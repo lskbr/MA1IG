@@ -1,0 +1,27 @@
+Language:
+  actAs: {Timestampable: ~}
+  columns:
+    name: {type: string(40), notnull: true, unique: true}
+    abbreviation: {type: string(5), notnull: true, unique: true}
+    flag: {type: string(255)}
+    isActivated: {type: boolean, notnull: true, default: false}
+    isDefault: {type: boolean, notnull: true, unique: false}
+
+Category:
+  actAs: {Timestampable: ~}
+  columns:
+    name: {type: string(40), notnull: true, unique: true}
+    position: {type: integer, notnull: true, default: 99}
+    isActivated: {type: boolean, notnull: true, default: false}
+  relations:
+    #Faire la relation avec Page
+
+Page:
+  actAs: {Timestampable: ~}
+  columns:
+    hashCode: {type: string(255), notnull: true}
+    menuTitle: {type: string(255), notnull: true}
+    position: {type: integer, notnull: true, default: 99}
+    publicationDate: {type: timestamp}
+  relations:
+    Language: {onDelete: Cascade,}

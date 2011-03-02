@@ -29,34 +29,33 @@ Page:
     Language: {local: language_id, foreign: id}
 
 StaticPage:
-  inheritance: {type: concret, extends: Page}
+  inheritance: {type: concrete, extends: Page}
   columns:
-    content: {type: text, notnull: true, default: "Page en construction"}
+    content: {type: text}
     is_activated : {type: boolean, notnull: true, default: 0}
     title: {type: string(255), notnull: true, default: "En contruction"}
-
 
 Configuration:
   columns:
     name: {type: string(255), notnull: true, unique: true}
     description: {type: text}
-    parent_id: {type: integer}
+    configuration_id: {type: integer}
   relations:
-    Configuration: {local: parent_id, foreign: id}
+    Configuration: {local: configuration_id, foreign: id}
 
 BooleanConfiguration:
-  inheritance: {type: concret, extends: Configuration}
+  inheritance: {type: concrete, extends: Configuration}
   columns:
     is_kernel: {type: boolean, notnull: true, default: 0}
     is_activated: {type: boolean, notnull: true, default: 0}
 
 NumericConfiguration:
-  inheritance: {type: concret, extends: Configuration}
+  inheritance: {type: concrete, extends: Configuration}
   columns:
     value: {type: integer, notnull: true}
 
 DynamicPage:
-  inheritance: {type: concret, extends: Page}
+  inheritance: {type: concrete, extends: Page}
   columns:
     controller: {type: string(255), notnull: true}
     action : {type: string(255), notnull: true}

@@ -35,14 +35,6 @@ StaticPage:
     is_activated : {type: boolean, notnull: true, default: 0}
     title: {type: string(255), notnull: true, default: "En contruction"}
 
-DynamicPage:
-  inheritance: {type: concret, extends: Page}
-  colunms:
-    controller: {type: string(255), notnull: true}
-    action : {type: string(255), notnull: true}
-    boolean_configuation_id: {type: integer, notnull: true}
-  relations:
-    BooleanConfiguration: {local: boolean_configuation_id, foreign: id}
 
 Configuration:
   columns:
@@ -50,8 +42,7 @@ Configuration:
     description: {type: text}
     parent_id: {type: integer}
   relations:
-    BooleanConfiguration: {local: parent_id, foreign: id}
-
+    Configuration: {local: parent_id, foreign: id}
 
 BooleanConfiguration:
   inheritance: {type: concret, extends: Configuration}
@@ -59,7 +50,16 @@ BooleanConfiguration:
     is_kernel: {type: boolean, notnull: true, default: 0}
     is_activated: {type: boolean, notnull: true, default: 0}
 
-BooleanConfiguration:
+NumericConfiguration:
   inheritance: {type: concret, extends: Configuration}
   columns:
     value: {type: integer, notnull: true}
+
+DynamicPage:
+  inheritance: {type: concret, extends: Page}
+  columns:
+    controller: {type: string(255), notnull: true}
+    action : {type: string(255), notnull: true}
+    boolean_configuation_id: {type: integer, notnull: true}
+  relations:
+    BooleanConfiguration: {local: boolean_configuation_id, foreign: id}

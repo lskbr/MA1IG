@@ -30,6 +30,8 @@ all:
     # Output escaping settings
     escaping_strategy:      true
     escaping_method:        ESC_SPECIALCHARS
+    i18n: true
+    standard_helpers: [Partial, Cache, I18N]
 
     # Enable the database manager
     use_database:           true

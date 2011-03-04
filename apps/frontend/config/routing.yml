@@ -6,6 +6,16 @@ homepage:
   url:   /
   param: { module: default, action: index }
 
+localized_homepage:
+  url:   /:sf_culture/
+  param: { module: default, action: index }
+  requirements:
+    sf_culture: (?:fr|en)
+
+homepage:
+  url: /change_language
+  param: {module: language, action: changeLanguage}
+
 # generic rules
 # please, remove them by adding more specific rules
 default_index:

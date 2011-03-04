@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packagerversion="1.9.1" version="2.0" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>sfFormExtraPlugin</name>
+ <channel>plugins.symfony-project.org</channel>
+ <summary>Validators, Widgets, and Forms.</summary>
+ <description>Validators, Widgets, and Forms.</description>
+ <lead>
+  <name>Fabien Potencier</name>
+  <user>fabpot</user>
+  <email>fabien.potencier@symfony-project.com</email>
+  <active>yes</active>
+ </lead>
+ <developer>
+  <name>Nicolas Perriault</name>
+  <user>nicolas</user>
+  <email>nicolas.perriault@symfony-project.com</email>
+  <active>yes</active>
+ </developer>
+ <developer>
+  <name>Kris Wallsmith</name>
+  <user>Kris.Wallsmith</user>
+  <email>kris.wallsmith@symfony-project.com</email>
+  <active>yes</active>
+ </developer>
+ <developer>
+  <name>Hugo Hamon</name>
+  <user>hugo.hamon</user>
+  <email>hugo.hamon@sensio.com</email>
+  <active>yes</active>
+ </developer>
+ <date>2010-08-25</date>
+ <time>14:00:37</time>
+ <version>
+  <release>1.1.3</release>
+  <api>1.0.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.symfony-project.com/license">MIT license</license>
+ <notes>
+-
+ </notes>
+ <contents>
+  <dir name="/">
+   <file md5sum="dd477c00b9182a8fce0a2931b2afe14f" name="bin/prove.php" role="data"/>
+   <file md5sum="352b4711bca96a9ef711c02ba51a7487" name="lib/form/sfFormLanguage.class.php" role="data"/>
+   <file md5sum="1374000a0198f4a174f80795e60e7c71" name="lib/validator/doctrine/sfValidatorDoctrineNestedSetLevel.class.php" role="data"/>
+   <file md5sum="47573deff2c7264ae1a31ead15940eed" name="lib/validator/sfValidatorBlacklist.class.php" role="data"/>
+   <file md5sum="71d741ed1a332e2c3c5e5eba43061123" name="lib/validator/sfValidatorReCaptcha.class.php" role="data"/>
+   <file md5sum="f1af2b598238238258888f18dbc8a257" name="lib/validator/sfValidatorSchemaTimeInterval.class.php" role="data"/>
+   <file md5sum="122f99df59284f63338fd9a1e055e4ff" name="lib/validator/sfValidatorDefault.class.php" role="data"/>
+   <file md5sum="b0a625150802410c9a39dee434746908" name="lib/widget/sfWidgetFormDoctrineChoiceGrouped.class.php" role="data"/>
+   <file md5sum="8d3f91f1b54429c94b71517bd3840e20" name="lib/widget/sfWidgetFormDoctrineJQueryAutocompleter.class.php" role="data"/>
+   <file md5sum="8ca49e7b709485623ebd124950a0a41f" name="lib/widget/sfWidgetFormJQueryAutocompleter.class.php" role="data"/>
+   <file md5sum="0a004f96c83c50872775bcc698d5dabb" name="lib/widget/sfWidgetFormJQueryDate.class.php" role="data"/>
+   <file md5sum="8c909201670d42f4d4ddfe46eab45adb" name="lib/widget/sfWidgetFormPropelChoiceGrouped.class.php" role="data"/>
+   <file md5sum="45adc6b7bfb2296d7bc77a83a441ac88" name="lib/widget/sfWidgetFormPropelJQueryAutocompleter.class.php" role="data"/>
+   <file md5sum="9feb211dbd9e4e274b7981f41af339cb" name="lib/widget/sfWidgetFormReCaptcha.class.php" role="data"/>
+   <file md5sum="83860c7eea89ef17f0e4d88268fbb7fc" name="lib/widget/sfWidgetFormSelectDoubleList.class.php" role="data"/>
+   <file md5sum="4b4bedb41a4adb487ecc39cc47be4eab" name="lib/widget/sfWidgetFormSelectUSState.class.php" role="data"/>
+   <file md5sum="b4e4b61fba61b26db3ac30bb5933771b" name="lib/widget/sfWidgetFormTextareaTinyMCE.class.php" role="data"/>
+   <file md5sum="ceecaca65fdf3b4c5e037ab6e696d06a" name="test/form/sfFormLanguageTest.php" role="data"/>
+   <file md5sum="6ea19158046962f6ad76776ed3ad8673" name="test/validator/sfValidatorReCaptchaTest.php" role="data"/>
+   <file md5sum="0c08b48fbc88fb98aa6062809cba54c8" name="test/validator/sfValidatorBlacklistTest.php" role="data"/>
+   <file md5sum="1f6fd7556f6f3a68b7a31ba859c4175b" name="test/validator/sfValidatorSchemaTimeIntervalTest.php" role="data"/>
+   <file md5sum="92b4a5838358108197afe3afe8aee679" name="test/validator/sfValidatorDefaultTest.php" role="data"/>
+   <file md5sum="993dc134aefab7538455472af3a3c5a4" name="test/widget/sfWidgetFormReCaptchaTest.php" role="data"/>
+   <file md5sum="e04220de43865dc7cf4cc7fe5965873b" name="test/bootstrap.php" role="data"/>
+   <file md5sum="88def8417a8aefc9fa5d833a4f4d0373" name="web/css/jquery.autocompleter.css" role="data"/>
+   <file md5sum="460d935f81fd9de0c01656fd4f294757" name="web/js/double_list.js" role="data"/>
+   <file md5sum="b4dc9ff8b1a5569405fe53a1d4dd4f4e" name="web/js/jquery.autocompleter.js" role="data"/>
+   <file md5sum="03ce3dcc84af110e9da8699a841e5200" name="web/images/indicator.gif" role="data"/>
+   <file md5sum="64113e3f418860c6c27caa83d8494c73" name="web/images/next.png" role="data"/>
+   <file md5sum="4485131fafbc7b6bd6018a67671e9040" name="web/images/previous.png" role="data"/>
+   <file md5sum="9c80350d278bfbcf24b946d86df8fab6" name="README" role="data"/>
+   <file md5sum="4db2c5c669396b6c794f2fe214cb33e8" name="LICENSE" role="data"/>
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.2.4</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.1</min>
+   </pearinstaller>
+   
+  </required>
+ </dependencies>
+ <phprelease/>
+ <changelog>
+  <release>
+   <version>
+    <release>1.1.3</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <license uri="http://www.symfony-project.com/license">MIT license</license>
+   <license>MIT</license>
+   <date>2010-08-25</date>
+   <notes>
+* xavier: allowed unassociated list to be left of the associated one (#7780)
+* Fabien: added culture and theme options for sfWidgetFormReCaptcha (#8509)
+* Fabien: updated the autocomplete JavaScript to the latest version
+* Fabien: fixed sfWidgetFormJQueryDate doesn't refresh "disabled" after the date was chosen from calendar (#8817)
+* Xavier: fixed sfWidgetFormJQueryDate doesn't restrict values on page load (#7792)
+* Fabien: fixed JS function names when the widget name contains - (#8836)
+* Fabien: added support for sfWidgetFormDateTime in sfWidgetFormJQueryDate (#8950)
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.1.2</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <license uri="http://www.symfony-project.com/license">MIT license</license>
+   <license>MIT</license>
+   <date>2010-08-03</date>
+   <notes>
+* Kris.Wallsmith: added sfValidatorDefault, which returns a default value rather than throw an error
+* Kris.Wallsmith: fixed blacklist validator test
+* FabianLange: fixed incorrect octal parsing of dates in javascript (#7743)
+* Kris.Wallsmith: fixed reading of can_be_empty option in sfWidgetFormJQueryDate (#8723)
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.1.1</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <license uri="http://www.symfony-project.com/license">MIT license</license>
+   <license>MIT</license>
+   <date>2009-11-30</date>
+   <notes>
+* fabien: added a date_widget option to sfWidgetFormJQueryDate (#5382)
+* fabien: changed the sfFormLanguage to take the current user culture into account (#6752)
+* fabien: added sfWidgetFormDoctrineJQueryAutocompleter (#5118, #4943)
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.1.0</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <license uri="http://www.symfony-project.com/license">MIT license</license>
+   <license>MIT</license>
+   <date>2009-11-30</date>
+   <notes>
+* fabien: made the plugin work for symfony 1.3/1.4
+   </notes>
+  </release>
+ </changelog>
+</package>

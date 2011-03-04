@@ -31,6 +31,7 @@ all:
     escaping_strategy:      true
     escaping_method:        ESC_SPECIALCHARS
     default_culture: fr
+    i18n: on
 
     # Enable the database manager
     use_database:           true

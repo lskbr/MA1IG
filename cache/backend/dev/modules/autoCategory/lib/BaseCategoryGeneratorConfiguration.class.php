@@ -47,7 +47,7 @@ abstract class BaseCategoryGeneratorConfiguration extends sfModelGeneratorConfig
 
   public function getListParams()
   {
-    return '%%id%% - %%position%% - %%is_activated%% - %%created_at%% - %%updated_at%%';
+    return '%%=name%%';
   }
 
   public function getListLayout()
@@ -57,17 +57,17 @@ abstract class BaseCategoryGeneratorConfiguration extends sfModelGeneratorConfig
 
   public function getListTitle()
   {
-    return 'Category List';
+    return 'Liste des catégories';
   }
 
   public function getEditTitle()
   {
-    return 'Edit Category';
+    return 'Edition de la catégorie "%%name%%"';
   }
 
   public function getNewTitle()
   {
-    return 'New Category';
+    return 'Ajouter une nouvelle catégorie';
   }
 
   public function getFilterDisplay()
@@ -92,7 +92,7 @@ abstract class BaseCategoryGeneratorConfiguration extends sfModelGeneratorConfig
 
   public function getListDisplay()
   {
-    return array(  0 => 'id',  1 => 'position',  2 => 'is_activated',  3 => 'created_at',  4 => 'updated_at',);
+    return array(  0 => '=name',);
   }
 
   public function getFieldsDefault()

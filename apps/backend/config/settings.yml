@@ -30,6 +30,7 @@ all:
     # Output escaping settings
     escaping_strategy:      true
     escaping_method:        ESC_SPECIALCHARS
+    default_culture: fr_BE
 
     # Enable the database manager
     use_database:           true

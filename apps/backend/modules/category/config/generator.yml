@@ -14,8 +14,12 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
+      list:
+        title: Liste des catégories
+        display: [=name]
       filter:  ~
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:
+        title: Edition de la catégorie "%%name%%"
+      new:
+        title: Ajouter une nouvelle catégorie

@@ -1,0 +1,3 @@
+<td colspan="5">
+  <?php echo __('%%id%% - %%position%% - %%is_activated%% - %%created_at%% - %%updated_at%%', array('%%id%%' => link_to($category->getId(), 'category_edit', $category), '%%position%%' => $category->getPosition(), '%%is_activated%%' => get_partial('category/list_field_boolean', array('value' => $category->getIsActivated())), '%%created_at%%' => false !== strtotime($category->getCreatedAt()) ? format_date($category->getCreatedAt(), "f") : '&nbsp;', '%%updated_at%%' => false !== strtotime($category->getUpdatedAt()) ? format_date($category->getUpdatedAt(), "f") : '&nbsp;'), 'messages') ?>
+</td>

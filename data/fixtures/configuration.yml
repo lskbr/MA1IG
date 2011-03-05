@@ -6,3 +6,12 @@ BooleanConfiguration:
     BooleanConfiguration: News
   Calendrier:
     name: Calendrier
+NumericConfiguration:
+  NewsParPage:
+    name: Nombre de news par page
+    BooleanConfiguration: News
+    value: 5
+  ComsParPage:
+    name: Nombre de commentaires par page
+    BooleanConfiguration: Commentaires
+    value: 4

@@ -1,14 +1,14 @@
 <?php
 
 /**
- * configuration actions.
+ * homepage actions.
  *
  * @package    grainedevie
- * @subpackage configuration
+ * @subpackage homepage
  * @author     Your name here
  * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
-class configurationActions extends sfActions
+class homepageActions extends sfActions
 {
  /**
   * Executes index action
@@ -17,8 +17,6 @@ class configurationActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-  	$this->config=Doctrine_Core::getTable('BooleanConfiguration')->findAll();
-  	var_dump($this->config);
-  	echo sizeof($this->config);
+    
   }
 }

@@ -11,5 +11,5 @@ configuration:
   param: { module: configuration, action: index }
 homepage:
   url:   /
-  param: { module: language, action: index }
+  param: { module: homepage, action: index }
 

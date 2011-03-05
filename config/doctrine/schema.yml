@@ -41,7 +41,7 @@ Configuration:
     description: {type: text}
     configuration_id: {type: integer}
   relations:
-    Configuration: {local: configuration_id, foreign: id}
+    BooleanConfiguration: {local: configuration_id, foreign: id}
 
 BooleanConfiguration:
   inheritance: {type: concrete, extends: Configuration}

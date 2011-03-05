@@ -15,13 +15,13 @@ abstract class BaseConfigurationFormFilter extends BaseFormFilterDoctrine
     $this->setWidgets(array(
       'name'             => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'description'      => new sfWidgetFormFilterInput(),
-      'configuration_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Configuration'), 'add_empty' => true)),
+      'configuration_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('BooleanConfiguration'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
       'name'             => new sfValidatorPass(array('required' => false)),
       'description'      => new sfValidatorPass(array('required' => false)),
-      'configuration_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Configuration'), 'column' => 'id')),
+      'configuration_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('BooleanConfiguration'), 'column' => 'id')),
     ));
 
     $this->widgetSchema->setNameFormat('configuration_filters[%s]');

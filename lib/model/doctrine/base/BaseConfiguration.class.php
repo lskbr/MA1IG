@@ -8,16 +8,16 @@
  * @property string $name
  * @property text $description
  * @property integer $configuration_id
- * @property Configuration $Configuration
+ * @property BooleanConfiguration $BooleanConfiguration
  * 
- * @method string        getName()             Returns the current record's "name" value
- * @method text          getDescription()      Returns the current record's "description" value
- * @method integer       getConfigurationId()  Returns the current record's "configuration_id" value
- * @method Configuration getConfiguration()    Returns the current record's "Configuration" value
- * @method Configuration setName()             Sets the current record's "name" value
- * @method Configuration setDescription()      Sets the current record's "description" value
- * @method Configuration setConfigurationId()  Sets the current record's "configuration_id" value
- * @method Configuration setConfiguration()    Sets the current record's "Configuration" value
+ * @method string               getName()                 Returns the current record's "name" value
+ * @method text                 getDescription()          Returns the current record's "description" value
+ * @method integer              getConfigurationId()      Returns the current record's "configuration_id" value
+ * @method BooleanConfiguration getBooleanConfiguration() Returns the current record's "BooleanConfiguration" value
+ * @method Configuration        setName()                 Sets the current record's "name" value
+ * @method Configuration        setDescription()          Sets the current record's "description" value
+ * @method Configuration        setConfigurationId()      Sets the current record's "configuration_id" value
+ * @method Configuration        setBooleanConfiguration() Sets the current record's "BooleanConfiguration" value
  * 
  * @package    grainedevie
  * @subpackage model
@@ -46,7 +46,7 @@ abstract class BaseConfiguration extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('Configuration', array(
+        $this->hasOne('BooleanConfiguration', array(
              'local' => 'configuration_id',
              'foreign' => 'id'));
     }

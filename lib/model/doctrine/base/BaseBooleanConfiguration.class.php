@@ -7,14 +7,17 @@
  * 
  * @property boolean $is_kernel
  * @property boolean $is_activated
+ * @property Doctrine_Collection $Configuration
  * @property Doctrine_Collection $DynamicPage
  * 
- * @method boolean              getIsKernel()     Returns the current record's "is_kernel" value
- * @method boolean              getIsActivated()  Returns the current record's "is_activated" value
- * @method Doctrine_Collection  getDynamicPage()  Returns the current record's "DynamicPage" collection
- * @method BooleanConfiguration setIsKernel()     Sets the current record's "is_kernel" value
- * @method BooleanConfiguration setIsActivated()  Sets the current record's "is_activated" value
- * @method BooleanConfiguration setDynamicPage()  Sets the current record's "DynamicPage" collection
+ * @method boolean              getIsKernel()      Returns the current record's "is_kernel" value
+ * @method boolean              getIsActivated()   Returns the current record's "is_activated" value
+ * @method Doctrine_Collection  getConfiguration() Returns the current record's "Configuration" collection
+ * @method Doctrine_Collection  getDynamicPage()   Returns the current record's "DynamicPage" collection
+ * @method BooleanConfiguration setIsKernel()      Sets the current record's "is_kernel" value
+ * @method BooleanConfiguration setIsActivated()   Sets the current record's "is_activated" value
+ * @method BooleanConfiguration setConfiguration() Sets the current record's "Configuration" collection
+ * @method BooleanConfiguration setDynamicPage()   Sets the current record's "DynamicPage" collection
  * 
  * @package    grainedevie
  * @subpackage model
@@ -42,6 +45,10 @@ abstract class BaseBooleanConfiguration extends Configuration
     public function setUp()
     {
         parent::setUp();
+        $this->hasMany('Configuration', array(
+             'local' => 'id',
+             'foreign' => 'configuration_id'));
+
         $this->hasMany('DynamicPage', array(
              'local' => 'id',
              'foreign' => 'boolean_configuation_id'));

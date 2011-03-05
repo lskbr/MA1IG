@@ -1,0 +1,8 @@
+BooleanConfiguration:
+  News:
+    name: Actualités
+  Commentaires:
+    name: Commentaire
+    Configuration: News
+  Calendrier:
+    name: Calendrier

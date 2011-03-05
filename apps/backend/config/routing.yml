@@ -1,16 +1,15 @@
-# You can find more information about this file on the symfony website:
-# http://www.symfony-project.org/reference/1_4/en/10-Routing
-
-# default rules
+language:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                language
+    module:               language
+    prefix_path:          /language
+    column:               id
+    with_wildcard_routes: true
+configuration:
+  url: /configuration
+  param: { module: configuration, action: index }
 homepage:
   url:   /
-  param: { module: default, action: index }
+  param: { module: language, action: index }
 
-# generic rules
-# please, remove them by adding more specific rules
-default_index:
-  url:   /:module
-  param: { action: index }
-
-default:
-  url:   /:module/:action/*

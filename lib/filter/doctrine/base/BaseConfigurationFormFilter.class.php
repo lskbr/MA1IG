@@ -16,12 +16,20 @@ abstract class BaseConfigurationFormFilter extends BaseFormFilterDoctrine
       'name'             => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'description'      => new sfWidgetFormFilterInput(),
       'configuration_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('BooleanConfiguration'), 'add_empty' => true)),
+      'type'             => new sfWidgetFormFilterInput(),
+      'is_kernel'        => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
+      'is_activated'     => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
+      'value'            => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
       'name'             => new sfValidatorPass(array('required' => false)),
       'description'      => new sfValidatorPass(array('required' => false)),
       'configuration_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('BooleanConfiguration'), 'column' => 'id')),
+      'type'             => new sfValidatorPass(array('required' => false)),
+      'is_kernel'        => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
+      'is_activated'     => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
+      'value'            => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
     ));
 
     $this->widgetSchema->setNameFormat('configuration_filters[%s]');
@@ -45,6 +53,10 @@ abstract class BaseConfigurationFormFilter extends BaseFormFilterDoctrine
       'name'             => 'Text',
       'description'      => 'Text',
       'configuration_id' => 'ForeignKey',
+      'type'             => 'Text',
+      'is_kernel'        => 'Boolean',
+      'is_activated'     => 'Boolean',
+      'value'            => 'Number',
     );
   }
 }

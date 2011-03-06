@@ -12,5 +12,8 @@
  */
 class NumericConfiguration extends BaseNumericConfiguration
 {
-
+	public function getParent()
+	{
+		return $this->getBooleanConfiguration();
+	}
 }

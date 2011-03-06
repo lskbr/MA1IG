@@ -12,5 +12,8 @@
  */
 class Configuration extends BaseConfiguration
 {
-
+	public function getParent()
+	{
+		return $this->getBooleanConfiguration();
+	}
 }

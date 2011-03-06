@@ -16,9 +16,6 @@ abstract class BaseNumericConfigurationForm extends ConfigurationForm
   {
     parent::setupInheritance();
 
-    $this->widgetSchema   ['value'] = new sfWidgetFormInputText();
-    $this->validatorSchema['value'] = new sfValidatorInteger();
-
     $this->widgetSchema->setNameFormat('numeric_configuration[%s]');
   }
 

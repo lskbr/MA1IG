@@ -16,12 +16,6 @@ abstract class BaseBooleanConfigurationForm extends ConfigurationForm
   {
     parent::setupInheritance();
 
-    $this->widgetSchema   ['is_kernel'] = new sfWidgetFormInputCheckbox();
-    $this->validatorSchema['is_kernel'] = new sfValidatorBoolean(array('required' => false));
-
-    $this->widgetSchema   ['is_activated'] = new sfWidgetFormInputCheckbox();
-    $this->validatorSchema['is_activated'] = new sfValidatorBoolean(array('required' => false));
-
     $this->widgetSchema->setNameFormat('boolean_configuration[%s]');
   }
 

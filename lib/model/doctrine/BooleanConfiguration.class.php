@@ -12,5 +12,12 @@
  */
 class BooleanConfiguration extends BaseBooleanConfiguration
 {
-
+	public function isActivated()
+	{
+		return $this->getIsActivated();
+	}
+	public function getParent()
+	{
+		return $this->getBooleanConfiguration();
+	}
 }

@@ -17,8 +17,22 @@ class configurationActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-  	$this->config=Doctrine_Core::getTable('BooleanConfiguration')->findAll();
-  	var_dump($this->config);
-  	echo sizeof($this->config);
+  	//$this->configs=Doctrine_Core::getTable('Configuration')->orderBy('configuration_id')->findAll();
+  	$this->configs=Doctrine_Query::create()->from('Configuration c')->orderBy('configuration_id')->execute();
+  }
+  public function executeUpdate(sfWebRequest $request)
+  {
+  	$this->configs=Doctrine_Query::create()->from('Configuration c')->orderBy('configuration_id')->execute();
+  	foreach($this->configs as $config)
+  	{
+  		if($config->getType()==1)
+  			$config->setIsActivated($config->getIsKernel() || isset($_POST['options'][$config->getId()]));
+  		else
+  			if(isset($_POST['options'][$config->getId()]))
+  				$config->setValue($_POST['options'][$config->getId()]);
+  		$config->save();
+  	}
+  	$this->getUser()->setFlash('notice','La configuration du site à été mise à jour.');
+  	$this->redirect('configuration');
   }
 }

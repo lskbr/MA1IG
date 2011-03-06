@@ -12,7 +12,8 @@ class BackendLanguageForm extends LanguageForm
 	      'label'     => 'Drapeau :',
 	      'file_src'  => '/uploads/flags/'.$this->getObject()->getFlag(),
 	      'is_image'  => true,
-	      'with_delete' => true
+	      'with_delete' => true,
+	      'edit_mode' => !$this->isNew()
 	    ));
 
 	    $this->validatorSchema['flag'] = new sfValidatorFile(array(

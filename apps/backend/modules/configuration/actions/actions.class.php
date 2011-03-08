@@ -17,7 +17,6 @@ class configurationActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-  	//$this->configs=Doctrine_Core::getTable('Configuration')->orderBy('configuration_id')->findAll();
   	$this->configs=Doctrine_Query::create()->from('Configuration c')->orderBy('configuration_id')->execute();
   }
   public function executeUpdate(sfWebRequest $request)

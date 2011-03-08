@@ -116,7 +116,7 @@ body{
 	background-color: #ddd;
 }
 .body{
-	margin-top:85px;
+	background-color:#484848;
 }
 .main{
 	margin-left:270px;
@@ -247,6 +247,31 @@ textarea{
 	padding-bottom: 15px;
 	line-height:10px;
 }
+.help{
+	font-size:0.8em;
+	color:#8a8a8a;
+}
+table .flag{
+	height:50px;
+	width:100px;
+	padding:3px;
+}
+table{
+	border:1px solid #7b7b7b;
+	border-collapse:collapse;
+}
+th, td {
+	border:1px solid #7b7b7b;
+	text-align:center;
+	color: #444;
+}
+thead th{
+	padding:5px;
+	padding-left:10px;
+	padding-right:10px;
+	color: #8a8a8a;
+}
+
 					/*				
 				#top table{
 					margin-bottom:30px;	

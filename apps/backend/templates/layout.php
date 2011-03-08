@@ -26,7 +26,7 @@
 
         <span class='memberinfo_span2'><a href="">Aucun message en attente</a></span>
       </div>
-    <div>
+    </div>
     <div class="body">
       <div id="sidebar">
         <ul>

@@ -3,6 +3,7 @@ class BackendLanguageForm extends LanguageForm
 {
 	public function configure()
 	{
+		$this->getWidgetSchema()->getFormFormatter()->setHelpFormat('%help%');
 		unset($this['created_at'], $this['updated_at'], $this['is_activated'], $this['is_default']);
 		$this->widgetSchema->setLabels(array(
 		  'name'    => 'Nom de la langue :',

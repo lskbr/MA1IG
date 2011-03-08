@@ -18,4 +18,5 @@ function textfield_tag($config)
 		$txt.= 'disabled="disabled"';
 	$txt.= 'class="input-tiny"/> : '.$config->getName().'<br/>';
 	$txt.= '<span class="desc">'.$config->getDescription().'</span>';
+	return $txt;
 }

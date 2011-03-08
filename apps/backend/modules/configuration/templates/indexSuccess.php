@@ -16,7 +16,7 @@ function display($configs,$config,$first=false)
 	echo '</div>';
 }
 echo form_tag('configuration/update');
-include_helper('config_form');
+use_helper('ConfigForm');
 foreach($configs as $config)
 {
 	if($config->getParent()->__toString()=="")

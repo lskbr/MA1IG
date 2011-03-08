@@ -13,12 +13,16 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
+      fields:
+        name: {label: Nom de la catégorie, help: Veuillez entrer le nom de la cétégorie de la langue mentionnée}
+        is_activated: {label: Visible, help: Cette catégorie est-elle visible pour les utilisateurs du site}
       list:
         title: Liste des catégories
-        display: [=name]
-      filter:  ~
-      form:    ~
+        display: [=name, is_activated]
+        sort: [position, asc]
+      filter:
+        display: [is_activated, position]
+      form:   ~
       edit:
         title: Edition de la catégorie "%%name%%"
       new:

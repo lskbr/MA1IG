@@ -47,7 +47,7 @@ abstract class BaseCategoryGeneratorConfiguration extends sfModelGeneratorConfig
 
   public function getListParams()
   {
-    return '%%=name%%';
+    return '%%=name%% - %%is_activated%%';
   }
 
   public function getListLayout()
@@ -72,7 +72,7 @@ abstract class BaseCategoryGeneratorConfiguration extends sfModelGeneratorConfig
 
   public function getFilterDisplay()
   {
-    return array();
+    return array(  0 => 'is_activated',  1 => 'position',);
   }
 
   public function getFormDisplay()
@@ -92,7 +92,7 @@ abstract class BaseCategoryGeneratorConfiguration extends sfModelGeneratorConfig
 
   public function getListDisplay()
   {
-    return array(  0 => '=name',);
+    return array(  0 => '=name',  1 => 'is_activated',);
   }
 
   public function getFieldsDefault()
@@ -100,9 +100,10 @@ abstract class BaseCategoryGeneratorConfiguration extends sfModelGeneratorConfig
     return array(
       'id' => array(  'is_link' => true,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
       'position' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',),
-      'is_activated' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Boolean',),
+      'is_activated' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Boolean',  'label' => 'Visible',  'help' => 'Cette catégorie est-elle visible pour les utilisateurs du site',),
       'created_at' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Date',),
       'updated_at' => array(  'is_link' => false,  'is_real' => true,  'is_partial' => false,  'is_component' => false,  'type' => 'Date',),
+      'name' => array(  'is_link' => false,  'is_real' => false,  'is_partial' => false,  'is_component' => false,  'type' => 'Text',  'label' => 'Nom de la catégorie',  'help' => 'Veuillez entrer le nom de la cétégorie de la langue mentionnée',),
     );
   }
 
@@ -199,7 +200,7 @@ abstract class BaseCategoryGeneratorConfiguration extends sfModelGeneratorConfig
 
   public function getDefaultSort()
   {
-    return array(null, null);
+    return array('position', 'asc');
   }
 
   public function getTableMethod()

@@ -15,3 +15,68 @@
 #     password: changeme
 #     name:     Kris Wallsmith
 #     email:    kris.wallsmith@symfony-project.com
+
+Category:
+  Graine_de_vie:
+    position: 1
+    is_activated : 1
+    Translation:
+       en:
+         name: Seed for life
+       fr:
+         name: Graine de vie
+
+  Notre_engagement:
+    position: 2
+    is_activated : 1
+    Translation:
+       en:
+         name: Our commitment
+       fr:
+         name: Notre engagement
+
+  Raison_d_agir:
+    position: 3
+    is_activated : 1
+    Translation:
+       en:
+         name: Reason to act
+       fr:
+         name: Raison d'agir
+
+  Projet_Madagascar:
+    position: 4
+    is_activated : 1
+    Translation:
+       en:
+         name: Project Madagascar
+       fr:
+         name: Projet Madagascar
+
+  Ils_ont_dit:
+    position: 5
+    is_activated : 1
+    Translation:
+       en:
+         name: They say
+       fr:
+         name: Ils ont dit !
+
+  Comment_nous_aider:
+    position: 6
+    is_activated : 1
+    Translation:
+       en:
+         name: Help us
+       fr:
+         name: Comment nous aider ?
+
+  Contact:
+    position: 7
+    is_activated : 1
+    Translation:
+       en:
+         name: Contact us
+       fr:
+         name: Contact
+

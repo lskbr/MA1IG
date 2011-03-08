@@ -14,10 +14,10 @@ class CategoryForm extends BaseCategoryForm {
         unset(
                 $this['created_at'], $this['updated_at']
         );
-
+        sfContext::getInstance()->getUser()->setculture('fr');
         $this->embedI18n(array('en', 'fr'));
-        $this->widgetSchema->setLabel('en', 'English');
-        $this->widgetSchema->setLabel('fr', 'French');
+        $this->widgetSchema->setLabel('en', 'Anglais');
+        $this->widgetSchema->setLabel('fr', 'Français');
     }
 
 }

@@ -2,11 +2,14 @@ Language:
   Français:
     name: Français
     abbreviation: fr
+    flag: 950663d84d9c9643fec995c4cd9fd90d5e2021b5.png
 
   Anglais:
     name: English
     abbreviation: en
+    flag: 3c15a0978d3af1095f1e34f7f91e154397c8eb30.png
 
   Néerlandais:
     name: Nederlands
     abbreviation: nl
+    flag: 0af5b21481436ed308536ce079bcc75510838037.png

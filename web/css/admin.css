@@ -147,6 +147,7 @@ h1{
 .flag{
 	max-width:50px;
 	max-height:30px;
+	vertical-align:middle;
 }
 				
 				
@@ -223,6 +224,7 @@ textarea{
 }
 .case_homepage div.case_txt{
 	color:#4a4a4a;
+	position:relative;
 	font-size:15px;
 	font-family: "Lucida Sans Unicode";
 }
@@ -277,10 +279,26 @@ thead th{
 .sf_admin_td_actions{
 	list-style-type:none;
 }
+
 .sf_admin_actions{
 	list-style-type:none;
 }
 
+table a{
+	color:#454545;
+	text-decoration:none;
+}
+table a:hover{
+	color:#454545;
+	text-decoration:underline;
+}
+img.add{
+	position:absolute;
+	height:25px;
+	width:25px;
+	left:20px;
+	top:28px;
+}
 					/*				
 				#top table{
 					margin-bottom:30px;	

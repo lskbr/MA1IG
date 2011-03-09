@@ -18,14 +18,22 @@ abstract class BaseConfigurationForm extends BaseFormDoctrine
       'id'               => new sfWidgetFormInputHidden(),
       'name'             => new sfWidgetFormInputText(),
       'description'      => new sfWidgetFormInputText(),
-      'configuration_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Configuration'), 'add_empty' => true)),
+      'configuration_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('BooleanConfiguration'), 'add_empty' => true)),
+      'type'             => new sfWidgetFormInputText(),
+      'is_kernel'        => new sfWidgetFormInputCheckbox(),
+      'is_activated'     => new sfWidgetFormInputCheckbox(),
+      'value'            => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
       'id'               => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'name'             => new sfValidatorString(array('max_length' => 255)),
       'description'      => new sfValidatorPass(array('required' => false)),
-      'configuration_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Configuration'), 'required' => false)),
+      'configuration_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('BooleanConfiguration'), 'required' => false)),
+      'type'             => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'is_kernel'        => new sfValidatorBoolean(array('required' => false)),
+      'is_activated'     => new sfValidatorBoolean(array('required' => false)),
+      'value'            => new sfValidatorInteger(array('required' => false)),
     ));
 
     $this->validatorSchema->setPostValidator(

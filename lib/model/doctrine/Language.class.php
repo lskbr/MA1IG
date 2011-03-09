@@ -12,5 +12,18 @@
  */
 class Language extends BaseLanguage
 {
-
+	public function isActivated()
+	{
+		return $this->getIsActivated();
+	}
+	public function enable()
+	{
+		$this->setIsActivated(true);
+		$this->save();
+	}
+	public function disable()
+	{
+		$this->setIsActivated(false);
+		$this->save();
+	}
 }

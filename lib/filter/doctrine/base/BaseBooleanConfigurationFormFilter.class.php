@@ -14,25 +14,11 @@ abstract class BaseBooleanConfigurationFormFilter extends ConfigurationFormFilte
   {
     parent::setupInheritance();
 
-    $this->widgetSchema   ['is_kernel'] = new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no')));
-    $this->validatorSchema['is_kernel'] = new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0)));
-
-    $this->widgetSchema   ['is_activated'] = new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no')));
-    $this->validatorSchema['is_activated'] = new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0)));
-
     $this->widgetSchema->setNameFormat('boolean_configuration_filters[%s]');
   }
 
   public function getModelName()
   {
     return 'BooleanConfiguration';
-  }
-
-  public function getFields()
-  {
-    return array_merge(parent::getFields(), array(
-      'is_kernel' => 'Boolean',
-      'is_activated' => 'Boolean',
-    ));
   }
 }

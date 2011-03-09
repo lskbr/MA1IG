@@ -1,0 +1,29 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           language
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          language
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Liste des langues présentes sur le site :
+        display: [_flag, =name, abbreviation]
+        object_actions:
+          enable: {label: "Activer" action: "enable"}
+          disable: {label: "Désactiver" action: "disable"}
+        batch_actions: {}
+      filter:
+        class: false
+      form:
+        class: BackendLanguageForm
+      edit:    ~
+      new:     ~

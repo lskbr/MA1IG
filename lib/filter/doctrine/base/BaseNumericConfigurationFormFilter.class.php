@@ -14,21 +14,11 @@ abstract class BaseNumericConfigurationFormFilter extends ConfigurationFormFilte
   {
     parent::setupInheritance();
 
-    $this->widgetSchema   ['value'] = new sfWidgetFormFilterInput(array('with_empty' => false));
-    $this->validatorSchema['value'] = new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false)));
-
     $this->widgetSchema->setNameFormat('numeric_configuration_filters[%s]');
   }
 
   public function getModelName()
   {
     return 'NumericConfiguration';
-  }
-
-  public function getFields()
-  {
-    return array_merge(parent::getFields(), array(
-      'value' => 'Number',
-    ));
   }
 }

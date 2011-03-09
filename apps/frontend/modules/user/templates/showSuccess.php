@@ -57,6 +57,6 @@
 
 <hr />
 
-<a href="<?php echo url_for('user/edit?id='.$sf_guard_user->getId()) ?>">Edit</a>
+<a href="<?php echo url_for('user/edit?id='.$sf_guard_user->getId()) ?>"><?php echo __('Editer') ?></a>
 &nbsp;
-<a href="<?php echo url_for('user/index') ?>">List</a>
+<a href="<?php echo url_for('user/index') ?>"><?php echo __('Voir la liste') ?></a>

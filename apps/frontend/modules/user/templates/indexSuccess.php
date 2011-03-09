@@ -1,5 +1,4 @@
 <h1>Sf guard users List</h1>
-
 <table>
   <thead>
     <tr>
@@ -39,4 +38,4 @@
   </tbody>
 </table>
 
-  <a href="<?php echo url_for('user/new') ?>">New</a>
+  <a href="<?php echo url_for('user/new') ?>"><?php echo __('Ajouter un nouvel utilisateur') ?></a>

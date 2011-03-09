@@ -1,0 +1,42 @@
+## author: Laurent
+
+sfGuardUser:
+  Laurent:
+    first_name: Laurent
+    last_name: Cardon
+    email_address: laurent_cardon@hotmail.com
+    algorithm: sha1
+    username: laurent5
+    is_active: 1
+    is_super_admin: 1
+    password: laurent5
+
+  Olivier:
+    first_name: Olivier
+    last_name: Deltour
+    email_address: jin_7281@hotmail.com
+    algorithm: sha1
+    username: Xtream
+    is_active: 1
+    is_super_admin: 1
+    password: mdp_xt
+
+  Nicolas:
+    first_name: Nicolas
+    last_name: Dechamps
+    email_address: ndech13@hotmail.com
+    algorithm: sha1
+    username: Nico
+    is_active: 1
+    is_super_admin: 1
+    password: 13031991
+
+  Alexandre:
+    first_name: Alexandre
+    last_name: Anoutchine
+    email_address: anoutchine@gmail.com
+    algorithm: sha1
+    username: xirius
+    is_active: 1
+    is_super_admin: 1
+    password: 947482317

@@ -1,3 +1,3 @@
-<h1>New Sf guard user</h1>
+<h1><?php echo __("S'enregistrer comme nouvel utilisateur") ?></h1>
 
 <?php include_partial('form', array('form' => $form)) ?>

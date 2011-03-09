@@ -32,6 +32,14 @@ all:
     escaping_method:        ESC_SPECIALCHARS
     i18n: on
     standard_helpers: [Partial, Cache, I18N]
+    enabled_modules: [default, sfGuardAuth, sfGuardUser]
 
     # Enable the database manager
     use_database:           true
+
+  .actions:
+      login_module:    sfGuardAuth
+      login_action:    signin
+
+      secure_module:          sfGuardAuth
+      secure_action:          secure

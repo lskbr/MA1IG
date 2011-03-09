@@ -47,7 +47,7 @@ abstract class BaseCategoryGeneratorConfiguration extends sfModelGeneratorConfig
 
   public function getListParams()
   {
-    return '%%=name%% - %%is_activated%%';
+    return '%%=name%% - %%_isActivated%%';
   }
 
   public function getListLayout()
@@ -92,7 +92,7 @@ abstract class BaseCategoryGeneratorConfiguration extends sfModelGeneratorConfig
 
   public function getListDisplay()
   {
-    return array(  0 => '=name',  1 => 'is_activated',);
+    return array(  0 => '=name',  1 => '_isActivated',);
   }
 
   public function getFieldsDefault()

@@ -1,3 +1,3 @@
 <td colspan="2">
-  <?php echo __('%%name%% - %%is_activated%%', array('%%name%%' => link_to($category->getName(), 'category_edit', $category), '%%is_activated%%' => get_partial('category/list_field_boolean', array('value' => $category->getIsActivated()))), 'messages') ?>
+  <?php echo __('%%name%% - %%isActivated%%', array('%%name%%' => link_to($category->getName(), 'category_edit', $category), '%%isActivated%%' => get_partial('category/isActivated', array('type' => 'list', 'category' => $category))), 'messages') ?>
 </td>

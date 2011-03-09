@@ -30,8 +30,8 @@
     <div class="body">
       <div id="sidebar">
         <ul>
-          <?php use_helper('AdminMenu');
-          echo menu_item('Accueil', 'homepage', $sf_context);
+          <?php use_helper('AdminMenu'); //Ajouter ici pour le menu
+          echo menu_item('Accueil', 'homepage', $sf_context); // 'NomAAfficher','route',$sf_context;
           echo menu_item('Langage', 'language', $sf_context);
           echo menu_item('Configuration', 'configuration', $sf_context);?>
         </ul>

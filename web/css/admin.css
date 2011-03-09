@@ -2,6 +2,9 @@ body, ul, ol, h1,h2,h3,h4,h5,h6,form,li,p{
 	margin:0;
 	padding:0;
 }
+img{
+	border:0px;
+}
 
 html{
 	background:#484848;
@@ -270,6 +273,12 @@ thead th{
 	padding-left:10px;
 	padding-right:10px;
 	color: #8a8a8a;
+}
+.sf_admin_td_actions{
+	list-style-type:none;
+}
+.sf_admin_actions{
+	list-style-type:none;
 }
 
 					/*				

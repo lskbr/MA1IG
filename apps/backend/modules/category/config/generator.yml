@@ -18,7 +18,7 @@ generator:
         is_activated: {label: Visible, help: Cette catégorie est-elle visible pour les utilisateurs du site}
       list:
         title: Liste des catégories
-        display: [=name, _isActivated]
+        display: [=name, _isActivated, position]
         sort: [position, asc]
       filter:
         display: [is_activated, position]

@@ -1,3 +1,8 @@
+
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
 category:
   class: sfDoctrineRouteCollection
   options:
@@ -7,10 +12,6 @@ category:
     column:               id
     with_wildcard_routes: true
 
-# You can find more information about this file on the symfony website:
-# http://www.symfony-project.org/reference/1_4/en/10-Routing
-
-# default rules
 language:
   class: sfDoctrineRouteCollection
   options:
@@ -19,12 +20,15 @@ language:
     prefix_path:          /language
     column:               id
     with_wildcard_routes: true
+
 configuration:
   url: /configuration
   param: { module: configuration, action: index }
+
 configuration_update:
   url: /configuration/update
   param: { module: configuration, action: update }
+  
 homepage:
   url:   /
   param: { module: homepage, action: index }

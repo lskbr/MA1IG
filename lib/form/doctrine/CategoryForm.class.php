@@ -14,10 +14,14 @@ class CategoryForm extends BaseCategoryForm {
         unset(
                 $this['created_at'], $this['updated_at']
         );
+        $languages=Doctrine_Query::create()->from('Language l')->execute();
+        $lang_abb=array();
+        foreach($languages as $lang)
+        	$lang_abb[]=$lang->getAbbreviation();
         sfContext::getInstance()->getUser()->setculture('fr');
-        $this->embedI18n(array('en', 'fr'));
-        $this->widgetSchema->setLabel('en', 'Anglais');
-        $this->widgetSchema->setLabel('fr', 'Français');
+        $this->embedI18n($lang_abb);
+        foreach($languages as $lang)
+        	$this->widgetSchema->setLabel($lang->getAbbreviation(),$lang->getName());
     }
 
 }

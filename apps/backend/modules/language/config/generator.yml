@@ -16,7 +16,7 @@ generator:
       fields:  ~
       list:
         title: Liste des langues présentes sur le site :
-        display: [_flag, =name, abbreviation]
+        display: [_flag, =name, =abbreviation]
         object_actions:
           enable: {label: "Activer" action: "enable"}
           disable: {label: "Désactiver" action: "disable"}

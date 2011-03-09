@@ -13,23 +13,11 @@
     </body><div id="footer">
         <div class="content">
             <!-- footer content -->
-
-            <?php
-            $form = new sfFormLanguage(
-                            $sf_user,
-                            array('languages' => array('en', 'fr'))
-                    )
-            ?>
-            <form action="<?php echo url_for('change_language') ?>">
-<?php echo $form ?><input type="submit" value="ok" />
-            </form>
         </div>
     </div>
     <div id="footer">
   <div class="content">
     <!-- footer content -->
-
-    <?php include_component('language', 'language') ?>
   </div>
 </div>
 

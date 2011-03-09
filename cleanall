@@ -1,0 +1,5 @@
+#!/bin/bash
+./symfony cc
+./symfony doctrine:clean
+git add .
+clear

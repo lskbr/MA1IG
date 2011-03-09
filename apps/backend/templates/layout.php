@@ -21,7 +21,7 @@
                         <img src="/images/unreadmail.png" alt=""/>
                     </div>
 
-                    <span class='memberinfo_span'>Bienvenue <a href="">Admin</a></span>
+                    <span class='memberinfo_span'>Bienvenue <a href=""><?php echo $sf_user->getName() ?></a></span>
 
                     <span class='memberinfo_span'><a href="">Profil</a></span>
                     <span><a href="login.html"><?php echo link_to('Déconnexion', 'logout') ?></a></span>

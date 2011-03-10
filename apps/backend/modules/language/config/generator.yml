@@ -17,6 +17,13 @@ generator:
       list:
         title: Liste des langues présentes sur le site :
         display: [_flag, =name, =abbreviation]
+        fields:
+          flag:
+            label: Drapeau
+          name:
+            label: Langue
+          abbreviation:
+            label: Version courte
         object_actions:
           enable: {label: "Activer" action: "enable"}
           disable: {label: "Désactiver" action: "disable"}

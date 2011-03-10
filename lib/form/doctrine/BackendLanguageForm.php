@@ -14,8 +14,9 @@ class BackendLanguageForm extends LanguageForm
 	      'file_src'  => '/uploads/flags/'.$this->getObject()->getFlag(),
 	      'is_image'  => true,
 	      'with_delete' => true,
-	      'edit_mode' => !$this->isNew()
-	    ));
+	      'edit_mode' => true,
+	      'delete_label' => 'Supprimer le fichier actuellement présent sur le site'
+	    ), array('class' => 'edit_flag'));
 
 	    $this->validatorSchema['flag'] = new sfValidatorFile(array(
 	      'required'   => false,
@@ -25,5 +26,6 @@ class BackendLanguageForm extends LanguageForm
 
     	$this->validatorSchema['path_delete'] = new sfValidatorBoolean();
 	    $this->widgetSchema->setHelp('abbreviation', 'L\'abréviation est généralement de deux lettres.');
+	    $this->widgetSchema->setHelp('name','La langue doit être indiqué dans la langue elle même.');
 	}
 }

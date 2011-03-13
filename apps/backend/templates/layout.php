@@ -37,7 +37,7 @@
                     if($sf_user->isAuthenticated())
                     {
                     echo menu_item('Accueil', 'homepage', $sf_context); // 'NomAAfficher','route',$sf_context;
-                    echo menu_item('Langage', 'language', $sf_context);
+                    echo menu_item('Langues', 'language', $sf_context);
                     echo menu_item('Configuration', 'configuration', $sf_context);
                     echo menu_item('Catégories', 'category', $sf_context);
                     echo menu_item('Utilisateurs','sf_guard_user', $sf_context);

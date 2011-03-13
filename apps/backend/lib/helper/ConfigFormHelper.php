@@ -8,15 +8,15 @@ function checkbox_tag($config)
 	if((!($config->getParent()->__toString()=="") && !$config->getParent()->isActivated())||$config->getIsKernel()==true)
 		$txt.='disabled="disabled"';
 	$txt.='/> : '.$config->getName().'<br/>';
-	$txt.='<span class="desc">'.$config->getDescription().'</span>';
+	$txt.='<span class="desc_check">'.$config->getDescription().'</span>';
 	return $txt;
 }
 function textfield_tag($config)
 {
-	$txt= '<input type="text" name="options['.$config->getId().']" value="'.$config->getValue().'"';
+	$txt= $config->getName().' : <input type="text" name="options['.$config->getId().']" value="'.$config->getValue().'"';
 	if(!$config->getParent()->isActivated())
 		$txt.= 'disabled="disabled"';
-	$txt.= 'class="input-tiny"/> : '.$config->getName().'<br/>';
+	$txt.= 'class="input-tiny"/><br/>';
 	$txt.= '<span class="desc">'.$config->getDescription().'</span>';
 	return $txt;
 }

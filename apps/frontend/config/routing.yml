@@ -6,11 +6,6 @@ sf_guard_register:
   url: /register
   param: {module: sfGuardRegister, action: index}
 
-sf_guard_forgot_password:
-  url: /forgotpassword
-  param: {module: sfGuardForgotPassword, action: index}
-
-
 # generic rules
 # please, remove them by adding more specific rules
 

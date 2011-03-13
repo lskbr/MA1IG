@@ -1,4 +1,7 @@
 ## author: Laurent
+sf_guard_forgot_password:
+  url: /forgotpassword
+  param: {module: sfGuardForgotPassword, action: index}
 
 sf_guard_signin:
   url:   /login

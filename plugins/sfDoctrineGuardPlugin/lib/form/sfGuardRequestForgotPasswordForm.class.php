@@ -15,5 +15,8 @@ class sfGuardRequestForgotPasswordForm extends BasesfGuardRequestForgotPasswordF
    */
   public function configure()
   {
+      $this->widgetSchema->setLabels(array(
+          'email_address' => 'Adresse Email'
+      ));
   }
 }

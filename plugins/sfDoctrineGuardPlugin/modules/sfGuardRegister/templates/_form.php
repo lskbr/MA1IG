@@ -6,7 +6,7 @@
     <tfoot>
       <tr>
         <td colspan="2">
-          <input type="submit" name="register" value="<?php echo __('Register', null, 'sf_guard') ?>" />
+          <input type="submit" name="register" value="<?php echo __("S'inscrire") ?>" />
         </td>
       </tr>
     </tfoot>

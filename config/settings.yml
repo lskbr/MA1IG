@@ -2,3 +2,4 @@
 all:
   .settings:
     standard_helpers: [Partial, Cache, I18N]
+    enabled_modules: [sfGuardAuth, sfGuardForgotPassword]

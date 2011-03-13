@@ -16,4 +16,12 @@ class CategoryTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('category');
     }
+
+    public function getActiveCategories() //author : Laurent
+    {
+        $query = $this->createQuery('a')->where('a.is_activated = ?', true)->orderBy('a.position ASC');
+
+        return $query->execute();
+
+    }
 }

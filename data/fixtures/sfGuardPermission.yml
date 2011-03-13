@@ -1,0 +1,6 @@
+## author: Laurent
+
+sfGuardPermission:
+  AccesAdmin:
+    name: AcessAdmin
+    description: Permet d'accèder au backend

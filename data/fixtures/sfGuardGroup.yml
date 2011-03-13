@@ -1,0 +1,11 @@
+## author: Laurent
+
+sfGuardGroup:
+  Administrateur:
+    name: Administrateur
+    description: Possède toutes les autorisations et tous les accès
+    Permissions: [AccesAdmin]
+
+  Utilisateur:
+    name: Utilisateur
+    description: Utilisateur loggé. Possède l'accès a son espace membre ainsi que la possibilité de gérer ses données personelles

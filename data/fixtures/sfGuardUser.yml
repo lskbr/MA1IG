@@ -8,8 +8,9 @@ sfGuardUser:
     algorithm: sha1
     username: laurent5
     is_active: 1
-    is_super_admin: 1
+    is_super_admin: 0
     password: laurent5
+    Groups: [Administrateur]
 
   Olivier:
     first_name: Olivier
@@ -18,8 +19,9 @@ sfGuardUser:
     algorithm: sha1
     username: Xtream
     is_active: 1
-    is_super_admin: 1
+    is_super_admin: 0
     password: mdp_xt
+    Groups: [Administrateur]
 
   Nicolas:
     first_name: Nicolas
@@ -28,8 +30,9 @@ sfGuardUser:
     algorithm: sha1
     username: Nico
     is_active: 1
-    is_super_admin: 1
+    is_super_admin: 0
     password: 13031991
+    Groups: [Administrateur]
 
   Alexandre:
     first_name: Alexandre
@@ -38,5 +41,17 @@ sfGuardUser:
     algorithm: sha1
     username: xirius
     is_active: 1
-    is_super_admin: 1
+    is_super_admin: 0
     password: 947482317
+    Groups: [Administrateur]
+
+  User:
+    first_name: User
+    last_name: Test
+    email_address: user@user.com
+    algorithm: sha1
+    username: user
+    is_active: 1
+    is_super_admin: 0
+    password: user
+    Groups: [Utilisateur]

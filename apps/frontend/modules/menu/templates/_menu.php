@@ -50,6 +50,6 @@
         </li>
         <li><a href="#">Ils ont dit!</a></li>
         <li><a href="#">Comment nous aider?</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>-->
+        <li><a href="#">Contact</a></li>-->
+    </ul>
 </div>

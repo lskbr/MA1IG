@@ -1,0 +1,129 @@
+@charset "utf-8";
+/********************************************************************************
+ *	ProtoSlider.js - prototype.js based plugin
+ *	@version: 1.0 alhpa 5
+ *	@requires: prototype.js v1.6.1 or later
+ *	@author: Alexandre Anoutchine
+ *
+ *	Examples and documentation at: http://www.protoslider.com
+ *	Prototype.js at : http://www.prototypejs.org/download
+ *
+ *	Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+ ********************************************************************************/
+ 
+div.protoSlider {
+	cursor: default;
+	display: block;
+	overflow: hidden;
+	position: relative;
+}
+
+div.protoSlider > * {
+	border: none;
+	display: block;
+	left: 0;
+	margin: 0;
+	outline: none;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	visibility: hidden;
+	z-index: 1;
+}
+
+div.protoSlider > *:first-child {
+	display: block;
+	position: relative;
+	visibility: visible;
+}
+
+div.protoSlider > a.element {
+	border: 0;
+	display: block;
+	left: 0;
+	margin: 0;
+	outline: none;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	visibility: visible;
+	z-index: 1000;
+}
+
+div.protoSlider > a.nav-lr {
+	background-color: #000000;
+	border: solid 2px #bbbbbb;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	text-align: center;
+	text-decoration: none;
+	visibility: hidden;
+	width: 50px;
+	z-index: 1001;
+}
+
+div.protoSlider:hover a.nav-lr {
+	display: block;
+}
+
+div.protoSlider > div.element {
+	border: 0;
+	cursor: default;
+	display: block;
+	left: 0;
+	margin: 0;
+	outline: none;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	visibility: visible;
+	z-index: 1000;
+}
+
+div.protoSlider > div.element > div {
+	position: absolute;
+}
+
+div.protoSlider > a img {
+	border: none;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+div.protoSlider > a span {
+	display: none;
+}
+
+/* Navigation */
+div.protoSliderNav {
+	height: 17px;
+	text-align: right;
+}
+
+div.protoSliderNav span {
+	background: url(img/nav-dot1.png) no-repeat;
+	cursor: pointer;
+	display: inline-block;
+	height: 15px;
+	margin: 1px 2px;
+	padding: 0;
+	width: 15px;
+}
+
+div.protoSliderNav span:hover {
+	background: url(img/nav-dot3.png) no-repeat;
+}
+
+div.protoSliderNav span.current {
+	background: url(img/nav-dot2.png) no-repeat;
+}

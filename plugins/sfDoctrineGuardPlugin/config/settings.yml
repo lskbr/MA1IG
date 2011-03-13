@@ -1,0 +1,6 @@
+## YAML Template.
+---
+all:
+  .settings:
+    default_culture: fr
+    i18n: on

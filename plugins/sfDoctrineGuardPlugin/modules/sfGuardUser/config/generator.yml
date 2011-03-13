@@ -11,21 +11,23 @@ generator:
     with_doctrine_route:   true
 
     config:
+      filter:
+        display: [username, first_name, last_name, email_address, created_at, groups_list]
       fields:
-        password_again: { label: "Password (again)" }
+        password_again: { label: "Mot de passe (encore)" }
 
       list:
-        title:   User list
-        display: [=username, created_at, updated_at, last_login]
+        title:   Liste des utilisateurs
+        display: [=username, last_login, _listGroup]
 
       form:
         class: sfGuardUserAdminForm
         display:
           "User":                   [first_name, last_name, email_address, username, password, password_again]
-          "Permissions and groups": [is_active, is_super_admin, groups_list, permissions_list]
+          "Permissions and groups": [is_active, groups_list]
 
       edit:
-        title: Editing User "%%username%%"
+        title: Edition de l'utilisateur "%%username%%" %%first_name%% %%last_name%%
 
       new:
         title: New User

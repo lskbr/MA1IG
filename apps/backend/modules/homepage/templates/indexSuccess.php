@@ -6,3 +6,7 @@ echo homepageItem('Langues','Ajouter une nouvelle langue','language_new','add_la
 echo homepageItem('Configuration','Activer les différents modules du site','configuration','config');
 echo homepageItem('Catégories', 'Modifier des catégories du menu', 'category', 'category');
 echo homepageItem('Catégories', 'Ajouter une catégorie au menu', 'category_new', 'add_category');
+echo homepageItem('Utilisateurs', 'Gestion des utilisateurs du site Internet', 'sf_guard_user', 'user');
+echo homepageItem('Utilisateurs', 'Ajouter manuellement un utilisateur', 'sf_guard_user_add', 'add_user');
+echo homepageItem('Groupes', 'Gestion des différents groupes d\'utilisateurs', 'sf_guard_group', 'group');
+echo homepageItem('Droits', 'Gestion des différents droits', 'sf_guard_permission', 'permission');

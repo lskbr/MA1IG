@@ -11,15 +11,17 @@ generator:
     with_doctrine_route:   true
 
     config:
+      filter:
+        display: [name, groups_list]
       list:
-        title: Permission list
-        display: [=name, description, created_at, updated_at]
+        title: Liste des droits
+        display: [=name, description, _groupList]
 
       edit:
-        title: Editing Permission "%%name%%"
+        title: Edition de "%%name%%"
 
       new:
-        title: New Permission
+        title: Nouveau droit
 
       form:
-        display: [name, description, groups_list, users_list]
+        display: [name, description, groups_list]

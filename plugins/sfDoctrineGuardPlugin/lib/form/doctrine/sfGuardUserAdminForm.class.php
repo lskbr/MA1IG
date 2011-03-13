@@ -15,5 +15,15 @@ class sfGuardUserAdminForm extends BasesfGuardUserAdminForm
    */
   public function configure()
   {
+
+      $this->widgetSchema->setLabels(array(
+          'first_name' => 'Prénom',
+          'last_name' => 'Nom de famille'
+          ));
+
+      $this->validatorSchema['email_address'] = new sfValidatorAnd(array(
+          $this->validatorSchema['email_address'],
+          new sfValidatorEmail()
+      ));
   }
 }

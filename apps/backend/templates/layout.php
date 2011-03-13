@@ -23,7 +23,7 @@
 
                     <span class='memberinfo_span'>Bienvenue <a href=""><?php echo $sf_user->getName() ?></a></span>
 
-                    <span><a href="login.html"><?php echo link_to('Déconnexion', 'logout') ?></a></span>
+                    <span><a href="login.html"><?php echo link_to('Déconnexion', 'sf_guard_logout') ?></a></span>
                     <span class='memberinfo_span2'><a href="">Aucun message en attente</a></span>
                 </div>
             <?php endif ?>
@@ -34,10 +34,20 @@
                     <ul>
                     <?php
                     use_helper('AdminMenu'); //Ajouter ici pour le menu
+                    if($sf_user->isAuthenticated())
+                    {
                     echo menu_item('Accueil', 'homepage', $sf_context); // 'NomAAfficher','route',$sf_context;
                     echo menu_item('Langage', 'language', $sf_context);
                     echo menu_item('Configuration', 'configuration', $sf_context);
                     echo menu_item('Catégories', 'category', $sf_context);
+                    echo menu_item('Utilisateurs','sf_guard_user', $sf_context);
+                    echo menu_item('Groupes','sf_guard_group',$sf_context);
+                    echo menu_item('Droits','sf_guard_permission',$sf_context);
+                    }
+                    else
+                    {
+                     echo menu_item('Connexion','sf_guard_signin',$sf_context);
+                    }
                     ?>
                 </ul>
             </div>

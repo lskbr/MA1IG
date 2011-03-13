@@ -13,8 +13,19 @@ generator:
     config:
       filter:
         display: [username, first_name, last_name, email_address, created_at, groups_list]
+
       fields:
         password_again: { label: "Mot de passe (encore)" }
+        username : {label: Nom d'utilisateur}
+        first_name : {label: Prénom}
+        last_name : {label: Nom de famille}
+        email_address : {label: Adresse Email}
+        created_at: {label: Créer le }
+        groups_list: {label: Appartient à ce groupe}
+        last_login : {label: Dernière connexion}
+        list_group : {label: Groupe}
+        password : {label: Mot de passe}
+        is_active: {label: "Est activé ?"}
 
       list:
         title:   Liste des utilisateurs
@@ -23,11 +34,11 @@ generator:
       form:
         class: sfGuardUserAdminForm
         display:
-          "User":                   [first_name, last_name, email_address, username, password, password_again]
-          "Permissions and groups": [is_active, groups_list]
+          "Utilisateur":                   [first_name, last_name, email_address, username, password, password_again]
+          "Droits et groupes": [is_active, groups_list]
 
       edit:
         title: Edition de l'utilisateur "%%username%%" %%first_name%% %%last_name%%
 
       new:
-        title: New User
+        title: Nouvel utilisateur

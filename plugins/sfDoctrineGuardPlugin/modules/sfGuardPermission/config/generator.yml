@@ -11,8 +11,13 @@ generator:
     with_doctrine_route:   true
 
     config:
+      fields:
+        name : {label: Nom}
+        groups_list : {label: Est compris dans ce groupe}
+      
       filter:
         display: [name, groups_list]
+
       list:
         title: Liste des droits
         display: [=name, description, _groupList]

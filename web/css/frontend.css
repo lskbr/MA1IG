@@ -351,10 +351,15 @@ ul#menu > li {
 	border-right: 1px solid #cdcdcd;
 }
 
-ul#menu > li:first-child {
+ul#menu > li.current-page:first-child {
+	border-top: none;
+}
+
+ul#menu > li.current-page {
 	background-color: #e4e4e4;
 	border-bottom: 1px solid #cdcdcd;
 	border-right: 1px solid #e4e4e4;
+	border-top: 1px solid #cdcdcd;
 }
 
 ul#menu li a, ul#menu li > span {

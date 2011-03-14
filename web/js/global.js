@@ -61,7 +61,6 @@ Event.observe(window, "load", function (evt) {
 	if ($("pSlider")) {
 		slider = new ProtoSlider("pSlider", {
 			navigation:		false,
-			effect:			"corner:o:a:od",
 			duration:		1500,
 			columns:		10,
 			rows:			6,

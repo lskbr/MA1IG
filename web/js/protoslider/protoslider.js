@@ -652,11 +652,17 @@ var ProtoSlider = Class.create({
 	},
 
 	_random: function() {
-		return this._effects[Math.round(Math.random()*(this._effects.length-1))]+
-			this._eff_trans[Math.round(Math.random()*(this._eff_trans.length-1))]+
-			this._eff_sense[Math.round(Math.random()*(this._eff_sense.length-1))]+
-			(Math.round(Math.random())? this._eff_inv : '')+
-			(Math.round(Math.random())? this._eff_od : '');
+		var rand_effect = [
+			"straight:o:a", "straight:o:a:inv", "straight:o:a:od",
+			"corner:o:a", "corner:o:a:inv", "corner:o:a:od",
+			"corner:o:b", "corner:o:b:inv", "corner:o:b:od",
+			"swirl:o:a", "swirl:o:a:inv", "grid:o:a", "grid:o:a:inv",
+			"strokes1:o:a", "strokes1:o:a:od", "strokes1:o:b", "strokes1:o:b:od",
+			"strokes2:o:a", "strokes2:o:a:od", "strokes2:o:b", "strokes2:o:b:od",
+			"random:o:a"
+		];
+		
+		return rand_effect[Math.round(Math.random()*(rand_effect.length-1))];
 	},
 
 	_render: function() {

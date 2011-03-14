@@ -5,7 +5,7 @@
   <?php echo __('Veuillez completer le formulaire ci-dessous pour le récupérer de manière sécurisée') ?>
 </p>
 
-<form action="<?php echo url_for('@sf_guard_forgot_password') ?>" method="post">
+<form class="module-form" action="<?php echo url_for('@sf_guard_forgot_password') ?>" method="post">
   <table>
     <tbody>
       <?php echo $form ?>

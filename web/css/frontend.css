@@ -159,15 +159,6 @@ div#login {
 	z-index: 1001;
 }
 
-div#login form {
-	display: block;
-	padding: 15px;
-	padding-bottom: 10px;
-	position: relative;
-	text-align: right;
-	width: 250px;
-}
-
 a#x-button {
 	background-image: url(../images/x-button.png);
 	cursor: pointer;
@@ -185,6 +176,29 @@ a#x-button {
 
 a#x-button:hover {
 	background-image: url(../images/x-button-hover.png);
+}
+
+div#login form,
+div#login form table {
+	position: relative;
+}
+
+div#login form table {
+	margin-left: 10px;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+div#login form table th {
+	text-align: right;
+}
+
+div#login form table tbody td {
+	text-align: left;
+}
+
+div#login form table tfoot td {
+	text-align: right;
 }
 
 div#login form p {
@@ -211,6 +225,7 @@ div#login form label {
 	font-size: 12px;
 	font-weight: bold;
 	line-height: 18px;
+	vertical-align: middle;
 	width: 70%;
 }
 
@@ -219,9 +234,19 @@ div#login form input {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	font-weight: bold;
-	padding: 0 3px;
 	height: 18px;
+	margin-left: 8px;
+	padding: 0 3px;
 	width: 120px;
+}
+
+div#login form input:focus {
+	background-color: #FFE2CF;
+}
+
+div#login form input#signin_remember {
+	vertical-align: middle;
+	width: inherit;
 }
 
 div#login input#login-button {
@@ -231,7 +256,7 @@ div#login input#login-button {
 	font-size: 12px;
 	font-weight: bold;
 	height: 24px;
-	width: 70px;
+	width: 80px;
 }
 
 div#login input#login-button:hover {
@@ -379,27 +404,88 @@ div#footer div {
 	position: relative;
 }
 
-/* Temp */
-div#content h1,h2 {
+/* --- Formulaires --- */
+form.module-form {
+	margin: 0 10px;
+	overflow: hidden;
+}
+
+form.module-form table {
+	position: relative;
+}
+
+form.module-form tbody th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-align: right;
+}
+
+form.module-form tbody td {
+	padding-left: 2px;
+	text-align: left;
+}
+
+form.module-form tbody tr:last-child td {
+	padding-bottom: 3px;
+}
+
+form.module-form tbody input {
+	background-color: #eee;
+	border: 1px solid #bbb;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height: 20px;
+	margin-left: 8px;
+	padding: 0 3px;
+	width: 150px;
+}
+
+form.module-form tbody input:focus {
+	background-color: #CCFFCC;
+}
+
+form.module-form tbody td ul {
+	position: absolute;
+	z-index: -1;
+}
+
+form.module-form tbody td ul li {
+	background-color: #FF6600;
+	height: 22px;
+	line-height: 20px;
+	padding-left: 175px;
+	width: 400px;
+}
+
+form.module-form tfoot td {
+	border-top: 2px dotted #bbb;
+	padding-top: 10px;
+	text-align: right;
+}
+
+form.module-form ul.error_list li {
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
+form.module-form tfoot input {
+	width: 100px;
+}
+
+/* Page title*/
+div#content h1,
+div#content h2 {
+	border-bottom: 3px solid #FF6600;
+	display: inline-block;
 	font-size: 24px;
 	font-weight: bold;
 	margin: 0 10px;
 	margin-bottom: 15px;
 }
 
-div#content p {
+div#content > p {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 13px;
-	padding: 0 10px;
-	text-align: justify;
-}
-
-div#content p.left {
-	float: left;
-	width: 345px;
-}
-
-div#content p.right {
-	float: right;
-	width: 345px;
+	font-size: 12px;
+	margin: 0 10px;
 }

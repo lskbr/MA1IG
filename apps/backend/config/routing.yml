@@ -40,7 +40,7 @@ configuration:
 configuration_update:
   url: /configuration/update
   param: { module: configuration, action: update }
-  
+
 homepage:
   url:   /
   param: { module: homepage, action: index }

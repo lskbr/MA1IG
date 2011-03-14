@@ -56,10 +56,11 @@ div#bg-frame-top {
 
 /* top = bg-frame-top.top + bg-frame-top.height*/
 /* bottom = bg-frame-bottom.bottom + bg-frame-bottom.height*/
+/* Dependant: center; footer*/
 div#bg-frame-center {
 	background-image: url(../images/bg-frame-center.png);
 	background-repeat: repeat-y;
-	bottom: 130px;
+	bottom: 110px;
 	position: absolute;
 	top: 45px;
 	width: 100%;
@@ -69,7 +70,7 @@ div#bg-frame-center {
 div#bg-frame-bottom {
 	background-image: url(../images/bg-frame-bottom.png);
 	background-repeat: no-repeat;
-	bottom: 90px;
+	bottom: 70px;
 	height: 40px;
 	position: absolute;
 	width: 100%;
@@ -315,11 +316,12 @@ div#counter {
 }
 
 /* Main center template */
+/* padding-bottom = bg-frame-botom + 25*/
 div#center {
 	overflow: auto;
 	margin-left: 1px;
 	margin-right: 17px;
-	padding-bottom: 115px;
+	padding-bottom: 95px;
 	position: relative;
 }
 
@@ -393,16 +395,62 @@ ul#menu li:first-child,  ul#menu > li:first-child a{
 }*/
 
 /* Footer */
+/* Dependant: br-frame-center; bg-frame-bottom, center*/
 div#footer {
 	position: absolute;
 	bottom: 0;
-	height: 80px;
+	height: 70px;
 	position: absolute;
-	width: 990px;
+	width: 100%;
 }
 
-div#footer div {
+div#footer div#logos {
 	position: relative;
+	margin: 0 10px;
+}
+
+div#footer div#bottom-bar {
+	position: absolute;
+	right: 20px;
+	top: 0;
+	width: 750px;
+}
+
+div#footer ul {
+	float: right;
+	margin-left: 17px;
+	position: relative;
+}
+
+div#footer ul li {
+	color: #fff;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0 3px;
+}
+
+div#footer ul li a {
+	color: #fff;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+div#footer ul li a:hover {
+	text-decoration: underline;
+}
+
+div#footer div#legal {
+	bottom: 15px;
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	margin: 0 10px;
+	position: absolute;
 }
 
 /* --- Formulaires --- */

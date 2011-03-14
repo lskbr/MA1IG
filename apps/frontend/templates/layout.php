@@ -26,39 +26,39 @@
             <div id="header">
                 <div id="pSlider" class="protoSlider">
                     <a href="#">
-                        <img src="/images/forest1.jpg" alt="Image title 1" />
+                        <img src="/images/forest1.jpg" alt="Madagascar" />
                         <span>Image title 1</span>
                     </a>
                     <a href="#">
-                        <img src="/images/forest2.jpg" alt="Image title 1" />
+                        <img src="/images/forest2.jpg" alt="Madagascar" />
                         <span>Image title 1</span>
                     </a>
                     <a href="#">
-                        <img src="/images/forest3.jpg" alt="Image title 1" />
+                        <img src="/images/forest3.jpg" alt="Madagascar" />
                         <span>Image title 1</span>
                     </a>
                     <a href="#">
-                        <img src="/images/forest4.jpg" alt="Image title 1" />
+                        <img src="/images/forest4.jpg" alt="Madagascar" />
                         <span>Image title 1</span>
                     </a>
                     <a href="#">
-                        <img src="/images/forest5.jpg" alt="Image title 1" />
+                        <img src="/images/forest5.jpg" alt="Madagascar" />
                         <span>Image title 1</span>
                     </a>
                     <a href="#">
-                        <img src="/images/forest6.jpg" alt="Image title 1" />
+                        <img src="/images/forest6.jpg" alt="Madagascar" />
                         <span>Image title 1</span>
                     </a>
                     <a href="#">
-                        <img src="/images/forest7.jpg" alt="Image title 1" />
+                        <img src="/images/forest7.jpg" alt="Madagascar" />
                         <span>Image title 1</span>
                     </a>
                     <a href="#">
-                        <img src="/images/forest8.jpg" alt="Image title 1" />
+                        <img src="/images/forest8.jpg" alt="Madagascar" />
                         <span>Image title 1</span>
                     </a>
                     <a href="#">
-                        <img src="/images/forest9.jpg" alt="Image title 1" />
+                        <img src="/images/forest9.jpg" alt="Madagascar" />
                         <span>Image title 1</span>
                     </a>
                 </div>
@@ -85,10 +85,20 @@
             </div>
 
             <div id="footer">
-                <div>
-                    <img src="/images/grainedevie.png" width="106" height="39" />
-                    <img src="/images/frblogo.png" width="106" height="39" />
+            	<div id="logos">
+                	<img src="/images/grainedevie.png" width="106" height="39" />
+                	<img src="/images/frblogo.png" width="106" height="39" />
                 </div>
+                <div id="bottom-bar">
+                	<ul>
+                    	<li><a href="#">Contact</a></li>
+                        <li>|</li>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li>|</li>
+                        <li><a href="#">Plan du site</a></li>
+                    </ul>
+                </div>
+                <div id="legal">Projet agréé par la Fondation Roi Baudouin | Copyright &copy; 2009 - 2011 Graine de vie. All rights reserved.</div>
             </div>
 
         </div>

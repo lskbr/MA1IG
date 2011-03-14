@@ -1,6 +1,7 @@
 jQuery.noConflict();
+var slider;
+
 jQuery(document).ready(function () {
-	//jQuery("#landscape").fadeOut(4000);
 	var height = jQuery("#menu li a:first").height();
 	var visible = false;
 
@@ -57,13 +58,15 @@ jQuery(document).ready(function () {
 });
 
 Event.observe(window, "load", function (evt) {
-	var slider = new ProtoSlider("pSlider", {
-		navigation:		false,
-		effect:			"corner:o:a:od",
-		duration:		1500,
-		columns:		10,
-		rows:			6,
-		seat:			0.15,
-		speedup:		1
-	});
+	if ($("pSlider")) {
+		slider = new ProtoSlider("pSlider", {
+			navigation:		false,
+			effect:			"corner:o:a:od",
+			duration:		1500,
+			columns:		10,
+			rows:			6,
+			seat:			0.15,
+			speedup:		1
+		});
+	}
 });

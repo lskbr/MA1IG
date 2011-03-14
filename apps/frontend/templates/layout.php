@@ -76,8 +76,6 @@
                 <img src="/images/counter.png" />
             </div>
 
-            <div id="test"></div>
-
             <div id="center">
                 <?php include_component('menu', 'menu') ?>
 

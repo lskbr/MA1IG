@@ -1,6 +1,6 @@
 <?php use_helper('I18N') ?>
 
-<form action="<?php echo url_for('@sf_guard_signin') ?>" method="post">
+<form class="module-form" action="<?php echo url_for('@sf_guard_signin') ?>" method="post">
     <table>
         <tbody>
             <?php echo $form ?>

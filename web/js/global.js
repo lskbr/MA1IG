@@ -64,7 +64,7 @@ Event.observe(window, "load", function (evt) {
 			duration:		1500,
 			columns:		10,
 			rows:			6,
-			seat:			0.15,
+			seat:			0.3,
 			speedup:		1
 		});
 	}

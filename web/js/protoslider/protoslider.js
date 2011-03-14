@@ -654,12 +654,17 @@ var ProtoSlider = Class.create({
 	_random: function() {
 		var rand_effect = [
 			"straight:o:a", "straight:o:a:inv", "straight:o:a:od",
+			"straight:owh:a:od", "straight:owh:b:od",
 			"corner:o:a", "corner:o:a:inv", "corner:o:a:od",
 			"corner:o:b", "corner:o:b:inv", "corner:o:b:od",
-			"swirl:o:a", "swirl:o:a:inv", "grid:o:a", "grid:o:a:inv",
+			"corner:owh:a", "corner:owh:b", "corner:owh:a:inv", "corner:owh:b:inv",
+			"corner:owh:a:od", "corner:owh:b:od",
+			"swirl:o:a", "swirl:o:a:inv", "swirl:owh:a:inv", "swirl:owh:a:inv:od",
+			"grid:o:a", "grid:o:a:inv", "grid:owh:a","grid:owh:a:inv",
 			"strokes1:o:a", "strokes1:o:a:od", "strokes1:o:b", "strokes1:o:b:od",
+			"strokes1:owh:a:inv", "strokes1:owh:a:od", "strokes1:owh:b:od",
 			"strokes2:o:a", "strokes2:o:a:od", "strokes2:o:b", "strokes2:o:b:od",
-			"random:o:a"
+			"random:o:a", "random:owh:a"
 		];
 		
 		return rand_effect[Math.round(Math.random()*(rand_effect.length-1))];

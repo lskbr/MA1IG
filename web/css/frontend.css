@@ -1,6 +1,4 @@
-/************************* Grane De Vie *******************/
-
-/************************* Global *************************/
+/************************* grainedevie.org: Global css *******************/
 a, abbr, acronym, address, applet, article, aside, big, blockquote, body, caption,
 cite, code, dd, del, dfn, dialog, div, dl, dt, em, fieldset, figure, font, footer,
 form, h1, h2, h3, h4, h5, h6, header, hgroup, html, iframe, img, ins, kbd, label,
@@ -58,10 +56,11 @@ div#bg-frame-top {
 
 /* top = bg-frame-top.top + bg-frame-top.height*/
 /* bottom = bg-frame-bottom.bottom + bg-frame-bottom.height*/
+/* Dependant: center; footer*/
 div#bg-frame-center {
 	background-image: url(../images/bg-frame-center.png);
 	background-repeat: repeat-y;
-	bottom: 130px;
+	bottom: 110px;
 	position: absolute;
 	top: 45px;
 	width: 100%;
@@ -71,7 +70,7 @@ div#bg-frame-center {
 div#bg-frame-bottom {
 	background-image: url(../images/bg-frame-bottom.png);
 	background-repeat: no-repeat;
-	bottom: 90px;
+	bottom: 70px;
 	height: 40px;
 	position: absolute;
 	width: 100%;
@@ -159,15 +158,6 @@ div#login {
 	z-index: 1001;
 }
 
-div#login form {
-	display: block;
-	padding: 15px;
-	padding-bottom: 10px;
-	position: relative;
-	text-align: right;
-	width: 250px;
-}
-
 a#x-button {
 	background-image: url(../images/x-button.png);
 	cursor: pointer;
@@ -187,6 +177,33 @@ a#x-button:hover {
 	background-image: url(../images/x-button-hover.png);
 }
 
+div#login form,
+div#login form table {
+	position: relative;
+}
+
+div#login form table {
+	margin-left: 10px;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+div#login form table th {
+	text-align: right;
+}
+
+div#login form table tbody td {
+	text-align: left;
+}
+
+div#login table tbody tr:last-child td {
+	padding-bottom: 0;
+}
+
+div#login form table tfoot td {
+	text-align: right;
+}
+
 div#login form p {
 	padding: 3px 0px;
 	text-align: right;
@@ -198,7 +215,6 @@ div#login form a {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	font-weight: bold;
-	margin-top: 8px;
 }
 
 div#login form a:hover {
@@ -211,6 +227,7 @@ div#login form label {
 	font-size: 12px;
 	font-weight: bold;
 	line-height: 18px;
+	vertical-align: middle;
 	width: 70%;
 }
 
@@ -219,9 +236,19 @@ div#login form input {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	font-weight: bold;
-	padding: 0 3px;
 	height: 18px;
+	margin-left: 8px;
+	padding: 0 3px;
 	width: 120px;
+}
+
+div#login form input:focus {
+	background-color: #FFE2CF;
+}
+
+div#login form input#signin_remember {
+	vertical-align: middle;
+	width: inherit;
 }
 
 div#login input#login-button {
@@ -231,7 +258,7 @@ div#login input#login-button {
 	font-size: 12px;
 	font-weight: bold;
 	height: 24px;
-	width: 70px;
+	width: 80px;
 }
 
 div#login input#login-button:hover {
@@ -289,11 +316,12 @@ div#counter {
 }
 
 /* Main center template */
+/* padding-bottom = bg-frame-botom + 25*/
 div#center {
 	overflow: auto;
 	margin-left: 1px;
 	margin-right: 17px;
-	padding-bottom: 115px;
+	padding-bottom: 95px;
 	position: relative;
 }
 
@@ -323,10 +351,15 @@ ul#menu > li {
 	border-right: 1px solid #cdcdcd;
 }
 
-ul#menu > li:first-child {
+ul#menu > li.current-page:first-child {
+	border-top: none;
+}
+
+ul#menu > li.current-page {
 	background-color: #e4e4e4;
 	border-bottom: 1px solid #cdcdcd;
 	border-right: 1px solid #e4e4e4;
+	border-top: 1px solid #cdcdcd;
 }
 
 ul#menu li a, ul#menu li > span {
@@ -367,39 +400,175 @@ ul#menu li:first-child,  ul#menu > li:first-child a{
 }*/
 
 /* Footer */
+/* Dependant: br-frame-center; bg-frame-bottom, center*/
 div#footer {
 	position: absolute;
 	bottom: 0;
-	height: 80px;
+	height: 70px;
 	position: absolute;
-	width: 990px;
+	width: 100%;
 }
 
-div#footer div {
+div#footer div#logos {
+	position: relative;
+	margin: 0 10px;
+}
+
+div#footer div#bottom-bar {
+	position: absolute;
+	right: 20px;
+	top: 0;
+	width: 750px;
+}
+
+div#footer ul {
+	float: right;
+	margin-left: 17px;
 	position: relative;
 }
 
-/* Temp */
-div#content h1,h2 {
-	font-size: 24px;
+div#footer ul li {
+	color: #fff;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0 3px;
+}
+
+div#footer ul li a {
+	color: #fff;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+div#footer ul li a:hover {
+	text-decoration: underline;
+}
+
+div#footer div#legal {
+	bottom: 15px;
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
 	font-weight: bold;
 	margin: 0 10px;
+	position: absolute;
+}
+
+/* --- Formulaires --- */
+form.module-form {
+	margin: 0 10px;
+	overflow: hidden;
+}
+
+form.module-form table {
+	position: relative;
+}
+
+form.module-form tbody th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-align: right;
+	vertical-align: middle;
+}
+
+form.module-form tbody td {
+	padding-left: 2px;
+	text-align: left;
+}
+
+form.module-form tbody tr:last-child th {
+	padding-bottom: 1px;
+}
+
+form.module-form tbody input {
+	background-color: #eee;
+	border: 1px solid #bbb;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height: 20px;
+	margin-left: 8px;
+	padding: 0 3px;
+	width: 150px;
+}
+
+form.module-form tbody input[type="checkbox"] {
+	width: auto;
+}
+
+
+form.module-form tbody input:focus {
+	background-color: #CCFFCC;
+}
+
+ul.error_list {
+	background-color: #FF6600;
+	height: 22px;
+	position: absolute;
+	width: 700px;
+	z-index: -1;
+}
+
+ul.error_list li {
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 20px;
+}
+
+ul.error_list li:first-child {
+	padding-left: 175px;
+}
+
+ul.error_list li:first-child + li {
+	padding-left: 235px;
+}
+
+form.module-form tfoot td {
+	border-top: 2px dotted #bbb;
+	padding-top: 7px;
+	text-align: right;
+}
+
+form.module-form tfoot input {
+	color: #333;
+	float: right;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	margin-left: 15px;
+	width: 100px;
+}
+
+form.module-form tfoot a {
+	color: #333;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 26px;
+}
+
+form.module-form tfoot a:hover {
+	text-decoration: underline;
+}
+
+/* Page title*/
+div#content h1,
+div#content h2 {
+	border-bottom: 3px solid #FF6600;
+	display: inline-block;
+	font-size: 24px;
+	font-weight: bold;
+	margin: 0 15px;
 	margin-bottom: 15px;
 }
 
-div#content p {
+div#content > p {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 13px;
-	padding: 0 10px;
-	text-align: justify;
-}
-
-div#content p.left {
-	float: left;
-	width: 345px;
-}
-
-div#content p.right {
-	float: right;
-	width: 345px;
+	font-size: 12px;
+	margin: 0 10px;
 }

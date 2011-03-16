@@ -148,7 +148,7 @@ var ProtoSlider = Class.create({
 				this.pause();
 			}
 			
-			this._ns_slider.ptimer = setTimeout(this.next.bind(this),
+			this._ns_slider.ptimer = setTimeout(this.next.bind(this, false),
 				this._ns_slider.settings.interval);
 		}
 	},
@@ -421,10 +421,12 @@ var ProtoSlider = Class.create({
 			}
 
 			if (item.nodeName.toLowerCase().match(/(a)|(div)/ig)[0] === 'a') {
+				// -> !!! Must be verified
 				item.setStyle({
 					height: this._ns_slider.dim.height+'px',
 					width:	this._ns_slider.dim.width+'px'
 				});
+				// <- !!! Must be verified
 				
 				if (!(img = item.down('img'))) {return;}
 				// Image
@@ -650,11 +652,22 @@ var ProtoSlider = Class.create({
 	},
 
 	_random: function() {
-		return this._effects[Math.round(Math.random()*(this._effects.length-1))]+
-			this._eff_trans[Math.round(Math.random()*(this._eff_trans.length-1))]+
-			this._eff_sense[Math.round(Math.random()*(this._eff_sense.length-1))]+
-			(Math.round(Math.random())? this._eff_inv : '')+
-			(Math.round(Math.random())? this._eff_od : '');
+		var rand_effect = [
+			"straight:o:a", "straight:o:a:inv", "straight:o:a:od",
+			"straight:owh:a:od", "straight:owh:b:od",
+			"corner:o:a", "corner:o:a:inv", "corner:o:a:od",
+			"corner:o:b", "corner:o:b:inv", "corner:o:b:od",
+			"corner:owh:a", "corner:owh:b", "corner:owh:a:inv", "corner:owh:b:inv",
+			"corner:owh:a:od", "corner:owh:b:od",
+			"swirl:o:a", "swirl:o:a:inv", "swirl:owh:a:inv", "swirl:owh:a:inv:od",
+			"grid:o:a", "grid:o:a:inv", "grid:owh:a","grid:owh:a:inv",
+			"strokes1:o:a", "strokes1:o:a:od", "strokes1:o:b", "strokes1:o:b:od",
+			"strokes1:owh:a:inv", "strokes1:owh:a:od", "strokes1:owh:b:od",
+			"strokes2:o:a", "strokes2:o:a:od", "strokes2:o:b", "strokes2:o:b:od",
+			"random:o:a", "random:owh:a"
+		];
+		
+		return rand_effect[Math.round(Math.random()*(rand_effect.length-1))];
 	},
 
 	_render: function() {

@@ -12,9 +12,9 @@ default:
     #language:     en
     #robots:       index, follow
 
-  stylesheets:    [frontend.css, protoslider.css]
+  stylesheets:    [frontend.css, protoslider.css, jquery-ui-1.8.custom.css]
 
-  javascripts:    [prototype.js, jquery-1.5.1.min.js, jquery.accordion.min.js, protoslider/protoslider.min.js, global.js]
+  javascripts:    [prototype.js, jquery-1.5.1.min.js, jquery-ui-1.8.custom.min.js, jquery.accordion.min.js, protoslider/protoslider.min.js, global.js]
 
   has_layout:     true
   layout:         layout

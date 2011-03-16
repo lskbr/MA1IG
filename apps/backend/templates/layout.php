@@ -43,6 +43,7 @@
                     echo menu_item('Utilisateurs','sf_guard_user', $sf_context);
                     echo menu_item('Groupes','sf_guard_group',$sf_context);
                     echo menu_item('Droits','sf_guard_permission',$sf_context);
+                    echo menu_item('Pages','static_page',$sf_context);
                     }
                     else
                     {

@@ -32,12 +32,10 @@ abstract class BaseStaticPage extends Page
              ));
         $this->hasColumn('is_activated', 'boolean', null, array(
              'type' => 'boolean',
-             'notnull' => true,
              'default' => 0,
              ));
         $this->hasColumn('title', 'string', 255, array(
              'type' => 'string',
-             'notnull' => true,
              'length' => 255,
              ));
     }

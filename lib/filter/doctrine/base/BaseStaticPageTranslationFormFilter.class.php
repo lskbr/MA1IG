@@ -13,10 +13,10 @@ abstract class BaseStaticPageTranslationFormFilter extends BaseFormFilterDoctrin
   public function setup()
   {
     $this->setWidgets(array(
-      'menu_title'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'menu_title'   => new sfWidgetFormFilterInput(),
       'content'      => new sfWidgetFormFilterInput(),
       'is_activated' => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
-      'title'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'title'        => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(

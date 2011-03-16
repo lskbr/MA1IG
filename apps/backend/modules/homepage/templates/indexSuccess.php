@@ -10,3 +10,5 @@ echo homepageItem('Utilisateurs', 'Gestion des utilisateurs du site Internet', '
 echo homepageItem('Utilisateurs', 'Ajouter manuellement un utilisateur', 'sf_guard_user_add', 'add_user');
 echo homepageItem('Groupes', 'Gestion des différents groupes d\'utilisateurs', 'sf_guard_group', 'group');
 echo homepageItem('Droits', 'Gestion des différents droits', 'sf_guard_permission', 'permission');
+echo homepageItem('Gestion des pages', 'Gestion des pages et de leurs contenu', 'static_page', 'staticpage');
+echo homepageItem('Ajouter une page', 'Ajout d\'une page au site internet', 'static_page_new', 'add_staticpage');

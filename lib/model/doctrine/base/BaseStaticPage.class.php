@@ -38,7 +38,6 @@ abstract class BaseStaticPage extends Page
         $this->hasColumn('title', 'string', 255, array(
              'type' => 'string',
              'notnull' => true,
-             'default' => 'En contruction',
              'length' => 255,
              ));
     }
@@ -46,6 +45,14 @@ abstract class BaseStaticPage extends Page
     public function setUp()
     {
         parent::setUp();
-        
+        $i18n0 = new Doctrine_Template_I18n(array(
+             'fields' => 
+             array(
+              0 => 'content',
+              1 => 'is_activated',
+              2 => 'title',
+             ),
+             ));
+        $this->actAs($i18n0);
     }
 }

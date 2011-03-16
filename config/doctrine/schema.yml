@@ -17,23 +17,23 @@ Category:
 
 Page:
   actAs: {Timestampable: ~}
+  actAs: {I18n: {fields: [menu_title]}}
   columns:
     hash_code: {type: string(255), notnull: true}
     menu_title: {type: string(255), notnull: true}
     position: {type: integer, notnull: true, default: 99}
     publication_date: {type: timestamp}
     category_id: {type: integer, notnull: true}
-    language_id: {type: integer, notnull: true}
   relations:
     Category: {local: category_id, foreign: id}
-    Language: {local: language_id, foreign: id}
 
 StaticPage:
   inheritance: {type: concrete, extends: Page}
+  actAs: {I18n: {fields: [content, is_activated, title]}}
   columns:
     content: {type: text}
     is_activated : {type: boolean, notnull: true, default: 0}
-    title: {type: string(255), notnull: true, default: "En contruction"}
+    title: {type: string(255), notnull: true}
 
 Configuration:
   columns:

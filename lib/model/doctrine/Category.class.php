@@ -12,5 +12,38 @@
  */
 class Category extends BaseCategory {
 
+    public static function monter(Category $category) {
+        $currentPosition = $category->getPosition();
+        if ($currentPosition <= 1) {
+            return false;
+        } else {
+            $upCategory = Doctrine_Query::create()->from('category c')->whereIn('c.position', $currentPosition - 1)->leftJoin('c.Translation')->execute();
+
+            $upCategory['0']->setPosition($currentPosition);
+            $upCategory['0']->save();
+
+            $category->setPosition($currentPosition - 1);
+            $category->save();
+
+            return true;
+        }
+    }
+
+    public static function descendre(Category $category) {
+        $currentPosition = $category->getPosition();
+        $lowCategory =  Doctrine_Query::create()->from('category c')->whereIn('c.position', $currentPosition + 1)->leftJoin('c.Translation')->fetchOne();        
+        if($lowCategory == false){
+            return false;
+        }else{
+            $lowCategory->setPosition($currentPosition);
+            $lowCategory->save();
+
+            $category->setPosition($currentPosition+1);
+            $category->save();
+
+            return true;
+        }
+        
+    }
 
 }

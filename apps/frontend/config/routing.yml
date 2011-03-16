@@ -11,7 +11,15 @@ sf_guard_register:
 
 homepage:
   url:   /
-  param: { module: default, action: index }
+  param: { module: page, action: index }
+
+localized_homepage:
+  url:   /:sf_culture/
+  param: { module: page, action: index}
+
+page:
+  url:   /:sf_culture/page/:id/:title
+  param: { module: page, action: show}
 
 default_index:
   url:   /:module

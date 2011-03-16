@@ -23,7 +23,7 @@ abstract class BaseStaticPageForm extends PageForm
     $this->validatorSchema['is_activated'] = new sfValidatorBoolean(array('required' => false));
 
     $this->widgetSchema   ['title'] = new sfWidgetFormInputText();
-    $this->validatorSchema['title'] = new sfValidatorString(array('max_length' => 255, 'required' => false));
+    $this->validatorSchema['title'] = new sfValidatorString(array('max_length' => 255));
 
     $this->widgetSchema->setNameFormat('static_page[%s]');
   }

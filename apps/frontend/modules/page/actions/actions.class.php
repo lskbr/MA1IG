@@ -30,7 +30,5 @@ class pageActions extends sfActions
   	$id=$request->getParameter('id');
   	$q = Doctrine_Query::create()->from('StaticPage p')->where('is_activated=1')->andWhere('id='.$id);
   	$page=$q->execute();
-  	var_dump(sizeof($page));
-  	exit();
   }
 }

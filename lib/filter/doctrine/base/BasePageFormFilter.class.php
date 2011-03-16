@@ -13,14 +13,12 @@ abstract class BasePageFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'hash_code'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'position'         => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'publication_date' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
       'category_id'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Category'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
-      'hash_code'        => new sfValidatorPass(array('required' => false)),
       'position'         => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'publication_date' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'category_id'      => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Category'), 'column' => 'id')),
@@ -44,7 +42,6 @@ abstract class BasePageFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'id'               => 'Number',
-      'hash_code'        => 'Text',
       'position'         => 'Number',
       'publication_date' => 'Date',
       'category_id'      => 'ForeignKey',

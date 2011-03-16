@@ -16,7 +16,6 @@ abstract class BasePageForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'               => new sfWidgetFormInputHidden(),
-      'hash_code'        => new sfWidgetFormInputText(),
       'position'         => new sfWidgetFormInputText(),
       'publication_date' => new sfWidgetFormDateTime(),
       'category_id'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Category'), 'add_empty' => false)),
@@ -24,7 +23,6 @@ abstract class BasePageForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'               => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'hash_code'        => new sfValidatorString(array('max_length' => 255)),
       'position'         => new sfValidatorInteger(array('required' => false)),
       'publication_date' => new sfValidatorDateTime(array('required' => false)),
       'category_id'      => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Category'))),

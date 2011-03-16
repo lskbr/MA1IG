@@ -16,6 +16,9 @@ class StaticPageForm extends BaseStaticPageForm {
     public function configure() {
         parent::configure();
 
+        /*
+         * Affichage multilingue
+         */
         $languages = Doctrine_Query::create()->from('Language l')->execute();
         $lang_abb = array();
         foreach ($languages as $lang)
@@ -24,6 +27,16 @@ class StaticPageForm extends BaseStaticPageForm {
         $this->embedI18n($lang_abb);
         foreach ($languages as $lang)
             $this->widgetSchema->setLabel($lang->getAbbreviation(), $lang->getName());
+
+        $this->widgetSchema['publication_date'] = new sfWidgetFormJQueryDate(array(
+            'image'=>'/images/calendar.png',
+            'date_widget' => new sfWidgetFormDate(array('format' => '%day%/%month%/%year%')),
+            'culture' => 'fr'
+            ));
+        
+        
+
+
     }
 
 }

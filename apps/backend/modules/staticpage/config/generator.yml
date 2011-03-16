@@ -15,13 +15,14 @@ generator:
 
       actions: ~
 
-      fields:  ~
+      fields:
+        content: {label: Contenu de la page}
 
       list:    ~
 
       filter:  ~
 
-      form:    ~
+      form:   ~
 
       edit:    ~
 

@@ -23,13 +23,12 @@ Page:
     position: {type: integer, notnull: true, default: 99}
     publication_date: {type: timestamp}
     category_id: {type: integer, notnull: true}
-    language_id: {type: integer, notnull: true}
   relations:
     Category: {local: category_id, foreign: id}
-    Language: {local: language_id, foreign: id}
 
 StaticPage:
   inheritance: {type: concrete, extends: Page}
+  actAs: {I18n: {fields: [content, is_ativated, menu_title, title]}}
   columns:
     content: {type: text}
     is_activated : {type: boolean, notnull: true, default: 0}

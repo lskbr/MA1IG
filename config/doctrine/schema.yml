@@ -17,9 +17,9 @@ Category:
 
 Page:
   actAs: {Timestampable: ~}
-  actAs: {I18n: {fields: [menu_title,content, is_activated, title]}}
+  actAs: {I18n: {fields: [menu_title, content, is_activated, title]}}
   columns:
-    menu_title: {type: string(255), notnull: true}
+    menu_title: {type: string(255)}
     position: {type: integer, notnull: true, default: 99}
     publication_date: {type: timestamp}
     category_id: {type: integer, notnull: true}
@@ -30,8 +30,8 @@ StaticPage:
   inheritance: {type: concrete, extends: Page}
   columns:
     content: {type: text}
-    is_activated : {type: boolean, notnull: true, default: 0}
-    title: {type: string(255), notnull: true}
+    is_activated : {type: boolean, default: 0}
+    title: {type: string(255)}
 
 Configuration:
   columns:

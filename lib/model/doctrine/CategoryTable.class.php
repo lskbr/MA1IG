@@ -18,16 +18,13 @@ class CategoryTable extends Doctrine_Table {
 
     public function getActiveCategories() { //author : Laurent
         $query = $this->createQuery('a')->where('a.is_activated = ?', true)->orderBy('a.position ASC');
-
         return $query->execute();
     }
 
-      public function retrieveBackendCategories(Doctrine_Query $query)
-  {
-    $rootAlias = $query->getRootAlias();
-    $query->leftJoin($rootAlias . '.Translation');
-    return $query;
-  }
-
-
+    public function retrieveBackendCategories(Doctrine_Query $query)
+    {
+        $rootAlias = $query->getRootAlias();
+        $query->leftJoin($rootAlias . '.Translation');
+        return $query;
+    }
 }

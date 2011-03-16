@@ -28,7 +28,6 @@ Page:
 
 StaticPage:
   inheritance: {type: concrete, extends: Page}
-#  actAs: {I18n: {fields: []}}
   columns:
     content: {type: text}
     is_activated : {type: boolean, notnull: true, default: 0}

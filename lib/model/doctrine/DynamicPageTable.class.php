@@ -16,4 +16,9 @@ class DynamicPageTable extends PageTable
     {
         return Doctrine_Core::getTable('DynamicPage');
     }
+
+    public function getActivePages() {
+        $query = $this->createQuery('a')->leftJoin('BooleanConfiguration b')->where('b.is_activated = ?',true);
+        return $query->execute();
+    }
 }

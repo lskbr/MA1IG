@@ -23,8 +23,13 @@ localized_homepage:
   param: { module: page, action: index}
 
 page:
-  url:   /:sf_culture/page/:id/:title
-  param: { module: page, action: show}
+  url:   /:sf_culture/page/:id/:title_slug
+  class:   sfDoctrineRoute
+  options: { model: StaticPage, type: object }
+  param:   { module: page, action: show }
+  requirements:
+    id: \d+
+    sf_method: [get]
 
 default_index:
   url:   /:module

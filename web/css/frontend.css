@@ -14,7 +14,7 @@ strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, tt, ul, var {
 	margin: 0;
 	outline: 0;
 	padding: 0;
-	position: inherit;
+	position: relative;
 	text-decoration: none;
 	text-transform: none;
 	vertical-align: baseline;
@@ -35,12 +35,12 @@ body {
 }
 
 div#global {
-	min-height: 100%;
 	margin: 0 auto;
+	min-height: 100%;
+	overflow: visible;
 	position: relative;
 	width: 1000px;
 	z-index: 1;
-	overflow: visible;
 }
 
 /* background:frame*/
@@ -247,6 +247,8 @@ div#login form input:focus {
 }
 
 div#login form input#signin_remember {
+	background: inherit;
+	height: inherit;
 	vertical-align: middle;
 	width: inherit;
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* CSS file for table dialog in the table plugin */
 
 .panel_wrapper div.current {
@@ -11,3 +12,18 @@
 #class {
 	width: 150px;
 }
+=======
+/* CSS file for table dialog in the table plugin */
+
+.panel_wrapper div.current {
+	height: 245px;
+}
+
+.advfield {
+	width: 200px;
+}
+
+#class {
+	width: 150px;
+}
+>>>>>>> 58ff1e4b6498d84a22961009d3512c9d81eeb6df

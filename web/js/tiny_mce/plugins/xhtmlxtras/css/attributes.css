@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .panel_wrapper div.current {
 	height: 290px;
 }
@@ -9,3 +10,16 @@
 #events_panel input {
 	width: 200px;
 }
+=======
+.panel_wrapper div.current {
+	height: 290px;
+}
+
+#id, #style, #title, #dir, #hreflang, #lang, #classlist, #tabindex, #accesskey {
+	width: 200px;
+}
+
+#events_panel input {
+	width: 200px;
+}
+>>>>>>> 58ff1e4b6498d84a22961009d3512c9d81eeb6df

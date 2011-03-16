@@ -2,6 +2,11 @@
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 
 # default rules
+
+sf_guard_auth_signin:
+  url: /signin
+  param: {module: sfGuardAuth, action: signin}
+
 sf_guard_register:
   url: /register
   param: {module: sfGuardRegister, action: index}

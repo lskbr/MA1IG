@@ -26,6 +26,7 @@ jQuery(document).ready(function () {
 	});
 	
 	var closed = false;
+	jQuery("#login-bar-button").attr("href", "#");
 	jQuery("#login-bar-button").hover(function () {
 		if (jQuery("#login").is(":hidden") && !closed) {
 			jQuery("#login-bar-button").addClass("login-open");

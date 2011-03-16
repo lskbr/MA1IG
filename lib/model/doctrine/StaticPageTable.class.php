@@ -16,4 +16,9 @@ class StaticPageTable extends PageTable
     {
         return Doctrine_Core::getTable('StaticPage');
     }
+
+    public function getActivePages($cu) {
+        $query = $this->createQuery('a')->leftJoin('a.Translation t')->where('t.is_activated = ?', true)->andWhere('t.lang = ?', $cu);
+        return $query->execute();
+    }
 }

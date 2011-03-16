@@ -16,15 +16,6 @@ abstract class BaseStaticPageForm extends PageForm
   {
     parent::setupInheritance();
 
-    $this->widgetSchema   ['content'] = new sfWidgetFormInputText();
-    $this->validatorSchema['content'] = new sfValidatorPass(array('required' => false));
-
-    $this->widgetSchema   ['is_activated'] = new sfWidgetFormInputCheckbox();
-    $this->validatorSchema['is_activated'] = new sfValidatorBoolean(array('required' => false));
-
-    $this->widgetSchema   ['title'] = new sfWidgetFormInputText();
-    $this->validatorSchema['title'] = new sfValidatorString(array('max_length' => 255));
-
     $this->widgetSchema->setNameFormat('static_page[%s]');
   }
 

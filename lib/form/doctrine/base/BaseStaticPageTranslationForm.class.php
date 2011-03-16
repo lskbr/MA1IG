@@ -15,15 +15,21 @@ abstract class BaseStaticPageTranslationForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'id'         => new sfWidgetFormInputHidden(),
-      'menu_title' => new sfWidgetFormInputText(),
-      'lang'       => new sfWidgetFormInputHidden(),
+      'id'           => new sfWidgetFormInputHidden(),
+      'menu_title'   => new sfWidgetFormInputText(),
+      'content'      => new sfWidgetFormInputText(),
+      'is_activated' => new sfWidgetFormInputCheckbox(),
+      'title'        => new sfWidgetFormInputText(),
+      'lang'         => new sfWidgetFormInputHidden(),
     ));
 
     $this->setValidators(array(
-      'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'menu_title' => new sfValidatorString(array('max_length' => 255)),
-      'lang'       => new sfValidatorChoice(array('choices' => array($this->getObject()->get('lang')), 'empty_value' => $this->getObject()->get('lang'), 'required' => false)),
+      'id'           => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'menu_title'   => new sfValidatorString(array('max_length' => 255)),
+      'content'      => new sfValidatorPass(array('required' => false)),
+      'is_activated' => new sfValidatorBoolean(array('required' => false)),
+      'title'        => new sfValidatorString(array('max_length' => 255)),
+      'lang'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('lang')), 'empty_value' => $this->getObject()->get('lang'), 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('static_page_translation[%s]');

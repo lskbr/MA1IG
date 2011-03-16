@@ -26,9 +26,8 @@ class pageActions extends sfActions
   }
   public function executeShow(sfWebRequest $request)
   {
-
-  	$id=$request->getParameter('id');
-  	$q = Doctrine_Query::create()->from('StaticPage p')->where('is_activated=1')->andWhere('id='.$id);
-  	$page=$q->execute();
+    $this->page = $this->getRoute()->getObject();
+    if($this->page->getIsActivated()==false)
+      $this->forward404();
   }
 }

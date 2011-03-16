@@ -12,5 +12,12 @@
  */
 class StaticPage extends BaseStaticPage
 {
-
+	public function getUrl()
+	{
+		return url_for('page', $this);
+	}
+	public function getTitleSlug()
+	{
+		return trim(preg_replace('/\W+/', '-', $this->getTitle()),'-');
+	}
 }

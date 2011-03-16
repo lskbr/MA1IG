@@ -17,6 +17,7 @@ Category:
 
 Page:
   actAs: {Timestampable: ~}
+  actAs: {I18n: {fields: [menu_title]}}
   columns:
     hash_code: {type: string(255), notnull: true}
     menu_title: {type: string(255), notnull: true}
@@ -28,11 +29,11 @@ Page:
 
 StaticPage:
   inheritance: {type: concrete, extends: Page}
-  actAs: {I18n: {fields: [content, is_ativated, menu_title, title]}}
+  actAs: {I18n: {fields: [content, is_activated, title]}}
   columns:
     content: {type: text}
     is_activated : {type: boolean, notnull: true, default: 0}
-    title: {type: string(255), notnull: true, default: "En contruction"}
+    title: {type: string(255), notnull: true}
 
 Configuration:
   columns:

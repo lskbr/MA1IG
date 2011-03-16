@@ -10,26 +10,20 @@
  * @property integer $position
  * @property timestamp $publication_date
  * @property integer $category_id
- * @property integer $language_id
  * @property Category $Category
- * @property Language $Language
  * 
  * @method string    getHashCode()         Returns the current record's "hash_code" value
  * @method string    getMenuTitle()        Returns the current record's "menu_title" value
  * @method integer   getPosition()         Returns the current record's "position" value
  * @method timestamp getPublicationDate()  Returns the current record's "publication_date" value
  * @method integer   getCategoryId()       Returns the current record's "category_id" value
- * @method integer   getLanguageId()       Returns the current record's "language_id" value
  * @method Category  getCategory()         Returns the current record's "Category" value
- * @method Language  getLanguage()         Returns the current record's "Language" value
  * @method Page      setHashCode()         Sets the current record's "hash_code" value
  * @method Page      setMenuTitle()        Sets the current record's "menu_title" value
  * @method Page      setPosition()         Sets the current record's "position" value
  * @method Page      setPublicationDate()  Sets the current record's "publication_date" value
  * @method Page      setCategoryId()       Sets the current record's "category_id" value
- * @method Page      setLanguageId()       Sets the current record's "language_id" value
  * @method Page      setCategory()         Sets the current record's "Category" value
- * @method Page      setLanguage()         Sets the current record's "Language" value
  * 
  * @package    grainedevie
  * @subpackage model
@@ -63,10 +57,6 @@ abstract class BasePage extends sfDoctrineRecord
              'type' => 'integer',
              'notnull' => true,
              ));
-        $this->hasColumn('language_id', 'integer', null, array(
-             'type' => 'integer',
-             'notnull' => true,
-             ));
     }
 
     public function setUp()
@@ -76,11 +66,12 @@ abstract class BasePage extends sfDoctrineRecord
              'local' => 'category_id',
              'foreign' => 'id'));
 
-        $this->hasOne('Language', array(
-             'local' => 'language_id',
-             'foreign' => 'id'));
-
-        $timestampable0 = new Doctrine_Template_Timestampable();
-        $this->actAs($timestampable0);
+        $i18n0 = new Doctrine_Template_I18n(array(
+             'fields' => 
+             array(
+              0 => 'menu_title',
+             ),
+             ));
+        $this->actAs($i18n0);
     }
 }

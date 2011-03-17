@@ -16,5 +16,17 @@ class StaticPageFormFilter extends BaseStaticPageFormFilter
   public function configure()
   {
     parent::configure();
+
+    $bDate = new sfWidgetFormJQueryDate(array('image'=>'/images/calendar.png','date_widget' => new sfWidgetFormDate(array('format' => '%day%/%month%/%year%')),'culture' => 'fr'));
+    $eDate = new sfWidgetFormJQueryDate(array('image'=>'/images/calendar.png','date_widget' => new sfWidgetFormDate(array('format' => '%day%/%month%/%year%')),'culture' => 'fr'));
+
+    $this->widgetSchema['publication_date'] = new sfWidgetFormFilterDate(array('from_date' => $bDate, 'to_date' => $eDate));
+
+
+
+
+
   }
+
+
 }

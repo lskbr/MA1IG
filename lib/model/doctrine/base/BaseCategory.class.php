@@ -38,7 +38,6 @@ abstract class BaseCategory extends sfDoctrineRecord
         $this->hasColumn('position', 'integer', null, array(
              'type' => 'integer',
              'notnull' => true,
-             'default' => 99,
              ));
         $this->hasColumn('is_activated', 'boolean', null, array(
              'type' => 'boolean',

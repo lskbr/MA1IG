@@ -34,7 +34,9 @@ class StaticPageForm extends BaseStaticPageForm {
             'culture' => 'fr'
             ));
         
-        
+        unset(
+            $this['position']
+        );
 
 
     }

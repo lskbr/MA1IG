@@ -24,7 +24,7 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'           => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'position'     => new sfValidatorInteger(array('required' => false)),
+      'position'     => new sfValidatorInteger(),
       'is_activated' => new sfValidatorBoolean(array('required' => false)),
       'created_at'   => new sfValidatorDateTime(),
       'updated_at'   => new sfValidatorDateTime(),

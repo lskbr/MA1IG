@@ -12,5 +12,6 @@ class CategoryTranslationForm extends BaseCategoryTranslationForm
 {
   public function configure()
   {
+      $this->widgetSchema['name']->setLabel("Nom");
   }
 }

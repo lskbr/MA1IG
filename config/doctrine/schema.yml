@@ -12,7 +12,7 @@ Category:
 
   columns:
     name: {type: string(40), notnull: true, unique: true}
-    position: {type: integer, notnull: true, default: 99}
+    position: {type: integer, notnull: true}
     is_activated: {type: boolean, notnull: true, default: false}
 
 Page:
@@ -20,7 +20,7 @@ Page:
   actAs: {I18n: {fields: [menu_title, content, is_activated, title]}}
   columns:
     menu_title: {type: string(255)}
-    position: {type: integer, notnull: true, default: 99}
+    position: {type: integer, notnull: true}
     publication_date: {type: timestamp}
     category_id: {type: integer, notnull: true}
   relations:

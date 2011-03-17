@@ -16,19 +16,15 @@ generator:
       fields:
         name: {label: Nom de la catégorie, help: Veuillez entrer le nom de la cétégorie de la langue mentionnée}
         is_activated: {label: Visible, help: Cette catégorie est-elle visible pour les utilisateurs du site}
+        _isActivated: {label: Visible}
       list:
         title: Liste des catégories
         display: [=name, _isActivated]
         sort: [position, asc]
-        object_actions:
-          monter: ~
-          descendre: ~
-          _delete: ~
-          _edit: ~
         table_method: retrieveBackendCategories
 
       filter:
-        display: [is_activated, position]
+        class : false
       form:   ~
       edit:
         title: Edition de la catégorie "%%name%%"

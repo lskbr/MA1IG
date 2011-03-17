@@ -46,4 +46,18 @@ class Category extends BaseCategory {
         
     }
 
+    public static function getLastPosition()
+    {
+        return Doctrine_Query::create()->from('category c')->count();
+    }
+
+    public function save(Doctrine_Connection $conn = null)
+    {
+        if($this->getPosition()==null)
+        {
+            $this->setPosition(Category::getLastPosition()+1);
+        }
+        parent::save($conn);
+    }
+
 }

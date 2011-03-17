@@ -10,14 +10,67 @@
  * @author     Your name here
  * @version    SVN: $Id: Builder.php 7691 2011-02-04 15:43:29Z jwage $
  */
-class StaticPage extends BaseStaticPage
-{
-	public function getUrl()
-	{
-		return url_for('page', $this);
-	}
-	public function getTitleSlug()
-	{
-		return trim(preg_replace('/\W+/', '-', $this->getTitle()),'-');
-	}
+class StaticPage extends BaseStaticPage {
+
+    public function getUrl() {
+        return url_for('page', $this);
+    }
+
+    public function getTitleSlug() {
+        return trim(preg_replace('/\W+/', '-', $this->getTitle()), '-');
+    }
+
+    public static function monter($sp) {
+        $currentPosition = $sp->getPosition();
+        if ($currentPosition <= 1) {
+            return false;
+        } else {
+            $upSp = Doctrine_Query::create()->from('StaticPage sp')->whereIn('sp.position', $currentPosition - 1)->andWhereIn('sp.category_id', $sp->getCategoryId())->fetchOne();
+            if ($upSp != false) {
+                $upSp->setPosition($currentPosition);
+                $upSp->save();
+
+                $sp->setPosition($currentPosition - 1);
+                $sp->save();
+
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public static function descendre($sp) {
+        $currentPosition = $sp->getPosition();
+        $lowSp = Doctrine_Query::create()->from('StaticPage sp')->whereIn('sp.position', $currentPosition + 1)->andWhereIn('sp.category_id', $sp->getCategoryId())->fetchOne();
+        if ($lowSp == false) {
+            return false;
+        } else {
+            $lowSp->setPosition($currentPosition);
+            $lowSp->save();
+
+            $sp->setPosition($currentPosition + 1);
+            $sp->save();
+
+            return true;
+        }
+    }
+
+    public static function getLastPositionOfMyCategory($sp) {
+        $categoryId = $sp->getCategoryId();
+        $position = Doctrine_Query::create()->from('StaticPage sp')->where('sp.category_id = ?', $categoryId)->count();
+        return $position;
+    }
+
+    public function save(Doctrine_Connection $conn = null) {
+        if ($this->isNew() && $this->getPosition() == null) {
+            $position = StaticPage::getLastPositionOfMyCategory($this);
+            $this->setPosition($position + 1);
+        }
+        return parent::save($conn);
+    }
+
+//    public function setCategoryId() { //Réaliser ici la gestion de vérifier quant ont change de catégorie de bien mettre à jour toutes les positions
+//        return parent::setCategoryId();
+//    }
 }

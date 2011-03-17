@@ -19,16 +19,17 @@ generator:
         publication_date: {label: Date de publication, help: Date à partir de laquelle la page doit-être visible sur le site internet}
         menu_title: {label: Titre du menu}
         category_id: {label: Catégorie}
+        category: {label: Catégorie}
 
       list:
         table_method: retrieveBackendStaticPage
-        sort: [category_id, asc]
+        sort: [[category_id, position], asc]
         title: Liste des pages du site 
-        display: [=menu_title, category, publication_date]
+        display: [=menu_title, category]
 
       filter:
         class: staticPageFormFilter
-        display: [publication_date, category_id]
+        display: [category_id]
 
       form:   ~
 

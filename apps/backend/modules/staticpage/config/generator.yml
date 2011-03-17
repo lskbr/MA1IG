@@ -22,7 +22,8 @@ generator:
         
       list:
         title: Liste des pages du site
-        display: [=menu_title, category, publication_date]
+        display: [=menu_title, category_id, publication_date]
+        sort: [menu_title, asc]
 
       filter:
         class: staticPageFormFilter

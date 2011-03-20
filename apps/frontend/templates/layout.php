@@ -9,9 +9,48 @@
 
     <body>
         <div id="global">
-            <div id="bg-frame-top"></div>
-            <div id="bg-frame-center"></div>
-            <div id="bg-frame-bottom"></div>
+            <div id="overPSlider">
+            <div id="pSlider" class="protoSlider">
+                <a href="#">
+                    <img src="/images/forest1.jpg" alt="Madagascar" />
+                    <span>Image title 1</span>
+                </a>
+                <a href="#">
+                    <img src="/images/forest2.jpg" alt="Madagascar" />
+                    <span>Image title 1</span>
+                </a>
+                <a href="#">
+                    <img src="/images/forest3.jpg" alt="Madagascar" />
+                    <span>Image title 1</span>
+                </a>
+                <a href="#">
+                    <img src="/images/forest4.jpg" alt="Madagascar" />
+                    <span>Image title 1</span>
+                </a>
+                <a href="#">
+                    <img src="/images/forest5.jpg" alt="Madagascar" />
+                    <span>Image title 1</span>
+                </a>
+                <a href="#">
+                    <img src="/images/forest6.jpg" alt="Madagascar" />
+                    <span>Image title 1</span>
+                </a>
+                <a href="#">
+                    <img src="/images/forest7.jpg" alt="Madagascar" />
+                    <span>Image title 1</span>
+                </a>
+                <a href="#">
+                    <img src="/images/forest8.jpg" alt="Madagascar" />
+                    <span>Image title 1</span>
+                </a>
+                <a href="#">
+                    <img src="/images/forest9.jpg" alt="Madagascar" />
+                    <span>Image title 1</span>
+                </a>
+            </div>
+            </div>
+
+            <div id="bg-frame-background"><img src="/images/bg-frame-global.png" alt="Madagascar" /></div>
 
             <div id ="upper-bar">
                 <div>
@@ -24,45 +63,6 @@
             </div>
 
             <div id="header">
-                <div id="pSlider" class="protoSlider">
-                    <a href="#">
-                        <img src="/images/forest1.jpg" alt="Madagascar" />
-                        <span>Image title 1</span>
-                    </a>
-                    <a href="#">
-                        <img src="/images/forest2.jpg" alt="Madagascar" />
-                        <span>Image title 1</span>
-                    </a>
-                    <a href="#">
-                        <img src="/images/forest3.jpg" alt="Madagascar" />
-                        <span>Image title 1</span>
-                    </a>
-                    <a href="#">
-                        <img src="/images/forest4.jpg" alt="Madagascar" />
-                        <span>Image title 1</span>
-                    </a>
-                    <a href="#">
-                        <img src="/images/forest5.jpg" alt="Madagascar" />
-                        <span>Image title 1</span>
-                    </a>
-                    <a href="#">
-                        <img src="/images/forest6.jpg" alt="Madagascar" />
-                        <span>Image title 1</span>
-                    </a>
-                    <a href="#">
-                        <img src="/images/forest7.jpg" alt="Madagascar" />
-                        <span>Image title 1</span>
-                    </a>
-                    <a href="#">
-                        <img src="/images/forest8.jpg" alt="Madagascar" />
-                        <span>Image title 1</span>
-                    </a>
-                    <a href="#">
-                        <img src="/images/forest9.jpg" alt="Madagascar" />
-                        <span>Image title 1</span>
-                    </a>
-                </div>
-
                 <div id="login">
                     <a id="x-button" href="#"></a>
                     <?php include_component('sfGuardAuth', 'signin_form') ?>

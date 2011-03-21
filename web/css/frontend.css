@@ -270,7 +270,6 @@ div#login input#login-button:hover {
 }
 
 div#header-logo {
-	height: 319px;
 	left: 10px;
 	position: absolute;
 	top: 10px;
@@ -366,7 +365,7 @@ ul#menu > li.current-page {
 }
 
 ul#menu li a, ul#menu li > span {
-	color: #000;
+	color: #633a13;
 	cursor: pointer;
 	display: block;
 	font-family: Arial, Helvetica, sans-serif;
@@ -380,14 +379,14 @@ ul#menu li a, ul#menu li > span {
 ul#menu li > span span {
 	float: right;
 }
-
+/*
 ul#menu li ul {
 	display: none;
 }
-
+*/
 ul#menu li a:hover, ul#menu li span:hover {
-	background-color: #33559B;
-	color: #fff;
+	background-color: #ffffbe;
+	color: #000;
 }
 
 ul#menu > li ul > li a {

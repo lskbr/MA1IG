@@ -23,7 +23,7 @@ generator:
 
       list:
         table_method: retrieveBackendStaticPage
-        sort: [[category_id, position], asc]
+        sort: [category_id, asc]
         title: Liste des pages du site 
         display: [=menu_title, category]
 

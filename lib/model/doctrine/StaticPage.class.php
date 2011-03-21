@@ -62,15 +62,38 @@ class StaticPage extends BaseStaticPage {
         return $position;
     }
 
+    public static function addAtTheEnd($sp) {
+        $position = StaticPage::getLastPositionOfMyCategory($sp);
+        $sp->setPosition($position + 1);
+    }
+
+    public static function cleanCategory($category_id){
+        $pages = Doctrine_Query::create()->from('StaticPage sp')->where('sp.category_id = ?',$category_id)->orderBy('position ASC')->execute();
+
+        foreach ($pages as $compteur => $page) {
+            $page->setPosition($compteur+1);
+            $page->save();
+        }
+    }
+
     public function save(Doctrine_Connection $conn = null) {
         if ($this->isNew() && $this->getPosition() == null) {
-            $position = StaticPage::getLastPositionOfMyCategory($this);
-            $this->setPosition($position + 1);
+            StaticPage::AddAtTheEnd($this);
         }
         return parent::save($conn);
     }
 
-//    public function setCategoryId() { //Réaliser ici la gestion de vérifier quant ont change de catégorie de bien mettre à jour toutes les positions
-//        return parent::setCategoryId();
-//    }
+    public function setCategoryId($categoryId = null) {
+        if (!$this->isNew() && isset($categoryId) && $categoryId != $this->getCategoryId()) {
+
+            $exCategory = $this->getCategoryId();
+            $retour = $this->_set('category_id', $categoryId);
+            StaticPage::addAtTheEnd($this);
+            $this->save();
+            $this->cleanCategory($exCategory);
+
+            return $retour;
+        }
+    }
+
 }

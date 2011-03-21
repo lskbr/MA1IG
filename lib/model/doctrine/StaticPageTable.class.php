@@ -23,7 +23,7 @@ class StaticPageTable extends PageTable {
 
     public function retrieveBackendStaticPage(Doctrine_Query $query) {
         $rootAlias = $query->getRootAlias();
-        $query->leftJoin($rootAlias . '.Category c')->leftJoin('c.Translation');
+        $query->leftJoin($rootAlias . '.Category c')->leftJoin('c.Translation')->orderBy('category_id, position ASC');
         return $query;
     }
 

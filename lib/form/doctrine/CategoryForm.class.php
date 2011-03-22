@@ -12,7 +12,7 @@ class CategoryForm extends BaseCategoryForm {
 
     public function configure() {
         unset(
-                $this['created_at'], $this['updated_at']
+                $this['created_at'], $this['updated_at'], $this['position']
         );
         $languages=Doctrine_Query::create()->from('Language l')->execute();
         $lang_abb=array();

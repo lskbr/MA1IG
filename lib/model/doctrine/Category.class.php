@@ -17,33 +17,46 @@ class Category extends BaseCategory {
         if ($currentPosition <= 1) {
             return false;
         } else {
-            $upCategory = Doctrine_Query::create()->from('category c')->whereIn('c.position', $currentPosition - 1)->leftJoin('c.Translation')->execute();
+            $upCategory = Doctrine_Query::create()->from('category c')->whereIn('c.position', $currentPosition - 1)->leftJoin('c.Translation')->fetchOne();
+            if ($upCategory != false) {
+                $upCategory->setPosition($currentPosition);
+                $upCategory->save();
 
-            $upCategory['0']->setPosition($currentPosition);
-            $upCategory['0']->save();
+                $category->setPosition($currentPosition - 1);
+                $category->save();
 
-            $category->setPosition($currentPosition - 1);
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public static function descendre(Category $category) {
+        $currentPosition = $category->getPosition();
+        $lowCategory = Doctrine_Query::create()->from('category c')->whereIn('c.position', $currentPosition + 1)->leftJoin('c.Translation')->fetchOne();
+        if ($lowCategory == false) {
+            return false;
+        } else {
+            $lowCategory->setPosition($currentPosition);
+            $lowCategory->save();
+
+            $category->setPosition($currentPosition + 1);
             $category->save();
 
             return true;
         }
     }
 
-    public static function descendre(Category $category) {
-        $currentPosition = $category->getPosition();
-        $lowCategory =  Doctrine_Query::create()->from('category c')->whereIn('c.position', $currentPosition + 1)->leftJoin('c.Translation')->fetchOne();        
-        if($lowCategory == false){
-            return false;
-        }else{
-            $lowCategory->setPosition($currentPosition);
-            $lowCategory->save();
+    public static function getLastPosition() {
+        return Doctrine_Query::create()->from('category c')->count();
+    }
 
-            $category->setPosition($currentPosition+1);
-            $category->save();
-
-            return true;
+    public function save(Doctrine_Connection $conn = null) {
+        if ($this->getPosition() == null) {
+            $this->setPosition(Category::getLastPosition() + 1);
         }
-        
+        return parent::save($conn);
     }
 
 }

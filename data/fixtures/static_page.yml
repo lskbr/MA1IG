@@ -1,6 +1,6 @@
 StaticPage:
   Qui:
-    position: 0
+    position: 1
     Category: Graine_de_vie
     Translation:
       fr:
@@ -19,7 +19,7 @@ StaticPage:
         is_activated: 0
         title: Wie zijn wij ??
   Plant:
-    position: 0
+    position: 1
     Category: Notre_engagement
     Translation:
       fr:

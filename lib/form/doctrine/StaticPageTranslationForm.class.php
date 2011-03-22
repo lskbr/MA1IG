@@ -27,6 +27,16 @@ class StaticPageTranslationForm extends BaseStaticPageTranslationForm {
         );
         $js_path = sfConfig::get('sf_rich_text_js_dir') ? '/' . sfConfig::get('sf_rich_text_js_dir') . '/tiny_mce.js' : '/sf/tinymce/js/tiny_mce.js';
         sfContext::getInstance()->getResponse()->addJavascript($js_path);
+
+        /*
+         * Gestion des traductions
+         */
+        $this->widgetSchema->setLabels(array(
+            'menu_title' => 'Titre a afficher dans le menu',
+            'title' => 'Titre de la page',
+            'content' => 'contenu de la page',
+            'is_activated' => 'Visible ?'
+        ));
     }
 
 }

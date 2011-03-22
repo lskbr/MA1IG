@@ -39,7 +39,6 @@ abstract class BasePage extends sfDoctrineRecord
         $this->hasColumn('position', 'integer', null, array(
              'type' => 'integer',
              'notnull' => true,
-             'default' => 99,
              ));
         $this->hasColumn('publication_date', 'timestamp', null, array(
              'type' => 'timestamp',

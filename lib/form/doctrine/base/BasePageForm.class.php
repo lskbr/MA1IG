@@ -23,7 +23,7 @@ abstract class BasePageForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'               => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'position'         => new sfValidatorInteger(array('required' => false)),
+      'position'         => new sfValidatorInteger(),
       'publication_date' => new sfValidatorDateTime(array('required' => false)),
       'category_id'      => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Category'))),
     ));

@@ -35,12 +35,12 @@ body {
 	width: 100%;
 }
 
-div#fond_image {
+/*div#fond_image {
         background-image: url(../images/forest1.jpg);
 	background-repeat: no-repeat;
 	margin: 0 auto;
         width: 1000px;
-}
+}*/
 
 div#global {
 	margin: 0 auto;
@@ -101,12 +101,12 @@ div#upper-bar ul li > a:hover {
 }
 
 div#upper-bar ul li a#login-bar-button:hover {
-	background-color: #68431c;
+	background-color: #035579;
 	text-decoration: none;
 }
 
 a.login-open {
-	background-color: #68431c;
+	background-color: #035579;
 }
 
 /* Header*/
@@ -120,20 +120,22 @@ div#header {
 div#overPSlider {
         position: absolute;
         top: 0;
-	height: 700px;
+        left: 5px;
+	height: 690px;
 	width: 990px;
         overflow: hidden;
 }
-
 div#pSlider {
         position: absolute;
         top: 0;
         left: 5px;
+	height: 690px;
+	width: 990px;
+        overflow: hidden;
+        
+	border-right: 1px solid #383E44;
 	border-bottom: 1px solid #383E44;
 	border-left: 1px solid #383E44;
-	border-right: 1px solid #383E44;
-	height: 700px;
-	width: 990px;
         
         z-index: -2;
 }
@@ -148,7 +150,7 @@ div#login {
 	-webkit-border-radius: 10px 10px 10px 10px;
 	-khtml-border-radius: 10px 10px 10px 10px;
 
-        background-color: #68431c;
+        background-color: #035579;
 	/*background-image: url(../images/bg-bar-login.png);
 	background-repeat: repeat;*/
 
@@ -357,7 +359,7 @@ ul#menu {
 }
 
 ul#menu > li {
-	border-right: 1px solid #cdcdcd;
+	/*border-right: 1px solid #cdcdcd;*/
 }
 
 ul#menu > li.current-page:first-child {
@@ -366,9 +368,9 @@ ul#menu > li.current-page:first-child {
 
 ul#menu > li.current-page {
 	background-color: #e4e4e4;
-	border-bottom: 1px solid #cdcdcd;
+	/*border-bottom: 1px solid #cdcdcd;
 	border-right: 1px solid #e4e4e4;
-	border-top: 1px solid #cdcdcd;
+	border-top: 1px solid #cdcdcd;*/
 }
 
 ul#menu li a, ul#menu li > span {

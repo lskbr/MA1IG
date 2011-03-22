@@ -27,6 +27,7 @@ jQuery(document).ready(function () {
     });
 */
 
+    // Menu
     jQuery('#menu').accordion({
             active: false,
             header: '.head',
@@ -37,22 +38,29 @@ jQuery(document).ready(function () {
             //autoheight: false
     });
 
+    //
+    // Login
+    //
     var closed = false;
+
     jQuery("#login-bar-button").attr("href", "#");
-    jQuery("#login-bar-button").hover(function () {
+
+    /*jQuery("#login-bar-button").hover(function () {
             if (jQuery("#login").is(":hidden") && !closed) {
                     jQuery("#login-bar-button").addClass("login-open");
                     jQuery("#login").slideDown("normal");
-            } else {
+            }
+            else {
                     closed = false;
             }
-    });
+    });*/
 
     jQuery("#login-bar-button").click(function () {
             if ((closed = jQuery("#login").is(":visible"))) {
                     jQuery("#login-bar-button").removeClass("login-open");
                     jQuery("#login").slideUp("normal");
-            } else {
+            }
+            else {
                     jQuery("#login-bar-button").addClass("login-open");
                     jQuery("#login").slideDown("normal");
             }
@@ -63,13 +71,15 @@ jQuery(document).ready(function () {
                     closed = false;
                     jQuery("#login-bar-button").removeClass("login-open");
                     jQuery("#login").slideUp("normal");
-            } else {
+            }
+            else {
                     jQuery("#login-bar-button").addClass("login-open");
                     jQuery("#login").slideDown("normal");
             }
     });
 });
 
+// ProtoSlider
 Event.observe(window, "load", function (evt) {
 	if ($("pSlider")) {
 		slider = new ProtoSlider("pSlider", {

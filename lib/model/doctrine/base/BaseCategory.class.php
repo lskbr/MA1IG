@@ -9,15 +9,18 @@
  * @property integer $position
  * @property boolean $is_activated
  * @property Doctrine_Collection $Page
+ * @property Doctrine_Collection $StaticPage
  * 
  * @method string              getName()         Returns the current record's "name" value
  * @method integer             getPosition()     Returns the current record's "position" value
  * @method boolean             getIsActivated()  Returns the current record's "is_activated" value
  * @method Doctrine_Collection getPage()         Returns the current record's "Page" collection
+ * @method Doctrine_Collection getStaticPage()   Returns the current record's "StaticPage" collection
  * @method Category            setName()         Sets the current record's "name" value
  * @method Category            setPosition()     Sets the current record's "position" value
  * @method Category            setIsActivated()  Sets the current record's "is_activated" value
  * @method Category            setPage()         Sets the current record's "Page" collection
+ * @method Category            setStaticPage()   Sets the current record's "StaticPage" collection
  * 
  * @package    grainedevie
  * @subpackage model
@@ -50,6 +53,10 @@ abstract class BaseCategory extends sfDoctrineRecord
     {
         parent::setUp();
         $this->hasMany('Page', array(
+             'local' => 'id',
+             'foreign' => 'category_id'));
+
+        $this->hasMany('StaticPage', array(
              'local' => 'id',
              'foreign' => 'category_id'));
 

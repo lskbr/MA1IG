@@ -44,7 +44,18 @@ sfGuardUser:
     is_super_admin: 0
     password: 947482317
     Groups: [Administrateur]
-
+    
+  Nilo:
+    first_name: Nilo
+    last_name: Menezes
+    email_address: nilo.menezes@gmail.com
+    algorithm: sha1
+    username: lskbr
+    is_active: 1
+    is_super_admin: 0
+    password: gluglux
+    Groups: [Administrateur]
+      
   User:
     first_name: User
     last_name: Test

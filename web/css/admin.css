@@ -1,4 +1,4 @@
-body, ul, ol, h1,h2,h3,h4,h5,h6,form,li,p{
+body, ul, ol, h1,h2,h3,h4,h5,h6,form,li,p {
 	margin:0;
 	padding:0;
 }
@@ -83,8 +83,8 @@ body{
 
 #sidebar{
 	background: url(../images/bg_main.jpg) repeat-y scroll left top;
-	width:270;
-	height:600;
+	width:270px;
+	height:600px;
 	float:left;
 }
 #sidebar li{
@@ -505,3 +505,4 @@ display:block;
 text-align:right;
 font-style:italic;
 }
+*/

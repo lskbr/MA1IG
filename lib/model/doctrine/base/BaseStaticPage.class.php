@@ -8,16 +8,13 @@
  * @property text $content
  * @property boolean $is_activated
  * @property string $title
- * @property Category $Category
  * 
  * @method text       getContent()      Returns the current record's "content" value
  * @method boolean    getIsActivated()  Returns the current record's "is_activated" value
  * @method string     getTitle()        Returns the current record's "title" value
- * @method Category   getCategory()     Returns the current record's "Category" value
  * @method StaticPage setContent()      Sets the current record's "content" value
  * @method StaticPage setIsActivated()  Sets the current record's "is_activated" value
  * @method StaticPage setTitle()        Sets the current record's "title" value
- * @method StaticPage setCategory()     Sets the current record's "Category" value
  * 
  * @package    grainedevie
  * @subpackage model
@@ -32,6 +29,7 @@ abstract class BaseStaticPage extends Page
         $this->setTableName('static_page');
         $this->hasColumn('content', 'text', null, array(
              'type' => 'text',
+             'notnull' => true,
              ));
         $this->hasColumn('is_activated', 'boolean', null, array(
              'type' => 'boolean',
@@ -39,6 +37,7 @@ abstract class BaseStaticPage extends Page
              ));
         $this->hasColumn('title', 'string', 255, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 255,
              ));
     }
@@ -46,8 +45,6 @@ abstract class BaseStaticPage extends Page
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('Category', array(
-             'local' => 'category_id',
-             'foreign' => 'id'));
+        
     }
 }

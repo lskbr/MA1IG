@@ -25,10 +25,10 @@ abstract class BaseStaticPageTranslationForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'           => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'menu_title'   => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'content'      => new sfValidatorPass(array('required' => false)),
+      'menu_title'   => new sfValidatorString(array('max_length' => 255)),
+      'content'      => new sfValidatorPass(),
       'is_activated' => new sfValidatorBoolean(array('required' => false)),
-      'title'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'title'        => new sfValidatorString(array('max_length' => 255)),
       'lang'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('lang')), 'empty_value' => $this->getObject()->get('lang'), 'required' => false)),
     ));
 

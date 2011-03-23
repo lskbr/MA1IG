@@ -22,7 +22,7 @@ Page:
     menu_title: {type: string(255), notnull: true}
     position: {type: integer, notnull: true}
     publication_date: {type: timestamp}
-    category_id: {type: integer, notnull: true}
+    category_id: {type: integer}
   relations:
     Category: {local: category_id, foreign: id}
 

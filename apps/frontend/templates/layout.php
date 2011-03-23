@@ -78,14 +78,14 @@
                 </div>
                 <div id="bottom-bar">
                 	<ul>
-                    	<li><a href="#">Contact</a></li>
+                    	<li><a href="#"><?php echo __("Contact") ?></a></li>
                         <li>|</li>
-                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#"><?php echo __("Mentions légales") ?></a></li>
                         <li>|</li>
-                        <li><a href="#">Plan du site</a></li>
+                        <li><a href="#"><?php echo __("Plan du site") ?></a></li>
                     </ul>
                 </div>
-                <div id="legal">Projet agréé par la Fondation Roi Baudouin | Copyright &copy; 2009 - 2011 Graine de vie. All rights reserved.</div>
+                <div id="legal"><?php echo __("Projet agréé par la Fondation Roi Baudouin | Copyright &copy; 2009 - 2011 Graine de vie. All rights reserved.") ?></div>
             </div>
 
         </div>

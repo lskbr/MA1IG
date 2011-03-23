@@ -1,8 +1,8 @@
 StaticPage:
   Qui:
-    position: 1
     Category: Graine_de_vie
-    publication_date: 2011-03-22 20:00
+    position: 1
+    publication_date: '2011-03-22 20:00'
     Translation:
       fr:
         menu_title: Qui sommes nous ?
@@ -27,7 +27,7 @@ StaticPage:
   Plant:
     position: 1
     Category: Notre_engagement
-    publication_date: 2011-03-22 20:00
+    publication_date: '2011-03-22 20:00'
     Translation:
       fr:
         menu_title: Planter des arbres !
@@ -49,11 +49,9 @@ StaticPage:
         content: 'Elas produzem oxigênio, em média para quatro pessoas, dependendo de seu tipo. Suas raízes fixam o solo, retem e purificam o solo, retem e purificam a água, captando poluentes. Seus galhos freiam os ventos, retentem a humidade do ar e intevêm na regulação do clima. Suas folhas fertilizam o solo. Uma terra sem árvores resseca e mesmo a chuva mais fraca lhe empobresse retirando nutrientes. A floresta é o habitat do mundo vegetal e animal que representa mais de 50% da biodiversidade. Ela produz material para aquecer, abrigar, curar (através das plantas medicinais) e alimentar (através seus frutos ou do resultado do trabalho que ela provê a milhões de pessoas)'
         is_activated: 1
         title: Plantar árvores
-        
-  Projet_de_expansion:
-     menu_title: Projet de Expansion
+  Projet_de_expansion:     
      position: 2
-     publication_date: 2011-03-22 20:00
+     publication_date: '2011-03-22 20:00'
      Category: Graine_de_vie
      Translation:
          fr:

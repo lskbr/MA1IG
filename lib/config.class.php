@@ -8,16 +8,16 @@ class config
 	}
 	private function __clone(){}
 
-	private function getAction($key)
+	private function getConfig($key)
 	{
 		foreach($this->_configs as $config)
-			if($config->getName()==$key)
+			if($config->getKey()==$key)
 				return $config;
 		throw new ConfigNotFoundException();
 	}
 	public function get($key)
 	{
-		if(($action=getAction())->getType()==1)
+		if(($action=getConfig())->getType()==1)
 			return $config->isActivated();
 		else
 			return $config->getValue();

@@ -11,7 +11,7 @@ function display($configs,$config,$first=false)
 	else
 		echo textfield_tag($config);
 	for($i=0; $i<sizeof($configs); $i++)
-		if($configs[$i]->getParent()->__toString()==$config->getName())
+		if($configs[$i]->getParent()==$config)
 			display($configs,$configs[$i]);
 	echo '</div>';
 }

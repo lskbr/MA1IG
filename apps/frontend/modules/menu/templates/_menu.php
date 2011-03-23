@@ -1,4 +1,4 @@
-<!--author: Laurent-->
+<!--author: Laurent && Nicolas-->
 <div id="sidebar">
     <ul id="menu">
         <li><a class="head" href="<?php echo url_for('@homepage') ?>">Accueil</a></li>

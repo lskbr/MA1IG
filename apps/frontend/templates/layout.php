@@ -9,9 +9,35 @@
 
     <body>
         <div id="global">
-            <div id="bg-frame-top"></div>
-            <div id="bg-frame-center"></div>
-            <div id="bg-frame-bottom"></div>
+            <div id="overPSlider">
+            <div id="pSlider" class="protoSlider">
+            <?php
+            $back_img = array(
+                'forest1.jpg',
+                'forest2.jpg',
+                'forest3.jpg',
+                'forest4.jpg',
+                'forest5.jpg',
+                'forest6.jpg',
+                'forest7.jpg',
+                'forest8.jpg',
+                'forest9.jpg'
+            );
+
+            shuffle($back_img);
+
+            foreach ($back_img as $value):
+            ?>
+                <a href="#">
+                    <img src="/images/background/<?php echo $value ?>" alt="Madagascar" />
+                </a>
+            <?php
+            endforeach;
+            ?>
+            </div>
+            </div>
+
+            <div id="bg-frame-background"><img src="/images/bg-frame-global.png" alt="Madagascar" /></div>
 
             <div id ="upper-bar">
                 <div>
@@ -21,48 +47,11 @@
                         <li><a href="<?php echo url_for('@sf_guard_register') ?>"><?php echo __("S'inscrire") ?></a></li>
                     </ul>
                 </div>
+                <img src="img/x-button.png" style="display: none"/>
+                <img src="img/x-button-hover.png" style="display: none"/>
             </div>
 
             <div id="header">
-                <div id="pSlider" class="protoSlider">
-                    <a href="#">
-                        <img src="/images/forest1.jpg" alt="Madagascar" />
-                        <span>Image title 1</span>
-                    </a>
-                    <a href="#">
-                        <img src="/images/forest2.jpg" alt="Madagascar" />
-                        <span>Image title 1</span>
-                    </a>
-                    <a href="#">
-                        <img src="/images/forest3.jpg" alt="Madagascar" />
-                        <span>Image title 1</span>
-                    </a>
-                    <a href="#">
-                        <img src="/images/forest4.jpg" alt="Madagascar" />
-                        <span>Image title 1</span>
-                    </a>
-                    <a href="#">
-                        <img src="/images/forest5.jpg" alt="Madagascar" />
-                        <span>Image title 1</span>
-                    </a>
-                    <a href="#">
-                        <img src="/images/forest6.jpg" alt="Madagascar" />
-                        <span>Image title 1</span>
-                    </a>
-                    <a href="#">
-                        <img src="/images/forest7.jpg" alt="Madagascar" />
-                        <span>Image title 1</span>
-                    </a>
-                    <a href="#">
-                        <img src="/images/forest8.jpg" alt="Madagascar" />
-                        <span>Image title 1</span>
-                    </a>
-                    <a href="#">
-                        <img src="/images/forest9.jpg" alt="Madagascar" />
-                        <span>Image title 1</span>
-                    </a>
-                </div>
-
                 <div id="login">
                     <a id="x-button" href="#"></a>
                     <?php include_component('sfGuardAuth', 'signin_form') ?>

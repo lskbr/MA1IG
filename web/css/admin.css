@@ -1,6 +1,6 @@
-body, ul, ol, h1,h2,h3,h4,h5,h6,form,li,p{
-    margin:0;
-    padding:0;
+body, ul, ol, h1,h2,h3,h4,h5,h6,form,li,p {
+	margin:0;
+	padding:0;
 }
 img{
     border:0px;
@@ -82,10 +82,10 @@ body{
 }
 
 #sidebar{
-    background: url(../images/bg_main.jpg) repeat-y scroll left top;
-    width:270;
-    height:600;
-    float:left;
+	background: url(../images/bg_main.jpg) repeat-y scroll left top;
+	width:270px;
+	height:600px;
+	float:left;
 }
 #sidebar li{
     height: 48px;
@@ -366,7 +366,7 @@ ul.sf_admin_actions a:hover{
     text-decoration:underline;
 }
 
-/*/*
+/*
 				#top table{
 					margin-bottom:30px;
 					}
@@ -542,4 +542,5 @@ background-position:top right;
 display:block;
 text-align:right;
 font-style:italic;
-}*/
+}
+*/

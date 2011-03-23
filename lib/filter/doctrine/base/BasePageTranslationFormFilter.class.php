@@ -13,7 +13,7 @@ abstract class BasePageTranslationFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'menu_title' => new sfWidgetFormFilterInput(),
+      'menu_title' => new sfWidgetFormFilterInput(array('with_empty' => false)),
     ));
 
     $this->setValidators(array(

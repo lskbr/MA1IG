@@ -575,3 +575,10 @@ div#content > p {
 	font-size: 12px;
 	margin: 0 10px;
 }
+
+div#citation{
+	max-width:200;	
+}
+div.author{
+	float:right;
+}

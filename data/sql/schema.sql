@@ -1,6 +1,8 @@
 CREATE TABLE configuration (id BIGINT AUTO_INCREMENT, main VARCHAR(255) NOT NULL, name VARCHAR(255) NOT NULL, description text, configuration_id BIGINT, type VARCHAR(255), is_kernel TINYINT(1) DEFAULT '0', is_activated TINYINT(1) DEFAULT '0', value BIGINT DEFAULT 0, INDEX configuration_id_idx (configuration_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE category_translation (id BIGINT, name VARCHAR(40) NOT NULL UNIQUE, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE category (id BIGINT AUTO_INCREMENT, position BIGINT NOT NULL, is_activated TINYINT(1) DEFAULT '0' NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE citation_translation (id BIGINT, author VARCHAR(255), content text, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
+CREATE TABLE citation (id BIGINT AUTO_INCREMENT, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE configuration (id BIGINT AUTO_INCREMENT, main VARCHAR(255) NOT NULL, name VARCHAR(255) NOT NULL, description text, configuration_id BIGINT, type VARCHAR(255), is_kernel TINYINT(1) DEFAULT '0', is_activated TINYINT(1) DEFAULT '0', value BIGINT DEFAULT 0, INDEX configuration_type_idx (type), INDEX configuration_id_idx (configuration_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE dynamic_page_translation (id BIGINT, menu_title VARCHAR(255), lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE dynamic_page (id BIGINT AUTO_INCREMENT, position BIGINT NOT NULL, publication_date DATETIME, category_id BIGINT NOT NULL, controller VARCHAR(255) NOT NULL, action VARCHAR(255) NOT NULL, boolean_configuation_id BIGINT NOT NULL, INDEX category_id_idx (category_id), INDEX boolean_configuation_id_idx (boolean_configuation_id), PRIMARY KEY(id)) ENGINE = INNODB;
@@ -19,6 +21,7 @@ CREATE TABLE sf_guard_user_group (user_id BIGINT, group_id BIGINT, created_at DA
 CREATE TABLE sf_guard_user_permission (user_id BIGINT, permission_id BIGINT, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(user_id, permission_id)) ENGINE = INNODB;
 ALTER TABLE configuration ADD CONSTRAINT configuration_configuration_id_configuration_id FOREIGN KEY (configuration_id) REFERENCES configuration(id);
 ALTER TABLE category_translation ADD CONSTRAINT category_translation_id_category_id FOREIGN KEY (id) REFERENCES category(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE citation_translation ADD CONSTRAINT citation_translation_id_citation_id FOREIGN KEY (id) REFERENCES citation(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE dynamic_page_translation ADD CONSTRAINT dynamic_page_translation_id_dynamic_page_id FOREIGN KEY (id) REFERENCES dynamic_page(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE dynamic_page ADD CONSTRAINT dynamic_page_category_id_category_id FOREIGN KEY (category_id) REFERENCES category(id);
 ALTER TABLE dynamic_page ADD CONSTRAINT dynamic_page_boolean_configuation_id_configuration_id FOREIGN KEY (boolean_configuation_id) REFERENCES configuration(id);

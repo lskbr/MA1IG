@@ -61,3 +61,9 @@ DynamicPage:
     boolean_configuation_id: {type: integer, notnull: true}
   relations:
     BooleanConfiguration: {local: boolean_configuation_id, foreign: id}
+
+Citation:
+  actAs: {I18n: {fields: [author, content]}}
+  columns:
+    author: {type: string(255)}
+    content: {type: text}

@@ -17,6 +17,11 @@ BooleanConfiguration:
     description: Active le système de CMS
     is_activated: true
     is_kernel: true
+  Citation:
+    main: citation
+    name: Citation
+    description: Place aléatoirement une citation sur chaque page de contenu du site.
+    is_activated: false
 NumericConfiguration:
   NewsParPage:
     main: news_by_page

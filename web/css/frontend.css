@@ -26,13 +26,21 @@ html {
 }
 
 body {
-	background-color: #3B7F10;
-	background-image: url("../images/texture.jpg");
+	background-color: #FFFFFF;
+        /*background-color: #3B7F10;
+	background-image: url("../images/texture.jpg");*/
 	height: 100%;
 	margin: 0 auto;
 	position: relative;
 	width: 100%;
 }
+
+/*div#fond_image {
+        background-image: url(../images/forest1.jpg);
+	background-repeat: no-repeat;
+	margin: 0 auto;
+        width: 1000px;
+}*/
 
 div#global {
 	margin: 0 auto;
@@ -43,45 +51,20 @@ div#global {
 	z-index: 1;
 }
 
-/* background:frame*/
-div#bg-frame-top {
-	background-image: url(../images/bg-frame-top.png);
+div#bg-frame-background {
+        background-image: url(../images/bg-frame-global.png);
 	background-repeat: no-repeat;
-	height: 30px;
-	position: absolute;
-	top: 15px;
-	width: 100%;
-	z-index: -1;
-}
 
-/* top = bg-frame-top.top + bg-frame-top.height*/
-/* bottom = bg-frame-bottom.bottom + bg-frame-bottom.height*/
-/* Dependant: center; footer*/
-div#bg-frame-center {
-	background-image: url(../images/bg-frame-center.png);
-	background-repeat: repeat-y;
-	bottom:85px;
-	position: absolute;
-	top: 45px;
-	width: 100%;
-	z-index: -1;
-}
+        position: absolute;
+        top: 0;
 
-div#bg-frame-bottom {
-	background-image: url(../images/bg-frame-bottom.png);
-	background-position: bottom;
-	background-repeat: no-repeat;
-	bottom: 0;
-	height: 85px;
-	position: absolute;
-	width: 100%;
-	z-index: -1;
+        z-index: -1;
 }
 
 /* Upper bar */
 div#upper-bar {
 	height: 28px;
-	padding-top: 17px;
+	padding-top: 0px;
 	position: relative;
 }
 
@@ -118,40 +101,59 @@ div#upper-bar ul li > a:hover {
 }
 
 div#upper-bar ul li a#login-bar-button:hover {
-	background-color: #33559B;
+	background-color: #035579;
 	text-decoration: none;
 }
 
 a.login-open {
-	background-color: #33559B;
+	background-color: #035579;
 }
 
 /* Header*/
 div#header {
-	height: 281p;
+	height: 0px;
 	margin-left: 1px;
 	position: relative;
 	width: 982px;
 }
 
+div#overPSlider {
+        position: absolute;
+        top: 0;
+        left: 5px;
+	height: 690px;
+	width: 990px;
+        overflow: hidden;
+}
 div#pSlider {
+        position: absolute;
+        top: 0;
+        left: 5px;
+	height: 690px;
+	width: 990px;
+        overflow: hidden;
+        
+	border-right: 1px solid #383E44;
 	border-bottom: 1px solid #383E44;
 	border-left: 1px solid #383E44;
-	border-right: 1px solid #383E44;
-	height: 280px;
-	width: 980px;
+        
+        z-index: -2;
 }
 
 /* Login */
 div#login {
-	border-bottom: 1px solid #383E44;
-	border-left: 1px solid #383E44;
-	border-radius: 0px 0px 0px 10px;
-	-moz-border-radius: 0px 0px 0px 10px;
-	-webkit-border-radius: 0px 0px 0px 10px;
-	-khtml-border-radius: 0px 0px 0px 10px;
-	background-image: url(../images/bg-bar-login.png);
-	background-repeat: repeat;
+	border: 1px solid #383E44;
+        border-top: none;
+
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	-khtml-border-radius: 10px 10px 10px 10px;
+
+        background-color: #035579;
+	/*background-image: url(../images/bg-bar-login.png);
+	background-repeat: repeat;*/
+
 	display: none;
 	position: absolute;
 	right: 1px;
@@ -270,9 +272,9 @@ div#login input#login-button:hover {
 }
 
 div#header-logo {
-	left: 10px;
 	position: absolute;
-	top: 10px;
+	left: 25px;
+	top: 0px;
 	width: 319px;
 	z-index: 1000;
 }
@@ -290,20 +292,20 @@ div#counter-text {
 	-webkit-border-radius: 10px 10px 10px 10px;
 	-khtml-border-radius: 10px 10px 10px 10px;
 	/* <- border */
-	bottom: 7px;
+	position: absolute;
+	left: 240px;
+	top: 125px;
 	color: #fff;
 	cursor: default;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 19px;
 	font-weight: bold;
-	left: 230px;
 	/* -> opacity */
 	-moz-opacity:0.8;
 	opacity: 0.8;
 	filter:alpha(opacity=80);
 	/* <- opacity */
 	padding: 5px 10px;
-	position: absolute;
 	z-index: 1001;
 }
 
@@ -312,7 +314,7 @@ div#counter {
 	height: 129px;
 	position: absolute;
 	right: 17px;
-	top: 289px;
+	top: 150px;
 	width: 500px;
 	z-index: 1000;
 }
@@ -320,24 +322,30 @@ div#counter {
 /* Main center template */
 /* padding-bottom = bg-frame-botom + 25*/
 div#center {
-	overflow: auto;
-	margin-left: 1px;
-	margin-right: 17px;
-	padding-bottom: 90px;
 	position: relative;
+        top: 165px;
+	overflow: auto;
+        margin-top: 0px;
+	margin-right: 7px;
+	padding-bottom: 90px;
+	margin-left: 8px;
+
+	min-height: 400px;
 }
 
 div#sidebar {
+        margin-top: 20px;
 	float: left;
 	position: relative;
-	width: 250px;
+	width: 244px;
 	z-index: 2;
 }
 
 div#content {
+        margin-top: 70px;
 	margin-left: 250px;
+	margin-right: 6px;
 	padding: 0;
-	padding-top: 70px;
 	position: relative;
 	z-index: 1;
 }
@@ -347,10 +355,11 @@ ul#menu {
 	/*-moz-opacity:0.9;
 	opacity: 0.9;
 	filter:alpha(opacity=90);*/
+
 }
 
 ul#menu > li {
-	border-right: 1px solid #cdcdcd;
+	/*border-right: 1px solid #cdcdcd;*/
 }
 
 ul#menu > li.current-page:first-child {
@@ -359,9 +368,9 @@ ul#menu > li.current-page:first-child {
 
 ul#menu > li.current-page {
 	background-color: #e4e4e4;
-	border-bottom: 1px solid #cdcdcd;
+	/*border-bottom: 1px solid #cdcdcd;
 	border-right: 1px solid #e4e4e4;
-	border-top: 1px solid #cdcdcd;
+	border-top: 1px solid #cdcdcd;*/
 }
 
 ul#menu li a, ul#menu li > span {
@@ -373,7 +382,7 @@ ul#menu li a, ul#menu li > span {
 	font-weight: bold;
 	height: 26px;
 	line-height: 26px;
-	padding: 0 10px;
+	padding: 0 5px;
 }
 
 ul#menu li > span span {
@@ -404,24 +413,23 @@ ul#menu li:first-child,  ul#menu > li:first-child a{
 /* Footer */
 /* Dependant: br-frame-center; bg-frame-bottom, center*/
 div#footer {
-	position: absolute;
-	bottom: 15px;;
-	height: 70px;
-	position: absolute;
+        background-image: url(../images/bg-frame-bottom.png);
+	position: relative;
+        margin-top: 85px;
+	height: 100px;
 	width: 100%;
 }
 
 div#footer div#logos {
-	position: relative;
-	margin: 0 10px;
-	margin-top: 5px;
+	position: absolute;
+	margin-left: 20px;
+	top: 20px;
 }
 
 div#footer div#bottom-bar {
 	position: absolute;
 	right: 20px;
-	top: 5px;
-	width: 750px;
+	top: 20px;
 }
 
 div#footer ul {
@@ -431,7 +439,7 @@ div#footer ul {
 }
 
 div#footer ul li {
-	color: #fff;
+	color: #000;
 	float: left;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
@@ -440,7 +448,7 @@ div#footer ul li {
 }
 
 div#footer ul li a {
-	color: #fff;
+	color: #000;
 	float: left;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
@@ -452,12 +460,12 @@ div#footer ul li a:hover {
 }
 
 div#footer div#legal {
-	bottom: 10px;
-	color: #fff;
+	bottom: 20px;
+	color: #000;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 11px;
 	font-weight: bold;
-	margin: 0 10px;
+	margin-left: 20px;
 	position: absolute;
 }
 

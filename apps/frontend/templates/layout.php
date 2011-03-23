@@ -47,8 +47,6 @@
                         <li><a href="<?php echo url_for('@sf_guard_register') ?>"><?php echo __("S'inscrire") ?></a></li>
                     </ul>
                 </div>
-                <img src="img/x-button.png" style="display: none"/>
-                <img src="img/x-button-hover.png" style="display: none"/>
             </div>
 
             <div id="header">

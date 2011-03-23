@@ -27,6 +27,8 @@ Category:
          name: Graine de vie
        nl:
          name: Granen der leven
+       pt:
+         name: Semente de Vida
 
   Notre_engagement:
     position: 2
@@ -36,6 +38,8 @@ Category:
          name: Our commitment
        fr:
          name: Notre engagement
+       pt:
+         name: Nosso compromisso
 
   Raison_d_agir:
     position: 3
@@ -45,6 +49,8 @@ Category:
          name: Reason to act
        fr:
          name: Raison d'agir
+       pt:
+         name: Razões para agir
 
   Projet_Madagascar:
     position: 4
@@ -54,6 +60,8 @@ Category:
          name: Project Madagascar
        fr:
          name: Projet Madagascar
+       pt:
+         name: Projeto Madagascar
 
   Ils_ont_dit:
     position: 5
@@ -63,6 +71,8 @@ Category:
          name: They say
        fr:
          name: Ils ont dit !
+       pt:
+         name: Eles disseram
 
   Comment_nous_aider:
     position: 6
@@ -72,6 +82,8 @@ Category:
          name: Help us
        fr:
          name: Comment nous aider ?
+       pt:
+         name: Como ajudar?
 
   Contact:
     position: 7
@@ -81,3 +93,5 @@ Category:
          name: Contact us
        fr:
          name: Contact
+       pt:
+         name: Contato

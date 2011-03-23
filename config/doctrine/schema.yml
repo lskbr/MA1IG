@@ -12,15 +12,15 @@ Category:
 
   columns:
     name: {type: string(40), notnull: true, unique: true}
-    position: {type: integer, notnull: true, default: 99}
+    position: {type: integer, notnull: true}
     is_activated: {type: boolean, notnull: true, default: false}
 
 Page:
   actAs: {Timestampable: ~}
   actAs: {I18n: {fields: [menu_title, content, is_activated, title]}}
   columns:
-    menu_title: {type: string(255)}
-    position: {type: integer, notnull: true, default: 99}
+    menu_title: {type: string(255), notnull: true}
+    position: {type: integer, notnull: true}
     publication_date: {type: timestamp}
     category_id: {type: integer, notnull: true}
   relations:
@@ -29,9 +29,9 @@ Page:
 StaticPage:
   inheritance: {type: concrete, extends: Page}
   columns:
-    content: {type: text}
+    content: {type: text, notnull:true}
     is_activated : {type: boolean, default: 0}
-    title: {type: string(255)}
+    title: {type: string(255), notnull: true}
 
 Configuration:
   columns:

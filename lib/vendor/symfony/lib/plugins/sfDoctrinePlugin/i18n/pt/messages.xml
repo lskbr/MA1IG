@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="EN" target-language="pt" datatype="plaintext" original="messages" date="2011-03-23T13:55:42Z" product-name="messages">
+    <header/>
+    <body>
+      <trans-unit id="1">
+        <source>Graine de Vie</source>
+        <target>Semente de Vida</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>Se connecter</source>
+        <target>Conectar</target>
+      </trans-unit>
+      <trans-unit id="3">
+        <source>S'inscrire</source>
+        <target>Se inscrever</target>
+      </trans-unit>
+      <trans-unit id="4">
+        <source>Nous avons déjà planté</source>
+        <target>Já plantamos</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>Accueil</source>
+        <target>Início</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

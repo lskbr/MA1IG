@@ -16,14 +16,25 @@ generator:
       actions: ~
 
       fields:
-        content: {label: Contenu de la page}
+        publication_date: {label: Date de publication, help: Date à partir de laquelle la page doit-être visible sur le site internet}
+        menu_title: {label: Titre du menu}
+        category_id: {label: Catégorie}
+        category: {label: Catégorie}
 
-      list:    ~
+      list:
+        table_method: retrieveBackendStaticPage
+        sort: [category_id, asc]
+        title: Liste des pages du site 
+        display: [=menu_title, category]
 
-      filter:  ~
+      filter:
+        class: staticPageFormFilter
+        display: [category_id]
 
       form:   ~
 
-      edit:    ~
+      edit:
+        title: Edition de la page "%%menu_title%%"
 
-      new:     ~
+      new:
+        title: Ajout d'une page

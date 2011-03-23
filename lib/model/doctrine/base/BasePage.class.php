@@ -34,12 +34,12 @@ abstract class BasePage extends sfDoctrineRecord
         $this->setTableName('page');
         $this->hasColumn('menu_title', 'string', 255, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 255,
              ));
         $this->hasColumn('position', 'integer', null, array(
              'type' => 'integer',
              'notnull' => true,
-             'default' => 99,
              ));
         $this->hasColumn('publication_date', 'timestamp', null, array(
              'type' => 'timestamp',

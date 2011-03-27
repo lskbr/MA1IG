@@ -67,3 +67,13 @@ Citation:
   columns:
     author: {type: string(255)}
     content: {type: text}
+
+Partner:
+  actAs: {I18n: {fields: [company_name, description, site, is_visible]}}
+  columns:
+    company_name: {type: string(255)}
+    logo: {type: string(255)}
+    description: {type: string(255)}
+    site: {type: string(255)}
+    is_visible: {type: boolean, default: 0}
+    position: {type: integer}

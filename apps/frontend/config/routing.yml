@@ -29,8 +29,8 @@ page:
     sf_method: [get]
 
 default_index:
-  url:   /:module
+  url:   /:sf_culture/:module
   param: { action: index }
 
 default:
-  url:   /:module/:action/*
+  url:   /:sf_culture/:module/:action/*

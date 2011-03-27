@@ -577,6 +577,13 @@ div#content h2 {
 	margin: 0 15px;
 	margin-bottom: 15px;
 }
+div#content h3 {
+	border-bottom: 3px solid #FF6600;
+	display: inline-block;
+	font-size: 16px;
+	font-weight: bold;
+}
+
 
 div#content > p {
 	font-family: Arial, Helvetica, sans-serif;
@@ -606,3 +613,16 @@ blockquote p.author{
 	color:#484848;
 	font-style: normal;
 }
+.partner_col1{
+	padding-top: 10px;
+	max-width:320px;
+	padding-left: 20px;
+	float: left;
+}
+.partner_col1 img{
+	max-width: 75px;
+	padding-right: 10px;
+	float: left;
+}
+
+

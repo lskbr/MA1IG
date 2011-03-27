@@ -18,14 +18,14 @@ abstract class BasePageForm extends BaseFormDoctrine
       'id'               => new sfWidgetFormInputHidden(),
       'position'         => new sfWidgetFormInputText(),
       'publication_date' => new sfWidgetFormDateTime(),
-      'category_id'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Category'), 'add_empty' => false)),
+      'category_id'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Category'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
       'id'               => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'position'         => new sfValidatorInteger(),
       'publication_date' => new sfValidatorDateTime(array('required' => false)),
-      'category_id'      => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Category'))),
+      'category_id'      => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Category'), 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('page[%s]');

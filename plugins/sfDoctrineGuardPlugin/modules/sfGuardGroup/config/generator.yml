@@ -16,7 +16,7 @@ generator:
         permissions_list : {label: Liste des droits}
 
       filter:
-        display: [name, permissions_list]
+        class: false
 
       list:
         title: Liste des différents groupes

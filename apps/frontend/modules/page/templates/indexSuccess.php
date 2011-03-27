@@ -1,1 +1,1 @@
-Blabla
+Bienvenue sur le nouveau site de Graine de Vie.

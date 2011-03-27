@@ -11,20 +11,22 @@ class config
 	private function getConfig($key)
 	{
 		foreach($this->_configs as $config)
-			if($config->getKey()==$key)
+			if($config->getMain()==$key)
 				return $config;
 		throw new ConfigNotFoundException();
 	}
 	public function get($key)
 	{
-		if(($action=getConfig())->getType()==1)
+		$config=$this->getConfig($key);
+		if($config->getType()==1)
 			return $config->isActivated();
 		else
 			return $config->getValue();
 	}
 	public function forward404Unless($sfAction,$key)
 	{
-		if(($action=getAction())->getType()==1)
+		$config=$this->getConfig($key);
+		if($config->getType()==1)
 			$sfAction->forward404Unless(get($key));
 		else
 			throw new InvalidConfigTypeException();

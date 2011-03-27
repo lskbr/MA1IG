@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #frmbody {
 	padding: 10px;
 	background-color: #FFF;
@@ -22,28 +21,3 @@
 .mceActionPanel {
 	padding-top: 5px;
 }
-=======
-#frmbody {
-	padding: 10px;
-	background-color: #FFF;
-	border: 1px solid #CCC;
-}
-
-.frmRow {
-	margin-bottom: 10px;
-}
-
-#templatesrc {
-	border: none;
-	width: 320px;
-	height: 240px;
-}
-
-.title {
-	padding-bottom: 5px;
-}
-
-.mceActionPanel {
-	padding-top: 5px;
-}
->>>>>>> 58ff1e4b6498d84a22961009d3512c9d81eeb6df

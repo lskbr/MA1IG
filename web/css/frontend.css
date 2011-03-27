@@ -583,6 +583,26 @@ div#content > p {
 	font-size: 12px;
 	margin: 0 10px;
 }
+
 ul#menu li{
 	padding-left:20px;
+}
+
+blockquote {
+	margin:22px 40px;
+	padding:3px;
+	color:#575757;
+	padding: 0 40px;
+	background: url("/images/quote-left.png") no-repeat 0 0;
+	min-height:60px;
+	max-width:350px;
+	font-style: italic;
+}
+blockquote p{
+	font-style: italic;
+}
+blockquote p.author{
+	float:right;
+	color:#484848;
+	font-style: normal;
 }

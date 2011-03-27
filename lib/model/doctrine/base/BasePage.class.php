@@ -45,7 +45,6 @@ abstract class BasePage extends sfDoctrineRecord
              ));
         $this->hasColumn('category_id', 'integer', null, array(
              'type' => 'integer',
-             'notnull' => true,
              ));
     }
 

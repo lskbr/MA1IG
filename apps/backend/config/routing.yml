@@ -1,3 +1,12 @@
+citation:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                citation
+    module:               citation
+    prefix_path:          /citation
+    column:               id
+    with_wildcard_routes: true
+
 static_page:
   class: sfDoctrineRouteCollection
   options:

@@ -226,6 +226,7 @@ textarea{
     position:relative;
     font-size:15px;
     font-family: "Lucida Sans Unicode";
+    line-height:19px;
 }
 .case_homepage:hover div.case_txt{
     color:#4a4a4a;
@@ -238,7 +239,13 @@ textarea{
     height:40px;
     width:40px;
     vertical-align: middle;
+    float:left;
     margin-right:10px;
+}
+.case_homepage .desc{
+    clear:both;
+    font-size:12px;
+    line-height:15px;
 }
 .leveled{
     margin-left:40px;

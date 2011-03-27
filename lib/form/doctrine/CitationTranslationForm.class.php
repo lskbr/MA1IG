@@ -12,5 +12,8 @@ class CitationTranslationForm extends BaseCitationTranslationForm
 {
   public function configure()
   {
+  	$this->setWidget('content',new sfWidgetFormTextarea(array(), array('size' => '20x5')));
+  	$this->widgetSchema['author']->setLabel("Auteur");
+  	$this->widgetSchema['content']->setLabel("Citation");
   }
 }

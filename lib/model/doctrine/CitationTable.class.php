@@ -18,7 +18,7 @@ class CitationTable extends Doctrine_Table
     }
     public function getOneRandom($culture)
     {
-    	$query = $this->createQuery('a')->innerJoin('a.Translation t')->where("t.lang=?", $culture)->orderBy('RAND()')->limit(1);
+    	$query = $this->createQuery('a')->innerJoin('a.Translation t')->where("t.lang=?", $culture)->andWhere("t.content != ''")->orderBy('RAND()')->limit(1);
         return $query->execute();
     }
 }

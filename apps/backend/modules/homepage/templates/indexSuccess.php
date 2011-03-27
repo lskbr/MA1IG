@@ -12,3 +12,5 @@ echo homepageItem('Groupes', 'Gestion des différents groupes d\'utilisateurs', 
 echo homepageItem('Droits', 'Gestion des différents droits', 'sf_guard_permission', 'permission');
 echo homepageItem('Gestion des pages', 'Gestion des pages et de leurs contenu', 'static_page', 'staticpage');
 echo homepageItem('Ajouter une page', 'Ajout d\'une page au site internet', 'static_page_new', 'add_staticpage');
+echo homepageItem('Liste des citations', 'Afficher la liste des citations', 'citation', 'quote-left');
+echo homepageItem('Ajouter une citation', 'Ajout d\'une citation', 'citation_new', 'add_quote-left');

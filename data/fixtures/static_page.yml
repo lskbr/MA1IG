@@ -1,0 +1,71 @@
+StaticPage:
+  Qui:
+    Category: Graine_de_vie
+    position: 1
+    publication_date: '2011-03-22 20:00'
+    Translation:
+      fr:
+        menu_title: Qui sommes nous ?
+        content: 'Graine de vie est une Organisation Non Gouvernementale (ONG) créée sous forme d’ASBL de droit belge, qui poursuit pour objectif la compensation de l’empreinte écologique des habitants de nos pays industrialisés par la plantation d’arbres dans des pays en voie de développement.'
+        is_activated: 1
+        title: Qui sommes nous ??
+      en:
+        menu_title: Who are we ?
+        content: 'Graine de vie is an Organisation not Gouvernementale (ONG) créée sous forme d’ASBL de droit belge, qui poursuit pour objectif la compensation de l’empreinte écologique des habitants de nos pays industrialisés par la plantation d’arbres dans des pays en voie de développement.'
+        is_activated: 1
+        title: Who are we ??
+      nl:
+        menu_title: Wie zijn wij ?
+        content: 'Graine de vie is an Organisation not Gouvernementale (ONG) créée sous forme d’ASBL de droit belge, qui poursuit pour objectif la compensation de l’empreinte écologique des habitants de nos pays industrialisés par la plantation d’arbres dans des pays en voie de développement.'
+        is_activated: 0
+        title: Wie zijn wij ??
+      pt:
+        menu_title: Quem somos?
+        content: 'Semente de vida é uma organização não governamental (ONG), criada na forma de uma associação sem fins lucrativos (ASBL) belga, que tem como objetivo a compensação do empréstimo ecológico dos habitantes dos países industrializados pela plantação de árvores em paises em desenvolvimento.'
+        is_activated: 1
+        title: Plantar árvores  
+  Plant:
+    position: 1
+    Category: Notre_engagement
+    publication_date: '2011-03-22 20:00'
+    Translation:
+      fr:
+        menu_title: Planter des arbres !
+        content: "Il produit de l'oxygène, en moyenne pour quatre personnes, selon son essence. Ses racines fixent les sols, retiennent et purifient l’eau, en captant les polluants. Ses ramures freinent les vents, retiennent l’humidité de l’air et interviennent dans la régulation du climat. Ses feuilles fertilisent les sols. Une terre sans arbre s’assèche et la moindre pluie la lessive et l’appauvrit. La forêt est l’habitat d’un monde végétal et animal qui représente plus de 50% de la biodiversité. Elle produit de quoi se chauffer, s’abriter, se soigner (avec les plantes médicinales) et se nourrir (avec les fruits ou les fruits du travail qu’elle fournit à des millions de personnes)."
+        is_activated: 1
+        title: Planter des arbres ??
+      en:
+        menu_title: Plant tree ?
+        content: 'Graine de vie is an Organisation not Gouvernementale (ONG) créée sous forme d’ASBL de droit belge, qui poursuit pour objectif la compensation de l’empreinte écologique des habitants de nos pays industrialisés par la plantation d’arbres dans des pays en voie de développement.'
+        is_activated: 0
+        title: Plant trees ??
+      nl:
+        menu_title: Planten arben ?
+        content: 'Graine de vie is een Organisation niet Gouvernementale (ONG) créée sous forme d’ASBL de droit belge, qui poursuit pour objectif la compensation de l’empreinte écologique des habitants de nos pays industrialisés par la plantation d’arbres dans des pays en voie de développement.'
+        is_activated: 1
+        title: Planten arben ??
+      pt:
+        menu_title: Plantar árvores
+        content: 'Elas produzem oxigênio, em média para quatro pessoas, dependendo de seu tipo. Suas raízes fixam o solo, retem e purificam o solo, retem e purificam a água, captando poluentes. Seus galhos freiam os ventos, retentem a humidade do ar e intevêm na regulação do clima. Suas folhas fertilizam o solo. Uma terra sem árvores resseca e mesmo a chuva mais fraca lhe empobresse retirando nutrientes. A floresta é o habitat do mundo vegetal e animal que representa mais de 50% da biodiversidade. Ela produz material para aquecer, abrigar, curar (através das plantas medicinais) e alimentar (através seus frutos ou do resultado do trabalho que ela provê a milhões de pessoas)'
+        is_activated: 1
+        title: Plantar árvores
+  Projet_de_expansion:     
+     position: 2
+     publication_date: '2011-03-22 20:00'
+     Category: Graine_de_vie
+     Translation:
+         fr:
+             menu_title: Project d'Expansion
+             content: Le projet d'expansion de Graine de vie
+             title: Projet d'Expansion
+             is_activated: 1
+         en:
+             menu_title: Expansion project
+             content: The expansion project will continue
+             title: Expansion project
+             is_activated: 1
+         pt:
+             menu_title: Projeto de Expansão
+             content: O projeto de expansão vai continuar
+             title: Projeto de Expansão
+             is_activated: 1

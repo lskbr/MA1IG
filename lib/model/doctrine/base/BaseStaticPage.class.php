@@ -29,6 +29,7 @@ abstract class BaseStaticPage extends Page
         $this->setTableName('static_page');
         $this->hasColumn('content', 'text', null, array(
              'type' => 'text',
+             'notnull' => true,
              ));
         $this->hasColumn('is_activated', 'boolean', null, array(
              'type' => 'boolean',
@@ -36,6 +37,7 @@ abstract class BaseStaticPage extends Page
              ));
         $this->hasColumn('title', 'string', 255, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 255,
              ));
     }

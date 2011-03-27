@@ -1,6 +1,6 @@
-body, ul, ol, h1,h2,h3,h4,h5,h6,form,li,p{
-    margin:0;
-    padding:0;
+body, ul, ol, h1,h2,h3,h4,h5,h6,form,li,p {
+	margin:0;
+	padding:0;
 }
 img{
     border:0px;
@@ -12,11 +12,13 @@ html{
 
 body{
     background:#fff url(../images/bg.jpg) repeat-x;
+    background-color:#dddddd;
     font-size:12px;
     font-family:"Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
     line-height:1.5em;
     color:#484848;
     margin:0 auto;
+    padding-bottom:30px;
 }
 #head{
     background:transparent url(../images/bg_head.png) no-repeat;
@@ -82,10 +84,10 @@ body{
 }
 
 #sidebar{
-    background: url(../images/bg_main.jpg) repeat-y scroll left top;
-    width:270;
-    height:600;
-    float:left;
+	background: url(../images/bg_main.jpg) repeat-y scroll left top;
+	width:270px;
+	height:600px;
+	float:left;
 }
 #sidebar li{
     height: 48px;
@@ -118,9 +120,6 @@ body{
 #sidebar li.current a{
     background-color: #ddd;
 }
-.body{
-    background-color:#484848;
-}
 .main{
     margin-left:270px;
     background-color: #ddd;
@@ -130,8 +129,8 @@ body{
 }
 #footer{
     clear:both;
-    height:30px;
-    background-color:#484848;
+    height:5px;
+    background-color:#dddddd;
 }
 h1{
     border-bottom-color: #c0c0c0;
@@ -201,7 +200,7 @@ textarea{
 .case_homepage{
     float:left;
     width:166px;
-    height:80px;
+    height:100px;
     overflow:hidden;
     border:1px solid #c0c0c0;
     padding:15px;
@@ -366,7 +365,7 @@ ul.sf_admin_actions a:hover{
     text-decoration:underline;
 }
 
-/*/*
+/*
 				#top table{
 					margin-bottom:30px;
 					}
@@ -542,4 +541,5 @@ background-position:top right;
 display:block;
 text-align:right;
 font-style:italic;
-}*/
+}
+*/

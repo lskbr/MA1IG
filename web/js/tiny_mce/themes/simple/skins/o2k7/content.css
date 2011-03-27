@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 body, td, pre {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:10px;}
 
 body {background: #FFF;}
@@ -16,22 +15,3 @@ scrollbar-highlight-color: #F0F0EE;
 scrollbar-shadow-color: #F0F0EE;
 scrollbar-track-color: #F5F5F5;	
 }
-=======
-body, td, pre {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:10px;}
-
-body {background: #FFF;}
-.mceVisualAid {border: 1px dashed #BBB;}
-
-/* IE */
-
-* html body {
-scrollbar-3dlight-color: #F0F0EE;
-scrollbar-arrow-color: #676662;
-scrollbar-base-color: #F0F0EE;
-scrollbar-darkshadow-color: #DDDDDD;
-scrollbar-face-color: #E0E0DD;
-scrollbar-highlight-color: #F0F0EE;
-scrollbar-shadow-color: #F0F0EE;
-scrollbar-track-color: #F5F5F5;	
-}
->>>>>>> 58ff1e4b6498d84a22961009d3512c9d81eeb6df

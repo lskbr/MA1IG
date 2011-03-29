@@ -47,8 +47,6 @@
                         <li><a href="<?php echo url_for('@sf_guard_register') ?>"><?php echo __("S'inscrire") ?></a></li>
                     </ul>
                 </div>
-                <img src="img/x-button.png" style="display: none"/>
-                <img src="img/x-button-hover.png" style="display: none"/>
             </div>
 
             <div id="header">
@@ -80,14 +78,14 @@
                 </div>
                 <div id="bottom-bar">
                 	<ul>
-                    	<li><a href="#">Contact</a></li>
+                    	<li><a href="#"><?php echo __("Contact") ?></a></li>
                         <li>|</li>
-                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#"><?php echo __("Mentions légales") ?></a></li>
                         <li>|</li>
-                        <li><a href="#">Plan du site</a></li>
+                        <li><a href="#"><?php echo __("Plan du site") ?></a></li>
                     </ul>
                 </div>
-                <div id="legal">Projet agréé par la Fondation Roi Baudouin | Copyright &copy; 2009 - 2011 Graine de vie. All rights reserved.</div>
+                <div id="legal"><?php echo __("Projet agréé par la Fondation Roi Baudouin | Copyright &copy; 2009 - 2011 Graine de vie. All rights reserved.") ?></div>
             </div>
 
         </div>

@@ -22,20 +22,21 @@ Page:
     menu_title: {type: string(255), notnull: true}
     position: {type: integer, notnull: true}
     publication_date: {type: timestamp}
-    category_id: {type: integer, notnull: true}
+    category_id: {type: integer}
   relations:
     Category: {local: category_id, foreign: id}
 
 StaticPage:
   inheritance: {type: concrete, extends: Page}
   columns:
-    content: {type: text, notnull:true}
+    content: {type: text, notnull: true}
     is_activated : {type: boolean, default: 0}
     title: {type: string(255), notnull: true}
 
 Configuration:
   columns:
-    name: {type: string(255), notnull: true, unique: true}
+    main: {type: string(255), notnull: true}
+    name: {type: string(255), notnull: true}
     description: {type: text}
     configuration_id: {type: integer}
   relations:
@@ -60,3 +61,9 @@ DynamicPage:
     boolean_configuation_id: {type: integer, notnull: true}
   relations:
     BooleanConfiguration: {local: boolean_configuation_id, foreign: id}
+
+Citation:
+  actAs: {I18n: {fields: [author, content]}}
+  columns:
+    author: {type: string(255)}
+    content: {type: text}

@@ -14,9 +14,9 @@ generator:
       fields:
         name : {label: Nom}
         groups_list : {label: Est compris dans ce groupe}
-      
+
       filter:
-        display: [name, groups_list]
+        class: false
 
       list:
         title: Liste des droits

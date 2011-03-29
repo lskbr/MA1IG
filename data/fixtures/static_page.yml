@@ -1,29 +1,31 @@
-StaticPage:
-  Qui:
-    position: 1
-    Category: Graine_de_vie
-    publication_date: 2011-03-22 20:00
-    Translation:
-      fr:
-        menu_title: Qui sommes nous ?
-        content: 'Graine de vie est une Organisation Non Gouvernementale (ONG) créée sous forme d’ASBL de droit belge, qui poursuit pour objectif la compensation de l’empreinte écologique des habitants de nos pays industrialisés par la plantation d’arbres dans des pays en voie de développement.'
-        is_activated: 1
-        title: Qui sommes nous ??
-      en:
-        menu_title: Who are we ?
-        content: 'Graine de vie is an Organisation not Gouvernementale (ONG) créée sous forme d’ASBL de droit belge, qui poursuit pour objectif la compensation de l’empreinte écologique des habitants de nos pays industrialisés par la plantation d’arbres dans des pays en voie de développement.'
-        is_activated: 1
-        title: Who are we ??
-      nl:
-        menu_title: Wie zijn wij ?
-        content: 'Graine de vie is an Organisation not Gouvernementale (ONG) créée sous forme d’ASBL de droit belge, qui poursuit pour objectif la compensation de l’empreinte écologique des habitants de nos pays industrialisés par la plantation d’arbres dans des pays en voie de développement.'
-        is_activated: 0
-        title: Wie zijn wij ??
-      pt:
-        menu_title: Quem somos?
-        content: 'Semente de vida é uma organização não governamental (ONG), criada na forma de uma associação sem fins lucrativos (ASBL) belga, que tem como objetivo a compensação do empréstimo ecológico dos habitantes dos países industrializados pela plantação de árvores em paises em desenvolvimento.'
-        is_activated: 1
-        title: Plantar árvores
+
+
+#StaticPage:
+#  Qui:
+#    position: 1
+#    Category: [Graine_de_vie]
+#    publication_date: 2011-03-22 20:00
+#    Translation:
+#      fr:
+#        menu_title: Qui sommes nous ?
+#        content: 'Graine de vie est une Organisation Non Gouvernementale (ONG) créée sous forme d’ASBL de droit belge, qui poursuit pour objectif la compensation de l’empreinte écologique des habitants de nos pays industrialisés par la plantation d’arbres dans des pays en voie de développement.'
+#        is_activated: 1
+#        title: Qui sommes nous ??
+#      en:
+#        menu_title: Who are we ?
+#        content: 'Graine de vie is an Organisation not Gouvernementale (ONG) créée sous forme d’ASBL de droit belge, qui poursuit pour objectif la compensation de l’empreinte écologique des habitants de nos pays industrialisés par la plantation d’arbres dans des pays en voie de développement.'
+#        is_activated: 1
+#        title: Who are we ??
+#      nl:
+#        menu_title: Wie zijn wij ?
+#        content: 'Gaine de vie is an Organisation not Gouvernementale (ONG) créée sous forme d’ASBL de droit belge, qui poursuit pour objectif la compensation de l’empreinte écologique des habitants de nos pays industrialisés par la plantation d’arbres dans des pays en voie de développement.'
+#        is_activated: 0
+#        title: Wie zijn wij ??
+#      pt:
+#        menu_title: Quem somos?
+#        content: 'Semente de vida é uma organização não governamental (ONG), criada na forma de uma associação sem fins lucrativos (ASBL) belga, que tem como objetivo a compensação do empréstimo ecológico dos habitantes dos países industrializados pela plantação de árvores em paises em desenvolvimento.'
+#        is_activated: 1
+#        title: Plantar árvores
 #  Plant:
 #    position: 1
 #    Category: Notre_engagement

@@ -29,7 +29,7 @@ Page:
 StaticPage:
   inheritance: {type: concrete, extends: Page}
   columns:
-    content: {type: text, notnull:true}
+    content: {type: text, notnull: true}
     is_activated : {type: boolean, default: 0}
     title: {type: string(255), notnull: true}
 

@@ -14,14 +14,9 @@ generator:
     config:
       actions: ~
       fields:
-<<<<<<< HEAD
         name: {label: Nom de la catégorie, help: Veuillez entrer le nom de la catégorie de la langue mentionnée}
-        is_activated: {label: Visible, help: Cette catégorie est-elle visible pour les utilisateurs du site?}
-=======
-        name: {label: Nom de la catégorie, help: Veuillez entrer le nom de la cétégorie de la langue mentionnée}
-        is_activated: {label: Visible, help: Cette catégorie est-elle visible pour les utilisateurs du site}
+        is_activated: {label: Visible, help: 'Cette catégorie est-elle visible pour les utilisateurs du site ?'}
         _isActivated: {label: Visible}
->>>>>>> e114f1557e2fb7b158dc2f3ad55807c05bd517c4
       list:
         title: Liste des catégories
         display: [=name, _isActivated]

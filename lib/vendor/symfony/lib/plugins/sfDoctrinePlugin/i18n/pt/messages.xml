@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
 <xliff version="1.0">
-  <file source-language="EN" target-language="pt" datatype="plaintext" original="messages" date="2011-03-23T13:55:42Z" product-name="messages">
+  <file source-language="EN" target-language="pt" datatype="plaintext" original="messages" date="2011-03-23T15:41:08Z" product-name="messages">
     <header/>
     <body>
       <trans-unit id="1">
@@ -23,6 +23,22 @@
       <trans-unit id="5">
         <source>Accueil</source>
         <target>Início</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>Mentions légales</source>
+        <target>Menções legais</target>
+      </trans-unit>
+      <trans-unit id="7">
+        <source>Plan du site</source>
+        <target>Mapa do site</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>Projet agréé par la Fondation Roi Baudouin | Copyright &amp;copy; 2009 - 2011 Graine de vie. All rights reserved.</source>
+        <target>Projeto reconhecido pela Fundação Rei Baudouin | Copyright &amp;copy; 2009 - 2011 Graine de Vie. Todos os direitos reservados.</target>
+      </trans-unit>
+      <trans-unit id="9">
+        <source>Contact</source>
+        <target>Contatos</target>
       </trans-unit>
     </body>
   </file>

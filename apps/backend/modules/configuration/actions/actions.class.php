@@ -24,12 +24,24 @@ class configurationActions extends sfActions
   	$this->configs=Doctrine_Query::create()->from('Configuration c')->orderBy('configuration_id')->execute();
   	foreach($this->configs as $config)
   	{
-  		if($config->getType()==1)
-  			$config->setIsActivated($config->getIsKernel() || isset($_POST['options'][$config->getId()]));
+  		if(($config->getType()==1))
+      {
+        foreach($this->configs as $c)
+        {
+          if($config->getConfigurationId()==null || (($config->getConfigurationId()==$c->getId()) && $c->getIsActivated()))
+          {
+            $config->setIsActivated(($config->getIsKernel() || isset($_POST['options'][$config->getId()])));
+            break;
+          }
+          else
+            $config->setIsActivated(false);
+        }
+      }
   		else
   			if(isset($_POST['options'][$config->getId()]))
   				$config->setValue($_POST['options'][$config->getId()]);
-  		$config->save();
+      if(!$config->isNew())
+  		  $config->save();
   	}
   	$this->getUser()->setFlash('notice','La configuration du site à été mise à jour.');
   	$this->redirect('configuration');

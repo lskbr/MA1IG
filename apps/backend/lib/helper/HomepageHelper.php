@@ -10,6 +10,6 @@ function homepageItem($name, $desc, $route, $img=null)
 			$txt.='<img src="/images/icons/'.$img.'.png"/>';
 	}
 	$txt.=$name.' </div>';
-	$txt.='<div>'.$desc.'</div></a>';
+	$txt.='<div class="desc">'.$desc.'</div></a>';
 	return $txt;
 } ?>

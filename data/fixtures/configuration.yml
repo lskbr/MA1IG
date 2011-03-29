@@ -1,25 +1,36 @@
 BooleanConfiguration:
   News:
+    main: news
     name: Actualités
     description: Active le système d'actualité
   Commentaires:
+    main: news_comments
     name: Commentaire
     description: Active le système de commentaire
     BooleanConfiguration: News
   Calendrier:
+    main: calendar
     name: Calendrier
   CMS:
+    main: cms
     name: Gestion de contenu
     description: Active le système de CMS
     is_activated: true
     is_kernel: true
+  Citation:
+    main: citation
+    name: Citation
+    description: Place aléatoirement une citation sur chaque page de contenu du site.
+    is_activated: false
 NumericConfiguration:
   NewsParPage:
+    main: news_by_page
     name: Nombre de news par page
     description: Indique le nombre d'actualités affichées sur la page d'accueil.
     BooleanConfiguration: News
     value: 5
   ComsParPage:
+    main: news_comments_by_page
     name: Nombre de commentaires par page
     BooleanConfiguration: Commentaires
     value: 4

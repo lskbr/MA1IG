@@ -16,6 +16,7 @@ abstract class BaseConfigurationForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'               => new sfWidgetFormInputHidden(),
+      'main'             => new sfWidgetFormInputText(),
       'name'             => new sfWidgetFormInputText(),
       'description'      => new sfWidgetFormInputText(),
       'configuration_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('BooleanConfiguration'), 'add_empty' => true)),
@@ -27,6 +28,7 @@ abstract class BaseConfigurationForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'               => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'main'             => new sfValidatorString(array('max_length' => 255)),
       'name'             => new sfValidatorString(array('max_length' => 255)),
       'description'      => new sfValidatorPass(array('required' => false)),
       'configuration_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('BooleanConfiguration'), 'required' => false)),
@@ -35,10 +37,6 @@ abstract class BaseConfigurationForm extends BaseFormDoctrine
       'is_activated'     => new sfValidatorBoolean(array('required' => false)),
       'value'            => new sfValidatorInteger(array('required' => false)),
     ));
-
-    $this->validatorSchema->setPostValidator(
-      new sfValidatorDoctrineUnique(array('model' => 'Configuration', 'column' => array('name')))
-    );
 
     $this->widgetSchema->setNameFormat('configuration[%s]');
 

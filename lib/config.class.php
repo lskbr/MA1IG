@@ -8,23 +8,25 @@ class config
 	}
 	private function __clone(){}
 
-	private function getAction($key)
+	private function getConfig($key)
 	{
 		foreach($this->_configs as $config)
-			if($config->getName()==$key)
+			if($config->getMain()==$key)
 				return $config;
 		throw new ConfigNotFoundException();
 	}
 	public function get($key)
 	{
-		if(($action=getAction())->getType()==1)
+		$config=$this->getConfig($key);
+		if($config->getType()==1)
 			return $config->isActivated();
 		else
 			return $config->getValue();
 	}
 	public function forward404Unless($sfAction,$key)
 	{
-		if(($action=getAction())->getType()==1)
+		$config=$this->getConfig($key);
+		if($config->getType()==1)
 			$sfAction->forward404Unless(get($key));
 		else
 			throw new InvalidConfigTypeException();

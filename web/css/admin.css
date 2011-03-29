@@ -12,11 +12,13 @@ html{
 
 body{
     background:#fff url(../images/bg.jpg) repeat-x;
+    background-color:#dddddd;
     font-size:12px;
     font-family:"Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
     line-height:1.5em;
     color:#484848;
     margin:0 auto;
+    padding-bottom:30px;
 }
 #head{
     background:transparent url(../images/bg_head.png) no-repeat;
@@ -118,9 +120,6 @@ body{
 #sidebar li.current a{
     background-color: #ddd;
 }
-.body{
-    background-color:#484848;
-}
 .main{
     margin-left:270px;
     background-color: #ddd;
@@ -130,8 +129,8 @@ body{
 }
 #footer{
     clear:both;
-    height:30px;
-    background-color:#484848;
+    height:5px;
+    background-color:#dddddd;
 }
 h1{
     border-bottom-color: #c0c0c0;
@@ -201,7 +200,7 @@ textarea{
 .case_homepage{
     float:left;
     width:166px;
-    height:80px;
+    height:100px;
     overflow:hidden;
     border:1px solid #c0c0c0;
     padding:15px;
@@ -227,6 +226,7 @@ textarea{
     position:relative;
     font-size:15px;
     font-family: "Lucida Sans Unicode";
+    line-height:19px;
 }
 .case_homepage:hover div.case_txt{
     color:#4a4a4a;
@@ -239,7 +239,13 @@ textarea{
     height:40px;
     width:40px;
     vertical-align: middle;
+    float:left;
     margin-right:10px;
+}
+.case_homepage .desc{
+    clear:both;
+    font-size:12px;
+    line-height:15px;
 }
 .leveled{
     margin-left:40px;

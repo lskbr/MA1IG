@@ -24,6 +24,11 @@ class categoryActions extends autoCategoryActions {
         $this->printResult($result);
     }
 
+    public function executeActivateToggle(sfWebRequest $request){
+        $result = Category::activateToggle($this->getRoute()->getObject());
+        $this->redirect('category');
+    }
+
     private function printResult($result) {
         if ($result) {
             $this->getUser()->setFlash('notice', 'Position dans le menu modifiée');

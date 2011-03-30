@@ -36,7 +36,7 @@
                     use_helper('AdminMenu'); //Ajouter ici pour le menu
                     if($sf_user->isAuthenticated())
                     {
-                    menu_item('Accueil', 'homepage', $sf_context); // 'NomAAfficher','route',$sf_context;
+                    menu_item('Accueil', 'homepage', $sf_context); // 'NomAAfficher','route',$sf_context,à activer;
                     menu_item('Langues', 'language', $sf_context);
                     menu_item('Configuration', 'configuration', $sf_context);
                     menu_item('Catégories', 'category', $sf_context);
@@ -45,6 +45,7 @@
                     menu_item('Groupes','sf_guard_group',$sf_context);
                     menu_item('Droits','sf_guard_permission',$sf_context);
                     menu_item('Citation','citation',$sf_context,'citation');
+                    menu_item('Partenaires','partner',$sf_context,'partner');
                     }
                     else
                     {

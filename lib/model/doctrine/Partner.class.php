@@ -12,5 +12,14 @@
  */
 class Partner extends BasePartner
 {
-
+	public function enable()
+	{
+		$this->setIsVisible(true);
+		$this->save();
+	}
+	public function disable()
+	{
+		$this->setIsVisible(false);
+		$this->save();
+	}
 }

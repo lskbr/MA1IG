@@ -22,6 +22,11 @@ BooleanConfiguration:
     name: Citation
     description: Place aléatoirement une citation sur chaque page de contenu du site.
     is_activated: false
+  Partner:
+    main: partner
+    name: Partenaire
+    description: Affiche la liste des partenaires sur une page avec les liens vers leurs sites.
+    is_activated: false
 NumericConfiguration:
   NewsParPage:
     main: news_by_page

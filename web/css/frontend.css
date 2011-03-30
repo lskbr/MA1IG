@@ -120,9 +120,9 @@ div#header {
 div#overPSlider {
         position: absolute;
         top: 0;
-        left: 5px;
+        left: 2px;
 	height: 690px;
-	width: 990px;
+	width: 995px;
         overflow: hidden;
 }
 div#pSlider {
@@ -273,8 +273,8 @@ div#login input#login-button:hover {
 
 div#header-logo {
 	position: absolute;
-	left: 25px;
-	top: 0px;
+	left: 10px;
+	top: -30px;
 	width: 319px;
 	z-index: 1000;
 }

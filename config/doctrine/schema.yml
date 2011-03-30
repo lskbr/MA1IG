@@ -77,3 +77,4 @@ Partner:
     site: {type: string(255)}
     is_visible: {type: boolean, default: 0}
     position: {type: integer}
+    visit_count: {type:integer, default: 0}

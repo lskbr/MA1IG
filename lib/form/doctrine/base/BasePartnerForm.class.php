@@ -15,15 +15,17 @@ abstract class BasePartnerForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'id'       => new sfWidgetFormInputHidden(),
-      'logo'     => new sfWidgetFormInputText(),
-      'position' => new sfWidgetFormInputText(),
+      'id'          => new sfWidgetFormInputHidden(),
+      'logo'        => new sfWidgetFormInputText(),
+      'position'    => new sfWidgetFormInputText(),
+      'visit_count' => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
-      'id'       => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'logo'     => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'position' => new sfValidatorInteger(array('required' => false)),
+      'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'logo'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'position'    => new sfValidatorInteger(array('required' => false)),
+      'visit_count' => new sfValidatorInteger(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('partner[%s]');

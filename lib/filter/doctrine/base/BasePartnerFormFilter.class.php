@@ -13,13 +13,15 @@ abstract class BasePartnerFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'logo'     => new sfWidgetFormFilterInput(),
-      'position' => new sfWidgetFormFilterInput(),
+      'logo'        => new sfWidgetFormFilterInput(),
+      'position'    => new sfWidgetFormFilterInput(),
+      'visit_count' => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
-      'logo'     => new sfValidatorPass(array('required' => false)),
-      'position' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'logo'        => new sfValidatorPass(array('required' => false)),
+      'position'    => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'visit_count' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
     ));
 
     $this->widgetSchema->setNameFormat('partner_filters[%s]');
@@ -39,9 +41,10 @@ abstract class BasePartnerFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id'       => 'Number',
-      'logo'     => 'Text',
-      'position' => 'Number',
+      'id'          => 'Number',
+      'logo'        => 'Text',
+      'position'    => 'Number',
+      'visit_count' => 'Number',
     );
   }
 }

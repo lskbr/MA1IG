@@ -9,7 +9,7 @@
 	{
 		echo "<div class='partner_col1'>";
 		echo "<img src='/uploads/logos/".$partner[$i]->getLogo()."'/>";
-		echo "<a href='".$partner[$i]->getSite()."' target='_blank'><h3>".$partner[$i]->getCompanyName()."</h3></a>";
+		echo "<a href='partner/".$partner[$i]->getId()."' target='_blank'><h3>".$partner[$i]->getCompanyName()."</h3></a>";
 		echo "<br/>".$partner[$i]->getDescription();
 		echo "</div>";
 	}

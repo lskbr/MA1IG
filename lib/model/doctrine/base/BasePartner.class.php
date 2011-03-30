@@ -11,6 +11,7 @@
  * @property string $site
  * @property boolean $is_visible
  * @property integer $position
+ * @property integer $visit_count
  * 
  * @method string  getCompanyName()  Returns the current record's "company_name" value
  * @method string  getLogo()         Returns the current record's "logo" value
@@ -18,12 +19,14 @@
  * @method string  getSite()         Returns the current record's "site" value
  * @method boolean getIsVisible()    Returns the current record's "is_visible" value
  * @method integer getPosition()     Returns the current record's "position" value
+ * @method integer getVisitCount()   Returns the current record's "visit_count" value
  * @method Partner setCompanyName()  Sets the current record's "company_name" value
  * @method Partner setLogo()         Sets the current record's "logo" value
  * @method Partner setDescription()  Sets the current record's "description" value
  * @method Partner setSite()         Sets the current record's "site" value
  * @method Partner setIsVisible()    Sets the current record's "is_visible" value
  * @method Partner setPosition()     Sets the current record's "position" value
+ * @method Partner setVisitCount()   Sets the current record's "visit_count" value
  * 
  * @package    grainedevie
  * @subpackage model
@@ -57,6 +60,10 @@ abstract class BasePartner extends sfDoctrineRecord
              ));
         $this->hasColumn('position', 'integer', null, array(
              'type' => 'integer',
+             ));
+        $this->hasColumn('visit_count', 'integer', null, array(
+             'type' => 'integer',
+             'default' => 0,
              ));
     }
 

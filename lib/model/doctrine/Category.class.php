@@ -48,6 +48,20 @@ class Category extends BaseCategory {
         }
     }
 
+    public static function activateToggle(Category $category) {
+        $currentIsActivated = $category->getIsActivated();
+
+        if ($currentIsActivated) {
+            $category->setIsActivated(false);
+            $category->save();
+        } else {
+            $category->setIsActivated(true);
+            $category->save();
+        }
+
+        return true;
+    }
+
     public static function getLastPosition() {
         return Doctrine_Query::create()->from('category c')->count();
     }

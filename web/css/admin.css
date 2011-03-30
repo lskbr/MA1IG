@@ -20,6 +20,16 @@ body{
     margin:0 auto;
     padding-bottom:30px;
 }
+
+a{
+    color:#454545;
+    text-decoration:none;
+}
+a:hover{
+    color:#454545;
+    text-decoration:underline;
+}
+
 #head{
     background:transparent url(../images/bg_head.png) no-repeat;
     height:199px;
@@ -269,14 +279,24 @@ textarea{
     font-size:0.8em;
     color:#8a8a8a;
 }
+
+
+table{
+    border:1px solid #7b7b7b;
+    border-collapse:collapse;
+}
 table .flag{
     height:50px;
     width:100px;
     padding:3px;
 }
-table{
-    border:1px solid #7b7b7b;
-    border-collapse:collapse;
+table a{
+    color:#454545;
+    text-decoration:none;
+}
+table a:hover{
+    color:#454545;
+    text-decoration:underline;
 }
 th, td {
     border:1px solid #7b7b7b;
@@ -287,9 +307,28 @@ thead th{
     padding:5px;
     padding-left:10px;
     padding-right:10px;
-    
-    color: #8a8a8a;
+
+    background-color: #8f8f8f;
+    color: #cdcdcd;
 }
+.odd:hover, .even:hover {
+    background-color: #c1c1c1;
+}
+tr.odd {
+    background-color: #eaeaea;
+}
+tr.even {
+    background-color: #cccccc;
+}
+th a, th a:hover {
+    color: #cdcdcd;
+}
+
+.sf_admin_list {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .sf_admin_td_actions{
     list-style-type:none;
     text-align: left;
@@ -329,17 +368,6 @@ thead th{
 }
 
 
-
-
-
-table a{
-    color:#454545;
-    text-decoration:none;
-}
-table a:hover{
-    color:#454545;
-    text-decoration:underline;
-}
 img.add{
     position:absolute;
     height:25px;

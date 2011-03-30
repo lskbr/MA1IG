@@ -15,8 +15,10 @@ function display($configs,$config,$first=false)
 			display($configs,$configs[$i]);
 	echo '</div>';
 }
+
 echo form_tag('configuration/update');
 use_helper('ConfigForm');
+
 foreach($configs as $config)
 {
 	if($config->getParent()->__toString()=="")

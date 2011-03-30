@@ -359,12 +359,18 @@ th a, th a:hover {
     background-image:url(../images/icons/delete.png);
     background-position:0 50%;
     background-repeat:no-repeat;
-    padding-left:18px;
+    padding-left:20px;
 }
 
 .sf_admin_actions{
     list-style-type:none;
 
+}
+.sf_admin_action_new{
+    background-image:url(../images/icons/add2.png);
+    background-position:0 50%;
+    background-repeat:no-repeat;
+    padding-left:18px;
 }
 
 

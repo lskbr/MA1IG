@@ -2,5 +2,5 @@
 
 sfGuardPermission:
   AccesAdmin:
-    name: AcessAdmin
+    name: AccesAdmin
     description: Permet d'accèder au backend

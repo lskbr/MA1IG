@@ -34,6 +34,17 @@ sfGuardUser:
     password: 13031991
     Groups: [Administrateur]
 
+  Kevin:
+    first_name: Kévin
+    last_name: Neirynk
+    email_address: kneirynck138@hotmail.com
+    algorithm: sha1
+    username: Kevin
+    is_active: 1
+    is_super_admin: 0
+    password: kevin
+    Groups: [Administrateur]
+
   Alexandre:
     first_name: Alexandre
     last_name: Anoutchine

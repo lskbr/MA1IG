@@ -45,6 +45,7 @@
                     echo menu_item('Groupes','sf_guard_group',$sf_context);
                     echo menu_item('Droits','sf_guard_permission',$sf_context);
                     echo menu_item('Citation','citation',$sf_context);
+                    echo menu_item('Partenaires','partner',$sf_context);
                     }
                     else
                     {

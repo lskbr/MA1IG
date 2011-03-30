@@ -14,3 +14,5 @@ echo homepageItem('Gestion des pages', 'Gestion des pages et de leurs contenu', 
 echo homepageItem('Ajouter une page', 'Ajout d\'une page au site internet', 'static_page_new', 'add_staticpage');
 echo homepageItem('Liste des citations', 'Afficher la liste des citations', 'citation', 'quote-left');
 echo homepageItem('Ajouter une citation', 'Ajout d\'une citation', 'citation_new', 'add_quote-left');
+echo homepageItem('Liste des partenaires', 'Afficher la liste des partenaires', 'partner', 'partner');
+echo homepageItem('Ajouter un partenaire', 'Ajout d\'un partenaire', 'partner_new', 'add_partner');

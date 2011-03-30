@@ -16,7 +16,7 @@ generator:
       fields:  ~
       list:     
         title: Liste des partenaires de Graine de Vie
-        display: [_logo, =company_name, =description]
+        display: [_logo, =company_name, =description, visit_count]
         fields:
           logo:
             label: Logo
@@ -24,6 +24,8 @@ generator:
             label: Nom de Société
           Description:
             label: Description
+          visit_count:
+            label: Nombre de clics
         object_actions:
           enable: {label: "Activer" action: "enable"}
           disable: {label: "Désactiver" action: "disable"}

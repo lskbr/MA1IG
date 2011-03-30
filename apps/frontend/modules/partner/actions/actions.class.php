@@ -19,4 +19,11 @@ class partnerActions extends sfActions
   {
     $this->partner = Doctrine_Core::getTable('partner')->createQuery('a')->innerJoin('a.Translation t')->where("t.lang=?", $this->getUser()->getCulture())->andWhere('t.is_visible=?', true)->execute();
   }
+  public function executeShow(sfWebRequest $request)
+  {
+  	$partner = $this->getRoute()->getObject();
+  	$partner->setVisitCount($partner->getVisitCount()+1);
+  	$partner->save();
+  	$this->redirect($partner->getSite());
+  }
 }

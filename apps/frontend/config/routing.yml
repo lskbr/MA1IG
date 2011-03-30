@@ -28,6 +28,15 @@ page:
     id: \d+
     sf_method: [get]
 
+partner_show:
+  url: /:sf_culture/partner/:id
+  class:   sfDoctrineRoute
+  options: { model: Partner, type: object }
+  param:   { module: partner, action: show }
+  requirements:
+    id: \d+
+    sf_method: [get]
+
 default_index:
   url:   /:sf_culture/:module
   param: { action: index }

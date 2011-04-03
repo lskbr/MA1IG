@@ -1,0 +1,40 @@
+Galery:
+  People:
+    position: 1
+    is_activated: 1
+    Translation:
+       en:
+         name: People
+       fr:
+         name: Personnes
+       nl:
+         name: Mensen
+       pt:
+         name: Gente
+
+  Place:
+    position: 2
+    is_activated: 1
+    Translation:
+       en:
+         name: Place
+       fr:
+         name: Lieu
+       nl:
+         name: Plaats
+       pt:
+         name: Lugar
+
+  Plantation:
+    position: 3
+    is_activated: 1
+    Translation:
+      en:
+        name: Plantation
+      fr:
+        name: PlantationFR
+      nl:
+        name: Plantage
+      pt:
+        name: Plantação
+

@@ -1,3 +1,21 @@
+galery:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Galery
+    module:               galery
+    prefix_path:          /galery
+    column:               id
+    with_wildcard_routes: true
+
+photo:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Photo
+    module:               photo
+    prefix_path:          /photo
+    column:               id
+    with_wildcard_routes: true
+
 partner:
   class: sfDoctrineRouteCollection
   options:

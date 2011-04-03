@@ -78,3 +78,22 @@ Partner:
     is_visible: {type: boolean, default: 0}
     position: {type: integer}
     visit_count: {type:integer, default: 0}
+
+Galery:
+  actAs: {Timestampable: ~, I18n: {fields: [name]}}
+  columns:
+    name: {type: string(40), notnull: true, unique: true}
+    position: {type: integer, notnull: true}
+    is_activated: {type: boolean, notnull: true, default: false}
+
+Photo:
+  actAs: {Timestampable: ~, I18n: {fields: [title, description] }}
+  columns:
+    title: {type: string(255)}
+    url: {type: string(255)}
+    description: {type: text}
+    publication_start: {type: timestamp}
+    publication_end: {type: timestamp}
+    galery_id: {type: integer}
+  relations:
+    Galery: {local: galery_id, foreign: id}

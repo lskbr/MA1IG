@@ -14,7 +14,9 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
+      list:    
+        title: Géstion de Galeries
+        display: [id, name, position, is_activated]
       filter:  ~
       form:    ~
       edit:    ~

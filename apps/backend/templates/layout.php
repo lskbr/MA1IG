@@ -46,6 +46,8 @@
                     menu_item('Droits','sf_guard_permission',$sf_context);
                     menu_item('Citation','citation',$sf_context,'citation');
                     menu_item('Partenaires','partner',$sf_context,'partner');
+                    menu_item('Photos','photo',$sf_context);
+                    menu_item('Galeries','galery',$sf_context);
                     }
                     else
                     {

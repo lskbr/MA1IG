@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Id</th>
+      <th>Image</th>
       <th>Url</th>
       <th>Publication start</th>
       <th>Publication end</th>
@@ -16,6 +17,7 @@
     <?php foreach ($photos as $photo): ?>
     <tr>
       <td><a href="<?php echo url_for('photo/show?id='.$photo->getId()) ?>"><?php echo $photo->getId() ?></a></td>
+      <td><?php include_partial('photo/picsmall', array('photo' => $photo)) ?></td>
       <td><?php echo $photo->getUrl() ?></td>
       <td><?php echo $photo->getPublicationStart() ?></td>
       <td><?php echo $photo->getPublicationEnd() ?></td>
@@ -25,6 +27,4 @@
     </tr>
     <?php endforeach; ?>
   </tbody>
-</table>
-
-  <a href="<?php echo url_for('photo/new') ?>">New</a>
+</table>  

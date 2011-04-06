@@ -625,4 +625,20 @@ blockquote p.author{
 	float: left;
 }
 
+.photo_single{
+    max-width:600px;
+    max-height:500px;
+    vertical-align:middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;  
+}
 
+.photo_small{
+    max-width:100px;
+    max-height:100px;
+    vertical-align:middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;  
+}

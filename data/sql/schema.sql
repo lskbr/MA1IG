@@ -15,8 +15,6 @@ CREATE TABLE partner_translation (id BIGINT, company_name VARCHAR(255), descript
 CREATE TABLE partner (id BIGINT AUTO_INCREMENT, logo VARCHAR(255), position BIGINT, visit_count BIGINT DEFAULT 0, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE photo_translation (id BIGINT, title VARCHAR(255), description text, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE photo (id BIGINT AUTO_INCREMENT, url VARCHAR(255), publication_start DATETIME, publication_end DATETIME, galery_id BIGINT, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX galery_id_idx (galery_id), PRIMARY KEY(id)) ENGINE = INNODB;
-CREATE TABLE photos_translation (id BIGINT, title VARCHAR(255), description text, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
-CREATE TABLE photos (id BIGINT AUTO_INCREMENT, url VARCHAR(255), publication_start DATETIME, publication_end DATETIME, galery_id BIGINT, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX galery_id_idx (galery_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE static_page_translation (id BIGINT, menu_title VARCHAR(255) NOT NULL, content text NOT NULL, is_activated TINYINT(1) DEFAULT '0', title VARCHAR(255) NOT NULL, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE static_page (id BIGINT AUTO_INCREMENT, position BIGINT NOT NULL, publication_date DATETIME, category_id BIGINT, INDEX category_id_idx (category_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE sf_guard_forgot_password (id BIGINT AUTO_INCREMENT, user_id BIGINT NOT NULL, unique_key VARCHAR(255), expires_at DATETIME NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX user_id_idx (user_id), PRIMARY KEY(id)) ENGINE = INNODB;
@@ -39,8 +37,6 @@ ALTER TABLE page ADD CONSTRAINT page_category_id_category_id FOREIGN KEY (catego
 ALTER TABLE partner_translation ADD CONSTRAINT partner_translation_id_partner_id FOREIGN KEY (id) REFERENCES partner(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE photo_translation ADD CONSTRAINT photo_translation_id_photo_id FOREIGN KEY (id) REFERENCES photo(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE photo ADD CONSTRAINT photo_galery_id_galery_id FOREIGN KEY (galery_id) REFERENCES galery(id);
-ALTER TABLE photos_translation ADD CONSTRAINT photos_translation_id_photos_id FOREIGN KEY (id) REFERENCES photos(id) ON UPDATE CASCADE ON DELETE CASCADE;
-ALTER TABLE photos ADD CONSTRAINT photos_galery_id_galery_id FOREIGN KEY (galery_id) REFERENCES galery(id);
 ALTER TABLE static_page_translation ADD CONSTRAINT static_page_translation_id_static_page_id FOREIGN KEY (id) REFERENCES static_page(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE static_page ADD CONSTRAINT static_page_category_id_category_id FOREIGN KEY (category_id) REFERENCES category(id);
 ALTER TABLE sf_guard_forgot_password ADD CONSTRAINT sf_guard_forgot_password_user_id_sf_guard_user_id FOREIGN KEY (user_id) REFERENCES sf_guard_user(id) ON DELETE CASCADE;

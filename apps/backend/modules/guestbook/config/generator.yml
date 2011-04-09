@@ -1,0 +1,34 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Guestbook
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          guestbook
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Liste des messages postés dans le livre d'or :
+        display: [_flag, =content, created_at, _is_validated]
+        fields:
+          flag:
+            label: Langue
+          content:
+            label: Message
+          created_at:
+            label: Date du message
+          is_validated:
+            label: Status
+        batch_actions: {}
+      filter:
+        display: [language_id, content]
+      form:    ~
+      edit:    ~
+      new:     ~

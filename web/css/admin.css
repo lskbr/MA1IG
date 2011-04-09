@@ -158,6 +158,12 @@ h1{
     max-height:35px;
     vertical-align:middle;
 }
+.small_flag{
+    width:40px;
+    height: 26px;
+    margin: -2px;
+    vertical-align:middle;
+}
 
 .photo{
     max-width:600px;
@@ -386,6 +392,18 @@ th a, th a:hover {
 }
 .sf_admin_action_new{
     background-image:url(../images/icons/add2.png);
+    background-position:0 50%;
+    background-repeat:no-repeat;
+    padding-left:18px;
+}
+.sf_admin_action_enable{
+    background-image:url(../images/icons/valider.png);
+    background-position:0 50%;
+    background-repeat:no-repeat;
+    padding-left:18px;
+}
+.sf_admin_action_disable{
+    background-image:url(../images/icons/back.png);
     background-position:0 50%;
     background-repeat:no-repeat;
     padding-left:18px;

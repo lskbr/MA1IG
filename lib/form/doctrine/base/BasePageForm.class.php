@@ -19,6 +19,8 @@ abstract class BasePageForm extends BaseFormDoctrine
       'position'         => new sfWidgetFormInputText(),
       'publication_date' => new sfWidgetFormDateTime(),
       'category_id'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Category'), 'add_empty' => true)),
+      'created_at'       => new sfWidgetFormDateTime(),
+      'updated_at'       => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
@@ -26,6 +28,8 @@ abstract class BasePageForm extends BaseFormDoctrine
       'position'         => new sfValidatorInteger(),
       'publication_date' => new sfValidatorDateTime(array('required' => false)),
       'category_id'      => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Category'), 'required' => false)),
+      'created_at'       => new sfValidatorDateTime(),
+      'updated_at'       => new sfValidatorDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('page[%s]');

@@ -36,22 +36,23 @@
                     use_helper('AdminMenu'); //Ajouter ici pour le menu
                     if($sf_user->isAuthenticated())
                     {
-                    menu_item('Accueil', 'homepage', $sf_context); // 'NomAAfficher','route',$sf_context,à activer;
-                    menu_item('Langues', 'language', $sf_context);
-                    menu_item('Configuration', 'configuration', $sf_context);
-                    menu_item('Catégories', 'category', $sf_context);
-                    menu_item('Pages','static_page',$sf_context);
-                    menu_item('Utilisateurs','sf_guard_user', $sf_context);
-                    menu_item('Groupes','sf_guard_group',$sf_context);
-                    menu_item('Droits','sf_guard_permission',$sf_context);
-                    menu_item('Citation','citation',$sf_context,'citation');
-                    menu_item('Partenaires','partner',$sf_context,'partner');
-                    menu_item('Photos','photo',$sf_context);
-                    menu_item('Galeries','galery',$sf_context);
+                        menu_item('Accueil', 'homepage', $sf_context); // 'NomAAfficher','route',$sf_context,à activer;
+                        menu_item('Langues', 'language', $sf_context);
+                        menu_item('Configuration', 'configuration', $sf_context);
+                        menu_item('Catégories', 'category', $sf_context);
+                        menu_item('Pages','static_page',$sf_context);
+                        menu_item('Utilisateurs','sf_guard_user', $sf_context);
+                        menu_item('Groupes','sf_guard_group',$sf_context);
+                        menu_item('Droits','sf_guard_permission',$sf_context);
+                        menu_item('Citation','citation',$sf_context,'citation');
+                        menu_item('Partenaires','partner',$sf_context,'partner');
+                        menu_item('Livre d\'or','guestbook',$sf_context);
+                        menu_item('Photos','photo',$sf_context);
+                        menu_item('Galeries','galery',$sf_context);
                     }
                     else
                     {
-                     echo menu_item('Connexion','sf_guard_signin',$sf_context);
+                        menu_item('Connexion','sf_guard_signin',$sf_context);
                     }
                     ?>
                 </ul>

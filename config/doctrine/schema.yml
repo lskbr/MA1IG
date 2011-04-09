@@ -16,8 +16,9 @@ Category:
     is_activated: {type: boolean, notnull: true, default: false}
 
 Page:
-  actAs: {Timestampable: ~}
-  actAs: {I18n: {fields: [menu_title, content, is_activated, title]}}
+  actAs:
+    Timestampable: ~
+    I18n: {fields: [menu_title, content, is_activated, title]}
   columns:
     menu_title: {type: string(255), notnull: true}
     position: {type: integer, notnull: true}
@@ -99,6 +100,8 @@ Photo:
     Galery: {local: galery_id, foreign: id}
 
 Guestbook:
+  actAs: 
+    Timestampable: ~
   columns:
     content: {type: text}
     is_validated: {type: boolean, notnull: true, default: false}

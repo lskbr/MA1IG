@@ -1,3 +1,12 @@
+guestbook:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Guestbook
+    module:               guestbook
+    prefix_path:          /guestbook
+    column:               id
+    with_wildcard_routes: true
+
 galery:
   class: sfDoctrineRouteCollection
   options:

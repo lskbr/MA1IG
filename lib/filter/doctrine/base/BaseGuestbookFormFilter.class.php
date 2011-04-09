@@ -16,12 +16,16 @@ abstract class BaseGuestbookFormFilter extends BaseFormFilterDoctrine
       'content'      => new sfWidgetFormFilterInput(),
       'is_validated' => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
       'language_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Language'), 'add_empty' => true)),
+      'created_at'   => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'updated_at'   => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
     ));
 
     $this->setValidators(array(
       'content'      => new sfValidatorPass(array('required' => false)),
       'is_validated' => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
       'language_id'  => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Language'), 'column' => 'id')),
+      'created_at'   => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
+      'updated_at'   => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
     ));
 
     $this->widgetSchema->setNameFormat('guestbook_filters[%s]');
@@ -45,6 +49,8 @@ abstract class BaseGuestbookFormFilter extends BaseFormFilterDoctrine
       'content'      => 'Text',
       'is_validated' => 'Boolean',
       'language_id'  => 'ForeignKey',
+      'created_at'   => 'Date',
+      'updated_at'   => 'Date',
     );
   }
 }

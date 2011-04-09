@@ -12,5 +12,14 @@
  */
 class Guestbook extends BaseGuestbook
 {
-
+	public function enable()
+	{
+		$this->setIsValidated(true);
+		$this->save();
+	}
+	public function disable()
+	{
+		$this->setIsValidated(false);
+		$this->save();
+	}
 }

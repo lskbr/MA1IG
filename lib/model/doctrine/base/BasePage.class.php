@@ -56,6 +56,7 @@ abstract class BasePage extends sfDoctrineRecord
              'local' => 'category_id',
              'foreign' => 'id'));
 
+        $timestampable0 = new Doctrine_Template_Timestampable();
         $i18n0 = new Doctrine_Template_I18n(array(
              'fields' => 
              array(
@@ -65,6 +66,7 @@ abstract class BasePage extends sfDoctrineRecord
               3 => 'title',
              ),
              ));
+        $this->actAs($timestampable0);
         $this->actAs($i18n0);
     }
 }

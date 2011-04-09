@@ -48,6 +48,8 @@
                     menu_item('Partenaires','partner',$sf_context,'partner');
                     menu_item('Catégories de FAQ','faq_category',$sf_context,'faq');
                     menu_item('FAQ','faq',$sf_context,'faq');
+                    menu_item('Photos','photo',$sf_context);
+                    menu_item('Galeries','galery',$sf_context);
                     }
                     else
                     {

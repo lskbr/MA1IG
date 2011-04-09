@@ -14,8 +14,12 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
+      list:    
+        title: Géstion de Photos
+        display: [_picsmall, id, title, description, galery, publication_start, publication_end]  
+        sort: [id, title, description, galery, publication_start, publication_end]                  
       filter:  ~
-      form:    ~
+      form:
+        class: PhotoForm
       edit:    ~
       new:     ~

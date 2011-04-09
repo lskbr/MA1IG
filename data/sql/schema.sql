@@ -8,6 +8,7 @@ CREATE TABLE dynamic_page_translation (id BIGINT, menu_title VARCHAR(255) NOT NU
 CREATE TABLE dynamic_page (id BIGINT AUTO_INCREMENT, position BIGINT NOT NULL, publication_date DATETIME, category_id BIGINT, controller VARCHAR(255) NOT NULL, action VARCHAR(255) NOT NULL, boolean_configuation_id BIGINT NOT NULL, INDEX category_id_idx (category_id), INDEX boolean_configuation_id_idx (boolean_configuation_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE galery_translation (id BIGINT, name VARCHAR(40) NOT NULL UNIQUE, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE galery (id BIGINT AUTO_INCREMENT, position BIGINT NOT NULL, is_activated TINYINT(1) DEFAULT '0' NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE guestbook (id BIGINT AUTO_INCREMENT, content text, is_validated TINYINT(1) DEFAULT '0' NOT NULL, language_id BIGINT, INDEX language_id_idx (language_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE language (id BIGINT AUTO_INCREMENT, name VARCHAR(40) NOT NULL UNIQUE, abbreviation VARCHAR(5) NOT NULL UNIQUE, flag VARCHAR(255), is_activated TINYINT(1) DEFAULT '0' NOT NULL, is_default TINYINT(1) NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE page_translation (id BIGINT, menu_title VARCHAR(255) NOT NULL, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE page (id BIGINT AUTO_INCREMENT, position BIGINT NOT NULL, publication_date DATETIME, category_id BIGINT, INDEX category_id_idx (category_id), PRIMARY KEY(id)) ENGINE = INNODB;
@@ -32,6 +33,7 @@ ALTER TABLE dynamic_page_translation ADD CONSTRAINT dynamic_page_translation_id_
 ALTER TABLE dynamic_page ADD CONSTRAINT dynamic_page_category_id_category_id FOREIGN KEY (category_id) REFERENCES category(id);
 ALTER TABLE dynamic_page ADD CONSTRAINT dynamic_page_boolean_configuation_id_configuration_id FOREIGN KEY (boolean_configuation_id) REFERENCES configuration(id);
 ALTER TABLE galery_translation ADD CONSTRAINT galery_translation_id_galery_id FOREIGN KEY (id) REFERENCES galery(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE guestbook ADD CONSTRAINT guestbook_language_id_language_id FOREIGN KEY (language_id) REFERENCES language(id);
 ALTER TABLE page_translation ADD CONSTRAINT page_translation_id_page_id FOREIGN KEY (id) REFERENCES page(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE page ADD CONSTRAINT page_category_id_category_id FOREIGN KEY (category_id) REFERENCES category(id);
 ALTER TABLE partner_translation ADD CONSTRAINT partner_translation_id_partner_id FOREIGN KEY (id) REFERENCES partner(id) ON UPDATE CASCADE ON DELETE CASCADE;

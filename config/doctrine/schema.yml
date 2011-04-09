@@ -97,3 +97,11 @@ Photo:
     galery_id: {type: integer}
   relations:
     Galery: {local: galery_id, foreign: id}
+
+Guestbook:
+  columns:
+    content: {type: text}
+    is_validated: {type: boolean, notnull: true, default: false}
+    language_id: {type: integer}
+  relations:
+    Language: {local: language_id, foreign: id}

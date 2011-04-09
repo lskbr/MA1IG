@@ -1,3 +1,21 @@
+faq_category:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                faqCategory
+    module:               faq_category
+    prefix_path:          /faq_category
+    column:               id
+    with_wildcard_routes: true
+
+faq:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                faq
+    module:               faq
+    prefix_path:          /faq
+    column:               id
+    with_wildcard_routes: true
+
 galery:
   class: sfDoctrineRouteCollection
   options:

@@ -37,6 +37,12 @@ partner_show:
     id: \d+
     sf_method: [get]
 
+faq:
+  url: /:sf_culture/faq
+  class: sfDoctrineRoute
+  options: { model: Faq, type: object }
+  param:   { module: faq, action: index }
+
 photo:
   url:   /:sf_culture/photo/:id/:title_slug
   class:   sfDoctrineRoute

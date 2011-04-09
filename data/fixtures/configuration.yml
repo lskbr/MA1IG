@@ -27,6 +27,11 @@ BooleanConfiguration:
     name: Partenaire
     description: Affiche la liste des partenaires sur une page avec les liens vers leurs sites.
     is_activated: false
+  Faq:
+    main: faq
+    name: Foire aux Questions
+    description: Affiche la liste des questions fréquemment posées par les visiteurs.
+    is_activated: false
 NumericConfiguration:
   NewsParPage:
     main: news_by_page

@@ -79,6 +79,22 @@ Partner:
     position: {type: integer}
     visit_count: {type:integer, default: 0}
 
+FaqCategory:
+  actAs: {I18n: {fields: [name]}}
+  columns:
+    name: {type: string(255)}
+
+Faq:
+  actAs: {I18n: {fields: [question, answer, is_activated]}}
+  columns:
+    question: {type: text}
+    answer: {type: text}
+    position: {type: integer}
+    is_activated: {type: boolean, default: 0}
+    faq_category_id: {type: integer, notnull: true}
+  relations:
+    faqCategory: {local: faq_category_id, foreign: id}
+
 Galery:
   actAs: {Timestampable: ~, I18n: {fields: [name]}}
   columns:

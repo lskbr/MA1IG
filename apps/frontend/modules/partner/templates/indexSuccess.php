@@ -1,5 +1,8 @@
 <h2>Nos Partenaires</h2>
-<p>Nombreuses sont les entreprises soucieuses de l'environnement, vous aussi, compensez votre empreinte écologique et profitez des avantages fiscaux <a href="">(en savoir plus)</a>
+<p>
+<?php 
+	echo __('Nombreuses sont les entreprises soucieuses de l\'environnement, vous aussi, compensez votre empreinte écologique et profitez des avantages fiscaux <a href="">(en savoir plus)</a>'; 
+?>
 <br/>
 
 

@@ -1,0 +1,1 @@
+<p><?php echo $guestbook[0]->getContent() ?></p>

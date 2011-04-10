@@ -29,6 +29,7 @@ generator:
         batch_actions: {}
       filter:
         display: [language_id, content]
-      form:    ~
+      form:
+        display: [content, language_id]
       edit:    ~
       new:     ~

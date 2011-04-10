@@ -12,5 +12,6 @@ class GuestbookForm extends BaseGuestbookForm
 {
   public function configure()
   {
+  	$this->setWidget('content',new sfWidgetFormTextarea(array(), array('size' => '20x5')));
   }
 }

@@ -16,4 +16,8 @@ class GuestbookTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('Guestbook');
     }
+    public function getOneRandom($culture)
+    {
+    	return Doctrine_Core::getTable('guestbook')->createQuery('a')->innerJoin('a.Language l')->where("l.abbreviation=?", $culture)->andWhere("a.is_validated=?",true)->orderBy('RAND()')->limit(1)->execute();
+    }
 }

@@ -15,6 +15,6 @@
             ?>
         </li>
         <?php echo $helper->linkToEdit($category, array('params' => array(), 'class_suffix' => 'edit', 'label' => 'Edit',)) ?>
-        <?php echo $helper->linkToDelete($category, array('params' => array(), 'confirm' => 'Are you sure?', 'class_suffix' => 'delete', 'label' => 'Delete',)) ?>
+        <?php echo $helper->linkToDelete($category, array('params' => array(), 'confirm' => 'Etes-vous sûr?', 'class_suffix' => 'delete', 'label' => 'Delete',)) ?>
     </ul>
 </td>

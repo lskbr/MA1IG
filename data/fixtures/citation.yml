@@ -1,5 +1,5 @@
 Citation:
-  P1:
+  C1:
     Translation:
       en:
         author: "Ameridian Proverb"
@@ -7,7 +7,7 @@ Citation:
       fr:
         author: "Proverbe Amérindien"
         content: "Nous n'héritons pas de la terre de nos parents, nous l'empruntons à nos enfants."
-  P2:
+  C2:
     Translation:
       fr:
         author: "Sagesse africaine"
@@ -18,7 +18,7 @@ Citation:
       nl:
         author: "Afikaan wijsheid"
         content: "Uw mensen hebben horlogen, maar nooit de tijd."
-  P3:
+  C3:
     Translation:
       fr:
         author: Sagesse des Lakotas
@@ -29,7 +29,7 @@ Citation:
       nl:
         author: "Lakotaan wijsheid"
         content: De hart van de man weg van de natuur woordt hard.
-  P4:
+  C4:
     Translation:
       fr:
         author: Kofi Annan

@@ -20,6 +20,16 @@ body{
     margin:0 auto;
     padding-bottom:30px;
 }
+
+a{
+    color:#454545;
+    text-decoration:none;
+}
+a:hover{
+    color:#454545;
+    text-decoration:underline;
+}
+
 #head{
     background:transparent url(../images/bg_head.png) no-repeat;
     height:199px;
@@ -149,6 +159,24 @@ h1{
     vertical-align:middle;
 }
 
+.photo{
+    max-width:600px;
+    max-height:400px;
+    vertical-align:middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.photo_small{
+    max-width:100px;
+    max-height:100px;
+    vertical-align:middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;  
+}
+
 
 label{
     display:block;
@@ -269,14 +297,24 @@ textarea{
     font-size:0.8em;
     color:#8a8a8a;
 }
+
+
+table{
+    border:1px solid #7b7b7b;
+    border-collapse:collapse;
+}
 table .flag{
     height:50px;
     width:100px;
     padding:3px;
 }
-table{
-    border:1px solid #7b7b7b;
-    border-collapse:collapse;
+table a{
+    color:#454545;
+    text-decoration:none;
+}
+table a:hover{
+    color:#454545;
+    text-decoration:underline;
 }
 th, td {
     border:1px solid #7b7b7b;
@@ -287,9 +325,28 @@ thead th{
     padding:5px;
     padding-left:10px;
     padding-right:10px;
-    
-    color: #8a8a8a;
+
+    background-color: #8f8f8f;
+    color: #cdcdcd;
 }
+.odd:hover, .even:hover {
+    background-color: #c1c1c1;
+}
+tr.odd {
+    background-color: #eaeaea;
+}
+tr.even {
+    background-color: #cccccc;
+}
+th a, th a:hover {
+    color: #cdcdcd;
+}
+
+.sf_admin_list {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .sf_admin_td_actions{
     list-style-type:none;
     text-align: left;
@@ -320,26 +377,21 @@ thead th{
     background-image:url(../images/icons/delete.png);
     background-position:0 50%;
     background-repeat:no-repeat;
-    padding-left:18px;
+    padding-left:20px;
 }
 
 .sf_admin_actions{
     list-style-type:none;
 
 }
-
-
-
-
-
-table a{
-    color:#454545;
-    text-decoration:none;
+.sf_admin_action_new{
+    background-image:url(../images/icons/add2.png);
+    background-position:0 50%;
+    background-repeat:no-repeat;
+    padding-left:18px;
 }
-table a:hover{
-    color:#454545;
-    text-decoration:underline;
-}
+
+
 img.add{
     position:absolute;
     height:25px;
@@ -355,6 +407,12 @@ label.edit_flag{
     float:right;
     text-align:left;
 }
+
+label.edit_photo{
+    float:right;
+    text-align:left;
+}
+
 ul.sf_admin_actions li
 {
     float:left;
@@ -370,6 +428,10 @@ ul.sf_admin_actions a{
 }
 ul.sf_admin_actions a:hover{
     text-decoration:underline;
+}
+tr.sf_admin_row td{
+    padding-left:10px;
+    padding-right:10px;
 }
 
 /*

@@ -1,11 +1,14 @@
 <?php
     if($category->getIsActivated())
     {
-        echo "Visible";
-
+        $visibility = "Visible";
+        $link_title = "Rendre invisible";
     }
     else
     {
-        echo "Non visible";
+        $visibility = "Non visible";
+        $link_title = "Rendre visible";
     }
+
+    echo link_to($visibility, 'category/activateToggle?id='.$category->getId(), 'title='.$link_title);
 ?>

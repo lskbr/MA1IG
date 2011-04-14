@@ -28,7 +28,21 @@ sfGuardUser:
     Groups: [Administrateur]
     Person: Nicolas
 
-  AlexandreLogin:
+  Kevin:
+    first_name: Kévin
+    last_name: Neirynk
+    email_address: kneirynck138@hotmail.com
+    algorithm: sha1
+    username: Kevin
+    is_active: 1
+    is_super_admin: 0
+    password: kevin
+    Groups: [Administrateur]
+
+  Alexandre:
+    first_name: Alexandre
+    last_name: Anoutchine
+    email_address: anoutchine@gmail.com
     algorithm: sha1
     username: xirius
     is_active: 1

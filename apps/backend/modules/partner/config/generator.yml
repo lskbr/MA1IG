@@ -1,0 +1,37 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           partner
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          partner
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:     
+        title: Liste des partenaires de Graine de Vie
+        display: [_logo, =company_name, =description, visit_count]
+        fields:
+          logo:
+            label: Logo
+          company_name:
+            label: Nom de Société
+          Description:
+            label: Description
+          visit_count:
+            label: Nombre de clics
+        object_actions:
+          enable: {label: "Activer" action: "enable"}
+          disable: {label: "Désactiver" action: "disable"}
+        batch_actions: {}
+      filter:  
+        class: false
+      form:    ~
+      edit:    ~
+      new:     ~

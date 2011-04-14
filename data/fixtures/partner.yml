@@ -1,0 +1,30 @@
+Partner:
+  P1:
+    logo: "gdf.jpg"
+    position: 1
+    Translation:
+      en:
+        company_name: "GDF EN"
+        description: "Trees are alive! So we paid M€ to plant new ones."
+        site: "http://www.gdfsuez.com"
+        is_visible: 1
+      fr:
+        company_name: "GDF FR"
+        description: "Les arbres sont vivants! On a donc payé des millions pour en planter des nouveaux."
+        site: "http://www.gdfsuez.com"
+        is_visible: 1
+  P2:
+    logo: "gdf2.jpg"
+    position: 1
+    Translation:
+      en:
+        company_name: "GDF EN2"
+        description: "Trees are alive! So we paid M€ to plant new ones.2"
+        site: "http://www.gdfsuez2.com"
+        is_visible: 1
+      fr:
+        company_name: "GDF FR2"
+        description: "Les arbres sont vivants! On a donc payé des millions pour en planter des nouveaux.2"
+        site: "http://www.gdfsuez2.com"
+        is_visible: 1
+ 

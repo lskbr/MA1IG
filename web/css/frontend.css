@@ -120,9 +120,9 @@ div#header {
 div#overPSlider {
         position: absolute;
         top: 0;
-        left: 5px;
+        left: 2px;
 	height: 690px;
-	width: 990px;
+	width: 995px;
         overflow: hidden;
 }
 div#pSlider {
@@ -273,8 +273,8 @@ div#login input#login-button:hover {
 
 div#header-logo {
 	position: absolute;
-	left: 25px;
-	top: 0px;
+	left: 10px;
+	top: -30px;
 	width: 319px;
 	z-index: 1000;
 }
@@ -577,6 +577,13 @@ div#content h2 {
 	margin: 0 15px;
 	margin-bottom: 15px;
 }
+div#content h3 {
+	border-bottom: 3px solid #FF6600;
+	display: inline-block;
+	font-size: 16px;
+	font-weight: bold;
+}
+
 
 div#content > p {
 	font-family: Arial, Helvetica, sans-serif;
@@ -605,4 +612,43 @@ blockquote p.author{
 	float:right;
 	color:#484848;
 	font-style: normal;
+}
+.partner_col1{
+	padding-top: 10px;
+	max-width:320px;
+	padding-left: 20px;
+	float: left;
+}
+.partner_col1 img{
+	max-width: 75px;
+	padding-right: 10px;
+	float: left;
+}
+
+.faq_question{
+	padding-left: 20px;
+}
+.faq_answer{
+	padding-left: 25px;
+}
+.faq_categQuestions{
+	text-align: center;
+}
+
+.photo_single{
+    max-width:600px;
+    max-height:500px;
+    vertical-align:middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;  
+}
+
+.photo_small{
+    max-width:100px;
+    max-height:100px;
+    vertical-align:middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;  
 }

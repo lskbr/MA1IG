@@ -1,0 +1,32 @@
+## YAML Template.
+---
+Person:
+  Laurent:
+    first_name: Laurent
+    last_name: Cardon
+    email_address: laurent_cardon@hotmail.com
+
+  Olivier:
+    first_name: Olivier
+    last_name: Deltour
+    email_address: jin_7281@hotmail.com
+
+  Nicolas:
+    first_name: Nicolas
+    last_name: Dechamps
+    email_address: ndech13@hotmail.com
+
+  Alexandre:
+    first_name: Alexandre
+    last_name: Anoutchine
+    email_address: anoutchine@gmail.com
+
+  Nilo:
+    first_name: Nilo
+    last_name: Menezes
+    email_address: nilo.menezes@gmail.com
+
+  User:
+    first_name: User
+    last_name: Test
+    email_address: user@user.com

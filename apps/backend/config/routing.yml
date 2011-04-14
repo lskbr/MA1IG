@@ -1,3 +1,12 @@
+message:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                message
+    module:               message
+    prefix_path:          /message
+    column:               id
+    with_wildcard_routes: true
+
 citation:
   class: sfDoctrineRouteCollection
   options:

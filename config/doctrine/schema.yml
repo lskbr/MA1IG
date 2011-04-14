@@ -67,3 +67,25 @@ Citation:
   columns:
     author: {type: string(255)}
     content: {type: text}
+    
+Comment:
+  columns:
+    text: {type: text, notnull: true}
+    update_at: {type: date, notnull: true}
+    
+Message:
+  columns:
+    text: {type: text, notnull: true}
+    is_saved: {type: boolean, default: 0}
+    read_at: {type: date}
+    created_at: {type: date, notnull: true}
+    reply_at: {type: date}
+    comment_id: {type: integer}
+  relations:
+    Comment: {local: comment_id, foreign: id}
+
+Person:
+  columns:
+    first_name: {type: string(255)}
+    last_name: {type: string(255)}
+    email_address: {type: string(255), notnull: true, unique: true}

@@ -16,6 +16,11 @@ Person:
     last_name: Dechamps
     email_address: ndech13@hotmail.com
 
+  Kevin:
+    first_name: Kévin
+    last_name: Neirynk
+    email_address: kneirynck138@hotmail.com
+
   Alexandre:
     first_name: Alexandre
     last_name: Anoutchine

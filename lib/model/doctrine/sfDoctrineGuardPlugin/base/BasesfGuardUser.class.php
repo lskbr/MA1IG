@@ -12,7 +12,7 @@
  * @property boolean $is_active
  * @property boolean $is_super_admin
  * @property timestamp $last_login
- * @property integer $user_id
+ * @property integer $person_id
  * @property Doctrine_Collection $Groups
  * @property Doctrine_Collection $Permissions
  * @property Person $Person
@@ -28,7 +28,7 @@
  * @method boolean               getIsActive()              Returns the current record's "is_active" value
  * @method boolean               getIsSuperAdmin()          Returns the current record's "is_super_admin" value
  * @method timestamp             getLastLogin()             Returns the current record's "last_login" value
- * @method integer               getUserId()                Returns the current record's "user_id" value
+ * @method integer               getPersonId()              Returns the current record's "person_id" value
  * @method Doctrine_Collection   getGroups()                Returns the current record's "Groups" collection
  * @method Doctrine_Collection   getPermissions()           Returns the current record's "Permissions" collection
  * @method Person                getPerson()                Returns the current record's "Person" value
@@ -43,7 +43,7 @@
  * @method sfGuardUser           setIsActive()              Sets the current record's "is_active" value
  * @method sfGuardUser           setIsSuperAdmin()          Sets the current record's "is_super_admin" value
  * @method sfGuardUser           setLastLogin()             Sets the current record's "last_login" value
- * @method sfGuardUser           setUserId()                Sets the current record's "user_id" value
+ * @method sfGuardUser           setPersonId()              Sets the current record's "person_id" value
  * @method sfGuardUser           setGroups()                Sets the current record's "Groups" collection
  * @method sfGuardUser           setPermissions()           Sets the current record's "Permissions" collection
  * @method sfGuardUser           setPerson()                Sets the current record's "Person" value
@@ -93,7 +93,7 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
         $this->hasColumn('last_login', 'timestamp', null, array(
              'type' => 'timestamp',
              ));
-        $this->hasColumn('user_id', 'integer', null, array(
+        $this->hasColumn('person_id', 'integer', null, array(
              'type' => 'integer',
              ));
 
@@ -120,7 +120,7 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
              'foreign' => 'permission_id'));
 
         $this->hasOne('Person', array(
-             'local' => 'user_id',
+             'local' => 'person_id',
              'foreign' => 'id'));
 
         $this->hasMany('sfGuardUserPermission', array(

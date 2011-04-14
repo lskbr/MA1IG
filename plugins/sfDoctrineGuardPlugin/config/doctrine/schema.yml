@@ -72,7 +72,8 @@ sfGuardUser:
       default: false
     last_login:
       type: timestamp
-    user_id: integer
+#    user_id: integer
+    person_id: integer
   indexes:
     is_active_idx:
       fields: [is_active]
@@ -89,7 +90,7 @@ sfGuardUser:
       foreign: permission_id
       refClass: sfGuardUserPermission
       foreignAlias: Users
-    Person: {local: user_id, foreign: id }
+    Person: {local: person_id, foreign: id }
 
 
 

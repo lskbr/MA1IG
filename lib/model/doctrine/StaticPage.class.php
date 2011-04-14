@@ -67,11 +67,11 @@ class StaticPage extends BaseStaticPage {
         $sp->setPosition($position + 1);
     }
 
-    public static function cleanCategory($category_id){
-        $pages = Doctrine_Query::create()->from('StaticPage sp')->where('sp.category_id = ?',$category_id)->orderBy('position ASC')->execute();
+    public static function cleanCategory($category_id) {
+        $pages = Doctrine_Query::create()->from('StaticPage sp')->where('sp.category_id = ?', $category_id)->orderBy('position ASC')->execute();
 
         foreach ($pages as $compteur => $page) {
-            $page->setPosition($compteur+1);
+            $page->setPosition($compteur + 1);
             $page->save();
         }
     }
@@ -93,6 +93,14 @@ class StaticPage extends BaseStaticPage {
             $this->cleanCategory($exCategory);
 
             return $retour;
+        }
+    }
+
+    public function couldBeEcho() {
+        if ($this->getIsActivated() && $this->getPublicationDate() <= date('Y-m-d H:i:s')) {
+            return true;
+        } else {
+            return false;
         }
     }
 

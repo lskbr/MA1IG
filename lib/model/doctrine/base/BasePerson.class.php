@@ -52,6 +52,6 @@ abstract class BasePerson extends sfDoctrineRecord
         parent::setUp();
         $this->hasMany('sfGuardUser', array(
              'local' => 'id',
-             'foreign' => 'user_id'));
+             'foreign' => 'person_id'));
     }
 }

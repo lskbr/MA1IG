@@ -27,7 +27,7 @@ class pageActions extends sfActions
   public function executeShow(sfWebRequest $request)
   {
     $this->page = $this->getRoute()->getObject();
-    if($this->page->getIsActivated()==false)
-      $this->forward404();
+    if($this->page->couldBeEcho()==false) //Cette page peut-elle être affichée ? (tient compte du isActivated et du publicationDate). Laurent
+    $this->forward404();
   }
 }

@@ -15,23 +15,27 @@ abstract class BaseMessageForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'id'         => new sfWidgetFormInputHidden(),
-      'text'       => new sfWidgetFormInputText(),
-      'is_saved'   => new sfWidgetFormInputCheckbox(),
-      'read_at'    => new sfWidgetFormDate(),
-      'created_at' => new sfWidgetFormDate(),
-      'reply_at'   => new sfWidgetFormDate(),
-      'comment_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Comment'), 'add_empty' => true)),
+      'id'          => new sfWidgetFormInputHidden(),
+      'text'        => new sfWidgetFormInputText(),
+      'is_saved'    => new sfWidgetFormInputCheckbox(),
+      'read_at'     => new sfWidgetFormInputText(),
+      'created_at'  => new sfWidgetFormInputText(),
+      'reply_at'    => new sfWidgetFormInputText(),
+      'comment_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Comment'), 'add_empty' => true)),
+      'sender_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Sender'), 'add_empty' => true)),
+      'category_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('faqCategory'), 'add_empty' => false)),
     ));
 
     $this->setValidators(array(
-      'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'text'       => new sfValidatorPass(),
-      'is_saved'   => new sfValidatorBoolean(array('required' => false)),
-      'read_at'    => new sfValidatorDate(array('required' => false)),
-      'created_at' => new sfValidatorDate(),
-      'reply_at'   => new sfValidatorDate(array('required' => false)),
-      'comment_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Comment'), 'required' => false)),
+      'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'text'        => new sfValidatorPass(),
+      'is_saved'    => new sfValidatorBoolean(array('required' => false)),
+      'read_at'     => new sfValidatorPass(array('required' => false)),
+      'created_at'  => new sfValidatorPass(),
+      'reply_at'    => new sfValidatorPass(array('required' => false)),
+      'comment_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Comment'), 'required' => false)),
+      'sender_id'   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Sender'), 'required' => false)),
+      'category_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('faqCategory'))),
     ));
 
     $this->widgetSchema->setNameFormat('message[%s]');

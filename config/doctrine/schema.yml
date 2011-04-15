@@ -7,15 +7,14 @@ Language:
     is_activated: {type: boolean, notnull: true, default: false}
     is_default: {type: boolean, notnull: true, unique: false}
 
-Category:
+Category: #Laurent
   actAs: {Timestampable: ~, I18n: {fields: [name]}}
-
   columns:
     name: {type: string(40), notnull: true, unique: true}
     position: {type: integer, notnull: true}
     is_activated: {type: boolean, notnull: true, default: false}
 
-Page:
+Page: #Laurent
   actAs: {Timestampable: ~}
   actAs: {I18n: {fields: [menu_title, content, is_activated, title]}}
   columns:
@@ -26,7 +25,7 @@ Page:
   relations:
     Category: {local: category_id, foreign: id}
 
-StaticPage:
+StaticPage: #Laurent
   inheritance: {type: concrete, extends: Page}
   columns:
     content: {type: text, notnull: true}
@@ -68,23 +67,27 @@ Citation:
     author: {type: string(255)}
     content: {type: text}
     
-Comment:
+Comment: #Laurent
   columns:
     text: {type: text, notnull: true}
     update_at: {type: date, notnull: true}
     
-Message:
+Message: #Laurent
   columns:
     text: {type: text, notnull: true}
     is_saved: {type: boolean, default: 0}
-    read_at: {type: date}
-    created_at: {type: date, notnull: true}
-    reply_at: {type: date}
+    read_at: {type: datetime}
+    created_at: {type: datetime, notnull: true}
+    reply_at: {type: datetime}
     comment_id: {type: integer}
+    sender_id: {type: integer}
+    category_id: {type: integer, notnull: true}
   relations:
     Comment: {local: comment_id, foreign: id}
+    Person: {local: sender_id, foreign: id, alias: Sender, foreignType: one}
+    FaqCategory: {local: category_id, foreign: id, alias: faqCategory, foreignType: one}
 
-Person:
+Person: #Laurent
   columns:
     first_name: {type: string(255), notnull: true}
     last_name: {type: string(255), notnull: true}

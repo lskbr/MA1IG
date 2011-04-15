@@ -14,7 +14,7 @@ class sfGuardUserAdminForm extends BasesfGuardUserAdminForm {
      * @see sfForm
      */
     public function configure() {
-        $this->mergeForm(new PersonForm($this->getObject()->getPerson()));
+        $this->embedRelation("Person");
     }
 
 }

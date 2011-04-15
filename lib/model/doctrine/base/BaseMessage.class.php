@@ -7,26 +7,38 @@
  * 
  * @property text $text
  * @property boolean $is_saved
- * @property date $read_at
- * @property date $created_at
- * @property date $reply_at
+ * @property datetime $read_at
+ * @property datetime $created_at
+ * @property datetime $reply_at
  * @property integer $comment_id
+ * @property integer $sender_id
+ * @property integer $category_id
  * @property Comment $Comment
+ * @property Person $Sender
+ * @property FaqCategory $faqCategory
  * 
- * @method text    getText()       Returns the current record's "text" value
- * @method boolean getIsSaved()    Returns the current record's "is_saved" value
- * @method date    getReadAt()     Returns the current record's "read_at" value
- * @method date    getCreatedAt()  Returns the current record's "created_at" value
- * @method date    getReplyAt()    Returns the current record's "reply_at" value
- * @method integer getCommentId()  Returns the current record's "comment_id" value
- * @method Comment getComment()    Returns the current record's "Comment" value
- * @method Message setText()       Sets the current record's "text" value
- * @method Message setIsSaved()    Sets the current record's "is_saved" value
- * @method Message setReadAt()     Sets the current record's "read_at" value
- * @method Message setCreatedAt()  Sets the current record's "created_at" value
- * @method Message setReplyAt()    Sets the current record's "reply_at" value
- * @method Message setCommentId()  Sets the current record's "comment_id" value
- * @method Message setComment()    Sets the current record's "Comment" value
+ * @method text        getText()        Returns the current record's "text" value
+ * @method boolean     getIsSaved()     Returns the current record's "is_saved" value
+ * @method datetime    getReadAt()      Returns the current record's "read_at" value
+ * @method datetime    getCreatedAt()   Returns the current record's "created_at" value
+ * @method datetime    getReplyAt()     Returns the current record's "reply_at" value
+ * @method integer     getCommentId()   Returns the current record's "comment_id" value
+ * @method integer     getSenderId()    Returns the current record's "sender_id" value
+ * @method integer     getCategoryId()  Returns the current record's "category_id" value
+ * @method Comment     getComment()     Returns the current record's "Comment" value
+ * @method Person      getSender()      Returns the current record's "Sender" value
+ * @method FaqCategory getFaqCategory() Returns the current record's "faqCategory" value
+ * @method Message     setText()        Sets the current record's "text" value
+ * @method Message     setIsSaved()     Sets the current record's "is_saved" value
+ * @method Message     setReadAt()      Sets the current record's "read_at" value
+ * @method Message     setCreatedAt()   Sets the current record's "created_at" value
+ * @method Message     setReplyAt()     Sets the current record's "reply_at" value
+ * @method Message     setCommentId()   Sets the current record's "comment_id" value
+ * @method Message     setSenderId()    Sets the current record's "sender_id" value
+ * @method Message     setCategoryId()  Sets the current record's "category_id" value
+ * @method Message     setComment()     Sets the current record's "Comment" value
+ * @method Message     setSender()      Sets the current record's "Sender" value
+ * @method Message     setFaqCategory() Sets the current record's "faqCategory" value
  * 
  * @package    grainedevie
  * @subpackage model
@@ -46,18 +58,25 @@ abstract class BaseMessage extends sfDoctrineRecord
              'type' => 'boolean',
              'default' => 0,
              ));
-        $this->hasColumn('read_at', 'date', null, array(
-             'type' => 'date',
+        $this->hasColumn('read_at', 'datetime', null, array(
+             'type' => 'datetime',
              ));
-        $this->hasColumn('created_at', 'date', null, array(
-             'type' => 'date',
+        $this->hasColumn('created_at', 'datetime', null, array(
+             'type' => 'datetime',
              'notnull' => true,
              ));
-        $this->hasColumn('reply_at', 'date', null, array(
-             'type' => 'date',
+        $this->hasColumn('reply_at', 'datetime', null, array(
+             'type' => 'datetime',
              ));
         $this->hasColumn('comment_id', 'integer', null, array(
              'type' => 'integer',
+             ));
+        $this->hasColumn('sender_id', 'integer', null, array(
+             'type' => 'integer',
+             ));
+        $this->hasColumn('category_id', 'integer', null, array(
+             'type' => 'integer',
+             'notnull' => true,
              ));
     }
 
@@ -66,6 +85,14 @@ abstract class BaseMessage extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('Comment', array(
              'local' => 'comment_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('Person as Sender', array(
+             'local' => 'sender_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('FaqCategory as faqCategory', array(
+             'local' => 'category_id',
              'foreign' => 'id'));
     }
 }

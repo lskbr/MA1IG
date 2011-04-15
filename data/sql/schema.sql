@@ -14,7 +14,7 @@ CREATE TABLE faq_category (id BIGINT AUTO_INCREMENT, PRIMARY KEY(id)) ENGINE = I
 CREATE TABLE galery_translation (id BIGINT, name VARCHAR(40) NOT NULL UNIQUE, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE galery (id BIGINT AUTO_INCREMENT, position BIGINT NOT NULL, is_activated TINYINT(1) DEFAULT '0' NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE language (id BIGINT AUTO_INCREMENT, name VARCHAR(40) NOT NULL UNIQUE, abbreviation VARCHAR(5) NOT NULL UNIQUE, flag VARCHAR(255), is_activated TINYINT(1) DEFAULT '0' NOT NULL, is_default TINYINT(1) NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
-CREATE TABLE message (id BIGINT AUTO_INCREMENT, text text NOT NULL, is_saved TINYINT(1) DEFAULT '0', read_at DATE, created_at DATE NOT NULL, reply_at DATE, comment_id BIGINT, INDEX comment_id_idx (comment_id), PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE message (id BIGINT AUTO_INCREMENT, text text NOT NULL, is_saved TINYINT(1) DEFAULT '0', read_at datetime, created_at datetime NOT NULL, reply_at datetime, comment_id BIGINT, sender_id BIGINT, category_id BIGINT NOT NULL, INDEX comment_id_idx (comment_id), INDEX sender_id_idx (sender_id), INDEX category_id_idx (category_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE page_translation (id BIGINT, menu_title VARCHAR(255) NOT NULL, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE page (id BIGINT AUTO_INCREMENT, position BIGINT NOT NULL, publication_date DATETIME, category_id BIGINT, INDEX category_id_idx (category_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE partner_translation (id BIGINT, company_name VARCHAR(255), description VARCHAR(255), site VARCHAR(255), is_visible TINYINT(1) DEFAULT '0', lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
@@ -42,7 +42,9 @@ ALTER TABLE faq_translation ADD CONSTRAINT faq_translation_id_faq_id FOREIGN KEY
 ALTER TABLE faq ADD CONSTRAINT faq_faq_category_id_faq_category_id FOREIGN KEY (faq_category_id) REFERENCES faq_category(id);
 ALTER TABLE faq_category_translation ADD CONSTRAINT faq_category_translation_id_faq_category_id FOREIGN KEY (id) REFERENCES faq_category(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE galery_translation ADD CONSTRAINT galery_translation_id_galery_id FOREIGN KEY (id) REFERENCES galery(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE message ADD CONSTRAINT message_sender_id_person_id FOREIGN KEY (sender_id) REFERENCES person(id);
 ALTER TABLE message ADD CONSTRAINT message_comment_id_comment_id FOREIGN KEY (comment_id) REFERENCES comment(id);
+ALTER TABLE message ADD CONSTRAINT message_category_id_faq_category_id FOREIGN KEY (category_id) REFERENCES faq_category(id);
 ALTER TABLE page_translation ADD CONSTRAINT page_translation_id_page_id FOREIGN KEY (id) REFERENCES page(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE page ADD CONSTRAINT page_category_id_category_id FOREIGN KEY (category_id) REFERENCES category(id);
 ALTER TABLE partner_translation ADD CONSTRAINT partner_translation_id_partner_id FOREIGN KEY (id) REFERENCES partner(id) ON UPDATE CASCADE ON DELETE CASCADE;

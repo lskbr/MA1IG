@@ -71,3 +71,8 @@ StaticPage:
              content: O projeto de expansão vai continuar
              title: Projeto de Expansão
              is_activated: 1
+         nl:
+             menu_title: ffdfgd
+             content: sdfsdfsfsdfsdfsdfsdf sd
+             title: dfgpdf
+             is_activated: 0

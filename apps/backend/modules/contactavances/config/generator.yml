@@ -1,0 +1,37 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Message
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          contactavances
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+
+      fields:
+        created_at: {label: "Envoyé le"}
+        sender_name: {label: "Expéditeur"}
+        faq_category: {label: "Catégorie"}
+        read_at: {label: "Lu le"}
+
+      list:
+        title: Liste des messages
+        display: [=sender_name, faq_category, created_at, read_at]
+        sort: [read_at, desc]
+
+
+      filter:
+        class: false
+
+      form:    ~
+
+      edit:    ~
+
+      new:     ~
+

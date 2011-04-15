@@ -8,16 +8,19 @@
  * @property string $first_name
  * @property string $last_name
  * @property string $email_address
- * @property Doctrine_Collection $sfGuardUser
+ * @property sfGuardUser $Person
+ * @property Message $Message
  * 
- * @method string              getFirstName()     Returns the current record's "first_name" value
- * @method string              getLastName()      Returns the current record's "last_name" value
- * @method string              getEmailAddress()  Returns the current record's "email_address" value
- * @method Doctrine_Collection getSfGuardUser()   Returns the current record's "sfGuardUser" collection
- * @method Person              setFirstName()     Sets the current record's "first_name" value
- * @method Person              setLastName()      Sets the current record's "last_name" value
- * @method Person              setEmailAddress()  Sets the current record's "email_address" value
- * @method Person              setSfGuardUser()   Sets the current record's "sfGuardUser" collection
+ * @method string      getFirstName()     Returns the current record's "first_name" value
+ * @method string      getLastName()      Returns the current record's "last_name" value
+ * @method string      getEmailAddress()  Returns the current record's "email_address" value
+ * @method sfGuardUser getPerson()        Returns the current record's "Person" value
+ * @method Message     getMessage()       Returns the current record's "Message" value
+ * @method Person      setFirstName()     Sets the current record's "first_name" value
+ * @method Person      setLastName()      Sets the current record's "last_name" value
+ * @method Person      setEmailAddress()  Sets the current record's "email_address" value
+ * @method Person      setPerson()        Sets the current record's "Person" value
+ * @method Person      setMessage()       Sets the current record's "Message" value
  * 
  * @package    grainedevie
  * @subpackage model
@@ -50,8 +53,12 @@ abstract class BasePerson extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('sfGuardUser', array(
+        $this->hasOne('sfGuardUser as Person', array(
              'local' => 'id',
              'foreign' => 'person_id'));
+
+        $this->hasOne('Message', array(
+             'local' => 'id',
+             'foreign' => 'sender_id'));
     }
 }

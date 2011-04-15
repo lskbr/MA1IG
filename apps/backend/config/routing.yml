@@ -1,10 +1,11 @@
-
-message:
+contactavances:
   class: sfDoctrineRouteCollection
   options:
-    model:                message
-    module:               message
-    prefix_path:          /message
+    model:                Message
+    module:               contactavances
+    prefix_path:          /contactavances
+    column:               id
+    with_wildcard_routes: true
 
 faq_category:
   class: sfDoctrineRouteCollection

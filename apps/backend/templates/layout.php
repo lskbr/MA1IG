@@ -17,16 +17,17 @@
             <?php if ($sf_user->isAuthenticated()): ?>
                 <div class="head_memberinfo">
                     <div class="head_memberinfo_logo">
-                        <span>0</span>
+                        <span><?php $numberOfMessage = MessageTable::numberOfNewMessage();
+                echo $numberOfMessage; ?></span>
                         <img src="/images/unreadmail.png" alt=""/>
                     </div>
 
                     <span class='memberinfo_span'>Bienvenue <a href=""><?php echo $sf_user->getName() ?></a></span>
 
                     <span><a href="login.html"><?php echo link_to('Déconnexion', 'sf_guard_logout') ?></a></span>
-                    <span class='memberinfo_span2'><a href="">Aucun message en attente</a></span>
+                    <span class='memberinfo_span2'><a href="<?php echo url_for('contactavances/index'); ?>"><?php echo $numberOfMessage; ?> message(s) en attente</a></span>
                 </div>
-            <?php endif ?>
+<?php endif ?>
             </div>
 
             <div class="body">
@@ -34,26 +35,24 @@
                     <ul>
                     <?php
                     use_helper('AdminMenu'); //Ajouter ici pour le menu
-                    if($sf_user->isAuthenticated())
-                    {
-                    menu_item('Accueil', 'homepage', $sf_context); // 'NomAAfficher','route',$sf_context,à activer;
-                    menu_item('Langues', 'language', $sf_context);
-                    menu_item('Configuration', 'configuration', $sf_context);
-                    menu_item('Catégories', 'category', $sf_context);
-                    menu_item('Pages','static_page',$sf_context);
-                    menu_item('Utilisateurs','sf_guard_user', $sf_context);
-                    menu_item('Groupes','sf_guard_group',$sf_context);
-                    menu_item('Droits','sf_guard_permission',$sf_context);
-                    menu_item('Citation','citation',$sf_context,'citation');
-                    menu_item('Partenaires','partner',$sf_context,'partner');
-                    menu_item('Catégories de FAQ','faq_category',$sf_context,'faq');
-                    menu_item('FAQ','faq',$sf_context,'faq');
-                    menu_item('Photos','photo',$sf_context);
-                    menu_item('Galeries','galery',$sf_context);
-                    }
-                    else
-                    {
-                     echo menu_item('Connexion','sf_guard_signin',$sf_context);
+                    if ($sf_user->isAuthenticated()) {
+                        menu_item('Accueil', 'homepage', $sf_context); // 'NomAAfficher','route',$sf_context,à activer;
+                        menu_item('Messagerie', 'contactavances', $sf_context);
+                        menu_item('Langues', 'language', $sf_context);
+                        menu_item('Configuration', 'configuration', $sf_context);
+                        menu_item('Catégories', 'category', $sf_context);
+                        menu_item('Pages', 'static_page', $sf_context);
+                        menu_item('Utilisateurs', 'sf_guard_user', $sf_context);
+                        menu_item('Groupes', 'sf_guard_group', $sf_context);
+                        menu_item('Droits', 'sf_guard_permission', $sf_context);
+                        menu_item('Citation', 'citation', $sf_context, 'citation');
+                        menu_item('Partenaires', 'partner', $sf_context, 'partner');
+                        menu_item('Catégories de FAQ', 'faq_category', $sf_context, 'faq');
+                        menu_item('FAQ', 'faq', $sf_context, 'faq');
+                        menu_item('Photos', 'photo', $sf_context);
+                        menu_item('Galeries', 'galery', $sf_context);
+                    } else {
+                        echo menu_item('Connexion', 'sf_guard_signin', $sf_context);
                     }
                     ?>
                 </ul>

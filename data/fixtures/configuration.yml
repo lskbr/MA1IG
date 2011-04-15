@@ -1,4 +1,9 @@
 BooleanConfiguration:
+  ContactAvances:
+    main: contacts
+    name: Contacts avancés
+    description: Permet aux utilisateurs de vous contacter via le site
+    is_activated: true
   News:
     main: news
     name: Actualités

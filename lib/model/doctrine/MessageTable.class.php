@@ -15,5 +15,11 @@ class MessageTable extends Doctrine_Table
     public static function getInstance()
     {
         return Doctrine_Core::getTable('Message');
+
+
+    }
+
+    public static function numberOfNewMessage(){
+        return Doctrine_Core::getTable('Message')->createQuery()->where('read_at IS NULL')->count();
     }
 }

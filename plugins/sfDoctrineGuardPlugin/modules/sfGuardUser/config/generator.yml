@@ -31,8 +31,8 @@ generator:
       form:
         class: sfGuardUserAdminForm
         display:
-          "Identitée": [first_name, last_name, email_address]
-          "Utilisateur":                   [username, password, password_again]
+          "Identitée": [Person]
+          "Utilisateur": [username, password, password_again]
           "Droits et groupes": [is_active, groups_list]
 
       edit:

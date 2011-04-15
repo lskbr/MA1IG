@@ -15,17 +15,21 @@ class sfGuardRegisterForm extends BasesfGuardRegisterForm {
      */
     public function configure() {
 
-        unset(
-            $this['user_id']
-        );
-
-        $this->mergeForm(new PersonForm());
+        
 
         $this->widgetSchema->setLabels(array(
             'username' => "Nom d'utilisateur",
             'password' => 'Mot de passe',
             'password_again' => 'Confirmation de votre mot de passe'
         ));
+
+        $this->useFields(array(
+            'username',
+            'password',
+            'password_again'
+        ));
+
+        $this->embedRelation('Person');
     }
 
 }

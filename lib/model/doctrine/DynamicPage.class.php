@@ -12,5 +12,8 @@
  */
 class DynamicPage extends BaseDynamicPage
 {
-
+    public function getUrl()
+    {
+        return url_for($this->getController().'/'.$this->getAction());
+    }
 }

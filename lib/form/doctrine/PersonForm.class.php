@@ -21,6 +21,10 @@ class PersonForm extends BasePersonForm {
                     $this->validatorSchema['email_address'],
                     new sfValidatorEmail()
                 ));
+
+        $this->useFields(array(
+            'first_name', 'last_name', 'email_address'
+        ));
     }
 
 }

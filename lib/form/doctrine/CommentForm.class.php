@@ -12,5 +12,10 @@ class CommentForm extends BaseCommentForm
 {
   public function configure()
   {
+      $this->setWidget('text', new sfWidgetFormTextarea());
+        $this->setValidator('text', new sfValidatorString());
+        unset(
+            $this['update_at']
+        );
   }
 }

@@ -17,13 +17,13 @@ abstract class BaseCommentForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'        => new sfWidgetFormInputHidden(),
       'text'      => new sfWidgetFormInputText(),
-      'update_at' => new sfWidgetFormDate(),
+      'update_at' => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
       'id'        => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'text'      => new sfValidatorPass(),
-      'update_at' => new sfValidatorDate(),
+      'text'      => new sfValidatorPass(array('required' => false)),
+      'update_at' => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('comment[%s]');

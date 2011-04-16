@@ -19,6 +19,10 @@ generator:
         sender_name: {label: "Expéditeur"}
         faq_category: {label: "Catégorie"}
         read_at: {label: "Lu le"}
+        category_id: {label: "Catégorie"}
+        text: {label: "Message"}
+        comment: {label: "Commentaire", help: "N'est pas visible pour l'expéditeur mais seulement par les admins"}
+        is_saved: {label: "Voulez-vous conserver ce message ?"}
 
       list:
         title: Liste des messages
@@ -29,9 +33,10 @@ generator:
       filter:
         class: false
 
-      form:    ~
-
-      edit:    ~
+      form:
+        class: MessageAdminForm
 
       new:     ~
 
+      edit:  ~
+        

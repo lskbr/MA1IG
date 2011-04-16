@@ -69,8 +69,9 @@ Citation:
     
 Comment: #Laurent
   columns:
-    text: {type: text, notnull: true}
-    update_at: {type: date, notnull: true}
+
+    text: {type: text}
+    update_at: {type: datetime}
     
 Message: #Laurent
   columns:
@@ -83,7 +84,7 @@ Message: #Laurent
     sender_id: {type: integer}
     category_id: {type: integer, notnull: true}
   relations:
-    Comment: {local: comment_id, foreign: id}
+    Comment: {local: comment_id, foreign: id, alias: comment, foreignType: one}
     Person: {local: sender_id, foreign: id, alias: Sender, foreignType: one}
     FaqCategory: {local: category_id, foreign: id, alias: faqCategory, foreignType: one}
 

@@ -13,7 +13,7 @@
  * @property integer $comment_id
  * @property integer $sender_id
  * @property integer $category_id
- * @property Comment $Comment
+ * @property Comment $comment
  * @property Person $Sender
  * @property FaqCategory $faqCategory
  * 
@@ -25,7 +25,7 @@
  * @method integer     getCommentId()   Returns the current record's "comment_id" value
  * @method integer     getSenderId()    Returns the current record's "sender_id" value
  * @method integer     getCategoryId()  Returns the current record's "category_id" value
- * @method Comment     getComment()     Returns the current record's "Comment" value
+ * @method Comment     getComment()     Returns the current record's "comment" value
  * @method Person      getSender()      Returns the current record's "Sender" value
  * @method FaqCategory getFaqCategory() Returns the current record's "faqCategory" value
  * @method Message     setText()        Sets the current record's "text" value
@@ -36,7 +36,7 @@
  * @method Message     setCommentId()   Sets the current record's "comment_id" value
  * @method Message     setSenderId()    Sets the current record's "sender_id" value
  * @method Message     setCategoryId()  Sets the current record's "category_id" value
- * @method Message     setComment()     Sets the current record's "Comment" value
+ * @method Message     setComment()     Sets the current record's "comment" value
  * @method Message     setSender()      Sets the current record's "Sender" value
  * @method Message     setFaqCategory() Sets the current record's "faqCategory" value
  * 
@@ -83,7 +83,7 @@ abstract class BaseMessage extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('Comment', array(
+        $this->hasOne('Comment as comment', array(
              'local' => 'comment_id',
              'foreign' => 'id'));
 

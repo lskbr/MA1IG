@@ -21,7 +21,7 @@ abstract class BaseMessageForm extends BaseFormDoctrine
       'read_at'     => new sfWidgetFormInputText(),
       'created_at'  => new sfWidgetFormInputText(),
       'reply_at'    => new sfWidgetFormInputText(),
-      'comment_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Comment'), 'add_empty' => true)),
+      'comment_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('comment'), 'add_empty' => true)),
       'sender_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Sender'), 'add_empty' => true)),
       'category_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('faqCategory'), 'add_empty' => false)),
     ));
@@ -33,7 +33,7 @@ abstract class BaseMessageForm extends BaseFormDoctrine
       'read_at'     => new sfValidatorPass(array('required' => false)),
       'created_at'  => new sfValidatorPass(),
       'reply_at'    => new sfValidatorPass(array('required' => false)),
-      'comment_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Comment'), 'required' => false)),
+      'comment_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('comment'), 'required' => false)),
       'sender_id'   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Sender'), 'required' => false)),
       'category_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('faqCategory'))),
     ));

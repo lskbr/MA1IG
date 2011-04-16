@@ -12,23 +12,19 @@
  */
 class Message extends BaseMessage {
 
-
     public function save(Doctrine_Connection $conn = null) {
         if ($this->getCreatedAt() == null) {
             $this->setCreatedAt(date('Y-m-d H:i:s'));
         }
-        if($this->getComment() == null){
-            $this->setComment(new Comment());
-        }
         return parent::save($conn);
     }
 
-    public function getSenderName(){
-        return $this->getSender()->getFirstName()." ".$this->getSender()->getLastName();
+    public function getSenderName() {
+        return $this->getSender()->getFirstName() . " " . $this->getSender()->getLastName();
     }
 
     public function readed($valeur) {
-        if($this->getReadAt() == null){
+        if ($this->getReadAt() == null) {
             $this->setReadAt($valeur);
         }
     }

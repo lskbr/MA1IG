@@ -23,20 +23,23 @@ generator:
         text: {label: "Message"}
         comment: {label: "Commentaire", help: "N'est pas visible pour l'expéditeur mais seulement par les admins"}
         is_saved: {label: "Voulez-vous conserver ce message ?"}
+        folder_id: {label: "Dossier"}
+        folder: {label: "Dossier"}
 
       list:
         title: Liste des messages
-        display: [=sender_name, faq_category, created_at, read_at]
+        display: [_status, =sender_name, faq_category, created_at, read_at, folder]
         sort: [read_at, desc]
 
 
       filter:
-        class: false
+        display: [folder_id]
 
       form:
         class: MessageAdminForm
 
-      new:     ~
+      new: ~
 
-      edit:  ~
+      edit:
+        title: Lecture du message de %%sender_name%%
         

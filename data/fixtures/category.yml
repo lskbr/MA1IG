@@ -18,7 +18,7 @@
 
 Category:
 
-  graineDeVie:
+  graineDeVieCat:
     position: 1
     is_activated : 1
     Translation:
@@ -31,7 +31,7 @@ Category:
        pt:
          name: Semente de Vida
 
-  notreEngagement:
+  notreEngagementCat:
     position: 2
     is_activated : 1
     Translation:
@@ -42,7 +42,7 @@ Category:
        pt:
          name: Nosso compromisso
 
-  raisonDAgir:
+  raisonDAgirCat:
     position: 3
     is_activated : 1
     Translation:
@@ -53,7 +53,7 @@ Category:
        pt:
          name: Razões para agir
 
-  projetMadagascar:
+  projetMadagascarCat:
     position: 4
     is_activated : 1
     Translation:
@@ -64,7 +64,7 @@ Category:
        pt:
          name: Projeto Madagascar
 
-  ilsOntDit:
+  ilsOntDitCat:
     position: 5
     is_activated : 1
     Translation:
@@ -75,7 +75,7 @@ Category:
        pt:
          name: Eles disseram
 
-  commentNousAider:
+  commentNousAiderCat:
     position: 6
     is_activated : 1
     Translation:
@@ -86,7 +86,7 @@ Category:
        pt:
          name: Como ajudar?
 
-  contact:
+  contactCat:
     position: 7
     is_activated : 1
     Translation:

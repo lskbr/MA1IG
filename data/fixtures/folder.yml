@@ -1,0 +1,9 @@
+Folder:
+  inbox:
+    name: "Boite de réception"
+
+  saved:
+    name: "A conserver"
+
+  archive:
+    name: "A archiver"

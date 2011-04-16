@@ -49,3 +49,8 @@ NumericConfiguration:
     name: Nombre de commentaires par page
     BooleanConfiguration: Commentaires
     value: 4
+  DureeAvantSuppressionMessagerie:
+    main: contacts_delay_before_supress
+    name: Delais en jour avant supression automatique des messages non-enregistrés
+    BooleanConfiguration: ContactAvances
+    value: 100

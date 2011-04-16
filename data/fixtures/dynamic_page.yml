@@ -3,7 +3,7 @@ DynamicPage:
   contactsAvances:
     position: 1
     publication_date: '2000-03-03 00:00:00'
-    Category: contact
+    Category: contactCat
     controller: contactavances
     action: new
     BooleanConfiguration: ContactAvances

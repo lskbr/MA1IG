@@ -20,9 +20,9 @@ class Comment extends BaseComment {
     }
 
     public function save(Doctrine_Connection $conn = null) {
-
-        $this->setUpdateAt(date('Y-m-d H:i:s'));
-
+        if($this->isModified()){
+            $this->setUpdateAt(date('Y-m-d H:i:s'));
+        }
         return parent::save($conn);
     }
 

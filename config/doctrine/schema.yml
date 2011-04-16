@@ -23,7 +23,7 @@ Page: #Laurent
     publication_date: {type: timestamp}
     category_id: {type: integer}
   relations:
-    Category: {local: category_id, foreign: id}
+    Category: {local: category_id, foreign: id, alias: Category}
 
 StaticPage: #Laurent
   inheritance: {type: concrete, extends: Page}
@@ -83,16 +83,29 @@ Message: #Laurent
     comment_id: {type: integer}
     sender_id: {type: integer}
     category_id: {type: integer, notnull: true}
+    folder_id: {type: integer, notnull: true, default: 1}
   relations:
     Comment: {local: comment_id, foreign: id, alias: comment, foreignType: one}
     Person: {local: sender_id, foreign: id, alias: Sender, foreignType: one}
     FaqCategory: {local: category_id, foreign: id, alias: faqCategory, foreignType: one}
+    Folder: {local: folder_id, foreign: id}
+
 
 Person: #Laurent
   columns:
     first_name: {type: string(255), notnull: true}
     last_name: {type: string(255), notnull: true}
     email_address: {type: string(255), notnull: true, unique: true}
+    corespondance_id: {type: integer}
+  relations:
+    Corespondance: {local: corespondance_id, foreign: id}
+
+Corespondance: #Laurent
+  columns:
+    first_mail: {type: datetime}
+    last_mail: {type: datetime}
+    number_of_mail: {type: integer, default: 0}
+
 
 Partner:
   actAs: {I18n: {fields: [company_name, description, site, is_visible]}}
@@ -139,3 +152,8 @@ Photo:
     galery_id: {type: integer}
   relations:
     Galery: {local: galery_id, foreign: id}
+
+Folder:
+  columns:
+    name: {type: string(255), unique: true}
+

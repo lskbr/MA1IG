@@ -24,6 +24,7 @@ abstract class BaseMessageForm extends BaseFormDoctrine
       'comment_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('comment'), 'add_empty' => true)),
       'sender_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Sender'), 'add_empty' => true)),
       'category_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('faqCategory'), 'add_empty' => false)),
+      'folder_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Folder'), 'add_empty' => false)),
     ));
 
     $this->setValidators(array(
@@ -36,6 +37,7 @@ abstract class BaseMessageForm extends BaseFormDoctrine
       'comment_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('comment'), 'required' => false)),
       'sender_id'   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Sender'), 'required' => false)),
       'category_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('faqCategory'))),
+      'folder_id'   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Folder'), 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('message[%s]');

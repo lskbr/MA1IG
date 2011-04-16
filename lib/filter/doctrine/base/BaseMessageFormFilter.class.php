@@ -21,6 +21,7 @@ abstract class BaseMessageFormFilter extends BaseFormFilterDoctrine
       'comment_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('comment'), 'add_empty' => true)),
       'sender_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Sender'), 'add_empty' => true)),
       'category_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('faqCategory'), 'add_empty' => true)),
+      'folder_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Folder'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
@@ -32,6 +33,7 @@ abstract class BaseMessageFormFilter extends BaseFormFilterDoctrine
       'comment_id'  => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('comment'), 'column' => 'id')),
       'sender_id'   => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Sender'), 'column' => 'id')),
       'category_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('faqCategory'), 'column' => 'id')),
+      'folder_id'   => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Folder'), 'column' => 'id')),
     ));
 
     $this->widgetSchema->setNameFormat('message_filters[%s]');
@@ -60,6 +62,7 @@ abstract class BaseMessageFormFilter extends BaseFormFilterDoctrine
       'comment_id'  => 'ForeignKey',
       'sender_id'   => 'ForeignKey',
       'category_id' => 'ForeignKey',
+      'folder_id'   => 'ForeignKey',
     );
   }
 }

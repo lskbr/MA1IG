@@ -10,6 +10,7 @@ Person:
     first_name: Olivier
     last_name: Deltour
     email_address: jin_7281@hotmail.com
+    Corespondance: OlivierCorespondance
 
   Nicolas:
     first_name: Nicolas
@@ -35,3 +36,4 @@ Person:
     first_name: User
     last_name: Test
     email_address: user@user.com
+    Corespondance: UserCorespondance

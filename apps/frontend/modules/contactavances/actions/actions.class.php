@@ -11,17 +11,15 @@
 class contactavancesActions extends sfActions {
 
     public function executeNew(sfWebRequest $request) {
-        if(Doctrine_Core::getTable('BooleanConfiguration')->createQuery()->where('main = "contacts"')->fetchOne()->getIsActivated())
-        {
-        $printEmbed = $this->getUser()->isAuthenticated();
-        $this->form = new MessageForm(null, null, null, !$printEmbed);
+        if (Doctrine_Core::getTable('BooleanConfiguration')->createQuery()->where('main = "contacts"')->fetchOne()->getIsActivated()) {
+            $printEmbed = $this->getUser()->isAuthenticated();
+            $this->form = new MessageForm(null, null, null, !$printEmbed);
 
-        if ($printEmbed) {
-            $this->userName = $this->getUser()->getName();
-            $this->mail = $this->getUser()->getEmail();
-        }
-        }
-        else{
+            if ($printEmbed) {
+                $this->userName = $this->getUser()->getName();
+                $this->mail = $this->getUser()->getEmail();
+            }
+        } else {
             $this->redirect404();
         }
     }
@@ -45,13 +43,22 @@ class contactavancesActions extends sfActions {
     protected function processForm(sfWebRequest $request, sfForm $form) {
         $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
         if ($form->isValid()) {
-                $message = $form->save();
+            $message = $form->save();
             if ($message) {
-                if($this->getUser()->isAuthenticated()){
+                if ($this->getUser()->isAuthenticated()) {
                     $message->setSender($this->getUser()->getPerson());
-                    $message->save();
+                }
+                $cor = $message->getSender()->getCorespondance();
+                $cor->setLastMail(date('Y-m-d H:i:s'));
+                $cor->setNumberOfMail($cor->getNumberOfMail()+1);
+                if($cor->getFirstMail()==null){
+                    $cor->setFirstMail(date('Y-m-d H:i:s'));
+                    $message->getSender()->setCorespondance($cor);
+                }else{
+                    $cor->save();
                 }
                 
+                $message->save();
                 return true;
             }
         }

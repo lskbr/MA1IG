@@ -19,8 +19,10 @@ class contactavancesActions extends autoContactavancesActions {
         $this->message = $message;
         $message->readed(date('Y-m-d H:i:s'));
         $message->save();
+    }
 
-        
+    public function executeNew(sfWebRequest $request){
+        $this->forward404();
     }
 
 }

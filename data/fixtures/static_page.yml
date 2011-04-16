@@ -23,12 +23,12 @@ StaticPage:
         content: 'Semente de vida é uma organização não governamental (ONG), criada na forma de uma associação sem fins lucrativos (ASBL) belga, que tem como objetivo a compensação do empréstimo ecológico dos habitantes dos países industrializados pela plantação de árvores em paises em desenvolvimento.'
         is_activated: 1
         title: Plantar árvores
-    Category: graineDeVie
+    Category: graineDeVieCat
 
   Plant:
     position: 2
     publication_date: '2011-03-22 00:00'
-    Category: notreEngagement
+    Category: notreEngagementCat
     Translation:
       fr:
         menu_title: Planter des arbres !
@@ -54,7 +54,7 @@ StaticPage:
   ProjetDExpansion:
      position: 3
      publication_date: '2011-03-22 00:00'
-     Category: graineDeVie
+     Category: graineDeVieCat
      Translation:
          fr:
              menu_title: Project d'Expansion

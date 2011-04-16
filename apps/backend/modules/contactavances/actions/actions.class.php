@@ -15,11 +15,6 @@ class contactavancesActions extends autoContactavancesActions {
 
     public function executeEdit(sfWebRequest $request) {
         $this->forward404Unless($message = Doctrine_Core::getTable('message')->find(array($request->getParameter('id'))), sprintf('Object message does not exist (%s).', $request->getParameter('id')));
-        if($message->getComment() instanceof BaseComment){
-            $comment = new Comment();
-            $message->setCommentId($comment->getOid());
-            $message->save();
-        }
         $this->form = new MessageAdminForm($message);
         $this->message = $message;
         $message->readed(date('Y-m-d H:i:s'));

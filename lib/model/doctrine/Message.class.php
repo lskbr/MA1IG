@@ -17,6 +17,9 @@ class Message extends BaseMessage {
         if ($this->getCreatedAt() == null) {
             $this->setCreatedAt(date('Y-m-d H:i:s'));
         }
+        if($this->getComment() == null){
+            $this->setComment(new Comment());
+        }
         return parent::save($conn);
     }
 

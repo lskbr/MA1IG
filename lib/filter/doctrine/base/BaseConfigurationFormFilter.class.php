@@ -31,7 +31,7 @@ abstract class BaseConfigurationFormFilter extends BaseFormFilterDoctrine
       'type'             => new sfValidatorPass(array('required' => false)),
       'is_kernel'        => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
       'is_activated'     => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
-      'value'            => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'value'            => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('configuration_filters[%s]');
@@ -59,7 +59,7 @@ abstract class BaseConfigurationFormFilter extends BaseFormFilterDoctrine
       'type'             => 'Text',
       'is_kernel'        => 'Boolean',
       'is_activated'     => 'Boolean',
-      'value'            => 'Number',
+      'value'            => 'Text',
     );
   }
 }

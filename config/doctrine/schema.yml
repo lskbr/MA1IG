@@ -52,6 +52,11 @@ NumericConfiguration:
   columns:
     value: {type: integer, default:0}
 
+StringConfiguration:
+  inheritance: {type: column_aggregation, extends: Configuration, keyValue:3}
+  columns:
+    value: {type: string(255), default:0}
+
 DynamicPage:
   inheritance: {type: concrete, extends: Page}
   columns:

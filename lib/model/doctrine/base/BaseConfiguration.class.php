@@ -12,7 +12,7 @@
  * @property string $type
  * @property boolean $is_kernel
  * @property boolean $is_activated
- * @property integer $value
+ * @property string $value
  * @property BooleanConfiguration $BooleanConfiguration
  * 
  * @method string               getMain()                 Returns the current record's "main" value
@@ -22,7 +22,7 @@
  * @method string               getType()                 Returns the current record's "type" value
  * @method boolean              getIsKernel()             Returns the current record's "is_kernel" value
  * @method boolean              getIsActivated()          Returns the current record's "is_activated" value
- * @method integer              getValue()                Returns the current record's "value" value
+ * @method string               getValue()                Returns the current record's "value" value
  * @method BooleanConfiguration getBooleanConfiguration() Returns the current record's "BooleanConfiguration" value
  * @method Configuration        setMain()                 Sets the current record's "main" value
  * @method Configuration        setName()                 Sets the current record's "name" value
@@ -72,9 +72,10 @@ abstract class BaseConfiguration extends sfDoctrineRecord
              'type' => 'boolean',
              'default' => 0,
              ));
-        $this->hasColumn('value', 'integer', null, array(
-             'type' => 'integer',
+        $this->hasColumn('value', 'string', 255, array(
+             'type' => 'string',
              'default' => 0,
+             'length' => 255,
              ));
 
         $this->setSubClasses(array(
@@ -85,6 +86,10 @@ abstract class BaseConfiguration extends sfDoctrineRecord
              'NumericConfiguration' => 
              array(
               'type' => 2,
+             ),
+             'StringConfiguration' => 
+             array(
+              'type' => 3,
              ),
              ));
     }

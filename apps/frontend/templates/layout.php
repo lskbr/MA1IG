@@ -12,24 +12,24 @@
             <div id="overPSlider">
             <div id="pSlider" class="protoSlider">
             <?php
-            $back_img = array(
-                'forest1.jpg',
-                'forest2.jpg',
-                'forest3.jpg',
-                'forest4.jpg',
-                'forest5.jpg',
-                'forest6.jpg',
-                'forest7.jpg',
-                'forest8.jpg',
-                'forest9.jpg'
-            );
+            $back_img = array();
+
+            $rep = './images/background/';
+            $d = opendir($rep);
+
+            while($entry = readdir($d)) {
+                if(is_file($rep.$entry)) {
+                    array_push($back_img, $entry);
+                }
+            }
+            closedir($d);
 
             shuffle($back_img);
 
             foreach ($back_img as $value):
             ?>
                 <a href="#">
-                    <img src="/images/background/<?php echo $value ?>" alt="Madagascar" />
+                    <img src="<?php echo substr($rep,1).$value ?>" alt="Madagascar" />
                 </a>
             <?php
             endforeach;

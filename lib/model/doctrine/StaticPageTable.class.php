@@ -17,7 +17,7 @@ class StaticPageTable extends PageTable {
     }
 
     public function getActivePages($cu) {
-        $query = $this->createQuery('a')->leftJoin('a.Translation t')->where('t.is_activated = ?', true)->andWhere('t.lang = ?', $cu);
+        $query = $this->createQuery('a')->leftJoin('a.Translation t')->where('t.is_activated = ?', true)->andWhere('a.publication_date <= ?',date('Y-m-d H:i:s'))->andWhere('t.lang = ?', $cu);
         return $query->execute();
     }
 

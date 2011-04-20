@@ -1,68 +1,65 @@
 ## author: Laurent
 
 sfGuardUser:
-  Laurent:
-    first_name: Laurent
-    last_name: Cardon
-    email_address: laurent_cardon@hotmail.com
+  LaurentLogin:
     algorithm: sha1
     username: laurent5
     is_active: 1
     is_super_admin: 0
     password: laurent5
     Groups: [Administrateur]
+    Person: Laurent
 
-  Olivier:
-    first_name: Olivier
-    last_name: Deltour
-    email_address: jin_7281@hotmail.com
+  OlivierLogin:
     algorithm: sha1
     username: Xtream
     is_active: 1
     is_super_admin: 0
     password: mdp_xt
     Groups: [Administrateur]
+    Person: Olivier
 
-  Nicolas:
-    first_name: Nicolas
-    last_name: Dechamps
-    email_address: ndech13@hotmail.com
+  NicolasLogin:
     algorithm: sha1
     username: Nico
     is_active: 1
     is_super_admin: 0
     password: 13031991
     Groups: [Administrateur]
+    Person: Nicolas
 
-  Alexandre:
-    first_name: Alexandre
-    last_name: Anoutchine
-    email_address: anoutchine@gmail.com
+  KevinLogin:
+    algorithm: sha1
+    username: Kevin
+    is_active: 1
+    is_super_admin: 0
+    password: kevin
+    Groups: [Administrateur]
+    Person : Kevin
+
+  AlexandreLogin:
     algorithm: sha1
     username: xirius
     is_active: 1
     is_super_admin: 0
     password: 947482317
     Groups: [Administrateur]
+    Person: Alexandre
     
-  Nilo:
-    first_name: Nilo
-    last_name: Menezes
-    email_address: nilo.menezes@gmail.com
+  NiloLogin:
     algorithm: sha1
     username: lskbr
     is_active: 1
     is_super_admin: 0
     password: gluglux
     Groups: [Administrateur]
+    Person: Nilo
       
-  User:
-    first_name: User
-    last_name: Test
-    email_address: user@user.com
+  UserLogin:
     algorithm: sha1
     username: user
     is_active: 1
     is_super_admin: 0
     password: user
     Groups: [Utilisateur]
+    Person: User

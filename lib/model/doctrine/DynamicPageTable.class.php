@@ -18,7 +18,7 @@ class DynamicPageTable extends PageTable
     }
 
     public function getActivePages() {
-        $query = $this->createQuery('a')->leftJoin('BooleanConfiguration b')->where('b.is_activated = ?',true);
+        $query = $this->createQuery('a')->leftJoin('a.BooleanConfiguration b')->where('b.is_activated = ?',true);
         return $query->execute();
     }
 }

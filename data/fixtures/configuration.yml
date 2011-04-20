@@ -1,4 +1,15 @@
 BooleanConfiguration:
+  ContactAvances:
+    main: contacts
+    name: Contacts avancés
+    description: Permet aux utilisateurs de vous contacter via le site
+    is_activated: true
+  ContactsAvancesAlertesMail:
+    main: contacts_alerte
+    name: Alerte mail
+    description: Voulez-vous être contacté pour prévenir de nouveaux messages ?
+    is_activated: true
+    BooleanConfiguration: ContactAvances
   News:
     main: news
     name: Actualités
@@ -22,6 +33,17 @@ BooleanConfiguration:
     name: Citation
     description: Place aléatoirement une citation sur chaque page de contenu du site.
     is_activated: false
+  Partner:
+    main: partner
+    name: Partenaire
+    description: Affiche la liste des partenaires sur une page avec les liens vers leurs sites.
+    is_activated: false
+  Faq:
+    main: faq
+    name: Foire aux Questions
+    description: Affiche la liste des questions fréquemment posées par les visiteurs.
+    is_activated: false
+
 NumericConfiguration:
   NewsParPage:
     main: news_by_page
@@ -34,3 +56,16 @@ NumericConfiguration:
     name: Nombre de commentaires par page
     BooleanConfiguration: Commentaires
     value: 4
+  DureeAvantSuppressionMessagerie:
+    main: contacts_delay_before_supress
+    name: Delais en jour avant supression automatique des messages non-enregistrés
+    BooleanConfiguration: ContactAvances
+    value: 100
+
+StringConfiguration:
+  ContactAvancesAdresseMail:
+    main: contacts_avances_adresse_mail
+    name: Adresse mail
+    description: Adresse-mail pour envoyer les alertes
+    value: laurent_cardon@hotmail.com
+    BooleanConfiguration: ContactsAvancesAlertesMail

@@ -1,3 +1,57 @@
+contactavances:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Message
+    module:               contactavances
+    prefix_path:          /contactavances
+    column:               id
+    with_wildcard_routes: true
+
+faq_category:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                faqCategory
+    module:               faq_category
+    prefix_path:          /faq_category
+    column:               id
+    with_wildcard_routes: true
+
+faq:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                faq
+    module:               faq
+    prefix_path:          /faq
+    column:               id
+    with_wildcard_routes: true
+
+galery:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Galery
+    module:               galery
+    prefix_path:          /galery
+    column:               id
+    with_wildcard_routes: true
+
+photo:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Photo
+    module:               photo
+    prefix_path:          /photo
+    column:               id
+    with_wildcard_routes: true
+
+partner:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                partner
+    module:               partner
+    prefix_path:          /partner
+    column:               id
+    with_wildcard_routes: true
+
 citation:
   class: sfDoctrineRouteCollection
   options:
@@ -15,11 +69,6 @@ static_page:
     prefix_path:          /staticpage
     column:               id
     with_wildcard_routes: true
-
-
-
-# You can find more information about this file on the symfony website:
-# http://www.symfony-project.org/reference/1_4/en/10-Routing
 
 sf_guard_permissions:
   url: /permission

@@ -1,0 +1,36 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           faq
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          faq
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:     
+        title: Liste des Questions Fréquemment Posées
+        display: [position, =question, =answer, _isActivated]
+        fields:
+          question:
+            label: Question
+          answer:
+            label: Réponse
+          Description:
+            label: Description
+          is_activated: {label: Visible, help: 'Cette faq est-elle visible pour les utilisateurs du site ?'}
+        object_actions:
+          enable: {label: "Invisible" action: "enable"}
+          disable: {label: "Visible" action: "disable"}
+        batch_actions: {}
+      filter:  
+        class: false
+      form:    ~
+      edit:    ~
+      new:     ~

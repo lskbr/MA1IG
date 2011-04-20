@@ -16,5 +16,6 @@ class DynamicPageForm extends BaseDynamicPageForm
   public function configure()
   {
     parent::configure();
+
   }
 }

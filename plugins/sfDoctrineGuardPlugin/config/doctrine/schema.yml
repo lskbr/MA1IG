@@ -50,15 +50,10 @@ sfGuardGroupPermission:
       local: permission_id
       onDelete: CASCADE
 
+#Modifié par Laurent : le prénom, mail & nom sont gérés dans la classe "Person"
 sfGuardUser:
   actAs: [Timestampable]
   columns:
-    first_name: string(255)
-    last_name: string(255)
-    email_address:
-      type: string(255)
-      notnull: true
-      unique: true
     username:
       type: string(128)
       notnull: true
@@ -77,6 +72,8 @@ sfGuardUser:
       default: false
     last_login:
       type: timestamp
+#    user_id: integer
+    person_id: integer
   indexes:
     is_active_idx:
       fields: [is_active]
@@ -93,6 +90,9 @@ sfGuardUser:
       foreign: permission_id
       refClass: sfGuardUserPermission
       foreignAlias: Users
+    Person: {local: person_id, foreign: id, foreignAlias: Person, foreignType: one}
+
+
 
 sfGuardUserPermission:
   options:

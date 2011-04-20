@@ -1,0 +1,25 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Photo
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          photo
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    
+        title: Géstion de Photos
+        display: [_picsmall, id, title, description, galery, publication_start, publication_end]  
+        sort: [id, title, description, galery, publication_start, publication_end]                  
+      filter:  ~
+      form:
+        class: PhotoForm
+      edit:    ~
+      new:     ~

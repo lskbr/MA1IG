@@ -28,9 +28,42 @@ page:
     id: \d+
     sf_method: [get]
 
+partner_show:
+  url: /:sf_culture/partner/:id
+  class:   sfDoctrineRoute
+  options: { model: Partner, type: object }
+  param:   { module: partner, action: show }
+  requirements:
+    id: \d+
+    sf_method: [get]
+
+faq:
+  url: /:sf_culture/faq
+  class: sfDoctrineRoute
+  options: { model: Faq, type: object }
+  param:   { module: faq, action: index }
+
+photo:
+  url:   /:sf_culture/photo/:id/:title_slug
+  class:   sfDoctrineRoute
+  options: { model: Photo, type: object }
+  param:   { module: photo, action: show }
+  requirements:
+    id: \d+
+    sf_method: [get]
+
+galery:
+  url:   /:sf_culture/galery/:id/:title_slug
+  class:   sfDoctrineRoute
+  options: { model: Galery, type: object }
+  param:   { module: galery, action: show }
+  requirements:
+    id: \d+
+    sf_method: [get]    
+
 default_index:
-  url:   /:module
+  url:   /:sf_culture/:module
   param: { action: index }
 
 default:
-  url:   /:module/:action/*
+  url:   /:sf_culture/:module/:action/*

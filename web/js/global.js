@@ -1,6 +1,12 @@
 jQuery.noConflict();
 var slider;
 
+
+function new_page(url,id,largeur,hauteur) {
+	var popup = window.open(url,id,'toolbar=0,location=0,directories=0,status=yes,menubar=0,scrollbars=yes,resizable=yes,width='+largeur+',height='+hauteur+',left=50,top=50');
+	return false;
+}
+
 jQuery(document).ready(function () {
 /*
     var height = jQuery("#menu li a:first").height();
@@ -54,7 +60,7 @@ jQuery(document).ready(function () {
                     closed = false;
             }
     });*/
-
+	
     jQuery("#login-bar-button").click(function () {
             if ((closed = jQuery("#login").is(":visible"))) {
                     jQuery("#login-bar-button").removeClass("login-open");

@@ -273,8 +273,8 @@ div#login input#login-button:hover {
 
 div#header-logo {
 	position: absolute;
-	left: 10px;
-	top: -30px;
+	left: 20px;
+	top: 0px;
 	width: 319px;
 	z-index: 1000;
 }
@@ -605,4 +605,11 @@ blockquote p.author{
 	float:right;
 	color:#484848;
 	font-style: normal;
+}
+
+#logo_link {
+    color: #8fbc13;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 110%;
 }

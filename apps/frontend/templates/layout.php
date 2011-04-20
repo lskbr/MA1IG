@@ -5,6 +5,10 @@
         <title><?php $titre_page = __('Graine de Vie'); echo $titre_page; ?></title>
         <?php include_javascripts() ?>
         <?php include_stylesheets() ?>
+
+        <!-- Tracking de Google Analytics -->
+        <?php include_once('googleanalyticstracking.php') ?>
+        <!-- Fin du tracking de Google Analytics -->
     </head>
 
     <body>

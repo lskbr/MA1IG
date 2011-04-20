@@ -16,11 +16,8 @@ abstract class BaseDynamicPageForm extends PageForm
   {
     parent::setupInheritance();
 
-    $this->widgetSchema   ['controller'] = new sfWidgetFormInputText();
-    $this->validatorSchema['controller'] = new sfValidatorString(array('max_length' => 255));
-
-    $this->widgetSchema   ['action'] = new sfWidgetFormInputText();
-    $this->validatorSchema['action'] = new sfValidatorString(array('max_length' => 255));
+    $this->widgetSchema   ['route'] = new sfWidgetFormInputText();
+    $this->validatorSchema['route'] = new sfValidatorString(array('max_length' => 255));
 
     $this->widgetSchema   ['boolean_configuation_id'] = new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('BooleanConfiguration'), 'add_empty' => false));
     $this->validatorSchema['boolean_configuation_id'] = new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('BooleanConfiguration')));

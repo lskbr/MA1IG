@@ -57,8 +57,7 @@ NumericConfiguration:
 DynamicPage:
   inheritance: {type: concrete, extends: Page}
   columns:
-    controller: {type: string(255), notnull: true}
-    action : {type: string(255), notnull: true}
+    route: {type: string(255), notnull: true}
     boolean_configuation_id: {type: integer, notnull: true}
   relations:
     BooleanConfiguration: {local: boolean_configuation_id, foreign: id}

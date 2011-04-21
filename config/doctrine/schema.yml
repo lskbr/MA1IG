@@ -61,7 +61,8 @@ StringConfiguration:
 DynamicPage:
   inheritance: {type: concrete, extends: Page}
   columns:
-    route: {type: string(255), notnull: true}
+    controller: {type: string(255), notnull: true}
+    action: {type: string(255), notnull: true}
     boolean_configuation_id: {type: integer, notnull: true}
   relations:
     BooleanConfiguration: {local: boolean_configuation_id, foreign: id}
@@ -74,7 +75,6 @@ Citation:
 
 Comment: #Laurent
   columns:
-
     text: {type: text}
     update_at: {type: datetime}
 

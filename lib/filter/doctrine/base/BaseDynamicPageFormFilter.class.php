@@ -14,8 +14,11 @@ abstract class BaseDynamicPageFormFilter extends PageFormFilter
   {
     parent::setupInheritance();
 
-    $this->widgetSchema   ['route'] = new sfWidgetFormFilterInput(array('with_empty' => false));
-    $this->validatorSchema['route'] = new sfValidatorPass(array('required' => false));
+    $this->widgetSchema   ['controller'] = new sfWidgetFormFilterInput(array('with_empty' => false));
+    $this->validatorSchema['controller'] = new sfValidatorPass(array('required' => false));
+
+    $this->widgetSchema   ['action'] = new sfWidgetFormFilterInput(array('with_empty' => false));
+    $this->validatorSchema['action'] = new sfValidatorPass(array('required' => false));
 
     $this->widgetSchema   ['boolean_configuation_id'] = new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('BooleanConfiguration'), 'add_empty' => true));
     $this->validatorSchema['boolean_configuation_id'] = new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('BooleanConfiguration'), 'column' => 'id'));
@@ -31,7 +34,8 @@ abstract class BaseDynamicPageFormFilter extends PageFormFilter
   public function getFields()
   {
     return array_merge(parent::getFields(), array(
-      'route' => 'Text',
+      'controller' => 'Text',
+      'action' => 'Text',
       'boolean_configuation_id' => 'ForeignKey',
     ));
   }

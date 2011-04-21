@@ -71,15 +71,3 @@ StaticPage:
              content: O projeto de expansão vai continuar
              title: Projeto de Expansão
              is_activated: 1
-
-
-DynamicPage:
-  Partner:
-    position: 1
-    publication_date: '2011-03-22 20:00'
-    Category: Ils_ont_dit
-    route: partner
-    BooleanConfiguration: Partner
-    Translation:
-      fr:
-        menu_title: Nos partenaires

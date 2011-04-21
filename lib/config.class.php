@@ -13,6 +13,7 @@ class config
 		foreach($this->_configs as $config)
 			if($config->getMain()==$key)
 				return $config;
+		echo $key;
 		throw new ConfigNotFoundException();
 	}
 	public function get($key)

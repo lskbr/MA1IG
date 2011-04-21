@@ -4,6 +4,8 @@ guestbook:
     model:                Guestbook
     module:               guestbook
     prefix_path:          /guestbook
+    column:               id
+    with_wildcard_routes: true
 
 contactavances:
   class: sfDoctrineRouteCollection

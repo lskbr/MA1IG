@@ -50,9 +50,9 @@ StaticPage:
         is_activated: 1
         title: Plantar árvores
   Projet_de_expansion:     
-     position: 2
+     position: 1
      publication_date: '2011-03-22 20:00'
-     Category: Graine_de_vie
+     category_id: 2
      Translation:
          fr:
              menu_title: Project d'Expansion

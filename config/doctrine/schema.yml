@@ -107,3 +107,14 @@ Guestbook:
     language_id: {type: integer}
   relations:
     Language: {local: language_id, foreign: id}
+
+News:
+  actAs:
+    Timestampable: ~
+  columns:
+    content: {type: text}
+    is_activated: {type: boolean, notnull: true, default: false}
+    language_id: {type: integer}
+    publication_date: {type: timestamp}
+  relations:
+    Language: {local: language_id, foreign: id}

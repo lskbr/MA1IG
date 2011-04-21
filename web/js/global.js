@@ -26,16 +26,11 @@ jQuery(document).ready(function () {
             }
     });
 */
-
-    // Menu
-    jQuery('#menu').accordion({
-            active: false,
-            header: '.head',
-            navigation: true,
-            event: 'mouseover',
-            fillSpace: false,
-            animated: 'easeslide'
-            //autoheight: false
+    jQuery("#menu ul").hide();
+    jQuery("#menu span").click(function()
+    {
+        jQuery("#menu ul").not(jQuery(this).next("ul")).slideUp();
+        jQuery(this).next("ul").slideDown(500);
     });
 
     //

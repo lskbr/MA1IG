@@ -24,7 +24,7 @@ Page:
     publication_date: {type: timestamp}
     category_id: {type: integer}
   relations:
-    Category: {local: category_id, foreign: id, alias: Category}
+    Category: {local: category_id, foreign: id}
 
 StaticPage: #Laurent
   inheritance: {type: concrete, extends: Page}

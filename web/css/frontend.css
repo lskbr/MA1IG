@@ -271,16 +271,35 @@ div#login input#login-button:hover {
 	cursor: pointer;
 }
 
-div#header-logo {
+div#header-logo a#logo_link {
+        display: block;
 	position: absolute;
-	left: 20px;
+	left: 30px;
 	top: 0px;
-	width: 319px;
+        padding: 10px;
 	z-index: 1000;
+
+        background-image: url("../images/logo-background.png");
+        /*background-color: #fff;*/
+	/* -> border */
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -khtml-border-radius: 10px;
+        border-radius: 10px;
+        behavior: url("../script/border-radius.htc");
+	/* <- border */
 }
 
 div#header-logo img {
-	margin: 0px 0 0 0px;
+	margin: 0;
+}
+
+div#header-logo #slogan_link {
+	margin-left: 23px;
+        color: #8fbc13;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 110%;
 }
 
 /* Header:Counter text */
@@ -396,6 +415,10 @@ ul#menu li ul {
 ul#menu li a:hover, ul#menu li span:hover {
 	background-color: #ffffbe;
 	color: #000;
+}
+
+ul#menu li a, ul#menu li span {
+	padding-left: 10px;
 }
 
 ul#menu > li ul > li a {
@@ -567,32 +590,37 @@ form.module-form tfoot a:hover {
 	text-decoration: underline;
 }
 
-/* Page title*/
+/* Page title */
 div#content h1,
-div#content h2 {
-	border-bottom: 3px solid #FF6600;
+div#content h2,
+div#content h3 {
 	display: inline-block;
-	font-size: 24px;
 	font-weight: bold;
-	margin: 0 15px;
+        font-family: "Trebuchet MS";
+        color: #5f3812;
+}
+
+div#content h1 {
+        height: 50px;
+        background: url("../images/img-h1.png") no-repeat 0 0;
+	font-size: 24px;
 	margin-bottom: 15px;
+        padding: 1px 0 0 27px;
+}
+div#content h2 {
+	font-size: 20px;
+	margin-bottom: 10px;
 }
 div#content h3 {
-	border-bottom: 3px solid #FF6600;
-	display: inline-block;
 	font-size: 16px;
-	font-weight: bold;
+	margin-bottom: 5px;
 }
 
 
-div#content > p {
+div#content {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
-	margin: 0 10px;
-}
-
-ul#menu li{
-	padding-left:20px;
+        padding: 10px;
 }
 
 blockquote {
@@ -600,7 +628,7 @@ blockquote {
 	padding:3px;
 	color:#575757;
 	padding: 0 40px;
-	background: url("/images/quote-left.png") no-repeat 0 0;
+	background: url("../images/quote-left.png") no-repeat 0 0;
 	min-height:60px;
 	max-width:350px;
 	font-style: italic;
@@ -612,14 +640,6 @@ blockquote p.author{
 	float:right;
 	color:#484848;
 	font-style: normal;
-}
-
-
-#logo_link {
-    color: #8fbc13;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 110%;
 }
 
 .partner_col1{

@@ -65,7 +65,7 @@
                 <div id="header-logo">
                     <a href="<?php echo url_for('@homepage') ?>" id="logo_link">
                         <img src="/images/header-logo.png" /><br/>
-                        <?php echo __('Compensons notre empreinte écologique !'); ?>
+                        <span id="slogan_link"><?php echo __('Compensons notre empreinte écologique !'); ?></span>
                     </a>
                 </div>
                 <div id="counter-text"><?php echo __('Nous avons déjà planté') ?></div>
@@ -141,10 +141,6 @@ addthis:description="An Example Description"
 <div class="addthis_toolbox addthis_default_style">
         <a class="addthis_button_facebook" title="<?php echo __('Partager sur Facebook') ?>"></a>
         <a class="addthis_button_twitter" title="<?php echo __('Partager sur Twitter') ?>"></a>
-        <a class="addthis_button_googlebuzz" title="<?php echo __('Partager sur Google Buzz') ?>"></a>
-        <a class="addthis_button_myspace" title="<?php echo __('Partager sur MySpace') ?>"></a>
-        <a class="addthis_button_email" title="<?php echo __('Envoyer par mail') ?>"></a>
-        <a class="addthis_button_favorites" title="<?php echo __('Ajouter aux favoris') ?>"></a>
         <a class="addthis_button_www.signaler.com" title="<?php echo __('Signaler') ?>"></a>
         <span class="addthis_separator">|</span>
         <a href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=ra-4d92ffa329add9af" class="addthis_button_compact"> <?php echo __('Partager') ?></a>

@@ -279,6 +279,7 @@ div#header-logo a#logo_link {
         padding: 10px;
 	z-index: 1000;
 
+        border: 0;
         background-image: url("../images/logo-background.png");
         /*background-color: #fff;*/
 	/* -> border */
@@ -286,7 +287,7 @@ div#header-logo a#logo_link {
         -webkit-border-radius: 10px;
         -khtml-border-radius: 10px;
         border-radius: 10px;
-        behavior: url("../script/border-radius.htc");
+        /*behavior: url("../script/border-radius.htc");*/
 	/* <- border */
 }
 

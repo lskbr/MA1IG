@@ -50,18 +50,11 @@ StaticPage:
         content: 'Elas produzem oxigênio, em média para quatro pessoas, dependendo de seu tipo. Suas raízes fixam o solo, retem e purificam o solo, retem e purificam a água, captando poluentes. Seus galhos freiam os ventos, retentem a humidade do ar e intevêm na regulação do clima. Suas folhas fertilizam o solo. Uma terra sem árvores resseca e mesmo a chuva mais fraca lhe empobresse retirando nutrientes. A floresta é o habitat do mundo vegetal e animal que representa mais de 50% da biodiversidade. Ela produz material para aquecer, abrigar, curar (através das plantas medicinais) e alimentar (através seus frutos ou do resultado do trabalho que ela provê a milhões de pessoas)'
         is_activated: 1
         title: Plantar árvores
-<<<<<<< HEAD
-  Projet_de_expansion:     
-     position: 1
-     publication_date: '2011-03-22 20:00'
-     category_id: 2
-=======
 
   ProjetDExpansion:
      position: 3
      publication_date: '2011-03-22 00:00'
      Category: graineDeVieCat
->>>>>>> c7ec2801456d1b35125749ad69daecb024534a35
      Translation:
          fr:
              menu_title: Project d'Expansion
@@ -78,7 +71,6 @@ StaticPage:
              content: O projeto de expansão vai continuar
              title: Projeto de Expansão
              is_activated: 1
-<<<<<<< HEAD
 
 
 DynamicPage:
@@ -91,10 +83,3 @@ DynamicPage:
     Translation:
       fr:
         menu_title: Nos partenaires
-=======
-         nl:
-             menu_title: ffdfgd
-             content: sdfsdfsfsdfsdfsdfsdf sd
-             title: dfgpdf
-             is_activated: 0
->>>>>>> c7ec2801456d1b35125749ad69daecb024534a35

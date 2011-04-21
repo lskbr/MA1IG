@@ -16,9 +16,6 @@ echo homepageItem('Liste des citations', 'Afficher la liste des citations', 'cit
 echo homepageItem('Ajouter une citation', 'Ajout d\'une citation', 'citation_new', 'add_quote-left');
 echo homepageItem('Liste des partenaires', 'Afficher la liste des partenaires', 'partner', 'partner');
 echo homepageItem('Ajouter un partenaire', 'Ajout d\'un partenaire', 'partner_new', 'add_partner');
-<<<<<<< HEAD
 echo homepageItem('Livre d\'or', 'Valider les messages du livre d\'or', 'guestbook', 'guestbook');
-=======
 echo homepageItem('Liste des FAQ', 'Afficher la liste des questions fréquemment posées', 'faq', 'faq');
 echo homepageItem('Ajouter un partenaire', 'Ajout d\'une FAQ', 'faq_new', 'add_faq');
->>>>>>> c7ec2801456d1b35125749ad69daecb024534a35

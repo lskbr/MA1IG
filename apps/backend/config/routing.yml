@@ -1,11 +1,10 @@
-<<<<<<< HEAD
 guestbook:
   class: sfDoctrineRouteCollection
   options:
     model:                Guestbook
     module:               guestbook
     prefix_path:          /guestbook
-=======
+
 contactavances:
   class: sfDoctrineRouteCollection
   options:
@@ -30,7 +29,6 @@ faq:
     model:                faq
     module:               faq
     prefix_path:          /faq
->>>>>>> c7ec2801456d1b35125749ad69daecb024534a35
     column:               id
     with_wildcard_routes: true
 

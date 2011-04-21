@@ -26,7 +26,7 @@ jQuery(document).ready(function () {
             }
     });
 */
-    jQuery("#menu ul").hide();
+    jQuery("#menu ul").not(jQuery("#menu ul.selected")).hide();
     jQuery("#menu span").click(function()
     {
         jQuery("#menu ul").not(jQuery(this).next("ul")).slideUp();

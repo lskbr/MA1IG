@@ -1,0 +1,17 @@
+Message:
+  UserMessage:
+    text: "Bonjour, pourquoi alors que je viens de planter 10 000 arbre, le compteur continu à s'incrémenter au même rythme ? Mon don a-t-il bien été pris en compte ?"
+    is_saved: true
+    created_at: '2011-02-04 20:25:00'
+    Sender: User
+    faqCategory: Engagement
+
+  OlivierMessage:
+    text: "Bonjour, je suis un grand fan de jQuery et je me demande pourquoi vous ne l'avez pas plus utilisé sur votre super site ? Mes honoraires sont de 20€/heure, merci de me recontacter"
+    is_saved: true
+    read_at: '2011-03-08 23:51:20'
+    created_at: '2011-03-04 20:25:00'
+    comment: OlivierComment
+    Sender: Olivier
+    faqCategory: Stupid
+    

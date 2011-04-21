@@ -625,6 +625,16 @@ blockquote p.author{
 	float: left;
 }
 
+.faq_question{
+	padding-left: 20px;
+}
+.faq_answer{
+	padding-left: 25px;
+}
+.faq_categQuestions{
+	text-align: center;
+}
+
 .photo_single{
     max-width:600px;
     max-height:500px;

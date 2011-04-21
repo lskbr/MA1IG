@@ -1,0 +1,13 @@
+DynamicPage:
+
+  contactsAvances:
+    position: 1
+    publication_date: '2000-03-03 00:00:00'
+    Category: contactCat
+    route: contactavances_new
+    BooleanConfiguration: ContactAvances
+    Translation:
+      fr:
+        menu_title: Contactez-nous
+      nl:
+        menu_title: Contacter-ons

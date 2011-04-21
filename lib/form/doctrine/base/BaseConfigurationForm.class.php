@@ -35,7 +35,7 @@ abstract class BaseConfigurationForm extends BaseFormDoctrine
       'type'             => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'is_kernel'        => new sfValidatorBoolean(array('required' => false)),
       'is_activated'     => new sfValidatorBoolean(array('required' => false)),
-      'value'            => new sfValidatorInteger(array('required' => false)),
+      'value'            => new sfValidatorString(array('max_length' => 255, 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('configuration[%s]');

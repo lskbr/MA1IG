@@ -7,27 +7,32 @@ Language:
     is_activated: {type: boolean, notnull: true, default: false}
     is_default: {type: boolean, notnull: true, unique: false}
 
-Category:
+Category: #Laurent
   actAs: {Timestampable: ~, I18n: {fields: [name]}}
-
   columns:
     name: {type: string(40), notnull: true, unique: true}
     position: {type: integer, notnull: true}
     is_activated: {type: boolean, notnull: true, default: false}
 
+<<<<<<< HEAD
 Page:
   actAs:
     Timestampable: ~
     I18n: {fields: [menu_title, content, is_activated, title]}
+=======
+Page: #Laurent
+  actAs: {Timestampable: ~}
+  actAs: {I18n: {fields: [menu_title, content, is_activated, title]}}
+>>>>>>> c7ec2801456d1b35125749ad69daecb024534a35
   columns:
     menu_title: {type: string(255), notnull: true}
     position: {type: integer, notnull: true}
     publication_date: {type: timestamp}
     category_id: {type: integer}
   relations:
-    Category: {local: category_id, foreign: id}
+    Category: {local: category_id, foreign: id, alias: Category}
 
-StaticPage:
+StaticPage: #Laurent
   inheritance: {type: concrete, extends: Page}
   columns:
     content: {type: text, notnull: true}
@@ -54,6 +59,11 @@ NumericConfiguration:
   columns:
     value: {type: integer, default:0}
 
+StringConfiguration:
+  inheritance: {type: column_aggregation, extends: Configuration, keyValue:3}
+  columns:
+    value: {type: string(255), default:0}
+
 DynamicPage:
   inheritance: {type: concrete, extends: Page}
   columns:
@@ -67,6 +77,46 @@ Citation:
   columns:
     author: {type: string(255)}
     content: {type: text}
+    
+Comment: #Laurent
+  columns:
+
+    text: {type: text}
+    update_at: {type: datetime}
+    
+Message: #Laurent
+  columns:
+    text: {type: text, notnull: true}
+    is_saved: {type: boolean, default: 0}
+    read_at: {type: datetime}
+    created_at: {type: datetime, notnull: true}
+    reply_at: {type: datetime}
+    comment_id: {type: integer}
+    sender_id: {type: integer}
+    category_id: {type: integer, notnull: true}
+    folder_id: {type: integer, notnull: true, default: 1}
+  relations:
+    Comment: {local: comment_id, foreign: id, alias: comment, foreignType: one}
+    Person: {local: sender_id, foreign: id, alias: Sender, foreignType: one}
+    FaqCategory: {local: category_id, foreign: id, alias: faqCategory, foreignType: one}
+    Folder: {local: folder_id, foreign: id}
+
+
+Person: #Laurent
+  columns:
+    first_name: {type: string(255), notnull: true}
+    last_name: {type: string(255), notnull: true}
+    email_address: {type: string(255), notnull: true, unique: true}
+    corespondance_id: {type: integer}
+  relations:
+    Corespondance: {local: corespondance_id, foreign: id}
+
+Corespondance: #Laurent
+  columns:
+    first_mail: {type: datetime}
+    last_mail: {type: datetime}
+    number_of_mail: {type: integer, default: 0}
+
 
 Partner:
   actAs: {I18n: {fields: [company_name, description, site, is_visible]}}
@@ -77,7 +127,23 @@ Partner:
     site: {type: string(255)}
     is_visible: {type: boolean, default: 0}
     position: {type: integer}
-    visit_count: {type:integer, default: 0}
+    visit_count: {type: integer, default: 0}
+
+FaqCategory:
+  actAs: {I18n: {fields: [name]}}
+  columns:
+    name: {type: string(255)}
+
+Faq:
+  actAs: {I18n: {fields: [question, answer, is_activated]}}
+  columns:
+    question: {type: text}
+    answer: {type: text}
+    position: {type: integer}
+    is_activated: {type: boolean, default: 0}
+    faq_category_id: {type: integer, notnull: true}
+  relations:
+    faqCategory: {local: faq_category_id, foreign: id}
 
 Galery:
   actAs: {Timestampable: ~, I18n: {fields: [name]}}
@@ -98,6 +164,7 @@ Photo:
   relations:
     Galery: {local: galery_id, foreign: id}
 
+<<<<<<< HEAD
 Guestbook:
   actAs: 
     Timestampable: ~
@@ -118,3 +185,9 @@ News:
     publication_date: {type: timestamp}
   relations:
     Language: {local: language_id, foreign: id}
+=======
+Folder:
+  columns:
+    name: {type: string(255), unique: true}
+
+>>>>>>> c7ec2801456d1b35125749ad69daecb024534a35

@@ -1,0 +1,45 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Message
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          contactavances
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+
+      fields:
+        created_at: {label: "Envoyé le"}
+        sender_name: {label: "Expéditeur"}
+        faq_category: {label: "Catégorie"}
+        read_at: {label: "Lu le"}
+        category_id: {label: "Catégorie"}
+        text: {label: "Message"}
+        comment: {label: "Commentaire", help: "N'est pas visible pour l'expéditeur mais seulement par les admins"}
+        is_saved: {label: "Voulez-vous conserver ce message ?"}
+        folder_id: {label: "Dossier"}
+        folder: {label: "Dossier"}
+
+      list:
+        title: Liste des messages
+        display: [_status, =sender_name, faq_category, created_at, read_at, folder]
+        sort: [read_at, desc]
+
+
+      filter:
+        display: [folder_id]
+
+      form:
+        class: MessageAdminForm
+
+      new: ~
+
+      edit:
+        title: Lecture du message de %%sender_name%%
+        

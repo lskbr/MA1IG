@@ -1,0 +1,50 @@
+FaqCategory:
+  Engagement :
+    Translation:
+      en:
+        name: Employment
+      fr:
+        name: Engagement
+  Stupid :
+    Translation:
+      en:
+        name: Stupid
+      fr:
+        name: Betes
+Faq:
+  Employment:
+    position: 1
+    faq_category_id : 1
+    Translation:
+       en:
+         question: "How can I get employed by GdV?"
+         answer: "It's easy, you just have to take a few seeds and go to Madagascar"
+         is_activated : 1
+       fr:
+         question: "Comment puis-je être engagé par Graine de Vie?"
+         answer: "Facile, prenez simplement quelques graines et allez à Madagascar"
+         is_activated : 1
+  name:
+    position: 2
+    faq_category_id : 2
+    Translation:
+       en:
+         question: "Why is it called Graine de Vie?"
+         answer: "Because we plant life!"
+         is_activated : 1
+       fr:
+         question: "Pourquoi est-ce que ça s'appelle Graine de Vie?"
+         answer: "Parce qu'on fait pousser la vie!"
+         is_activated : 1
+  count:
+    position: 3
+    faq_category_id : 1
+    Translation:
+       en:
+         question: "How many trees are you going to plant?"
+         answer: "So much as possible!"
+         is_activated : 1
+       fr:
+         question: "Combien d'arbres comptez-vous planter?"
+         answer: "Autant que possible!"
+         is_activated : 1

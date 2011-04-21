@@ -17,7 +17,8 @@
 #     email:    kris.wallsmith@symfony-project.com
 
 Category:
-  Graine_de_vie:
+
+  graineDeVieCat:
     position: 1
     is_activated : 1
     Translation:
@@ -30,7 +31,7 @@ Category:
        pt:
          name: Semente de Vida
 
-  Notre_engagement:
+  notreEngagementCat:
     position: 2
     is_activated : 1
     Translation:
@@ -41,7 +42,7 @@ Category:
        pt:
          name: Nosso compromisso
 
-  Raison_d_agir:
+  raisonDAgirCat:
     position: 3
     is_activated : 1
     Translation:
@@ -52,7 +53,7 @@ Category:
        pt:
          name: Razões para agir
 
-  Projet_Madagascar:
+  projetMadagascarCat:
     position: 4
     is_activated : 1
     Translation:
@@ -63,7 +64,7 @@ Category:
        pt:
          name: Projeto Madagascar
 
-  Ils_ont_dit:
+  ilsOntDitCat:
     position: 5
     is_activated : 1
     Translation:
@@ -74,7 +75,7 @@ Category:
        pt:
          name: Eles disseram
 
-  Comment_nous_aider:
+  commentNousAiderCat:
     position: 6
     is_activated : 1
     Translation:
@@ -85,7 +86,7 @@ Category:
        pt:
          name: Como ajudar?
 
-  Contact:
+  contactCat:
     position: 7
     is_activated : 1
     Translation:

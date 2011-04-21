@@ -15,6 +15,14 @@ abstract class PluginsfGuardUser extends BasesfGuardUser
     $_permissions    = null,
     $_allPermissions = null;
 
+  /*
+   * Rajout de Laurent
+   * Gère la relation entre Person et ce plugin
+   */
+  public function getEmail(){
+      return (string)$this->getPerson()->getEmailAddress();
+  }
+
   /**
    * Returns the string representation of the object: "Full Name (username)"
    *
@@ -32,7 +40,7 @@ abstract class PluginsfGuardUser extends BasesfGuardUser
    */
   public function getName()
   {
-    return trim($this->getFirstName().' '.$this->getLastName());
+    return trim($this->getPerson()->getFirstName().' '.$this->getPerson()->getLastName());
   }
 
   /**
@@ -289,4 +297,5 @@ abstract class PluginsfGuardUser extends BasesfGuardUser
       $this->_set('password', $v);
     }
   }
+
 }

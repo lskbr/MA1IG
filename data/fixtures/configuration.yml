@@ -14,11 +14,13 @@ BooleanConfiguration:
     main: news
     name: Actualités
     description: Active le système d'actualité
+    is_activated: true
   Commentaires:
     main: news_comments
     name: Commentaire
     description: Active le système de commentaire
     BooleanConfiguration: News
+    is_activated: true
   Calendrier:
     main: calendar
     name: Calendrier

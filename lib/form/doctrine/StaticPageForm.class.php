@@ -33,7 +33,6 @@ class StaticPageForm extends BaseStaticPageForm {
             'date_widget' => new sfWidgetFormDate(array('format' => '%day%/%month%/%year%')),
             'culture' => 'fr'
             ));
-        
         unset(
             $this['position']
         );

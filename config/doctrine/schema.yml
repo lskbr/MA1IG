@@ -169,13 +169,13 @@ Guestbook:
     Language: {local: language_id, foreign: id}
 
 News:
-  actAs:
-    Timestampable: ~
   columns:
+    title: {type: varchar(255)}
     content: {type: text}
     is_activated: {type: boolean, notnull: true, default: false}
-    language_id: {type: integer}
+    language_id: {type: integer, notnull: true}
     publication_date: {type: timestamp}
+    comments_activated: {type: boolean, notnull: true, default: true}
   relations:
     Language: {local: language_id, foreign: id}
 Folder:

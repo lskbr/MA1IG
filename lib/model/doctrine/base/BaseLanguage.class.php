@@ -10,17 +10,23 @@
  * @property string $flag
  * @property boolean $is_activated
  * @property boolean $is_default
+ * @property Doctrine_Collection $Guestbook
+ * @property Doctrine_Collection $News
  * 
- * @method string   getName()         Returns the current record's "name" value
- * @method string   getAbbreviation() Returns the current record's "abbreviation" value
- * @method string   getFlag()         Returns the current record's "flag" value
- * @method boolean  getIsActivated()  Returns the current record's "is_activated" value
- * @method boolean  getIsDefault()    Returns the current record's "is_default" value
- * @method Language setName()         Sets the current record's "name" value
- * @method Language setAbbreviation() Sets the current record's "abbreviation" value
- * @method Language setFlag()         Sets the current record's "flag" value
- * @method Language setIsActivated()  Sets the current record's "is_activated" value
- * @method Language setIsDefault()    Sets the current record's "is_default" value
+ * @method string              getName()         Returns the current record's "name" value
+ * @method string              getAbbreviation() Returns the current record's "abbreviation" value
+ * @method string              getFlag()         Returns the current record's "flag" value
+ * @method boolean             getIsActivated()  Returns the current record's "is_activated" value
+ * @method boolean             getIsDefault()    Returns the current record's "is_default" value
+ * @method Doctrine_Collection getGuestbook()    Returns the current record's "Guestbook" collection
+ * @method Doctrine_Collection getNews()         Returns the current record's "News" collection
+ * @method Language            setName()         Sets the current record's "name" value
+ * @method Language            setAbbreviation() Sets the current record's "abbreviation" value
+ * @method Language            setFlag()         Sets the current record's "flag" value
+ * @method Language            setIsActivated()  Sets the current record's "is_activated" value
+ * @method Language            setIsDefault()    Sets the current record's "is_default" value
+ * @method Language            setGuestbook()    Sets the current record's "Guestbook" collection
+ * @method Language            setNews()         Sets the current record's "News" collection
  * 
  * @package    grainedevie
  * @subpackage model
@@ -63,6 +69,14 @@ abstract class BaseLanguage extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
+        $this->hasMany('Guestbook', array(
+             'local' => 'id',
+             'foreign' => 'language_id'));
+
+        $this->hasMany('News', array(
+             'local' => 'id',
+             'foreign' => 'language_id'));
+
         $timestampable0 = new Doctrine_Template_Timestampable();
         $this->actAs($timestampable0);
     }

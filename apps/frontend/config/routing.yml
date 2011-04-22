@@ -28,6 +28,10 @@ page:
     id: \d+
     sf_method: [get]
 
+partner:
+  url: /:sf_culture/partner
+  param:   { module: partner, action: index }
+
 partner_show:
   url: /:sf_culture/partner/:id
   class:   sfDoctrineRoute
@@ -59,7 +63,7 @@ galery:
   param:   { module: galery, action: show }
   requirements:
     id: \d+
-    sf_method: [get]    
+    sf_method: [get]
 
 default_index:
   url:   /:sf_culture/:module

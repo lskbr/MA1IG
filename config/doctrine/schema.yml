@@ -14,16 +14,17 @@ Category: #Laurent
     position: {type: integer, notnull: true}
     is_activated: {type: boolean, notnull: true, default: false}
 
-Page: #Laurent
-  actAs: {Timestampable: ~}
-  actAs: {I18n: {fields: [menu_title, content, is_activated, title]}}
+Page:
+  actAs:
+    Timestampable: ~
+    I18n: {fields: [menu_title, content, is_activated, title]}
   columns:
     menu_title: {type: string(255), notnull: true}
     position: {type: integer, notnull: true}
     publication_date: {type: timestamp}
     category_id: {type: integer}
   relations:
-    Category: {local: category_id, foreign: id, alias: Category}
+    Category: {local: category_id, foreign: id}
 
 StaticPage: #Laurent
   inheritance: {type: concrete, extends: Page}
@@ -61,7 +62,7 @@ DynamicPage:
   inheritance: {type: concrete, extends: Page}
   columns:
     controller: {type: string(255), notnull: true}
-    action : {type: string(255), notnull: true}
+    action: {type: string(255), notnull: true}
     boolean_configuation_id: {type: integer, notnull: true}
   relations:
     BooleanConfiguration: {local: boolean_configuation_id, foreign: id}
@@ -71,13 +72,12 @@ Citation:
   columns:
     author: {type: string(255)}
     content: {type: text}
-    
+
 Comment: #Laurent
   columns:
-
     text: {type: text}
     update_at: {type: datetime}
-    
+
 Message: #Laurent
   columns:
     text: {type: text, notnull: true}
@@ -158,7 +158,26 @@ Photo:
   relations:
     Galery: {local: galery_id, foreign: id}
 
+Guestbook:
+  actAs: 
+    Timestampable: ~
+  columns:
+    content: {type: text}
+    is_validated: {type: boolean, notnull: true, default: false}
+    language_id: {type: integer}
+  relations:
+    Language: {local: language_id, foreign: id}
+
+News:
+  columns:
+    title: {type: varchar(255)}
+    content: {type: text}
+    is_activated: {type: boolean, notnull: true, default: false}
+    language_id: {type: integer, notnull: true}
+    publication_date: {type: timestamp}
+    comments_activated: {type: boolean, notnull: true, default: true}
+  relations:
+    Language: {local: language_id, foreign: id}
 Folder:
   columns:
     name: {type: string(255), unique: true}
-

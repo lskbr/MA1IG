@@ -22,7 +22,7 @@
         <?php if(isset($mail) && isset($userName)): ?>
         <tr>
             <td>
-                <?php echo __('Identitée :')?>
+                <?php echo __('Identité :')?>
             </td>
             <td>
                 <?php echo $userName; ?>

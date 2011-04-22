@@ -1,3 +1,21 @@
+news:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                News
+    module:               news
+    prefix_path:          /news
+    column:               id
+    with_wildcard_routes: true
+
+guestbook:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Guestbook
+    module:               guestbook
+    prefix_path:          /guestbook
+    column:               id
+    with_wildcard_routes: true
+
 contactavances:
   class: sfDoctrineRouteCollection
   options:

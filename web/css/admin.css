@@ -96,17 +96,16 @@ a:hover{
 #sidebar{
 	background: url(../images/bg_main.jpg) repeat-y scroll left top;
 	width:270px;
-	height:600px;
 	float:left;
 }
 #sidebar li{
-    height: 48px;
+    height: 32px;
     line-height: 48px;
     border-bottom: #c0c0c0 solid 1px;
 }
 
 #sidebar li a{
-    line-height:48px;
+    line-height:32px;
     font-size:15px;
     color:#555555;
     width:230px;
@@ -117,7 +116,7 @@ a:hover{
     outline:none;
 }
 #sidebar li a:hover{
-    line-height:48px;
+    line-height:32px;
     font-size:15px;
     color:#333333;
     width:230px;
@@ -156,6 +155,12 @@ h1{
 .flag{
     max-width:60px;
     max-height:35px;
+    vertical-align:middle;
+}
+.small_flag{
+    width:40px;
+    height: 26px;
+    margin: -2px;
     vertical-align:middle;
 }
 
@@ -386,6 +391,18 @@ th a, th a:hover {
 }
 .sf_admin_action_new{
     background-image:url(../images/icons/add2.png);
+    background-position:0 50%;
+    background-repeat:no-repeat;
+    padding-left:18px;
+}
+.sf_admin_action_enable{
+    background-image:url(../images/icons/valider.png);
+    background-position:0 50%;
+    background-repeat:no-repeat;
+    padding-left:18px;
+}
+.sf_admin_action_disable{
+    background-image:url(../images/icons/back.png);
     background-position:0 50%;
     background-repeat:no-repeat;
     padding-left:18px;

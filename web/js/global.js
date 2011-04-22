@@ -32,16 +32,16 @@ jQuery(document).ready(function () {
             }
     });
 */
-
-    // Menu
-    jQuery('#menu').accordion({
-            active: false,
-            header: '.head',
-            navigation: true,
-            event: 'mouseover',
-            fillSpace: false,
-            animated: 'easeslide'
-            //autoheight: false
+    
+    jQuery("#menu ul").not(jQuery("#menu ul.selected")).hide();
+    jQuery("#menu div").css('paddingLeft','24px');
+    jQuery("#menu div").not(":first").css({backgroundImage:"url(/images/left.png)"});
+    jQuery("#menu div").click(function()
+    {
+        jQuery(this).css({backgroundImage:"url(/images/down.png)"});
+        jQuery("#menu div").not(":first").not(jQuery(this)).css({backgroundImage:"url(/images/left.png)"});
+        jQuery("#menu ul").not(jQuery(this).next("ul")).slideUp();
+        jQuery(this).next("ul").slideDown(500);
     });
 
     //

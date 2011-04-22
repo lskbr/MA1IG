@@ -14,11 +14,13 @@ BooleanConfiguration:
     main: news
     name: Actualités
     description: Active le système d'actualité
+    is_activated: true
   Commentaires:
     main: news_comments
     name: Commentaire
     description: Active le système de commentaire
     BooleanConfiguration: News
+    is_activated: true
   Calendrier:
     main: calendar
     name: Calendrier
@@ -32,17 +34,22 @@ BooleanConfiguration:
     main: citation
     name: Citation
     description: Place aléatoirement une citation sur chaque page de contenu du site.
-    is_activated: false
+    is_activated: true
   Partner:
     main: partner
     name: Partenaire
     description: Affiche la liste des partenaires sur une page avec les liens vers leurs sites.
-    is_activated: false
+    is_activated: true
   Faq:
     main: faq
     name: Foire aux Questions
     description: Affiche la liste des questions fréquemment posées par les visiteurs.
-    is_activated: false
+    is_activated: true
+  Guestbook:
+    main: guestbook
+    name: Livre d'or
+    description: Affiche un livre d'or que les visiteurs peuvent compléter.
+    is_activated: true
 
 NumericConfiguration:
   NewsParPage:

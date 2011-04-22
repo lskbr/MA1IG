@@ -44,9 +44,8 @@
                         use_helper('AdminMenu'); //Ajouter ici pour le menu
                         if ($sf_user->isAuthenticated()) {
                             menu_item('Accueil', 'homepage', $sf_context); // 'NomAAfficher','route',$sf_context,à activer;
-                            if (Doctrine_Core::getTable('BooleanConfiguration')->createQuery()->where('main = "contacts"')->fetchOne()->getIsActivated()) {
-                                menu_item('Messagerie', 'contactavances', $sf_context);
-                            }
+                            menu_item('Messagerie', 'contactavances', $sf_context, 'contacts');
+                            menu_item('Actualités', 'news', $sf_context, 'news');
                             menu_item('Langues', 'language', $sf_context);
                             menu_item('Configuration', 'configuration', $sf_context);
                             menu_item('Catégories', 'category', $sf_context);
@@ -57,6 +56,7 @@
                             menu_item('Citation', 'citation', $sf_context, 'citation');
                             menu_item('Partenaires', 'partner', $sf_context, 'partner');
                             menu_item('Catégories de FAQ', 'faq_category', $sf_context, 'faq');
+                            menu_item('Livre d\'or', 'guestbook', $sf_context, 'guestbook');
                             menu_item('FAQ', 'faq', $sf_context, 'faq');
                             menu_item('Photos', 'photo', $sf_context);
                             menu_item('Galeries', 'galery', $sf_context);

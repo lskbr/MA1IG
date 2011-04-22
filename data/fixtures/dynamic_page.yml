@@ -1,5 +1,4 @@
 DynamicPage:
-
   contactsAvances:
     position: 1
     publication_date: '2000-03-03 00:00:00'
@@ -12,3 +11,13 @@ DynamicPage:
         menu_title: Contactez-nous
       nl:
         menu_title: Contacter-ons
+  Partner:
+    position: 2
+    publication_date: '2011-03-22 20:00'
+    Category: contactCat
+    controller: partner
+    action: index
+    BooleanConfiguration: Partner
+    Translation:
+      fr:
+        menu_title: Nos partenaires

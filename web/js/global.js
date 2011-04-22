@@ -29,11 +29,11 @@ jQuery(document).ready(function () {
     
     jQuery("#menu ul").not(jQuery("#menu ul.selected")).hide();
     jQuery("#menu div").css('paddingLeft','24px');
-    jQuery("#menu div").css({backgroundImage:"url(/images/left.png)"});
+    jQuery("#menu div").not(":first").css({backgroundImage:"url(/images/left.png)"});
     jQuery("#menu div").click(function()
     {
         jQuery(this).css({backgroundImage:"url(/images/down.png)"});
-        jQuery("#menu div").not(jQuery(this)).css({backgroundImage:"url(/images/left.png)"});
+        jQuery("#menu div").not(":first").not(jQuery(this)).css({backgroundImage:"url(/images/left.png)"});
         jQuery("#menu ul").not(jQuery(this).next("ul")).slideUp();
         jQuery(this).next("ul").slideDown(500);
     });

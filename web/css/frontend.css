@@ -289,6 +289,11 @@ div#header-logo a#logo_link {
         border-radius: 10px;
         /*behavior: url("../script/border-radius.htc");*/
 	/* <- border */
+	/* -> shadow */
+	-moz-box-shadow: 0 0 5px #000;
+	-webkit-box-shadow: 0 0 5px #000;
+	box-shadow: 0 0 5px #000;
+	/* <- shadow */
 }
 
 div#header-logo img {

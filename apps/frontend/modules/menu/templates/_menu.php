@@ -17,7 +17,7 @@
                 else echo '<ul>';
                     foreach($pages[$category->getId()] as $p)
                     {
-                        echo '<li><a href="'.$p->getUrl().'"><img src="/images/hierarchie.png" style="vertical-align:0%"/> '.$p->getMenuTitle().'</a></li>';
+                        echo '<li><a href="'.$p->getUrl().'"><img src="/images/hierarchie.png" alt="Flèche" style="vertical-align:0%"/> '.$p->getMenuTitle().'</a></li>';
                     }?>
                 </ul>
             </li>

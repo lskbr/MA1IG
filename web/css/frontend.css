@@ -634,12 +634,9 @@ div#content h3 {
 div#content {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
-        /*padding: 10px;*/
-	margin: 0 10px;
+    padding: 10px;
+	/*margin: 0 10px;*/
 }
-
-
->>>>>>> 819e970a70c919c71f6ea4fc4f71a61c4a6ff73e
 
 blockquote {
 	margin:22px 40px;

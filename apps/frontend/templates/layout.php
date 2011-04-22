@@ -131,8 +131,6 @@ function url_actuelle()
         }
 </script>
 
-<p>echo GET : <?php echo $_GET['test'] ?></p>
-
 <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4d92ffa329add9af"></script>
 
 <div class="addthis_toolbox addthis_default_style" addthis:url="http://www.example.com" addthis:title="An Example Title" addthis:description="An Example Description">

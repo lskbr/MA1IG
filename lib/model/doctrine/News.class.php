@@ -12,5 +12,14 @@
  */
 class News extends BaseNews
 {
-
+	public function enable()
+	{
+		$this->setIsActivated(true);
+		$this->save();
+	}
+	public function disable()
+	{
+		$this->setIsActivated(false);
+		$this->save();
+	}
 }

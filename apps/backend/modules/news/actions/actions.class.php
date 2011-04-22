@@ -13,4 +13,18 @@ require_once dirname(__FILE__).'/../lib/newsGeneratorHelper.class.php';
  */
 class newsActions extends autoNewsActions
 {
+	public function executeEnable(sfWebRequest $request)
+	{
+		$news = $this->getRoute()->getObject();
+		$news->enable();
+		$this->getUser()->setFlash('notice', 'La news à été publiée et pourra apparaître sur le site.');
+ 		$this->redirect('news');
+	}
+	public function executeDisable(sfWebRequest $request)
+	{
+		$news = $this->getRoute()->getObject();
+		$news->disable();
+		$this->getUser()->setFlash('notice', 'La news à été invalidée et n\'apparaîtra plus sur le site.');
+ 		$this->redirect('news');
+	}
 }

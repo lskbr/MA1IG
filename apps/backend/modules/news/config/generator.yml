@@ -22,9 +22,9 @@ generator:
             label: Langue
           title:
             label: Titre
-          created_at:
+          publication_date:
             label: Date de publication
-          is_validated:
+          is_activated:
             label: Status
         batch_actions: {}
       filter:

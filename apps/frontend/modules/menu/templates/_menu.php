@@ -1,11 +1,11 @@
 <!--author: Laurent && Nicolas-->
 <div id="sidebar">
     <ul id="menu">
-        <li><a class="head" href="<?php echo url_for('@homepage') ?>">
-        <?php echo __('Accueil') ?></a></li>
+        <li class="root"><div class="head"><a class="head" href="<?php echo url_for('@homepage') ?>">
+        <?php echo __('Accueil') ?></a></div></li>
         <?php foreach ($categories as $category): ?>
-            <li>
-                <span class="head"><?php echo $category->getName() ?></span>
+            <li class="root">
+                <div class="head"><?php echo $category->getName() ?></div>
                 <?php 
                 $active=false;
                 foreach($pages[$category->getId()] as $p)

@@ -7,6 +7,7 @@
 	<span class="date"><?php echo date('d-m-Y',strtotime($new->getPublicationDate())); ?></span><br/>
 	<?php echo $new->getFormatedText(200); ?>
 	</div>
+	<br/>
 	<?php
 }
 ?>

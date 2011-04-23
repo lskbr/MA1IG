@@ -2,8 +2,8 @@
 <div id="sidebar">
     <ul id="menu">
         <li class="root">
-            <div class="backcolor">
-                <a href="<?php echo url_for('@homepage') ?>"><?php echo __('Accueil') ?></a>
+            <div>
+                <a class="accueil" href="<?php echo url_for('@homepage') ?>"><?php echo __('Accueil') ?></a>
             </div>
         </li>
         <?php foreach ($categories as $category): ?>

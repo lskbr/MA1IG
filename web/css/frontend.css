@@ -445,34 +445,34 @@ div#sidebar {
 	z-index: 2;
 }
 
+/* design du menu */
+ul#menu li div, ul#menu li a {
+	cursor: pointer;
+	display: block;
+	height: 26px;
+	line-height: 26px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #633a13;
+	font-size: 14px;
+	font-weight: bold;
+}
+
 /* Padding du menu */
-ul#menu li div.backcolor { /* Catégories */
+ul#menu li a.accueil, ul#menu li div.backcolor { /* Catégories */
     padding-left: 10px;
 }
 ul#menu li a.backcolor { /* Pages */
     padding-left: 20px;
 }
-
-/* design du menu */
-ul#menu li div, ul#menu li a {
-	color: #633a13;
-	cursor: pointer;
-	display: block;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-size: 14px;
-	font-weight: bold;
-	height: 26px;
-	line-height: 26px;
-}
 ul#menu li.current-page {
-	background-color: #e4e4e4;
-	/*border-bottom: 1px solid #cdcdcd;
+	/*background-color: #e4e4e4;
+	border-bottom: 1px solid #cdcdcd;
 	border-right: 1px solid #e4e4e4;
 	border-top: 1px solid #cdcdcd;*/
 }
 
 /* Survol */
-ul#menu li a:hover, ul#menu li div:hover {
+ul#menu li div:hover, ul#menu li a:hover {
 	background-color: #ffffbe;
 	color: #000;
 }
@@ -484,10 +484,10 @@ ul#menu div.backcolor {
 ul#menu li{
     background: top left no-repeat;
 }
-div.fleche_image{
+/*div.fleche_image{
 	width:20px;
 	float:left;
-}
+}*/
 
 /*
     Fin Menu

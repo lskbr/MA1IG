@@ -419,9 +419,9 @@ div#content h3 {
 
 div#content h1 {
         height: 35px;
-        background: url("../images/img-h1.png") no-repeat 0 0;
-	font-size: 24px;
-        padding: 1px 0 0 27px;
+        background: url("../images/img-h1.png") no-repeat 0 9px;
+		font-size: 24px;
+        padding: 10px 0 0 27px;
 }
 div#content h2 {
 	font-size: 20px;

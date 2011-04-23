@@ -1,4 +1,6 @@
 <?php 
+slot('title', __('Bienvenue !'));
+
 if(config::getInstance()->get('citation'))
   include_component('citation', 'citation');
 ?>

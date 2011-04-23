@@ -2,7 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title><?php $titre_page = __('Graine de Vie'); echo $titre_page; ?></title>
+        <title><?php 
+        echo __('Graine de vie');
+        if(get_slot('title')):
+            echo ' - '.get_slot('title');
+        endif;
+        ?></title>
         <?php include_javascripts() ?>
         <?php include_stylesheets() ?>
 
@@ -88,6 +93,7 @@ function url_actuelle()
 {
      return "http://" . $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
 }
+$titre_page=get_slot('title');
 ?>
     <a href="#" title="<?php echo __('Partager sur Facebook') ?>" onclick="new_page('http://www.facebook.com/share.php?u=<?php echo urlencode(url_actuelle()) ?>',995,600,400)"><img src="/images/f_logo.png"/></a>
     <a href="#" title="<?php echo __('Partager sur Twitter') ?>" onclick="new_page('http://twitter.com/intent/tweet?text=<?php echo urlencode($titre_page) ?>&url=<?php echo url_actuelle() ?>',995,600,400)"><img src="http://twitter-badges.s3.amazonaws.com/t_logo-a.png" style="width:36px; height:36px"/></a>

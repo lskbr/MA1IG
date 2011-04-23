@@ -35,6 +35,28 @@ body {
 	width: 100%;
 }
 
+/*
+    Citations
+*/
+blockquote {
+	margin:22px 40px;
+	padding:3px;
+	color:#575757;
+	padding: 0 40px;
+	background: url("../images/quote-left.png") no-repeat 0 0;
+	min-height:60px;
+	max-width:350px;
+	font-style: italic;
+}
+blockquote p{
+	font-style: italic;
+}
+blockquote p.author{
+	float:right;
+	color:#484848;
+	font-style: normal;
+}
+
 /*div#fond_image {
         background-image: url(../images/forest1.jpg);
 	background-repeat: no-repeat;
@@ -61,7 +83,9 @@ div#bg-frame-background {
         z-index: -1;
 }
 
-/* Upper bar */
+/*
+    Upper bar
+*/
 div#upper-bar {
 	height: 28px;
 	padding-top: 0px;
@@ -109,7 +133,9 @@ a.login-open {
 	background-color: #035579;
 }
 
-/* Header*/
+/*
+    Header
+*/
 div#header {
 	height: 0px;
 	margin-left: 1px;
@@ -140,7 +166,46 @@ div#pSlider {
         z-index: -2;
 }
 
-/* Login */
+
+/* Header:Counter text */
+div#counter-text {
+	background-color: #000;
+	/* -> border */
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	-khtml-border-radius: 10px 10px 10px 10px;
+	/* <- border */
+	position: absolute;
+	left: 240px;
+	top: 125px;
+	color: #fff;
+	cursor: default;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 19px;
+	font-weight: bold;
+	/* -> opacity */
+	-moz-opacity:0.8;
+	opacity: 0.8;
+	filter:alpha(opacity=80);
+	/* <- opacity */
+	padding: 5px 10px;
+	z-index: 1001;
+}
+
+/* Counter */
+div#counter {
+	height: 129px;
+	position: absolute;
+	right: 17px;
+	top: 150px;
+	width: 500px;
+	z-index: 1000;
+}
+
+/*
+    Login
+*/
 div#login {
 	border: 1px solid #383E44;
         border-top: none;
@@ -271,6 +336,10 @@ div#login input#login-button:hover {
 	cursor: pointer;
 }
 
+/*
+    Logo
+*/
+
 div#header-logo a#logo_link {
         display: block;
 	position: absolute;
@@ -287,7 +356,7 @@ div#header-logo a#logo_link {
         -webkit-border-radius: 10px;
         -khtml-border-radius: 10px;
         border-radius: 10px;
-        /*behavior: url("../script/border-radius.htc");*/
+        behavior: url("../script/border-radius.htc");
 	/* <- border */
 	/* -> shadow */
 	-moz-box-shadow: 0 0 5px #000;
@@ -308,43 +377,10 @@ div#header-logo #slogan_link {
         font-size: 110%;
 }
 
-/* Header:Counter text */
-div#counter-text {
-	background-color: #000;
-	/* -> border */
-	border-radius: 10px 10px 10px 10px;
-	-moz-border-radius: 10px 10px 10px 10px;
-	-webkit-border-radius: 10px 10px 10px 10px;
-	-khtml-border-radius: 10px 10px 10px 10px;
-	/* <- border */
-	position: absolute;
-	left: 240px;
-	top: 125px;
-	color: #fff;
-	cursor: default;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 19px;
-	font-weight: bold;
-	/* -> opacity */
-	-moz-opacity:0.8;
-	opacity: 0.8;
-	filter:alpha(opacity=80);
-	/* <- opacity */
-	padding: 5px 10px;
-	z-index: 1001;
-}
+/*
+    Centre du design
+*/
 
-/* Counter */
-div#counter {
-	height: 129px;
-	position: absolute;
-	right: 17px;
-	top: 150px;
-	width: 500px;
-	z-index: 1000;
-}
-
-/* Main center template */
 /* padding-bottom = bg-frame-botom + 25*/
 div#center {
 	position: relative;
@@ -358,6 +394,49 @@ div#center {
 	min-height: 400px;
 }
 
+div#content {
+        position: relative;
+        float: right;
+        width: 720px;
+        margin: 0;
+        padding: 10px;
+        padding-top: 20px;
+        z-index: 1;
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+}
+
+/* Page titles */
+div#content h1,
+div#content h2,
+div#content h3 {
+	display: inline-block;
+	font-weight: bold;
+        font-family: "Trebuchet MS";
+        color: #5f3812;
+}
+
+div#content h1 {
+        height: 50px;
+        background: url("../images/img-h1.png") no-repeat 0 0;
+	font-size: 24px;
+	margin-bottom: 15px;
+        padding: 1px 0 0 27px;
+}
+div#content h2 {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+div#content h3 {
+	font-size: 16px;
+	margin-bottom: 5px;
+}
+
+/*
+    Menu
+*/
+
 div#sidebar {
         margin-top: 20px;
 	float: left;
@@ -366,86 +445,53 @@ div#sidebar {
 	z-index: 2;
 }
 
-div#content {
-        margin-top: 70px;
-	margin-left: 250px;
-	margin-right: 6px;
-	padding: 0;
-	position: relative;
-	z-index: 1;
+/* Padding du menu */
+ul#menu li div.backcolor { /* Catégories */
+    padding-left: 10px;
+}
+ul#menu li a.backcolor { /* Pages */
+    padding-left: 20px;
 }
 
-ul#menu li.root{
-	padding-left:0px;
+/* design du menu */
+ul#menu li div, ul#menu li a {
+	color: #633a13;
+	cursor: pointer;
+	display: block;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	height: 26px;
+	line-height: 26px;
 }
-
-ul#menu > li.current-page:first-child {
-	border-top: none;
-}
-
-ul#menu > li.current-page {
+ul#menu li.current-page {
 	background-color: #e4e4e4;
 	/*border-bottom: 1px solid #cdcdcd;
 	border-right: 1px solid #e4e4e4;
 	border-top: 1px solid #cdcdcd;*/
 }
 
-ul#menu li a, ul#menu li > div {
-	color: #633a13;
-	cursor: pointer;
-	display: block;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
-	font-weight: bold;
-	height: 26px;
-	line-height: 26px;
-}
-
-ul#menu li > div div {
-	float: right;
-}
-/*
-ul#menu li ul {
-	display: none;
-}
-*/
+/* Survol */
 ul#menu li a:hover, ul#menu li div:hover {
 	background-color: #ffffbe;
 	color: #000;
 }
 
-/*
-ul#menu li a, ul#menu li span {
-	padding-left: 10px;
-}
-
-ul#menu > li ul > li a {
-	padding-left: 25px;
-*/
-
-ul#menu div.head{
-	padding-left:4px;
+/* Javascript */
+ul#menu div.backcolor {
     background: 8px 5px no-repeat;
 }
 ul#menu li{
-	margin-left:8px;
-	padding-left:12px;
     background: top left no-repeat;
 }
 div.fleche_image{
 	width:20px;
 	float:left;
 }
-ul#menu li.root{
-	padding-left:0px;
-}
+
 /*
-ul#menu li:first-child,  ul#menu > li:first-child a{
-	border-radius: 20px 0px 0px 0px;
-	-moz-border-radius: 20px 0px 0px 0px;
-	-webkit-border-radius: 20px 0px 0px 0px;
-	-khtml-border-radius: 20px 0px 0px 0px;
-}*/
+    Fin Menu
+*/
 
 /* Footer */
 /* Dependant: br-frame-center; bg-frame-bottom, center*/
@@ -602,59 +648,6 @@ form.module-form tfoot a {
 
 form.module-form tfoot a:hover {
 	text-decoration: underline;
-}
-
-/* Page title */
-div#content h1,
-div#content h2,
-div#content h3 {
-	display: inline-block;
-	font-weight: bold;
-        font-family: "Trebuchet MS";
-        color: #5f3812;
-}
-
-div#content h1 {
-        height: 50px;
-        background: url("../images/img-h1.png") no-repeat 0 0;
-	font-size: 24px;
-	margin-bottom: 15px;
-        padding: 1px 0 0 27px;
-}
-div#content h2 {
-	font-size: 20px;
-	margin-bottom: 10px;
-}
-div#content h3 {
-	font-size: 16px;
-	margin-bottom: 5px;
-}
-
-
-div#content {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-    padding: 10px;
-	/*margin: 0 10px;*/
-}
-
-blockquote {
-	margin:22px 40px;
-	padding:3px;
-	color:#575757;
-	padding: 0 40px;
-	background: url("../images/quote-left.png") no-repeat 0 0;
-	min-height:60px;
-	max-width:350px;
-	font-style: italic;
-}
-blockquote p{
-	font-style: italic;
-}
-blockquote p.author{
-	float:right;
-	color:#484848;
-	font-style: normal;
 }
 
 .partner_col1{

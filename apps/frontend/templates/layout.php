@@ -68,12 +68,12 @@
                         <span id="slogan_link"><?php echo __('Compensons notre empreinte écologique !'); ?></span>
                     </a>
                 </div>
-                <div id="counter-text"><?php echo __('Nous avons déjà planté') ?></div>
+                <!--<div id="counter-text"><?php echo __('Nous avons déjà planté') ?></div>-->
             </div>
 
-            <div id="counter">
+            <!--<div id="counter">
                 <img src="/images/counter.png" />
-            </div>
+            </div>-->
 
             <div id="center">
                 <?php include_component('menu', 'menu') ?>

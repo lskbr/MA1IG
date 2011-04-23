@@ -17,6 +17,10 @@ class newsActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    $this->forward('default', 'module');
+    
+  }
+  public function executeShow(sfWebRequest $request)
+  {
+  	
   }
 }

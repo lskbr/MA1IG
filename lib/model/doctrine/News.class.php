@@ -22,4 +22,18 @@ class News extends BaseNews
 		$this->setIsActivated(false);
 		$this->save();
 	}
+	public function getFormatedText($lenght)
+	{
+		$texte=strip_tags($this->getContent());
+		if (strlen($texte)>$lenght)
+		{
+		    // Séléction du maximum de caractères
+		    $texte = substr($texte, 0, $lenght);
+		    // Récupération de la position du dernier espace (afin de ne pas tronquer un mot)
+		    $position_espace = strrpos($texte, " ");
+		    $texte = substr($texte, 0, $position_espace);
+		    $texte = $texte."...";
+		}
+		return $texte;
+	}
 }

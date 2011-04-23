@@ -22,7 +22,7 @@
                 
                 foreach($pages[$category->getId()] as $p)
                 {
-                    echo '<li><a class="backcolor" href="'.$p->getUrl().'"><img src="/images/hierarchie.png" style="vertical-align:0%"/> '.$p->getMenuTitle().'</a></li>';
+                    echo '<li><a class="backcolor" href="'.$p->getUrl().'"><img src="/images/hierarchie.png" style="vertical-align:0%; margin-right: 5px;"/>'.$p->getMenuTitle().'</a></li>';
                 }
                 ?>
                 </ul>

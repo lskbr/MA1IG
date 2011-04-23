@@ -58,6 +58,12 @@ NumericConfiguration:
     description: Indique le nombre d'actualités affichées sur la page d'accueil.
     BooleanConfiguration: News
     value: 5
+  CharParNews:
+    main: char_by_news
+    name: Nombre maximal de caractères par news
+    description: Indique combien de lettres sont utilisées dans l'accroche de chaque news sur la page d'acceuil.
+    BooleanConfiguration: News
+    value: 275
   ComsParPage:
     main: news_comments_by_page
     name: Nombre de commentaires par page

@@ -39,12 +39,12 @@ body {
     Citations
 */
 blockquote {
-	margin:22px 40px;
+	margin:12px 40px;
 	padding:3px;
 	color:#575757;
 	padding: 0 40px;
 	background: url("../images/quote-left.png") no-repeat 0 0;
-	min-height:60px;
+	min-height:40px;
 	max-width:350px;
 	font-style: italic;
 }
@@ -418,10 +418,9 @@ div#content h3 {
 }
 
 div#content h1 {
-        height: 50px;
+        height: 35px;
         background: url("../images/img-h1.png") no-repeat 0 0;
 	font-size: 24px;
-	margin-bottom: 15px;
         padding: 1px 0 0 27px;
 }
 div#content h2 {
@@ -459,7 +458,7 @@ ul#menu li div, ul#menu li a {
 	cursor: pointer;
 	display: block;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: bold;
 	height: 26px;
 	line-height: 26px;
@@ -691,9 +690,50 @@ form.module-form tfoot a:hover {
 }
 
 .homepage_col1{
-	width:400px;
+	width:370px;
 	float:left;
+	padding-right:10px;
+}
+.homepage_col2{
+	width:340px;
+	float:right;
 }
 .hompage_clear{
 	clear:both;
+}
+
+.news{
+	border: #b5ac8f solid 1px;
+	padding: 5px;
+	margin-top:5px;
+	color:#6c6243;
+	text-align: justify;
+}
+.news a.news_link{
+	color:#544a2d;
+	text-decoration:underline;
+	float:right;
+	padding-right:20px;
+}
+.news .news_content{
+	text-indent:20px;
+}
+a{
+	color:#544a2d;
+}
+.news span.date{
+    color:#544a2d;
+    font-weight:bold;
+}
+.news a.title{
+	font-size:14px;
+	color:#443c25;
+}
+.president_speech{
+	text-align: justify;
+	color:#544a2d;
+	text-indent:20px;	
+}
+.president_speech p{
+	margin-bottom:5px;
 }

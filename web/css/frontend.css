@@ -694,3 +694,6 @@ form.module-form tfoot a:hover {
 	width:400px;
 	float:left;
 }
+.hompage_clear{
+	clear:both;
+}

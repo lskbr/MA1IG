@@ -158,6 +158,16 @@ Photo:
   relations:
     Galery: {local: galery_id, foreign: id}
 
+Counter:
+  actAs: {I18n: {fields: [slogan_part1, slogan_part2, donation_text]}}
+  columns:
+    initial_number: {type: integer, notnull: true}
+    initial_date: {type: timestamp, notnull: true}
+    flow: {type: float, notnull: true}
+    slogan_part1: {type: string(255), notnull: true}
+    slogan_part2: {type: string(255), notnull: true}
+    donation_text: {type: string(255), notnull: true}
+
 Guestbook:
   actAs: 
     Timestampable: ~

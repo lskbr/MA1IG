@@ -6,6 +6,8 @@ CREATE TABLE citation (id BIGINT AUTO_INCREMENT, PRIMARY KEY(id)) ENGINE = INNOD
 CREATE TABLE comment (id BIGINT AUTO_INCREMENT, text text, update_at datetime, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE configuration (id BIGINT AUTO_INCREMENT, main VARCHAR(255) NOT NULL, name VARCHAR(255) NOT NULL, description text, configuration_id BIGINT, type VARCHAR(255), is_kernel TINYINT(1) DEFAULT '0', is_activated TINYINT(1) DEFAULT '0', value VARCHAR(255) DEFAULT '0', INDEX configuration_type_idx (type), INDEX configuration_id_idx (configuration_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE corespondance (id BIGINT AUTO_INCREMENT, first_mail datetime, last_mail datetime, number_of_mail BIGINT DEFAULT 0, PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE counter_translation (id BIGINT, slogan_part1 VARCHAR(255) NOT NULL, slogan_part2 VARCHAR(255) NOT NULL, donation_text VARCHAR(255) NOT NULL, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
+CREATE TABLE counter (id BIGINT AUTO_INCREMENT, initial_number BIGINT NOT NULL, initial_date DATETIME NOT NULL, flow FLOAT(18, 2) NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE dynamic_page_translation (id BIGINT, menu_title VARCHAR(255) NOT NULL, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE dynamic_page (id BIGINT AUTO_INCREMENT, position BIGINT NOT NULL, publication_date DATETIME, category_id BIGINT, controller VARCHAR(255) NOT NULL, action VARCHAR(255) NOT NULL, boolean_configuation_id BIGINT NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX category_id_idx (category_id), INDEX boolean_configuation_id_idx (boolean_configuation_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE faq_translation (id BIGINT, question text, answer text, is_activated TINYINT(1) DEFAULT '0', lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
@@ -39,6 +41,7 @@ CREATE TABLE sf_guard_user_permission (user_id BIGINT, permission_id BIGINT, cre
 ALTER TABLE configuration ADD CONSTRAINT configuration_configuration_id_configuration_id FOREIGN KEY (configuration_id) REFERENCES configuration(id);
 ALTER TABLE category_translation ADD CONSTRAINT category_translation_id_category_id FOREIGN KEY (id) REFERENCES category(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE citation_translation ADD CONSTRAINT citation_translation_id_citation_id FOREIGN KEY (id) REFERENCES citation(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE counter_translation ADD CONSTRAINT counter_translation_id_counter_id FOREIGN KEY (id) REFERENCES counter(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE dynamic_page_translation ADD CONSTRAINT dynamic_page_translation_id_dynamic_page_id FOREIGN KEY (id) REFERENCES dynamic_page(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE dynamic_page ADD CONSTRAINT dynamic_page_category_id_category_id FOREIGN KEY (category_id) REFERENCES category(id);
 ALTER TABLE dynamic_page ADD CONSTRAINT dynamic_page_boolean_configuation_id_configuration_id FOREIGN KEY (boolean_configuation_id) REFERENCES configuration(id);

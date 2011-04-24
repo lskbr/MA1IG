@@ -27,7 +27,7 @@ html {
 
 body {
 	background-color: #FFFFFF;
-        /*background-color: #3B7F10;
+	/*background-color: #3B7F10;
 	background-image: url("../images/texture.jpg");*/
 	height: 100%;
 	margin: 0 auto;
@@ -52,13 +52,11 @@ div#global {
 }
 
 div#bg-frame-background {
-        background-image: url(../images/bg-frame-global.png);
+	background-image: url(../images/bg-frame-global.png);
 	background-repeat: no-repeat;
-
-        position: absolute;
-        top: 0;
-
-        z-index: -1;
+	position: absolute;
+	top: 0;
+	z-index: -1;
 }
 
 /* Upper bar */
@@ -283,7 +281,7 @@ div#header-logo img {
 	margin: 0px 0 0 0px;
 }
 
-/* Header:Counter text */
+/* Header: Counter text */
 div#counter-text {
 	background-color: #000;
 	/* -> border */
@@ -311,10 +309,10 @@ div#counter-text {
 
 /* Counter */
 div#counter {
-	height: 129px;
+	height: 70px;
 	position: absolute;
-	right: 17px;
-	top: 150px;
+	right: 25px;
+	top: 155px;
 	width: 500px;
 	z-index: 1000;
 }

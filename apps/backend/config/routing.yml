@@ -1,3 +1,12 @@
+counter:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Counter
+    module:               counter
+    prefix_path:          /counter
+    column:               id
+    with_wildcard_routes: true
+
 guestbook:
   class: sfDoctrineRouteCollection
   options:

@@ -17,7 +17,7 @@ class newsActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    $this->news=Doctrine_Core::getTable('News')->createQuery('a')->where("a.publication_date < NOW()")->andWhere("a.is_activated=?",true)->orderBy('a.publication_date DESC')->execute();
+    $this->news=Doctrine_Core::getTable('News')->createQuery('a')->leftJoin('a.Language t')->where("a.publication_date < NOW()")->andWhere("a.is_activated=?",true)->andWhere('t.abbreviation= ?',$this->getUser()->getCulture())->orderBy('a.publication_date DESC')->execute();
   }
   public function executeShow(sfWebRequest $request)
   {

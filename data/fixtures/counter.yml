@@ -1,0 +1,14 @@
+Counter:
+  C1:
+    initial_number: 140000
+    initial_date: 2011-01-01 0:0:0
+    flow: 1
+    Translation:
+      en:
+        slogan_part1: "We have already planted"
+        slogan_part2: "Aidez nous à continuer à augmenter ce nombre"
+        donation_text: "Faites un don !"
+      fr:
+        slogan_part1: "Nous avons déjà planté"
+        slogan_part2: "Help us continue to increase this number"
+        donation_text: "Donate !"

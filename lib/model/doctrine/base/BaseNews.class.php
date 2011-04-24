@@ -12,21 +12,24 @@
  * @property timestamp $publication_date
  * @property boolean $comments_activated
  * @property Language $Language
+ * @property Doctrine_Collection $NewsComments
  * 
- * @method varchar   getTitle()              Returns the current record's "title" value
- * @method text      getContent()            Returns the current record's "content" value
- * @method boolean   getIsActivated()        Returns the current record's "is_activated" value
- * @method integer   getLanguageId()         Returns the current record's "language_id" value
- * @method timestamp getPublicationDate()    Returns the current record's "publication_date" value
- * @method boolean   getCommentsActivated()  Returns the current record's "comments_activated" value
- * @method Language  getLanguage()           Returns the current record's "Language" value
- * @method News      setTitle()              Sets the current record's "title" value
- * @method News      setContent()            Sets the current record's "content" value
- * @method News      setIsActivated()        Sets the current record's "is_activated" value
- * @method News      setLanguageId()         Sets the current record's "language_id" value
- * @method News      setPublicationDate()    Sets the current record's "publication_date" value
- * @method News      setCommentsActivated()  Sets the current record's "comments_activated" value
- * @method News      setLanguage()           Sets the current record's "Language" value
+ * @method varchar             getTitle()              Returns the current record's "title" value
+ * @method text                getContent()            Returns the current record's "content" value
+ * @method boolean             getIsActivated()        Returns the current record's "is_activated" value
+ * @method integer             getLanguageId()         Returns the current record's "language_id" value
+ * @method timestamp           getPublicationDate()    Returns the current record's "publication_date" value
+ * @method boolean             getCommentsActivated()  Returns the current record's "comments_activated" value
+ * @method Language            getLanguage()           Returns the current record's "Language" value
+ * @method Doctrine_Collection getNewsComments()       Returns the current record's "NewsComments" collection
+ * @method News                setTitle()              Sets the current record's "title" value
+ * @method News                setContent()            Sets the current record's "content" value
+ * @method News                setIsActivated()        Sets the current record's "is_activated" value
+ * @method News                setLanguageId()         Sets the current record's "language_id" value
+ * @method News                setPublicationDate()    Sets the current record's "publication_date" value
+ * @method News                setCommentsActivated()  Sets the current record's "comments_activated" value
+ * @method News                setLanguage()           Sets the current record's "Language" value
+ * @method News                setNewsComments()       Sets the current record's "NewsComments" collection
  * 
  * @package    grainedevie
  * @subpackage model
@@ -70,5 +73,9 @@ abstract class BaseNews extends sfDoctrineRecord
         $this->hasOne('Language', array(
              'local' => 'language_id',
              'foreign' => 'id'));
+
+        $this->hasMany('NewsComments', array(
+             'local' => 'id',
+             'foreign' => 'news_id'));
     }
 }

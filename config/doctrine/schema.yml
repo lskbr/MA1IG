@@ -188,6 +188,20 @@ News:
     comments_activated: {type: boolean, notnull: true, default: true}
   relations:
     Language: {local: language_id, foreign: id}
+
+NewsComments:
+  actAs:
+    Timestampable: ~
+  columns:
+    content: {type: text}
+    author_id: {type: integer, notnull: true}
+    news_id: {type: integer, notnull: true}
+    father_id: {type: integer, notnull: true}
+  relations:
+    News: {local: news_id, foreign: id}
+    Comments: {local: father_id, foreign: id}
+    sfGuardUser: {local: author_id, foreign: id}
+
 Folder:
   columns:
     name: {type: string(255), unique: true}

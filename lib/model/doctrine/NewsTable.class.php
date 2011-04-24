@@ -16,8 +16,8 @@ class NewsTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('News');
     }
-    public function getLast($count)
+    public function getLast($count,$culture)
     {
-    	return Doctrine_Core::getTable('News')->createQuery('a')->where("a.publication_date < NOW()")->andWhere("a.is_activated=?",true)->orderBy('a.publication_date DESC')->limit($count)->execute();
+    	return Doctrine_Core::getTable('News')->createQuery('a')->leftJoin('a.Language t')->where("a.publication_date < NOW()")->andWhere("a.is_activated=?",true)->andWhere('t.abbreviation= ?',$culture)->orderBy('a.publication_date DESC')->limit($count)->execute();
     }
 }

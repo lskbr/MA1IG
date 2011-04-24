@@ -6,16 +6,19 @@ if(config::getInstance()->get('citation'))
 ?>
 
 
-<div class="homepage_col1"/>
+<table id="homepage_table">
+    <tr>
+        <td class="homepage_cols">
 <?php
 if(config::getInstance()->get('news'))
-  include_component('news', 'news');?>
-</div>
-
-
-<div class="homepage_col2"/>
+  include_component('news', 'news');
+?>   
+        </td>
+        <td class="homepage_cols">
 <?php 
 if(config::getInstance()->get('guestbook'))
   include_component('guestbook', 'guestbook');
 ?>
-</div>
+        </td>
+    </tr>
+</table>

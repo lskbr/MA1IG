@@ -690,7 +690,21 @@ form.module-form tfoot a:hover {
     margin-right: auto;  
 }
 
-.homepage_col1{
-	width:400px;
+/*.homepage_col1{
+	width:370px;
 	float:left;
+}
+
+.homepage_col2{
+	width:370px;
+	float:right;
+}*/
+
+#homepage_table {
+    width: 100%;
+}
+
+.homepage_cols {
+    vertical-align: top;
+    width: 50%;
 }

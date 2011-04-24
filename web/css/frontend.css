@@ -737,3 +737,8 @@ a{
 .president_speech p{
 	margin-bottom:5px;
 }
+.president_speech .sign{
+	font-size:9px;
+	float:right;
+	color:#2c250e;
+}

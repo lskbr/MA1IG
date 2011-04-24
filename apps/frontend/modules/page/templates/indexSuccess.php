@@ -28,6 +28,7 @@ Le seuil d’alerte est atteint. Les équilibres naturels se révèlent beaucoup
 La destruction des forêts prend de telles proportions que, chaque année, plus de douze millions d’hectares de forêt disparaissent, soit une surface équivalente à quatre fois la superficie totale de la Belgique.<br/>
 Plus personne ne peut ignorer ce constat implacable : la Terre a atteint un seuil de vulnérabilité sans précédent. Les dégâts sont désormais visibles à l’œil nu.</p><p>
 Nous avons un devoir de solidarité vis-à-vis des générations suivantes. Nous devons accepter notre responsabilité écrasante dans la situation actuelle. Nous n’avons pas le droit de laisser à nos enfants comme seul héritage la gestion de nos manquements, comme nous leur abandonnons aujourd’hui nos déchets en tous genres. Si nous n’agissons pas, nous serons coupable de non-assistance à humanité en danger.');?>
+<p class="sign"><?php echo __('Frédéric Debouche, Président de Graine de Vie.'); ?></p>
 </div>
 </div>
 <div class="hompage_clear">

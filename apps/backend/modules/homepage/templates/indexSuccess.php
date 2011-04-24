@@ -21,3 +21,12 @@ echo homepageItem('Ajouter un partenaire', 'Ajout d\'un partenaire', 'partner_ne
 echo homepageItem('Livre d\'or', 'Valider les messages du livre d\'or', 'guestbook', 'guestbook');
 echo homepageItem('Liste des FAQ', 'Afficher la liste des questions fréquemment posées', 'faq', 'faq');
 echo homepageItem('Ajouter un partenaire', 'Ajout d\'une FAQ', 'faq_new', 'add_faq');
+echo homepageItem('Liste des citations', 'Afficher la liste des citations', 'citation', 'quote-left','citation');
+echo homepageItem('Ajouter une citation', 'Ajout d\'une citation', 'citation_new', 'add_quote-left','citation');
+echo homepageItem('Liste des partenaires', 'Afficher la liste des partenaires', 'partner', 'partner','partner');
+echo homepageItem('Ajouter un partenaire', 'Ajout d\'un partenaire', 'partner_new', 'add_partner','partner');
+echo homepageItem('Livre d\'or', 'Valider les messages du livre d\'or', 'guestbook', 'guestbook','guestbook');
+echo homepageItem('Livre d\'or', 'Ajouter un message dans le livre d\'or', 'guestbook_new', 'add_guestbook','guestbook');
+echo homepageItem('Liste des FAQ', 'Afficher la liste des questions fréquemment posées', 'faq', 'faq','faq');
+echo homepageItem('Ajouter une FAQ', 'Ajout d\'une FAQ', 'faq_new', 'add_faq','faq');
+

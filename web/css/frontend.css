@@ -348,6 +348,10 @@ div#counter-box {
 	top: 155px;
 }
 
+div#counter-box form {
+	display: none;
+}
+
 div#counter-box ul {
 }
 
@@ -390,7 +394,7 @@ li#slogan1 {
 	margin-right: 0;
 	margin-top: 12px;
 	padding: 0 10px;
-	padding-top: 4px;
+	padding-top: 3px;
 }
 
 

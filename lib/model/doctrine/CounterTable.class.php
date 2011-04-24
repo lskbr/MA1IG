@@ -21,9 +21,13 @@ class CounterTable extends Doctrine_Table
     {
     	return $this->createQuery('a')->
     		select('a.initial_number, a.flow, '.
-    			   'FLOOR(a.initial_number + TIMESTAMPDIFF(SECOND, a.initial_date, NOW())*a.flow) AS planted_trees, '.
-    			   'ROUND(1000/a.flow) AS interval, '.
-    			   't.slogan_part1, t.slogan_part2, t.donation_text')->
+    			   //'@margin := TIMESTAMPDIFF(SECOND, a.initial_date, NOW()) AS margin, '.
+    			   //'FLOOR(a.initial_number + @margin) AS planted_trees, '.
+    			'FLOOR(a.initial_number + TIMESTAMPDIFF(SECOND, a.initial_date, NOW())*a.flow) AS planted_trees, '.
+    			'FLOOR((1 - TIMESTAMPDIFF(SECOND, a.initial_date, NOW())*a.flow + '.
+    				'FLOOR(TIMESTAMPDIFF(SECOND, a.initial_date, NOW())*a.flow))*(1000/a.flow)) AS delay, '.
+    			'ROUND(1000/a.flow) AS interval, '.
+    			't.slogan_part1, t.slogan_part2, t.donation_text')->
     		innerJoin('a.Translation t')->
     		where("t.lang=?", $culture)->
     		orderBy('initial_date ASC')->

@@ -1,5 +1,5 @@
 <form class="lang_change" action="<?php echo url_for('change_language') ?>">
-	Langue:
+	<?php echo __('Langue:') ?>
   	<select name="language" id="language">
   	<?php 
   	foreach($languages as $l)

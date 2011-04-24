@@ -182,4 +182,3 @@ $titre_page=get_slot('title');
         </div>
     </body>
 </html>
-

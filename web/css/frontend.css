@@ -21,6 +21,9 @@ strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, tt, ul, var {
 	word-spacing: 0;
 }
 
+p{
+	color:#544a2d;
+}
 html {
 	height: 100%;
 }
@@ -742,6 +745,17 @@ form.module-form tfoot a:hover {
 .news .news_content{
 	text-indent:20px;
 }
+.news_ind {
+	border: #b5ac8f solid 1px;
+	margin-top:5px;
+	color:#6c6243;
+	text-align: justify;
+	padding:15px;
+}
+.date_ind {
+	text-indent:28px;
+	color:#6c6243;
+}
 a{
 	color:#544a2d;
 }
@@ -781,4 +795,12 @@ a{
 #bottom-bar li.form{
 	display:block;
 	padding-top:0px;
+}
+p{
+	color:#544a2d;
+}
+blockquote.guestbook{
+	text-align: justify;
+	padding-right:0px;
+	margin:5px;
 }

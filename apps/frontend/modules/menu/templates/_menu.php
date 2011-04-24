@@ -3,7 +3,7 @@
     <ul id="menu">
         <li class="root">
             <div class="backcolor">
-                <a href="<?php echo url_for('@homepage') ?>"><?php echo __('Accueil') ?></a>
+                <a href="<?php echo url_for('@localized_homepage') ?>"><?php echo __('Accueil') ?></a>
             </div>
         </li>
         <?php foreach ($categories as $category): ?>

@@ -738,6 +738,17 @@ form.module-form tfoot a:hover {
 .news .news_content{
 	text-indent:20px;
 }
+.news_ind {
+	border: #b5ac8f solid 1px;
+	margin-top:5px;
+	color:#6c6243;
+	text-align: justify;
+	padding:15px;
+}
+.date_ind {
+	text-indent:28px;
+	color:#6c6243;
+}
 a{
 	color:#544a2d;
 }

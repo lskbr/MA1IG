@@ -21,6 +21,6 @@ class newsActions extends sfActions
   }
   public function executeShow(sfWebRequest $request)
   {
-  	
+  	$this->news = $this->getRoute()->getObject();
   }
 }

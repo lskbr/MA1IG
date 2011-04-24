@@ -371,24 +371,26 @@ li#counter {
 li#slogan1 {
 	background-color: #000;
 	/* -> border */
-	border-radius: 10px 10px 10px 10px;
-	-moz-border-radius: 10px 10px 10px 10px;
-	-webkit-border-radius: 10px 10px 10px 10px;
-	-khtml-border-radius: 10px 10px 10px 10px;
+	border-radius: 10px 0px 0px 0px;
+	-moz-border-radius: 10px 0px 0px 0px;
+	-webkit-border-radius: 10px 0px 0px 0px;
+	-khtml-border-radius: 10px 0px 0px 0px;
 	/* <- border */
 	color: #fff;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 15px;
 	font-style: italic;
 	font-weight: bold;
+	height: 20px;
 	/* -> opacity */
 	-moz-opacity:0.8;
 	opacity: 0.8;
 	filter:alpha(opacity=80);
 	/* <- opacity */
-	margin-right: 10px;
-	margin-top: 5px;
-	padding: 4px 10px;
+	margin-right: 0;
+	margin-top: 12px;
+	padding: 0 10px;
+	padding-top: 4px;
 }
 
 

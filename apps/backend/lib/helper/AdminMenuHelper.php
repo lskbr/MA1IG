@@ -5,7 +5,7 @@ function menu_item($name, $route, $sf_context, $config=null)
 
 	if($config ==null || config::getInstance()->get($config))
 	{
-		if($current_route==$route)
+		if($current_route==$route || $current_route==($route.'_new'))
 			echo '<li class="current"><a href="'.url_for($route).'">'.$name.'</a></li>';
 		else
 			echo '<li><a href="'.url_for($route).'">'.$name.'</a></li>';

@@ -62,7 +62,7 @@ NumericConfiguration:
     name: Nombre de news par page
     description: Indique le nombre d'actualités affichées sur la page d'accueil.
     BooleanConfiguration: News
-    value: 5
+    value: 3
   CharParNews:
     main: char_by_news
     name: Nombre maximal de caractères par news

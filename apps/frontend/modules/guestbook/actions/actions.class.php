@@ -16,7 +16,7 @@ class guestbookActions extends sfActions
   * @param sfRequest $request A request object
   */
   public function executeIndex(sfWebRequest $request)
-  {
-        $this->guestbook = Doctrine_Core::getTable('guestbook')->createQuery('a')->innerJoin('a.Language l')->where("l.abbreviation=?", $this->getUser()->getCulture())->andWhere("a.is_validated=?",true)->execute();
+  { 
+    $this->guestbook = Doctrine_Core::getTable('guestbook')->createQuery('a')->innerJoin('a.Language l')->where("l.abbreviation=?", $this->getUser()->getCulture())->andWhere("a.is_validated=?",true)->execute();
   }
 }

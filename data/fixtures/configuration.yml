@@ -69,6 +69,12 @@ NumericConfiguration:
     description: Indique combien de lettres sont utilisées dans l'accroche de chaque news sur la page d'acceuil.
     BooleanConfiguration: News
     value: 275
+  CharParNewsList:
+    main: char_by_news_list
+    name: Nombre maximal de caractères par news
+    description: Indique combien de lettres sont utilisées dans l'accroche de chaque news sur la page récapitulative.
+    BooleanConfiguration: News
+    value: 275
   ComsParPage:
     main: news_comments_by_page
     name: Nombre de commentaires par page

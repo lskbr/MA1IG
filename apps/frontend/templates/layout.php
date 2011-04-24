@@ -168,6 +168,9 @@ $titre_page=get_slot('title');
                 </div>
                 <div id="bottom-bar">
                 	<ul>
+                        <li class="form">
+                            <?php include_component('language', 'language') ?>
+                        </li>
                     	<li><a href="#"><?php echo __("Contact") ?></a></li>
                         <li>|</li>
                         <li><a href="#"><?php echo __("Mentions légales") ?></a></li>

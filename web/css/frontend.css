@@ -715,6 +715,10 @@ form.module-form tfoot a:hover {
 	float:right;
 	padding-right:20px;
 }
+.news .news_clear{
+	height:1px;
+	clear:both;
+}
 .news .news_content{
 	text-indent:20px;
 }
@@ -722,12 +726,12 @@ a{
 	color:#544a2d;
 }
 .news span.date{
-    color:#544a2d;
+	color:#5f7f0c;
     font-weight:bold;
 }
 .news a.title{
 	font-size:14px;
-	color:#443c25;
+    color:#544a2d;
 }
 .president_speech{
 	text-align: justify;
@@ -741,4 +745,19 @@ a{
 	font-size:9px;
 	float:right;
 	color:#2c250e;
+}
+.lang_change{
+	font-weight:700;
+}
+#bottom-bar li.form{
+	display:block;
+	padding-top:0px;
+}
+#bottom-bar li{
+	display:block;
+	padding-top:4px;
+}
+#bottom-bar li.form{
+	display:block;
+	padding-top:0px;
 }

@@ -11,6 +11,10 @@ sf_guard_register:
   url: /register
   param: {module: sfGuardRegister, action: index}
 
+change_language:
+  url:   /change_language
+  param: { module: language, action: changeLanguage }
+
 homepage:
   url:   /
   param: { module: page, action: index }

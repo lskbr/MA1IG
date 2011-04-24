@@ -40,6 +40,11 @@ BooleanConfiguration:
     name: Partenaire
     description: Affiche la liste des partenaires sur une page avec les liens vers leurs sites.
     is_activated: true
+  Counter:
+    main: counter
+    name: Compteur d'arbres
+    description: Affiche le compteur d'arbres sur la page d'acceuil
+    is_activated: true
   Faq:
     main: faq
     name: Foire aux Questions

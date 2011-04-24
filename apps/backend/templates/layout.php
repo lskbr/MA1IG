@@ -54,6 +54,7 @@
                             menu_item('Groupes', 'sf_guard_group', $sf_context);
                             menu_item('Droits', 'sf_guard_permission', $sf_context);
                             menu_item('Citation', 'citation', $sf_context, 'citation');
+                            menu_item('Compteur d\'arbres', 'counter', $sf_context);
                             menu_item('Partenaires', 'partner', $sf_context, 'partner');
                             menu_item('Catégories de FAQ', 'faq_category', $sf_context, 'faq');
                             menu_item('Livre d\'or', 'guestbook', $sf_context, 'guestbook');

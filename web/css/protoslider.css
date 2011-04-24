@@ -1,7 +1,7 @@
 @charset "utf-8";
 /********************************************************************************
  *	ProtoSlider.js - prototype.js based plugin
- *	@version: 1.0 alhpa 5
+ *	@version: 1.0 alhpa 6
  *	@requires: prototype.js v1.6.1 or later
  *	@author: Alexandre Anoutchine
  *
@@ -48,7 +48,7 @@ div.protoSlider > a.element {
 	position: absolute;
 	top: 0;
 	visibility: visible;
-	z-index: 1000;
+	z-index: 2;
 }
 
 div.protoSlider > a.nav-lr {
@@ -67,7 +67,7 @@ div.protoSlider > a.nav-lr {
 	text-decoration: none;
 	visibility: hidden;
 	width: 50px;
-	z-index: 1001;
+	z-index: 3;
 }
 
 div.protoSlider:hover a.nav-lr {
@@ -86,7 +86,7 @@ div.protoSlider > div.element {
 	position: absolute;
 	top: 0;
 	visibility: visible;
-	z-index: 1000;
+	z-index: 2;
 }
 
 div.protoSlider > div.element > div {

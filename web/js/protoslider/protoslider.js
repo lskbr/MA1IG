@@ -1,6 +1,6 @@
 /********************************************************************************
  *	ProtoSlider.js - prototype.js based plugin
- *	@version: 1.0 alhpa 5
+ *	@version: 1.0 alhpa 6
  *	@requires: prototype.js v1.6.1 or later
  *	@author: Alexandre Anoutchine
  *
@@ -12,24 +12,25 @@
 //"use strict";
 //var alert, Class, $A, $, Ajax, Hash, Element, document, window, setInterval, clearInterval, setTimeout, clearTimeout, Event;
 
-/*	settings:		default	possible		description
- *		navigation:	[false]	(false, true)	Left, right navigation buttons
- *		navOpacity:	[0.7]	(0 - 1)			Nav. button's opacity
- *		navId:		[]						Extended navigation container id
+/*	settings:		default	possible					description
+ *		navigation:	[false]	(false, true)				Left, right navigation buttons
+ *		navOpacity:	[0.7]	(0 - 1)						Nav. button's opacity
+ *		navId:		[]									Extended navigation container id
  *
- *		fps:		[25]	(1 - 30)		Frames per second
- *		duration:	[2000]	(100 - 10000)	Animation time
- *		interval:	[5000]	(1 - 1000000)	Interval between slides
- *		hoverPause: [true]	(true, false)	Pause on mouse hover
+ *		fps:		[25]	(1 - 100)					Frames per second
+ *		duration:	[2000]	(100 - 10000)				Animation time
+ *		interval:	[false]	(100 - 1000000) or false	Interval between slides (in milliseconds)
+ *		hoverPause: [true]	(true, false)				Pause on mouse hover
  *
  *		effect		[]		(straight, corner, random)	Effect
- *		columns:	[]		(1 - 100)		Number of columns	( columns*rows must be between 1 - 300 )
- *		rows:		[]		(1 - 100)		Number of rows		( columns*rows must be between 1 - 300 )
- *		seat:		[0.25]	(0.0 - 1.0)		Single element animation time in % of total "duration"
- *		speedup:	[2]		(1 - 10)		Speedup the animation
+ *		random:		[all combination] (list of effects separeted by space, ex: "straight:owh:a swirl:owh:a:inv grid:ow:a")
+ *		columns:	[]		(1 - 100)					Number of columns	( columns*rows must be between 1 - 300 )
+ *		rows:		[]		(1 - 100)					Number of rows		( columns*rows must be between 1 - 300 )
+ *		seat:		[0.25]	(0.0 - 1.0)					Single element animation time in % of total "duration"
+ *		speedup:	[2]		(1 - 10)					Speedup the animation
  *
- *		onChange(n):						On change event
- *		onFinished(n):						On animation finished
+ *		onChange(n):									On change event
+ *		onFinished(n):									On animation finished
  */
 
 var ProtoSlider = Class.create({
@@ -71,13 +72,15 @@ var ProtoSlider = Class.create({
 				onFinished:	settings.onFinished	|| null,
 
 				// Animation
-				fps:		this._check(settings.fps, 1, 30, 25),
+				fps:		this._check(settings.fps, 1, 100, 25),
 				duration:	this._check(settings.duration, 100, 10000, 2000),
-				interval:	this._check(settings.interval, 100, 1000000, 5000),
+				interval:	settings.interval ?
+					this._check(settings.interval, 100, 1000000, 5000) : false,
 				hoverPause:	settings.hoverPause	|| true,
 				
 				// Main slide animation
 				effect:		settings.effect		|| null,
+				random:		settings.random ? settings.random.split(' ') : null,
 				columns:	this._check(settings.columns, 1, 100, 0),
 				rows:		this._check(settings.rows, 1, 100, 0),
 				seat:		this._check(settings.seat, 0, 1, 0.25),
@@ -159,6 +162,7 @@ var ProtoSlider = Class.create({
 	},
 
 	resize: function(columns, rows) {
+		this.cancel();
 		this._free();
 		// New size
 		this._ns_slider.settings.columns = this._check(columns, 1, 100, 0);
@@ -167,6 +171,7 @@ var ProtoSlider = Class.create({
 		// Validate params and resize
 		this._validate();
 		this._ns_slider.resize = true;
+		this.play();
 	},
 
 	show: function(n, effect) {
@@ -218,7 +223,7 @@ var ProtoSlider = Class.create({
 	_eff_inv:	':inv',
 	_eff_od:	':od',
 	_eff_sense:	[':a', ':b'],
-	_eff_trans:	[':o', ':ow', ':oh', ':owh'],
+	_eff_trans:	[':o', ':ow', ':oh', ':owh', ':oc', ':och', ':ocw', ':ohl', ':ohr', ':ovt', ':ovb'],
 
 	/*	work = {
 	 *		type:	 1,	// animation object: 1 - slide content, 2 -title
@@ -228,6 +233,7 @@ var ProtoSlider = Class.create({
 	 *	}
 	 */
 	_addWork: function(work) {
+		//$("test").update(work.effect); ///////////////////////////////////////
 		var ropt = {
 			coeff_a:	[0, 0],		// Engine parameter
 			coeff_b:	[0, 0],		// Engine parameter
@@ -238,13 +244,26 @@ var ProtoSlider = Class.create({
 			opacity:	[1, 0, 0],	// First: Element max opacity. 2 - 3 Internal
 			pattern:	null,		// Animation pattern
 			prev:		0,			// Previous slide
-			render:		null,		// Render engin
-			transition:	null,		// Singla element transition
+			render:		null,		// Render engine
+			seat:		0,			// Single element animation time (in % of all anim. time)
+			transition:	null,		// Single element transition
 			timestamp:	0,			// Start time
 			delta:		0,			// Time passed from the start
 			speedup:	0,			// Speedup flag
 			type:		work.type	// object animation type: slide, title, etc ...
 		};
+		
+		var _seat = work.effect.match(/seat\[([^<]+)\]/i);
+
+		if ((_seat = _seat && _seat[1])) {
+			ropt.seat = _seat;
+		} else {
+			ropt.seat = this._ns_slider.settings.seat;
+		}
+
+		if (ropt.seat < 1/this._ns_slider.slides[work.slide].length) {
+			ropt.seat = 1/this._ns_slider.slides[work.slide].length;
+		}
 
 		if (work.speedup) {
 			if (this._ns_slider.settings.speedup) {
@@ -279,11 +298,11 @@ var ProtoSlider = Class.create({
 			case 3:break;
 		}
 
-		switch (this._match(work.effect, this._eff_trans)) {
-			case 'ow':ropt.transition = this._rend_trans_ow;break;
-			case 'oh':ropt.transition = this._rend_trans_oh;break;
-			case 'owh':ropt.transition = this._rend_trans_owh;break;
-			default: case 'o':ropt.transition = this._rend_trans_o;break;
+		var trans_type = this._match(work.effect, this._eff_trans);
+		if (trans_type) {
+			ropt.transition = this['_rend_trans_'+trans_type];
+		} else {
+			ropt.transition = this._rend_trans_o;
 		}
 
 		// Start animation
@@ -317,9 +336,7 @@ var ProtoSlider = Class.create({
 						height:	(i === 0 ? last_h : elm_h),
 						width:	((this._ns_slider.settings.columns-1) === j ? last_w : elm_w),
 						x:		j*elm_w,
-						y:		(this._ns_slider.dim.height-last_h)-(i*elm_h),
-						x1:		0,
-						y1:		0
+						y:		(this._ns_slider.dim.height-last_h)-(i*elm_h)
 					};
 
 					if (slide.meta.type == 1) {
@@ -377,7 +394,7 @@ var ProtoSlider = Class.create({
 					borderLeft:	(i === 0 ? 'none' : ''),
 					borderRight:(i === 1 ? 'none' : ''),
 					opacity:	this._ns_slider.settings.navOpacity,
-					left:		(i === 0 ? 0 : this._ns_slider.dim.width-dim.width+'px'),
+					left:		(i === 0 ? 0 : this._ns_slider.dim.width-dim.width+2+'px'),
 					top:		Math.round((this._ns_slider.dim.height-dim.height)/2)+'px',
 					visibility:	'visible'
 				});
@@ -421,12 +438,10 @@ var ProtoSlider = Class.create({
 			}
 
 			if (item.nodeName.toLowerCase().match(/(a)|(div)/ig)[0] === 'a') {
-				// -> !!! Must be verified
 				item.setStyle({
 					height: this._ns_slider.dim.height+'px',
 					width:	this._ns_slider.dim.width+'px'
 				});
-				// <- !!! Must be verified
 				
 				if (!(img = item.down('img'))) {return;}
 				// Image
@@ -473,8 +488,7 @@ var ProtoSlider = Class.create({
 
 	_initEngineOpt: function(ropt, progress) {
 		ropt.fpa = Math.round(ropt.duration*this._ns_slider.settings.fps/1000);
-		ropt.fpse = Math.round(ropt.duration*this._ns_slider.settings.seat*
-			this._ns_slider.settings.fps/1000);
+		ropt.fpse = Math.round(ropt.duration*ropt.seat*this._ns_slider.settings.fps/1000);
 		ropt.fpse = (!ropt.fpse ? 0.01 : ropt.fpse);
 
 		for (var i=0; i<2; i++) {
@@ -644,7 +658,7 @@ var ProtoSlider = Class.create({
 				}
 				break;
 
-			case '':alert("oups !!!");
+			case '':alert("Unknown effect: "+effect);
 				break;
 		}
 		
@@ -652,22 +666,16 @@ var ProtoSlider = Class.create({
 	},
 
 	_random: function() {
-		var rand_effect = [
-			"straight:o:a", "straight:o:a:inv", "straight:o:a:od",
-			"straight:owh:a:od", "straight:owh:b:od",
-			"corner:o:a", "corner:o:a:inv", "corner:o:a:od",
-			"corner:o:b", "corner:o:b:inv", "corner:o:b:od",
-			"corner:owh:a", "corner:owh:b", "corner:owh:a:inv", "corner:owh:b:inv",
-			"corner:owh:a:od", "corner:owh:b:od",
-			"swirl:o:a", "swirl:o:a:inv", "swirl:owh:a:inv", "swirl:owh:a:inv:od",
-			"grid:o:a", "grid:o:a:inv", "grid:owh:a","grid:owh:a:inv",
-			"strokes1:o:a", "strokes1:o:a:od", "strokes1:o:b", "strokes1:o:b:od",
-			"strokes1:owh:a:inv", "strokes1:owh:a:od", "strokes1:owh:b:od",
-			"strokes2:o:a", "strokes2:o:a:od", "strokes2:o:b", "strokes2:o:b:od",
-			"random:o:a", "random:owh:a"
-		];
-		
-		return rand_effect[Math.round(Math.random()*(rand_effect.length-1))];
+		if (this._ns_slider.settings.random) {
+			return this._ns_slider.settings.random[Math.round(Math.random()*
+					(this._ns_slider.settings.random.length-1))];
+		}
+
+		return this._effects[Math.round(Math.random()*(this._effects.length-1))]+
+			this._eff_trans[Math.round(Math.random()*(this._eff_trans.length-1))]+
+			this._eff_sense[Math.round(Math.random()*(this._eff_sense.length-1))]+
+			(Math.round(Math.random())? this._eff_inv : '')+
+			(Math.round(Math.random())? this._eff_od : '');
 	},
 
 	_render: function() {
@@ -722,43 +730,102 @@ var ProtoSlider = Class.create({
 		}
 	},
 
-	_rend_trans_o: function(elm, alpha) {
-		elm.setStyle({opacity: alpha});
-	},
-
-	_rend_trans_h: function(elm, alpha) {
-		elm.setStyle({
-			opacity: 1,
-			height: Math.round((alpha)*elm.dim.height)+'px'
-		});
-	},
-
-	_rend_trans_w: function(elm, alpha) {
-		elm.setStyle({
-			opacity: 1,
-			width: Math.round((alpha)*elm.dim.width)+'px'
-		});
+	_rend_trans_o: function(elm, p) {
+		elm.setStyle({opacity: p});
 	},
 	
-	_rend_trans_oh: function(elm, alpha) {
+	_rend_trans_oh: function(elm, p) {
 		elm.setStyle({
-			opacity: alpha,
-			height: Math.round((alpha)*elm.dim.height)+'px'
+			opacity: p,
+			height: Math.round(elm.dim.height*(Math.cos(Math.PI*(1-p)/2)))+'px'
 		});
 	},
 
-	_rend_trans_ow: function(elm, alpha) {
+	_rend_trans_ow: function(elm, p) {
 		elm.setStyle({
-			opacity: alpha,
-			width: Math.round((alpha)*elm.dim.width)+'px'
+			opacity: p,
+			width: Math.round(elm.dim.width*(Math.cos(Math.PI*(1-p)/2)))+'px'
 		});
 	},
 
-	_rend_trans_owh: function(elm, alpha) {
+	_rend_trans_owh: function(elm, p) {
 		elm.setStyle({
-			opacity: alpha,
-			height: Math.round((alpha)*elm.dim.height)+'px',
-			width: Math.round((alpha)*elm.dim.width)+'px'
+			opacity: p,
+			height: Math.round(elm.dim.height*(Math.cos(Math.PI*(1-p)/2)))+'px',
+			width: Math.round(elm.dim.width*(Math.cos(Math.PI*(1-p)/2)))+'px'
+		});
+	},
+
+	_rend_trans_oc: function(elm, p) {
+		var height = elm.dim.height*(Math.cos(Math.PI*(1-p)/2)),
+			width = elm.dim.width*(Math.cos(Math.PI*(1-p)/2)),
+			left = Math.round(elm.dim.x+(elm.dim.width-width)/2),
+			top = Math.round(elm.dim.y+(elm.dim.height-height)/2);
+
+		elm.setStyle({
+			opacity: p,
+			backgroundPosition: (-left)+'px '+(-top)+'px',
+			height: Math.round(height)+'px',
+			left: (left)+'px',
+			top: (top)+'px',
+			width: Math.round(width)+'px'
+		});
+	},
+
+	_rend_trans_och: function(elm, p) {
+		var height = elm.dim.height*(Math.cos(Math.PI*(1-p)/2)),
+			top = Math.round(elm.dim.y+(elm.dim.height-height)/2);
+
+		elm.setStyle({
+			opacity: p,
+			backgroundPosition: (-elm.dim.x)+'px '+(-top)+'px',
+			height: Math.round(height)+'px',
+			top: (top)+'px'
+		});
+	},
+
+	_rend_trans_ocw: function(elm, p) {
+		var width = elm.dim.width*(Math.cos(Math.PI*(1-p)/2)),
+			left = Math.round(elm.dim.x+(elm.dim.width-width)/2);
+
+		elm.setStyle({
+			opacity: p,
+			backgroundPosition: (-left)+'px '+(-elm.dim.y)+'px',
+			left: (left)+'px',
+			width: Math.round(width)+'px'
+		});
+	},
+
+	_rend_trans_ohl: function(elm, p) {
+		elm.setStyle({
+			opacity: p,
+			left: Math.round(elm.dim.x - elm.dim.width +
+				  elm.dim.width*(Math.cos(Math.PI*(1-p)/2)))+'px'
+		});
+	},
+
+	_rend_trans_ohr: function(elm, p) {
+		elm.setStyle({
+			opacity: p,
+			left: Math.round(elm.dim.x + elm.dim.width -
+				  elm.dim.width*(Math.cos(Math.PI*(1-p)/2)))+'px'
+		});
+	},
+
+	_rend_trans_ovb: function(elm, p) {
+		elm.setStyle({
+			opacity: p,
+			top: Math.round(elm.dim.y + elm.dim.height -
+				 elm.dim.height*(Math.cos(Math.PI*(1-p)/2)))+'px'
+		});
+	},
+
+	_rend_trans_ovt: function(elm, p) {
+		// elm.dim.height*p
+		elm.setStyle({
+			opacity: p,
+			top: Math.round(elm.dim.y - elm.dim.height +
+				 elm.dim.height*(Math.cos(Math.PI*(1-p)/2)))+'px'
 		});
 	},
 	
@@ -777,6 +844,7 @@ var ProtoSlider = Class.create({
 	_s_reset: function() {
 		for (var i=0; i<this.length; i++) {
 			this[i].setStyle({
+				backgroundPosition: (-this[i].dim.x)+'px '+(-this[i].dim.y)+'px',
 				opacity:0,
 				left:	this[i].dim.x+'px',
 				top:	this[i].dim.y+'px',
@@ -848,4 +916,4 @@ var ProtoSlider = Class.create({
 });
 
 // ProtoSlider version
-ProtoSlider.version = "1.0a5";
+ProtoSlider.version = "1.0a6";

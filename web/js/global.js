@@ -1,3 +1,8 @@
+/********************************************************************************
+ *	Graine de Vie
+ *
+ *	UMons 2011.
+ ********************************************************************************/
 jQuery.noConflict();
 var slider;
 
@@ -88,19 +93,64 @@ jQuery(document).ready(function () {
                     jQuery("#login").slideDown("normal");
             }
     });
+
+	//! Initialize counter
+	var interval = jQuery("#counter-interval").get(0).value,
+		step = 1;
+
+	if (interval < 1000) {
+		step = 1000/interval;
+		interval = 1000;
+	}
+
+	jQuery("#counter").jsCounter({
+		number:		jQuery("#counter-trees").get(0).value,
+		interval:	interval,
+		step:		step,
+		spaceWidth:	2,
+		duration:	300,
+		fps:		50
+	});
 });
 
-// ProtoSlider
+//! ProtoSlider - Image transition library
 Event.observe(window, "load", function (evt) {
+	//! Use of the combination of these effects only
+	var effects =
+		"straight:o:a straight:o:a:inv straight:o:b straight:o:b:inv straight:o:a:od "+
+		"straight:ow:a:seat[0.5] straight:ow:a:inv:seat[0.5] straight:oh:a:seat[0.5] "+
+		"straight:oh:a:inv:seat[0.5] straight:owh:a:seat[0.5] straight:owh:a:inv:seat[0.5] "+
+		"straight:owh:b:seat[0.5] straight:oc:a:seat[0.5] straight:oc:a:inv:seat[0.5] "+
+		"straight:oc:b straight:oc:b:inv straight:och:a:seat[0.5] straight:och:a:inv:seat[0.5] "+
+		"straight:ocw:b:seat[0.5] straight:ohl:a:seat[0.4] straight:ohl:b:seat[0.4] "+
+		"straight:ohr:a:inv:seat[0.4] straight:ohr:b:inv:seat[0.4] straight:ovt:b:seat[0.4] "+
+		"straight:ovt:a:inv:seat[0.4] straight:ovb:a:seat[0.4] straight:ovb:b:inv:seat[0.4] "+
+		"corner:o:a corner:o:a:inv corner:o:b corner:o:b:inv corner:oc:a corner:oc:a:inv "+
+		"corner:oc:b corner:oc:b:inv random:o:a random:owh:a random:oc:a random:ohl:a "+
+		"random:ohr:a random:ovt:a random:ovb:a swirl:o:a:seat[0.4] swirl:o:b:seat[0.4] "+
+		"swirl:owh:a:seat[0.4] swirl:owh:b:seat[0.4] swirl:oc:a:seat[0.4] swirl:oc:b:seat[0.4] "+
+		"grid:o:a grid:o:a:inv grid:ow:a:seat[0.4] grid:ow:a:inv:seat[0.4] grid:oh:a:seat[0.4] "+
+		"grid:oh:a:inv:seat[0.4] grid:och:a:seat[0.4] grid:och:a:inv:seat[0.4] grid:ocw:a:seat[0.4] "+
+		"grid:ocw:a:inv:seat[0.4] grid:ohl:a:seat[0.5] grid:ohl:a:inv:seat[0.5] grid:ohl:b:seat[0.5] "+
+		"grid:ohl:b:inv:seat[0.5] grid:ovt:a:seat[0.5] grid:ovt:a:inv:seat[0.5] grid:ovb:a:seat[0.5] "+
+		"grid:ovb:a:inv:seat[0.5] grid:owh:a:seat[0.5] grid:owh:a:inv:seat[0.5] grid:oc:a:seat[0.5] "+
+		"grid:oc:a:inv:seat[0.5] strokes1:o:a strokes1:o:b:seat[0.4] strokes1:oh:a:seat[0.5] "+
+		"strokes1:oh:a:inv:seat[0.5] strokes1:owh:a:seat[0.5] strokes1:owh:a:inv:seat[0.5] "+
+		"strokes1:oc:a:seat[0.5] strokes1:oc:a:inv:seat[0.5] strokes1:oc:b:seat[0.5] "+
+		"strokes1:oc:b:inv:seat[0.5] strokes1:och:a:seat[0.5] strokes1:och:a:inv:seat[0.5] "+
+		"strokes1:ocw:b:seat[0.5] strokes1:ocw:b:inv:seat[0.5] strokes1:ovt:a:seat[0.5] "+
+		"strokes1:ovt:a:inv:seat[0.5]";
+
 	if ($("pSlider")) {
 		slider = new ProtoSlider("pSlider", {
 			navigation:		false,
 			duration:		1500,
-			columns:		10,
-			rows:			6,
+			interval:		7000,
+			fps:			75,
+			columns:		9,
+			rows:			7,
 			seat:			0.3,
-			speedup:		1,
-            fps:            100
+			random:			effects
 		});
 	}
 });

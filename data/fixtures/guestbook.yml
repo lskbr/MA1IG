@@ -9,3 +9,7 @@ Guestbook:
   M3:
     Language: Anglais
     content: "I love this fu**ing website !"
+  M4:
+    Language: Français
+    content: "La version 2.9 de l'implémentation de Scala est sortie en RC fin mars. Au même moment, plusieurs frameworks Scala gagnent une version et l'équipe a eu l'honneur de voir ses efforts récompensés par une subvention de l'Union Européenne. Tout ceci suggère de nombreuses nouveautés que nous allons voir après une présentation d'un langage bien plus répandu qu'on ne le croit."
+    is_validated: true

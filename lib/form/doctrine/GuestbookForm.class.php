@@ -13,10 +13,10 @@ class GuestbookForm extends BaseGuestbookForm
   public function configure()
   {
   	unset($this['created_at'],$this['updated_at'],$this['is_validated']);
+  	$this->setWidget('content',new sfWidgetFormTextarea(array(), array('size' => '20x5')));
   	$this->widgetSchema->setLabels(array(
             'language_id' => 'Langue :',
             'content' => 'Message :'
         ));
-  	$this->setWidget('content',new sfWidgetFormTextarea(array(), array('size' => '20x5')));
   }
 }

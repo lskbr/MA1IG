@@ -795,3 +795,8 @@ a{
 p{
 	color:#544a2d;
 }
+blockquote.guestbook{
+	text-align: justify;
+	padding-right:0px;
+	margin:5px;
+}

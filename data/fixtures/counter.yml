@@ -2,7 +2,7 @@ Counter:
   C1:
     initial_number: 140000
     initial_date: 2011-01-01 0:0:0
-    flow: 1
+    flow: 0.0272704
     Translation:
       en:
         slogan_part1: "We have already planted"

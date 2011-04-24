@@ -1,0 +1,35 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           News
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          news
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Liste des news :
+        display: [_flag, =title, publication_date, _is_activated]
+        fields:
+          flag:
+            label: Langue
+          title:
+            label: Titre
+          publication_date:
+            label: Date de publication
+          is_activated:
+            label: Status
+        batch_actions: {}
+      filter:
+        display: [language_id, title]
+      form:    ~
+      edit:    ~
+      new:
+        title: Ecrire une news

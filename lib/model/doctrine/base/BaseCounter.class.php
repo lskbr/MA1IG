@@ -45,6 +45,7 @@ abstract class BaseCounter extends sfDoctrineRecord
              ));
         $this->hasColumn('flow', 'float', null, array(
              'type' => 'float',
+             'scale' => 7,
              'notnull' => true,
              ));
         $this->hasColumn('slogan_part1', 'string', 255, array(

@@ -6,7 +6,16 @@
 jQuery.noConflict();
 var slider;
 
+
+function new_page(url,id,largeur,hauteur) {
+	var popup = window.open(url,id,'toolbar=0,location=0,directories=0,status=yes,menubar=0,scrollbars=yes,resizable=yes,width='+largeur+',height='+hauteur+',left=50,top=50');
+	return false;
+}
+
 jQuery(document).ready(function () {
+	//
+	// Menu
+	//
 /*
     var height = jQuery("#menu li a:first").height();
     var visible = false;
@@ -31,9 +40,16 @@ jQuery(document).ready(function () {
             }
     });
 */
+    
     jQuery("#menu ul").not(jQuery("#menu ul.selected")).hide();
-    jQuery("#menu span").click(function()
+    jQuery("#menu div").css('paddingLeft','26px');
+    jQuery("#menu a.backcolor").css('paddingLeft','26px');
+    jQuery("#menu div.categorie").css({backgroundImage:"url(/images/left.png)"});
+	
+    jQuery("#menu div.categorie").click(function()
     {
+        jQuery(this).css({backgroundImage:"url(/images/down.png)"});
+        jQuery("#menu div.categorie").not(jQuery(this)).css({backgroundImage:"url(/images/left.png)"});
         jQuery("#menu ul").not(jQuery(this).next("ul")).slideUp();
         jQuery(this).next("ul").slideDown(500);
     });
@@ -54,7 +70,7 @@ jQuery(document).ready(function () {
                     closed = false;
             }
     });*/
-
+	
     jQuery("#login-bar-button").click(function () {
             if ((closed = jQuery("#login").is(":visible"))) {
                     jQuery("#login-bar-button").removeClass("login-open");
@@ -79,14 +95,21 @@ jQuery(document).ready(function () {
     });
 
 	//! Initialize counter
+	var interval = jQuery("#counter-interval").get(0).value,
+		step = 1;
+
+	if (interval < 1000) {
+		step = 1000/interval;
+		interval = 1000;
+	}
+
 	jQuery("#counter").jsCounter({
-		//image_numbers:	'numbers-original.png',
-		number:		0,
-		step:		1,
+		number:		jQuery("#counter-trees").get(0).value,
+		interval:	interval,
+		step:		step,
 		spaceWidth:	2,
 		duration:	300,
-		fps:		50,
-		interval:	1000
+		fps:		50
 	});
 });
 
@@ -122,11 +145,11 @@ Event.observe(window, "load", function (evt) {
 		slider = new ProtoSlider("pSlider", {
 			navigation:		false,
 			duration:		1500,
-			fps:			50,
+			interval:		7000,
+			fps:			75,
 			columns:		9,
 			rows:			7,
 			seat:			0.3,
-			interval:		7000,
 			random:			effects
 		});
 	}

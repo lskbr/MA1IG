@@ -7,6 +7,15 @@ counter:
     column:               id
     with_wildcard_routes: true
 
+news:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                News
+    module:               news
+    prefix_path:          /news
+    column:               id
+    with_wildcard_routes: true
+
 guestbook:
   class: sfDoctrineRouteCollection
   options:

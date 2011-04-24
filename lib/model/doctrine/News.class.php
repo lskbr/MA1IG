@@ -12,5 +12,45 @@
  */
 class News extends BaseNews
 {
-
+	public function getTitleSlug() {
+		$text = preg_replace('#[^\\pL\d]+#u', '-', $this->getTitle());
+		// trim
+		$text = trim($text, '-');
+		// transliterate
+		if (function_exists('iconv'))
+			$text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+		// lowercase
+		$text = strtolower($text);
+		// remove unwanted characters
+		$text = preg_replace('#[^-\w]+#', '', $text);
+ 
+		if (empty($text))
+			return 'n-a';
+		return $text;
+    }
+    
+	public function enable()
+	{
+		$this->setIsActivated(true);
+		$this->save();
+	}
+	public function disable()
+	{
+		$this->setIsActivated(false);
+		$this->save();
+	}
+	public function getFormatedText($lenght)
+	{
+		$texte=strip_tags($this->getContent());
+		if (strlen($texte)>$lenght)
+		{
+		    // Séléction du maximum de caractères
+		    $texte = substr($texte, 0, $lenght);
+		    // Récupération de la position du dernier espace (afin de ne pas tronquer un mot)
+		    $position_espace = strrpos($texte, " ");
+		    $texte = substr($texte, 0, $position_espace);
+		    $texte = $texte."...";
+		}
+		return $texte;
+	}
 }

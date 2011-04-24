@@ -20,8 +20,10 @@ class CounterTable extends Doctrine_Table
     public function getCurrentData($culture)
     {
     	return $this->createQuery('a')->
-    		select('a.initial_number, ROUND(TIMESTAMPDIFF(SECOND, a.initial_date, NOW())*a.flow) AS planted_trees, '.
-    			   'a.flow, t.slogan_part1, t.slogan_part2, t.donation_text')->
+    		select('a.initial_number, a.flow, '.
+    			   'FLOOR(a.initial_number + TIMESTAMPDIFF(SECOND, a.initial_date, NOW())*a.flow) AS planted_trees, '.
+    			   'ROUND(1000/a.flow) AS interval, '.
+    			   't.slogan_part1, t.slogan_part2, t.donation_text')->
     		innerJoin('a.Translation t')->
     		where("t.lang=?", $culture)->
     		orderBy('initial_date ASC')->

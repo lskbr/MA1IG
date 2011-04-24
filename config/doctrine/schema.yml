@@ -163,7 +163,7 @@ Counter:
   columns:
     initial_number: {type: integer, notnull: true}
     initial_date: {type: timestamp, notnull: true}
-    flow: {type: float, notnull: true}
+    flow: {type: float, scale: 7,  notnull: true}
     slogan_part1: {type: string(255), notnull: true}
     slogan_part2: {type: string(255), notnull: true}
     donation_text: {type: string(255), notnull: true}
@@ -179,13 +179,13 @@ Guestbook:
     Language: {local: language_id, foreign: id}
 
 News:
-  actAs:
-    Timestampable: ~
   columns:
+    title: {type: varchar(255)}
     content: {type: text}
     is_activated: {type: boolean, notnull: true, default: false}
-    language_id: {type: integer}
+    language_id: {type: integer, notnull: true}
     publication_date: {type: timestamp}
+    comments_activated: {type: boolean, notnull: true, default: true}
   relations:
     Language: {local: language_id, foreign: id}
 Folder:

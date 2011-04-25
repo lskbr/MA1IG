@@ -13,4 +13,22 @@
 class Photo extends BasePhoto
 {
 
+public function getPhotoPage()
+{
+	$q = Doctrine_Query::create()
+		->from('photo p');
+	return ($q);
+}
+
+public function save(Doctrine_Connection $conn = null)
+{
+	$fileName = $this->getUrl();
+	// Create the thumbnail
+    $thumbnail = new sfThumbnail(150, 150);
+    $thumbnail->loadFile(sfConfig::get('sf_upload_dir').'/photo/'.$fileName);
+    $thumbnail->save(sfConfig::get('sf_upload_dir').'/photo/thumbnail/'.$fileName);
+
+	return parent::save($conn);
+}
+
 }

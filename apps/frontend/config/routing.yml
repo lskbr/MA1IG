@@ -73,6 +73,14 @@ photo:
     id: \d+
     sf_method: [get]
 
+photo:
+  url:   /:sf_culture/photo/
+  class:   sfDoctrineRoute
+  options: { model: Photo, type: object }
+  param: { module: photo, action: index } 
+  requirements:
+    sf_method: [get]   
+
 galery:
   url:   /:sf_culture/galery/:id/:title_slug
   class:   sfDoctrineRoute

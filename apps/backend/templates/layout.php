@@ -61,6 +61,7 @@
                             menu_item('FAQ', 'faq', $sf_context, 'faq');
                             menu_item('Photos', 'photo', $sf_context);
                             menu_item('Galeries', 'galery', $sf_context);
+                            menu_item('Pages dynamiques', 'dynamic_page', $sf_context);
                         } else {
                             echo menu_item('Connexion', 'sf_guard_signin', $sf_context);
                         }

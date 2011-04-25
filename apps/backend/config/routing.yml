@@ -1,3 +1,12 @@
+dynamic_page:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                DynamicPage
+    module:               dynamic_page
+    prefix_path:          /dynamic_page
+    column:               id
+    with_wildcard_routes: true
+
 counter:
   class: sfDoctrineRouteCollection
   options:

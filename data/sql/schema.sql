@@ -21,6 +21,7 @@ CREATE TABLE guestbook (id BIGINT AUTO_INCREMENT, content text, is_validated TIN
 CREATE TABLE language (id BIGINT AUTO_INCREMENT, name VARCHAR(40) NOT NULL UNIQUE, abbreviation VARCHAR(5) NOT NULL UNIQUE, flag VARCHAR(255), is_activated TINYINT(1) DEFAULT '0' NOT NULL, is_default TINYINT(1) NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE message (id BIGINT AUTO_INCREMENT, text text NOT NULL, is_saved TINYINT(1) DEFAULT '0', read_at datetime, created_at datetime NOT NULL, reply_at datetime, comment_id BIGINT, sender_id BIGINT, category_id BIGINT NOT NULL, folder_id BIGINT DEFAULT 1 NOT NULL, INDEX comment_id_idx (comment_id), INDEX sender_id_idx (sender_id), INDEX category_id_idx (category_id), INDEX folder_id_idx (folder_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE news (id BIGINT AUTO_INCREMENT, title VARCHAR(255), content text, is_activated TINYINT(1) DEFAULT '0' NOT NULL, language_id BIGINT NOT NULL, publication_date DATETIME, comments_activated TINYINT(1) DEFAULT '1' NOT NULL, INDEX language_id_idx (language_id), PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE news_comments (id BIGINT AUTO_INCREMENT, content text, author_id BIGINT NOT NULL, news_id BIGINT NOT NULL, father_id BIGINT, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX news_id_idx (news_id), INDEX author_id_idx (author_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE page_translation (id BIGINT, menu_title VARCHAR(255) NOT NULL, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE page (id BIGINT AUTO_INCREMENT, position BIGINT NOT NULL, publication_date DATETIME, category_id BIGINT, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX category_id_idx (category_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE partner_translation (id BIGINT, company_name VARCHAR(255), description VARCHAR(255), site VARCHAR(255), is_visible TINYINT(1) DEFAULT '0', lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
@@ -55,6 +56,8 @@ ALTER TABLE message ADD CONSTRAINT message_folder_id_folder_id FOREIGN KEY (fold
 ALTER TABLE message ADD CONSTRAINT message_comment_id_comment_id FOREIGN KEY (comment_id) REFERENCES comment(id);
 ALTER TABLE message ADD CONSTRAINT message_category_id_faq_category_id FOREIGN KEY (category_id) REFERENCES faq_category(id);
 ALTER TABLE news ADD CONSTRAINT news_language_id_language_id FOREIGN KEY (language_id) REFERENCES language(id);
+ALTER TABLE news_comments ADD CONSTRAINT news_comments_news_id_news_id FOREIGN KEY (news_id) REFERENCES news(id);
+ALTER TABLE news_comments ADD CONSTRAINT news_comments_author_id_sf_guard_user_id FOREIGN KEY (author_id) REFERENCES sf_guard_user(id);
 ALTER TABLE page_translation ADD CONSTRAINT page_translation_id_page_id FOREIGN KEY (id) REFERENCES page(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE page ADD CONSTRAINT page_category_id_category_id FOREIGN KEY (category_id) REFERENCES category(id);
 ALTER TABLE partner_translation ADD CONSTRAINT partner_translation_id_partner_id FOREIGN KEY (id) REFERENCES partner(id) ON UPDATE CASCADE ON DELETE CASCADE;

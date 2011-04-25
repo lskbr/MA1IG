@@ -817,3 +817,43 @@ blockquote.guestbook{
 	padding-right:0px;
 	margin:5px;
 }
+.news_comments{
+	padding: 0px 135px;
+}
+.comment_item{
+	border:1px solid #927e60;
+	margin:5px;
+}
+.comment_content{
+	padding:5px;
+}
+.comment_header{
+	padding:3px;
+	border-bottom:1px solid #927e60;
+	background-color: #b5ac8f;
+}
+.answer{
+	margin-left:40px;
+}
+.answer .comment_header{
+	padding:3px;
+	border-bottom:1px solid #927e60;
+	background-color: #abd38d;
+}
+.comment_header a{
+	float:right;
+}
+#comment_form {
+	margin-left:12px;
+}
+#comment_form label{
+	color:#544a2d;
+}
+#comment_form .com_textarea{
+	width:420px;
+	height:100px;
+}
+#comment_form input{
+	margin-top:3px;
+	margin-left:180px;
+}

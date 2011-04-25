@@ -45,6 +45,15 @@ news_show:
     id: \d+
     sf_method: [get]
 
+news_answer:
+  url:   /:sf_culture/news/:id/answer/:answer
+  class:   sfDoctrineRoute
+  options: { model: News, type: object }
+  param:   { module: news, action: show }
+  requirements:
+    id: \d+
+    sf_method: [get]
+
 partner:
   url: /:sf_culture/partner
   param:   { module: partner, action: index }

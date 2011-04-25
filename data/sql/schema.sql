@@ -4,7 +4,6 @@ CREATE TABLE category (id BIGINT AUTO_INCREMENT, position BIGINT NOT NULL, is_ac
 CREATE TABLE citation_translation (id BIGINT, author VARCHAR(255), content text, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE citation (id BIGINT AUTO_INCREMENT, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE comment (id BIGINT AUTO_INCREMENT, text text, update_at datetime, PRIMARY KEY(id)) ENGINE = INNODB;
-CREATE TABLE comments (id BIGINT AUTO_INCREMENT, content text, author_id BIGINT NOT NULL, news_id BIGINT NOT NULL, father_id BIGINT NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX news_id_idx (news_id), INDEX father_id_idx (father_id), INDEX author_id_idx (author_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE configuration (id BIGINT AUTO_INCREMENT, main VARCHAR(255) NOT NULL, name VARCHAR(255) NOT NULL, description text, configuration_id BIGINT, type VARCHAR(255), is_kernel TINYINT(1) DEFAULT '0', is_activated TINYINT(1) DEFAULT '0', value VARCHAR(255) DEFAULT '0', INDEX configuration_type_idx (type), INDEX configuration_id_idx (configuration_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE corespondance (id BIGINT AUTO_INCREMENT, first_mail datetime, last_mail datetime, number_of_mail BIGINT DEFAULT 0, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE counter_translation (id BIGINT, slogan_part1 VARCHAR(255) NOT NULL, slogan_part2 VARCHAR(255) NOT NULL, donation_text VARCHAR(255) NOT NULL, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
@@ -22,7 +21,7 @@ CREATE TABLE guestbook (id BIGINT AUTO_INCREMENT, content text, is_validated TIN
 CREATE TABLE language (id BIGINT AUTO_INCREMENT, name VARCHAR(40) NOT NULL UNIQUE, abbreviation VARCHAR(5) NOT NULL UNIQUE, flag VARCHAR(255), is_activated TINYINT(1) DEFAULT '0' NOT NULL, is_default TINYINT(1) NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE message (id BIGINT AUTO_INCREMENT, text text NOT NULL, is_saved TINYINT(1) DEFAULT '0', read_at datetime, created_at datetime NOT NULL, reply_at datetime, comment_id BIGINT, sender_id BIGINT, category_id BIGINT NOT NULL, folder_id BIGINT DEFAULT 1 NOT NULL, INDEX comment_id_idx (comment_id), INDEX sender_id_idx (sender_id), INDEX category_id_idx (category_id), INDEX folder_id_idx (folder_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE news (id BIGINT AUTO_INCREMENT, title VARCHAR(255), content text, is_activated TINYINT(1) DEFAULT '0' NOT NULL, language_id BIGINT NOT NULL, publication_date DATETIME, comments_activated TINYINT(1) DEFAULT '1' NOT NULL, INDEX language_id_idx (language_id), PRIMARY KEY(id)) ENGINE = INNODB;
-CREATE TABLE news_comments (id BIGINT AUTO_INCREMENT, content text, author_id BIGINT NOT NULL, news_id BIGINT NOT NULL, father_id BIGINT NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX news_id_idx (news_id), INDEX author_id_idx (author_id), PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE news_comments (id BIGINT AUTO_INCREMENT, content text, author_id BIGINT NOT NULL, news_id BIGINT NOT NULL, father_id BIGINT, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX news_id_idx (news_id), INDEX author_id_idx (author_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE page_translation (id BIGINT, menu_title VARCHAR(255) NOT NULL, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE page (id BIGINT AUTO_INCREMENT, position BIGINT NOT NULL, publication_date DATETIME, category_id BIGINT, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX category_id_idx (category_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE partner_translation (id BIGINT, company_name VARCHAR(255), description VARCHAR(255), site VARCHAR(255), is_visible TINYINT(1) DEFAULT '0', lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
@@ -43,9 +42,6 @@ CREATE TABLE sf_guard_user_permission (user_id BIGINT, permission_id BIGINT, cre
 ALTER TABLE configuration ADD CONSTRAINT configuration_configuration_id_configuration_id FOREIGN KEY (configuration_id) REFERENCES configuration(id);
 ALTER TABLE category_translation ADD CONSTRAINT category_translation_id_category_id FOREIGN KEY (id) REFERENCES category(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE citation_translation ADD CONSTRAINT citation_translation_id_citation_id FOREIGN KEY (id) REFERENCES citation(id) ON UPDATE CASCADE ON DELETE CASCADE;
-ALTER TABLE comments ADD CONSTRAINT comments_news_id_news_id FOREIGN KEY (news_id) REFERENCES news(id);
-ALTER TABLE comments ADD CONSTRAINT comments_father_id_comments_id FOREIGN KEY (father_id) REFERENCES comments(id);
-ALTER TABLE comments ADD CONSTRAINT comments_author_id_sf_guard_user_id FOREIGN KEY (author_id) REFERENCES sf_guard_user(id);
 ALTER TABLE counter_translation ADD CONSTRAINT counter_translation_id_counter_id FOREIGN KEY (id) REFERENCES counter(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE dynamic_page_translation ADD CONSTRAINT dynamic_page_translation_id_dynamic_page_id FOREIGN KEY (id) REFERENCES dynamic_page(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE dynamic_page ADD CONSTRAINT dynamic_page_category_id_category_id FOREIGN KEY (category_id) REFERENCES category(id);

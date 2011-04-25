@@ -48,7 +48,6 @@ abstract class BaseNewsComments extends sfDoctrineRecord
              ));
         $this->hasColumn('father_id', 'integer', null, array(
              'type' => 'integer',
-             'notnull' => true,
              ));
     }
 

@@ -29,7 +29,7 @@ abstract class BaseNewsCommentsForm extends BaseFormDoctrine
       'content'    => new sfValidatorPass(array('required' => false)),
       'author_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'))),
       'news_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('News'))),
-      'father_id'  => new sfValidatorInteger(),
+      'father_id'  => new sfValidatorInteger(array('required' => false)),
       'created_at' => new sfValidatorDateTime(),
       'updated_at' => new sfValidatorDateTime(),
     ));

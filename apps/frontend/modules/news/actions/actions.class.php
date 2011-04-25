@@ -22,5 +22,18 @@ class newsActions extends sfActions
   public function executeShow(sfWebRequest $request)
   {
   	$this->news = $this->getRoute()->getObject();
+    $this->comments = Doctrine_Core::getTable('NewsComments')
+        ->createQuery('a')
+        ->where('a.news_id= ? ', $this->news->getId())
+        ->orderBy('least(id,coalesce(father_id,id)), created_at')
+        ->execute();
+    $this->authenticated = $this->getUser()->isAuthenticated();
+    if($this->authenticated)
+    {
+      $this->form = new NewsCommentsForm();
+      $this->form->setDefault('author_id', $this->getUser()->getGuardUser()->getId());
+      $this->form->setDefault('news_id', $this->getRequestParameter('id'));
+      $this->form->setDefault('father_id', $this->getRequestParameter('answer'));
+    }
   }
 }

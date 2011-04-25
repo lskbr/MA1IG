@@ -12,5 +12,12 @@ class NewsCommentsForm extends BaseNewsCommentsForm
 {
   public function configure()
   {
+  	unset($this['created_at'],$this['updated_at']);
+  	$widget_schema = $this->getWidgetSchema();
+    $widget_schema['news_id'] = new sfWidgetFormInputHidden();
+    $widget_schema['father_id'] = new sfWidgetFormInputHidden();
+    $widget_schema['author_id'] = new sfWidgetFormInputHidden();
+  	$this->setWidget('content',new sfWidgetFormTextarea(array(), array('size' => '30x8')));
+  	$this->widgetSchema->setLabels(array('content',''));
   }
 }

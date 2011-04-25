@@ -196,7 +196,7 @@ NewsComments:
     content: {type: text}
     author_id: {type: integer, notnull: true}
     news_id: {type: integer, notnull: true}
-    father_id: {type: integer, notnull: true}
+    father_id: {type: integer}
   relations:
     News: {local: news_id, foreign: id}
     Comments: {local: father_id, foreign: id}

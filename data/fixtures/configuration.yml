@@ -19,6 +19,7 @@ BooleanConfiguration:
     main: social_sharing
     name: Partage sur les réseaux sociaux
     description: Active la possibilité de partager les news sur les réseaux sociaux
+    BooleanConfiguration: News
     is_activated: true
   Commentaires:
     main: news_comments

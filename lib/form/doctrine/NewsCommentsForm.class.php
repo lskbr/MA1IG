@@ -17,7 +17,7 @@ class NewsCommentsForm extends BaseNewsCommentsForm
     $widget_schema['news_id'] = new sfWidgetFormInputHidden();
     $widget_schema['father_id'] = new sfWidgetFormInputHidden();
     $widget_schema['author_id'] = new sfWidgetFormInputHidden();
-  	$this->setWidget('content',new sfWidgetFormTextarea(array(), array('size' => '30x8')));
-  	$this->widgetSchema->setLabels(array('content',''));
+  	$this->setWidget('content',new sfWidgetFormTextarea(array(), array('size' => '30x8', 'class' => 'com_textarea')));
+  	$this->widgetSchema->setLabels(array('content' =>'Postez un commentaire : <br/>'));
   }
 }

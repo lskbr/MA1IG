@@ -35,7 +35,7 @@ if(config::getInstance()->get('citation'))
 	<?php if($authenticated): ?>
 	<form id="comment_form" action="<?php echo url_for('newsComments/create') ?>" method="post" <?php $form->isMultipart() and print 'enctype="multipart/form-data" ' ?>>
 		<?php echo $form ?>
-		<input type="submit" value="Save" />
+		<br/><input type="submit" value="Envoyer" />
 	</form>
 	<?php
 	else:

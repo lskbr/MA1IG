@@ -826,3 +826,17 @@ blockquote.guestbook{
 .comment_header a{
 	float:right;
 }
+#comment_form {
+	margin-left:12px;
+}
+#comment_form label{
+	color:#544a2d;
+}
+#comment_form .com_textarea{
+	width:420px;
+	height:100px;
+}
+#comment_form input{
+	margin-top:3px;
+	margin-left:180px;
+}

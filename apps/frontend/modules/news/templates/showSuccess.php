@@ -22,7 +22,7 @@ if(config::getInstance()->get('citation'))
 		?>
 		<div class="comment_header"/>
 		<?php echo $com->getsfGuardUser()->getName(); ?> - Le <?php echo date('d-m-Y à h:m:s',strtotime($com->getCreatedAt()));?>
-		<?php if($authenticated):?><a href="<?php echo url_for('news_answer', $news).$com->getId().'#comment_form';?>">Répondre</a><?php endif; ?>
+		<?php if($authenticated && $com->getFatherId()==null):?><a href="<?php echo url_for('news_answer', $news).$com->getId().'#comment_form';?>">Répondre</a><?php endif; ?>
 		</div>
 		<div class="comment_content"/>
 		<?php echo $com->getContent(); ?>

@@ -839,6 +839,7 @@ blockquote.guestbook{
 #comment_form .com_textarea{
 	width:420px;
 	height:100px;
+	background-color:#f8f6ed;
 }
 #comment_form input{
 	margin-top:3px;

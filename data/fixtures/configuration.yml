@@ -15,6 +15,11 @@ BooleanConfiguration:
     name: Actualités
     description: Active le système d'actualité
     is_activated: true
+  PartageSociaux:
+    main: social_sharing
+    name: Partage sur les réseaux sociaux
+    description: Active la possibilité de partager les news sur les réseaux sociaux
+    is_activated: true
   Commentaires:
     main: news_comments
     name: Commentaire

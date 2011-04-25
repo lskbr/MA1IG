@@ -6,9 +6,9 @@ var addthis_config = {
 	ui_header_color: "#5f3812",
 	ui_header_background: "#fbfbfb",
 	
-	services_custom: {
-		name: "<?php echo __('Signaler') ?>",
-		url: "http://grainedevie.seaflat.be/?url={{url}}&title={{title}}&description={{description}}",
-		icon: "/images/signaler3.png"
-	}
+	// services_custom: {
+		// name: "<?php echo __('Signaler') ?>",
+		// url: "http://grainedevie.seaflat.be/?url={{url}}&title={{title}}&description={{description}}",
+		// icon: "/images/signaler3.png"
+	// }
 }

@@ -91,6 +91,13 @@ galery:
     id: \d+
     sf_method: [get]
 
+bilan_carbone:
+  url:   /:sf_culture/bilan_carbone
+  class:   sfDoctrineRoute
+  requirements:
+    id: \d+
+    sf_method: [get]
+
 default_index:
   url:   /:sf_culture/:module
   param: { action: index }

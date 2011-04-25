@@ -2,7 +2,7 @@
 <div id="sidebar">
     <ul id="menu">
         <li class="root">
-            <div>
+            <div class="backcolor">
                 <a class="accueil" href="<?php echo url_for('@homepage') ?>"><?php echo __('Accueil') ?></a>
             </div>
         </li>

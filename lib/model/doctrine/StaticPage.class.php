@@ -17,7 +17,20 @@ class StaticPage extends BaseStaticPage {
     }
 
     public function getTitleSlug() {
-        return trim(preg_replace('/\W+/', '-', $this->getTitle()), '-');
+        $text = preg_replace('#[^\\pL\d]+#u', '-', $this->getTitle());
+        // trim
+        $text = trim($text, '-');
+        // transliterate
+        if (function_exists('iconv'))
+            $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+        // lowercase
+        $text = strtolower($text);
+        // remove unwanted characters
+        $text = preg_replace('#[^-\w]+#', '', $text);
+ 
+        if (empty($text))
+            return 'n-a';
+        return $text;
     }
 
     public static function monter($sp) {

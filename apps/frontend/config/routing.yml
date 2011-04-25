@@ -11,6 +11,10 @@ sf_guard_register:
   url: /register
   param: {module: sfGuardRegister, action: index}
 
+change_language:
+  url:   /change_language
+  param: { module: language, action: changeLanguage }
+
 homepage:
   url:   /
   param: { module: page, action: index }
@@ -24,6 +28,19 @@ page:
   class:   sfDoctrineRoute
   options: { model: StaticPage, type: object }
   param:   { module: page, action: show }
+  requirements:
+    id: \d+
+    sf_method: [get]
+
+news:
+  url:   /:sf_culture/news
+  param: { module: news, action: index}
+
+news_show:
+  url:   /:sf_culture/news/:id/:title_slug
+  class:   sfDoctrineRoute
+  options: { model: News, type: object }
+  param:   { module: news, action: show }
   requirements:
     id: \d+
     sf_method: [get]

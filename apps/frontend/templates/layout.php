@@ -73,12 +73,10 @@
                         <span id="slogan_link"><?php echo __('Compensons notre empreinte écologique !'); ?></span>
                     </a>
                 </div>
-                <!--<div id="counter-text"><?php echo __('Nous avons déjà planté') ?></div>-->
             </div>
-
-            <!--<div id="counter">
-                <img src="/images/counter.png" />
-            </div>-->
+            
+            <?php if(config::getInstance()->get('counter'))
+                include_component('counter', 'counter'); ?>
 
             <div id="center">
                 <?php include_component('menu', 'menu') ?>
@@ -134,6 +132,9 @@ $titre_page=get_slot('title');
                 </div>
                 <div id="bottom-bar">
                 	<ul>
+                        <li class="form">
+                            <?php include_component('language', 'language') ?>
+                        </li>
                     	<li><a href="#"><?php echo __("Contact") ?></a></li>
                         <li>|</li>
                         <li><a href="#"><?php echo __("Mentions légales") ?></a></li>
@@ -147,4 +148,3 @@ $titre_page=get_slot('title');
         </div>
     </body>
 </html>
-

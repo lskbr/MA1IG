@@ -12,6 +12,23 @@
  */
 class News extends BaseNews
 {
+	public function getTitleSlug() {
+		$text = preg_replace('#[^\\pL\d]+#u', '-', $this->getTitle());
+		// trim
+		$text = trim($text, '-');
+		// transliterate
+		if (function_exists('iconv'))
+			$text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+		// lowercase
+		$text = strtolower($text);
+		// remove unwanted characters
+		$text = preg_replace('#[^-\w]+#', '', $text);
+ 
+		if (empty($text))
+			return 'n-a';
+		return $text;
+    }
+    
 	public function enable()
 	{
 		$this->setIsActivated(true);

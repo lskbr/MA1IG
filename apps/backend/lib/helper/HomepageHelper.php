@@ -1,6 +1,8 @@
 <?php 
-function homepageItem($name, $desc, $route, $img=null)
+function homepageItem($name, $desc, $route, $img=null, $config=null)
 {
+	if(!($config ==null || config::getInstance()->get($config)))
+		return '';
 	$txt='<a class="case_homepage" href="'.url_for($route).'"><div class="case_txt">';
 	if($img!==null)
 	{

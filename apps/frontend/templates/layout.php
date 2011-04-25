@@ -118,42 +118,8 @@ $titre_page=get_slot('title');
 </div>
 
 <!-- AddThis Button BEGIN -->
-<script type="text/javascript">
-        var addthis_config = {
-                data_track_clickback: "true",
-                ui_open_windows: "true",
-                ui_delay: "750",
-                ui_offset_top: "0",
-                ui_header_color: "#8fbc13",
-                ui_header_background: "#fbfbfb"
-        }
-
-        var addthis_config = {
-            services_custom: {
-                name: "<?php echo __('Signaler') ?>",
-                url: "http://grainedevie.seaflat.be/?url={{url}}&title={{title}}&description={{description}}",
-                icon: "/images/signaler3.png"
-            }
-        }
-</script>
-
-<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4d92ffa329add9af"></script>
-
-<div class="addthis_toolbox addthis_default_style" addthis:url="http://www.example.com" addthis:title="An Example Title" addthis:description="An Example Description">
-        <a class="addthis_button_facebook" title="<?php echo __('Partager sur Facebook') ?>"></a>
-        <a class="addthis_button_twitter" title="<?php echo __('Partager sur Twitter') ?>"></a>
-        <a class="addthis_button_grainedevie.seaflat.be" title="<?php echo __('Signaler') ?>"></a>
-        <span class="addthis_separator">|</span>
-        <a href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=ra-4d92ffa329add9af" class="addthis_button_compact"> <?php echo __('Partager') ?></a>
-</div>
-
-<div class="addthis_toolbox addthis_default_style" addthis:url="http://www.perdu.com" addthis:title="Site perdu" addthis:description="Lost Description">
-        <a class="addthis_button_preferred_1"></a>
-        <a class="addthis_button_preferred_2"></a>
-        <a class="addthis_button_www.signaler.com" title="<?php echo __('Signaler') ?>"></a>
-        <span class="addthis_separator">|</span>
-        <a href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=ra-4d92ffa329add9af" class="addthis_button_compact"> <?php echo __('Partager') ?></a>
-</div>
+<?php include_partial('social_sharing/social_sharing', array()) ?>
+<?php include_component('social_sharing', 'social_sharing', array()) ?>
 <!-- AddThis Button END -->
 
 

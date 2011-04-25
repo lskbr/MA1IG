@@ -6,6 +6,7 @@
 	<?php echo $new->getTitle(); ?>
 	<span class="date"><?php echo date('d-m-Y',strtotime($new->getPublicationDate())); ?></span><br/>
 	<?php echo $new->getFormatedText(200); ?>
+        <?php include_partial(social_sharing/social_sharing, array()) ?>
 	</div>
 	<br/>
 	<?php

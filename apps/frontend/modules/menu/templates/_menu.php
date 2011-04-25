@@ -2,27 +2,28 @@
 <div id="sidebar">
     <ul id="menu">
         <li class="root">
-            <div class="backcolor">
-                <a href="<?php echo url_for('@localized_homepage') ?>"><?php echo __('Accueil') ?></a>
+            <div>
+                <a class="accueil" href="<?php echo url_for('@homepage') ?>"><?php echo __('Accueil') ?></a>
             </div>
         </li>
         <?php foreach ($categories as $category): ?>
             <li class="root">
                 <div class="backcolor categorie"><?php echo $category->getName() ?></div>
                 <?php 
-                $active=false;
+                $cat_active=false;
                 foreach($pages[$category->getId()] as $p)
                 {
                     if(strstr($p->getUrl(),$_SERVER["PATH_INFO"]) && strlen($_SERVER["PATH_INFO"])>5)
-                        $active=true;
+                        $cat_active=true;
                 }
 
-                if($active) echo '<ul class="selected">';
+                if($cat_active) echo '<ul class="selected">';
                 else echo '<ul>';
-                    foreach($pages[$category->getId()] as $p)
-                    {
-                        echo '<li><a class="backcolor" href="'.$p->getUrl().'"><img src="/images/hierarchie.png" alt="Flèche" style="vertical-align:0%"/> '.$p->getMenuTitle().'</a></li>';
-                    }?>
+
+                foreach($pages[$category->getId()] as $p)
+                {
+                    echo '<li><a class="backcolor" href="'.$p->getUrl().'"><img src="/images/hierarchie.png" alt="Flèche" style="vertical-align:5%"/> '.$p->getMenuTitle().'</a></li>';
+                }?>
                 </ul>
             </li>
         <?php endforeach; ?>

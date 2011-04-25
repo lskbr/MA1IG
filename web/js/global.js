@@ -41,7 +41,7 @@ jQuery(document).ready(function () {
 */
     
     jQuery("#menu ul").not(jQuery("#menu ul.selected")).hide();
-    jQuery("#menu div").css('paddingLeft','26px');
+    jQuery("#menu a.accueil, #menu div.backcolor").css('paddingLeft','26px');
     jQuery("#menu a.backcolor").css('paddingLeft','26px');
     jQuery("#menu div.categorie").css({backgroundImage:"url(/images/left.png)"});
 	

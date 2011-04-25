@@ -5,20 +5,7 @@ if(config::getInstance()->get('citation'))
   include_component('citation', 'citation');
 ?>
 
-
 <div class="homepage_col1">
-<?php
-if(config::getInstance()->get('news'))
-  include_component('news', 'news');?>
-
-<?php 
-if(config::getInstance()->get('guestbook'))
-  include_component('guestbook', 'guestbook');
-?>
-</div>
-
-
-<div class="homepage_col2">
 <h1>Le mot du président</h1>
 <div class="president_speech">
 <?php echo __('<p>En à peine deux siècles de révolution industrielle, l’homme est parvenu à détériorer, souvent de façon irréversible, son habitat, la Terre, résultat magnifique et fragile de millions d’années d’évolution.</p><p>
@@ -30,6 +17,14 @@ Plus personne ne peut ignorer ce constat implacable : la Terre a atteint un seui
 Nous avons un devoir de solidarité vis-à-vis des générations suivantes. Nous devons accepter notre responsabilité écrasante dans la situation actuelle. Nous n’avons pas le droit de laisser à nos enfants comme seul héritage la gestion de nos manquements, comme nous leur abandonnons aujourd’hui nos déchets en tous genres. Si nous n’agissons pas, nous serons coupable de non-assistance à humanité en danger.');?>
 <p class="sign"><?php echo __('Frédéric Debouche, Président de Graine de Vie.'); ?></p>
 </div>
+
 </div>
+<div class="homepage_col2">
+<?php
+if(config::getInstance()->get('news'))
+  include_component('news', 'news');
+?>
+</div>
+
 <div class="hompage_clear">
 </div>

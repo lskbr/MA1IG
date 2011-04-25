@@ -79,6 +79,8 @@ div#global {
 div#bg-frame-background {
 	background-image: url(../images/bg-frame-global.png);
 	background-repeat: no-repeat;
+        width: 1000px;
+        height: 700px;
 	position: absolute;
 	top: 0;
 	z-index: -1;
@@ -90,10 +92,25 @@ div#bg-frame-background {
 div#upper-bar {
 	height: 28px;
 	padding-top: 0px;
+        padding-right: 6px;
 	position: relative;
 }
 
 div#upper-bar div {
+	background-color: #000;
+	/* -> border */
+	border-radius: 0px 0px 0px 10px;
+	-moz-border-radius: 0px 0px 0px 10px;
+	-webkit-border-radius: 0px 0px 0px 10px;
+	-khtml-border-radius: 0px 0px 0px 10px;
+	/* <- border */
+	/* -> opacity */
+	-moz-opacity:0.8;
+	opacity: 0.8;
+	filter:alpha(opacity=80);
+	/* <- opacity */
+	height: 28px;
+	float: right;
 }
 
 div#upper-bar ul {
@@ -151,6 +168,7 @@ div#overPSlider {
 	height: 690px;
 	width: 995px;
         overflow: hidden;
+        z-index: -5;
 }
 div#pSlider {
         position: absolute;
@@ -467,36 +485,42 @@ div#sidebar {
 	z-index: 2;
 }
 
-/* Padding du menu */
-ul#menu li div.backcolor { /* Catégories */
-    padding-left: 10px;
-}
-ul#menu li a.backcolor { /* Pages */
-    padding-left: 20px;
-}
-
 /* design du menu */
 ul#menu li div, ul#menu li a {
-	color: #633a13;
-	cursor: pointer;
 	display: block;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-size: 15px;
-	font-weight: bold;
+	cursor: pointer;
 	height: 26px;
 	line-height: 26px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #633a13;
+	font-size: 15px;
+	font-weight: bold;
 }
-ul#menu li.current-page {
-	background-color: #e4e4e4;
-	/*border-bottom: 1px solid #cdcdcd;
+/*make hover effect work in IE (ou pas...)*/
+/*ul#menu li a {
+	width: 218px;
+}*/
+
+ul#menu .current-page {
+        color: #8fbc13;
+	/*background-color: #e4e4e4;
+	border-bottom: 1px solid #cdcdcd;
 	border-right: 1px solid #e4e4e4;
 	border-top: 1px solid #cdcdcd;*/
 }
 
 /* Survol */
-ul#menu li a:hover, ul#menu li div:hover {
+ul#menu li div:hover, ul#menu li a:hover {
 	background-color: #ffffbe;
 	color: #000;
+}
+
+/* Padding du menu */
+ul#menu li a.accueil, ul#menu li div.backcolor { /* Catégories */
+    padding-left: 10px;
+}
+ul#menu li a.backcolor { /* Pages */
+    padding-left: 20px;
 }
 
 /* Javascript */
@@ -506,10 +530,10 @@ ul#menu div.backcolor {
 ul#menu li{
     background: top left no-repeat;
 }
-div.fleche_image{
+/*div.fleche_image{
 	width:20px;
 	float:left;
-}
+}*/
 
 /*
     Fin Menu
@@ -712,13 +736,14 @@ form.module-form tfoot a:hover {
     margin-right: auto;  
 }
 
+
 .homepage_col1{
-	width:370px;
+	width:355px;
 	float:left;
 	padding-right:10px;
 }
 .homepage_col2{
-	width:340px;
+	width:355px;
 	float:right;
 }
 .hompage_clear{
@@ -767,6 +792,9 @@ a{
 	font-size:14px;
     color:#544a2d;
 }
+.news a.title:hover{
+	text-decoration: underline;
+}
 .president_speech{
 	text-align: justify;
 	color:#544a2d;
@@ -777,7 +805,7 @@ a{
 }
 
 .president_speech .sign{
-	font-size:9px;
+	font-size:10px;
 	float:right;
 	color:#2c250e;
 }

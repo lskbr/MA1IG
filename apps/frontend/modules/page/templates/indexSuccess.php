@@ -6,14 +6,14 @@ if(config::getInstance()->get('citation'))
 ?>
 
 
-<div class="homepage_col1"/>
+<div class="homepage_col1">
 <?php
 if(config::getInstance()->get('news'))
   include_component('news', 'news');?>
 </div>
 
 
-<div class="homepage_col2"/>
+<div class="homepage_col2">
 <?php 
 if(config::getInstance()->get('guestbook'))
   include_component('guestbook', 'guestbook');

@@ -46,7 +46,7 @@
             </div>
             </div>
 
-            <div id="bg-frame-background"><img src="/images/bg-frame-global.png" alt="Madagascar" /></div>
+            <div id="bg-frame-background"></div>
 
             <div id ="upper-bar">
                 <div>
@@ -83,45 +83,6 @@
 
                 <div id="content">
                     <?php echo $sf_content ?>
-
-
-
-<?php
-function url_actuelle()
-{
-     return "http://" . $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
-}
-$titre_page=get_slot('title');
-?>
-    <a href="#" title="<?php echo __('Partager sur Facebook') ?>" onclick="new_page('http://www.facebook.com/share.php?u=<?php echo urlencode(url_actuelle()) ?>',995,600,400)"><img src="/images/f_logo.png"/></a>
-    <a href="#" title="<?php echo __('Partager sur Twitter') ?>" onclick="new_page('http://twitter.com/intent/tweet?text=<?php echo urlencode($titre_page) ?>&url=<?php echo url_actuelle() ?>',995,600,400)"><img src="http://twitter-badges.s3.amazonaws.com/t_logo-a.png" style="width:36px; height:36px"/></a>
-    <a href="#" ><img src="/images/e-mail.png"/></a>
-    <a href="#" ><img src="/images/signaler.png"/></a>
-
-<div>
-    <span style="vertical-align: 30%">
-        <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
-        <a class="facebook-share-button" name="fb_share" type="button" href="http://www.facebook.com/sharer.php"><?php echo __('Partager'); ?></a>
-    </span>
-
-    <a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-
-    <span style="vertical-align: 35%">
-        <script type="text/javascript" src="http://www.google.com/buzz/api/button.js"></script>
-        <a title="<?php echo __('Publier sur Google Buzz'); ?>" class="google-buzz-button" href="http://www.google.com/buzz/post" data-button-style="small-button" data-locale="fr"></a>
-    </span>
-
-    <a href="#" title="<?php echo __('Envoyer par mail') ?>"><img src="/images/e-mail2.png"/></a>
-    <a href="#" title="<?php echo __('Signaler') ?>"><img src="/images/signaler2.png"/></a>
-</div>
-
-<!-- AddThis Button BEGIN -->
-<?php include_partial('social_sharing/social_sharing', array()) ?>
-<?php include_component('social_sharing', 'social_sharing', array()) ?>
-<!-- AddThis Button END -->
-
-
-
                 </div>
             </div>
 

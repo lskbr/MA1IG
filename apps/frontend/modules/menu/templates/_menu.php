@@ -2,7 +2,7 @@
 <div id="sidebar">
     <ul id="menu">
         <li class="root">
-            <div class="backcolor">
+            <div>
                 <a class="accueil" href="<?php echo url_for('@homepage') ?>"><?php echo __('Accueil') ?></a>
             </div>
         </li>
@@ -22,7 +22,7 @@
 
                 foreach($pages[$category->getId()] as $p)
                 {
-                    echo '<li><a class="backcolor" href="'.$p->getUrl().'"><img src="/images/hierarchie.png" alt="Flèche" style="vertical-align:0%"/> '.$p->getMenuTitle().'</a></li>';
+                    echo '<li><a class="backcolor" href="'.$p->getUrl().'"><img src="/images/hierarchie.png" alt="Flèche" style="vertical-align:5%"/> '.$p->getMenuTitle().'</a></li>';
                 }?>
                 </ul>
             </li>

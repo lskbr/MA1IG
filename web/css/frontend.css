@@ -79,6 +79,8 @@ div#global {
 div#bg-frame-background {
 	background-image: url(../images/bg-frame-global.png);
 	background-repeat: no-repeat;
+        width: 1000px;
+        height: 700px;
 	position: absolute;
 	top: 0;
 	z-index: -1;
@@ -151,6 +153,7 @@ div#overPSlider {
 	height: 690px;
 	width: 995px;
         overflow: hidden;
+        z-index: -5;
 }
 div#pSlider {
         position: absolute;
@@ -719,22 +722,13 @@ form.module-form tfoot a:hover {
 }
 
 
-#homepage_table {
-    width: 100%;
-}
-
-.homepage_cols {
-    vertical-align: top;
-    width: 50%;
-}
-
 .homepage_col1{
-	width:370px;
+	width:355px;
 	float:left;
 	padding-right:10px;
 }
 .homepage_col2{
-	width:340px;
+	width:355px;
 	float:right;
 }
 .hompage_clear{
@@ -783,6 +777,9 @@ a{
 	font-size:14px;
     color:#544a2d;
 }
+.news a.title:hover{
+	text-decoration: underline;
+}
 .president_speech{
 	text-align: justify;
 	color:#544a2d;
@@ -793,7 +790,7 @@ a{
 }
 
 .president_speech .sign{
-	font-size:9px;
+	font-size:10px;
 	float:right;
 	color:#2c250e;
 }

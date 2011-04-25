@@ -41,6 +41,7 @@
 
 		//! Animation
 		fps:			25,		//! Min 1. Max 100
+		delay:			0,		//! Set first delayed counter tick
 		interval:		1000,	//! Min. step interval 1000 ms
 		duration:		300,	//! Animation duration: min, max [100, 1000];
 
@@ -263,8 +264,9 @@
 		};
 
 		//! Start counter | return: undefined
-		this.play = function (interval, step) {
+		this.play = function (interval, step, delay) {
 			if (interval) {
+				this._settings.delay = this._validate('delay', delay);
 				this._settings.interval = this._validate('interval', interval);
 				this._settings.step = step || this._settings.step;
 			}
@@ -298,9 +300,10 @@
 			}
 
 			//! Validation
-			this._validate('minLength', this._settings.minLength);
-			this._validate('interval', this._settings.interval);
+			this._validate('delay', this._settings.delay);
 			this._validate('duration', this._settings.duration);
+			this._validate('interval', this._settings.interval);
+			this._validate('minLength', this._settings.minLength);
 
 			if (this._settings.fps < 1 || this._settings.fps > 100) {
 				this._settings.fps = 25;
@@ -350,26 +353,54 @@
 			return path;
 		};
 
+		//! Set regular counter timer
+		this._setTimer = function () {
+			if (this._settings.interval >= 1000) {
+				this._timer = window.setInterval(lib.bind(this._tick, this),
+					this._settings.interval);
+			}
+		};
+
 		//! Start the counter timer
 		this._start = function () {
 			if (this._timer) {
 				this.stop();
 			}
 
-			if (this._settings.interval >= 1000) {
-				this._timer = window.setInterval(lib.bind(function () {
-					//! Call abstract method
-					this.setNumber(this._settings.number + this._settings.step);
+			if (this._settings.delay) {
+				this._timer = window.setTimeout(lib.bind(function () {
+					//! Clear delay and timer
+					this._settings.delay = 0;
+					this._timer = null;
 
-					//! Send onChange event
-					this._onChange(Math.round(this._settings.number));
-				}, this), this._settings.interval);
+					//! Do delayed tick
+					this._tick();
+
+					//! Set regular timer
+					this._setTimer();
+				}, this), this._settings.delay);
+			} else {
+				this._setTimer();
 			}
+		};
+
+		//! Counter tick
+		this._tick = function () {
+			//! Call abstract method
+			this.setNumber(this._settings.number + this._settings.step);
+			//! Send onChange event
+			this._onChange(Math.round(this._settings.number));
 		};
 
 		//! Validate parameters | return: value
 		this._validate = function (type, value) {
 			switch (type) {
+				case 'delay':
+					if (value < 0) {
+						throw "Wrong 'delay' parameter: Must be >= 0";
+					}
+					break;
+					
 				case 'duration':
 					if (value < 100 || value > 1000) {
 						throw "Wrong 'duration' parameter: Must be [100, 1000]";

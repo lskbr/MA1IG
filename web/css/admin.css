@@ -504,7 +504,8 @@ div.sf_admin_date label {
 	font-weight: normal;
 }
 
-div.sf_admin_date select {
+div.sf_admin_form_row.sf_admin_date select {
+	height: 26px;
 	margin: 0 2px;
 }
 

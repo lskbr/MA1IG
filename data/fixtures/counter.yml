@@ -18,6 +18,6 @@ Counter:
         slogan_part2: "Help us continue to increase this number"
         donation_text: "Donate !"
       pt:
-        slogan_part1: "We have already planted"
-        slogan_part2: "Help us continue to increase this number"
-        donation_text: "Donate !"
+        slogan_part1: "Já plantamos"
+        slogan_part2: "Ajude-nos a continuar aumentando este número"
+        donation_text: "Doe !"

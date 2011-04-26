@@ -1,5 +1,5 @@
 /********************************************************************************
- *	Graine de Vie
+ *	Graine de Vie | www.grainedevie.org
  *
  *	UMons 2011.
  ********************************************************************************/
@@ -53,22 +53,12 @@ jQuery(document).ready(function () {
         jQuery(this).next("ul").slideDown(500);
     });
 
-    //
-    // Login
-    //
+    //!
+    //! Login
+    //!
     var closed = false;
 
     jQuery("#login-bar-button").attr("href", "#");
-
-    /*jQuery("#login-bar-button").hover(function () {
-            if (jQuery("#login").is(":hidden") && !closed) {
-                    jQuery("#login-bar-button").addClass("login-open");
-                    jQuery("#login").slideDown("normal");
-            }
-            else {
-                    closed = false;
-            }
-    });*/
 	
     jQuery("#login-bar-button").click(function () {
             if ((closed = jQuery("#login").is(":visible"))) {
@@ -93,7 +83,9 @@ jQuery(document).ready(function () {
             }
     });
 
-	//! Initialize counter
+	//!
+	//! Counter initialization
+	//!
 	var delay = jQuery("#counter-delay").get(0).value - (new Date()).getTime(),
 		interval = jQuery("#counter-interval").get(0).value,
 		step = 1, mask = 0;
@@ -117,7 +109,7 @@ jQuery(document).ready(function () {
 		if ((mask & 1) && !(mask & 2)) {
 			mask |= 2;
 			jQuery("#donation-box").animate(
-				{ height: '+=96' }, 300, function () {
+				{height: 'toggle'}, 300, function () {
 					mask &= ~2;
 					mask |= 4;
 
@@ -126,8 +118,6 @@ jQuery(document).ready(function () {
 					}
 				}
 			);
-		} else {
-			mask = 0;
 		}
 	}
 
@@ -135,9 +125,9 @@ jQuery(document).ready(function () {
 		if (!(mask & 1) && !(mask & 2)) {
 			mask |= 2;
 			jQuery("#donation-box").animate(
-				{ height: '-=96' }, 300, function () {
+				{height: 'toggle'}, 300, function () {
 					mask &= ~6;
-
+					
 					if (mask & 1) {
 						window.setTimeout(openBox, 300);
 					}
@@ -151,9 +141,7 @@ jQuery(document).ready(function () {
 		if (!(mask & 2) && !(mask & 4)) {
 			window.setTimeout(openBox, 300);
 		}
-	});
-
-	jQuery("#counter-box").mouseleave(function () {
+	}).mouseleave(function () {
 		mask &= ~1;
 		if (!(mask & 2) && (mask & 4)) {
 			window.setTimeout(closeBox, 300);
@@ -162,7 +150,9 @@ jQuery(document).ready(function () {
 
 });
 
+//!
 //! ProtoSlider - Image transition library
+//!
 Event.observe(window, "load", function (evt) {
 	//! Use of the combination of these effects only
 	var effects =

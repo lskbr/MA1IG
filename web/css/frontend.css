@@ -429,9 +429,8 @@ div#donation-box {
 	-khtml-border-radius: 0px 18px 10px 10px;
 	/* <- border radius */
 	color: #fff;
-	/*display: none;*/
-	/*height: 96px;*/
-	height: 0;
+	display: none;
+	height: 96px;
 	left: 0;
 	/* -> opacity */
 	-moz-opacity:0.9;
@@ -456,7 +455,7 @@ div#donation-box > div {
 
 div#slogan2 {
 	font-size: 15px;
-	margin-top: 45px;
+	margin-top: 42px;
 }
 
 div#donate {

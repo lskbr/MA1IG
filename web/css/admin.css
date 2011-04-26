@@ -2,6 +2,7 @@ body, ul, ol, h1,h2,h3,h4,h5,h6,form,li,p {
 	margin:0;
 	padding:0;
 }
+
 img{
     border:0px;
 }
@@ -115,6 +116,7 @@ a:hover{
     background:transparent url(../images/dotted_line.gif) repeat-x left top;
     outline:none;
 }
+
 #sidebar li a:hover{
     line-height:32px;
     font-size:15px;
@@ -141,6 +143,7 @@ a:hover{
     height:5px;
     background-color:#dddddd;
 }
+
 h1{
     border-bottom-color: #c0c0c0;
     border-bottom-style: solid;
@@ -191,9 +194,17 @@ label{
 
 label.inline{
     display:inline;
+}
+
+select {
+	font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+	height: 26px;
+	padding: 0 2px;
+	padding-top: 0px;
 }	
 
-.input-tiny, .input-small, .input-medium, .input-big, .input-flex, select, textarea{
+.input-tiny, .input-small, .input-medium, .input-big, .input-flex, textarea{
     padding:5px;
     border:1px solid #959595;
     font-size:12px;
@@ -380,20 +391,23 @@ th a, th a:hover {
 
 .sf_admin_action_delete{
     background-image:url(../images/icons/delete.png);
-    background-position:0 50%;
+    background-position: 4px 50%;
     background-repeat:no-repeat;
-    padding-left:20px;
+    padding-left: 21px;
 }
 
-.sf_admin_actions{
-    list-style-type:none;
-
+.sf_admin_actions {
+	border-top: 2px dotted #999;
+	display: inline-block;
+    list-style-type: none;
+	padding-top: 5px;
 }
-.sf_admin_action_new{
+
+.sf_admin_action_new {
     background-image:url(../images/icons/add2.png);
-    background-position:0 50%;
+    background-position: 4px 50%;
     background-repeat:no-repeat;
-    padding-left:18px;
+    padding-left: 21px;
 }
 .sf_admin_action_enable{
     background-image:url(../images/icons/valider.png);
@@ -430,25 +444,86 @@ label.edit_photo{
     text-align:left;
 }
 
-ul.sf_admin_actions li
-{
-    float:left;
-    padding-right:10px;
-    vertical-align:middle;
-
+ul.sf_admin_actions li:first-child {
+	padding-left: 20px;
 }
 
-
-ul.sf_admin_actions a{
-    text-decoration:none;
-    font-size:14px;
+ul.sf_admin_actions li:last-child {
+	border: none;
 }
-ul.sf_admin_actions a:hover{
+
+ul.sf_admin_actions li {
+	border-right: 2px dotted #999;
+    float: left;
+	height: 26px;
+	line-height: 26px;
+}
+
+ul.sf_admin_actions li input {
+	color: #444;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	height: 26px;
+	margin: 0 10px;
+	padding: 0 10px;
+	padding-bottom: 1px;
+	vertical-align: top;
+}
+
+ul.sf_admin_actions li.sf_admin_batch_actions_choice input {
+	margin: 0;
+	margin-right: 10px;
+}
+
+ul.sf_admin_actions li a {
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+	font-weight: bold;
+	padding: 0 7px;
+    text-decoration: none;
+}
+
+ul.sf_admin_actions li a:hover {
+	background-color: #ccc;
     text-decoration:underline;
 }
+
+ul.sf_admin_actions li select {
+	vertical-align: top;
+}
+
+div.sf_admin_date {
+	font-size: 16px;
+}
+
+div.sf_admin_date label {
+	font-family: "Lucida Grande","Lucida Sans Unicode",Arial,Helvetica,Verdana,sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+div.sf_admin_form_row.sf_admin_date select {
+	height: 26px;
+	margin: 0 2px;
+}
+
+div.sf_admin_date select:first-child {
+	margin-left: 0;
+}
+
 tr.sf_admin_row td{
     padding-left:10px;
     padding-right:10px;
+}
+
+div.sf_admin_form fieldset {
+	border: none;
+}
+
+div.sf_admin_form_row select {
+	height: auto;
 }
 
 /*

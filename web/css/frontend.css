@@ -367,6 +367,7 @@ div#counter-box {
 	position: absolute;
 	right: 0;
 	top: 155px;
+	z-index: 10;
 }
 
 div#counter-box form {
@@ -374,6 +375,7 @@ div#counter-box form {
 }
 
 div#counter-box ul {
+	z-index: 2;
 }
 
 div#counter-box ul li {
@@ -395,12 +397,12 @@ li#counter {
 
 li#slogan1 {
 	background-color: #000;
-	/* -> border */
+	/* -> border radius */
 	border-radius: 10px 0px 0px 0px;
 	-moz-border-radius: 10px 0px 0px 0px;
 	-webkit-border-radius: 10px 0px 0px 0px;
 	-khtml-border-radius: 10px 0px 0px 0px;
-	/* <- border */
+	/* <- border radius */
 	color: #fff;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 15px;
@@ -418,6 +420,49 @@ li#slogan1 {
 	padding-top: 3px;
 }
 
+div#donation-box {
+	background-color: #000;
+	/* -> border radius */
+	border-radius: 0px 18px 10px 10px;
+	-moz-border-radius: 0px 18px 10px 10px;
+	-webkit-border-radius: 0px 18px 10px 10px;
+	-khtml-border-radius: 0px 18px 10px 10px;
+	/* <- border radius */
+	color: #fff;
+	/*display: none;*/
+	/*height: 96px;*/
+	height: 0;
+	left: 0;
+	/* -> opacity */
+	-moz-opacity:0.9;
+	opacity: 0.9;
+	overflow: hidden;
+	filter:alpha(opacity=90);
+	/* <- opacity */
+	position: absolute;
+	right: 6px;;
+	top: 35px;
+	z-index: 1;
+}
+
+div#donation-box > div {
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: italic;
+	font-weight: bold;
+	padding: 0 10px;
+	padding-right: 20px;
+	text-align: right;
+}
+
+div#slogan2 {
+	font-size: 15px;
+	margin-top: 45px;
+}
+
+div#donate {
+	font-size: 19px;
+	margin-top: 5px;
+}
 
 /*
     Centre du design

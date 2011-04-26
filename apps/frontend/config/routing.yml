@@ -32,6 +32,15 @@ page:
     id: \d+
     sf_method: [get]
 
+page:
+  url:   /:sf_culture/page/:id
+  class:   sfDoctrineRoute
+  options: { model: StaticPage, type: object }
+  param:   { module: page, action: show }
+  requirements:
+    id: \d+
+    sf_method: [get]    
+
 news:
   url:   /:sf_culture/news
   param: { module: news, action: index}

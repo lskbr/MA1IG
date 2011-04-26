@@ -7,7 +7,7 @@
  */
 class CounterTable extends Doctrine_Table
 {
-    /**
+	/**
      * Returns an instance of this class.
      *
      * @return object CounterTable
@@ -20,13 +20,20 @@ class CounterTable extends Doctrine_Table
     public function getCurrentData($culture)
     {
     	return $this->createQuery('a')->
-    		select('a.initial_number, a.flow, '.
-    			   //'@margin := TIMESTAMPDIFF(SECOND, a.initial_date, NOW()) AS margin, '.
-    			   //'FLOOR(a.initial_number + @margin) AS planted_trees, '.
-    			'FLOOR(a.initial_number + TIMESTAMPDIFF(SECOND, a.initial_date, NOW())*a.flow) AS planted_trees, '.
-    			'FLOOR((1 - TIMESTAMPDIFF(SECOND, a.initial_date, NOW())*a.flow + '.
-    				'FLOOR(TIMESTAMPDIFF(SECOND, a.initial_date, NOW())*a.flow))*(1000/a.flow)) AS delay, '.
-    			'ROUND(1000/a.flow) AS interval, '.
+			select('a.initial_number, '.
+    			'FLOOR(a.initial_number + TIMESTAMPDIFF(SECOND, a.initial_date, NOW())*'.
+    				'a.objective_number/TIMESTAMPDIFF(SECOND, a.initial_date, '.
+    				'ADDDATE(initial_date, INTERVAL period MONTH))) AS planted_trees, '.
+    			'FLOOR((1 - TIMESTAMPDIFF(SECOND, a.initial_date, NOW())*'.
+    				'a.objective_number/TIMESTAMPDIFF(SECOND, a.initial_date, '.
+    				'ADDDATE(initial_date, INTERVAL period MONTH)) + '.
+    				'FLOOR(TIMESTAMPDIFF(SECOND, a.initial_date, NOW())*'.
+    				'a.objective_number/TIMESTAMPDIFF(SECOND, a.initial_date, '.
+    				'ADDDATE(initial_date, INTERVAL period MONTH))))*'.
+    				'(1000*TIMESTAMPDIFF(SECOND, initial_date, ADDDATE(initial_date, '.
+    				'INTERVAL period MONTH))/objective_number)) AS delay, '.
+    			'FLOOR(1000*TIMESTAMPDIFF(SECOND, initial_date, ADDDATE(initial_date, '.
+    				'INTERVAL period MONTH))/objective_number) AS interval, '.
     			't.slogan_part1, t.slogan_part2, t.donation_text')->
     		innerJoin('a.Translation t')->
     		where("t.lang=?", $culture)->

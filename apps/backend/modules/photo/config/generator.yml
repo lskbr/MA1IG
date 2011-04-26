@@ -16,8 +16,9 @@ generator:
       fields:  ~
       list:    
         title: Géstion de Photos
-        display: [_picsmall, id, title, description, galery, publication_start, publication_end]  
-        sort: [id, title, description, galery, publication_start, publication_end]                  
+        batch_actions: {}
+        display: [_picsmall, id, title, description, galery, publication_start, publication_end]
+        sort: [id, title, description, galery, publication_start, publication_end]
       filter:  ~
       form:
         class: PhotoForm

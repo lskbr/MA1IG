@@ -17,6 +17,7 @@ generator:
         is_activated: {label: Visible, help: 'Cette catégorie est-elle visible pour les utilisateurs du site ?'}
       list:
         title: Liste des catégories
+        batch_actions: {}
         display: [=name, _isActivated]
         sort: [position, asc]
         table_method: retrieveBackendCategories

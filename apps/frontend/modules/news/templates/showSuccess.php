@@ -8,14 +8,6 @@ if(config::getInstance()->get('citation'))
 <p class="date_ind">Posté le <?php echo date('d/m/Y',strtotime($news->getPublicationDate())); ?>.<p>
 <div class="news_ind">
 <p><?php echo $news->getContent(ESC_RAW); ?></p>
-<?php
-if(config::getInstance()->get('social_sharing'))
-    include_partial('social_sharing/social_sharing', array(
-        'url_news' => url_for('news_show', $news),
-        'url_title' => $news->getTitle(),
-        'url_description' => $news->getFormatedText(config::getInstance()->get('char_by_news_list'))
-    ))
-?>
 </div>
 <p><?php echo link_to('Retour à la liste des news','news') ?><p>
 
@@ -30,7 +22,7 @@ if(config::getInstance()->get('social_sharing'))
 		?>
 		<div class="comment_header"/>
 		<?php echo $com->getsfGuardUser()->getName(); ?> - Le <?php echo date('d-m-Y à h:m:s',strtotime($com->getCreatedAt()));?>
-		<?php if($authenticated):?><a href="<?php echo url_for('news_answer', $news).$com->getId().'#comment_form';?>">Répondre</a><?php endif; ?>
+		<?php if($authenticated && $com->getFatherId()==null):?><a href="<?php echo url_for('news_answer', $news).$com->getId().'#comment_form';?>">Répondre</a><?php endif; ?>
 		</div>
 		<div class="comment_content"/>
 		<?php echo $com->getContent(); ?>

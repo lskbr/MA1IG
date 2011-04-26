@@ -93,6 +93,8 @@ galery:
 
 bilan_carbone:
   url:   /:sf_culture/bilan_carbone
+  options: { model: BilanCarbone, type: object }
+  param:   { module: bilan_carbone, action: index }
   class:   sfDoctrineRoute
   requirements:
     id: \d+

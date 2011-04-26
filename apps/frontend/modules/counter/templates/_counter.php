@@ -4,6 +4,10 @@
     <li id="counter"></li>
     <li id="slogan1"><?php print($counter[0]->getSloganPart1()); ?></li>
   </ul>
+  <div id="donation-box">
+    <div id="slogan2"><?php print($counter[0]->getSloganPart2()); ?></div>
+    <div id="donate"><?php print($counter[0]->getDonationText()); ?></div>
+  </div>
   <form>
     <input type="hidden" id="counter-trees" value="<?php print($counter[0]->getPlantedTrees()); ?>" />
     <input type="hidden" id="counter-interval" value="<?php print($counter[0]->getInterval()); ?>"  />

@@ -96,7 +96,7 @@ jQuery(document).ready(function () {
 	//! Initialize counter
 	var delay = jQuery("#counter-delay").get(0).value - (new Date()).getTime(),
 		interval = jQuery("#counter-interval").get(0).value,
-		step = 1;
+		step = 1, mask = 0;
 
 	if (interval < 1000) {
 		step = 1000/interval;
@@ -111,6 +111,53 @@ jQuery(document).ready(function () {
 		spaceWidth:	2,
 		duration:	300,
 		fps:		50
+	});
+
+	function openBox () {
+		if ((mask & 1) && !(mask & 2)) {
+			mask |= 2;
+			jQuery("#donation-box").animate(
+				{ height: '+=96' }, 300, function () {
+					mask &= ~2;
+					mask |= 4;
+
+					if (!(mask & 1)) {
+						window.setTimeout(closeBox, 300);
+					}
+				}
+			);
+		} else {
+			mask = 0;
+		}
+	}
+
+	function closeBox () {
+		if (!(mask & 1) && !(mask & 2)) {
+			mask |= 2;
+			jQuery("#donation-box").animate(
+				{ height: '-=96' }, 300, function () {
+					mask &= ~6;
+
+					if (mask & 1) {
+						window.setTimeout(openBox, 300);
+					}
+				}
+			);
+		}
+	}
+
+	jQuery("#counter-box").mouseenter(function () {
+		mask |= 1;
+		if (!(mask & 2) && !(mask & 4)) {
+			window.setTimeout(openBox, 300);
+		}
+	});
+
+	jQuery("#counter-box").mouseleave(function () {
+		mask &= ~1;
+		if (!(mask & 2) && (mask & 4)) {
+			window.setTimeout(closeBox, 300);
+		}
 	});
 
 });
@@ -156,11 +203,3 @@ Event.observe(window, "load", function (evt) {
 		});
 	}
 });
-
-//! Google Search
-/*google.load('search', '1', {language : 'fr', style : google.loader.themes.GREENSKY});
-google.setOnLoadCallback(function() {
-	var customSearchControl = new google.search.CustomSearchControl('003679774222452109927:zo5e_ivptpq');
-	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-	customSearchControl.draw('gSearch');
-}, true);*/

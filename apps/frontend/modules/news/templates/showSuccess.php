@@ -11,6 +11,16 @@ if(config::getInstance()->get('citation'))
 </div>
 <p><?php echo link_to('Retour à la liste des news','news') ?><p>
 
+<?php
+// Partage sur les réseaux sociaux
+if(config::getInstance()->get('social_sharing'))
+    include_partial('social_sharing/social_sharing', array(
+        'url_news' => url_for('news_show', $news),
+        'url_title' => $news->getTitle(),
+        'url_description' => $news->getFormatedText(config::getInstance()->get('char_by_news_list'))
+    ))
+?>
+
 <div class="news_comments">
 	<?php 
 	foreach($comments as $com)

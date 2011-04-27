@@ -120,6 +120,14 @@ change_folder:
   url: /contactavances/changeFolder
   param: {module: contactavances, action: changeFolder}
 
+delegate_to:
+  url: /contactavances/delegateTo
+  param: {module: contactavances, action: delegateTo}
+
+insert_from_faq:
+  url: /contactavances/InsertFromFaq
+  param: {module: contactavances, action: InsertFromFaq}
+
 sf_guard_permissions:
   url: /permission
   param: {module: sfGuardPermission, action: index}

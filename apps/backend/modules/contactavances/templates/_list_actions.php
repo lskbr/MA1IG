@@ -7,5 +7,5 @@
 </div>
 
 <div id="forwardResponse">
-    Bonjour
+    <?php include_component('sfGuardUser', 'administrator')?>
 </div>

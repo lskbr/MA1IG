@@ -1,5 +1,5 @@
 
-#changeFolder, #forwardResponse{
+#changeFolder, #forwardResponse, #insertFaqQuestion{
     -moz-border-radius: 6px 6px 6px 6px;
     -moz-box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
     background: none repeat scroll 0 0 #EEF2F7;

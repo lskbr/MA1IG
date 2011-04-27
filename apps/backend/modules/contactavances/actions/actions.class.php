@@ -45,19 +45,29 @@ class contactavancesActions extends autoContactavancesActions {
         $this->forward404Unless(Doctrine_Core::getTable('BooleanConfiguration')->createQuery()->where('main = "contacts"')->fetchOne()->getIsActivated());
         parent::executeView($request);
     }
- public function executeGetQuestion (sfWebRequest $request){
-     $category = $request->getGetParameter('id');
-     $question = Doctrine::getTable('faq')->where('category_id = ?', $category)->execute();
-     $this->question = $question;
- }
 
- public function executeChangeFolder(sfWebRequest $request){
-     $this->forward404unless($request->isXmlHttpRequest());
-     $messageId = $request->getParameter('messageId');
-     $folderId = $request->getParameter('folderId');
-     $message = Doctrine_Core::getTable('message')->createQuery()->where('id = ?',$messageId)->fetchOne();
-     $message->setFolderId($folderId);
-     $message->save();
-     $this->message = $message;
- }
+    public function executeChangeFolder(sfWebRequest $request) {
+        $this->forward404unless($request->isXmlHttpRequest());
+        $messageId = $request->getParameter('messageId');
+        $folderId = $request->getParameter('folderId');
+        $message = Doctrine_Core::getTable('message')->createQuery()->where('id = ?', $messageId)->fetchOne();
+        $message->setFolderId($folderId);
+        $message->save();
+        $this->message = $message;
+    }
+
+    public function executeDelegateTo(sfWebRequest $request) {
+        $this->forward404unless($request->isXmlHttpRequest());
+        $delegateId = $request->getParameter('delegateId');
+        $messageId = $request->getParameter('messageId');
+        $message = Doctrine_Core::getTable('message')->createQuery()->where('id = ?', $messageId)->fetchOne();
+        $message->setForwardToId($delegateId);
+        $message->save();
+        $this->message = $message;
+    }
+
+    public function executeInsertFromFaq(sfWebRequest $request){
+
+    }
+
 }

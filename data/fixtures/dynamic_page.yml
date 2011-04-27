@@ -11,6 +11,10 @@ DynamicPage:
         menu_title: Contactez-nous
       nl:
         menu_title: Contacter-ons
+      pt:
+        menu_title: Contacte-nos
+      en:
+        menu_title: Contact us
   Partner:
     position: 2
     publication_date: '2011-03-22 20:00'
@@ -21,3 +25,22 @@ DynamicPage:
     Translation:
       fr:
         menu_title: Nos partenaires
+      pt:
+        menu_title: Nossos parceiros
+      en:
+        menu_title: Our partners
+  Gallery:
+    position: 3
+    publication_date: '2011-03-22 20:00'
+    Category: projetMadagascarCat
+    controller: gallery
+    action: index
+    BooleanConfiguration: Partner
+    Translation:
+      fr:
+        menu_title: Gallerie
+      pt:
+        menu_title: Fotos
+      en:
+        menu_title: Gallery
+       

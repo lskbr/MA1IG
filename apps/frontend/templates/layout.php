@@ -34,6 +34,7 @@
             closedir($d);
 
             shuffle($back_img);
+			$back_img = array_slice($back_img, 0, 5);
 
             foreach ($back_img as $value):
             ?>

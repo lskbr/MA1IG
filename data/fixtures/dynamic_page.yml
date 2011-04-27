@@ -29,4 +29,18 @@ DynamicPage:
         menu_title: Nossos parceiros
       en:
         menu_title: Our partners
+  Gallery:
+    position: 3
+    publication_date: '2011-03-22 20:00'
+    Category: projetMadagascarCat
+    controller: gallery
+    action: index
+    BooleanConfiguration: Partner
+    Translation:
+      fr:
+        menu_title: Gallerie
+      pt:
+        menu_title: Fotos
+      en:
+        menu_title: Gallery
        

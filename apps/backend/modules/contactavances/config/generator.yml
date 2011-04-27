@@ -28,7 +28,7 @@ generator:
 
       list:
         title: Liste des messages
-        display: [_status, =sender_name, faq_category, created_at, read_at, folder]
+        display: [_status, =sender_name, faq_category, created_at, read_at, _folderjs]
         sort: [read_at, desc]
 
 

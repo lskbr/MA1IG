@@ -1,3 +1,21 @@
+standard_sentence:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                StandardSentence
+    module:               sentences
+    prefix_path:          /sentences
+    column:               id
+    with_wildcard_routes: true
+
+folder:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Folder
+    module:               folder
+    prefix_path:          /folder
+    column:               id
+    with_wildcard_routes: true
+
 counter:
   class: sfDoctrineRouteCollection
   options:
@@ -31,6 +49,7 @@ contactavances:
     model:                Message
     module:               contactavances
     prefix_path:          /contactavances
+    url:                  /contactavances
     column:               id
     with_wildcard_routes: true
 
@@ -96,6 +115,10 @@ static_page:
     prefix_path:          /staticpage
     column:               id
     with_wildcard_routes: true
+
+change_folder:
+  url: /contactavances/changeFolder
+  param: {module: contactavances, action: changeFolder}
 
 sf_guard_permissions:
   url: /permission

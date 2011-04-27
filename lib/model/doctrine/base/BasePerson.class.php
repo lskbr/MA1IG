@@ -11,22 +11,22 @@
  * @property integer $corespondance_id
  * @property Corespondance $Corespondance
  * @property sfGuardUser $Person
- * @property Message $Message
+ * @property Doctrine_Collection $forwardTo
  * 
- * @method string        getFirstName()        Returns the current record's "first_name" value
- * @method string        getLastName()         Returns the current record's "last_name" value
- * @method string        getEmailAddress()     Returns the current record's "email_address" value
- * @method integer       getCorespondanceId()  Returns the current record's "corespondance_id" value
- * @method Corespondance getCorespondance()    Returns the current record's "Corespondance" value
- * @method sfGuardUser   getPerson()           Returns the current record's "Person" value
- * @method Message       getMessage()          Returns the current record's "Message" value
- * @method Person        setFirstName()        Sets the current record's "first_name" value
- * @method Person        setLastName()         Sets the current record's "last_name" value
- * @method Person        setEmailAddress()     Sets the current record's "email_address" value
- * @method Person        setCorespondanceId()  Sets the current record's "corespondance_id" value
- * @method Person        setCorespondance()    Sets the current record's "Corespondance" value
- * @method Person        setPerson()           Sets the current record's "Person" value
- * @method Person        setMessage()          Sets the current record's "Message" value
+ * @method string              getFirstName()        Returns the current record's "first_name" value
+ * @method string              getLastName()         Returns the current record's "last_name" value
+ * @method string              getEmailAddress()     Returns the current record's "email_address" value
+ * @method integer             getCorespondanceId()  Returns the current record's "corespondance_id" value
+ * @method Corespondance       getCorespondance()    Returns the current record's "Corespondance" value
+ * @method sfGuardUser         getPerson()           Returns the current record's "Person" value
+ * @method Doctrine_Collection getForwardTo()        Returns the current record's "forwardTo" collection
+ * @method Person              setFirstName()        Sets the current record's "first_name" value
+ * @method Person              setLastName()         Sets the current record's "last_name" value
+ * @method Person              setEmailAddress()     Sets the current record's "email_address" value
+ * @method Person              setCorespondanceId()  Sets the current record's "corespondance_id" value
+ * @method Person              setCorespondance()    Sets the current record's "Corespondance" value
+ * @method Person              setPerson()           Sets the current record's "Person" value
+ * @method Person              setForwardTo()        Sets the current record's "forwardTo" collection
  * 
  * @package    grainedevie
  * @subpackage model
@@ -70,8 +70,8 @@ abstract class BasePerson extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'person_id'));
 
-        $this->hasOne('Message', array(
+        $this->hasMany('Message as forwardTo', array(
              'local' => 'id',
-             'foreign' => 'sender_id'));
+             'foreign' => 'forward_to_id'));
     }
 }

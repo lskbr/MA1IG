@@ -18,7 +18,7 @@ class StaticPageTranslationForm extends BaseStaticPageTranslationForm {
                         array(
                             'width' => 550,
                             'height' => 350,
-                            'config' => 'theme_advanced_disable: "anchor,image,cleanup,help"',
+                            'config' => 'theme_advanced_disable: "anchor,cleanup,help"',
                             'theme' => sfConfig::get('app_tinymce_theme', 'advanced'),
                         ),
                         array(

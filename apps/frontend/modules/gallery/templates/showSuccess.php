@@ -21,7 +21,7 @@
          $image_link = "/uploads/photo/".$photo->getUrl();
          $image_thumb_link = "/uploads/photo/thumbnail/".$photo->getUrl();
          $x++;?>
-            <td> <a href="<?php echo $image_link ?>">
+            <td> <a href="<?php echo $image_link ?>" rel="lightbox-gallery">
                  <img src="<?php echo $image_thumb_link ?>">
                  </a>
             </td>

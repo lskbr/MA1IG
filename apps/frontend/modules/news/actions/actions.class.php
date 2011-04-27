@@ -34,6 +34,14 @@ class newsActions extends sfActions
       $this->form->setDefault('author_id', $this->getUser()->getGuardUser()->getId());
       $this->form->setDefault('news_id', $this->getRequestParameter('id'));
       $this->form->setDefault('father_id', $this->getRequestParameter('answer'));
+      if(($this->answer=$this->getRequestParameter('answer'))!=null)
+      {
+        $com=Doctrine::getTable('newsComments')->find($this->answer);
+        $this->answer=$com->getSfGuardUser()->getName();
+        $this->form->getWidgetSchema()->setLabels(array('content' =>'Postez un commentaire en réponse à '.$this->answer.' (<a href="'.$this->generateUrl('news_show',$this->news).'">Annuler</a>) : <br/>'));     
+      }
+      else
+        $this->form->getWidgetSchema()->setLabels(array('content' =>'Postez un commentaire : <br/>'));
     }
   }
 }

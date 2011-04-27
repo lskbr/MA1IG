@@ -1,5 +1,5 @@
 /********************************************************************************
- *	Graine de Vie
+ *	Graine de Vie | www.grainedevie.org
  *
  *	UMons 2011.
  ********************************************************************************/
@@ -53,22 +53,12 @@ jQuery(document).ready(function () {
         jQuery(this).next("ul").slideDown(500);
     });
 
-    //
-    // Login
-    //
+    //!
+    //! Login
+    //!
     var closed = false;
 
     jQuery("#login-bar-button").attr("href", "#");
-
-    /*jQuery("#login-bar-button").hover(function () {
-            if (jQuery("#login").is(":hidden") && !closed) {
-                    jQuery("#login-bar-button").addClass("login-open");
-                    jQuery("#login").slideDown("normal");
-            }
-            else {
-                    closed = false;
-            }
-    });*/
 	
     jQuery("#login-bar-button").click(function () {
             if ((closed = jQuery("#login").is(":visible"))) {
@@ -93,10 +83,12 @@ jQuery(document).ready(function () {
             }
     });
 
-	//! Initialize counter
+	//!
+	//! Counter initialization
+	//!
 	var delay = jQuery("#counter-delay").get(0).value - (new Date()).getTime(),
 		interval = jQuery("#counter-interval").get(0).value,
-		step = 1;
+		step = 1, mask = 0;
 
 	if (interval < 1000) {
 		step = 1000/interval;
@@ -113,9 +105,54 @@ jQuery(document).ready(function () {
 		fps:		50
 	});
 
+	function openBox () {
+		if ((mask & 1) && !(mask & 2)) {
+			mask |= 2;
+			jQuery("#donation-box").animate(
+				{height: 'toggle'}, 300, function () {
+					mask &= ~2;
+					mask |= 4;
+
+					if (!(mask & 1)) {
+						window.setTimeout(closeBox, 300);
+					}
+				}
+			);
+		}
+	}
+
+	function closeBox () {
+		if (!(mask & 1) && !(mask & 2)) {
+			mask |= 2;
+			jQuery("#donation-box").animate(
+				{height: 'toggle'}, 300, function () {
+					mask &= ~6;
+					
+					if (mask & 1) {
+						window.setTimeout(openBox, 300);
+					}
+				}
+			);
+		}
+	}
+
+	jQuery("#counter-box").mouseenter(function () {
+		mask |= 1;
+		if (!(mask & 2) && !(mask & 4)) {
+			window.setTimeout(openBox, 300);
+		}
+	}).mouseleave(function () {
+		mask &= ~1;
+		if (!(mask & 2) && (mask & 4)) {
+			window.setTimeout(closeBox, 300);
+		}
+	});
+
 });
 
+//!
 //! ProtoSlider - Image transition library
+//!
 Event.observe(window, "load", function (evt) {
 	//! Use of the combination of these effects only
 	var effects =
@@ -156,11 +193,3 @@ Event.observe(window, "load", function (evt) {
 		});
 	}
 });
-
-//! Google Search
-/*google.load('search', '1', {language : 'fr', style : google.loader.themes.GREENSKY});
-google.setOnLoadCallback(function() {
-	var customSearchControl = new google.search.CustomSearchControl('003679774222452109927:zo5e_ivptpq');
-	customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-	customSearchControl.draw('gSearch');
-}, true);*/

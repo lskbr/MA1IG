@@ -13,15 +13,17 @@ abstract class BaseCounterFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'initial_number' => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'initial_date'   => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
-      'flow'           => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'initial_date'     => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'initial_number'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'period'           => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'objective_number' => new sfWidgetFormFilterInput(array('with_empty' => false)),
     ));
 
     $this->setValidators(array(
-      'initial_number' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'initial_date'   => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
-      'flow'           => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
+      'initial_date'     => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
+      'initial_number'   => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'period'           => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'objective_number' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
     ));
 
     $this->widgetSchema->setNameFormat('counter_filters[%s]');
@@ -41,10 +43,11 @@ abstract class BaseCounterFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id'             => 'Number',
-      'initial_number' => 'Number',
-      'initial_date'   => 'Date',
-      'flow'           => 'Number',
+      'id'               => 'Number',
+      'initial_date'     => 'Date',
+      'initial_number'   => 'Number',
+      'period'           => 'Number',
+      'objective_number' => 'Number',
     );
   }
 }

@@ -12,6 +12,3 @@
      <p> <?php echo $photo_count.' '.format_number_choice('[1]photo|(1,+Inf]photos',array(),$photo_count); ?></p>
     </div>
 <?php endforeach; ?>
-
-
-

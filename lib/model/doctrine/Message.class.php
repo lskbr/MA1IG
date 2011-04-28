@@ -23,9 +23,19 @@ class Message extends BaseMessage {
         return $this->getSender()->getFirstName() . " " . $this->getSender()->getLastName();
     }
 
+    public function getSender(){
+        return Doctrine::getTable('Person')->createQuery()->where('id = ?',$this->getSenderId())->fetchOne();
+    }
+
     public function readed($valeur) {
         if ($this->getReadAt() == null) {
             $this->setReadAt($valeur);
+            $this->setText("
+
+--------------------------------------------------------------------------------------------------------------
+Texte original de " . $this->getSenderName() . " en date du " . $this->getCreatedAt() . "
+
+            " . $this->getText());
         }
     }
 

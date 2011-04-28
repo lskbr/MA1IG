@@ -3,12 +3,3 @@ Guestbook:
     Language: Français
     content: "J'adore votre site !"
     is_validated: true
-  M2:
-    Language: Anglais
-    content: "This website is amazing !"
-  M3:
-    Language: Anglais
-  M4:
-    Language: Français
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a elit lobortis nibh varius consequat a eget quam. In sed nulla nec urna congue malesuada eu a augue. In tincidunt fermentum tristique. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc nibh augue, elementum consequat fermentum vel, feugiat non leo. Cum sociis natoque penatibus."
-    is_validated: true

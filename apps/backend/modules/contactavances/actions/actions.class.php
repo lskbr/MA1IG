@@ -16,29 +16,58 @@ class contactavancesActions extends autoContactavancesActions {
     public function executeEdit(sfWebRequest $request) {
         $this->forward404Unless($message = Doctrine_Core::getTable('message')->find(array($request->getParameter('id'))), sprintf('Object message does not exist (%s).', $request->getParameter('id')));
         $this->forward404Unless(Doctrine_Core::getTable('BooleanConfiguration')->createQuery()->where('main = "contacts"')->fetchOne()->getIsActivated());
+        $message->readed(date('Y-m-d H:i:s'));
         $this->form = new MessageAdminForm($message);
         $this->message = $message;
-        $message->readed(date('Y-m-d H:i:s'));
         $message->save();
     }
 
-    public function executeNew(sfWebRequest $request){
+    public function executeNew(sfWebRequest $request) {
         $this->forward404();
     }
 
-    public function executeIndex(sfWebRequest $request){
+    public function executeIndex(sfWebRequest $request) {
         $this->forward404Unless(Doctrine_Core::getTable('BooleanConfiguration')->createQuery()->where('main = "contacts"')->fetchOne()->getIsActivated());
         parent::executeIndex($request);
     }
-    
-    public function executeShow(sfWebRequest $request){
+
+    public function executeShow(sfWebRequest $request) {
         $this->forward404Unless(Doctrine_Core::getTable('BooleanConfiguration')->createQuery()->where('main = "contacts"')->fetchOne()->getIsActivated());
         parent::executeShow($request);
     }
 
-    public function executeDelete(sfWebRequest $request){
+    public function executeDelete(sfWebRequest $request) {
         $this->forward404Unless(Doctrine_Core::getTable('BooleanConfiguration')->createQuery()->where('main = "contacts"')->fetchOne()->getIsActivated());
         parent::executeDelete($request);
+    }
+
+    public function executeView(sfWebRequest $request) {
+        $this->forward404Unless(Doctrine_Core::getTable('BooleanConfiguration')->createQuery()->where('main = "contacts"')->fetchOne()->getIsActivated());
+        parent::executeView($request);
+    }
+
+    public function executeChangeFolder(sfWebRequest $request) {
+        $this->forward404unless($request->isXmlHttpRequest());
+        $messageId = $request->getParameter('messageId');
+        $folderId = $request->getParameter('folderId');
+        $message = Doctrine_Core::getTable('message')->createQuery()->where('id = ?', $messageId)->fetchOne();
+        $message->setFolderId($folderId);
+        $message->save();
+        $this->message = $message;
+    }
+
+    public function executeDelegateTo(sfWebRequest $request) {
+        $this->forward404unless($request->isXmlHttpRequest());
+        $delegateId = $request->getParameter('delegateId');
+        $messageId = $request->getParameter('messageId');
+        $message = Doctrine_Core::getTable('message')->createQuery()->where('id = ?', $messageId)->fetchOne();
+        $message->setForwardToId($delegateId);
+        $message->save();
+        $this->message = $message;
+    }
+
+    public function executeInsertFromFaq(sfWebRequest $request){
+
     }
 
 }

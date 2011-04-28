@@ -22,6 +22,7 @@ test:
     no_script_name:         false
     etag:                   false
 
+
 all:
   .settings:
 
@@ -35,6 +36,9 @@ all:
     default_culture: fr
     i18n: on
     rich_text_js_dir:       js/tiny_mce
+    jquery_web_dir:      /js/lib
+    jquery_core:      jquery-1.8.10.custom.min.js
+
 
     # Enable the database manager
     use_database:           true

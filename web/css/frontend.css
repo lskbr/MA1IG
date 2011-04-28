@@ -978,3 +978,48 @@ p{
 	margin-top:3px;
 	margin-left:180px;
 }
+.photo_thumb{
+	height:100px;
+	width:150px;
+	padding:5px;
+	border:1px solid #bbb;
+	background-color:white;
+	margin:3px;
+}
+.photo_thumb_padding{
+	height:100px;
+	width:150px;
+	padding:4px;
+	border:1px solid #bbb;
+	background-color:white;
+	margin:1px;
+}
+.gallery_title{
+	clear:both;
+}
+.gallery_thumb{
+	height:100px;
+	width:150px;
+	padding:4px;
+	border:1px solid #bbb;
+	background-color:white;
+	margin:4px;
+	margin-right:8px;
+	display: block;
+}
+.gallery_item{
+	float: left;
+}
+.gallery_item a{
+	font-family:tahoma;
+	font-weight:700;
+	color: #5f3812;
+}
+.gallery_text{
+	padding-top:3px;
+	padding-bottom:3px;
+	margin-left:10px;
+}
+.gallery_item a:hover{
+	text-decoration:underline;
+}

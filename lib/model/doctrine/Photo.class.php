@@ -27,6 +27,9 @@ public function save(Doctrine_Connection $conn = null)
     $thumbnail = new sfThumbnail(150, 150);
     $thumbnail->loadFile(sfConfig::get('sf_upload_dir').'/photo/'.$fileName);
     $thumbnail->save(sfConfig::get('sf_upload_dir').'/photo/thumbnail/'.$fileName);
+    /*$thumbnail2 = new sfThumbnail(1024, 768);
+    $thumbnail2->loadFile(sfConfig::get('sf_upload_dir').'/photo/'.$fileName);
+    $thumbnail2->save(sfConfig::get('sf_upload_dir').'/photo/thumbnailGrande/'.$fileName);*/
 
 	return parent::save($conn);
 }

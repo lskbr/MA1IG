@@ -4,12 +4,10 @@ Guestbook:
     content: "J'adore votre site !"
     is_validated: true
   M2:
-    Language: Anglais
-    content: "I love this fu**ing site !"
-  M3:
-    Language: Anglais
-    content: "I love this fu**ing website !"
-  M4:
     Language: Français
-    content: "La version 2.9 de l'implémentation de Scala est sortie en RC fin mars. Au même moment, plusieurs frameworks Scala gagnent une version et l'équipe a eu l'honneur de voir ses efforts récompensés par une subvention de l'Union Européenne. Tout ceci suggère de nombreuses nouveautés que nous allons voir après une présentation d'un langage bien plus répandu qu'on ne le croit."
+    content: "Bravo à tous le monde qui participe à la réussite de votre association."
+    is_validated: true
+  M3:
+    Language: Français
+    content: "Je trouve votre site et votre association géniaux, comment puis-je vous aider afin de sauver la planéte? Un arbre compense combien de gramme de Co2, de plus je souhaiterais partir voir les plantation qui dois-je contacter? Merci beaucoup pour votre association"
     is_validated: true

@@ -53,14 +53,12 @@ abstract class BaseGalery extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'galery_id'));
 
-        $timestampable0 = new Doctrine_Template_Timestampable();
         $i18n0 = new Doctrine_Template_I18n(array(
              'fields' => 
              array(
               0 => 'name',
              ),
              ));
-        $this->actAs($timestampable0);
         $this->actAs($i18n0);
     }
 }

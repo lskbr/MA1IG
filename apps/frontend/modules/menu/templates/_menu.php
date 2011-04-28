@@ -3,7 +3,7 @@
     <ul id="menu">
         <li class="root">
             <div>
-                <a class="accueil" href="<?php echo url_for('@homepage') ?>"><?php echo __('Accueil') ?></a>
+                <a class="accueil" href="<?php echo url_for('localized_homepage') ?>"><?php echo __('Accueil') ?></a>
             </div>
         </li>
         <?php foreach ($categories as $category): ?>
@@ -36,7 +36,6 @@
             </li>
         <?php endforeach; ?>
     </ul>
-
     <!-- Préchargement des images JS -->
     <img src="/images/left.png" style="display: none"/>
     <img src="/images/down.png" style="display: none"/>

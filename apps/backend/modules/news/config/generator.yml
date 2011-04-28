@@ -16,7 +16,7 @@ generator:
       fields:  ~
       list:
         title: Liste des news :
-        display: [_flag, =title, publication_date, _is_activated]
+        display: [_flag, =title, _publication_date, _is_activated]
         fields:
           flag:
             label: Langue

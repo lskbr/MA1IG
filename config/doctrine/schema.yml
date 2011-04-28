@@ -89,11 +89,13 @@ Message: #Laurent
     sender_id: {type: integer}
     category_id: {type: integer, notnull: true}
     folder_id: {type: integer, notnull: true, default: 1}
+    forward_to_id : {type: integer}
   relations:
     Comment: {local: comment_id, foreign: id, alias: comment, foreignType: one}
-    Person: {local: sender_id, foreign: id, alias: Sender, foreignType: one}
+    Person: {local: sender_id, foreign: id, foreignAlias: sender}
     FaqCategory: {local: category_id, foreign: id, alias: faqCategory, foreignType: one}
     Folder: {local: folder_id, foreign: id}
+    Person: {local: forward_to_id, foreign: id, foreignAlias: forwardTo}
 
 
 Person: #Laurent
@@ -140,7 +142,7 @@ Faq:
     faqCategory: {local: faq_category_id, foreign: id}
 
 Galery:
-  actAs: {Timestampable: ~, I18n: {fields: [name]}}
+  actAs: {I18n: {fields: [name]}}
   columns:
     name: {type: string(40), notnull: true, unique: true}
     position: {type: integer, notnull: true}
@@ -206,3 +208,7 @@ NewsComments:
 Folder:
   columns:
     name: {type: string(255), unique: true}
+StandardSentence:
+  columns:
+    text: {type: text}
+    title: {type: string(255)}

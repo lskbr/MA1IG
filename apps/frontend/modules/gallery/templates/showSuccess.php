@@ -18,7 +18,7 @@
          if($x==0):  ?>
          <tr>
          <?php endif;
-         $image_link = "/uploads/photo/".$photo->getUrl();
+         $image_link = "/uploads/photo/thumbnailGrande/".$photo->getUrl();
          $image_thumb_link = "/uploads/photo/thumbnail/".$photo->getUrl();
          $x++;?>
             <td> <a href="<?php echo $image_link ?>" rel="lightbox-gallery">

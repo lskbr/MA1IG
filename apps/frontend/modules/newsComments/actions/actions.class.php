@@ -10,24 +10,6 @@
  */
 class newsCommentsActions extends sfActions
 {
-  public function executeIndex(sfWebRequest $request)
-  {
-    $this->news_commentss = Doctrine_Core::getTable('NewsComments')
-      ->createQuery('a')
-      ->execute();
-  }
-
-  public function executeShow(sfWebRequest $request)
-  {
-    $this->news_comments = Doctrine_Core::getTable('NewsComments')->find(array($request->getParameter('id')));
-    $this->forward404Unless($this->news_comments);
-  }
-
-  public function executeNew(sfWebRequest $request)
-  {
-    $this->form = new NewsCommentsForm();
-  }
-
   public function executeCreate(sfWebRequest $request)
   {
     $this->forward404Unless($request->isMethod(sfRequest::POST));
@@ -61,9 +43,9 @@ class newsCommentsActions extends sfActions
     $request->checkCSRFProtection();
 
     $this->forward404Unless($news_comments = Doctrine_Core::getTable('NewsComments')->find(array($request->getParameter('id'))), sprintf('Object news_comments does not exist (%s).', $request->getParameter('id')));
+    $url=$this->generateUrl('news_show',$news_comments->getNews()).'#comment_form';
     $news_comments->delete();
-
-    $this->redirect('newsComments/index');
+    $this->redirect($url);
   }
 
   protected function processForm(sfWebRequest $request, sfForm $form)
@@ -79,5 +61,6 @@ class newsCommentsActions extends sfActions
       }
       $this->redirect($this->generateUrl('news_show',$news_comments->getNews()).'#comment_form');
     }
+    $this->redirect($this->generateUrl('news'));
   }
 }

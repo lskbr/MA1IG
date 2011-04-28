@@ -21,3 +21,15 @@ DynamicPage:
     Translation:
       fr:
         menu_title: Nos partenaires
+  GalleriePhoto:
+    position: 3
+    publication_date: '2000-03-03 00:00:00'
+    Category: contactCat
+    controller: photo
+    action: index
+    BooleanConfiguration: ContactAvances
+    Translation:
+      fr:
+        menu_title: Gallerie photo
+      nl:
+        menu_title: Galerij photo

@@ -30,11 +30,24 @@ Galery:
     is_activated: 1
     Translation:
       en:
-        name: Plantation
+        name: Plantations
       fr:
-        name: PlantationFR
+        name: Plantation
       nl:
         name: Plantage
       pt:
         name: Plantação
+
+  Voyages:
+    position: 4
+    is_activated: 1
+    Translation:
+      en:
+        name: Trips
+      fr:
+        name: Voyages
+      nl:
+        name: Vervoren
+      pt:
+        name: VoyagePT
 

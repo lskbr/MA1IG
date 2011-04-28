@@ -944,10 +944,11 @@ blockquote.guestbook{
 .gallery_thumb{
 	height:100px;
 	width:150px;
-	padding:5px;
+	padding:4px;
 	border:1px solid #bbb;
 	background-color:white;
 	margin:4px;
+	margin-right:8px;
 	float: left;
 	display: block;
 }

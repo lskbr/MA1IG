@@ -12,9 +12,9 @@ function new_page(url,id,largeur,hauteur) {
 }
 
 jQuery(document).ready(function () {
-	//
-	// Menu
-	//
+	//!
+	//! Menu
+	//!
 /*
     var height = jQuery("#menu li a:first").height();
     var visible = false;
@@ -44,6 +44,7 @@ jQuery(document).ready(function () {
     jQuery("#menu a.accueil, #menu div.backcolor").css('paddingLeft','26px');
     jQuery("#menu a.backcolor").css('paddingLeft','26px');
     jQuery("#menu div.categorie").css({backgroundImage:"url(/images/left.png)"});
+	jQuery("#menu div.cat_selected").css({backgroundImage:"url(/images/down.png)"});
 	
     jQuery("#menu div.categorie").click(function()
     {

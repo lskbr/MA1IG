@@ -8,7 +8,6 @@
         </li>
         <?php foreach ($categories as $category): ?>
             <li class="root">
-                <div class="backcolor categorie"><?php echo $category->getName() ?></div>
                 <?php 
                 $cat_active=false;
                 foreach($pages[$category->getId()] as $p)
@@ -16,9 +15,18 @@
                     if(strstr($p->getUrl(),$_SERVER["PATH_INFO"]) && strlen($_SERVER["PATH_INFO"])>5)
                         $cat_active=true;
                 }
+                
+                if($cat_active) {
+                    $cat_active_text = 'class="selected"';
+                    $cat_active_text2 = 'cat_selected';
+                }
+                else {
+                    $cat_active_text = '';
+                    $cat_active_text2 = '';
+                }
 
-                if($cat_active) echo '<ul class="selected">';
-                else echo '<ul>';
+                echo '<div class="backcolor categorie '.$cat_active_text2.'">'.$category->getName().'</div>';
+                echo '<ul '.$cat_active_text.'>';
 
                 foreach($pages[$category->getId()] as $p)
                 {

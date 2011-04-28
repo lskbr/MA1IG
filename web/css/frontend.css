@@ -41,6 +41,7 @@ body {
 /*
     Citations
 */
+
 blockquote {
 	margin:12px 40px;
 	padding:3px;
@@ -58,6 +59,11 @@ blockquote p.author{
 	float:right;
 	color:#484848;
 	font-style: normal;
+}
+blockquote.guestbook{
+	text-align: justify;
+	padding-right:0px;
+	margin:5px;
 }
 
 /*div#fond_image {
@@ -693,29 +699,6 @@ form.module-form tbody input:focus {
 	background-color: #CCFFCC;
 }
 
-ul.error_list {
-	background-color: #FF6600;
-	height: 22px;
-	position: absolute;
-	width: 700px;
-	z-index: -1;
-}
-
-ul.error_list li {
-	color: #fff;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: bold;
-	line-height: 20px;
-}
-
-ul.error_list li:first-child {
-	padding-left: 175px;
-}
-
-ul.error_list li:first-child + li {
-	padding-left: 235px;
-}
 
 form.module-form tfoot td {
 	border-top: 2px dotted #bbb;
@@ -745,6 +728,75 @@ form.module-form tfoot a:hover {
 	text-decoration: underline;
 }
 
+/* Erreur dans formulaire */
+/*
+ul.error_list {
+	background-color: #FF6600;
+	height: 22px;
+	position: absolute;
+	width: 700px;
+	z-index: -1;
+}
+
+ul.error_list li {
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 20px;
+}
+
+ul.error_list li:first-child {
+	padding-left: 175px;
+}
+
+ul.error_list li:first-child + li {
+	padding-left: 235px;
+}
+*/
+
+.error_list {margin: 0; padding: 0;}
+.error, .notice, .success, .error_list li {padding:2px;margin: 2px;border:1px solid #ddd; list-style: none;}
+.error, .error_list li {background:#FBE3E4;color:#8a1f11;border-color:#FBC2C4; font-size: 11px;}
+.notice {background:#FFF6BF;color:#514721;border-color:#FFD324;}
+.success {background:#E6EFC2;color:#264409;border-color:#C6D880;}
+.error a {color:#8a1f11;}
+.notice a {color:#514721;}
+.success a {color:#264409;}
+
+/* Bulle d'erreur dans les formulaires */
+/*
+.jquerybubblepopup{width:auto;height:auto;margin:0px;padding:0px;border:0px;z-index:100;text-align:center;background-color:transparent;}
+.jquerybubblepopup table{width:auto;height:auto;margin:0px;padding:0px;display:table;border-collapse:collapse;border-spacing:0px;border:0px;empty-cells:show;background-color:transparent;}
+.jquerybubblepopup tbody{display:table-row-group;vertical-align:middle;border:0px;background-color:transparent;}
+.jquerybubblepopup td{margin:0px;padding:0px;background-color:transparent;}
+.jquerybubblepopup-top-left,    .jquerybubblepopup-top-right,
+.jquerybubblepopup-bottom-left, .jquerybubblepopup-bottom-right{width:21px;height:21px;overflow:hidden;background-repeat:no-repeat;}
+.jquerybubblepopup-top-middle,  .jquerybubblepopup-bottom-middle{overflow:hidden;background-repeat:repeat-x;}
+.jquerybubblepopup-middle-left, .jquerybubblepopup-middle-right{overflow:hidden;background-repeat:repeat-y;}
+.jquerybubblepopup-tail{border:0px;margin:0px;padding:0px;display:inline;}
+
+.jquerybubblepopup img {vertical-align:middle;}
+
+.jquerybubblepopup-orange .jquerybubblepopup-innerHtml
+{
+        font-family:'Trebuchet MS',Arial;
+        font-size:11px;
+        font-weight:normal;
+        color:orange;
+        background-color:#FFFFFF;
+}
+
+ul.error_list {
+    margin: 0;
+    padding: 0;
+}
+ul.error_list li {
+        color:#ff9933;
+}*/
+
+/* Partenaires */
+
 .partner_col1{
 	padding-top: 10px;
 	max-width:320px;
@@ -757,6 +809,8 @@ form.module-form tfoot a:hover {
 	float: left;
 }
 
+/* FAQ */
+
 .faq_question{
 	padding-left: 20px;
 }
@@ -766,6 +820,8 @@ form.module-form tfoot a:hover {
 .faq_categQuestions{
 	text-align: center;
 }
+
+/* Photos */
 
 .photo_single{
     max-width:600px;
@@ -785,6 +841,7 @@ form.module-form tfoot a:hover {
     margin-right: auto;  
 }
 
+/* Page d'accueil' */
 
 .homepage_col1{
 	width:355px;
@@ -798,6 +855,26 @@ form.module-form tfoot a:hover {
 .hompage_clear{
 	clear:both;
 }
+
+.president_speech{
+	text-align: justify;
+	color:#544a2d;
+	text-indent:20px;
+}
+.president_speech p{
+	margin-bottom:5px;
+}
+
+.president_speech .sign{
+	font-size:10px;
+	float:right;
+	color:#2c250e;
+}
+.lang_change{
+	font-weight:700;
+}
+
+/* News */
 
 .news{
 	border: #b5ac8f solid 1px;
@@ -844,23 +921,7 @@ a{
 .news a.title:hover{
 	text-decoration: underline;
 }
-.president_speech{
-	text-align: justify;
-	color:#544a2d;
-	text-indent:20px;	
-}
-.president_speech p{
-	margin-bottom:5px;
-}
 
-.president_speech .sign{
-	font-size:10px;
-	float:right;
-	color:#2c250e;
-}
-.lang_change{
-	font-weight:700;
-}
 #bottom-bar li.form{
 	display:block;
 	padding-top:0px;
@@ -875,11 +936,6 @@ a{
 }
 p{
 	color:#544a2d;
-}
-blockquote.guestbook{
-	text-align: justify;
-	padding-right:0px;
-	margin:5px;
 }
 .news_comments{
 	padding: 0px 135px;

@@ -140,7 +140,7 @@ Faq:
     faqCategory: {local: faq_category_id, foreign: id}
 
 Galery:
-  actAs: {Timestampable: ~, I18n: {fields: [name]}}
+  actAs: {I18n: {fields: [name]}}
   columns:
     name: {type: string(40), notnull: true, unique: true}
     position: {type: integer, notnull: true}

@@ -4,7 +4,7 @@ var addthis_config = {
 	ui_delay: "750",
 	ui_offset_top: "0",
 	ui_header_color: "#5f3812",
-	ui_header_background: "#fbfbfb",
+	ui_header_background: "#fbfbfb" //,
 	
 	// services_custom: {
 		// name: "<?php echo __('Signaler') ?>",

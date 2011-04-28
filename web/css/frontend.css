@@ -331,8 +331,8 @@ div#header-logo a#logo_link {
 	z-index: 1000;
 
         border: 0;
-        background-image: url("../images/logo-background.png");
-        /*background-color: #fff;*/
+        /*background-image: url("../images/logo-background.png");*/
+        background-color: #fff;
 	/* -> border */
         -moz-border-radius: 10px;
         -webkit-border-radius: 10px;
@@ -341,10 +341,15 @@ div#header-logo a#logo_link {
         behavior: url("../script/border-radius.htc");
 	/* <- border */
 	/* -> shadow */
-	-moz-box-shadow: 0 0 5px #000;
-	-webkit-box-shadow: 0 0 5px #000;
-	box-shadow: 0 0 5px #000;
+	-moz-box-shadow: 0 0 5px 5px #fff;
+	-webkit-box-shadow: 0 0 5px 5px #fff;
+	box-shadow: 0 0 5px 5px #fff;
 	/* <- shadow */
+	/* -> opacity */
+	-moz-opacity:0.8;
+	opacity: 0.8;
+	filter:alpha(opacity=80);
+	/* <- opacity */
 }
 
 div#header-logo img {

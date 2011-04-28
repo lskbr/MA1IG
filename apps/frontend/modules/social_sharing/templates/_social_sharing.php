@@ -11,6 +11,7 @@
 
     <a class="addthis_button_facebook" title="<?php echo __('Partager sur Facebook') ?>"></a>
     <a class="addthis_button_twitter" title="<?php echo __('Partager sur Twitter') ?>"></a>
+    <a class="addthis_button_linkedin" title="<?php echo __('Partager sur LinkedIn') ?>"></a>
     <a class="addthis_button_orkut" title="<?php echo __('Partager sur Orkut') ?>"></a>
     <!--<a class="addthis_button_grainedevie.org" title="<?php echo __('Signaler') ?>"></a>-->
     <span class="addthis_separator">|</span>

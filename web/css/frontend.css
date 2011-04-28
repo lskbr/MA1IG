@@ -922,3 +922,41 @@ blockquote.guestbook{
 	margin-top:3px;
 	margin-left:180px;
 }
+.photo_thumb{
+	height:100px;
+	width:150px;
+	padding:5px;
+	border:1px solid #bbb;
+	background-color:white;
+	margin:3px;
+}
+.photo_thumb_padding{
+	height:100px;
+	width:150px;
+	padding:4px;
+	border:1px solid #bbb;
+	background-color:white;
+	margin:1px;
+}
+.gallery_title{
+	clear:both;
+}
+.gallery_thumb{
+	height:100px;
+	width:150px;
+	padding:5px;
+	border:1px solid #bbb;
+	background-color:white;
+	margin:4px;
+	float: left;
+	display: block;
+}
+.gallery_thumb a{
+	font-family:tahoma;
+	font-weight:700;
+	color: #5f3812;
+
+}
+.gallery_thumb a:hover{
+	text-decoration:underline;
+}

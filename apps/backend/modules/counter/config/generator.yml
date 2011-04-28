@@ -16,16 +16,44 @@ generator:
       fields:  ~
       list:
         title: Géstion du compteur d'arbres
-        display: [=initial_number,=initial_date, =flow]
+        batch_actions: {}
+        display: [=initial_date,=initial_number,=period,=objective_number]
         fields:
-          initial_number:
-            label: Nombre d'arbres
           initial_date:
-            label: Date
-          flow:
-            label: Débit (arbres/par minute)
+            label: Date initial
+            date_format: dd-MMMM-yyyy
+          initial_number:
+            label: Nombre d'arbres initial
+          period:
+            label: Période (en mois)
+          objective_number:
+            label: Objectif
       filter:
         class: false
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:
+        title: Modification du compteur d'arbres
+        display: [=initial_date,=initial_number,=period,=objective_number]
+        fields:
+          initial_date:
+            label: Date initial
+            date_format: dd-MMMM-yyyy
+          initial_number:
+            label: Nombre d'arbres initial
+          period:
+            label: Période (en mois)
+          objective_number:
+            label: Objectif
+      new:
+        title: Géstion du compteur d'arbres
+        display: [=initial_date,=initial_number,=period,=objective_number]
+        fields:
+          initial_date:
+            label: Date initial
+            date_format: dd-MMMM-yyyy
+          initial_number:
+            label: Nombre d'arbres initial
+          period:
+            label: Période (en mois)
+          objective_number:
+            label: Objectif

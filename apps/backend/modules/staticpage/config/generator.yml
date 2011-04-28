@@ -25,6 +25,7 @@ generator:
         table_method: retrieveBackendStaticPage
         sort: [category_id, asc]
         title: Liste des pages du site 
+        batch_actions: {}
         display: [=menu_title, category]
 
       filter:

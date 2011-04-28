@@ -79,6 +79,8 @@ div#global {
 div#bg-frame-background {
 	background-image: url(../images/bg-frame-global.png);
 	background-repeat: no-repeat;
+        width: 1000px;
+        height: 700px;
 	position: absolute;
 	top: 0;
 	z-index: -1;
@@ -90,10 +92,25 @@ div#bg-frame-background {
 div#upper-bar {
 	height: 28px;
 	padding-top: 0px;
+        padding-right: 6px;
 	position: relative;
 }
 
 div#upper-bar div {
+	background-color: #000;
+	/* -> border */
+	border-radius: 0px 0px 0px 10px;
+	-moz-border-radius: 0px 0px 0px 10px;
+	-webkit-border-radius: 0px 0px 0px 10px;
+	-khtml-border-radius: 0px 0px 0px 10px;
+	/* <- border */
+	/* -> opacity */
+	-moz-opacity:0.8;
+	opacity: 0.8;
+	filter:alpha(opacity=80);
+	/* <- opacity */
+	height: 28px;
+	float: right;
 }
 
 div#upper-bar ul {
@@ -151,6 +168,7 @@ div#overPSlider {
 	height: 690px;
 	width: 995px;
         overflow: hidden;
+        z-index: -5;
 }
 div#pSlider {
         position: absolute;
@@ -313,8 +331,8 @@ div#header-logo a#logo_link {
 	z-index: 1000;
 
         border: 0;
-        background-image: url("../images/logo-background.png");
-        /*background-color: #fff;*/
+        /*background-image: url("../images/logo-background.png");*/
+        background-color: #fff;
 	/* -> border */
         -moz-border-radius: 10px;
         -webkit-border-radius: 10px;
@@ -323,10 +341,15 @@ div#header-logo a#logo_link {
         behavior: url("../script/border-radius.htc");
 	/* <- border */
 	/* -> shadow */
-	-moz-box-shadow: 0 0 5px #000;
-	-webkit-box-shadow: 0 0 5px #000;
-	box-shadow: 0 0 5px #000;
+	-moz-box-shadow: 0 0 5px 5px #fff;
+	-webkit-box-shadow: 0 0 5px 5px #fff;
+	box-shadow: 0 0 5px 5px #fff;
 	/* <- shadow */
+	/* -> opacity */
+	-moz-opacity:0.8;
+	opacity: 0.8;
+	filter:alpha(opacity=80);
+	/* <- opacity */
 }
 
 div#header-logo img {
@@ -349,6 +372,7 @@ div#counter-box {
 	position: absolute;
 	right: 0;
 	top: 155px;
+	z-index: 10;
 }
 
 div#counter-box form {
@@ -356,6 +380,7 @@ div#counter-box form {
 }
 
 div#counter-box ul {
+	z-index: 2;
 }
 
 div#counter-box ul li {
@@ -377,12 +402,12 @@ li#counter {
 
 li#slogan1 {
 	background-color: #000;
-	/* -> border */
+	/* -> border radius */
 	border-radius: 10px 0px 0px 0px;
 	-moz-border-radius: 10px 0px 0px 0px;
 	-webkit-border-radius: 10px 0px 0px 0px;
 	-khtml-border-radius: 10px 0px 0px 0px;
-	/* <- border */
+	/* <- border radius */
 	color: #fff;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 15px;
@@ -400,6 +425,48 @@ li#slogan1 {
 	padding-top: 3px;
 }
 
+div#donation-box {
+	background-color: #000;
+	/* -> border radius */
+	border-radius: 0px 18px 10px 10px;
+	-moz-border-radius: 0px 18px 10px 10px;
+	-webkit-border-radius: 0px 18px 10px 10px;
+	-khtml-border-radius: 0px 18px 10px 10px;
+	/* <- border radius */
+	color: #fff;
+	display: none;
+	height: 96px;
+	left: 0;
+	/* -> opacity */
+	-moz-opacity:0.9;
+	opacity: 0.9;
+	overflow: hidden;
+	filter:alpha(opacity=90);
+	/* <- opacity */
+	position: absolute;
+	right: 6px;;
+	top: 35px;
+	z-index: 1;
+}
+
+div#donation-box > div {
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: italic;
+	font-weight: bold;
+	padding: 0 10px;
+	padding-right: 20px;
+	text-align: right;
+}
+
+div#slogan2 {
+	font-size: 15px;
+	margin-top: 42px;
+}
+
+div#donate {
+	font-size: 19px;
+	margin-top: 5px;
+}
 
 /*
     Centre du design
@@ -467,36 +534,42 @@ div#sidebar {
 	z-index: 2;
 }
 
-/* Padding du menu */
-ul#menu li div.backcolor { /* Catégories */
-    padding-left: 10px;
-}
-ul#menu li a.backcolor { /* Pages */
-    padding-left: 20px;
-}
-
 /* design du menu */
 ul#menu li div, ul#menu li a {
-	color: #633a13;
-	cursor: pointer;
 	display: block;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-size: 15px;
-	font-weight: bold;
+	cursor: pointer;
 	height: 26px;
 	line-height: 26px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #633a13;
+	font-size: 15px;
+	font-weight: bold;
 }
-ul#menu li.current-page {
-	background-color: #e4e4e4;
-	/*border-bottom: 1px solid #cdcdcd;
+/*make hover effect work in IE (ou pas...)*/
+/*ul#menu li a {
+	width: 218px;
+}*/
+
+ul#menu .current-page {
+        color: #8fbc13;
+	/*background-color: #e4e4e4;
+	border-bottom: 1px solid #cdcdcd;
 	border-right: 1px solid #e4e4e4;
 	border-top: 1px solid #cdcdcd;*/
 }
 
 /* Survol */
-ul#menu li a:hover, ul#menu li div:hover {
+ul#menu li div:hover, ul#menu li a:hover {
 	background-color: #ffffbe;
 	color: #000;
+}
+
+/* Padding du menu */
+ul#menu li a.accueil, ul#menu li div.backcolor { /* Catégories */
+    padding-left: 10px;
+}
+ul#menu li a.backcolor { /* Pages */
+    padding-left: 20px;
 }
 
 /* Javascript */
@@ -506,10 +579,10 @@ ul#menu div.backcolor {
 ul#menu li{
     background: top left no-repeat;
 }
-div.fleche_image{
+/*div.fleche_image{
 	width:20px;
 	float:left;
-}
+}*/
 
 /*
     Fin Menu
@@ -712,13 +785,14 @@ form.module-form tfoot a:hover {
     margin-right: auto;  
 }
 
+
 .homepage_col1{
-	width:370px;
+	width:355px;
 	float:left;
 	padding-right:10px;
 }
 .homepage_col2{
-	width:340px;
+	width:355px;
 	float:right;
 }
 .hompage_clear{
@@ -767,6 +841,9 @@ a{
 	font-size:14px;
     color:#544a2d;
 }
+.news a.title:hover{
+	text-decoration: underline;
+}
 .president_speech{
 	text-align: justify;
 	color:#544a2d;
@@ -777,7 +854,7 @@ a{
 }
 
 .president_speech .sign{
-	font-size:9px;
+	font-size:10px;
 	float:right;
 	color:#2c250e;
 }
@@ -803,4 +880,45 @@ blockquote.guestbook{
 	text-align: justify;
 	padding-right:0px;
 	margin:5px;
+}
+.news_comments{
+	padding: 0px 135px;
+}
+.comment_item{
+	border:1px solid #927e60;
+	margin:5px;
+}
+.comment_content{
+	padding:5px;
+}
+.comment_header{
+	padding:3px;
+	border-bottom:1px solid #927e60;
+	background-color: #b5ac8f;
+}
+.answer{
+	margin-left:40px;
+}
+.answer .comment_header{
+	padding:3px;
+	border-bottom:1px solid #927e60;
+	background-color: #abd38d;
+}
+.comment_header a{
+	float:right;
+}
+#comment_form {
+	margin-left:12px;
+}
+#comment_form label{
+	color:#544a2d;
+}
+#comment_form .com_textarea{
+	width:420px;
+	height:100px;
+	background-color:#f8f6ed;
+}
+#comment_form input{
+	margin-top:3px;
+	margin-left:180px;
 }

@@ -142,7 +142,7 @@ Faq:
     faqCategory: {local: faq_category_id, foreign: id}
 
 Galery:
-  actAs: {Timestampable: ~, I18n: {fields: [name]}}
+  actAs: {I18n: {fields: [name]}}
   columns:
     name: {type: string(40), notnull: true, unique: true}
     position: {type: integer, notnull: true}
@@ -163,9 +163,10 @@ Photo:
 Counter:
   actAs: {I18n: {fields: [slogan_part1, slogan_part2, donation_text]}}
   columns:
-    initial_number: {type: integer, notnull: true}
     initial_date: {type: timestamp, notnull: true}
-    flow: {type: float, scale: 7,  notnull: true}
+    initial_number: {type: integer, notnull: true}
+    period: {type: integer, notnull: true}
+    objective_number: {type: integer, notnull: true}
     slogan_part1: {type: string(255), notnull: true}
     slogan_part2: {type: string(255), notnull: true}
     donation_text: {type: string(255), notnull: true}
@@ -190,6 +191,20 @@ News:
     comments_activated: {type: boolean, notnull: true, default: true}
   relations:
     Language: {local: language_id, foreign: id}
+
+NewsComments:
+  actAs:
+    Timestampable: ~
+  columns:
+    content: {type: text}
+    author_id: {type: integer, notnull: true}
+    news_id: {type: integer, notnull: true}
+    father_id: {type: integer}
+  relations:
+    News: {local: news_id, foreign: id}
+    Comments: {local: father_id, foreign: id}
+    sfGuardUser: {local: author_id, foreign: id}
+
 Folder:
   columns:
     name: {type: string(255), unique: true}

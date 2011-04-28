@@ -18,16 +18,12 @@ abstract class BaseGaleryForm extends BaseFormDoctrine
       'id'           => new sfWidgetFormInputHidden(),
       'position'     => new sfWidgetFormInputText(),
       'is_activated' => new sfWidgetFormInputCheckbox(),
-      'created_at'   => new sfWidgetFormDateTime(),
-      'updated_at'   => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
       'id'           => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'position'     => new sfValidatorInteger(),
       'is_activated' => new sfValidatorBoolean(array('required' => false)),
-      'created_at'   => new sfValidatorDateTime(),
-      'updated_at'   => new sfValidatorDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('galery[%s]');

@@ -15,17 +15,19 @@ abstract class BaseCounterForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'id'             => new sfWidgetFormInputHidden(),
-      'initial_number' => new sfWidgetFormInputText(),
-      'initial_date'   => new sfWidgetFormDateTime(),
-      'flow'           => new sfWidgetFormInputText(),
+      'id'               => new sfWidgetFormInputHidden(),
+      'initial_date'     => new sfWidgetFormDateTime(),
+      'initial_number'   => new sfWidgetFormInputText(),
+      'period'           => new sfWidgetFormInputText(),
+      'objective_number' => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
-      'id'             => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'initial_number' => new sfValidatorInteger(),
-      'initial_date'   => new sfValidatorDateTime(),
-      'flow'           => new sfValidatorNumber(),
+      'id'               => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'initial_date'     => new sfValidatorDateTime(),
+      'initial_number'   => new sfValidatorInteger(),
+      'period'           => new sfValidatorInteger(),
+      'objective_number' => new sfValidatorInteger(),
     ));
 
     $this->widgetSchema->setNameFormat('counter[%s]');

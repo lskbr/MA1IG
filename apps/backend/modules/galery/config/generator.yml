@@ -16,8 +16,10 @@ generator:
       fields:  ~
       list:    
         title: Géstion de Galeries
-        display: [id, name, position, is_activated]
-      filter:  ~
+        batch_actions: {}
+        display: [name, position, is_activated]
+      filter:  
+        class: false
       form:    ~
       edit:    ~
       new:     ~

@@ -12,6 +12,9 @@
  */
 class News extends BaseNews
 {
+	public function getAnswer() {
+		return '';
+	}
 	public function getTitleSlug() {
 		$text = preg_replace('#[^\\pL\d]+#u', '-', $this->getTitle());
 		// trim

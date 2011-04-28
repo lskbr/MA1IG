@@ -34,6 +34,7 @@
             closedir($d);
 
             shuffle($back_img);
+			$back_img = array_slice($back_img, 0, 5);
 
             foreach ($back_img as $value):
             ?>
@@ -46,15 +47,17 @@
             </div>
             </div>
 
-            <div id="bg-frame-background"><img src="/images/bg-frame-global.png" alt="Madagascar" /></div>
+            <div id="bg-frame-background"></div>
 
             <div id ="upper-bar">
                 <div>
-                    <ul>
-                        <li><a id="login-bar-button" href="<?php echo url_for('@sf_guard_auth_signin') ?>"><?php echo __("Se connecter") ?></a></li>
-                        <li><span>|</span></li>
-                        <li><a href="<?php echo url_for('@sf_guard_register') ?>"><?php echo __("S'inscrire") ?></a></li>
-                    </ul>
+                    <div>
+                        <ul>
+                            <li><a id="login-bar-button" href="<?php echo url_for('@sf_guard_auth_signin') ?>"><?php echo __("Se connecter") ?></a></li>
+                            <li><span>|</span></li>
+                            <li><a href="<?php echo url_for('@sf_guard_register') ?>"><?php echo __("S'inscrire") ?></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -83,79 +86,6 @@
 
                 <div id="content">
                     <?php echo $sf_content ?>
-
-
-
-<?php
-function url_actuelle()
-{
-     return "http://" . $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
-}
-$titre_page=get_slot('title');
-?>
-    <a href="#" title="<?php echo __('Partager sur Facebook') ?>" onclick="new_page('http://www.facebook.com/share.php?u=<?php echo urlencode(url_actuelle()) ?>',995,600,400)"><img src="/images/f_logo.png"/></a>
-    <a href="#" title="<?php echo __('Partager sur Twitter') ?>" onclick="new_page('http://twitter.com/intent/tweet?text=<?php echo urlencode($titre_page) ?>&url=<?php echo url_actuelle() ?>',995,600,400)"><img src="http://twitter-badges.s3.amazonaws.com/t_logo-a.png" style="width:36px; height:36px"/></a>
-    <a href="#" ><img src="/images/e-mail.png"/></a>
-    <a href="#" ><img src="/images/signaler.png"/></a>
-
-<div>
-    <span style="vertical-align: 30%">
-        <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
-        <a class="facebook-share-button" name="fb_share" type="button" href="http://www.facebook.com/sharer.php"><?php echo __('Partager'); ?></a>
-    </span>
-
-    <a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-lang="fr">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-
-    <span style="vertical-align: 35%">
-        <script type="text/javascript" src="http://www.google.com/buzz/api/button.js"></script>
-        <a title="<?php echo __('Publier sur Google Buzz'); ?>" class="google-buzz-button" href="http://www.google.com/buzz/post" data-button-style="small-button" data-locale="fr"></a>
-    </span>
-
-    <a href="#" title="<?php echo __('Envoyer par mail') ?>"><img src="/images/e-mail2.png"/></a>
-    <a href="#" title="<?php echo __('Signaler') ?>"><img src="/images/signaler2.png"/></a>
-</div>
-
-<!-- AddThis Button BEGIN -->
-<script type="text/javascript">
-        var addthis_config = {
-                data_track_clickback: "true",
-                ui_open_windows: "true",
-                ui_delay: "750",
-                ui_offset_top: "0",
-                ui_header_color: "#8fbc13",
-                ui_header_background: "#fbfbfb"
-        }
-
-        var addthis_config = {
-            services_custom: {
-                name: "<?php echo __('Signaler') ?>",
-                url: "http://grainedevie.seaflat.be/?url={{url}}&title={{title}}&description={{description}}",
-                icon: "/images/signaler3.png"
-            }
-        }
-</script>
-
-<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4d92ffa329add9af"></script>
-
-<div class="addthis_toolbox addthis_default_style" addthis:url="http://www.example.com" addthis:title="An Example Title" addthis:description="An Example Description">
-        <a class="addthis_button_facebook" title="<?php echo __('Partager sur Facebook') ?>"></a>
-        <a class="addthis_button_twitter" title="<?php echo __('Partager sur Twitter') ?>"></a>
-        <a class="addthis_button_grainedevie.seaflat.be" title="<?php echo __('Signaler') ?>"></a>
-        <span class="addthis_separator">|</span>
-        <a href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=ra-4d92ffa329add9af" class="addthis_button_compact"> <?php echo __('Partager') ?></a>
-</div>
-
-<div class="addthis_toolbox addthis_default_style" addthis:url="http://www.perdu.com" addthis:title="Site perdu" addthis:description="Lost Description">
-        <a class="addthis_button_preferred_1"></a>
-        <a class="addthis_button_preferred_2"></a>
-        <a class="addthis_button_www.signaler.com" title="<?php echo __('Signaler') ?>"></a>
-        <span class="addthis_separator">|</span>
-        <a href="http://www.addthis.com/bookmark.php?v=250&amp;pubid=ra-4d92ffa329add9af" class="addthis_button_compact"> <?php echo __('Partager') ?></a>
-</div>
-<!-- AddThis Button END -->
-
-
-
                 </div>
             </div>
 

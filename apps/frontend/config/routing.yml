@@ -32,12 +32,47 @@ page:
     id: \d+
     sf_method: [get]
 
+page:
+  url:   /:sf_culture/page/:id
+  class:   sfDoctrineRoute
+  options: { model: StaticPage, type: object }
+  param:   { module: page, action: show }
+  requirements:
+    id: \d+
+    sf_method: [get]    
+
+galleryIndex:
+  url:   /:sf_culture/gallery/
+  class:   sfDoctrineRoute
+  options: { model: Galery, type: object }
+  param:   { module: gallery, action: index }
+  requirements:
+    sf_method: [get]    
+
+gallery:
+  url:   /:sf_culture/gallery/:id
+  class:   sfDoctrineRoute
+  options: { model: Galery, type: object }
+  param:   { module: gallery, action: show }
+  requirements:
+    id: \d+
+    sf_method: [get]    
+
 news:
   url:   /:sf_culture/news
   param: { module: news, action: index}
 
 news_show:
   url:   /:sf_culture/news/:id/:title_slug
+  class:   sfDoctrineRoute
+  options: { model: News, type: object }
+  param:   { module: news, action: show }
+  requirements:
+    id: \d+
+    sf_method: [get]
+
+news_answer:
+  url:   /:sf_culture/news/:id/answer/:answer
   class:   sfDoctrineRoute
   options: { model: News, type: object }
   param:   { module: news, action: show }
@@ -73,11 +108,28 @@ photo:
     id: \d+
     sf_method: [get]
 
+photo:
+  url:   /:sf_culture/photo/
+  class:   sfDoctrineRoute
+  options: { model: Photo, type: object }
+  param: { module: photo, action: index } 
+  requirements:
+    sf_method: [get]   
+
 galery:
   url:   /:sf_culture/galery/:id/:title_slug
   class:   sfDoctrineRoute
   options: { model: Galery, type: object }
   param:   { module: galery, action: show }
+  requirements:
+    id: \d+
+    sf_method: [get]
+
+bilan_carbone:
+  url:   /:sf_culture/bilan_carbone
+  options: { model: BilanCarbone, type: object }
+  param:   { module: bilan_carbone, action: index }
+  class:   sfDoctrineRoute
   requirements:
     id: \d+
     sf_method: [get]

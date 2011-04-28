@@ -1,12 +1,5 @@
-<table>
-  <tbody>
-    <tr>
-      <th>Nom:</th>
-      <td><?php echo $galery->getName() ?></td>
-    </tr>
-  </tbody>
-</table>
 
+<h1><?php echo $galery->getName() ?></h1>
 <table>
   <thead>
   </thead>
@@ -22,7 +15,7 @@
          $image_thumb_link = "/uploads/photo/thumbnail/".$photo->getUrl();
          $x++;?>
             <td> <a href="<?php echo $image_link ?>" rel="lightbox-gallery">
-                 <img src="<?php echo $image_thumb_link ?>">
+                 <img class="photo_thumb" src="<?php echo $image_thumb_link ?>">
                  </a>
             </td>
          <?php if($x==$photos_per_line):  

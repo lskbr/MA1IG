@@ -12,9 +12,9 @@ default:
     #language:     en
     #robots:       index, follow
 
-  stylesheets:    [admin.css, jquery-ui-1.8.10.custom.css]
+  stylesheets:    [admin.css, jquery-ui-1.8.10.custom.css, uidatepicker.css]
 
-  javascripts:    [lib/jquery-ui-1.8.10.custom.min.js]
+  javascripts:    [lib/jquery-ui-1.8.10.custom.min.js, lib/uidatepicker-fr.jss]
 
   has_layout:     true
   layout:         layout

@@ -38,9 +38,8 @@ DynamicPage:
     BooleanConfiguration: Partner
     Translation:
       fr:
-        menu_title: Gallerie
+        menu_title: Galerie
       pt:
         menu_title: Fotos
       en:
         menu_title: Gallery
-       

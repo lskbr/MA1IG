@@ -23,6 +23,8 @@ Nous avons un devoir de solidarité vis-à-vis des générations suivantes. Nous
 <?php
 if(config::getInstance()->get('news'))
   include_component('news', 'news');
+if(config::getInstance()->get('guestbook'))
+  include_component('guestbook', 'guestbook');
 ?>
 </div>
 

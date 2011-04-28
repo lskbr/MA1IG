@@ -1,4 +1,4 @@
-<h1>Galerys List</h1>
+<h1><?php echo __('Galerie photos')?></h1>
 
 <table>
   <thead>

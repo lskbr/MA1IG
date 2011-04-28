@@ -17,5 +17,9 @@ class CommentForm extends BaseCommentForm
         unset(
             $this['update_at']
         );
+
+        $this->getWidgetSchema()->setLabels(array(
+            'text' => 'commentaire',
+        ));
   }
 }

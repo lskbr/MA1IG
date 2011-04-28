@@ -24,7 +24,7 @@ $(function() {
         });
     });
 
-        $.each($(".insertFromFaq"),function(){
+    $.each($(".insertFromFaq"),function(){
         $(this).click(function() {
             $('#insertFaqQuestion').lightbox_me({
                 centered: true
@@ -33,6 +33,17 @@ $(function() {
             return false;
         });
     });
+    
+    $.each($(".insertStandartSentence"),function(){
+        $(this).click(function() {
+            $('#insertSentence').lightbox_me({
+                centered: true
+            });
+
+            return false;
+        });
+    });
+
 
     $.each($(".folderChoice"),function(){
         $(this).click(function() {
@@ -66,26 +77,29 @@ $(function() {
         });
     });
 
-        $.each($(".questionsFromFaq"),function(){
+    $.each($(".questionsFromFaq"),function(){
         $(this).click(function() {
-            responseId = $(this).attr('id');
+            insertText($(this));
             $('#insertFaqQuestion').trigger('close');
-            $("#message_text").empty();
-//            $("#message_text").append($.ajax({
-//                type: 'GET',
-//                url: 'contactavances/InsertFromFaq',
-//                async: false
-//            }).responseText);
-            alert($.ajax({
-                type: 'GET',
-                url: '../../contactavances/InsertFromFaq',
-                async: false
-            }).responseText);
+
             return false;
 
         });
     });
 
+        $.each($(".linkStandardSentences"),function(){
+        $(this).click(function() {
+            insertText($(this));
+            $('#insertSentence').trigger('close');
 
+            return false;
+
+        });
+    });
+
+    function insertText(element){
+        content = element.attr('content') + "\n\n" + $("#message_text").val();
+        $("#message_text").val(content);
+    }
 
 });

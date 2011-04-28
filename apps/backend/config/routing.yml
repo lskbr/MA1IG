@@ -166,6 +166,9 @@ configuration_update:
   url: /configuration/update
   param: { module: configuration, action: update }
 
+sentences:
+  url: /sentence
+  param: { module: sentences, action: index }
 
 homepage:
   url:   /

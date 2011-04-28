@@ -50,4 +50,15 @@ Galery:
         name: Vervoren
       pt:
         name: VoyagePT
-
+  Arbres:
+    position: 5
+    is_activated: 1
+    Translation:
+      en:
+        name: Trees
+      fr:
+        name: Arbres
+      nl:
+        name: Bonen
+      pt:
+        name: Arbre

@@ -51,13 +51,7 @@
 
             <div id ="upper-bar">
                 <div>
-                    <div>
-                        <ul>
-                            <li><a id="login-bar-button" href="<?php echo url_for('@sf_guard_auth_signin') ?>"><?php echo __("Se connecter") ?></a></li>
-                            <li><span>|</span></li>
-                            <li><a href="<?php echo url_for('@sf_guard_register') ?>"><?php echo __("S'inscrire") ?></a></li>
-                        </ul>
-                    </div>
+                    <?php include_component('login', 'login') ?>
                 </div>
             </div>
 

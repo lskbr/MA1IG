@@ -157,6 +157,23 @@ a.login-open {
 	background-color: #035579;
 }
 
+span#connected-bar-button {
+    display: inline;
+    padding-left: 10px;
+    cursor: default;
+}
+span#connected-bar-button a {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    background-image: url(../images/disconnection.png);
+    vertical-align: -15%;
+}
+span#connected-bar-button a:hover {
+    background-image: url(../images/disconnection-hover.png);
+}
+
 /*
     Header
 */

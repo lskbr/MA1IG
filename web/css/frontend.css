@@ -590,6 +590,24 @@ ul#menu li{
 	float:left;
 }*/
 
+.fb_page {
+    border: 1px #aaaaaa solid;
+    border-top: 1px #315c99 solid;
+    background-color: #ffffff;
+    margin: 20px auto 20px auto;
+    padding: 0;
+    width: 214px;
+}
+
+.fb_page_title {
+    border-bottom: 1px #c6cedd solid;
+    background-color: #edeff4;
+    padding: 5px;
+    font-weight: bold;
+    font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+}
+
+
 /*
     Fin Menu
 */

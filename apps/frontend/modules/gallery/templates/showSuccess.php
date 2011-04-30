@@ -24,4 +24,4 @@
          <?php endif; ?>
     <?php endforeach; ?>  </tbody>
 </table>
-<?php echo link_to( __("Galerie"), "galleryIndex"); ?>
+<?php echo link_to( __("Retour"), "galleryIndex"); ?>

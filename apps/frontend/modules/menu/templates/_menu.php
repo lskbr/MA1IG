@@ -41,21 +41,8 @@
     <img src="/images/down.png" style="display: none"/>
 	
 	<!-- Page Facebook -->
-	<div style="border: 1px #aaaaaa solid;
-				border-top: 1px #315c99 solid;
-				background-color: #ffffff;
-				margin: 20px auto 20px auto;
-				padding: 0;
-				width: 214px;">
-		<div style="border-bottom: 1px #c6cedd solid;
-					background-color: #edeff4;
-					padding: 5px;
-					font-weight: bold;
-					font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
-					">
-			<?php echo __('Retrouvez-nous sur Facebook') ?>
-		</div>
-		<iframe src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FGraine-de-Vie%2F121700314571131&amp;width=194&amp;colorscheme=light&amp;show_faces=false&amp;stream=false&amp;header=true&amp;height=62" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:194px; height:62px;" allowTransparency="true"></iframe>
-	</div>
-	<!-- Fin Page Facebook -->
+        <?php
+        if(config::getInstance()->get('fb_page'))
+            include_partial('fb_page/fb_page');
+        ?>
 </div>

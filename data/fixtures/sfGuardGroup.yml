@@ -4,7 +4,7 @@ sfGuardGroup:
   Administrateur:
     name: Administrateur
     description: Possède toutes les autorisations et tous les accès
-    Permissions: [AccesAdmin]
+    Permissions: [AccesAdmin, DeleteNewsComments]
 
   Utilisateur:
     name: Utilisateur

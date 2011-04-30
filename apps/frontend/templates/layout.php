@@ -34,7 +34,7 @@
             closedir($d);
 
             shuffle($back_img);
-			$back_img = array_slice($back_img, 0, 5);
+			$back_img = array_slice($back_img, 0, 4);
 
             foreach ($back_img as $value):
             ?>
@@ -53,7 +53,11 @@
                 <div>
                     <div>
                         <ul>
+                            <?php if(!$sf_user->isAuthenticated()): ?>
                             <li><a id="login-bar-button" href="<?php echo url_for('@sf_guard_auth_signin') ?>"><?php echo __("Se connecter") ?></a></li>
+                            <?php else: ?>
+                            <li><a href="<?php echo url_for('sf_guard_auth_signout') ?>"><?php echo __("Se déconnecter") ?></a></li>
+                            <?php endif; ?>
                             <li><span>|</span></li>
                             <li><a href="<?php echo url_for('@sf_guard_register') ?>"><?php echo __("S'inscrire") ?></a></li>
                         </ul>

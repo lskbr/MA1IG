@@ -22,7 +22,7 @@ if(config::getInstance()->get('social_sharing'))
 
 <div class="news_comments">
 	<?php 
-	foreach($comments as $com)
+	foreach($comments as $i=>$com)
 	{
 		if($com->getFatherId()==null)
 			echo'<div class="comment_item"/>';
@@ -31,7 +31,14 @@ if(config::getInstance()->get('social_sharing'))
 		?>
 		<div class="comment_header"/>
 		<?php echo $com->getsfGuardUser()->getName(); ?> - Le <?php echo date('d-m-Y à h:m:s',strtotime($com->getCreatedAt()));?>
+		<div>
 		<?php if($authenticated && $com->getFatherId()==null):?><a href="<?php echo url_for('news_answer', $news).$com->getId().'#comment_form';?>">Répondre</a><?php endif; ?>
+		<?php if($authenticated && $sf_user->hasCredential('DeleteNewsComments')){
+			if($com->getFatherId()!=null || $com->getId()!=$comments[$i+1]->getFatherId())
+			echo link_to('<img alt="supprimer" src="/images/icons/delete_small.png"/>', 'newsComments/delete?id='.$com->getId(), array('method' => 'delete', 'confirm' => 'Etes vous sur de vouloir supprimer le commentaire de '.$com->getsfGuardUser()->getName().' ?'));
+		}
+		?>
+		</div>
 		</div>
 		<div class="comment_content"/>
 		<?php echo $com->getContent(); ?>

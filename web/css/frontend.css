@@ -960,7 +960,7 @@ p{
 	border-bottom:1px solid #927e60;
 	background-color: #abd38d;
 }
-.comment_header a{
+.comment_header div{
 	float:right;
 }
 #comment_form {

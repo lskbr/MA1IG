@@ -59,16 +59,20 @@ jQuery(document).ready(function () {
     //!
     var closed = false;
 
-    jQuery("#login-bar-button").attr("href", "#");
+    //jQuery("#login-bar-button").attr("href", "#");
 	
     jQuery("#login-bar-button").click(function () {
             if ((closed = jQuery("#login").is(":visible"))) {
                     jQuery("#login-bar-button").removeClass("login-open");
-                    jQuery("#login").slideUp("normal");
+                    if (jQuery("#login").slideUp("normal")) {
+						return false;
+					}
             }
             else {
                     jQuery("#login-bar-button").addClass("login-open");
-                    jQuery("#login").slideDown("normal");
+                    if (jQuery("#login").slideDown("normal")) {
+						return false;
+					}
             }
     });
 
@@ -82,6 +86,7 @@ jQuery(document).ready(function () {
                     jQuery("#login-bar-button").addClass("login-open");
                     jQuery("#login").slideDown("normal");
             }
+			return false;
     });
 
 	//!

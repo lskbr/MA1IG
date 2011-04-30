@@ -38,6 +38,10 @@ body {
 	width: 100%;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 /*
     Citations
 */
@@ -100,6 +104,10 @@ div#upper-bar {
 	padding-top: 0px;
         padding-right: 6px;
 	position: relative;
+}
+
+div#upper-bar a:hover {
+        text-decoration: none;
 }
 
 div#upper-bar div {
@@ -379,6 +387,10 @@ div#header-logo img {
 	margin: 0;
 }
 
+div#header-logo a:hover {
+	text-decoration: none;
+}
+
 div#header-logo #slogan_link {
 	color: #8fbc13;
 	font-family: Arial, Helvetica, sans-serif;
@@ -585,6 +597,7 @@ ul#menu .current-page {
 ul#menu li div:hover, ul#menu li a:hover {
 	background-color: #ffffbe;
 	color: #000;
+        text-decoration: none;
 }
 
 /* Padding du menu */
@@ -974,9 +987,15 @@ p{
 	color:#544a2d;
 }
 #comment_form .com_textarea{
+        padding: 5px;
 	width:420px;
 	height:100px;
-	background-color:#f8f6ed;
+	background-color:#fff;
+        border: 1px #bbbbbb solid;
+}
+#comment_form .com_textarea:hover, #comment_form .com_textarea:focus{
+        border-color: #383e44;
+	background-color:#efffef;
 }
 #comment_form input{
 	margin-top:3px;

@@ -764,37 +764,6 @@ ul.error_list li:first-child + li {
 .notice a {color:#514721;}
 .success a {color:#264409;}
 
-/* Bulle d'erreur dans les formulaires */
-/*
-.jquerybubblepopup{width:auto;height:auto;margin:0px;padding:0px;border:0px;z-index:100;text-align:center;background-color:transparent;}
-.jquerybubblepopup table{width:auto;height:auto;margin:0px;padding:0px;display:table;border-collapse:collapse;border-spacing:0px;border:0px;empty-cells:show;background-color:transparent;}
-.jquerybubblepopup tbody{display:table-row-group;vertical-align:middle;border:0px;background-color:transparent;}
-.jquerybubblepopup td{margin:0px;padding:0px;background-color:transparent;}
-.jquerybubblepopup-top-left,    .jquerybubblepopup-top-right,
-.jquerybubblepopup-bottom-left, .jquerybubblepopup-bottom-right{width:21px;height:21px;overflow:hidden;background-repeat:no-repeat;}
-.jquerybubblepopup-top-middle,  .jquerybubblepopup-bottom-middle{overflow:hidden;background-repeat:repeat-x;}
-.jquerybubblepopup-middle-left, .jquerybubblepopup-middle-right{overflow:hidden;background-repeat:repeat-y;}
-.jquerybubblepopup-tail{border:0px;margin:0px;padding:0px;display:inline;}
-
-.jquerybubblepopup img {vertical-align:middle;}
-
-.jquerybubblepopup-orange .jquerybubblepopup-innerHtml
-{
-        font-family:'Trebuchet MS',Arial;
-        font-size:11px;
-        font-weight:normal;
-        color:orange;
-        background-color:#FFFFFF;
-}
-
-ul.error_list {
-    margin: 0;
-    padding: 0;
-}
-ul.error_list li {
-        color:#ff9933;
-}*/
-
 /* Partenaires */
 
 .partner_col1{

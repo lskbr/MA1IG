@@ -990,12 +990,6 @@ p{
         padding: 5px;
 	width:420px;
 	height:100px;
-	background-color:#fff;
-        border: 1px #bbbbbb solid;
-}
-#comment_form .com_textarea:hover, #comment_form .com_textarea:focus{
-        border-color: #383e44;
-	background-color:#efffef;
 }
 #comment_form input{
 	margin-top:3px;

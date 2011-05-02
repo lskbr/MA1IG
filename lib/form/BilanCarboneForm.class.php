@@ -34,27 +34,27 @@ class BilanCarboneForm extends BaseForm {
         ));
 
         $this->setValidators(array(
-                'nbr_people' => new sfValidatorInteger(array('required' => true, 'min' => 1)),
-                'gas'   => new sfValidatorNumber(array('required' => true, 'min' => 0)),
-                'fuel' => new sfValidatorNumber(array('required' => true, 'min' => 0)),
-                'wood' => new sfValidatorNumber(array('required' => true, 'min' => 0)),
-                'elec' => new sfValidatorNumber(array('required' => true, 'min' => 0)),
+                'nbr_people' => new sfValidatorInteger(array('required' => true, 'trim' => true, 'min' => 1)),
+                'fuel' => new sfValidatorNumber(array('required' => true, 'trim' => true, 'min' => 0)),
+                'gas'   => new sfValidatorNumber(array('required' => true, 'trim' => true, 'min' => 0)),
+                'wood' => new sfValidatorNumber(array('required' => true, 'trim' => true, 'min' => 0)),
+                'elec' => new sfValidatorNumber(array('required' => true, 'trim' => true, 'min' => 0)),
 
-                'km1' => new sfValidatorNumber(array('required' => true, 'min' => 0)),
-                'co21' => new sfValidatorNumber(array('required' => true, 'min' => 0)),
-                'km2' => new sfValidatorNumber(array('required' => true, 'min' => 0)),
-                'co22' => new sfValidatorNumber(array('required' => true, 'min' => 0)),
+                'km1' => new sfValidatorNumber(array('required' => true, 'trim' => true, 'min' => 0)),
+                'co21' => new sfValidatorNumber(array('required' => true, 'trim' => true, 'min' => 0)),
+                'km2' => new sfValidatorNumber(array('required' => true, 'trim' => true, 'min' => 0)),
+                'co22' => new sfValidatorNumber(array('required' => true, 'trim' => true, 'min' => 0)),
 
-                'nbr_plane' => new sfValidatorInteger(array('required' => true, 'min' => 0)),
-                'km_plane' => new sfValidatorNumber(array('required' => true, 'min' => 0)),
-                'train' => new sfValidatorNumber(array('required' => true, 'min' => 0)),
-                'bus' => new sfValidatorNumber(array('required' => true, 'min' => 0)),
-                'metro' => new sfValidatorNumber(array('required' => true, 'min' => 0)),
+                'nbr_plane' => new sfValidatorInteger(array('required' => true, 'trim' => true, 'min' => 0)),
+                'km_plane' => new sfValidatorNumber(array('required' => true, 'trim' => true, 'min' => 0)),
+                'train' => new sfValidatorNumber(array('required' => true, 'trim' => true, 'min' => 0)),
+                'bus' => new sfValidatorNumber(array('required' => true, 'trim' => true, 'min' => 0)),
+                'metro' => new sfValidatorNumber(array('required' => true, 'trim' => true, 'min' => 0)),
                 
-                'computers' => new sfValidatorNumber(array('required' => true, 'min' => 0)),
-                'books' => new sfValidatorNumber(array('required' => true, 'min' => 0)),
-                'pets' => new sfValidatorNumber(array('required' => true, 'min' => 0)),
-                'yacht' => new sfValidatorNumber(array('required' => true, 'min' => 0)),
+                'computers' => new sfValidatorNumber(array('required' => true, 'trim' => true, 'min' => 0)),
+                'books' => new sfValidatorNumber(array('required' => true, 'trim' => true, 'min' => 0)),
+                'pets' => new sfValidatorNumber(array('required' => true, 'trim' => true, 'min' => 0)),
+                'yacht' => new sfValidatorNumber(array('required' => true, 'trim' => true, 'min' => 0)),
         ));
 
         $this->widgetSchema->setNameFormat('bilan_carbone[%s]');

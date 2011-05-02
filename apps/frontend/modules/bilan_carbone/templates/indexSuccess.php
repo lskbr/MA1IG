@@ -4,28 +4,26 @@
 
 <h1><?php echo $page_title ?></h1>
 
-<div style="margin: 10px 0 10px 0;">
+<div id="bilan_text">
     <?php echo __('Ce questionnaire se base sur des <b>chiffres annuels</b> et tous les champs sont requis.<br/>
     Il est simplifié de manière à ne vous prendre que quelques minutes pour y répondre.<br/>
     Vous pourrez trouver des questionnaires plus complets et plus précis sur les sites suivants :<br/>
     <a href="http://www.calculateurcarbone.org/" target="_blank">Bilan Carbone® Personnel</a>') ?>
 </div>
 
-<!--
-<form method="post" action="<?php echo url_for('bilan_carbone/index') ?>">
-  <table>
-    <?php echo $form ?>
-    <tr>
-      <td colspan="2">
-        <input type="submit" />
-      </td>
-    </tr>
-  </table>
-</form>
--->
+<?php
+if ($bilan_error):
+?>
+<div id="bilan_error">
+    Certaines informations n'ont pas été saisies correctement dans le questionnaire
+</div>
+<?php
+endif;
+?>
 
 <div id="bilan_carbone">
     <form method="post" action="<?php echo url_for('bilan_carbone/index') ?>">
+        <?php echo $form->renderHiddenFields(false); ?>
         <fieldset>
             <legend><h3><?php echo __('Logement') ?></h3></legend>
             <h4>&#149; <?php echo $form['nbr_people']->renderLabel('Combien de personnes vivent dans votre logement ?', array('style' => 'font-weight: inherit;')) ?></h4>
@@ -37,7 +35,7 @@
                 <?php echo $form['wood']->renderLabel('Bois').' : '.$form['wood']->render(array('value' => '0', 'size' => '6')).' '.__('kg').$form['wood']->renderError(); ?>
             </div>
             <h4>&#149; <?php echo $form['elec']->renderLabel('Que consommez-vous en électricité ?', array('style' => 'font-weight: inherit;')) ?></h4>
-            <div><?php echo $form['elec']->render(array('value' => '0', 'size' => '6')).' '.__('kWh').$form['elec']->renderError(); ?></div>
+            <div><?php echo $form['elec']->render(array('value' => '', 'size' => '6')).' '.__('kWh').$form['elec']->renderError(); ?></div>
 
         </fieldset>
         <fieldset>
@@ -45,12 +43,12 @@
             <h4>&#149; <?php echo __('Véhicule 1 (voiture, moto,...)') ?></h4>
             <div>
                 <?php echo $form['km1']->renderLabel('Nombre de kilomètres parcourus').' : '.$form['km1']->render(array('value' => '0', 'size' => '6')).' '.__('km').$form['km1']->renderError(); ?><br/>
-                <?php echo $form['co21']->renderLabel('Emission de CO<sub>2</sub> par kilomètre').' : '.$form['co21']->render(array('value' => '0', 'size' => '3')).' '.__('g/km').$form['co21']->renderError(); ?><br/>
+                <?php echo $form['co21']->renderLabel('Emission de CO<sub>2</sub> par kilomètre').' : '.$form['co21']->render(array('value' => '0', 'size' => '6')).' '.__('g/km').$form['co21']->renderError(); ?><br/>
             </div>
             <h4>&#149; <?php echo __('Véhicule 2 (voiture, moto,...)') ?></h4>
             <div>
                 <?php echo $form['km2']->renderLabel('Nombre de kilomètres parcourus').' : '.$form['km2']->render(array('value' => '0', 'size' => '6')).' '.__('km').$form['km2']->renderError(); ?><br/>
-                <?php echo $form['co22']->renderLabel('Emission de CO<sub>2</sub> par kilomètre').' : '.$form['co22']->render(array('value' => '0', 'size' => '3')).' '.__('g/km').$form['co22']->renderError(); ?><br/>
+                <?php echo $form['co22']->renderLabel('Emission de CO<sub>2</sub> par kilomètre').' : '.$form['co22']->render(array('value' => '0', 'size' => '6')).' '.__('g/km').$form['co22']->renderError(); ?><br/>
             </div>
             <h4>&#149; <?php echo __('Avion') ?></h4>
             <div>

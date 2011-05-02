@@ -65,9 +65,4 @@ class contactavancesActions extends autoContactavancesActions {
         $message->save();
         $this->message = $message;
     }
-
-    public function executeInsertFromFaq(sfWebRequest $request){
-
-    }
-
 }

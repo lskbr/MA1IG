@@ -38,7 +38,7 @@ class newsActions extends sfActions
       {
         $com=Doctrine::getTable('newsComments')->find($this->answer);
         $this->answer=$com->getSfGuardUser()->getName();
-        $this->form->getWidgetSchema()->setLabels(array('content' =>'Postez un commentaire en réponse à '.$this->answer.' (<a href="'.$this->generateUrl('news_show',$this->news).'">Annuler</a>) : <br/>'));     
+        $this->form->getWidgetSchema()->setLabels(array('content' =>'Postez un commentaire en réponse à '.$this->answer.' (<a href="'.$this->generateUrl('news_show',$this->news).'#comment_form">Annuler</a>) : <br/>'));     
       }
       else
         $this->form->getWidgetSchema()->setLabels(array('content' =>'Postez un commentaire : <br/>'));

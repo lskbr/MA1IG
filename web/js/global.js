@@ -12,9 +12,9 @@ function new_page(url,id,largeur,hauteur) {
 }
 
 jQuery(document).ready(function () {
-	//
-	// Menu
-	//
+	//!
+	//! Menu
+	//!
 /*
     var height = jQuery("#menu li a:first").height();
     var visible = false;
@@ -44,6 +44,7 @@ jQuery(document).ready(function () {
     jQuery("#menu a.accueil, #menu div.backcolor").css('paddingLeft','26px');
     jQuery("#menu a.backcolor").css('paddingLeft','26px');
     jQuery("#menu div.categorie").css({backgroundImage:"url(/images/left.png)"});
+	jQuery("#menu div.cat_selected").css({backgroundImage:"url(/images/down.png)"});
 	
     jQuery("#menu div.categorie").click(function()
     {
@@ -58,16 +59,20 @@ jQuery(document).ready(function () {
     //!
     var closed = false;
 
-    jQuery("#login-bar-button").attr("href", "#");
+    //jQuery("#login-bar-button").attr("href", "#");
 	
     jQuery("#login-bar-button").click(function () {
             if ((closed = jQuery("#login").is(":visible"))) {
                     jQuery("#login-bar-button").removeClass("login-open");
-                    jQuery("#login").slideUp("normal");
+                    if (jQuery("#login").slideUp("normal")) {
+						return false;
+					}
             }
             else {
                     jQuery("#login-bar-button").addClass("login-open");
-                    jQuery("#login").slideDown("normal");
+                    if (jQuery("#login").slideDown("normal")) {
+						return false;
+					}
             }
     });
 
@@ -81,6 +86,7 @@ jQuery(document).ready(function () {
                     jQuery("#login-bar-button").addClass("login-open");
                     jQuery("#login").slideDown("normal");
             }
+			return false;
     });
 
 	//!

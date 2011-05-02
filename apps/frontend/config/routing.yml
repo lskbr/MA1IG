@@ -7,6 +7,11 @@ sf_guard_auth_signin:
   url: /signin
   param: {module: sfGuardAuth, action: signin}
 
+
+sf_guard_auth_signout:
+  url: /signout
+  param: {module: sfGuardAuth, action: signout}
+
 sf_guard_register:
   url: /register
   param: {module: sfGuardRegister, action: index}
@@ -39,7 +44,7 @@ page:
   param:   { module: page, action: show }
   requirements:
     id: \d+
-    sf_method: [get]    
+    sf_method: [get]
 
 galleryIndex:
   url:   /:sf_culture/gallery/

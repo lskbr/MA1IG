@@ -4,3 +4,6 @@ sfGuardPermission:
   AccesAdmin:
     name: AccesAdmin
     description: Permet d'accèder au backend
+  DeleteNewsComments:
+    name: DeleteNewsComments
+    description: Permet de supprimer un commentaire sur les actualités

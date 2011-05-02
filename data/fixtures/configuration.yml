@@ -18,7 +18,7 @@ BooleanConfiguration:
   PartageSociaux:
     main: social_sharing
     name: Partage sur les réseaux sociaux
-    description: Active la possibilité de partager les news sur les réseaux sociaux
+    description: Active la possibilité de partager les news sur les réseaux sociaux grâce à AddThis
     BooleanConfiguration: News
     is_activated: true
   Commentaires:
@@ -26,6 +26,11 @@ BooleanConfiguration:
     name: Commentaire
     description: Active le système de commentaire
     BooleanConfiguration: News
+    is_activated: true
+  PageFB:
+    main: fb_page
+    name: Page Facebook
+    description: Affiche une boîte "Retrouvez-nous sur Facebook" dans le menu
     is_activated: true
   Calendrier:
     main: calendar

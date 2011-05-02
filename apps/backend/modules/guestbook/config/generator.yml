@@ -16,7 +16,7 @@ generator:
       fields:  ~
       list:
         title: Liste des messages postés dans le livre d'or :
-        display: [_flag, =content, created_at, _is_validated]
+        display: [_flag, =content, _created_at, _is_validated]
         fields:
           flag:
             label: Langue

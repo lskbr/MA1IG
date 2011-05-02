@@ -21,7 +21,7 @@ class newsCommentsActions extends sfActions
     $this->redirect('news');
   }
 
-  public function executeEdit(sfWebRequest $request)
+  /*public function executeEdit(sfWebRequest $request)
   {
     $this->forward404Unless($news_comments = Doctrine_Core::getTable('NewsComments')->find(array($request->getParameter('id'))), sprintf('Object news_comments does not exist (%s).', $request->getParameter('id')));
     $this->form = new NewsCommentsForm($news_comments);
@@ -36,12 +36,13 @@ class newsCommentsActions extends sfActions
     $this->processForm($request, $this->form);
 
     $this->setTemplate('edit');
-  }
+  }*/
 
   public function executeDelete(sfWebRequest $request)
   {
     $request->checkCSRFProtection();
-
+    $this->forward404Unless($this->getUser()->isAuthenticated());
+    $this->forward404Unless($this->getUser()->hasCredential('DeleteNewsComments'));
     $this->forward404Unless($news_comments = Doctrine_Core::getTable('NewsComments')->find(array($request->getParameter('id'))), sprintf('Object news_comments does not exist (%s).', $request->getParameter('id')));
     $url=$this->generateUrl('news_show',$news_comments->getNews()).'#comment_form';
     $news_comments->delete();

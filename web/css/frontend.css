@@ -38,9 +38,14 @@ body {
 	width: 100%;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 /*
     Citations
 */
+
 blockquote {
 	margin:12px 40px;
 	padding:3px;
@@ -58,6 +63,11 @@ blockquote p.author{
 	float:right;
 	color:#484848;
 	font-style: normal;
+}
+blockquote.guestbook{
+	text-align: justify;
+	padding-right:0px;
+	margin:5px;
 }
 
 /*div#fond_image {
@@ -94,6 +104,10 @@ div#upper-bar {
 	padding-top: 0px;
         padding-right: 6px;
 	position: relative;
+}
+
+div#upper-bar a:hover {
+        text-decoration: none;
 }
 
 div#upper-bar div {
@@ -149,6 +163,23 @@ div#upper-bar ul li a#login-bar-button:hover {
 
 a.login-open {
 	background-color: #035579;
+}
+
+span#connected-bar-button {
+    display: inline;
+    padding-left: 10px;
+    cursor: default;
+}
+span#connected-bar-button a {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    background-image: url(../images/disconnection.png);
+    vertical-align: -15%;
+}
+span#connected-bar-button a:hover {
+    background-image: url(../images/disconnection-hover.png);
 }
 
 /*
@@ -354,6 +385,10 @@ div#header-logo a#logo_link {
 
 div#header-logo img {
 	margin: 0;
+}
+
+div#header-logo a:hover {
+	text-decoration: none;
 }
 
 div#header-logo #slogan_link {
@@ -562,6 +597,7 @@ ul#menu .current-page {
 ul#menu li div:hover, ul#menu li a:hover {
 	background-color: #ffffbe;
 	color: #000;
+        text-decoration: none;
 }
 
 /* Padding du menu */
@@ -583,6 +619,24 @@ ul#menu li{
 	width:20px;
 	float:left;
 }*/
+
+.fb_page {
+    border: 1px #aaaaaa solid;
+    border-top: 1px #315c99 solid;
+    background-color: #ffffff;
+    margin: 20px auto 20px auto;
+    padding: 0;
+    width: 214px;
+}
+
+.fb_page_title {
+    border-bottom: 1px #c6cedd solid;
+    background-color: #edeff4;
+    padding: 5px;
+    font-weight: bold;
+    font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+}
+
 
 /*
     Fin Menu
@@ -693,29 +747,6 @@ form.module-form tbody input:focus {
 	background-color: #CCFFCC;
 }
 
-ul.error_list {
-	background-color: #FF6600;
-	height: 22px;
-	position: absolute;
-	width: 700px;
-	z-index: -1;
-}
-
-ul.error_list li {
-	color: #fff;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-weight: bold;
-	line-height: 20px;
-}
-
-ul.error_list li:first-child {
-	padding-left: 175px;
-}
-
-ul.error_list li:first-child + li {
-	padding-left: 235px;
-}
 
 form.module-form tfoot td {
 	border-top: 2px dotted #bbb;
@@ -745,6 +776,44 @@ form.module-form tfoot a:hover {
 	text-decoration: underline;
 }
 
+/* Erreur dans formulaire */
+/*
+ul.error_list {
+	background-color: #FF6600;
+	height: 22px;
+	position: absolute;
+	width: 700px;
+	z-index: -1;
+}
+
+ul.error_list li {
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 20px;
+}
+
+ul.error_list li:first-child {
+	padding-left: 175px;
+}
+
+ul.error_list li:first-child + li {
+	padding-left: 235px;
+}
+*/
+
+.error_list {margin: 0; padding: 0;}
+.error, .notice, .success, .error_list li {padding:2px;margin: 2px;border:1px solid #ddd; list-style: none;}
+.error, .error_list li {background:#FBE3E4;color:#8a1f11;border-color:#FBC2C4; font-size: 11px;}
+.notice {background:#FFF6BF;color:#514721;border-color:#FFD324;}
+.success {background:#E6EFC2;color:#264409;border-color:#C6D880;}
+.error a {color:#8a1f11;}
+.notice a {color:#514721;}
+.success a {color:#264409;}
+
+/* Partenaires */
+
 .partner_col1{
 	padding-top: 10px;
 	max-width:320px;
@@ -757,6 +826,8 @@ form.module-form tfoot a:hover {
 	float: left;
 }
 
+/* FAQ */
+
 .faq_question{
 	padding-left: 20px;
 }
@@ -766,6 +837,8 @@ form.module-form tfoot a:hover {
 .faq_categQuestions{
 	text-align: center;
 }
+
+/* Photos */
 
 .photo_single{
     max-width:600px;
@@ -785,6 +858,7 @@ form.module-form tfoot a:hover {
     margin-right: auto;  
 }
 
+/* Page d'accueil' */
 
 .homepage_col1{
 	width:355px;
@@ -798,6 +872,26 @@ form.module-form tfoot a:hover {
 .hompage_clear{
 	clear:both;
 }
+
+.president_speech{
+	text-align: justify;
+	color:#544a2d;
+	text-indent:20px;
+}
+.president_speech p{
+	margin-bottom:5px;
+}
+
+.president_speech .sign{
+	font-size:10px;
+	float:right;
+	color:#2c250e;
+}
+.lang_change{
+	font-weight:700;
+}
+
+/* News */
 
 .news{
 	border: #b5ac8f solid 1px;
@@ -844,23 +938,7 @@ a{
 .news a.title:hover{
 	text-decoration: underline;
 }
-.president_speech{
-	text-align: justify;
-	color:#544a2d;
-	text-indent:20px;	
-}
-.president_speech p{
-	margin-bottom:5px;
-}
 
-.president_speech .sign{
-	font-size:10px;
-	float:right;
-	color:#2c250e;
-}
-.lang_change{
-	font-weight:700;
-}
 #bottom-bar li.form{
 	display:block;
 	padding-top:0px;
@@ -875,11 +953,6 @@ a{
 }
 p{
 	color:#544a2d;
-}
-blockquote.guestbook{
-	text-align: justify;
-	padding-right:0px;
-	margin:5px;
 }
 .news_comments{
 	padding: 0px 135px;
@@ -904,7 +977,7 @@ blockquote.guestbook{
 	border-bottom:1px solid #927e60;
 	background-color: #abd38d;
 }
-.comment_header a{
+.comment_header div{
 	float:right;
 }
 #comment_form {
@@ -914,9 +987,15 @@ blockquote.guestbook{
 	color:#544a2d;
 }
 #comment_form .com_textarea{
+        padding: 5px;
 	width:420px;
 	height:100px;
-	background-color:#f8f6ed;
+	background-color:#fff;
+        border: 1px #bbbbbb solid;
+}
+#comment_form .com_textarea:hover, #comment_form .com_textarea:focus{
+        border-color: #383e44;
+	background-color:#efffef;
 }
 #comment_form input{
 	margin-top:3px;
@@ -944,19 +1023,26 @@ blockquote.guestbook{
 .gallery_thumb{
 	height:100px;
 	width:150px;
-	padding:5px;
+	padding:4px;
 	border:1px solid #bbb;
 	background-color:white;
 	margin:4px;
-	float: left;
+	margin-right:8px;
 	display: block;
 }
-.gallery_thumb a{
+.gallery_item{
+	float: left;
+}
+.gallery_item a{
 	font-family:tahoma;
 	font-weight:700;
 	color: #5f3812;
-
 }
-.gallery_thumb a:hover{
+.gallery_text{
+	padding-top:3px;
+	padding-bottom:3px;
+	margin-left:10px;
+}
+.gallery_item a:hover{
 	text-decoration:underline;
 }

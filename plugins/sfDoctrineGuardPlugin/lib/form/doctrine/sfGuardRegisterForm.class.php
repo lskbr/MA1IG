@@ -14,9 +14,6 @@ class sfGuardRegisterForm extends BasesfGuardRegisterForm {
      * @see sfForm
      */
     public function configure() {
-
-        
-
         $this->widgetSchema->setLabels(array(
             'username' => "Nom d'utilisateur",
             'password' => 'Mot de passe',

@@ -535,7 +535,8 @@ div#content {
 /* Page titles */
 div#content h1,
 div#content h2,
-div#content h3 {
+div#content h3,
+div#content h4 {
 	display: inline-block;
 	font-weight: bold;
         font-family: "Trebuchet MS";
@@ -554,6 +555,10 @@ div#content h2 {
 }
 div#content h3 {
 	font-size: 16px;
+	margin-bottom: 5px;
+}
+div#content h4 {
+	font-size: 13px;
 	margin-bottom: 5px;
 }
 
@@ -1039,4 +1044,36 @@ p{
 }
 .gallery_item a:hover{
 	text-decoration:underline;
+}
+
+/* --- Bilan Carbone (Empreinte écologique) --- */
+div#bilan_carbone h4 {
+    display: block;
+    margin-top: 10px;
+}
+
+div#bilan_carbone fieldset {
+    margin-bottom: 10px;
+    border: 1px #b5ac8f solid;
+    padding: 0 10px 10px 10px;
+}
+div#bilan_carbone fieldset legend {
+    padding: 0 5px 0 5px;
+}
+
+div#bilan_carbone fieldset div {
+    margin-left: 20px;
+}
+
+div#bilan_carbone sub {
+    font-size: .83em;
+    vertical-align: sub;
+}
+
+div#bilan_carbone #submit_carbone {
+    margin-left: 20px;
+}
+
+div#bilan_carbone .error_list {
+    display: inline-block;
 }

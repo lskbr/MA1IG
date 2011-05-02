@@ -52,8 +52,8 @@ class bilan_carboneActions extends sfActions {
                 $this->getUser()->setAttribute('eco_footprint', $eco_footprint);
                 $this->getUser()->setAttribute('nbr_trees', $nbr_trees);
 
-                //$this->getUser()->getAttributeHolder()->remove('eco_footprint');
-                //$this->getUser()->getAttributeHolder()->remove('nbr_trees');
+                $this->getUser()->getAttributeHolder()->remove('eco_footprint');
+                $this->getUser()->getAttributeHolder()->remove('nbr_trees');
 
                 $this->redirect('bilan_carbone/calcul'); //?'.http_build_query($this->form->getValues()));
             }

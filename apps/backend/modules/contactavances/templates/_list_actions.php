@@ -1,5 +1,5 @@
 &nbsp;<a href="<?php echo url_for('folder');?>">Gérer les dossiers</a>&nbsp;
-&nbsp;<a href="#">Options de la messagerie</a>&nbsp;
+&nbsp;<a href="<?php echo url_for('configuration');?>">Options de la messagerie</a>&nbsp;
 
 
 <div id="changeFolder">

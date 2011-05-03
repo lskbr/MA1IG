@@ -27,6 +27,8 @@ dev:
   mailer:
     param:
       delivery_strategy: none
+      transport:
+        class:  Swift_MailTransport
 
 all:
   routing:

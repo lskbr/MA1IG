@@ -14,7 +14,7 @@ CREATE TABLE faq_translation (id BIGINT, question text, answer text, is_activate
 CREATE TABLE faq (id BIGINT AUTO_INCREMENT, position BIGINT, faq_category_id BIGINT NOT NULL, INDEX faq_category_id_idx (faq_category_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE faq_category_translation (id BIGINT, name VARCHAR(255), lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE faq_category (id BIGINT AUTO_INCREMENT, PRIMARY KEY(id)) ENGINE = INNODB;
-CREATE TABLE folder (id BIGINT AUTO_INCREMENT, name VARCHAR(255) UNIQUE, PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE folder (id BIGINT AUTO_INCREMENT, name VARCHAR(255) NOT NULL UNIQUE, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE galery_translation (id BIGINT, name VARCHAR(40) NOT NULL UNIQUE, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE galery (id BIGINT AUTO_INCREMENT, position BIGINT NOT NULL, is_activated TINYINT(1) DEFAULT '0' NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE guestbook (id BIGINT AUTO_INCREMENT, content text, is_validated TINYINT(1) DEFAULT '0' NOT NULL, language_id BIGINT, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX language_id_idx (language_id), PRIMARY KEY(id)) ENGINE = INNODB;
@@ -29,7 +29,7 @@ CREATE TABLE partner (id BIGINT AUTO_INCREMENT, logo VARCHAR(255), position BIGI
 CREATE TABLE person (id BIGINT AUTO_INCREMENT, first_name VARCHAR(255) NOT NULL, last_name VARCHAR(255) NOT NULL, email_address VARCHAR(255) NOT NULL UNIQUE, corespondance_id BIGINT, INDEX corespondance_id_idx (corespondance_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE photo_translation (id BIGINT, title VARCHAR(255), description text, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE photo (id BIGINT AUTO_INCREMENT, url VARCHAR(255), publication_start DATETIME, publication_end DATETIME, galery_id BIGINT, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX galery_id_idx (galery_id), PRIMARY KEY(id)) ENGINE = INNODB;
-CREATE TABLE standard_sentence (id BIGINT AUTO_INCREMENT, text text, title VARCHAR(255), PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE standard_sentence (id BIGINT AUTO_INCREMENT, text text NOT NULL, title VARCHAR(255) NOT NULL UNIQUE, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE static_page_translation (id BIGINT, menu_title VARCHAR(255) NOT NULL, content text NOT NULL, is_activated TINYINT(1) DEFAULT '0', title VARCHAR(255) NOT NULL, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE static_page (id BIGINT AUTO_INCREMENT, position BIGINT NOT NULL, publication_date DATETIME, category_id BIGINT, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX category_id_idx (category_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE sf_guard_forgot_password (id BIGINT AUTO_INCREMENT, user_id BIGINT NOT NULL, unique_key VARCHAR(255), expires_at DATETIME NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX user_id_idx (user_id), PRIMARY KEY(id)) ENGINE = INNODB;

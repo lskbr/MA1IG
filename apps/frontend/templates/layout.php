@@ -78,8 +78,10 @@
                 </div>
             </div>
             
-            <?php if(config::getInstance()->get('counter'))
-                include_component('counter', 'counter'); ?>
+            <?php
+            if(config::getInstance()->get('counter'))
+                include_component('counter', 'counter');
+            ?>
 
             <div id="center">
                 <?php include_component('menu', 'menu') ?>

@@ -51,6 +51,12 @@
 
             <div id ="upper-bar">
                 <div>
+                    <?php if(config::getInstance()->get('search')) { ?>
+                    <ul id="search">
+                      <li><span>|</span></li>
+                      <li><a href="#"><?php echo __("Rechercher") ?></a></li>
+                    </ul>
+                    <?php } ?>
                     <?php include_component('login', 'login') ?>
                 </div>
             </div>

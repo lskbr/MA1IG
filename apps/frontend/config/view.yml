@@ -12,9 +12,9 @@ default:
     #language:     en
     #robots:       index, follow
 
-  stylesheets:    [frontend.css, protoslider.css, jquery-ui-1.8.10.custom.css, slimbox2.css]
+  stylesheets:    [frontend.css, search.css, protoslider.css, jquery-ui-1.8.10.custom.css, slimbox2.css]
 
-  javascripts:    [lib/prototype.js, lib/jquery-1.5.1.min.js, lib/jquery-ui-1.8.10.custom.min.js, lib/easel.min.js, lib/chili-1.7.pack.js, lib/jquery.easing.js, lib/jquery.dimensions.js, lib/jquery.accordion.js, protoslider/protoslider.min.js, jscounter/jscounter.min.js, global.js, addthis.js, slimbox/slimbox2.js, http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4d92ffa329add9af]
+  javascripts:    [http:////www.google.com/jsapi, lib/prototype.js, lib/jquery-1.5.1.min.js, lib/jquery-ui-1.8.10.custom.min.js, lib/easel.min.js, lib/chili-1.7.pack.js, lib/jquery.easing.js, lib/jquery.dimensions.js, lib/jquery.accordion.js, protoslider/protoslider.min.js, jscounter/jscounter.min.js, global.js, addthis.js, slimbox/slimbox2.js, http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4d92ffa329add9af]
 
   has_layout:     true
   layout:         layout

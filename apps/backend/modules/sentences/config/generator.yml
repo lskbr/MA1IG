@@ -13,9 +13,15 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
-      list:    ~
+      fields:  
+        title: {label: 'Titre'}
+        text: {label: 'Texte'}
+      list:    
+        display: [=title, text]
+        title: Liste des phrases types
       filter:  ~
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:    
+        title: Modifier une phrase type
+      new:     
+        title: Nouvelle phrase type

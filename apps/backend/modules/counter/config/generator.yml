@@ -15,7 +15,7 @@ generator:
       actions: ~
       fields:  ~
       list:
-        title: Géstion du compteur d'arbres
+        title: Gestion du compteur d'arbres
         batch_actions: {}
         display: [=initial_date,=initial_number,=period,=objective_number]
         fields:
@@ -45,7 +45,7 @@ generator:
           objective_number:
             label: Objectif
       new:
-        title: Géstion du compteur d'arbres
+        title: Gestion du compteur d'arbres
         display: [=initial_date,=initial_number,=period,=objective_number]
         fields:
           initial_date:

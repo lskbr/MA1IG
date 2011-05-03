@@ -56,6 +56,11 @@ BooleanConfiguration:
     name: Compteur d'arbres
     description: Affiche le compteur d'arbres sur la page d'acceuil
     is_activated: true
+  Search:
+    main: search
+    name: Google Search Engine
+    description: Recherche sur le site de graine de vie
+    is_activated: true
   Faq:
     main: faq
     name: Foire aux Questions

@@ -133,7 +133,11 @@ div#upper-bar div {
 }
 
 div#upper-bar ul {
-	margin-right: 40px;
+	display: inline-block;
+}
+
+div#upper-bar ul:last-child {
+	margin-right: 10px;
 }
 
 div#upper-bar ul li {
@@ -161,13 +165,19 @@ div#upper-bar ul li > a:hover {
 	text-decoration: underline;
 }
 
+div#upper-bar ul li a#login-bar-button {
+	border-right: 1px solid #000;
+}
+
 div#upper-bar ul li a#login-bar-button:hover {
 	background-color: #035579;
+	border-right: 1px solid #383E44;
 	text-decoration: none;
 }
 
-a.login-open {
+a#login-bar-button.login-open {
 	background-color: #035579;
+	border-right: 1px solid #383E44;
 }
 
 span#connected-bar-button {
@@ -185,6 +195,10 @@ span#connected-bar-button a {
 }
 span#connected-bar-button a:hover {
     background-image: url(../images/disconnection-hover.png);
+}
+
+ul#search {
+	margin-right: 0;
 }
 
 /*
@@ -226,20 +240,20 @@ div#pSlider {
 */
 div#login {
 	border: 1px solid #383E44;
-        border-top: none;
+	border-top: none;
 
-	border-radius: 10px 10px 10px 10px;
-	-moz-border-radius: 10px 10px 10px 10px;
-	-webkit-border-radius: 10px 10px 10px 10px;
-	-khtml-border-radius: 10px 10px 10px 10px;
+	border-radius: 10px 0px 10px 10px;
+	-moz-border-radius: 10px 0px 10px 10px;
+	-webkit-border-radius: 10px 0px 10px 10px;
+	-khtml-border-radius: 10px 0px 10px 10px;
 
-        background-color: #035579;
+    background-color: #035579;
 	/*background-image: url(../images/bg-bar-login.png);
 	background-repeat: repeat;*/
 
 	display: none;
 	position: absolute;
-	right: 1px;
+	right: -1px;
 	top: 0;
 	z-index: 1001;
 }

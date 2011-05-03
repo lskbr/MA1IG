@@ -66,16 +66,23 @@ class contactavancesActions extends autoContactavancesActions {
         $this->message = $message;
     }
 
-    public function executeInsertFromFaq(sfWebRequest $request){
-
+    private function executeSendMail(sfWebRequest $request) {
+        $this->forward404Unless($message = Doctrine_Core::getTable('message')->find(array($request->getParameter('id'))), sprintf('Object message does not exist (%s).', $request->getParameter('id')));
+        var_dump($message);
+        $mail = $this->getMailer()->compose(array('info@grainedevie.seaflat.be' => 'Graine de Vie'), $message->getSender()->getEmailAddress(), 'RE: Graine de Vie', $request->getParameter('text'));
+        $this->getMailer()->send($mail);
     }
-	
-	public function executeSendMail(sfWebRequest $request){
-		$this->forward404Unless($message = Doctrine_Core::getTable('message')->find(array($request->getParameter('id'))), sprintf('Object message does not exist (%s).', $request->getParameter('id')));
-		$this->executeUpdate($request);
-		$mail= $this->getMailer()->compose(array ('info@grainedevie.seaflat.be'=>'Graine de Vie'),$message->getSender()->getEmailAddress(),'RE: Graine de Vie',$message->getText());
-		$this->getMailer()->send($mail);
-		
-	}
+
+    public function executeUpdate(sfWebRequest $request) {
+        if($request->hasParameter('_now')){
+            $this->executeSendMail($request);
+            $parent = parent::executeUpdate($request);
+            
+            return $parent;
+        }else{
+            parent::executeUpdate($request);
+        }
+        
+    }
 
 }

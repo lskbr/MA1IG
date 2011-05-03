@@ -4,7 +4,7 @@
  *	UMons 2011.
  ********************************************************************************/
 jQuery.noConflict();
-var slider;
+var content = null, gcontent = null, search, slider;
 
 function new_page(url,id,largeur,hauteur) {
 	var popup = window.open(url,id,'toolbar=0,location=0,directories=0,status=yes,menubar=0,scrollbars=yes,resizable=yes,width='+largeur+',height='+hauteur+',left=50,top=50');
@@ -88,6 +88,21 @@ jQuery(document).ready(function () {
             }
 			return false;
     });
+
+	//! Search
+	jQuery("#search").click(function () {
+		if (content) {
+			gcontent = jQuery("#content").replaceWith(content);
+			content = null;
+		} else {
+			if (gcontent) {
+				content = jQuery("#content").replaceWith(gcontent);
+			} else {
+				content = jQuery("#content").replaceWith("<div id='content' />");
+				search.draw('content');
+			}
+		}
+	});
 
 	//!
 	//! Counter initialization
@@ -198,4 +213,14 @@ Event.observe(window, "load", function (evt) {
 			random:			effects
 		});
 	}
+});
+
+//!
+//! Google Search
+//!
+google.load('search', '1', {language : 'fr', style : google.loader.themes.GREENSKY});
+google.setOnLoadCallback(function() {
+	search = new google.search.CustomSearchControl('008455696635280192844:d80hx0qt4b8');
+	search.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+	search.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
 });

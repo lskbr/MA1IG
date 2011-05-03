@@ -15,10 +15,6 @@ BooleanConfiguration:
     name: Actualités
     description: Active le système d'actualité
     is_activated: true
-  Search:
-    name: Recherche
-    description: Active la recherche
-    is_activated: true
   PartageSociaux:
     main: social_sharing
     name: Partage sur les réseaux sociaux

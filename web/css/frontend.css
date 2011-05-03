@@ -525,7 +525,7 @@ div#content {
 	width: 720px;
 	margin: 0;
 	padding: 10px;
-	padding-top: 20px;
+	padding-top: 35px;
 	z-index: 1;
 	
 	font-family: Arial, Helvetica, sans-serif;
@@ -535,7 +535,8 @@ div#content {
 /* Page titles */
 div#content h1,
 div#content h2,
-div#content h3 {
+div#content h3,
+div#content h4 {
 	display: inline-block;
 	font-weight: bold;
         font-family: "Trebuchet MS";
@@ -545,8 +546,9 @@ div#content h3 {
 div#content h1 {
         height: 35px;
         background: url("../images/img-h1.png") no-repeat 0 9px;
-		font-size: 24px;
+        font-size: 24px;
         padding: 10px 0 0 27px;
+        margin-bottom: 5px;
 }
 div#content h2 {
 	font-size: 20px;
@@ -554,6 +556,10 @@ div#content h2 {
 }
 div#content h3 {
 	font-size: 16px;
+	margin-bottom: 5px;
+}
+div#content h4 {
+	font-size: 13px;
 	margin-bottom: 5px;
 }
 
@@ -990,12 +996,6 @@ p{
         padding: 5px;
 	width:420px;
 	height:100px;
-	background-color:#fff;
-        border: 1px #bbbbbb solid;
-}
-#comment_form .com_textarea:hover, #comment_form .com_textarea:focus{
-        border-color: #383e44;
-	background-color:#efffef;
 }
 #comment_form input{
 	margin-top:3px;
@@ -1045,4 +1045,67 @@ p{
 }
 .gallery_item a:hover{
 	text-decoration:underline;
+}
+
+/* --- Bilan Carbone (Empreinte écologique) --- */
+div#bilan_text {
+    margin-bottom: 10px;
+}
+
+div#bilan_carbone h4 {
+    display: block;
+    margin-top: 10px;
+}
+
+div#bilan_carbone fieldset {
+    margin-bottom: 10px;
+    border: 1px #b5ac8f solid;
+    padding: 0 10px 10px 10px;
+}
+div#bilan_carbone fieldset legend {
+    padding: 0 5px 0 5px;
+}
+
+div#bilan_carbone fieldset div {
+    margin-left: 20px;
+}
+
+div#bilan_carbone sub {
+    font-size: .83em;
+    vertical-align: sub;
+}
+
+div#bilan_carbone #submit_carbone {
+    margin-left: 20px;
+}
+
+div#bilan_carbone .error_list {
+    display: inline-block;
+}
+
+div#bilan_error {
+    margin: 10px 0 10px 0;
+    padding:10px;
+    border: 1px solid #dd3c10;
+    background:#ffebe8;
+    color:#8a1f11;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+div#bilan_result, div.bilan_don {
+    font-size: 1.5em;
+    margin-top: 3px;
+}
+div#bilan_result {
+    margin-top: 20px;
+}
+div#bilan_result a {
+    font-size: inherit;
+}
+.bilan_nbr {
+    font-size: inherit;
+    font-weight: bold;
+    color: #5F3812;
 }

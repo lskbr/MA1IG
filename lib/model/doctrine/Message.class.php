@@ -27,6 +27,10 @@ class Message extends BaseMessage {
         return Doctrine::getTable('Person')->createQuery()->where('id = ?',$this->getSenderId())->fetchOne();
     }
 
+    public function setSender($sender){
+        $this->setSenderId($sender->getId());
+    }
+
     public function readed($valeur) {
         if ($this->getReadAt() == null) {
             $this->setReadAt($valeur);

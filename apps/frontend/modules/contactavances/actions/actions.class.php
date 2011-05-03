@@ -10,6 +10,12 @@
  */
 class contactavancesActions extends sfActions {
 
+    public function executeIndex(sfWebRequest $request){
+        $this->executeIndex($request);
+        $this->setTemplate('new');
+
+    }
+
     public function executeNew(sfWebRequest $request) {
         if (Doctrine_Core::getTable('BooleanConfiguration')->createQuery()->where('main = "contacts"')->fetchOne()->getIsActivated()) {
             $printEmbed = $this->getUser()->isAuthenticated();

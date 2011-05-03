@@ -20,8 +20,8 @@ class MessageForm extends BaseMessageForm {
         parent::__construct($object, $options, $CSRFSecret);
 
         if (isset($embed) && $embed) {
-            $this->embedRelation('Sender');
-            $this->useFields(array('Sender', 'category_id', 'text'));
+            $this->embedRelation('Person');
+            $this->useFields(array('Person', 'category_id', 'text'));
         } else {
             $this->useFields(array('category_id', 'text'));
         }

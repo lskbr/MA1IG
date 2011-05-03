@@ -13,6 +13,8 @@ folder:
     model:                Folder
     module:               folder
     prefix_path:          /folder
+    column:               id
+    with_wildcard_routes: true
 
 dynamic_page:
   class: sfDoctrineRouteCollection

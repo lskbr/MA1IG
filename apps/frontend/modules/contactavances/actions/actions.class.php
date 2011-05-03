@@ -31,7 +31,6 @@ class contactavancesActions extends sfActions {
     }
 
     public function executeCreate(sfWebRequest $request) {
-        $this->forward404Unless($request->isMethod(sfRequest::POST));
 
         $this->form = new MessageForm(null, null, null, !$this->getUser()->isAuthenticated());
 
@@ -54,6 +53,7 @@ class contactavancesActions extends sfActions {
                 if ($this->getUser()->isAuthenticated()) {
                     $message->setSender($this->getUser()->getPerson());
                 }
+                $message->save();
                 $cor = $message->getSender()->getCorespondance();
                 $cor->setLastMail(date('Y-m-d H:i:s'));
                 $cor->setNumberOfMail($cor->getNumberOfMail()+1);

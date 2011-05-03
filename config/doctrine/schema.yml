@@ -210,5 +210,5 @@ Folder:
     name: {type: string(255), unique: true}
 StandardSentence:
   columns:
-    text: {type: text}
-    title: {type: string(255)}
+    text: {type: text, notnull: true}
+    title: {type: string(255), notnull: true}

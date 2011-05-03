@@ -22,8 +22,8 @@ abstract class BaseStandardSentenceForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'    => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'text'  => new sfValidatorPass(array('required' => false)),
-      'title' => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'text'  => new sfValidatorPass(),
+      'title' => new sfValidatorString(array('max_length' => 255)),
     ));
 
     $this->widgetSchema->setNameFormat('standard_sentence[%s]');

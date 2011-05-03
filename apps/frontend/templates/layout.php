@@ -54,7 +54,7 @@
                     <?php if(config::getInstance()->get('search')) { ?>
                     <ul id="search">
                       <li><span>|</span></li>
-                      <li><a href="#"><?php echo __("Rechercher") ?></a></li>
+                      <li><a href="#" id="search_text" title="<?php echo __('Basculer vers la recherche') ?>"><?php echo __("Rechercher") ?></a></li>
                     </ul>
                     <?php } ?>
                     <?php include_component('login', 'login') ?>

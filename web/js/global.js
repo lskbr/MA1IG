@@ -94,6 +94,9 @@ jQuery(document).ready(function () {
 		if (content) {
 			gcontent = jQuery("#content").replaceWith(content);
 			content = null;
+
+                        // changement de couleur
+                        jQuery("#search_text").removeAttr("style");
 		} else {
 			if (gcontent) {
 				content = jQuery("#content").replaceWith(gcontent);
@@ -101,7 +104,12 @@ jQuery(document).ready(function () {
 				content = jQuery("#content").replaceWith("<div id='content' />");
 				search.draw('content');
 			}
+
+                        // changement de couleur
+                        jQuery("#search_text").attr("style", "color: #ffed23;");
 		}
+                
+                return false;
 	});
 
 	//!

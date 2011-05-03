@@ -16,11 +16,6 @@ class MessageAdminForm extends BaseMessageForm {
         $this->setValidator('text', new sfValidatorString());
     }
 
-    public function  valid() {
-        if($this->getWidgetSchema()->getFiel)
-        parent::valid();
-    }
-
 }
 
 ?>

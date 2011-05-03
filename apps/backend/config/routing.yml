@@ -180,4 +180,8 @@ sentences:
 homepage:
   url:   /
   param: { module: homepage, action: index }
+  
+multiplephoto:
+  url:   /multiplephoto
+  param: { module: multiplephoto, action: index }  
 

@@ -12,5 +12,6 @@ class ProjectConfiguration extends sfProjectConfiguration
     $this->enablePlugins('sfDoctrineGuardPlugin');
     $this->enablePlugins('sfJqueryReloadedPlugin');
     $this->enablePlugins('sfThumbnailPlugin');
+    $this->enablePlugins('sfWidgetFormInputSWFUploadPlugin');
   }
 }

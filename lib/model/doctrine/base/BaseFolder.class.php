@@ -26,6 +26,7 @@ abstract class BaseFolder extends sfDoctrineRecord
         $this->hasColumn('name', 'string', 255, array(
              'type' => 'string',
              'unique' => true,
+             'notnull' => true,
              'length' => 255,
              ));
     }

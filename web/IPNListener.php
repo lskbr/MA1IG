@@ -46,7 +46,6 @@ if (!$fp) { // HTTP ERROR
             $payer_email = $_POST['payer_email'];
             $id_user = $_POST['custom'];
 
-            echo $payment_amount;
 
 // TODO:
 // Check the payment_status is Completed

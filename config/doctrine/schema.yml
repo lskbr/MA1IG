@@ -212,3 +212,7 @@ StandardSentence:
   columns:
     text: {type: text, notnull: true}
     title: {type: string(255), notnull: true, unique: true}
+
+payment:
+  columns:
+    montant: {type: string(255)}

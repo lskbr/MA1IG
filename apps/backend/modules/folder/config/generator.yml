@@ -13,9 +13,14 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
-      list:    ~
+      fields:  
+        name: {label: 'Nom'}        
+      list:    
+        display: [=name]
+        title: Liste des dossiers
       filter:  ~
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:    
+        title: Modifier le nom d'un dossier
+      new:    
+        title: Creer un nouveau dossier

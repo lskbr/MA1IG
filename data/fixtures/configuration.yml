@@ -71,6 +71,11 @@ BooleanConfiguration:
     name: Livre d'or
     description: Affiche un livre d'or que les visiteurs peuvent compléter.
     is_activated: true
+  BilanCarbone:
+    main: bilan_carbone
+    name: Bilan Carbone
+    description: Calcule votre empreinte écologique en quelques minutes.
+    is_activated: true
 
 NumericConfiguration:
   NewsParPage:

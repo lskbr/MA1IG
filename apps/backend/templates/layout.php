@@ -45,6 +45,7 @@
                         if ($sf_user->isAuthenticated()) {
                             menu_item('Accueil', 'homepage', $sf_context); // 'NomAAfficher','route',$sf_context,à activer;
                             menu_item('Messagerie', 'contactavances', $sf_context, 'contacts');
+                            menu_item('Donnations', 'donenligne', $sf_context, 'donenligne');
                             menu_item('Actualités', 'news', $sf_context, 'news');
                             menu_item('Langues', 'language', $sf_context);
                             menu_item('Configuration', 'configuration', $sf_context);

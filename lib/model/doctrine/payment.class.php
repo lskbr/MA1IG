@@ -10,6 +10,20 @@
  * @author     Your name here
  * @version    SVN: $Id: Builder.php 7691 2011-02-04 15:43:29Z jwage $
  */
-class payment extends Basepayment
-{
+class payment extends Basepayment {
+
+    public function getMontantNet() {
+        return $this->getBrutAmout() - $this->getFee();
+    }
+
+    public function getPersonName() {
+        $person = PersonTable::getInstance()->findOneBy('id', $this->getPersonId());
+        return $person->getFirstName() . " " . $person->getLastName();
+    }
+
+    public function getPersonAddress() {
+        $address = addressTable::getInstance()->findOneBy('person_id', $this->getPersonId());
+        return $address->getStreet()." \n\n".$address->getZipCode()." ".$address->getCity()."\n\n".$address->getCountry();
+    }
+
 }

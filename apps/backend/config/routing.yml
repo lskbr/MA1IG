@@ -1,3 +1,20 @@
+donenligne:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                payment
+    module:               donenligne
+    prefix_path:          /donenligne
+    column:               id
+    with_wildcard_routes: true
+payment:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                payment
+    module:               donenligne
+    prefix_path:          /donenligne
+    column:               id
+    with_wildcard_routes: true
+
 standard_sentence:
   class: sfDoctrineRouteCollection
   options:

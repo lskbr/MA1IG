@@ -13,8 +13,15 @@
 class Photo extends BasePhoto
 {
 
-	public static $PHOTODIR = sfConfig::get('sf_upload_dir').'/photo/';
+	public static $PHOTODIR = "c:/ma1ig/web/uploads/photo/";
 
+	/*public function __construct()
+	{
+		parent::__construct();
+		if(!isset(Photo::$PHOTODIR))
+			Photo::$PHOTODIR = sfConfig::get('sf_upload_dir').'/photo/';
+	}*/
+	
 	public function getPhotoPage()
 	{
 		$q = Doctrine_Query::create()
@@ -37,26 +44,21 @@ class Photo extends BasePhoto
 		return Photo::$PHOTODIR;
 	}
 
-	public function create_thumbnail(string $filename, string $directory, 
-	                                 int $height, int $width)
+	public function create_thumbnail($filename, $directory, $height, $width)
 	{
 		$thumbnail = new sfThumbnail($width, $height);
-	    $thumbnail->loadFile($this->getPhotoUploadFolder().$fileName);
-	    $thumbnail->save($directory.$fileName);	
+	    $thumbnail->loadFile($this->getPhotoUploadFolder().$filename);
+	    $thumbnail->save($directory.$filename);	
 	}
 
 	public function save(Doctrine_Connection $conn = null)
 	{
-		$fileName = $this->getUrl();
+		$filename = $this->getUrl();		
 		// Create the thumbnail
-		$this->create_thumbnail($fileName, $this->getPhotoThumbnailFolder(), 150, 150);
-		$this->create_thumbnail($fileName, $this->getPhotoThumbnailGrandeFolder(), 1024, 768);
-	    //$thumbnail = new sfThumbnail(150, 150);
-	    //$thumbnail->loadFile(sfConfig::get('sf_upload_dir').'/photo/'.$fileName);
-	    //$thumbnail->save(sfConfig::get('sf_upload_dir').'/photo/thumbnail/'.$fileName);
-	    /*$thumbnail2 = new sfThumbnail(1024, 768);
-	    $thumbnail2->loadFile(sfConfig::get('sf_upload_dir').'/photo/'.$fileName);
-	    $thumbnail2->save(sfConfig::get('sf_upload_dir').'/photo/thumbnailGrande/'.$fileName);*/
+		if(isset($filename)){
+			$this->create_thumbnail($filename, $this->getPhotoThumbnailFolder(), 150, 150);
+			$this->create_thumbnail($filename, $this->getPhotoThumbnailGrandeFolder(), 1024, 768);	    
+		}
 		return parent::save($conn);
 	}
 

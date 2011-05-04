@@ -1,5 +1,13 @@
 <?php
 
+
+function my_dump($var)
+  {
+    ob_start();
+    var_dump($var);
+    return ob_get_clean();
+  }
+
 /**
  * multiplephoto actions.
  *
@@ -10,6 +18,7 @@
  */
 class multiplephotoActions extends sfActions
 {
+
  /**
   * Executes index action
   *
@@ -18,29 +27,34 @@ class multiplephotoActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
     $this->form = new MultiplePhotoForm();
-    $this->logMessage('TEST','info');
     if($request->isMethod('put'))
     {          
+    $this->logMessage('BEFORE SAVE');
      $this->form->bind($request->getParameter('multiplephoto'), $request->getFiles('multiplephoto'));
-     //if($this->form->isValid()){
-        
+     //if($this->form->isValid()){                
         $photo = new Photo();
-        $file = $this->form->getValue('upload');
-        //$this->logMessage('NILO:'.implode($request),'info');
         $files = $request->getFiles('multiplephoto');
+        $data = $request->getParameter('multiplephoto');
+        $this->logMessage("DATA DUMP: ".my_dump($data));
+        $this->logMessage("REQUEST DUMP: ".my_dump($request));
         foreach($files as $x => $y)
            { $this->logMessage('NILOX: '.$x.'->'.$y);
               foreach($y as $a => $b)
                  $this->logMessage('  NILOX: '.$a.'->'.$b);
-            }
-                           
-        $this->logMessage('NILOZ:'.$files['upload']['tmp_name'],'info');
-        $photo->setTitle($request->getParameter('multiplephoto[title]'));
-        //$photo->setTitle($this->form->getValue('upload'));
-        $photo->setDescription($request->getParameter('multiplephoto[title]'));
-        $new_name = sha1($files['upload']['tmp_name'].$files['upload']['name'].$files['upload']['size']);
+            }       
+        $this->logMessage("DATA DUMP2: ".my_dump($files));                    
+        $this->logMessage('NILOZ:'.$files['uploadedfile']['tmp_name'],'info');        
+        
+        $photo->setTitle($data['title']);
+        $photo->setGaleryId($data['galery_id']);
+        $photo->setDescription($data['description']);
+
+        $new_name = sha1($files['uploadedfile']['tmp_name'].$files['uploadedfile']['name'].$files['uploadedfile']['size']);
+        $original_name_parts = pathinfo($files['uploadedfile']['name']);
+        $orignal_extension = $original_name_parts['extension'];
+        $new_name .= ".".$orignal_extension;
         $this->logMessage('NILO:'.$new_name);
-        move_uploaded_file($files['upload']['tmp_name'], sfConfig::get('sf_upload_dir').'/photo/'.$new_name);
+        move_uploaded_file($files['uploadedfile']['tmp_name'], Photo::$PHOTODIR.$new_name);
         $photo->setUrl($new_name);
         $photo->save();      
         $this->setLayout(false);

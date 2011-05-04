@@ -13,10 +13,13 @@ class MultiplePhotoForm extends sfForm
   public function configure()
   {    	
     $this->widgetSchema['title'] = new sfWidgetFormInputText();
-    $this->widgetSchema['upload'] = new sfWidgetFormInputSWFUpload(array(
+    $this->widgetSchema['description'] = new sfWidgetFormInputText();
+    $this->widgetSchema['galery_id'] = new sfWidgetFormDoctrineChoice(
+	    array('model' => 'Galery', 'add_empty' => true));
+    $this->widgetSchema['uploadedfile'] = new sfWidgetFormInputSWFUpload(array(
     ));
     $this->widgetSchema->setNameFormat('multiplephoto[%s]');
-    $this->validatorSchema['name'] = new sfValidatorString(array('required' => false));
+    $this->validatorSchema['title'] = new sfValidatorString(array('required' => false));
 	//$this->validatorSchema['upload'] = new sfValidatorFile();
   }
 }

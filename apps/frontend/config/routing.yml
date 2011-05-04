@@ -3,6 +3,10 @@
 
 # default rules
 
+ipn:
+  url: /ipn
+  param: {module: donenligne, action: IPNListener}
+
 sf_guard_auth_signin:
   url: /signin
   param: {module: sfGuardAuth, action: signin}
@@ -66,6 +70,8 @@ gallery:
 news:
   url:   /:sf_culture/news
   param: { module: news, action: index}
+
+
 
 news_show:
   url:   /:sf_culture/news/:id/:title_slug

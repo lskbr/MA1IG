@@ -56,7 +56,7 @@ if(config::getInstance()->get('social_sharing'))
 	<?php
 	else:
 	?>
-	<p>Veuillez vous connecter pour commenter les actualités.
+	<p><b>Veuillez vous connecter pour commenter les actualités</b></p>
 	<?php
 	endif;
 	?>

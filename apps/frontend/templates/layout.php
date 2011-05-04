@@ -51,17 +51,13 @@
 
             <div id ="upper-bar">
                 <div>
-                    <div>
-                        <ul>
-                            <?php if(!$sf_user->isAuthenticated()): ?>
-                            <li><a id="login-bar-button" href="<?php echo url_for('@sf_guard_auth_signin') ?>"><?php echo __("Se connecter") ?></a></li>
-                            <?php else: ?>
-                            <li><a href="<?php echo url_for('sf_guard_auth_signout') ?>"><?php echo __("Se déconnecter") ?></a></li>
-                            <?php endif; ?>
-                            <li><span>|</span></li>
-                            <li><a href="<?php echo url_for('@sf_guard_register') ?>"><?php echo __("S'inscrire") ?></a></li>
-                        </ul>
-                    </div>
+                    <?php if(config::getInstance()->get('search')) { ?>
+                    <ul id="search">
+                      <li><span>|</span></li>
+                      <li><a href="#" id="search_text" title="<?php echo __('Basculer vers la recherche') ?>"><?php echo __("Rechercher") ?></a></li>
+                    </ul>
+                    <?php } ?>
+                    <?php include_component('login', 'login') ?>
                 </div>
             </div>
 
@@ -82,8 +78,10 @@
                 </div>
             </div>
             
-            <?php if(config::getInstance()->get('counter'))
-                include_component('counter', 'counter'); ?>
+            <?php
+            if(config::getInstance()->get('counter'))
+                include_component('counter', 'counter');
+            ?>
 
             <div id="center">
                 <?php include_component('menu', 'menu') ?>
@@ -100,6 +98,7 @@
                 </div>
                 <div id="bottom-bar">
                 	<ul>
+                            <li><?php include_component('donenligne', 'show')?></li>
                         <li class="form">
                             <?php include_component('language', 'language') ?>
                         </li>

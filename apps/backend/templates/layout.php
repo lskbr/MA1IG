@@ -45,6 +45,7 @@
                         if ($sf_user->isAuthenticated()) {
                             menu_item('Accueil', 'homepage', $sf_context); // 'NomAAfficher','route',$sf_context,à activer;
                             menu_item('Messagerie', 'contactavances', $sf_context, 'contacts');
+                            menu_item('Donnations', 'donenligne', $sf_context, 'donenligne');
                             menu_item('Actualités', 'news', $sf_context, 'news');
                             menu_item('Newsletter', 'newsletter', $sf_context);
                             menu_item('Langues', 'language', $sf_context);
@@ -63,6 +64,7 @@
                             menu_item('Photos', 'photo', $sf_context);
                             menu_item('Galeries', 'galery', $sf_context);
                             menu_item('Pages dynamiques', 'dynamic_page', $sf_context);
+                            menu_item('Multiple Photo Upload', 'multiplephoto', $sf_context);
                         } else {
                             echo menu_item('Connexion', 'sf_guard_signin', $sf_context);
                         }

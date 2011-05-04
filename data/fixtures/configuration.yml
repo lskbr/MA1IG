@@ -18,7 +18,7 @@ BooleanConfiguration:
   PartageSociaux:
     main: social_sharing
     name: Partage sur les réseaux sociaux
-    description: Active la possibilité de partager les news sur les réseaux sociaux
+    description: Active la possibilité de partager les news sur les réseaux sociaux grâce à AddThis
     BooleanConfiguration: News
     is_activated: true
   Commentaires:
@@ -26,6 +26,11 @@ BooleanConfiguration:
     name: Commentaire
     description: Active le système de commentaire
     BooleanConfiguration: News
+    is_activated: true
+  PageFB:
+    main: fb_page
+    name: Page Facebook
+    description: Affiche une boîte "Retrouvez-nous sur Facebook" dans le menu
     is_activated: true
   Calendrier:
     main: calendar
@@ -51,6 +56,11 @@ BooleanConfiguration:
     name: Compteur d'arbres
     description: Affiche le compteur d'arbres sur la page d'acceuil
     is_activated: true
+  Search:
+    main: search
+    name: Google Search Engine
+    description: Recherche sur le site de graine de vie
+    is_activated: true
   Faq:
     main: faq
     name: Foire aux Questions
@@ -61,6 +71,12 @@ BooleanConfiguration:
     name: Livre d'or
     description: Affiche un livre d'or que les visiteurs peuvent compléter.
     is_activated: true
+  Donenligne:
+    main: donenligne
+    name: Don en ligne
+    description: Permet les dons directement via le site internet
+    is_activated: true
+
 
 NumericConfiguration:
   NewsParPage:
@@ -69,6 +85,12 @@ NumericConfiguration:
     description: Indique le nombre d'actualités affichées sur la page d'accueil.
     BooleanConfiguration: News
     value: 3
+  DonenligneMontant:
+    main: donenligne_amount
+    name: Montant par défault
+    description: Montant par default des dons proposés
+    BooleanConfiguration: Donenligne
+    value: 12.5
   CharParNews:
     main: char_by_news
     name: Nombre maximal de caractères par news
@@ -99,3 +121,5 @@ StringConfiguration:
     description: Adresse-mail pour envoyer les alertes
     value: laurent_cardon@hotmail.com
     BooleanConfiguration: ContactsAvancesAlertesMail
+
+

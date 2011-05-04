@@ -38,6 +38,15 @@ body {
 	width: 100%;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
+
+sub, sup { font-size: .83em; font-weight: inherit }
+sub { vertical-align: sub; }
+sup { vertical-align: super; }
+
 /*
     Citations
 */
@@ -102,6 +111,10 @@ div#upper-bar {
 	position: relative;
 }
 
+div#upper-bar a:hover {
+        text-decoration: none;
+}
+
 div#upper-bar div {
 	background-color: #000;
 	/* -> border */
@@ -120,7 +133,11 @@ div#upper-bar div {
 }
 
 div#upper-bar ul {
-	margin-right: 40px;
+	display: inline-block;
+}
+
+div#upper-bar ul:last-child {
+	margin-right: 10px;
 }
 
 div#upper-bar ul li {
@@ -148,13 +165,41 @@ div#upper-bar ul li > a:hover {
 	text-decoration: underline;
 }
 
+div#upper-bar ul li a#login-bar-button {
+	border-right: 1px solid #000;
+}
+
 div#upper-bar ul li a#login-bar-button:hover {
 	background-color: #035579;
+	border-right: 1px solid #383E44;
 	text-decoration: none;
 }
 
-a.login-open {
+a#login-bar-button.login-open {
 	background-color: #035579;
+	border-right: 1px solid #383E44;
+}
+
+span#connected-bar-button {
+    display: inline;
+    margin-right: 10px;
+    padding-left: 10px;
+    cursor: default;
+}
+span#connected-bar-button a {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    background-image: url(../images/disconnection.png);
+    vertical-align: -15%;
+}
+span#connected-bar-button a:hover {
+    background-image: url(../images/disconnection-hover.png);
+}
+
+ul#search {
+	margin-right: 0;
 }
 
 /*
@@ -196,20 +241,20 @@ div#pSlider {
 */
 div#login {
 	border: 1px solid #383E44;
-        border-top: none;
+	border-top: none;
 
-	border-radius: 10px 10px 10px 10px;
-	-moz-border-radius: 10px 10px 10px 10px;
-	-webkit-border-radius: 10px 10px 10px 10px;
-	-khtml-border-radius: 10px 10px 10px 10px;
+	border-radius: 10px 0px 10px 10px;
+	-moz-border-radius: 10px 0px 10px 10px;
+	-webkit-border-radius: 10px 0px 10px 10px;
+	-khtml-border-radius: 10px 0px 10px 10px;
 
-        background-color: #035579;
+    background-color: #035579;
 	/*background-image: url(../images/bg-bar-login.png);
 	background-repeat: repeat;*/
 
 	display: none;
 	position: absolute;
-	right: 1px;
+	right: -1px;
 	top: 0;
 	z-index: 1001;
 }
@@ -362,6 +407,10 @@ div#header-logo img {
 	margin: 0;
 }
 
+div#header-logo a:hover {
+	text-decoration: none;
+}
+
 div#header-logo #slogan_link {
 	color: #8fbc13;
 	font-family: Arial, Helvetica, sans-serif;
@@ -496,7 +545,7 @@ div#content {
 	width: 720px;
 	margin: 0;
 	padding: 10px;
-	padding-top: 20px;
+	padding-top: 35px;
 	z-index: 1;
 	
 	font-family: Arial, Helvetica, sans-serif;
@@ -506,7 +555,8 @@ div#content {
 /* Page titles */
 div#content h1,
 div#content h2,
-div#content h3 {
+div#content h3,
+div#content h4 {
 	display: inline-block;
 	font-weight: bold;
         font-family: "Trebuchet MS";
@@ -516,8 +566,9 @@ div#content h3 {
 div#content h1 {
         height: 35px;
         background: url("../images/img-h1.png") no-repeat 0 9px;
-		font-size: 24px;
+        font-size: 24px;
         padding: 10px 0 0 27px;
+        margin-bottom: 5px;
 }
 div#content h2 {
 	font-size: 20px;
@@ -525,6 +576,10 @@ div#content h2 {
 }
 div#content h3 {
 	font-size: 16px;
+	margin-bottom: 5px;
+}
+div#content h4 {
+	font-size: 13px;
 	margin-bottom: 5px;
 }
 
@@ -568,6 +623,7 @@ ul#menu .current-page {
 ul#menu li div:hover, ul#menu li a:hover {
 	background-color: #ffffbe;
 	color: #000;
+        text-decoration: none;
 }
 
 /* Padding du menu */
@@ -589,6 +645,24 @@ ul#menu li{
 	width:20px;
 	float:left;
 }*/
+
+.fb_page {
+    border: 1px #aaaaaa solid;
+    border-top: 1px #315c99 solid;
+    background-color: #ffffff;
+    margin: 20px auto 20px auto;
+    padding: 0;
+    width: 214px;
+}
+
+.fb_page_title {
+    border-bottom: 1px #c6cedd solid;
+    background-color: #edeff4;
+    padding: 5px;
+    font-weight: bold;
+    font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+}
+
 
 /*
     Fin Menu
@@ -763,37 +837,6 @@ ul.error_list li:first-child + li {
 .error a {color:#8a1f11;}
 .notice a {color:#514721;}
 .success a {color:#264409;}
-
-/* Bulle d'erreur dans les formulaires */
-/*
-.jquerybubblepopup{width:auto;height:auto;margin:0px;padding:0px;border:0px;z-index:100;text-align:center;background-color:transparent;}
-.jquerybubblepopup table{width:auto;height:auto;margin:0px;padding:0px;display:table;border-collapse:collapse;border-spacing:0px;border:0px;empty-cells:show;background-color:transparent;}
-.jquerybubblepopup tbody{display:table-row-group;vertical-align:middle;border:0px;background-color:transparent;}
-.jquerybubblepopup td{margin:0px;padding:0px;background-color:transparent;}
-.jquerybubblepopup-top-left,    .jquerybubblepopup-top-right,
-.jquerybubblepopup-bottom-left, .jquerybubblepopup-bottom-right{width:21px;height:21px;overflow:hidden;background-repeat:no-repeat;}
-.jquerybubblepopup-top-middle,  .jquerybubblepopup-bottom-middle{overflow:hidden;background-repeat:repeat-x;}
-.jquerybubblepopup-middle-left, .jquerybubblepopup-middle-right{overflow:hidden;background-repeat:repeat-y;}
-.jquerybubblepopup-tail{border:0px;margin:0px;padding:0px;display:inline;}
-
-.jquerybubblepopup img {vertical-align:middle;}
-
-.jquerybubblepopup-orange .jquerybubblepopup-innerHtml
-{
-        font-family:'Trebuchet MS',Arial;
-        font-size:11px;
-        font-weight:normal;
-        color:orange;
-        background-color:#FFFFFF;
-}
-
-ul.error_list {
-    margin: 0;
-    padding: 0;
-}
-ul.error_list li {
-        color:#ff9933;
-}*/
 
 /* Partenaires */
 
@@ -970,9 +1013,9 @@ p{
 	color:#544a2d;
 }
 #comment_form .com_textarea{
+        padding: 5px;
 	width:420px;
 	height:100px;
-	background-color:#f8f6ed;
 }
 #comment_form input{
 	margin-top:3px;
@@ -1022,4 +1065,76 @@ p{
 }
 .gallery_item a:hover{
 	text-decoration:underline;
+}
+
+/* --- Bilan Carbone (Empreinte écologique) --- */
+div#bilan_text {
+    margin-bottom: 10px;
+}
+
+div#bilan_carbone h4 {
+    display: block;
+    margin-top: 10px;
+}
+
+div#bilan_carbone fieldset {
+    margin-bottom: 10px;
+    border: 1px #b5ac8f solid;
+    padding: 0 10px 10px 10px;
+}
+div#bilan_carbone fieldset legend {
+    padding: 0 5px 0 5px;
+}
+
+div#bilan_carbone fieldset div {
+    margin-left: 20px;
+}
+
+div#bilan_carbone .help {
+    margin: 10px 0 10px 0;
+    padding:10px;
+    border: 1px solid #5F3812;
+    color: #7ba700;
+}
+div#bilan_carbone .help legend {
+    font-weight: bold;
+}
+div#bilan_carbone .help_text {
+    font-weight: inherit;
+    color: #5F3812;
+}
+
+div#bilan_carbone #submit_carbone {
+    margin-left: 20px;
+}
+
+div#bilan_carbone .error_list {
+    display: inline-block;
+}
+
+div#bilan_error {
+    margin: 10px 0 10px 0;
+    padding:10px;
+    border: 1px solid #dd3c10;
+    background:#ffebe8;
+    color:#8a1f11;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+div#bilan_result, div.bilan_don {
+    font-size: 1.5em;
+    margin-top: 3px;
+}
+div#bilan_result {
+    margin-top: 20px;
+}
+div#bilan_result a {
+    font-size: inherit;
+}
+.bilan_nbr {
+    font-size: inherit;
+    font-weight: bold;
+    color: #5F3812;
 }

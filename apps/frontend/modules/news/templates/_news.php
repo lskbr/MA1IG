@@ -12,5 +12,5 @@
 }
 ?>
 <div>
-	<a href="<?php echo url_for('news'); ?>">Cliquez ici pour voir les news plus anciennes.</a>
+	<a href="<?php echo url_for('news'); ?>">Voir toutes les news</a>
 </div>

@@ -5,35 +5,45 @@ Person:
     first_name: Laurent
     last_name: Cardon
     email_address: laurent_cardon@hotmail.com
-
+    
   Olivier:
     first_name: Olivier
     last_name: Deltour
     email_address: jin_7281@hotmail.com
     Corespondance: OlivierCorespondance
-
+    
   Nicolas:
     first_name: Nicolas
     last_name: Dechamps
     email_address: ndech13@hotmail.com
-
+    
   Kevin:
     first_name: Kévin
     last_name: Neirynk
     email_address: kneirynck138@hotmail.com
-
+    
   Alexandre:
     first_name: Alexandre
     last_name: Anoutchine
     email_address: anoutchine@gmail.com
-
+    
   Nilo:
     first_name: Nilo
     last_name: Menezes
     email_address: nilo.menezes@gmail.com
-
+    
   User:
     first_name: User
     last_name: Test
     email_address: user@user.com
     Corespondance: UserCorespondance
+    
+  Luca:
+    first_name: Luca
+    last_name: DiMarino
+    email_address: luca_dima@hotmail.com
+    
+  Noemie:
+    first_name: Noemie
+    last_name: Boucher
+    email_address: chalut1@hotmail.com

@@ -14,13 +14,13 @@ class PersonForm extends BasePersonForm {
         $this->widgetSchema->setLabels(array(
             'first_name' => 'Prénom',
             'last_name' => 'Nom de famille',
-            'email_address' => 'Votre adresse email'
+            'email_address' => 'Adresse Email'
         ));
 
         $this->validatorSchema['email_address'] = new sfValidatorAnd(array(
-                    $this->validatorSchema['email_address'],
-                    new sfValidatorEmail()
-                ));
+            $this->validatorSchema['email_address'],
+            new sfValidatorEmail()
+        ));
 
         $this->useFields(array(
             'first_name', 'last_name', 'email_address'

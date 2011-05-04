@@ -9,7 +9,7 @@ sfGuardUser:
     password: laurent5
     Groups: [Administrateur]
     Person: Laurent
-
+    
   OlivierLogin:
     algorithm: sha1
     username: Xtream
@@ -18,7 +18,7 @@ sfGuardUser:
     password: mdp_xt
     Groups: [Administrateur]
     Person: Olivier
-
+    
   NicolasLogin:
     algorithm: sha1
     username: Nico
@@ -27,7 +27,7 @@ sfGuardUser:
     password: 13031991
     Groups: [Administrateur]
     Person: Nicolas
-
+    
   KevinLogin:
     algorithm: sha1
     username: Kevin
@@ -36,7 +36,7 @@ sfGuardUser:
     password: kevin
     Groups: [Administrateur]
     Person : Kevin
-
+    
   AlexandreLogin:
     algorithm: sha1
     username: xirius
@@ -54,7 +54,7 @@ sfGuardUser:
     password: gluglux
     Groups: [Administrateur]
     Person: Nilo
-      
+    
   UserLogin:
     algorithm: sha1
     username: user
@@ -63,3 +63,21 @@ sfGuardUser:
     password: user
     Groups: [Utilisateur]
     Person: User
+    
+  LucaLogin:
+    algorithm: sha1
+    username: lucadima
+    is_active: 1
+    is_super_admin: 0
+    password: lucadima
+    Groups: [Administrateur]
+    Person: Luca
+    
+  NoemieLogin:
+    algorithm: sha1
+    username: noemie
+    is_active: 1
+    is_super_admin: 0
+    password: noemie
+    Groups: [Administrateur]
+    Person: Noemie

@@ -18,7 +18,17 @@ function my_dump($var)
  */
 class multiplephotoActions extends sfActions
 {
+  public function generateNewFileName($uploadedFile)
+  {
+        $new_name = sha1($uploadedFile['tmp_name'].
+                         $uploadedFile['name'].
+                         $uploadedFile['size']);
 
+        $original_name_parts = pathinfo($uploadedFile['name']);
+        $orignal_extension = $original_name_parts['extension'];
+        $new_name .= ".".strtolower($orignal_extension);
+        return $new_name;
+  }
  /**
   * Executes index action
   *
@@ -29,32 +39,17 @@ class multiplephotoActions extends sfActions
     $this->form = new MultiplePhotoForm();
     if($request->isMethod('put'))
     {          
-    $this->logMessage('BEFORE SAVE');
-     $this->form->bind($request->getParameter('multiplephoto'), $request->getFiles('multiplephoto'));
-     //if($this->form->isValid()){                
-        $photo = new Photo();
+     $this->form->bind($request->getParameter('multiplephoto'), 
+                       $request->getFiles('multiplephoto'));
+     //if($this->form->isValid()){                        
         $files = $request->getFiles('multiplephoto');
-        $data = $request->getParameter('multiplephoto');
-        $this->logMessage("DATA DUMP: ".my_dump($data));
-        $this->logMessage("REQUEST DUMP: ".my_dump($request));
-        foreach($files as $x => $y)
-           { $this->logMessage('NILOX: '.$x.'->'.$y);
-              foreach($y as $a => $b)
-                 $this->logMessage('  NILOX: '.$a.'->'.$b);
-            }       
-        $this->logMessage("DATA DUMP2: ".my_dump($files));                    
-        $this->logMessage('NILOZ:'.$files['uploadedfile']['tmp_name'],'info');        
-        
+        $data = $request->getParameter('multiplephoto');                            
+        $photo = new Photo();
         $photo->setTitle($data['title']);
         $photo->setGaleryId($data['galery_id']);
         $photo->setDescription($data['description']);
-
-        $new_name = sha1($files['uploadedfile']['tmp_name'].$files['uploadedfile']['name'].$files['uploadedfile']['size']);
-        $original_name_parts = pathinfo($files['uploadedfile']['name']);
-        $orignal_extension = $original_name_parts['extension'];
-        $new_name .= ".".$orignal_extension;
-        $this->logMessage('NILO:'.$new_name);
-        move_uploaded_file($files['uploadedfile']['tmp_name'], Photo::$PHOTODIR.$new_name);
+        $new_name = $this->generateNewFileName($files['uploadedfile']);        
+        move_uploaded_file($files['uploadedfile']['tmp_name'], $photo->getPhotoUploadFolder().$new_name);
         $photo->setUrl($new_name);
         $photo->save();      
         $this->setLayout(false);

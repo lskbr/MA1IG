@@ -56,7 +56,7 @@ galleryIndex:
   options: { model: Galery, type: object }
   param:   { module: gallery, action: index }
   requirements:
-    sf_method: [get]    
+    sf_method: [get]
 
 gallery:
   url:   /:sf_culture/gallery/:id
@@ -65,7 +65,7 @@ gallery:
   param:   { module: gallery, action: show }
   requirements:
     id: \d+
-    sf_method: [get]    
+    sf_method: [get]
 
 news:
   url:   /:sf_culture/news

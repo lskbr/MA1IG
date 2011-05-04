@@ -102,11 +102,17 @@
                         <li class="form">
                             <?php include_component('language', 'language') ?>
                         </li>
-                    	<li><a href="#"><?php echo __("Contact") ?></a></li>
+                        <?php if(config::getInstance()->get('page_contact')): ?>
+                    	<li><a href="<?php echo url_for(config::getInstance()->get('id_contact'));  ?>"><?php echo __("Contact") ?></a></li>
+                        <?php endif;
+                        if(config::getInstance()->get('page_mention')): ?>
                         <li>|</li>
-                        <li><a href="#"><?php echo __("Mentions légales") ?></a></li>
+                        <li><a href="<?php echo url_for(config::getInstance()->get('id_mention'));  ?>"><?php echo __("Mentions légales") ?></a></li>
+                        <?php endif;
+                        if(config::getInstance()->get('page_sitemap')): ?>
                         <li>|</li>
-                        <li><a href="#"><?php echo __("Plan du site") ?></a></li>
+                        <li><a href="<?php echo url_for(config::getInstance()->get('id_sitemap'));  ?>"><?php echo __("Plan du site") ?></a></li>
+                        <?php endif; ?>
                     </ul>
                 </div>
                 <div id="legal"><?php echo __("Projet agréé par la Fondation Roi Baudouin | Copyright &copy; 2009 - 2011 Graine de vie. All rights reserved.") ?></div>

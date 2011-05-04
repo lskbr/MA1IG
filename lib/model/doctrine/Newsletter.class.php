@@ -17,14 +17,15 @@ class Newsletter extends BaseNewsletter
 		$this->setSubscriberCount(Doctrine::getTable('Subscriber')->count());
 
 		$subscribers=Doctrine::getTable('Subscriber')->findAll();
+		sfApplicationConfiguration::getActive()->loadHelpers(array('Url', 'Tag'));
 		foreach($subscribers as $s)
 		{
-
-		    /*sfContext::getInstance()->getMailer()->composeAndSend(
-		      array('site.graine.de.vie@gmail.com' => 'Graine de vie'),
+		    sfContext::getInstance()->getMailer()->composeAndSend(
+		      array('info@grainedevie.seaflat.be' => 'Graine de vie'),
 		      $s->getEmail(),
-		      $this->getNews()->getContent()
-		    );*/
+		      'Newsletter :'.$this->getNews()->getTitle(),
+		      $this->getNews()->getContent().'<br/>'.link_to('Me désinscrire','unsuscribe',$s)
+		    );
 		}
 		return parent::save($conn);
 	}

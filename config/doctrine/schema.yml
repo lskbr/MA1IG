@@ -208,7 +208,22 @@ NewsComments:
 Folder:
   columns:
     name: {type: string(255), unique: true}
+
 StandardSentence:
   columns:
     text: {type: text}
     title: {type: string(255)}
+
+Subscriber:
+  columns:
+    email: {type: string(255), unique: true}
+    hash: {type: string(255)}
+
+Newsletter:
+  actAs:
+    Timestampable: ~
+  columns:
+    news_id: {type: integer, notnull: true}
+    subscriber_count: {type: integer}
+  relations:
+    News: {local: news_id, foreign: id}

@@ -117,9 +117,9 @@ photo:
   url:   /:sf_culture/photo/
   class:   sfDoctrineRoute
   options: { model: Photo, type: object }
-  param: { module: photo, action: index } 
+  param: { module: photo, action: index }
   requirements:
-    sf_method: [get]   
+    sf_method: [get]
 
 galery:
   url:   /:sf_culture/galery/:id/:title_slug
@@ -138,6 +138,22 @@ bilan_carbone:
   requirements:
     id: \d+
     sf_method: [get]
+
+subscription:
+  url: /:sf_culture/subscription
+  param: { module: subscription, action: new}
+
+subscription_success:
+  url: /:sf_culture/subscription/success
+  param: { module: subscription, action: show}
+
+subscribe:
+  url: /:sf_culture/subscribe
+  param: { module: subscription, action: create}
+
+unsuscribe:
+  url: /:sf_culture/unsuscribe/:email/:hash
+  param: { module: subscription, action: delete}
 
 default_index:
   url:   /:sf_culture/:module

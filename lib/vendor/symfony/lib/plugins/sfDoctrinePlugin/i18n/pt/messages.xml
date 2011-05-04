@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
 <xliff version="1.0">
-  <file source-language="EN" target-language="pt" datatype="plaintext" original="messages" date="2011-03-23T15:41:08Z" product-name="messages">
+  <file source-language="EN" target-language="pt" datatype="plaintext" original="messages" date="2011-05-04T14:33:06Z" product-name="messages">
     <header/>
     <body>
-      <trans-unit id="1">
-        <source>Graine de Vie</source>
-        <target>Semente de Vida</target>
-      </trans-unit>
       <trans-unit id="2">
         <source>Se connecter</source>
         <target>Conectar</target>
@@ -15,10 +11,6 @@
       <trans-unit id="3">
         <source>S'inscrire</source>
         <target>Se inscrever</target>
-      </trans-unit>
-      <trans-unit id="4">
-        <source>Nous avons déjà planté</source>
-        <target>Já plantamos</target>
       </trans-unit>
       <trans-unit id="5">
         <source>Accueil</source>
@@ -39,6 +31,246 @@
       <trans-unit id="9">
         <source>Contact</source>
         <target>Contatos</target>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>Graine de vie</source>
+        <target>Semente de Vida</target>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>Compensons notre empreinte écologique !</source>
+        <target>Vamos compensar nosso empréstimo ecológico!</target>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>Résultat du calcul de votre empreinte écologique</source>
+        <target>Resultado do cálculo de seu empréstimo ecológico</target>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>Vous n'avez pas encore calculé votre empreinte écologique</source>
+        <target>Você ainda não calculou seu empréstimo ecológico!</target>
+      </trans-unit>
+      <trans-unit id="14">
+        <source>Cliquez ici pour la calculer</source>
+        <target>Clique aqui para calcular</target>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>Votre empreinte écologique s'élève à :</source>
+        <target>Seu empréstimo ecológico é de:</target>
+      </trans-unit>
+      <trans-unit id="16">
+        <source>Pour compenser celle-ci totalement, il faudrait planter %nbr_trees% arbres</source>
+        <target>Para compensá-lo totalmente, %nbr_trees% devem ser plantadas</target>
+      </trans-unit>
+      <trans-unit id="17">
+        <source>Aidez-nous à la compenser (au moins en partie) grâce à un don !</source>
+        <target>Ajude-nos a compensar (pelo menos em parte) com uma doação!</target>
+      </trans-unit>
+      <trans-unit id="18">
+        <source>Calculez votre empreinte écologique !</source>
+        <target>Calcule seu empréstimo ecológico</target>
+      </trans-unit>
+      <trans-unit id="19">
+        <source>Ce questionnaire se base sur des &lt;b&gt;chiffres annuels&lt;/b&gt; et tous les champs sont requis.&lt;br/&gt;&#13;
+    Il est simplifié de manière à ne vous prendre que quelques minutes pour y répondre.&lt;br/&gt;&#13;
+    Vous pourrez trouver des questionnaires plus complets et plus précis sur les sites suivants :&lt;br/&gt;&#13;
+    &lt;a href="http://www.calculateurcarbone.org/" target="_blank"&gt;Bilan Carbone® Personnel&lt;/a&gt;</source>
+        <target>Este questionário é baseado em valores anuais e todos os campos são obrigatórios&#13;
+    Ele foi simplificado de forma que você possa respondê-lo rapidamente.&#13;
+    Você pode encontrar questionários mais completos e precisos nos seguintes sites: &lt;br/&gt;&#13;
+    &lt;a href="http://www.calculateurcarbone.org/" target="_blank"&gt;Bilan Carbone® Personnel&lt;/a&gt;</target>
+      </trans-unit>
+      <trans-unit id="20">
+        <source>Logement</source>
+        <target>Moradia</target>
+      </trans-unit>
+      <trans-unit id="21">
+        <source>personne(s)</source>
+        <target>pessoas</target>
+      </trans-unit>
+      <trans-unit id="22">
+        <source>Que consommez-vous comme combustible ?</source>
+        <target>Que combustível você utiliza ?</target>
+      </trans-unit>
+      <trans-unit id="23">
+        <source>litre(s)</source>
+        <target>litro(s)</target>
+      </trans-unit>
+      <trans-unit id="24">
+        <source>kg</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="25">
+        <source>kWh</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="26">
+        <source>Transport</source>
+        <target>Transporte</target>
+      </trans-unit>
+      <trans-unit id="27">
+        <source>Véhicule 1 (voiture, moto,...)</source>
+        <target>Veículo 1 (carro, moto, ...)</target>
+      </trans-unit>
+      <trans-unit id="28">
+        <source>km</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="29">
+        <source>g/km</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="30">
+        <source>Véhicule 2 (voiture, moto,...)</source>
+        <target>Veículo 2 (carro, moto, ...)</target>
+      </trans-unit>
+      <trans-unit id="31">
+        <source>Avion</source>
+        <target>Avião</target>
+      </trans-unit>
+      <trans-unit id="32">
+        <source>Transports en commun</source>
+        <target>Transporte coletivo</target>
+      </trans-unit>
+      <trans-unit id="33">
+        <source>minute(s)</source>
+        <target>minuto(s)</target>
+      </trans-unit>
+      <trans-unit id="34">
+        <source>Consommation</source>
+        <target>Consumo</target>
+      </trans-unit>
+      <trans-unit id="35">
+        <source>euros</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="36">
+        <source>tonnes</source>
+        <target>toneladas</target>
+      </trans-unit>
+      <trans-unit id="37">
+        <source>Message envoyé</source>
+        <target>Mensagem enviada</target>
+      </trans-unit>
+      <trans-unit id="38">
+        <source>Votre message a été envoyé avec succès</source>
+        <target>Sua mensagem foi enviada com sucesso</target>
+      </trans-unit>
+      <trans-unit id="39">
+        <source>Retour à la page d'acceuil</source>
+        <target>Voltar à página inicial</target>
+      </trans-unit>
+      <trans-unit id="40">
+        <source>Nouveau message</source>
+        <target>Nova mensagem</target>
+      </trans-unit>
+      <trans-unit id="41">
+        <source>Enregistrer</source>
+        <target>Gravar</target>
+      </trans-unit>
+      <trans-unit id="42">
+        <source>Identité :</source>
+        <target>Identidade :</target>
+      </trans-unit>
+      <trans-unit id="43">
+        <source>Répondre à :</source>
+        <target>Responder à :</target>
+      </trans-unit>
+      <trans-unit id="44">
+        <source>&lt;div class='faq_categQuestions'&gt;</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="45">
+        <source>Retrouvez-nous sur Facebook</source>
+        <target>Encontre-nos no Facebook</target>
+      </trans-unit>
+      <trans-unit id="46">
+        <source>Galerie photos</source>
+        <target>Galeria de fotos</target>
+      </trans-unit>
+      <trans-unit id="47">
+        <source>[1]photo|(1,+Inf]photos</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="48">
+        <source>Retour</source>
+        <target>Voltar</target>
+      </trans-unit>
+      <trans-unit id="49">
+        <source>Retrouvez ici les messages que les visiteurs du site ont postés à propos de l'association graine de vie :</source>
+        <target>Encontre aqui as mensagens que os visitantes do site postaram sobre a associação Semente de Vida :</target>
+      </trans-unit>
+      <trans-unit id="50">
+        <source>Livre d'or</source>
+        <target>Livro de Visitantes</target>
+      </trans-unit>
+      <trans-unit id="51">
+        <source>Langue:</source>
+        <target>Língua:</target>
+      </trans-unit>
+      <trans-unit id="52">
+        <source>Connecté</source>
+        <target>Conectado</target>
+      </trans-unit>
+      <trans-unit id="53">
+        <source>Actualités</source>
+        <target>Novidades</target>
+      </trans-unit>
+      <trans-unit id="54">
+        <source>Lire la suite</source>
+        <target>Continuar lendo</target>
+      </trans-unit>
+      <trans-unit id="55">
+        <source>Bienvenue !</source>
+        <target>Bem-vindo</target>
+      </trans-unit>
+      <trans-unit id="56">
+        <source>&lt;p&gt;En à peine deux siècles de révolution industrielle, l’homme est parvenu à détériorer, souvent de façon irréversible, son habitat, la Terre, résultat magnifique et fragile de millions d’années d’évolution.&lt;/p&gt;&lt;p&gt;&#13;
+Nous sommes infiniment convaincus qu’il est temps d’agir, de réparer ce qui peut l’être et de préparer l’avenir pour que, lorsque l’Humanité aura progressé dans son évolution en organisant un monde plus conscient et moins injuste, la Terre soit encore en état de loger ses habitants.&lt;/p&gt;&lt;p&gt;&#13;
+Aujourd’hui, notre planète s’essouffle car elle n’a plus les moyens naturels de compenser l’empreinte écologique de l’homme.&lt;/p&gt;&lt;p&gt;&#13;
+Le seuil d’alerte est atteint. Les équilibres naturels se révèlent beaucoup plus fragiles que les hommes ne l’ont imaginé pendant des décennies. L’érosion de la biodiversité a atteint un niveau sans commune mesure avec l’histoire de la vie sur Terre.&lt;/p&gt;&lt;p&gt;&#13;
+La destruction des forêts prend de telles proportions que, chaque année, plus de douze millions d’hectares de forêt disparaissent, soit une surface équivalente à quatre fois la superficie totale de la Belgique.&lt;br/&gt;&#13;
+Plus personne ne peut ignorer ce constat implacable : la Terre a atteint un seuil de vulnérabilité sans précédent. Les dégâts sont désormais visibles à l’œil nu.&lt;/p&gt;&lt;p&gt;&#13;
+Nous avons un devoir de solidarité vis-à-vis des générations suivantes. Nous devons accepter notre responsabilité écrasante dans la situation actuelle. Nous n’avons pas le droit de laisser à nos enfants comme seul héritage la gestion de nos manquements, comme nous leur abandonnons aujourd’hui nos déchets en tous genres. Si nous n’agissons pas, nous serons coupable de non-assistance à humanité en danger.</source>
+        <target/>
+      </trans-unit>
+      <trans-unit id="57">
+        <source>Frédéric Debouche, Président de Graine de Vie.</source>
+        <target>Frédéric Debouche, Presidente da Semente de Vida</target>
+      </trans-unit>
+      <trans-unit id="58">
+        <source>Nombreuses sont les entreprises soucieuses de l'environnement, vous aussi, compensez votre empreinte écologique et profitez des avantages fiscaux &lt;a href=""&gt;(en savoir plus)&lt;/a&gt;</source>
+        <target>Várias empresas já se conscientizaram sobre o meio-ambiente, você também, compense seu empréstimo ecológico e obtenha vantagens fiscais &lt;a href=""&gt;(saber mais)&lt;/a&gt;</target>
+      </trans-unit>
+      <trans-unit id="59">
+        <source>Titre</source>
+        <target>Título</target>
+      </trans-unit>
+      <trans-unit id="60">
+        <source>Description</source>
+        <target>Descrição</target>
+      </trans-unit>
+      <trans-unit id="61">
+        <source>Partager</source>
+        <target>Compartilhar</target>
+      </trans-unit>
+      <trans-unit id="62">
+        <source>Partager sur Facebook</source>
+        <target>Publicar no Facebook</target>
+      </trans-unit>
+      <trans-unit id="63">
+        <source>Partager sur Twitter</source>
+        <target>Publicar no Twitter</target>
+      </trans-unit>
+      <trans-unit id="64">
+        <source>Partager sur LinkedIn</source>
+        <target>Publicar no LinkedIn</target>
+      </trans-unit>
+      <trans-unit id="65">
+        <source>Partager sur Orkut</source>
+        <target>Publicar no Orkut</target>
+      </trans-unit>
+      <trans-unit id="66">
+        <source>Signaler</source>
+        <target>Avisar</target>
       </trans-unit>
     </body>
   </file>

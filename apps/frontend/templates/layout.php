@@ -98,6 +98,7 @@
                 </div>
                 <div id="bottom-bar">
                 	<ul>
+                            <li><?php include_component('donenligne', 'show')?></li>
                         <li class="form">
                             <?php include_component('language', 'language') ?>
                         </li>

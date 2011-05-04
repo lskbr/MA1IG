@@ -71,6 +71,12 @@ BooleanConfiguration:
     name: Livre d'or
     description: Affiche un livre d'or que les visiteurs peuvent compléter.
     is_activated: true
+  Donenligne:
+    main: donenligne
+    name: Don en ligne
+    description: Permet les dons directement via le site internet
+    is_activated: true
+
 
 NumericConfiguration:
   NewsParPage:
@@ -79,6 +85,12 @@ NumericConfiguration:
     description: Indique le nombre d'actualités affichées sur la page d'accueil.
     BooleanConfiguration: News
     value: 3
+  DonenligneMontant:
+    main: donenligne_amount
+    name: Montant par défault
+    description: Montant par default des dons proposés
+    BooleanConfiguration: Donenligne
+    value: 12.5
   CharParNews:
     main: char_by_news
     name: Nombre maximal de caractères par news
@@ -109,3 +121,5 @@ StringConfiguration:
     description: Adresse-mail pour envoyer les alertes
     value: laurent_cardon@hotmail.com
     BooleanConfiguration: ContactsAvancesAlertesMail
+
+

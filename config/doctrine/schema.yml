@@ -215,4 +215,20 @@ StandardSentence:
 
 payment:
   columns:
-    montant: {type: string(255)}
+    brut_amout: {type: float, notnull: true}
+    fee: {type: float, notnull: true}
+    date: {type: string(255), notnull: true}
+    paypal_id: {type: string(255), notnull: true, unique: true}
+    person_id: {type: integer}
+  relations:
+    Person: {local: person_id, foreign: id}
+
+address:
+  columns:
+    street: {type: string(255), notnull: true}
+    country: {type: string(255), notnull: true}
+    city: {type: string(255), notnull: true}
+    zip_code: {type: string(10), notnull: true}
+    person_id: {type: integer}
+  relations:
+    Person: {local: person_id, foreign: id}

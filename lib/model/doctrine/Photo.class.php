@@ -13,7 +13,7 @@
 class Photo extends BasePhoto
 {
 
-	public static $PHOTODIR = "c:/ma1ig/web/uploads/photo/";
+	//public static $PHOTODIR = "c:/ma1ig/web/uploads/photo/";
 
 	/*public function __construct()
 	{
@@ -31,17 +31,17 @@ class Photo extends BasePhoto
 
 	public function getPhotoThumbnailGrandeFolder()
 	{
-		return Photo::$PHOTODIR.'thumbnailGrande/';
+		return $this->getPhotoUploadFolder().'thumbnailGrande/';
 	}
 
 	public function getPhotoThumbnailFolder()
 	{
-		return Photo::$PHOTODIR.'thumbnail/';
+		return $this->getPhotoUploadFolder().'thumbnail/';
 	}
 
 	public function getPhotoUploadFolder()
 	{
-		return Photo::$PHOTODIR;
+		return sfConfig::get('sf_upload_dir').'/photo/';
 	}
 
 	public function create_thumbnail($filename, $directory, $height, $width)

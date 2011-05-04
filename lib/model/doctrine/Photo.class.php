@@ -13,25 +13,51 @@
 class Photo extends BasePhoto
 {
 
-public function getPhotoPage()
-{
-	$q = Doctrine_Query::create()
-		->from('photo p');
-	return ($q);
-}
+	public static $PHOTODIR = sfConfig::get('sf_upload_dir').'/photo/';
 
-public function save(Doctrine_Connection $conn = null)
-{
-	$fileName = $this->getUrl();
-	// Create the thumbnail
-    $thumbnail = new sfThumbnail(150, 150);
-    $thumbnail->loadFile(sfConfig::get('sf_upload_dir').'/photo/'.$fileName);
-    $thumbnail->save(sfConfig::get('sf_upload_dir').'/photo/thumbnail/'.$fileName);
-    /*$thumbnail2 = new sfThumbnail(1024, 768);
-    $thumbnail2->loadFile(sfConfig::get('sf_upload_dir').'/photo/'.$fileName);
-    $thumbnail2->save(sfConfig::get('sf_upload_dir').'/photo/thumbnailGrande/'.$fileName);*/
+	public function getPhotoPage()
+	{
+		$q = Doctrine_Query::create()
+			->from('photo p');
+		return ($q);
+	}
 
-	return parent::save($conn);
-}
+	public function getPhotoThumbnailGrandeFolder()
+	{
+		return Photo::$PHOTODIR.'thumbnailGrande/';
+	}
+
+	public function getPhotoThumbnailFolder()
+	{
+		return Photo::$PHOTODIR.'thumbnail/';
+	}
+
+	public function getPhotoUploadFolder()
+	{
+		return Photo::$PHOTODIR;
+	}
+
+	public function create_thumbnail(string $filename, string $directory, 
+	                                 int $height, int $width)
+	{
+		$thumbnail = new sfThumbnail($width, $height);
+	    $thumbnail->loadFile($this->getPhotoUploadFolder().$fileName);
+	    $thumbnail->save($directory.$fileName);	
+	}
+
+	public function save(Doctrine_Connection $conn = null)
+	{
+		$fileName = $this->getUrl();
+		// Create the thumbnail
+		$this->create_thumbnail($fileName, $this->getPhotoThumbnailFolder(), 150, 150);
+		$this->create_thumbnail($fileName, $this->getPhotoThumbnailGrandeFolder(), 1024, 768);
+	    //$thumbnail = new sfThumbnail(150, 150);
+	    //$thumbnail->loadFile(sfConfig::get('sf_upload_dir').'/photo/'.$fileName);
+	    //$thumbnail->save(sfConfig::get('sf_upload_dir').'/photo/thumbnail/'.$fileName);
+	    /*$thumbnail2 = new sfThumbnail(1024, 768);
+	    $thumbnail2->loadFile(sfConfig::get('sf_upload_dir').'/photo/'.$fileName);
+	    $thumbnail2->save(sfConfig::get('sf_upload_dir').'/photo/thumbnailGrande/'.$fileName);*/
+		return parent::save($conn);
+	}
 
 }

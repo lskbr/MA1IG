@@ -15,6 +15,8 @@ class MultiplePhotoForm extends sfForm
     $this->widgetSchema['title'] = new sfWidgetFormInputText();
     $this->widgetSchema['upload'] = new sfWidgetFormInputSWFUpload(array(
     ));
-	  $this->validatorSchema['upload'] = new sfValidatorFile();
+    $this->widgetSchema->setNameFormat('multiplephoto[%s]');
+    $this->validatorSchema['name'] = new sfValidatorString(array('required' => false));
+	//$this->validatorSchema['upload'] = new sfValidatorFile();
   }
 }

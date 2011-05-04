@@ -49,7 +49,7 @@ Galery:
       nl:
         name: Vervoren
       pt:
-        name: VoyagePT
+        name: Viagens
   Arbres:
     position: 5
     is_activated: 1
@@ -61,4 +61,4 @@ Galery:
       nl:
         name: Bonen
       pt:
-        name: Arbre
+        name: Árvores

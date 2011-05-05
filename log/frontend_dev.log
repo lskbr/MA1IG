@@ -15089,3 +15089,163 @@ May 05 20:41:07 symfony [info] {sfWebDebugLogger} Partial "donenligne/_show" 5.8
 May 05 20:41:07 symfony [info] {sfWebDebugLogger} Component "language/language" 38.16 ms (1)
 May 05 20:41:07 symfony [info] {sfWebDebugLogger} Partial "language/_language" 7.54 ms (1)
 May 05 20:41:07 symfony [info] {sfWebResponse} Send content (108504 o)
+May 05 20:41:52 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+May 05 20:41:52 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+May 05 20:41:52 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_register" (/guard/register)
+May 05 20:41:52 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_forgot_password" (/guard/forgot_password)
+May 05 20:41:52 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_forgot_password_change" (/guard/forgot_password/:unique_key)
+May 05 20:41:52 symfony [info] {sfPatternRouting} Match route "localized_homepage" (/:sf_culture/) for /fr/ with parameters array (  'module' => 'page',  'action' => 'index',  'sf_culture' => 'fr',)
+May 05 20:41:52 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 05 20:41:52 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 05 20:41:52 symfony [info] {pageActions} Call "pageActions->executeIndex()"
+May 05 20:41:52 symfony [info] {sfPHPView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/page/templates/indexSuccess.php"
+May 05 20:41:52 symfony [info] {main} Set slot "title"
+May 05 20:41:52 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+May 05 20:41:52 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.id AS c__id, c.main AS c__main, c.name AS c__name, c.description AS c__description, c.configuration_id AS c__configuration_id, c.type AS c__type, c.is_kernel AS c__is_kernel, c.is_activated AS c__is_activated, c.value AS c__value FROM configuration c - ()
+May 05 20:41:52 symfony [info] {main} Call "citation->executeCitation()"
+May 05 20:41:53 symfony [info] {Doctrine_Connection_Statement} execute : SELECT DISTINCT c3.id FROM citation c3 INNER JOIN citation_translation c4 ON c3.id = c4.id WHERE c4.lang = ? AND c4.content != '' ORDER BY RAND() LIMIT 1 - (fr)
+May 05 20:41:53 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c2.id AS c2__id, c2.author AS c2__author, c2.content AS c2__content, c2.lang AS c2__lang FROM citation c INNER JOIN citation_translation c2 ON c.id = c2.id WHERE c.id IN ('1') AND (c2.lang = ? AND c2.content != '') ORDER BY RAND() - (fr)
+May 05 20:41:53 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/citation/templates/_citation.php"
+May 05 20:41:53 symfony [info] {main} Call "news->executeNews()"
+May 05 20:41:53 symfony [info] {Doctrine_Connection_Statement} execute : SELECT n.id AS n__id, n.title AS n__title, n.content AS n__content, n.is_activated AS n__is_activated, n.language_id AS n__language_id, n.publication_date AS n__publication_date, n.comments_activated AS n__comments_activated, l.id AS l__id, l.name AS l__name, l.abbreviation AS l__abbreviation, l.flag AS l__flag, l.is_activated AS l__is_activated, l.is_default AS l__is_default, l.created_at AS l__created_at, l.updated_at AS l__updated_at FROM news n LEFT JOIN language l ON n.language_id = l.id WHERE (n.publication_date < NOW() AND n.is_activated = ? AND l.abbreviation = ?) ORDER BY n.publication_date DESC LIMIT 3 - (1, fr)
+May 05 20:41:53 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/news/templates/_news.php"
+May 05 20:41:53 symfony [info] {main} Call "guestbook->executeGuestbook()"
+May 05 20:41:53 symfony [info] {Doctrine_Connection_Statement} execute : SELECT g.id AS g__id, g.content AS g__content, g.is_validated AS g__is_validated, g.language_id AS g__language_id, g.created_at AS g__created_at, g.updated_at AS g__updated_at, l.id AS l__id, l.name AS l__name, l.abbreviation AS l__abbreviation, l.flag AS l__flag, l.is_activated AS l__is_activated, l.is_default AS l__is_default, l.created_at AS l__created_at, l.updated_at AS l__updated_at FROM guestbook g INNER JOIN language l ON g.language_id = l.id WHERE (l.abbreviation = ? AND g.is_validated = ?) ORDER BY RAND() LIMIT 1 - (fr, 1)
+May 05 20:41:53 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/guestbook/templates/_guestbook.php"
+May 05 20:41:53 symfony [info] {sfPHPView} Decorate content with "C:\wamp\www\MA1IG\apps\frontend\templates/layout.php"
+May 05 20:41:53 symfony [info] {sfPHPView} Render "C:\wamp\www\MA1IG\apps\frontend\templates/layout.php"
+May 05 20:41:53 symfony [info] {main} Get slot "title"
+May 05 20:41:53 symfony [info] {main} Get slot "title"
+May 05 20:41:53 symfony [info] {main} Call "login->executeLogin()"
+May 05 20:41:53 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/login/templates/_login.php"
+May 05 20:41:53 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.person_id AS s__person_id, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.id = ?) LIMIT 1 - (3)
+May 05 20:41:53 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.first_name AS p__first_name, p.last_name AS p__last_name, p.email_address AS p__email_address, p.corespondance_id AS p__corespondance_id FROM person p WHERE (p.id = ?) - (3)
+May 05 20:41:53 symfony [info] {main} Call "sfGuardAuth->executeSignin_form()"
+May 05 20:41:53 symfony [info] {sfPartialView} Render "C:/wamp/www/MA1IG/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+May 05 20:41:53 symfony [info] {main} Call "counter->executeCounter()"
+May 05 20:41:53 symfony [info] {Doctrine_Connection_Statement} execute : SELECT DISTINCT c3.id FROM counter c3 INNER JOIN counter_translation c4 ON c3.id = c4.id WHERE c4.lang = ? ORDER BY c3.initial_date ASC LIMIT 1 - (fr)
+May 05 20:41:53 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.initial_number AS c__initial_number, c2.id AS c2__id, c2.lang AS c2__lang, c2.slogan_part1 AS c2__slogan_part1, c2.slogan_part2 AS c2__slogan_part2, c2.donation_text AS c2__donation_text, FLOOR(c.initial_number + TIMESTAMPDIFF(SECOND, c.initial_date, NOW())*c.objective_number/TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))) AS c__0, FLOOR((1 - TIMESTAMPDIFF(SECOND, c.initial_date, NOW())*c.objective_number/TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH)) + FLOOR(TIMESTAMPDIFF(SECOND, c.initial_date, NOW())*c.objective_number/TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))))*(1000*TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))/c.objective_number)) AS c__1, FLOOR(1000*TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))/c.objective_number) AS c__2 FROM counter c INNER JOIN counter_translation c2 ON c.id = c2.id WHERE c.id IN ('1') AND (c2.lang = ?) ORDER BY c.initial_date ASC - (fr)
+May 05 20:41:53 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/counter/templates/_counter.php"
+May 05 20:41:53 symfony [info] {main} Call "menu->executeMenu()"
+May 05 20:41:53 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.position AS c__position, c.is_activated AS c__is_activated, c.created_at AS c__created_at, c.updated_at AS c__updated_at FROM category c WHERE (c.is_activated = ?) ORDER BY c.position ASC - (1)
+May 05 20:41:53 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.position AS s__position, s.publication_date AS s__publication_date, s.category_id AS s__category_id, s.created_at AS s__created_at, s.updated_at AS s__updated_at, s2.id AS s2__id, s2.menu_title AS s2__menu_title, s2.content AS s2__content, s2.is_activated AS s2__is_activated, s2.title AS s2__title, s2.lang AS s2__lang FROM static_page s LEFT JOIN static_page_translation s2 ON s.id = s2.id WHERE (s2.is_activated = ? AND s.publication_date <= ? AND s2.lang = ?) - (1, 2011-05-05 20:41:53, fr)
+May 05 20:41:53 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.position AS d__position, d.publication_date AS d__publication_date, d.category_id AS d__category_id, d.controller AS d__controller, d.action AS d__action, d.boolean_configuation_id AS d__boolean_configuation_id, d.created_at AS d__created_at, d.updated_at AS d__updated_at, c.id AS c__id, c.main AS c__main, c.name AS c__name, c.description AS c__description, c.configuration_id AS c__configuration_id, c.type AS c__type, c.is_kernel AS c__is_kernel, c.is_activated AS c__is_activated, c.value AS c__value FROM dynamic_page d LEFT JOIN configuration c ON d.boolean_configuation_id = c.id AND c.type = 1 WHERE (c.is_activated = ?) - (1)
+May 05 20:41:53 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/menu/templates/_menu.php"
+May 05 20:41:53 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.name AS c__name, c.lang AS c__lang FROM category_translation c WHERE (c.id IN (?)) - (4)
+May 05 20:41:54 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (3)
+May 05 20:41:54 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.name AS c__name, c.lang AS c__lang FROM category_translation c WHERE (c.id IN (?)) - (7)
+May 05 20:41:54 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (1)
+May 05 20:41:54 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (2)
+May 05 20:41:54 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/fb_page/templates/_fb_page.php"
+May 05 20:41:54 symfony [info] {main} Call "donenligne->executeShow()"
+May 05 20:41:54 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/donenligne/templates/_show.php"
+May 05 20:41:54 symfony [info] {main} Call "language->executeLanguage()"
+May 05 20:41:54 symfony [info] {Doctrine_Connection_Statement} execute : SELECT l.id AS l__id, l.name AS l__name, l.abbreviation AS l__abbreviation, l.flag AS l__flag, l.is_activated AS l__is_activated, l.is_default AS l__is_default, l.created_at AS l__created_at, l.updated_at AS l__updated_at FROM language l WHERE (l.is_activated = ?) - (1)
+May 05 20:41:54 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/language/templates/_language.php"
+May 05 20:41:54 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+May 05 20:41:54 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+May 05 20:41:54 symfony [info] {sfWebDebugLogger} Configuration 1391.31 ms (19)
+May 05 20:41:54 symfony [info] {sfWebDebugLogger} Factories 434.53 ms (1)
+May 05 20:41:54 symfony [info] {sfWebDebugLogger} Action "page/index" 0.36 ms (1)
+May 05 20:41:54 symfony [info] {sfWebDebugLogger} View "Success" for "page/index" 1432.49 ms (1)
+May 05 20:41:54 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.31 ms (19)
+May 05 20:41:54 symfony [info] {sfWebDebugLogger} Component "citation/citation" 547.11 ms (1)
+May 05 20:41:54 symfony [info] {sfWebDebugLogger} Partial "citation/_citation" 9.93 ms (1)
+May 05 20:41:54 symfony [info] {sfWebDebugLogger} Component "news/news" 44.80 ms (1)
+May 05 20:41:54 symfony [info] {sfWebDebugLogger} Partial "news/_news" 29.48 ms (1)
+May 05 20:41:54 symfony [info] {sfWebDebugLogger} Component "guestbook/guestbook" 40.88 ms (1)
+May 05 20:41:54 symfony [info] {sfWebDebugLogger} Partial "guestbook/_guestbook" 6.22 ms (1)
+May 05 20:41:54 symfony [info] {sfWebDebugLogger} Component "login/login" 0.08 ms (1)
+May 05 20:41:54 symfony [info] {sfWebDebugLogger} Partial "login/_login" 45.11 ms (1)
+May 05 20:41:54 symfony [info] {sfWebDebugLogger} Component "sfGuardAuth/signin_form" 14.96 ms (1)
+May 05 20:41:54 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 9.05 ms (1)
+May 05 20:41:54 symfony [info] {sfWebDebugLogger} Component "counter/counter" 71.17 ms (1)
+May 05 20:41:54 symfony [info] {sfWebDebugLogger} Partial "counter/_counter" 9.94 ms (1)
+May 05 20:41:54 symfony [info] {sfWebDebugLogger} Component "menu/menu" 102.73 ms (1)
+May 05 20:41:54 symfony [info] {sfWebDebugLogger} Partial "menu/_menu" 103.50 ms (1)
+May 05 20:41:54 symfony [info] {sfWebDebugLogger} Partial "fb_page/_fb_page" 1.86 ms (1)
+May 05 20:41:54 symfony [info] {sfWebDebugLogger} Component "donenligne/show" 5.26 ms (1)
+May 05 20:41:54 symfony [info] {sfWebDebugLogger} Partial "donenligne/_show" 5.80 ms (1)
+May 05 20:41:54 symfony [info] {sfWebDebugLogger} Component "language/language" 41.99 ms (1)
+May 05 20:41:54 symfony [info] {sfWebDebugLogger} Partial "language/_language" 7.58 ms (1)
+May 05 20:41:54 symfony [info] {sfWebResponse} Send content (108527 o)
+May 05 20:43:16 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+May 05 20:43:16 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+May 05 20:43:16 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_register" (/guard/register)
+May 05 20:43:16 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_forgot_password" (/guard/forgot_password)
+May 05 20:43:16 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_forgot_password_change" (/guard/forgot_password/:unique_key)
+May 05 20:43:16 symfony [info] {sfPatternRouting} Match route "localized_homepage" (/:sf_culture/) for /fr/ with parameters array (  'module' => 'page',  'action' => 'index',  'sf_culture' => 'fr',)
+May 05 20:43:16 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 05 20:43:16 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 05 20:43:16 symfony [info] {pageActions} Call "pageActions->executeIndex()"
+May 05 20:43:16 symfony [info] {sfPHPView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/page/templates/indexSuccess.php"
+May 05 20:43:16 symfony [info] {main} Set slot "title"
+May 05 20:43:16 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+May 05 20:43:16 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.id AS c__id, c.main AS c__main, c.name AS c__name, c.description AS c__description, c.configuration_id AS c__configuration_id, c.type AS c__type, c.is_kernel AS c__is_kernel, c.is_activated AS c__is_activated, c.value AS c__value FROM configuration c - ()
+May 05 20:43:16 symfony [info] {main} Call "citation->executeCitation()"
+May 05 20:43:17 symfony [info] {Doctrine_Connection_Statement} execute : SELECT DISTINCT c3.id FROM citation c3 INNER JOIN citation_translation c4 ON c3.id = c4.id WHERE c4.lang = ? AND c4.content != '' ORDER BY RAND() LIMIT 1 - (fr)
+May 05 20:43:17 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c2.id AS c2__id, c2.author AS c2__author, c2.content AS c2__content, c2.lang AS c2__lang FROM citation c INNER JOIN citation_translation c2 ON c.id = c2.id WHERE c.id IN ('3') AND (c2.lang = ? AND c2.content != '') ORDER BY RAND() - (fr)
+May 05 20:43:17 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/citation/templates/_citation.php"
+May 05 20:43:17 symfony [info] {main} Call "news->executeNews()"
+May 05 20:43:17 symfony [info] {Doctrine_Connection_Statement} execute : SELECT n.id AS n__id, n.title AS n__title, n.content AS n__content, n.is_activated AS n__is_activated, n.language_id AS n__language_id, n.publication_date AS n__publication_date, n.comments_activated AS n__comments_activated, l.id AS l__id, l.name AS l__name, l.abbreviation AS l__abbreviation, l.flag AS l__flag, l.is_activated AS l__is_activated, l.is_default AS l__is_default, l.created_at AS l__created_at, l.updated_at AS l__updated_at FROM news n LEFT JOIN language l ON n.language_id = l.id WHERE (n.publication_date < NOW() AND n.is_activated = ? AND l.abbreviation = ?) ORDER BY n.publication_date DESC LIMIT 3 - (1, fr)
+May 05 20:43:17 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/news/templates/_news.php"
+May 05 20:43:17 symfony [info] {main} Call "guestbook->executeGuestbook()"
+May 05 20:43:17 symfony [info] {Doctrine_Connection_Statement} execute : SELECT g.id AS g__id, g.content AS g__content, g.is_validated AS g__is_validated, g.language_id AS g__language_id, g.created_at AS g__created_at, g.updated_at AS g__updated_at, l.id AS l__id, l.name AS l__name, l.abbreviation AS l__abbreviation, l.flag AS l__flag, l.is_activated AS l__is_activated, l.is_default AS l__is_default, l.created_at AS l__created_at, l.updated_at AS l__updated_at FROM guestbook g INNER JOIN language l ON g.language_id = l.id WHERE (l.abbreviation = ? AND g.is_validated = ?) ORDER BY RAND() LIMIT 1 - (fr, 1)
+May 05 20:43:17 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/guestbook/templates/_guestbook.php"
+May 05 20:43:17 symfony [info] {sfPHPView} Decorate content with "C:\wamp\www\MA1IG\apps\frontend\templates/layout.php"
+May 05 20:43:17 symfony [info] {sfPHPView} Render "C:\wamp\www\MA1IG\apps\frontend\templates/layout.php"
+May 05 20:43:17 symfony [info] {main} Get slot "title"
+May 05 20:43:17 symfony [info] {main} Get slot "title"
+May 05 20:43:17 symfony [info] {main} Call "login->executeLogin()"
+May 05 20:43:17 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/login/templates/_login.php"
+May 05 20:43:17 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.person_id AS s__person_id, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.id = ?) LIMIT 1 - (3)
+May 05 20:43:17 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.first_name AS p__first_name, p.last_name AS p__last_name, p.email_address AS p__email_address, p.corespondance_id AS p__corespondance_id FROM person p WHERE (p.id = ?) - (3)
+May 05 20:43:17 symfony [info] {main} Call "sfGuardAuth->executeSignin_form()"
+May 05 20:43:17 symfony [info] {sfPartialView} Render "C:/wamp/www/MA1IG/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+May 05 20:43:17 symfony [info] {main} Call "counter->executeCounter()"
+May 05 20:43:17 symfony [info] {Doctrine_Connection_Statement} execute : SELECT DISTINCT c3.id FROM counter c3 INNER JOIN counter_translation c4 ON c3.id = c4.id WHERE c4.lang = ? ORDER BY c3.initial_date ASC LIMIT 1 - (fr)
+May 05 20:43:17 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.initial_number AS c__initial_number, c2.id AS c2__id, c2.lang AS c2__lang, c2.slogan_part1 AS c2__slogan_part1, c2.slogan_part2 AS c2__slogan_part2, c2.donation_text AS c2__donation_text, FLOOR(c.initial_number + TIMESTAMPDIFF(SECOND, c.initial_date, NOW())*c.objective_number/TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))) AS c__0, FLOOR((1 - TIMESTAMPDIFF(SECOND, c.initial_date, NOW())*c.objective_number/TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH)) + FLOOR(TIMESTAMPDIFF(SECOND, c.initial_date, NOW())*c.objective_number/TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))))*(1000*TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))/c.objective_number)) AS c__1, FLOOR(1000*TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))/c.objective_number) AS c__2 FROM counter c INNER JOIN counter_translation c2 ON c.id = c2.id WHERE c.id IN ('1') AND (c2.lang = ?) ORDER BY c.initial_date ASC - (fr)
+May 05 20:43:17 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/counter/templates/_counter.php"
+May 05 20:43:17 symfony [info] {main} Call "menu->executeMenu()"
+May 05 20:43:17 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.position AS c__position, c.is_activated AS c__is_activated, c.created_at AS c__created_at, c.updated_at AS c__updated_at FROM category c WHERE (c.is_activated = ?) ORDER BY c.position ASC - (1)
+May 05 20:43:17 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.position AS s__position, s.publication_date AS s__publication_date, s.category_id AS s__category_id, s.created_at AS s__created_at, s.updated_at AS s__updated_at, s2.id AS s2__id, s2.menu_title AS s2__menu_title, s2.content AS s2__content, s2.is_activated AS s2__is_activated, s2.title AS s2__title, s2.lang AS s2__lang FROM static_page s LEFT JOIN static_page_translation s2 ON s.id = s2.id WHERE (s2.is_activated = ? AND s.publication_date <= ? AND s2.lang = ?) - (1, 2011-05-05 20:43:17, fr)
+May 05 20:43:17 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.position AS d__position, d.publication_date AS d__publication_date, d.category_id AS d__category_id, d.controller AS d__controller, d.action AS d__action, d.boolean_configuation_id AS d__boolean_configuation_id, d.created_at AS d__created_at, d.updated_at AS d__updated_at, c.id AS c__id, c.main AS c__main, c.name AS c__name, c.description AS c__description, c.configuration_id AS c__configuration_id, c.type AS c__type, c.is_kernel AS c__is_kernel, c.is_activated AS c__is_activated, c.value AS c__value FROM dynamic_page d LEFT JOIN configuration c ON d.boolean_configuation_id = c.id AND c.type = 1 WHERE (c.is_activated = ?) - (1)
+May 05 20:43:17 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/menu/templates/_menu.php"
+May 05 20:43:17 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.name AS c__name, c.lang AS c__lang FROM category_translation c WHERE (c.id IN (?)) - (4)
+May 05 20:43:17 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (3)
+May 05 20:43:17 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.name AS c__name, c.lang AS c__lang FROM category_translation c WHERE (c.id IN (?)) - (7)
+May 05 20:43:17 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (1)
+May 05 20:43:17 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (2)
+May 05 20:43:17 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/fb_page/templates/_fb_page.php"
+May 05 20:43:17 symfony [info] {main} Call "donenligne->executeShow()"
+May 05 20:43:17 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/donenligne/templates/_show.php"
+May 05 20:43:17 symfony [info] {main} Call "language->executeLanguage()"
+May 05 20:43:17 symfony [info] {Doctrine_Connection_Statement} execute : SELECT l.id AS l__id, l.name AS l__name, l.abbreviation AS l__abbreviation, l.flag AS l__flag, l.is_activated AS l__is_activated, l.is_default AS l__is_default, l.created_at AS l__created_at, l.updated_at AS l__updated_at FROM language l WHERE (l.is_activated = ?) - (1)
+May 05 20:43:17 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/language/templates/_language.php"
+May 05 20:43:17 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+May 05 20:43:17 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+May 05 20:43:17 symfony [info] {sfWebDebugLogger} Configuration 509.87 ms (20)
+May 05 20:43:17 symfony [info] {sfWebDebugLogger} Factories 86.64 ms (1)
+May 05 20:43:17 symfony [info] {sfWebDebugLogger} Action "page/index" 0.36 ms (1)
+May 05 20:43:17 symfony [info] {sfWebDebugLogger} View "Success" for "page/index" 1340.09 ms (1)
+May 05 20:43:17 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.34 ms (19)
+May 05 20:43:17 symfony [info] {sfWebDebugLogger} Component "citation/citation" 569.81 ms (1)
+May 05 20:43:17 symfony [info] {sfWebDebugLogger} Partial "citation/_citation" 9.41 ms (1)
+May 05 20:43:17 symfony [info] {sfWebDebugLogger} Component "news/news" 46.78 ms (1)
+May 05 20:43:17 symfony [info] {sfWebDebugLogger} Partial "news/_news" 30.98 ms (1)
+May 05 20:43:17 symfony [info] {sfWebDebugLogger} Component "guestbook/guestbook" 33.07 ms (1)
+May 05 20:43:17 symfony [info] {sfWebDebugLogger} Partial "guestbook/_guestbook" 5.09 ms (1)
+May 05 20:43:17 symfony [info] {sfWebDebugLogger} Component "login/login" 0.07 ms (1)
+May 05 20:43:17 symfony [info] {sfWebDebugLogger} Partial "login/_login" 39.01 ms (1)
+May 05 20:43:17 symfony [info] {sfWebDebugLogger} Component "sfGuardAuth/signin_form" 13.86 ms (1)
+May 05 20:43:17 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 9.15 ms (1)
+May 05 20:43:17 symfony [info] {sfWebDebugLogger} Component "counter/counter" 71.16 ms (1)
+May 05 20:43:17 symfony [info] {sfWebDebugLogger} Partial "counter/_counter" 10.52 ms (1)
+May 05 20:43:17 symfony [info] {sfWebDebugLogger} Component "menu/menu" 100.04 ms (1)
+May 05 20:43:17 symfony [info] {sfWebDebugLogger} Partial "menu/_menu" 103.29 ms (1)
+May 05 20:43:17 symfony [info] {sfWebDebugLogger} Partial "fb_page/_fb_page" 2.27 ms (1)
+May 05 20:43:17 symfony [info] {sfWebDebugLogger} Component "donenligne/show" 4.89 ms (1)
+May 05 20:43:17 symfony [info] {sfWebDebugLogger} Partial "donenligne/_show" 5.61 ms (1)
+May 05 20:43:17 symfony [info] {sfWebDebugLogger} Component "language/language" 37.17 ms (1)
+May 05 20:43:17 symfony [info] {sfWebDebugLogger} Partial "language/_language" 7.67 ms (1)
+May 05 20:43:17 symfony [info] {sfWebResponse} Send content (108490 o)

@@ -20,7 +20,7 @@
                     <div class="head_memberinfo_logo">
                         <span><?php
                 if (Doctrine_Core::getTable('BooleanConfiguration')->createQuery()->where('main = "contacts"')->fetchOne()->getIsActivated()) {
-                    $numberOfMessage = MessageTable::numberOfNewMessage();
+                    $numberOfMessage = MessageTable::numberOfNewMessage($sf_user->getPerson()->getId());
                     echo $numberOfMessage;
                 }
             ?></span>

@@ -10,8 +10,8 @@
  * @property string $email_address
  * @property integer $corespondance_id
  * @property Corespondance $Corespondance
- * @property sfGuardUser $Person
- * @property Doctrine_Collection $forwardTo
+ * @property sfGuardUser $sfGuardUser
+ * @property Doctrine_Collection $Message
  * @property Doctrine_Collection $payment
  * @property Doctrine_Collection $address
  * 
@@ -20,8 +20,8 @@
  * @method string              getEmailAddress()     Returns the current record's "email_address" value
  * @method integer             getCorespondanceId()  Returns the current record's "corespondance_id" value
  * @method Corespondance       getCorespondance()    Returns the current record's "Corespondance" value
- * @method sfGuardUser         getPerson()           Returns the current record's "Person" value
- * @method Doctrine_Collection getForwardTo()        Returns the current record's "forwardTo" collection
+ * @method sfGuardUser         getSfGuardUser()      Returns the current record's "sfGuardUser" value
+ * @method Doctrine_Collection getMessage()          Returns the current record's "Message" collection
  * @method Doctrine_Collection getPayment()          Returns the current record's "payment" collection
  * @method Doctrine_Collection getAddress()          Returns the current record's "address" collection
  * @method Person              setFirstName()        Sets the current record's "first_name" value
@@ -29,8 +29,8 @@
  * @method Person              setEmailAddress()     Sets the current record's "email_address" value
  * @method Person              setCorespondanceId()  Sets the current record's "corespondance_id" value
  * @method Person              setCorespondance()    Sets the current record's "Corespondance" value
- * @method Person              setPerson()           Sets the current record's "Person" value
- * @method Person              setForwardTo()        Sets the current record's "forwardTo" collection
+ * @method Person              setSfGuardUser()      Sets the current record's "sfGuardUser" value
+ * @method Person              setMessage()          Sets the current record's "Message" collection
  * @method Person              setPayment()          Sets the current record's "payment" collection
  * @method Person              setAddress()          Sets the current record's "address" collection
  * 
@@ -72,13 +72,13 @@ abstract class BasePerson extends sfDoctrineRecord
              'local' => 'corespondance_id',
              'foreign' => 'id'));
 
-        $this->hasOne('sfGuardUser as Person', array(
+        $this->hasOne('sfGuardUser', array(
              'local' => 'id',
              'foreign' => 'person_id'));
 
-        $this->hasMany('Message as forwardTo', array(
+        $this->hasMany('Message', array(
              'local' => 'id',
-             'foreign' => 'forward_to_id'));
+             'foreign' => 'sender_id'));
 
         $this->hasMany('payment', array(
              'local' => 'id',

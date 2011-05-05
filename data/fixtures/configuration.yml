@@ -10,6 +10,7 @@ BooleanConfiguration:
     description: Voulez-vous être contacté pour prévenir de nouveaux messages ?
     is_activated: true
     BooleanConfiguration: ContactAvances
+
   News:
     main: news
     name: Actualités
@@ -113,6 +114,11 @@ NumericConfiguration:
     name: Delais en jour avant supression automatique des messages non-enregistrés
     BooleanConfiguration: ContactAvances
     value: 100
+  PersoneDeContactParDefaultMessagerie:
+    main: contacts_default_person_id
+    name: Id de la persone a qui est destiné tous les mails
+    BooleanConfiguration: ContactAvances
+    value: 1
 
 StringConfiguration:
   ContactAvancesAdresseMail:

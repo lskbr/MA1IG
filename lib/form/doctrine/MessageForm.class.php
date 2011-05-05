@@ -20,8 +20,8 @@ class MessageForm extends BaseMessageForm {
         parent::__construct($object, $options, $CSRFSecret);
 
         if (isset($embed) && $embed) {
-            $this->embedRelation('Person');
-            $this->useFields(array('Person', 'category_id', 'text'));
+            $this->embedRelation('Sender');
+            $this->useFields(array('Sender', 'category_id', 'text'));
         } else {
             $this->useFields(array('category_id', 'text'));
         }
@@ -30,7 +30,9 @@ class MessageForm extends BaseMessageForm {
     public function configure() {
 
         $this->setWidget('text', new sfWidgetFormTextarea());
-        $this->setValidator('text', new sfValidatorString(array('min_length' => '50')));
+        $this->setValidator('text', new sfValidatorString(array('min_length' => '10')));
     }
+
+
 
 }

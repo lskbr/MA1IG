@@ -90,7 +90,7 @@ sfGuardUser:
       foreign: permission_id
       refClass: sfGuardUserPermission
       foreignAlias: Users
-    Person: {local: person_id, foreign: id, foreignAlias: Person, foreignType: one}
+    Person: {local: person_id, foreign: id, foreignType: one, class: Person}
 
 
 

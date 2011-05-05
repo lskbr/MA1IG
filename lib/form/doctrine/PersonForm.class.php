@@ -18,13 +18,17 @@ class PersonForm extends BasePersonForm {
         ));
 
         $this->validatorSchema['email_address'] = new sfValidatorAnd(array(
-            $this->validatorSchema['email_address'],
-            new sfValidatorEmail()
-        ));
+                    $this->validatorSchema['email_address'],
+                    new sfValidatorEmail()
+                ));
 
         $this->useFields(array(
             'first_name', 'last_name', 'email_address'
         ));
+
+        $this->validatorSchema->setPostValidator(
+                new sfValidatorDoctrineUnique(array('model' => 'Person', 'column' => array('email_address')), array('invalid'=>'Cette adresse email existe déjà dans notre base de donnée'))
+        );
     }
 
 }

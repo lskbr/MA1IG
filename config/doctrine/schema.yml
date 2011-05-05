@@ -89,13 +89,13 @@ Message: #Laurent
     sender_id: {type: integer}
     category_id: {type: integer, notnull: true}
     folder_id: {type: integer, notnull: true, default: 1}
-    forward_to_id : {type: integer}
+    forward_to_id : {type: integer, notnull: true}
   relations:
     Comment: {local: comment_id, foreign: id, alias: comment, foreignType: one}
-    Person: {local: sender_id, foreign: id, foreignAlias: sender}
+    Sender: {class: Person, local: sender_id, foreign: id}
     FaqCategory: {local: category_id, foreign: id, alias: faqCategory, foreignType: one}
     Folder: {local: folder_id, foreign: id}
-    Person: {local: forward_to_id, foreign: id, foreignAlias: forwardTo}
+    ForwardTo: {local: forward_to_id, foreign: id, class: Person}
 
 
 Person: #Laurent

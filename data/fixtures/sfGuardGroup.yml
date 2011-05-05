@@ -4,8 +4,9 @@ sfGuardGroup:
   Administrateur:
     name: Administrateur
     description: Possède toutes les autorisations et tous les accès
-    Permissions: [AccesAdmin, DeleteNewsComments]
+    Permissions: [standartUser, AccesAdmin, DeleteNewsComments]
 
   Utilisateur:
     name: Utilisateur
     description: Utilisateur loggé. Possède l'accès a son espace membre ainsi que la possibilité de gérer ses données personelles
+    Permissions: [standartUser]

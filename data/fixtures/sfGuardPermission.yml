@@ -7,3 +7,6 @@ sfGuardPermission:
   DeleteNewsComments:
     name: DeleteNewsComments
     description: Permet de supprimer un commentaire sur les actualités
+  standartUser:
+    name: StandartUser
+    description: Droits d'un utilisateur classique

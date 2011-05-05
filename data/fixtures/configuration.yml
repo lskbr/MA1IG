@@ -1,9 +1,23 @@
 BooleanConfiguration:
+  usersManagement:
+    main: usersmanagement
+    name: Gestion des utilisateurs
+    description: Permet des gérés les diférérents utilisateurs du site internet
+    is_activated: true
+    is_kernel: true
   ContactAvances:
     main: contacts
     name: Contacts avancés
     description: Permet aux utilisateurs de vous contacter via le site
     is_activated: true
+
+  Category:
+    main: categories
+    name: Gestion des catégories
+    description: Permet la gestion des catégories de manière mutlilingue et transparente pour les utilisateurs
+    is_activated: true
+    is_kernel: true
+    
   ContactsAvancesAlertesMail:
     main: contacts_alerte
     name: Alerte mail

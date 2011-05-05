@@ -1,0 +1,1 @@
+<?php echo $newsletter->getNews()->getTitle() ?>

@@ -23,6 +23,17 @@ abstract class PluginsfGuardUser extends BasesfGuardUser
       return (string)$this->getPerson()->getEmailAddress();
   }
 
+  public function getEmailAddress(){
+      return $this->getEmail();
+  }
+
+  public function getFirstName(){
+      return (string)$this->getPerson()->getFirstName();
+  }
+
+  public function getLastName(){
+      return (string)$this->getPerson()->getLastName();
+  }
   /**
    * Returns the string representation of the object: "Full Name (username)"
    *

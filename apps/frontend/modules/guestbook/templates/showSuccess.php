@@ -1,0 +1,2 @@
+<h1><?php echo __('Livre d\'or :') ?></h1><br/>
+<p><?php echo __('Votre message a bien été posté. Pour éviter des messages non conformes à l\'esprit du site, votre message sera rapidement validé par un membre de l\'équipe avant de pouvoir y apparaître.'); ?></p>

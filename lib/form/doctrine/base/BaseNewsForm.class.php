@@ -26,7 +26,7 @@ abstract class BaseNewsForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'                 => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'title'              => new sfValidatorPass(array('required' => false)),
+      'title'              => new sfValidatorPass(),
       'content'            => new sfValidatorPass(array('required' => false)),
       'is_activated'       => new sfValidatorBoolean(array('required' => false)),
       'language_id'        => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Language'))),

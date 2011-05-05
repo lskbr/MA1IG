@@ -13,19 +13,20 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
+      fields:
+        language_id:
+          label: Langue
+        flag:
+          label: Langue
+        title:
+          label: Titre
+        publication_date:
+          label: Date de publication
+        is_activated:
+          label: Status
       list:
         title: Liste des news :
         display: [_flag, =title, _publication_date, _is_activated]
-        fields:
-          flag:
-            label: Langue
-          title:
-            label: Titre
-          publication_date:
-            label: Date de publication
-          is_activated:
-            label: Status
         batch_actions: {}
       filter:
         display: [language_id, title]

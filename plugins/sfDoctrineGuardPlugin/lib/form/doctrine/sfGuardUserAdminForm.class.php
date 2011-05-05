@@ -15,6 +15,10 @@ class sfGuardUserAdminForm extends BasesfGuardUserAdminForm {
      */
     public function configure() {
         $this->embedRelation("Person");
+        $this->embedRelation("Groups");
+        $this->useFields(array(
+            'Person', 'username', 'password', 'password_again', 'is_active', 'groups_list'
+        ));
     }
 
 }

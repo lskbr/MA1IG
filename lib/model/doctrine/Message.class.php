@@ -16,19 +16,14 @@ class Message extends BaseMessage {
         if ($this->getCreatedAt() == null) {
             $this->setCreatedAt(date('Y-m-d H:i:s'));
         }
+        if($this->getForwardToId() == null){
+            $this->setForwardToId(config::getInstance()->get('contacts_default_person_id'));
+        }
         return parent::save($conn);
     }
 
     public function getSenderName() {
         return $this->getSender()->getFirstName() . " " . $this->getSender()->getLastName();
-    }
-
-    public function getSender(){
-        return Doctrine::getTable('Person')->createQuery()->where('id = ?',$this->getSenderId())->fetchOne();
-    }
-
-    public function setSender($sender){
-        $this->setSenderId($sender->getId());
     }
 
     public function readed($valeur) {

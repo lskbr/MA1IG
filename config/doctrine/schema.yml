@@ -183,7 +183,7 @@ Guestbook:
 
 News:
   columns:
-    title: {type: varchar(255)}
+    title: {type: varchar(255), notnull: true}
     content: {type: text}
     is_activated: {type: boolean, notnull: true, default: false}
     language_id: {type: integer, notnull: true}

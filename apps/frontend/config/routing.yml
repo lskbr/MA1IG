@@ -157,8 +157,10 @@ subscribe:
   url: /:sf_culture/subscribe
   param: { module: subscription, action: create}
 
-unsuscribe:
-  url: /:sf_culture/unsuscribe/:email/:hash
+unsubscribe:
+  url: /unsubscribe/:id/:hash
+  class:   sfDoctrineRoute
+  options: { model: Subscriber, type: object }
   param: { module: subscription, action: delete}
 
 default_index:

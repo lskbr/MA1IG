@@ -17,10 +17,10 @@ generator:
       list:
         title: Gestion du compteur d'arbres
         batch_actions: {}
-        display: [=initial_date,=initial_number,=period,=objective_number]
+        display: [_initial_date,=initial_number,=period,=objective_number]
         fields:
           initial_date:
-            label: Date initial
+            label: Date initiale
             date_format: dd-MMMM-yyyy
           initial_number:
             label: Nombre d'arbres initial
@@ -36,7 +36,7 @@ generator:
         display: [=initial_date,=initial_number,=period,=objective_number]
         fields:
           initial_date:
-            label: Date initial
+            label: Date initiale
             date_format: dd-MMMM-yyyy
           initial_number:
             label: Nombre d'arbres initial
@@ -46,10 +46,10 @@ generator:
             label: Objectif
       new:
         title: Gestion du compteur d'arbres
-        display: [=initial_date,=initial_number,=period,=objective_number]
+        display: [initial_date,initial_number,period,objective_number]
         fields:
           initial_date:
-            label: Date initial
+            label: Date initiale
             date_format: dd-MMMM-yyyy
           initial_number:
             label: Nombre d'arbres initial

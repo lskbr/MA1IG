@@ -10,3 +10,10 @@ sf_guard_signin:
 sf_guard_logout:
   url:   /logout
   param: { module: sfGuardAuth, action: signout }
+
+
+unsubscribe:
+  url: /:sf_culture/unsubscribe/:id/:hash
+  class:   sfDoctrineRoute
+  options: { model: Subscriber, type: object }
+  param: { module: subscription, action: delete}

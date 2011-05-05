@@ -18,20 +18,7 @@
             <td><?php echo $form['password_again']->renderError() ?></td>
         </tr>
         <tr>
-            <th><?php echo $form['Person']['first_name']->renderLabel() ?></th>
-            <td><?php echo $form['Person']['first_name']->render() ?></td>
-            <td><?php echo $form['Person']['first_name']->renderError() ?></td>
-        </tr>
-        <tr>
-            <th><?php echo $form['Person']['last_name']->renderLabel() ?></th>
-            <td><?php echo $form['Person']['last_name']->render() ?></td>
-            <td><?php echo $form['Person']['last_name']->renderError() ?></td>
-        </tr>
-        <tr>
-            <th><?php echo $form['Person']['email_address']->renderLabel() ?></th>
-            <td><?php echo $form['Person']['email_address']->render() ?></td>
-            <td><?php echo $form['Person']['email_address']->renderError() ?></td>
-        </tr>
+            <th><?php echo $form['Person'];?></th>
         <tfoot>
             <tr>
                 <td colspan="3">

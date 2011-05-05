@@ -27,7 +27,7 @@ class PersonForm extends BasePersonForm {
         ));
 
         $this->validatorSchema->setPostValidator(
-                new sfValidatorDoctrineUnique(array('model' => 'Person', 'column' => array('email_address')), array('invalid'=>'Cette adresse email existe déjà dans notre base de donnée'))
+                new sfValidatorDoctrineUnique(array('model' => 'Person', 'column' => array('email_address')), array('invalid'=>'Veuillez vous connecter pour continuer'))
         );
     }
 

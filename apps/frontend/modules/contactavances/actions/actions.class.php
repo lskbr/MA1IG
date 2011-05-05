@@ -32,7 +32,7 @@ class contactavancesActions extends sfActions {
     public function executeCreate(sfWebRequest $request) {
         //echo var_dump($request);
         $sse = $request->getPostParameters();
-        if (isset($sse['message']['Sender']['email_address']) && !$this->getUser()->isAuthenticated() && Doctrine_Core::getTable('Person')->createQuery()->where('email_address = ?', $sse['message']['Sender']['email_address'])->leftJoin('sfGuardUser')->count() == 1) {
+        if (isset($sse['message']['Sender']['email_address']) && !$this->getUser()->isAuthenticated() && Doctrine_Query::create()->from('sfGuardUser')->where('person.email_address = ?', $sse['message']['Sender']['email_address'])->andWhere('sfGuardUser.person_id = person.id')->count() != 1) {
 
             $sender = Doctrine_Core::getTable('Person')->createQuery()->where('email_address = ?', $sse['message']['Sender']['email_address'])->fetchOne();
             $this->form = new MessageForm(null, null, null, false);
@@ -53,7 +53,17 @@ class contactavancesActions extends sfActions {
     }
 
     protected function processForm(sfWebRequest $request, sfForm $form, $sender) {
-        $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
+        if ($sender) {
+            foreach ($request->getParameter($form->getName()) as $key => $value) {
+                if ($key != 'Sender') {
+                    $data[$key] = $value;
+                }
+            }
+
+        } else {
+            $data = $request->getParameter($form->getName());
+        }
+        $form->bind($data, $request->getFiles($form->getName()));
         if ($form->isValid()) {
             $message = $form->save();
             if ($message) {

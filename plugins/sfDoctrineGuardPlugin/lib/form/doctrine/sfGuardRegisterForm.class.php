@@ -29,4 +29,18 @@ class sfGuardRegisterForm extends BasesfGuardRegisterForm {
         $this->embedRelation('Person');
     }
 
+    public function bind(array $taintedValues = null, array $taintedFiles = null, $existdeja = null) {
+        if ($existdeja) {
+            $this->useFields(array('username', 'password', 'password_again'));
+            $temp = $taintedValues;
+            $taintedValues = null;
+            foreach ($temp as $key => $value) {
+                if ($key != 'Person') {
+                    $taintedValues[$key] = $value;
+                }
+            }
+        }
+        parent::bind($taintedValues, $taintedFiles);
+    }
+
 }

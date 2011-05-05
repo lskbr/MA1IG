@@ -1,3 +1,12 @@
+newsletter:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Newsletter
+    module:               newsletter
+    prefix_path:          /newsletter
+    column:               id
+    with_wildcard_routes: true
+
 donenligne:
   class: sfDoctrineRouteCollection
   options:

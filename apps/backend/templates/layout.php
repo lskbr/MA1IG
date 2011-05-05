@@ -47,6 +47,7 @@
                             menu_item('Messagerie', 'contactavances', $sf_context, 'contacts');
                             menu_item('Donnations', 'donenligne', $sf_context, 'donenligne');
                             menu_item('Actualités', 'news', $sf_context, 'news');
+                            menu_item('Newsletter', 'newsletter', $sf_context);
                             menu_item('Langues', 'language', $sf_context);
                             menu_item('Configuration', 'configuration', $sf_context);
                             menu_item('Catégories', 'category', $sf_context);

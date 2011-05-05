@@ -63,7 +63,8 @@ class contactavancesActions extends autoContactavancesActions {
 
     private function executeSendMail(sfWebRequest $request) {
         $this->forward404Unless($message = Doctrine_Core::getTable('message')->find(array($request->getParameter('id'))), sprintf('Object message does not exist (%s).', $request->getParameter('id')));
-        $mail = $this->getMailer()->compose(array('info@grainedevie.seaflat.be' => 'Graine de Vie'), $message->getSender()->getEmailAddress(), 'RE: Graine de Vie', $request->getParameter('text'));
+        $tab = $request->getPostParameter('message');
+        $mail = $this->getMailer()->compose(array('info@grainedevie.seaflat.be' => 'Graine de Vie'), $message->getSender()->getEmailAddress(), 'RE: Graine de Vie', $tab['text']);
         $this->getMailer()->send($mail);
         $message->setReplyAt(date('Y-m-d H:i:s'));
         $message->save();

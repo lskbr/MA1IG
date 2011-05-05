@@ -207,7 +207,7 @@ NewsComments:
 
 Folder:
   columns:
-    name: {type: string(255), unique: true}
+    name: {type: string(255), unique: true, notnull: true}
 
 StandardSentence:
   columns:

@@ -13,25 +13,53 @@
 class Photo extends BasePhoto
 {
 
-public function getPhotoPage()
-{
-	$q = Doctrine_Query::create()
-		->from('photo p');
-	return ($q);
-}
+	//public static $PHOTODIR = "c:/ma1ig/web/uploads/photo/";
 
-public function save(Doctrine_Connection $conn = null)
-{
-	$fileName = $this->getUrl();
-	// Create the thumbnail
-    $thumbnail = new sfThumbnail(150, 150);
-    $thumbnail->loadFile(sfConfig::get('sf_upload_dir').'/photo/'.$fileName);
-    $thumbnail->save(sfConfig::get('sf_upload_dir').'/photo/thumbnail/'.$fileName);
-    /*$thumbnail2 = new sfThumbnail(1024, 768);
-    $thumbnail2->loadFile(sfConfig::get('sf_upload_dir').'/photo/'.$fileName);
-    $thumbnail2->save(sfConfig::get('sf_upload_dir').'/photo/thumbnailGrande/'.$fileName);*/
+	/*public function __construct()
+	{
+		parent::__construct();
+		if(!isset(Photo::$PHOTODIR))
+			Photo::$PHOTODIR = sfConfig::get('sf_upload_dir').'/photo/';
+	}*/
+	
+	public function getPhotoPage()
+	{
+		$q = Doctrine_Query::create()
+			->from('photo p');
+		return ($q);
+	}
 
-	return parent::save($conn);
-}
+	public function getPhotoThumbnailGrandeFolder()
+	{
+		return $this->getPhotoUploadFolder().'thumbnailGrande/';
+	}
+
+	public function getPhotoThumbnailFolder()
+	{
+		return $this->getPhotoUploadFolder().'thumbnail/';
+	}
+
+	public function getPhotoUploadFolder()
+	{
+		return sfConfig::get('sf_upload_dir').'/photo/';
+	}
+
+	public function create_thumbnail($filename, $directory, $height, $width)
+	{
+		$thumbnail = new sfThumbnail($width, $height);
+	    $thumbnail->loadFile($this->getPhotoUploadFolder().$filename);
+	    $thumbnail->save($directory.$filename);	
+	}
+
+	public function save(Doctrine_Connection $conn = null)
+	{
+		$filename = $this->getUrl();		
+		// Create the thumbnail
+		if(isset($filename)){
+			$this->create_thumbnail($filename, $this->getPhotoThumbnailFolder(), 150, 150);
+			$this->create_thumbnail($filename, $this->getPhotoThumbnailGrandeFolder(), 1024, 768);	    
+		}
+		return parent::save($conn);
+	}
 
 }

@@ -1,3 +1,29 @@
+newsletter:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Newsletter
+    module:               newsletter
+    prefix_path:          /newsletter
+    column:               id
+    with_wildcard_routes: true
+
+donenligne:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                payment
+    module:               donenligne
+    prefix_path:          /donenligne
+    column:               id
+    with_wildcard_routes: true
+payment:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                payment
+    module:               donenligne
+    prefix_path:          /donenligne
+    column:               id
+    with_wildcard_routes: true
+
 standard_sentence:
   class: sfDoctrineRouteCollection
   options:
@@ -182,4 +208,8 @@ sentences:
 homepage:
   url:   /
   param: { module: homepage, action: index }
+  
+multiplephoto:
+  url:   /multiplephoto
+  param: { module: multiplephoto, action: index }  
 

@@ -26,10 +26,6 @@ abstract class BaseStandardSentenceForm extends BaseFormDoctrine
       'title' => new sfValidatorString(array('max_length' => 255)),
     ));
 
-    $this->validatorSchema->setPostValidator(
-      new sfValidatorDoctrineUnique(array('model' => 'StandardSentence', 'column' => array('title')))
-    );
-
     $this->widgetSchema->setNameFormat('standard_sentence[%s]');
 
     $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);

@@ -42,3 +42,8 @@ all:
     param:
       cache_key_use_vary_headers: true
       cache_key_use_host_name:    true
+  storage:
+    class: mySessionStorage
+    param:
+      session_name: symfony
+      

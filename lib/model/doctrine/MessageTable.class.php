@@ -19,7 +19,11 @@ class MessageTable extends Doctrine_Table
 
     }
 
-    public static function numberOfNewMessage(){
-        return Doctrine_Core::getTable('Message')->createQuery()->where('read_at IS NULL')->count();
+    public static function numberOfNewMessage($myId){
+        return Doctrine_Core::getTable('Message')->createQuery()->where('reply_at IS NULL')->andWhere('forward_to_id = ?',$myId)->count();
+    }
+
+    public static function getMyMessage(){
+        return Doctrine_Core::getTable('Message')->createQuery()->execute();
     }
 }

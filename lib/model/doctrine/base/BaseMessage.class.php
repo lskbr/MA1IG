@@ -16,9 +16,10 @@
  * @property integer $folder_id
  * @property integer $forward_to_id
  * @property Comment $comment
- * @property Person $Person
+ * @property Person $Sender
  * @property FaqCategory $faqCategory
  * @property Folder $Folder
+ * @property Person $ForwardTo
  * 
  * @method text        getText()          Returns the current record's "text" value
  * @method boolean     getIsSaved()       Returns the current record's "is_saved" value
@@ -31,9 +32,10 @@
  * @method integer     getFolderId()      Returns the current record's "folder_id" value
  * @method integer     getForwardToId()   Returns the current record's "forward_to_id" value
  * @method Comment     getComment()       Returns the current record's "comment" value
- * @method Person      getPerson()        Returns the current record's "Person" value
+ * @method Person      getSender()        Returns the current record's "Sender" value
  * @method FaqCategory getFaqCategory()   Returns the current record's "faqCategory" value
  * @method Folder      getFolder()        Returns the current record's "Folder" value
+ * @method Person      getForwardTo()     Returns the current record's "ForwardTo" value
  * @method Message     setText()          Sets the current record's "text" value
  * @method Message     setIsSaved()       Sets the current record's "is_saved" value
  * @method Message     setReadAt()        Sets the current record's "read_at" value
@@ -45,9 +47,10 @@
  * @method Message     setFolderId()      Sets the current record's "folder_id" value
  * @method Message     setForwardToId()   Sets the current record's "forward_to_id" value
  * @method Message     setComment()       Sets the current record's "comment" value
- * @method Message     setPerson()        Sets the current record's "Person" value
+ * @method Message     setSender()        Sets the current record's "Sender" value
  * @method Message     setFaqCategory()   Sets the current record's "faqCategory" value
  * @method Message     setFolder()        Sets the current record's "Folder" value
+ * @method Message     setForwardTo()     Sets the current record's "ForwardTo" value
  * 
  * @package    grainedevie
  * @subpackage model
@@ -94,6 +97,7 @@ abstract class BaseMessage extends sfDoctrineRecord
              ));
         $this->hasColumn('forward_to_id', 'integer', null, array(
              'type' => 'integer',
+             'notnull' => true,
              ));
     }
 
@@ -104,8 +108,8 @@ abstract class BaseMessage extends sfDoctrineRecord
              'local' => 'comment_id',
              'foreign' => 'id'));
 
-        $this->hasOne('Person', array(
-             'local' => 'forward_to_id',
+        $this->hasOne('Person as Sender', array(
+             'local' => 'sender_id',
              'foreign' => 'id'));
 
         $this->hasOne('FaqCategory as faqCategory', array(
@@ -114,6 +118,10 @@ abstract class BaseMessage extends sfDoctrineRecord
 
         $this->hasOne('Folder', array(
              'local' => 'folder_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('Person as ForwardTo', array(
+             'local' => 'forward_to_id',
              'foreign' => 'id'));
     }
 }

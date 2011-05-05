@@ -10,10 +10,9 @@
  */
 class contactavancesActions extends sfActions {
 
-    public function executeIndex(sfWebRequest $request){
-        $this->executeIndex($request);
+    public function executeIndex(sfWebRequest $request) {
+        $this->executeNew($request);
         $this->setTemplate('new');
-
     }
 
     public function executeNew(sfWebRequest $request) {
@@ -31,10 +30,18 @@ class contactavancesActions extends sfActions {
     }
 
     public function executeCreate(sfWebRequest $request) {
+        //echo var_dump($request);
+        $sse = $request->getPostParameters();
+        if (isset($sse['message']['Sender']['email_address']) && !$this->getUser()->isAuthenticated() && Doctrine_Query::create()->from('sfGuardUser')->where('person.email_address = ?', $sse['message']['Sender']['email_address'])->andWhere('sfGuardUser.person_id = person.id')->count() != 1) {
 
-        $this->form = new MessageForm(null, null, null, !$this->getUser()->isAuthenticated());
+            $sender = Doctrine_Core::getTable('Person')->createQuery()->where('email_address = ?', $sse['message']['Sender']['email_address'])->fetchOne();
+            $this->form = new MessageForm(null, null, null, false);
+        } else {
+            $sender = null;
+            $this->form = new MessageForm(null, null, null, !$this->getUser()->isAuthenticated());
+        }
 
-        if ($this->processForm($request, $this->form)) {
+        if ($this->processForm($request, $this->form, $sender)) {
             $this->setTemplate('confirmation');
         } else {
             if ($this->getUser()->isAuthenticated()) {
@@ -45,22 +52,33 @@ class contactavancesActions extends sfActions {
         }
     }
 
-    protected function processForm(sfWebRequest $request, sfForm $form) {
-        $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
+    protected function processForm(sfWebRequest $request, sfForm $form, $sender) {
+        if ($sender) {
+            foreach ($request->getParameter($form->getName()) as $key => $value) {
+                if ($key != 'Sender') {
+                    $data[$key] = $value;
+                }
+            }
+
+        } else {
+            $data = $request->getParameter($form->getName());
+        }
+        $form->bind($data, $request->getFiles($form->getName()));
         if ($form->isValid()) {
             $message = $form->save();
             if ($message) {
                 if ($this->getUser()->isAuthenticated()) {
                     $message->setSender($this->getUser()->getPerson());
+                } elseif ($sender != null) {
+                    $message->setSender($sender);
                 }
-                $message->save();
                 $cor = $message->getSender()->getCorespondance();
                 $cor->setLastMail(date('Y-m-d H:i:s'));
-                $cor->setNumberOfMail($cor->getNumberOfMail()+1);
-                if($cor->getFirstMail()==null){
+                $cor->setNumberOfMail($cor->getNumberOfMail() + 1);
+                if ($cor->getFirstMail() == null) {
                     $cor->setFirstMail(date('Y-m-d H:i:s'));
                     $message->getSender()->setCorespondance($cor);
-                }else{
+                } else {
                     $cor->save();
                 }
 

@@ -30,11 +30,6 @@ generator:
 
       form:
         class: sfGuardUserAdminForm
-        display:
-          "Identitée": [Person]
-          "Utilisateur": [username, password, password_again]
-          "Droits et groupes": [is_active, groups_list]
-
       edit:
         title: Edition de l'utilisateur "%%username%%" 
 

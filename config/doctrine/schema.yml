@@ -89,13 +89,13 @@ Message: #Laurent
     sender_id: {type: integer}
     category_id: {type: integer, notnull: true}
     folder_id: {type: integer, notnull: true, default: 1}
-    forward_to_id : {type: integer}
+    forward_to_id : {type: integer, notnull: true}
   relations:
     Comment: {local: comment_id, foreign: id, alias: comment, foreignType: one}
-    Person: {local: sender_id, foreign: id, foreignAlias: sender}
+    Sender: {class: Person, local: sender_id, foreign: id}
     FaqCategory: {local: category_id, foreign: id, alias: faqCategory, foreignType: one}
     Folder: {local: folder_id, foreign: id}
-    Person: {local: forward_to_id, foreign: id, foreignAlias: forwardTo}
+    ForwardTo: {local: forward_to_id, foreign: id, class: Person}
 
 
 Person: #Laurent
@@ -207,8 +207,43 @@ NewsComments:
 
 Folder:
   columns:
-    name: {type: string(255), unique: true, notnull: true}
+    name: {type: string(255), unique: true}
+
 StandardSentence:
   columns:
     text: {type: text, notnull: true}
-    title: {type: string(255), notnull: true, unique: true}
+    title: {type: string(255), notnull: true}
+
+Subscriber:
+  columns:
+    email: {type: string(255), unique: true}
+    hash: {type: string(255)}
+
+Newsletter:
+  actAs:
+    Timestampable: ~
+  columns:
+    news_id: {type: integer, notnull: true}
+    subscriber_count: {type: integer}
+  relations:
+    News: {local: news_id, foreign: id}
+
+payment:
+  columns:
+    brut_amout: {type: float, notnull: true}
+    fee: {type: float, notnull: true}
+    date: {type: string(255), notnull: true}
+    paypal_id: {type: string(255), notnull: true, unique: true}
+    person_id: {type: integer}
+  relations:
+    Person: {local: person_id, foreign: id}
+
+address:
+  columns:
+    street: {type: string(255), notnull: true}
+    country: {type: string(255), notnull: true}
+    city: {type: string(255), notnull: true}
+    zip_code: {type: string(10), notnull: true}
+    person_id: {type: integer}
+  relations:
+    Person: {local: person_id, foreign: id}

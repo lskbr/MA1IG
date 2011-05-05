@@ -41,11 +41,6 @@ class contactavancesActions extends autoContactavancesActions {
         parent::executeDelete($request);
     }
 
-    public function executeView(sfWebRequest $request) {
-        $this->forward404Unless(Doctrine_Core::getTable('BooleanConfiguration')->createQuery()->where('main = "contacts"')->fetchOne()->getIsActivated());
-        parent::executeView($request);
-    }
-
     public function executeChangeFolder(sfWebRequest $request) {
         $this->forward404unless($request->isXmlHttpRequest());
         $messageId = $request->getParameter('messageId');
@@ -68,21 +63,31 @@ class contactavancesActions extends autoContactavancesActions {
 
     private function executeSendMail(sfWebRequest $request) {
         $this->forward404Unless($message = Doctrine_Core::getTable('message')->find(array($request->getParameter('id'))), sprintf('Object message does not exist (%s).', $request->getParameter('id')));
-        var_dump($message);
         $mail = $this->getMailer()->compose(array('info@grainedevie.seaflat.be' => 'Graine de Vie'), $message->getSender()->getEmailAddress(), 'RE: Graine de Vie', $request->getParameter('text'));
         $this->getMailer()->send($mail);
+        $message->setReplyAt(date('Y-m-d H:i:s'));
+        $message->save();
     }
 
     public function executeUpdate(sfWebRequest $request) {
-        if($request->hasParameter('_now')){
+        if ($request->hasParameter('_now')) {
             $this->executeSendMail($request);
-            $parent = parent::executeUpdate($request);
-            
-            return $parent;
-        }else{
-            parent::executeUpdate($request);
         }
-        
+        parent::executeUpdate($request);
+        $this->forward('contactavances', 'index');
+    }
+
+    public function preExecute() {
+        $this->dispatcher->connect(
+                'admin.build_query',
+                array($this, 'myMessages')
+        );
+        parent::preExecute();
+    }
+
+    public function myMessages($event, Doctrine_Query $query) {
+        return $query->where('forward_to_id = ?', $this->getUser()->getPerson()->getId());
     }
 
 }
+

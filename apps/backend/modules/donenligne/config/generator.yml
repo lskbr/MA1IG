@@ -1,0 +1,28 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           payment
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          payment
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        brut_amout: {label: "Montant brut"}
+        paypal_id: {label: "Ref. Paypal"}
+        fee: {label: "commission"}
+      list:
+        display: [brut_amout, montant_net, date, paypal_id, person_name, person_address]
+        object_actions: {}
+        actions: {}
+      filter:
+        display: [brut_amout, fee, date, paypal_id]
+      form:    ~
+      edit: ~
+      new: ~

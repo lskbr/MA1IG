@@ -1,7 +1,7 @@
 <center><h1>Phrases enregistrées</h1></center>
-<li>
+<ul>
 <?php foreach ($standardSentences as $standardSentence): ?>
-    <ul><a href="#" class="linkStandardSentences" content="<?php echo $standardSentence->getText(); ?>"><?php echo $standardSentence->getTitle(); ?></a></ul>
+    <li><a href="#" class="linkStandardSentences" content="<?php echo $standardSentence->getText(); ?>"><?php echo $standardSentence->getTitle(); ?></a></li>
 <?php endforeach; ?>
-</li>
+</ul>
 <a href="<?php echo url_for1('sentences')?>">Gérer les phrases enregistrées</a>

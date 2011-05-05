@@ -4,7 +4,7 @@ class config
 	private static $_instance;
 	private $_configs;
 	private function __construct(){
-  		$this->_configs=Doctrine_Core::getTable('Configuration')->findAll();
+  		$this->_configs = Doctrine_Core::getTable('Configuration')->findAll();
 	}
 	private function __clone(){}
 
@@ -14,7 +14,7 @@ class config
 			if($config->getMain()==$key)
 				return $config;
 		echo $key;
-		throw new ConfigNotFoundException();
+		//throw new ConfigNotFoundException();
 	}
 	public function get($key)
 	{

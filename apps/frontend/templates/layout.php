@@ -87,7 +87,13 @@
                 <?php include_component('menu', 'menu') ?>
 
                 <div id="content">
-                    <?php echo $sf_content ?>
+                    <?php
+                    echo $sf_content;
+
+                    // Partage sur les réseaux sociaux
+                    if(config::getInstance()->get('social_sharing'))
+                        include_partial('social_sharing/social_sharing');
+                    ?>
                 </div>
             </div>
 

@@ -1,4 +1,10 @@
 BooleanConfiguration:
+  usersManagement:
+    main: usersmanagement
+    name: Gestion des utilisateurs
+    description: Permet des gérés les diférérents utilisateurs du site internet
+    is_activated: true
+    is_kernel: true
   ContactAvances:
     main: contacts
     name: Contacts avancés

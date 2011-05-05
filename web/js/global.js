@@ -109,7 +109,7 @@ jQuery(document).ready(function () {
 	//!
 	var delay = jQuery("#counter-delay").get(0).value - (new Date()).getTime(),
 		interval = jQuery("#counter-interval").get(0).value,
-		step = 1, mask = 0;
+		delayMouseOver = 300, mask = 0, step = 1;
 
 	if (interval < 1000) {
 		step = 1000/interval;
@@ -135,7 +135,7 @@ jQuery(document).ready(function () {
 					mask |= 4;
 
 					if (!(mask & 1)) {
-						window.setTimeout(closeBox, 300);
+						window.setTimeout(closeBox, delayMouseOver);
 					}
 				}
 			);
@@ -148,9 +148,9 @@ jQuery(document).ready(function () {
 			jQuery("#donation-box").animate(
 				{height: 'toggle'}, 300, function () {
 					mask &= ~6;
-					
+
 					if (mask & 1) {
-						window.setTimeout(openBox, 300);
+						window.setTimeout(openBox, delayMouseOver);
 					}
 				}
 			);
@@ -160,12 +160,12 @@ jQuery(document).ready(function () {
 	jQuery("#counter-box").mouseenter(function () {
 		mask |= 1;
 		if (!(mask & 2) && !(mask & 4)) {
-			window.setTimeout(openBox, 300);
+			window.setTimeout(openBox, delayMouseOver);
 		}
 	}).mouseleave(function () {
 		mask &= ~1;
 		if (!(mask & 2) && (mask & 4)) {
-			window.setTimeout(closeBox, 300);
+			window.setTimeout(closeBox, delayMouseOver);
 		}
 	});
 

@@ -25,9 +25,11 @@ abstract class BaseStandardSentence extends sfDoctrineRecord
         $this->setTableName('standard_sentence');
         $this->hasColumn('text', 'text', null, array(
              'type' => 'text',
+             'notnull' => true,
              ));
         $this->hasColumn('title', 'string', 255, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 255,
              ));
     }

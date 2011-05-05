@@ -9463,3 +9463,82 @@ May 05 06:55:41 symfony [info] {sfWebDebugLogger} Partial "donenligne/_show" 7.4
 May 05 06:55:41 symfony [info] {sfWebDebugLogger} Component "language/language" 22.31 ms (1)
 May 05 06:55:41 symfony [info] {sfWebDebugLogger} Partial "language/_language" 5.09 ms (1)
 May 05 06:55:41 symfony [info] {sfWebResponse} Send content (116250 o)
+mai 05 13:53:00 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+mai 05 13:53:00 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+mai 05 13:53:00 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_register" (/guard/register)
+mai 05 13:53:00 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_forgot_password" (/guard/forgot_password)
+mai 05 13:53:00 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_forgot_password_change" (/guard/forgot_password/:unique_key)
+May 05 13:53:00 symfony [err] {sfError404Exception} Empty module and/or action after parsing the URL "/donenligne" (/).
+May 05 13:53:00 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+May 05 13:53:00 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+May 05 13:53:00 symfony [info] {sfWebDebugLogger} Configuration 262.49 ms (6)
+May 05 13:53:00 symfony [info] {sfWebDebugLogger} Factories 327.40 ms (1)
+mai 05 13:53:05 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+mai 05 13:53:05 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+mai 05 13:53:05 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_register" (/guard/register)
+mai 05 13:53:05 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_forgot_password" (/guard/forgot_password)
+mai 05 13:53:05 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_forgot_password_change" (/guard/forgot_password/:unique_key)
+mai 05 13:53:05 symfony [info] {sfPatternRouting} Match route "default_index" (/:sf_culture/:module) for /fr/donenligne with parameters array (  'module' => 'donenligne',  'action' => 'index',  'sf_culture' => 'fr',)
+May 05 13:53:05 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 05 13:53:05 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 05 13:53:05 symfony [info] {donenligneActions} Call "donenligneActions->executeIndex()"
+May 05 13:53:05 symfony [info] {sfPHPView} Render "/home/laurent/Documents/Universite/1iereMaster/GenieLogiciel/GraineDeVie/MA1IG/apps/frontend/modules/donenligne/templates/indexSuccess.php"
+May 05 13:53:05 symfony [info] {main} Call "donenligne->executeShow()"
+May 05 13:53:05 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+May 05 13:53:05 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.id AS c__id, c.main AS c__main, c.name AS c__name, c.description AS c__description, c.configuration_id AS c__configuration_id, c.type AS c__type, c.is_kernel AS c__is_kernel, c.is_activated AS c__is_activated, c.value AS c__value FROM configuration c - ()
+May 05 13:53:05 symfony [info] {sfPartialView} Render "/home/laurent/Documents/Universite/1iereMaster/GenieLogiciel/GraineDeVie/MA1IG/apps/frontend/modules/donenligne/templates/_show.php"
+May 05 13:53:05 symfony [info] {sfPHPView} Decorate content with "/home/laurent/Documents/Universite/1iereMaster/GenieLogiciel/GraineDeVie/MA1IG/apps/frontend/templates/layout.php"
+May 05 13:53:05 symfony [info] {sfPHPView} Render "/home/laurent/Documents/Universite/1iereMaster/GenieLogiciel/GraineDeVie/MA1IG/apps/frontend/templates/layout.php"
+May 05 13:53:05 symfony [info] {main} Get slot "title"
+May 05 13:53:05 symfony [info] {main} Call "login->executeLogin()"
+May 05 13:53:05 symfony [info] {sfPartialView} Render "/home/laurent/Documents/Universite/1iereMaster/GenieLogiciel/GraineDeVie/MA1IG/apps/frontend/modules/login/templates/_login.php"
+May 05 13:53:05 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.username AS s__username, s.algorithm AS s__algorithm, s.salt AS s__salt, s.password AS s__password, s.is_active AS s__is_active, s.is_super_admin AS s__is_super_admin, s.last_login AS s__last_login, s.person_id AS s__person_id, s.created_at AS s__created_at, s.updated_at AS s__updated_at FROM sf_guard_user s WHERE (s.id = ?) LIMIT 1 - (1)
+May 05 13:53:05 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.first_name AS p__first_name, p.last_name AS p__last_name, p.email_address AS p__email_address, p.corespondance_id AS p__corespondance_id FROM person p WHERE (p.id = ?) - (1)
+May 05 13:53:05 symfony [info] {main} Call "sfGuardAuth->executeSignin_form()"
+May 05 13:53:05 symfony [info] {sfPartialView} Render "/home/laurent/Documents/Universite/1iereMaster/GenieLogiciel/GraineDeVie/MA1IG/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+May 05 13:53:05 symfony [info] {main} Call "counter->executeCounter()"
+May 05 13:53:05 symfony [info] {Doctrine_Connection_Statement} execute : SELECT DISTINCT c3.id FROM counter c3 INNER JOIN counter_translation c4 ON c3.id = c4.id WHERE c4.lang = ? ORDER BY c3.initial_date ASC LIMIT 1 - (fr)
+May 05 13:53:05 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.initial_number AS c__initial_number, c2.id AS c2__id, c2.lang AS c2__lang, c2.slogan_part1 AS c2__slogan_part1, c2.slogan_part2 AS c2__slogan_part2, c2.donation_text AS c2__donation_text, FLOOR(c.initial_number + TIMESTAMPDIFF(SECOND, c.initial_date, NOW())*c.objective_number/TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))) AS c__0, FLOOR((1 - TIMESTAMPDIFF(SECOND, c.initial_date, NOW())*c.objective_number/TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH)) + FLOOR(TIMESTAMPDIFF(SECOND, c.initial_date, NOW())*c.objective_number/TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))))*(1000*TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))/c.objective_number)) AS c__1, FLOOR(1000*TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))/c.objective_number) AS c__2 FROM counter c INNER JOIN counter_translation c2 ON c.id = c2.id WHERE c.id IN ('1') AND (c2.lang = ?) ORDER BY c.initial_date ASC - (fr)
+May 05 13:53:05 symfony [info] {sfPartialView} Render "/home/laurent/Documents/Universite/1iereMaster/GenieLogiciel/GraineDeVie/MA1IG/apps/frontend/modules/counter/templates/_counter.php"
+May 05 13:53:05 symfony [info] {main} Call "menu->executeMenu()"
+May 05 13:53:05 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.position AS c__position, c.is_activated AS c__is_activated, c.created_at AS c__created_at, c.updated_at AS c__updated_at FROM category c WHERE (c.is_activated = ?) ORDER BY c.position ASC - (1)
+May 05 13:53:05 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.position AS s__position, s.publication_date AS s__publication_date, s.category_id AS s__category_id, s.created_at AS s__created_at, s.updated_at AS s__updated_at, s2.id AS s2__id, s2.menu_title AS s2__menu_title, s2.content AS s2__content, s2.is_activated AS s2__is_activated, s2.title AS s2__title, s2.lang AS s2__lang FROM static_page s LEFT JOIN static_page_translation s2 ON s.id = s2.id WHERE (s2.is_activated = ? AND s.publication_date <= ? AND s2.lang = ?) - (1, 2011-05-05 13:53:05, fr)
+May 05 13:53:05 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.position AS d__position, d.publication_date AS d__publication_date, d.category_id AS d__category_id, d.controller AS d__controller, d.action AS d__action, d.boolean_configuation_id AS d__boolean_configuation_id, d.created_at AS d__created_at, d.updated_at AS d__updated_at, c.id AS c__id, c.main AS c__main, c.name AS c__name, c.description AS c__description, c.configuration_id AS c__configuration_id, c.type AS c__type, c.is_kernel AS c__is_kernel, c.is_activated AS c__is_activated, c.value AS c__value FROM dynamic_page d LEFT JOIN configuration c ON d.boolean_configuation_id = c.id AND c.type = 1 WHERE (c.is_activated = ?) - (1)
+May 05 13:53:05 symfony [info] {sfPartialView} Render "/home/laurent/Documents/Universite/1iereMaster/GenieLogiciel/GraineDeVie/MA1IG/apps/frontend/modules/menu/templates/_menu.php"
+May 05 13:53:05 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.name AS c__name, c.lang AS c__lang FROM category_translation c WHERE (c.id IN (?)) - (1)
+May 05 13:53:05 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.name AS c__name, c.lang AS c__lang FROM category_translation c WHERE (c.id IN (?)) - (2)
+May 05 13:53:05 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.name AS c__name, c.lang AS c__lang FROM category_translation c WHERE (c.id IN (?)) - (3)
+May 05 13:53:05 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.name AS c__name, c.lang AS c__lang FROM category_translation c WHERE (c.id IN (?)) - (4)
+May 05 13:53:05 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (3)
+May 05 13:53:05 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.name AS c__name, c.lang AS c__lang FROM category_translation c WHERE (c.id IN (?)) - (5)
+May 05 13:53:05 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.name AS c__name, c.lang AS c__lang FROM category_translation c WHERE (c.id IN (?)) - (6)
+May 05 13:53:05 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.name AS c__name, c.lang AS c__lang FROM category_translation c WHERE (c.id IN (?)) - (7)
+May 05 13:53:05 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (1)
+May 05 13:53:05 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (2)
+May 05 13:53:05 symfony [info] {sfPartialView} Render "/home/laurent/Documents/Universite/1iereMaster/GenieLogiciel/GraineDeVie/MA1IG/apps/frontend/modules/fb_page/templates/_fb_page.php"
+May 05 13:53:05 symfony [info] {main} Call "donenligne->executeShow()"
+May 05 13:53:05 symfony [info] {sfPartialView} Render "/home/laurent/Documents/Universite/1iereMaster/GenieLogiciel/GraineDeVie/MA1IG/apps/frontend/modules/donenligne/templates/_show.php"
+May 05 13:53:05 symfony [info] {main} Call "language->executeLanguage()"
+May 05 13:53:05 symfony [info] {Doctrine_Connection_Statement} execute : SELECT l.id AS l__id, l.name AS l__name, l.abbreviation AS l__abbreviation, l.flag AS l__flag, l.is_activated AS l__is_activated, l.is_default AS l__is_default, l.created_at AS l__created_at, l.updated_at AS l__updated_at FROM language l WHERE (l.is_activated = ?) - (1)
+May 05 13:53:06 symfony [info] {sfPartialView} Render "/home/laurent/Documents/Universite/1iereMaster/GenieLogiciel/GraineDeVie/MA1IG/apps/frontend/modules/language/templates/_language.php"
+May 05 13:53:06 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+May 05 13:53:06 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+May 05 13:53:06 symfony [info] {sfWebDebugLogger} Configuration 261.57 ms (18)
+May 05 13:53:06 symfony [info] {sfWebDebugLogger} Factories 61.42 ms (1)
+May 05 13:53:06 symfony [info] {sfWebDebugLogger} Action "donenligne/index" 0.26 ms (1)
+May 05 13:53:06 symfony [info] {sfWebDebugLogger} View "Success" for "donenligne/index" 872.45 ms (1)
+May 05 13:53:06 symfony [info] {sfWebDebugLogger} Component "donenligne/show" 64.30 ms (2)
+May 05 13:53:06 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.20 ms (20)
+May 05 13:53:06 symfony [info] {sfWebDebugLogger} Partial "donenligne/_show" 7.79 ms (2)
+May 05 13:53:06 symfony [info] {sfWebDebugLogger} Component "login/login" 0.06 ms (1)
+May 05 13:53:06 symfony [info] {sfWebDebugLogger} Partial "login/_login" 29.63 ms (1)
+May 05 13:53:06 symfony [info] {sfWebDebugLogger} Component "sfGuardAuth/signin_form" 7.56 ms (1)
+May 05 13:53:06 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 5.38 ms (1)
+May 05 13:53:06 symfony [info] {sfWebDebugLogger} Component "counter/counter" 359.91 ms (1)
+May 05 13:53:06 symfony [info] {sfWebDebugLogger} Partial "counter/_counter" 8.61 ms (1)
+May 05 13:53:06 symfony [info] {sfWebDebugLogger} Component "menu/menu" 105.75 ms (1)
+May 05 13:53:06 symfony [info] {sfWebDebugLogger} Partial "menu/_menu" 117.68 ms (1)
+May 05 13:53:06 symfony [info] {sfWebDebugLogger} Partial "fb_page/_fb_page" 1.30 ms (1)
+May 05 13:53:06 symfony [info] {sfWebDebugLogger} Component "language/language" 83.48 ms (1)
+May 05 13:53:06 symfony [info] {sfWebDebugLogger} Partial "language/_language" 5.04 ms (1)
+May 05 13:53:06 symfony [info] {sfWebResponse} Send content (97297 o)

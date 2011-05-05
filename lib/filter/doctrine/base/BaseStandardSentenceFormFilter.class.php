@@ -13,8 +13,8 @@ abstract class BaseStandardSentenceFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'text'  => new sfWidgetFormFilterInput(),
-      'title' => new sfWidgetFormFilterInput(),
+      'text'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'title' => new sfWidgetFormFilterInput(array('with_empty' => false)),
     ));
 
     $this->setValidators(array(

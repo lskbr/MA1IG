@@ -160,16 +160,19 @@ Photo:
   relations:
     Galery: {local: galery_id, foreign: id}
 
+CounterText:
+  actAs: {I18n: {fields: [slogan1, slogan2, donation]}}
+  columns:
+    slogan1: {type: string(255), notnull: true}
+    slogan2: {type: string(255), notnull: true}
+    donation: {type: string(255), notnull: true}
+
 Counter:
-  actAs: {I18n: {fields: [slogan_part1, slogan_part2, donation_text]}}
   columns:
     initial_date: {type: timestamp, notnull: true}
     initial_number: {type: integer, notnull: true}
     period: {type: integer, notnull: true}
     objective_number: {type: integer, notnull: true}
-    slogan_part1: {type: string(255), notnull: true}
-    slogan_part2: {type: string(255), notnull: true}
-    donation_text: {type: string(255), notnull: true}
 
 Guestbook:
   actAs: 

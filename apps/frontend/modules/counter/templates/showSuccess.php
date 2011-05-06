@@ -5,16 +5,20 @@
       <td><?php echo $counter->getId() ?></td>
     </tr>
     <tr>
-      <th>Initial number:</th>
-      <td><?php echo $counter->getInitialNumber() ?></td>
-    </tr>
-    <tr>
       <th>Initial date:</th>
       <td><?php echo $counter->getInitialDate() ?></td>
     </tr>
     <tr>
-      <th>Flow:</th>
-      <td><?php echo $counter->getFlow() ?></td>
+      <th>Initial number:</th>
+      <td><?php echo $counter->getInitialNumber() ?></td>
+    </tr>
+    <tr>
+      <th>Period:</th>
+      <td><?php echo $counter->getPeriod() ?></td>
+    </tr>
+    <tr>
+      <th>Objective number:</th>
+      <td><?php echo $counter->getObjectiveNumber() ?></td>
     </tr>
   </tbody>
 </table>

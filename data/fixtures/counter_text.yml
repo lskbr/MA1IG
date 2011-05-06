@@ -1,0 +1,19 @@
+CounterText:
+  C1:
+    Translation:
+      en:
+        slogan1: "We have already planted"
+        slogan2: "Help us continue to increase this number"
+        donation: "Donate !"
+      fr:
+        slogan1: "Nous avons déjà planté"
+        slogan2: "Aidez nous à continuer à augmenter ce nombre"
+        donation: "Faites un don !"
+      nl:
+        slogan1: "We have already planted"
+        slogan2: "Help us continue to increase this number"
+        donation: "Donate !"
+      pt:
+        slogan1: "Já plantamos"
+        slogan2: "Ajude-nos a continuar aumentando este número"
+        donation: "Doe !"

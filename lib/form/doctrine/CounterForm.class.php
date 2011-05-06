@@ -17,5 +17,7 @@ class CounterForm extends BaseCounterForm
 //			'date_widget' => new sfWidgetFormDate(array('format' => '%day%/%month%/%year%')),
 //			'culture' => 'fr'
 //		));
+
+ 		$this->widgetSchema["initial_date"] = new sfWidgetFormDate(array('format' => '%day%/%month%/%year%'));
 	}
 }

@@ -4,20 +4,3 @@ Counter:
     initial_number: 140000
     period:	12
     objective_number: 1000000
-    Translation:
-      en:
-        slogan_part1: "We have already planted"
-        slogan_part2: "Help us continue to increase this number"
-        donation_text: "Donate !"
-      fr:
-        slogan_part1: "Nous avons déjà planté"
-        slogan_part2: "Aidez nous à continuer à augmenter ce nombre"
-        donation_text: "Faites un don !"
-      nl:
-        slogan_part1: "We have already planted"
-        slogan_part2: "Help us continue to increase this number"
-        donation_text: "Donate !"
-      pt:
-        slogan_part1: "Já plantamos"
-        slogan_part2: "Ajude-nos a continuar aumentando este número"
-        donation_text: "Doe !"

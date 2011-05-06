@@ -7,7 +7,7 @@
  */
 class CounterTable extends Doctrine_Table
 {
-	/**
+    /**
      * Returns an instance of this class.
      *
      * @return object CounterTable
@@ -17,28 +17,23 @@ class CounterTable extends Doctrine_Table
         return Doctrine_Core::getTable('Counter');
     }
 
-    public function getCurrentData($culture)
+    public function getCounterData()
     {
-    	return $this->createQuery('a')->
-			select('a.initial_number, '.
-    			'FLOOR(a.initial_number + TIMESTAMPDIFF(SECOND, a.initial_date, NOW())*'.
-    				'a.objective_number/TIMESTAMPDIFF(SECOND, a.initial_date, '.
-    				'ADDDATE(initial_date, INTERVAL period MONTH))) AS planted_trees, '.
-    			'FLOOR((1 - TIMESTAMPDIFF(SECOND, a.initial_date, NOW())*'.
-    				'a.objective_number/TIMESTAMPDIFF(SECOND, a.initial_date, '.
-    				'ADDDATE(initial_date, INTERVAL period MONTH)) + '.
-    				'FLOOR(TIMESTAMPDIFF(SECOND, a.initial_date, NOW())*'.
-    				'a.objective_number/TIMESTAMPDIFF(SECOND, a.initial_date, '.
-    				'ADDDATE(initial_date, INTERVAL period MONTH))))*'.
-    				'(1000*TIMESTAMPDIFF(SECOND, initial_date, ADDDATE(initial_date, '.
-    				'INTERVAL period MONTH))/objective_number)) AS delay, '.
-    			'FLOOR(1000*TIMESTAMPDIFF(SECOND, initial_date, ADDDATE(initial_date, '.
-    				'INTERVAL period MONTH))/objective_number) AS interval, '.
-    			't.slogan_part1, t.slogan_part2, t.donation_text')->
-    		innerJoin('a.Translation t')->
-    		where("t.lang=?", $culture)->
-    		orderBy('initial_date ASC')->
-    		limit(1)->
-    		execute();
+        return $this->createQuery('a')->
+            select('a.initial_number, '.
+                'FLOOR(a.initial_number + TIMESTAMPDIFF(SECOND, a.initial_date, NOW())*'.
+                    'a.objective_number/TIMESTAMPDIFF(SECOND, a.initial_date, '.
+                    'ADDDATE(initial_date, INTERVAL period MONTH))) AS planted_trees, '.
+                'FLOOR((1 - TIMESTAMPDIFF(SECOND, a.initial_date, NOW())*'.
+                    'a.objective_number/TIMESTAMPDIFF(SECOND, a.initial_date, '.
+                    'ADDDATE(initial_date, INTERVAL period MONTH)) + '.
+                    'FLOOR(TIMESTAMPDIFF(SECOND, a.initial_date, NOW())*'.
+                    'a.objective_number/TIMESTAMPDIFF(SECOND, a.initial_date, '.
+                    'ADDDATE(initial_date, INTERVAL period MONTH))))*'.
+                    '(1000*TIMESTAMPDIFF(SECOND, initial_date, ADDDATE(initial_date, '.
+                    'INTERVAL period MONTH))/objective_number)) AS delay, '.
+                'FLOOR(1000*TIMESTAMPDIFF(SECOND, initial_date, ADDDATE(initial_date, '.
+                    'INTERVAL period MONTH))/objective_number) AS interval')->
+            orderBy('a.initial_date DESC')->limit(1)->execute();
     }
 }

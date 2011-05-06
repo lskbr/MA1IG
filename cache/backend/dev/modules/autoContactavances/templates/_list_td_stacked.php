@@ -1,0 +1,3 @@
+<td colspan="7">
+  <?php echo __('%%status%% - %%sender_name%% - %%faq_category%% - %%created_at%% - %%read_at%% - %%folderjs%% - %%responder%%', array('%%status%%' => get_partial('contactavances/status', array('type' => 'list', 'message' => $message)), '%%sender_name%%' => link_to($message->getSenderName(), 'contactavances_edit', $message), '%%faq_category%%' => $message->getFaqCategory(), '%%created_at%%' => $message->getCreatedAt(), '%%read_at%%' => $message->getReadAt(), '%%folderjs%%' => get_partial('contactavances/folderjs', array('type' => 'list', 'message' => $message)), '%%responder%%' => get_partial('contactavances/responder', array('type' => 'list', 'message' => $message))), 'messages') ?>
+</td>

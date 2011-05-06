@@ -42,6 +42,11 @@ a:hover {
     text-decoration: underline;
 }
 
+
+sub, sup { font-size: .83em; font-weight: inherit }
+sub { vertical-align: sub; }
+sup { vertical-align: super; }
+
 /*
     Citations
 */
@@ -128,7 +133,11 @@ div#upper-bar div {
 }
 
 div#upper-bar ul {
-	margin-right: 40px;
+	display: inline-block;
+}
+
+div#upper-bar ul:last-child {
+	margin-right: 10px;
 }
 
 div#upper-bar ul li {
@@ -156,17 +165,24 @@ div#upper-bar ul li > a:hover {
 	text-decoration: underline;
 }
 
+div#upper-bar ul li a#login-bar-button {
+	border-right: 1px solid #000;
+}
+
 div#upper-bar ul li a#login-bar-button:hover {
 	background-color: #035579;
+	border-right: 1px solid #383E44;
 	text-decoration: none;
 }
 
-a.login-open {
+a#login-bar-button.login-open {
 	background-color: #035579;
+	border-right: 1px solid #383E44;
 }
 
 span#connected-bar-button {
     display: inline;
+    margin-right: 10px;
     padding-left: 10px;
     cursor: default;
 }
@@ -180,6 +196,10 @@ span#connected-bar-button a {
 }
 span#connected-bar-button a:hover {
     background-image: url(../images/disconnection-hover.png);
+}
+
+ul#search {
+	margin-right: 0;
 }
 
 /*
@@ -221,20 +241,20 @@ div#pSlider {
 */
 div#login {
 	border: 1px solid #383E44;
-        border-top: none;
+	border-top: none;
 
-	border-radius: 10px 10px 10px 10px;
-	-moz-border-radius: 10px 10px 10px 10px;
-	-webkit-border-radius: 10px 10px 10px 10px;
-	-khtml-border-radius: 10px 10px 10px 10px;
+	border-radius: 10px 0px 10px 10px;
+	-moz-border-radius: 10px 0px 10px 10px;
+	-webkit-border-radius: 10px 0px 10px 10px;
+	-khtml-border-radius: 10px 0px 10px 10px;
 
-        background-color: #035579;
+    background-color: #035579;
 	/*background-image: url(../images/bg-bar-login.png);
 	background-repeat: repeat;*/
 
 	display: none;
 	position: absolute;
-	right: 1px;
+	right: -1px;
 	top: 0;
 	z-index: 1001;
 }
@@ -1070,9 +1090,18 @@ div#bilan_carbone fieldset div {
     margin-left: 20px;
 }
 
-div#bilan_carbone sub {
-    font-size: .83em;
-    vertical-align: sub;
+div#bilan_carbone .help {
+    margin: 10px 0 10px 0;
+    padding:10px;
+    border: 1px solid #5F3812;
+    color: #7ba700;
+}
+div#bilan_carbone .help legend {
+    font-weight: bold;
+}
+div#bilan_carbone .help_text {
+    font-weight: inherit;
+    color: #5F3812;
 }
 
 div#bilan_carbone #submit_carbone {

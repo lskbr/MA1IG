@@ -3,7 +3,7 @@
     <li>
         <span id="connected-bar-button">
             <?php echo '<span style="font-weight: normal">'.__('Connecté').' :</span> '.$sf_user->getName() ?>
-            <?php echo link_to('<img src="/images/img_vide.gif" width=16 height=16/>', '@sf_guard_logout', array('title'=>'Déconnexion')) ?>
+            <?php echo link_to('<img src="/images/img_vide.gif" width=16 height=16/>', '@sf_guard_logout', array('title'=> __('Déconnexion'))) ?>
         </span>
     </li>
 </ul>

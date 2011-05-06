@@ -51,6 +51,12 @@
 
             <div id ="upper-bar">
                 <div>
+                    <?php if(config::getInstance()->get('search')) { ?>
+                    <ul id="search">
+                      <li><span>|</span></li>
+                      <li><a href="#" id="search_text" title="<?php echo __('Basculer vers la recherche') ?>"><?php echo __("Rechercher") ?></a></li>
+                    </ul>
+                    <?php } ?>
                     <?php include_component('login', 'login') ?>
                 </div>
             </div>
@@ -81,7 +87,13 @@
                 <?php include_component('menu', 'menu') ?>
 
                 <div id="content">
-                    <?php echo $sf_content ?>
+                    <?php
+                    echo $sf_content;
+
+                    // Partage sur les réseaux sociaux
+                    if(config::getInstance()->get('social_sharing'))
+                        include_partial('social_sharing/social_sharing');
+                    ?>
                 </div>
             </div>
 
@@ -92,14 +104,21 @@
                 </div>
                 <div id="bottom-bar">
                 	<ul>
+                            <li><?php include_component('donenligne', 'show')?></li>
                         <li class="form">
                             <?php include_component('language', 'language') ?>
                         </li>
-                    	<li><a href="#"><?php echo __("Contact") ?></a></li>
+                        <?php if(config::getInstance()->get('page_contact')): ?>
+                    	<li><a href="<?php echo url_for(config::getInstance()->get('id_contact'));  ?>"><?php echo __("Contact") ?></a></li>
+                        <?php endif;
+                        if(config::getInstance()->get('page_mention')): ?>
                         <li>|</li>
-                        <li><a href="#"><?php echo __("Mentions légales") ?></a></li>
+                        <li><a href="<?php echo url_for(config::getInstance()->get('id_mention'));  ?>"><?php echo __("Mentions légales") ?></a></li>
+                        <?php endif;
+                        if(config::getInstance()->get('page_sitemap')): ?>
                         <li>|</li>
-                        <li><a href="#"><?php echo __("Plan du site") ?></a></li>
+                        <li><a href="<?php echo url_for(config::getInstance()->get('id_sitemap'));  ?>"><?php echo __("Plan du site") ?></a></li>
+                        <?php endif; ?>
                     </ul>
                 </div>
                 <div id="legal"><?php echo __("Projet agréé par la Fondation Roi Baudouin | Copyright &copy; 2009 - 2011 Graine de vie. All rights reserved.") ?></div>

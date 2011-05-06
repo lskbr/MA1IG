@@ -1,15 +1,30 @@
 BooleanConfiguration:
+  usersManagement:
+    main: usersmanagement
+    name: Gestion des utilisateurs
+    description: Permet des gérés les diférérents utilisateurs du site internet
+    is_activated: true
+    is_kernel: true
   ContactAvances:
     main: contacts
     name: Contacts avancés
     description: Permet aux utilisateurs de vous contacter via le site
     is_activated: true
+
+  Category:
+    main: categories
+    name: Gestion des catégories
+    description: Permet la gestion des catégories de manière mutlilingue et transparente pour les utilisateurs
+    is_activated: true
+    is_kernel: true
+    
   ContactsAvancesAlertesMail:
     main: contacts_alerte
     name: Alerte mail
     description: Voulez-vous être contacté pour prévenir de nouveaux messages ?
     is_activated: true
     BooleanConfiguration: ContactAvances
+
   News:
     main: news
     name: Actualités
@@ -56,6 +71,11 @@ BooleanConfiguration:
     name: Compteur d'arbres
     description: Affiche le compteur d'arbres sur la page d'acceuil
     is_activated: true
+  Search:
+    main: search
+    name: Google Search Engine
+    description: Recherche sur le site de graine de vie
+    is_activated: true
   Faq:
     main: faq
     name: Foire aux Questions
@@ -66,6 +86,36 @@ BooleanConfiguration:
     name: Livre d'or
     description: Affiche un livre d'or que les visiteurs peuvent compléter.
     is_activated: true
+  BilanCarbone:
+    main: bilan_carbone
+    name: Bilan Carbone
+    description: Calcule votre empreinte écologique en quelques minutes.
+    is_activated: true
+  Donenligne:
+    main: donenligne
+    name: Don en ligne
+    description: Permet les dons directement via le site internet
+    is_activated: true
+  Newsletter:
+    main: newsletter
+    name: Newsletter
+    description: Permet d'envoyer une actualité par e-mail aux abonnés
+    is_activated: true
+  Page1:
+    main: page_contact
+    name: Afficher le lien contact
+    description: Permet d'afficher le lien "Contact" en bas de chaque page
+    is_activated: true
+  Page2:
+    main: page_mention
+    name: Afficher le lien mentions légales
+    description: Permet d'afficher le lien "Mentions légales" en bas de chaque page
+    is_activated: false
+  Page3:
+    main: page_sitemap
+    name: Afficher le lien plan du site
+    description: Permet d'afficher le lien "Plan du site" en bas de chaque page
+    is_activated: false
 
 NumericConfiguration:
   NewsParPage:
@@ -74,6 +124,12 @@ NumericConfiguration:
     description: Indique le nombre d'actualités affichées sur la page d'accueil.
     BooleanConfiguration: News
     value: 3
+  DonenligneMontant:
+    main: donenligne_amount
+    name: Montant par défault
+    description: Montant par default des dons proposés
+    BooleanConfiguration: Donenligne
+    value: 12.5
   CharParNews:
     main: char_by_news
     name: Nombre maximal de caractères par news
@@ -96,6 +152,11 @@ NumericConfiguration:
     name: Delais en jour avant supression automatique des messages non-enregistrés
     BooleanConfiguration: ContactAvances
     value: 100
+  PersoneDeContactParDefaultMessagerie:
+    main: contacts_default_person_id
+    name: Id de la persone a qui est destiné tous les mails
+    BooleanConfiguration: ContactAvances
+    value: 1
 
 StringConfiguration:
   ContactAvancesAdresseMail:
@@ -104,3 +165,25 @@ StringConfiguration:
     description: Adresse-mail pour envoyer les alertes
     value: laurent_cardon@hotmail.com
     BooleanConfiguration: ContactsAvancesAlertesMail
+  NewsletterAdresseMail:
+    main: newsletter_mail
+    name: Adresse email
+    description: Adresse email qui enverra la newsletter du site
+    value: info@grainedevie.seaflat.be
+    BooleanConfiguration: Newsletter
+  Page1_link:
+    main: id_contact
+    name: Identifiant du lien contact
+    description: Lien (sans la langue) de la page vers laquelle mène le lien "Contact" en bas de chaque page
+    BooleanConfiguration: Page1
+    value: contactavances/new
+  Page2_link:
+    main: id_mention
+    name: Identifiant du lien mentions légales
+    description: Lien (sans la langue) de la page vers laquelle mène le lien "Mentions légales" en bas de chaque page
+    BooleanConfiguration: Page2
+  Page3_link:
+    main: id_sitemap
+    name: Identifiant du lien plan du site
+    description: Lien (sans la langue) de la page vers laquelle mène le lien "Plan du site" en bas de chaque page
+    BooleanConfiguration: Page3

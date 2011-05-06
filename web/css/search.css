@@ -1,0 +1,144 @@
+/* Google Search */
+
+/*
+#gSearch {
+	background-color: #999999;
+	position: absolute;
+	top: 150px;
+	width: 400px;
+}*/
+
+.gsc-control-cse {
+	font-family: Arial, sans-serif;
+	border: none;
+	background-color: inherit;
+	margin-top: 15px;
+}
+
+input.gsc-input {
+	border-color: #000000;
+	margin-right: 7px;
+}
+
+input.gsc-search-button {
+	border-color: #000000;
+	background-color: #cccccc;
+	margin-left: 7px;
+}
+
+.gsc-tabHeader.gsc-tabhInactive {
+	border-color: #33ccff;
+	background-color: #66ff99;
+}
+
+.gsc-tabHeader.gsc-tabhActive {
+	border-color: #3366ff;
+	background: none;
+}
+
+.gsc-tabsArea {
+	border-color: #3366ff;
+}
+
+.gsc-webResult.gsc-result {
+	border-color: #993300;
+	background: none;
+}
+
+.gsc-webResult.gsc-result:hover {
+	border-color: #3366ff;
+	background-color: #f0f0f0;
+}
+
+.gs-webResult.gs-result a.gs-title:link,
+.gs-webResult.gs-result a.gs-title:link b {
+	color: #993300;
+}
+
+.gs-webResult.gs-result a.gs-title:visited,
+.gs-webResult.gs-result a.gs-title:visited b {
+	color: #5F3812;
+}
+
+.gs-webResult.gs-result a.gs-title:hover,
+.gs-webResult.gs-result a.gs-title:hover b {
+	color: #5F7F0C;
+}
+
+.gs-webResult.gs-result a.gs-title:active,
+.gs-webResult.gs-result a.gs-title:active b {
+	color: #5F3812;
+}
+
+.gsc-cursor-page {
+	color: #993300;
+}
+
+a.gsc-trailing-more-results:link {
+	color: #993300;
+}
+
+.gs-webResult.gs-result .gs-snippet {
+	color: #000;
+	font-size: 13px;
+}
+
+.gs-webResult.gs-result .gs-visibleUrl {
+	color: #5F7F0C;
+}
+
+.gs-webResult.gs-result .gs-visibleUrl-short {
+	color: #5F7F0C;
+}
+
+.gs-webResult.gs-result .gs-visibleUrl-short {
+	display: none;
+}
+
+.gs-webResult.gs-result .gs-visibleUrl-long {
+	display: block;
+}
+
+.gsc-cursor-box {
+	border-color: #993300;
+}
+
+.gsc-results .gsc-cursor-page {
+	border-color: #33ccff;
+	background: none;
+}
+
+.gsc-results .gsc-cursor-page.gsc-cursor-current-page {
+	border-color: #3366ff;
+	background: none;
+}
+
+.gs-promotion.gs-result {
+	border-color: #993300;
+	background: none;
+}
+
+.gs-promotion.gs-result a.gs-title:link {
+	color: #993300;
+}
+
+.gs-promotion.gs-result a.gs-title:visited {
+	color: #5F3812;
+}
+
+.gs-promotion.gs-result a.gs-title:hover {
+	color: #5F7F0C;
+}
+
+.gs-promotion.gs-result a.gs-title:active {
+	color: #003300;
+}
+
+.gs-promotion.gs-result .gs-snippet {
+	color: #993300;
+}
+
+.gs-promotion.gs-result .gs-visibleUrl,
+.gs-promotion.gs-result .gs-visibleUrl-short {
+	color: #5F7F0C;
+}

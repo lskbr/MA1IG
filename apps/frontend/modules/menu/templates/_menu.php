@@ -7,33 +7,35 @@
             </div>
         </li>
         <?php foreach ($categories as $category): ?>
-            <li class="root">
-                <?php 
-                $cat_active=false;
-                foreach($pages[$category->getId()] as $p)
-                {
-                    if(strstr($p->getUrl(),$_SERVER["PATH_INFO"]) && strlen($_SERVER["PATH_INFO"])>5)
-                        $cat_active=true;
-                }
-                
-                if($cat_active) {
-                    $cat_active_text = 'class="selected"';
-                    $cat_active_text2 = 'cat_selected';
-                }
-                else {
-                    $cat_active_text = '';
-                    $cat_active_text2 = '';
-                }
+            <?php if(sizeof($pages[$category->getId()])!=0): ?>
+                <li class="root">
+                    <?php 
+                    $cat_active=false;
+                    foreach($pages[$category->getId()] as $p)
+                    {
+                        if(strstr($p->getUrl(),$_SERVER["PATH_INFO"]) && strlen($_SERVER["PATH_INFO"])>5)
+                            $cat_active=true;
+                    }
+                    
+                    if($cat_active) {
+                        $cat_active_text = 'class="selected"';
+                        $cat_active_text2 = 'cat_selected';
+                    }
+                    else {
+                        $cat_active_text = '';
+                        $cat_active_text2 = '';
+                    }
 
-                echo '<div class="backcolor categorie '.$cat_active_text2.'">'.$category->getName().'</div>';
-                echo '<ul '.$cat_active_text.'>';
+                    echo '<div class="backcolor categorie '.$cat_active_text2.'">'.$category->getName().'</div>';
+                    echo '<ul '.$cat_active_text.'>';
 
-                foreach($pages[$category->getId()] as $p)
-                {
-                    echo '<li><a class="backcolor" href="'.$p->getUrl().'"><img src="/images/hierarchie.png" alt="Flèche" style="vertical-align:5%"/> '.$p->getMenuTitle().'</a></li>';
-                }?>
-                </ul>
-            </li>
+                    foreach($pages[$category->getId()] as $p)
+                    {
+                        echo '<li><a class="backcolor" href="'.$p->getUrl().'"><img src="/images/hierarchie.png" alt="Flèche" style="vertical-align:5%"/> '.$p->getMenuTitle().'</a></li>';
+                    }?>
+                    </ul>
+                </li>
+                <?php endif; ?>
         <?php endforeach; ?>
     </ul>
     <!-- Préchargement des images JS -->

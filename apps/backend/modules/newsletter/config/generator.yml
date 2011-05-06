@@ -1,0 +1,31 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Newsletter
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          newsletter
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        news_id:
+          label: Actualité correspondante
+        subscriber_count:
+          label: Nombre de destinataires
+        created_at:
+          label: Envoyé le
+      list:
+        title: Liste des newsletters envoyées
+        display: [_news, subscriber_count, _created_at]
+        batch_actions: {}
+      filter:
+        class: false
+      form:    ~
+      edit:    ~
+      new:     ~

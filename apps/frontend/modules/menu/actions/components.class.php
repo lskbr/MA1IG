@@ -14,6 +14,7 @@ class menuComponents extends sfComponents
     	$this->pages[$p->getCategoryId()][]=$p;
     foreach($this->dynamic_pages as $d)
       $this->pages[$d->getCategoryId()][]=$d;
+    
   }
 }
 ?>

@@ -1,5 +1,10 @@
+<?php
+$page_title = __('Galerie photos');
+slot('title', $page_title);
+?>
+
 <div class="gallery_title">
-  <h1><?php echo __('Galerie photos')?></h1>
+  <h1><?php echo $page_title ?></h1>
 </div>
 
 <?php 

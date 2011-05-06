@@ -22,10 +22,10 @@ abstract class BaseMessageForm extends BaseFormDoctrine
       'created_at'    => new sfWidgetFormInputText(),
       'reply_at'      => new sfWidgetFormInputText(),
       'comment_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('comment'), 'add_empty' => true)),
-      'sender_id'     => new sfWidgetFormInputText(),
+      'sender_id'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Sender'), 'add_empty' => true)),
       'category_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('faqCategory'), 'add_empty' => false)),
       'folder_id'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Folder'), 'add_empty' => false)),
-      'forward_to_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Person'), 'add_empty' => true)),
+      'forward_to_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('ForwardTo'), 'add_empty' => false)),
     ));
 
     $this->setValidators(array(
@@ -36,10 +36,10 @@ abstract class BaseMessageForm extends BaseFormDoctrine
       'created_at'    => new sfValidatorPass(),
       'reply_at'      => new sfValidatorPass(array('required' => false)),
       'comment_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('comment'), 'required' => false)),
-      'sender_id'     => new sfValidatorInteger(array('required' => false)),
+      'sender_id'     => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Sender'), 'required' => false)),
       'category_id'   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('faqCategory'))),
       'folder_id'     => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Folder'), 'required' => false)),
-      'forward_to_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Person'), 'required' => false)),
+      'forward_to_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('ForwardTo'))),
     ));
 
     $this->widgetSchema->setNameFormat('message[%s]');

@@ -1,4 +1,10 @@
 BooleanConfiguration:
+  usersManagement:
+    main: usersmanagement
+    name: Gestion des utilisateurs
+    description: Permet des gérés les diférérents utilisateurs du site internet
+    is_activated: true
+    is_kernel: true
   ContactAvances:
     main: contacts
     name: Contacts avancés
@@ -80,6 +86,11 @@ BooleanConfiguration:
     name: Livre d'or
     description: Affiche un livre d'or que les visiteurs peuvent compléter.
     is_activated: true
+  BilanCarbone:
+    main: bilan_carbone
+    name: Bilan Carbone
+    description: Calcule votre empreinte écologique en quelques minutes.
+    is_activated: true
   Donenligne:
     main: donenligne
     name: Don en ligne
@@ -105,8 +116,6 @@ BooleanConfiguration:
     name: Afficher le lien plan du site
     description: Permet d'afficher le lien "Plan du site" en bas de chaque page
     is_activated: false
-
-
 
 NumericConfiguration:
   NewsParPage:

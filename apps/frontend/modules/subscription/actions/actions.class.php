@@ -13,6 +13,12 @@ class subscriptionActions extends sfActions
   public function executeShow(sfWebRequest $request)
   {
   }
+  public function executeDelete(sfWebRequest $request)
+  {
+    $s = $this->getRoute()->getObject();
+    $s->delete();
+    $this->redirect('homepage');
+  }
 
   public function executeNew(sfWebRequest $request)
   {

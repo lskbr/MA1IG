@@ -11,3 +11,7 @@ Guestbook:
     Language: Français
     content: "Je trouve votre site et votre association géniaux, comment puis-je vous aider afin de sauver la planéte? Un arbre compense combien de gramme de Co2, de plus je souhaiterais partir voir les plantation qui dois-je contacter? Merci beaucoup pour votre association"
     is_validated: true
+  M4:
+    Language: Anglais
+    content: "Your website is amazing !"
+    is_validated: true

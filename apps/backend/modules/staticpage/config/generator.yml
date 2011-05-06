@@ -20,6 +20,8 @@ generator:
         menu_title: {label: Titre du menu}
         category_id: {label: Catégorie}
         category: {label: Catégorie}
+        created_at: {label: Creer le: }
+        updated_at: {label: Modifier le: }
 
       list:
         table_method: retrieveBackendStaticPage

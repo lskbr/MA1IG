@@ -13,7 +13,7 @@ abstract class BaseNewsFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'title'              => new sfWidgetFormFilterInput(),
+      'title'              => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'content'            => new sfWidgetFormFilterInput(),
       'is_activated'       => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
       'language_id'        => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Language'), 'add_empty' => true)),

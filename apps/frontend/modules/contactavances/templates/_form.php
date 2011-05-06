@@ -14,7 +14,7 @@
       <tr>
         <td colspan="2">
           <?php echo $form->renderHiddenFields(false) ?>
-          <input type="submit" value="<?php echo __('Enregistrer') ?>" />
+          <input type="submit" value="<?php echo __('Envoyer') ?>" />
         </td>
       </tr>
     </tfoot>
@@ -30,7 +30,7 @@
         </tr>
         <tr>
             <td>
-                <?php echo __('Répondre à :')?>
+                <?php echo __('Répondre à cette adresse:')?>
             </td>
             <td>
                 <?php echo $mail; ?>

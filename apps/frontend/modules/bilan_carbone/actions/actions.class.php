@@ -15,6 +15,9 @@ class bilan_carboneActions extends sfActions {
      * @param sfRequest $request A request object
      */
     public function executeIndex(sfWebRequest $request) {
+        if(!config::getInstance()->get('bilan_carbone'))
+            $this->redirect404();
+
         $this->form = new BilanCarboneForm();
 
         if ($request->isMethod('post')) {
@@ -58,6 +61,7 @@ class bilan_carboneActions extends sfActions {
     }
 
     public function executeCalcul(sfWebRequest $request) {
-        
+        if(!config::getInstance()->get('bilan_carbone'))
+            $this->redirect404();
     }
 }

@@ -1,3 +1,4 @@
+<?php $sf_user->setCulture('fr_FR');?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -45,7 +46,7 @@
                         if ($sf_user->isAuthenticated()) {
                             menu_item('Accueil', 'homepage', $sf_context); // 'NomAAfficher','route',$sf_context,à activer;
                             menu_item('Messagerie', 'contactavances', $sf_context, 'contacts');
-                            menu_item('Donnations', 'donenligne', $sf_context, 'donenligne');
+                            menu_item('Donations', 'donenligne', $sf_context, 'donenligne');
                             menu_item('Actualités', 'news', $sf_context, 'news');
                             menu_item('Newsletter', 'newsletter', $sf_context);
                             menu_item('Langues', 'language', $sf_context);

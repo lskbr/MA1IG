@@ -12,6 +12,21 @@
  */
 class Newsletter extends BaseNewsletter
 {
+	protected $frontendRouting = null;
+	public function frontendRouting()
+    {
+      if (!$this->frontendRouting)
+      {
+         $this->frontendRouting = new sfPatternRouting(new sfEventDispatcher());
+         $config = new sfRoutingConfigHandler();
+         $routes = $config->evaluate(array(sfConfig::get('sf_apps_dir').'/frontend/config/routing.yml'));
+ 
+         $this->frontendRouting->setRoutes($routes);
+      }
+ 
+      return $this->frontendRouting;
+    }
+
 	public function save(Doctrine_Connection $conn = null)
 	{
 		$this->setSubscriberCount(Doctrine::getTable('Subscriber')->count());
@@ -21,10 +36,10 @@ class Newsletter extends BaseNewsletter
 		foreach($subscribers as $s)
 		{
 		    sfContext::getInstance()->getMailer()->composeAndSend(
-		      array('info@grainedevie.seaflat.be' => 'Graine de vie'),
+		      array(config::getInstance()->get('newsletter_mail') => 'Graine de vie'),
 		      $s->getEmail(),
 		      'Newsletter :'.$this->getNews()->getTitle(),
-		      $this->getNews()->getContent().'<br/>'.link_to('Me désinscrire','unsuscribe',$s)
+		      $this->getNews()->getContent().'<br/><a href="'.$this->frontendRouting()->generate('unsubscribe',$s,true).'">'.__('Me supprimer de cette liste de diffusion').'</a>'
 		    );
 		}
 		return parent::save($conn);

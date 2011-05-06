@@ -46,6 +46,7 @@ abstract class BaseNews extends sfDoctrineRecord
         $this->setTableName('news');
         $this->hasColumn('title', 'varchar', 255, array(
              'type' => 'varchar',
+             'notnull' => true,
              'length' => 255,
              ));
         $this->hasColumn('content', 'text', null, array(

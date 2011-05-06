@@ -4,10 +4,7 @@
     <b><?php echo __('Partager') ?> :</b>
 </div>
 
-<div style="display: inline" class="addthis_toolbox addthis_default_style"
-     addthis:url="<?php echo $url_news ?>"
-     addthis:title="<?php echo $url_title ?>"
-     addthis:description="<?php echo $url_description ?>">
+<div style="display: inline" class="addthis_toolbox addthis_default_style">
 
     <a class="addthis_button_facebook" title="<?php echo __('Partager sur Facebook') ?>"></a>
     <a class="addthis_button_twitter" title="<?php echo __('Partager sur Twitter') ?>"></a>

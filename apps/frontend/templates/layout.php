@@ -3,10 +3,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title><?php 
-        echo __('Graine de vie');
         if(get_slot('title')):
-            echo ' - '.get_slot('title');
+            echo get_slot('title').' - ';
         endif;
+        echo __('Graine de vie');
         ?></title>
         <?php include_javascripts() ?>
         <?php include_stylesheets() ?>

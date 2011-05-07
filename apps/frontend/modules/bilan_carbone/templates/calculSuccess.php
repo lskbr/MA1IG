@@ -1,19 +1,21 @@
-<?php $page_title = __('Résultat du calcul de votre empreinte écologique'); ?>
+<?php
+use_helper('Number');
 
-<?php slot('title', $page_title); ?>
+$page_title = __('Résultat du calcul de votre empreinte écologique');
+
+slot('title', $page_title); ?>
 
 <h1><?php echo $page_title ?></h1>
 
-<?php
-if ($sf_user->getAttribute('eco_footprint') == '' || $sf_user->getAttribute('nbr_trees') == ''):
-?>
-<div id="bilan_result"><?php echo link_to(__('Vous n\'avez pas encore calculé votre empreinte écologique'), '@bilan_carbone', array('title' => __('Cliquez ici pour la calculer'))); ?></div>
-<?php
-else:
-?>
-<div id="bilan_result"><?php echo __('Votre empreinte écologique s\'élève à').' <span class="bilan_nbr">'.sprintf("%0.2f", $sf_user->getAttribute('eco_footprint')).'</span> kg équiv. CO<sub>2</sub>'; ?></div>
-<div class="bilan_don"><?php echo __('Pour compenser celle-ci totalement, il faudrait planter %nbr_trees% arbres', array('%nbr_trees%' => '<span class="bilan_nbr">'.ceil($sf_user->getAttribute('nbr_trees')).'</span>')); ?></div>
-<div class="bilan_don"><?php echo __('Aidez-nous à la compenser (au moins en partie) grâce à un don !') ?></div>
-<?php
-endif;
-?>
+<div id="bilan_calcul">
+    <div id="bilan_result">
+        <?php echo __('Votre empreinte écologique s\'élève à :').'<br/><span class="bilan_nbr">'.format_number(round($sf_user->getAttribute('eco_footprint'), 2)).'</span> kg équiv. CO<sub>2</sub>'; ?>
+    </div>
+    <div class="bilan_don">
+        <?php echo __('Pour compenser celle-ci totalement, il faudrait planter :<br/>%nbr_trees% arbres', array('%nbr_trees%' => '<span class="bilan_nbr">'.format_number(ceil($sf_user->getAttribute('nbr_trees'))).'</span>')); ?>
+    </div>
+    <div class="bilan_don">
+        <?php echo __('Aidez-nous à la compenser (au moins en partie) grâce à un don :') ?><br/>
+        <?php include_component('donenligne', 'show', array('montant' => round($sf_user->getAttribute('montant_don'), 2))); ?>
+    </div>
+</div>

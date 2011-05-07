@@ -5,7 +5,7 @@ if(!isset($montant)) {
 }
 ?>
 <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
-    <input type="text" value="<?php echo sprintf("%0.2f", $montant); ?>" name="amount" size="5"/>€
+    <input type="text" value="<?php echo sprintf("%0.2f", $montant); ?>" name="amount" size="8"/>€
     <input name="currency_code" type="hidden" value="EUR" />
     <input name="shipping" type="hidden" value="0.00" />
     <input name="tax" type="hidden" value="0.00" />

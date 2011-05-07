@@ -1149,16 +1149,26 @@ div#bilan_error {
     font-weight: bold;
 }
 
-div#bilan_result, div.bilan_don {
-    font-size: 1.5em;
-    margin-top: 3px;
+
+div#bilan_calcul {
+    border: 1px #5F3812 solid;
+    background-color: #fffae7;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    width: 420px;
+
+    text-align: center;
 }
-div#bilan_result {
+
+div.bilan_don {
     margin-top: 20px;
 }
-div#bilan_result a {
-    font-size: inherit;
+
+div.bilan_don form {
+    margin-top: 5px;
 }
+
 .bilan_nbr {
     font-size: inherit;
     font-weight: bold;

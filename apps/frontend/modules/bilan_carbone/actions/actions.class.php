@@ -43,13 +43,17 @@ class bilan_carboneActions extends sfActions {
                 $eco_footprint += $bilan['computers']*0.733 + $bilan['books']*4.40 + $bilan['pets']*208.729 + $bilan['yacht']*550;
                 /* Nombre d'arbres à planter pour compenser */
                 $nbr_trees = $eco_footprint/7.14; // 167;
+                /* Montant du don */
+                $montant_don = ceil($nbr_trees)*5;
 
                 /* Enregistrement de l'empreinte écologique dans une variable de session pour la garder en mémoire si on change de page */
-                $this->getUser()->setAttribute('eco_footprint', number_format($eco_footprint, 2, '.', ''));
-                $this->getUser()->setAttribute('nbr_trees', number_format($nbr_trees, 0, '.', ''));
+                $this->getUser()->setAttribute('eco_footprint', $eco_footprint);
+                $this->getUser()->setAttribute('nbr_trees', $nbr_trees);
+                $this->getUser()->setAttribute('montant_don', $montant_don);
 
                 //$this->getUser()->getAttributeHolder()->remove('eco_footprint');
                 //$this->getUser()->getAttributeHolder()->remove('nbr_trees');
+                //$this->getUser()->getAttributeHolder()->remove('montant_don');
 
                 $this->redirect('bilan_carbone/calcul'); //?'.http_build_query($this->form->getValues()));
             }

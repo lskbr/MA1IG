@@ -88,7 +88,7 @@
 
                 <div id="content">
                     <?php
-                    echo $sf_content;
+                    echo '<div class="social_sharing">'.$sf_content.'</div>';
 
                     // Partage sur les réseaux sociaux
                     if(config::getInstance()->get('social_sharing'))

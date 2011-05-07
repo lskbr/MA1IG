@@ -663,12 +663,33 @@ ul#menu li{
     font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
 }
 
-
 /*
-    Fin Menu
+    Social Sharing
 */
 
-/* Footer */
+div.social_sharing {
+    position: relative;
+    float: left;
+    width: 720px;
+}
+
+div.border_social_sharing {
+    margin: 25px 0 10px 0;
+    border-top: 2px #bbbbbb dotted;
+    height: 1px;
+    width: 100px;
+}
+
+div.text_social_sharing {
+    display: inline;
+    float: left;
+    margin-right: 3px;
+}
+
+/*
+    Footer
+*/
+
 /* Dependant: br-frame-center; bg-frame-bottom, center*/
 div#footer {
         background-image: url(../images/bg-frame-bottom.png);

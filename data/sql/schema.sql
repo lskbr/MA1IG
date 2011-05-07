@@ -14,7 +14,7 @@ CREATE TABLE faq_translation (id BIGINT, question text, answer text, is_activate
 CREATE TABLE faq (id BIGINT AUTO_INCREMENT, position BIGINT, faq_category_id BIGINT NOT NULL, INDEX faq_category_id_idx (faq_category_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE faq_category_translation (id BIGINT, name VARCHAR(255), lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE faq_category (id BIGINT AUTO_INCREMENT, PRIMARY KEY(id)) ENGINE = INNODB;
-CREATE TABLE folder (id BIGINT AUTO_INCREMENT, name VARCHAR(255) UNIQUE, PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE folder (id BIGINT AUTO_INCREMENT, name VARCHAR(255) NOT NULL UNIQUE, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE galery_translation (id BIGINT, name VARCHAR(40) NOT NULL UNIQUE, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE galery (id BIGINT AUTO_INCREMENT, position BIGINT NOT NULL, is_activated TINYINT(1) DEFAULT '0' NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE guestbook (id BIGINT AUTO_INCREMENT, content text, is_validated TINYINT(1) DEFAULT '0' NOT NULL, language_id BIGINT, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX language_id_idx (language_id), PRIMARY KEY(id)) ENGINE = INNODB;

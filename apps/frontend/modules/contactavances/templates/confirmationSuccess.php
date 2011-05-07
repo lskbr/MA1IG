@@ -1,10 +1,16 @@
 <!--
     Réaliser par Laurent
 -->
-<h1><?php echo __('Message envoyé') ?></h1>
+<?php
+$page_title = __('Message envoyé');
+
+slot('title', $page_title);
+?>
+
+<h1><?php echo $page_title ?></h1>
 <tbody>
 <p class="confirmation-text">
-    <?php echo __('Votre message a été envoyé avec succès')?>
+    <?php echo __('Votre message a été envoyé avec succès !')?>
 </p>
 <br />
 <br />

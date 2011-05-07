@@ -711,6 +711,11 @@ div#footer div#bottom-bar {
 	top: 20px;
 }
 
+div#footer div#bottom-bar .sep_li {
+	height: 12px;
+	line-height: 12px;
+}
+
 div#footer ul {
 	float: right;
 	margin-left: 17px;
@@ -1158,4 +1163,16 @@ div#bilan_result a {
     font-size: inherit;
     font-weight: bold;
     color: #5F3812;
+}
+
+/*
+    Don en ligne
+*/
+
+div#text_donenligne {
+    margin: 10px 0 10px 0;
+}
+
+.img_donenligne {
+    vertical-align: -30%;
 }

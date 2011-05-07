@@ -103,18 +103,22 @@
                 	<img src="/images/frblogo.png" width="106" height="39" />
                 </div>
                 <div id="bottom-bar">
-                	<ul>
-                            <li><?php include_component('donenligne', 'show')?></li>
-                        <li class="form">
-                            <?php include_component('language', 'language') ?>
-                        </li>
+                    <ul>
+                        <li class="form"><?php include_component('donenligne', 'show')?></li>
+                        
+                        <li class="sep_li">|</li>
+                        <li class="form"><?php include_component('language', 'language') ?></li>
+
                         <?php if(config::getInstance()->get('page_contact')): ?>
-                    	<li><a href="<?php echo url_for(config::getInstance()->get('id_contact'));  ?>"><?php echo __("Contact") ?></a></li>
+                        <li class="sep_li">|</li>
+                        <li><a href="<?php echo url_for(config::getInstance()->get('id_contact'));  ?>"><?php echo __("Contact") ?></a></li>
                         <?php endif;
+
                         if(config::getInstance()->get('page_mention')): ?>
                         <li>|</li>
                         <li><a href="<?php echo url_for(config::getInstance()->get('id_mention'));  ?>"><?php echo __("Mentions légales") ?></a></li>
                         <?php endif;
+
                         if(config::getInstance()->get('page_sitemap')): ?>
                         <li>|</li>
                         <li><a href="<?php echo url_for(config::getInstance()->get('id_sitemap'));  ?>"><?php echo __("Plan du site") ?></a></li>

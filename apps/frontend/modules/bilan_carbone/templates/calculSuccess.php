@@ -3,7 +3,8 @@ use_helper('Number');
 
 $page_title = __('Résultat du calcul de votre empreinte écologique');
 
-slot('title', $page_title); ?>
+slot('title', $page_title);
+?>
 
 <h1><?php echo $page_title ?></h1>
 

@@ -219,6 +219,12 @@ bilan_carbone_coeff:
     column:               id
     with_wildcard_routes: true
 
+google_analytics:
+  url:   /google_analytics
+  class:   sfDoctrineRoute
+  options: { model: GoogleAnalytics, type: object }
+  param:   { module: google_analytics, action: edit }
+
 homepage:
   url:   /
   param: { module: homepage, action: index }

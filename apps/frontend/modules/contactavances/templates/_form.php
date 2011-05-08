@@ -14,7 +14,7 @@
       <tr>
         <td colspan="2">
           <?php echo $form->renderHiddenFields(false) ?>
-          <input type="submit" value="<?php echo __('Enregistrer') ?>" />
+          <input type="submit" value="<?php echo __('Envoyer') ?>" />
         </td>
       </tr>
     </tfoot>
@@ -22,7 +22,7 @@
         <?php if(isset($mail) && isset($userName)): ?>
         <tr>
             <td>
-                <?php echo __('Identité :')?>
+                <?php echo __('Votre identité :')?>
             </td>
             <td>
                 <?php echo $userName; ?>
@@ -30,7 +30,7 @@
         </tr>
         <tr>
             <td>
-                <?php echo __('Répondre à :')?>
+                <?php echo __('Votre adresse Email :')?>
             </td>
             <td>
                 <?php echo $mail; ?>

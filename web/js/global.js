@@ -12,6 +12,15 @@ function new_page(url,id,largeur,hauteur) {
 }
 
 jQuery(document).ready(function () {
+        //!
+        //! Selecteur de langue
+        //!
+        jQuery("#lang_submit").empty();
+        
+        jQuery("#language").change(function() {
+            jQuery("#lang_selector").submit();
+        });
+
 	//!
 	//! Menu
 	//!

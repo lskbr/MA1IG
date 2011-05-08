@@ -6,7 +6,7 @@ default:
     content-type: text/html
 
   metas:
-    #title:        symfony project
+    title:         Administration du site - Graine de vie
     #description:  symfony project
     #keywords:     symfony, project
     #language:     en

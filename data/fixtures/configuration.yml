@@ -86,6 +86,11 @@ BooleanConfiguration:
     name: Livre d'or
     description: Affiche un livre d'or que les visiteurs peuvent compléter.
     is_activated: true
+  BilanCarbone:
+    main: bilan_carbone
+    name: Empreinte écologique
+    description: Calcule votre empreinte écologique en quelques minutes.
+    is_activated: true
   Donenligne:
     main: donenligne
     name: Don en ligne
@@ -95,6 +100,11 @@ BooleanConfiguration:
     main: newsletter
     name: Newsletter
     description: Permet d'envoyer une actualité par e-mail aux abonnés
+    is_activated: true
+  GoogleAnalytics:
+    main: google_analytics
+    name: Google Analytics
+    description: Permet d'obtenir des statistiques de visite du site grâce à Google Analytics
     is_activated: true
   Page1:
     main: page_contact
@@ -111,8 +121,6 @@ BooleanConfiguration:
     name: Afficher le lien plan du site
     description: Permet d'afficher le lien "Plan du site" en bas de chaque page
     is_activated: false
-
-
 
 NumericConfiguration:
   NewsParPage:

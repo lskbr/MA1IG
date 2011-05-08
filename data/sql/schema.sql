@@ -1,3 +1,4 @@
+CREATE TABLE bilan_carbone_coeff (id BIGINT AUTO_INCREMENT, name_short VARCHAR(255) NOT NULL UNIQUE, name VARCHAR(255) NOT NULL, coeff FLOAT(18, 2) NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE configuration (id BIGINT AUTO_INCREMENT, main VARCHAR(255) NOT NULL, name VARCHAR(255) NOT NULL, description text, configuration_id BIGINT, type VARCHAR(255), is_kernel TINYINT(1) DEFAULT '0', is_activated TINYINT(1) DEFAULT '0', value VARCHAR(255) DEFAULT '0', INDEX configuration_id_idx (configuration_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE category_translation (id BIGINT, name VARCHAR(40) NOT NULL UNIQUE, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE category (id BIGINT AUTO_INCREMENT, position BIGINT NOT NULL, is_activated TINYINT(1) DEFAULT '0' NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
@@ -14,9 +15,10 @@ CREATE TABLE faq_translation (id BIGINT, question text, answer text, is_activate
 CREATE TABLE faq (id BIGINT AUTO_INCREMENT, position BIGINT, faq_category_id BIGINT NOT NULL, INDEX faq_category_id_idx (faq_category_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE faq_category_translation (id BIGINT, name VARCHAR(255), lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE faq_category (id BIGINT AUTO_INCREMENT, PRIMARY KEY(id)) ENGINE = INNODB;
-CREATE TABLE folder (id BIGINT AUTO_INCREMENT, name VARCHAR(255) UNIQUE, PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE folder (id BIGINT AUTO_INCREMENT, name VARCHAR(255) NOT NULL UNIQUE, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE galery_translation (id BIGINT, name VARCHAR(40) NOT NULL UNIQUE, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE galery (id BIGINT AUTO_INCREMENT, position BIGINT NOT NULL, is_activated TINYINT(1) DEFAULT '0' NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE google_analytics (id BIGINT AUTO_INCREMENT, code text, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE guestbook (id BIGINT AUTO_INCREMENT, content text, is_validated TINYINT(1) DEFAULT '0' NOT NULL, language_id BIGINT, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX language_id_idx (language_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE language (id BIGINT AUTO_INCREMENT, name VARCHAR(40) NOT NULL UNIQUE, abbreviation VARCHAR(5) NOT NULL UNIQUE, flag VARCHAR(255), is_activated TINYINT(1) DEFAULT '0' NOT NULL, is_default TINYINT(1) NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE message (id BIGINT AUTO_INCREMENT, text text NOT NULL, is_saved TINYINT(1) DEFAULT '0', read_at datetime, created_at datetime NOT NULL, reply_at datetime, comment_id BIGINT, sender_id BIGINT, category_id BIGINT NOT NULL, folder_id BIGINT DEFAULT 1 NOT NULL, forward_to_id BIGINT NOT NULL, INDEX comment_id_idx (comment_id), INDEX sender_id_idx (sender_id), INDEX category_id_idx (category_id), INDEX folder_id_idx (folder_id), INDEX forward_to_id_idx (forward_to_id), PRIMARY KEY(id)) ENGINE = INNODB;

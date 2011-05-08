@@ -511,7 +511,7 @@ class phpthumb_functions {
 		static $cache_gd_version = array();
 		if (empty($cache_gd_version)) {
 			$gd_info = gd_info();
-			if (preg_match('/bundled \((.+)\)$/i', $gd_info['GD Version'], $matches)) {
+			if (eregi('bundled \((.+)\)$', $gd_info['GD Version'], $matches)) {
 				$cache_gd_version[1] = $gd_info['GD Version'];  // e.g. "bundled (2.0.15 compatible)"
 				$cache_gd_version[0] = (float) $matches[1];     // e.g. "2.0" (not "bundled (2.0.15 compatible)")
 			} else {
@@ -649,12 +649,10 @@ class phpthumb_functions {
 				} else {
 					$Data_body .= $line;
 				}
-				//if (eregi('^HTTP/[\\.0-9]+ ([0-9]+) (.+)$', rtrim($line), $matches)) {
-				if (preg_match('/^HTTP\/([\\\.0-9])+ (\d+) (.+)$/i', rtrim($line), $matches)) {
+				if (eregi('^HTTP/[\\.0-9]+ ([0-9]+) (.+)$', rtrim($line), $matches)) {
 					list($dummy, $errno, $errstr) = $matches;
 					$errno = intval($errno);
-				//} elseif (eregi('^Location: (.*)$', rtrim($line), $matches)) {
-				} elseif (preg_match('/^Location: (.*)$/i', rtrim($line), $matches)) {
+				} elseif (eregi('^Location: (.*)$', rtrim($line), $matches)) {
 					$header_newlocation = $matches[1];
 				}
 				if ($isHeader && ($line == "\r\n")) {
@@ -744,8 +742,7 @@ class phpthumb_functions {
 		while (true) {
 			$tryagain = false;
 			$rawData = phpthumb_functions::URLreadFsock(@$parsed_url['host'], @$parsed_url['path'].'?'.@$parsed_url['query'], $errstr, true, (@$parsed_url['port'] ? @$parsed_url['port'] : 80), $timeout);
-//			if (eregi('302 [a-z ]+; Location\\: (http.*)', $errstr, $matches)) {
-       if (preg_match('/302 [a-z ]+; Location\\: (http.*)/i', $errstr, $matches)) {
+			if (eregi('302 [a-z ]+; Location\\: (http.*)', $errstr, $matches)) {
 				$matches[1] = trim(@$matches[1]);
 				if (!@$alreadyLookedAtURLs[$matches[1]]) {
 					// loop through and examine new URL
@@ -822,11 +819,9 @@ class phpthumb_functions {
 	function EnsureDirectoryExists($dirname) {
 		$directory_elements = explode(DIRECTORY_SEPARATOR, $dirname);
 		$startoffset = (!$directory_elements[0] ? 2 : 1);  // unix with leading "/" then start with 2nd element; Windows with leading "c:\" then start with 1st element
-		//$open_basedirs = split('[;:]', ini_get('open_basedir'));
-		$open_basedirs = preg_split('/[;:]/', ini_get('open_basedir'));
+		$open_basedirs = split('[;:]', ini_get('open_basedir'));
 		foreach ($open_basedirs as $key => $open_basedir) {
-			//if (ereg('^'.preg_quote($open_basedir), $dirname) && (strlen($dirname) > strlen($open_basedir))) {
-			if (preg_match('/^'.preg_quote($open_basedir).'/', $dirname) && (strlen($dirname) > strlen($open_basedir))) {
+			if (ereg('^'.preg_quote($open_basedir), $dirname) && (strlen($dirname) > strlen($open_basedir))) {
 				$startoffset = count(explode(DIRECTORY_SEPARATOR, $open_basedir));
 				break;
 			}

@@ -18,11 +18,8 @@
 	//=========================================================================
 	// initiate iBrowser object	
 	function iBrowser() {	
-	 alert("Constructor called");
 	}
-	alert("new iBrowser");
 	var ib = new iBrowser;
-	alert("new iBrowser called");
 	//-------------------------------------------------------------------------
 	// open iBrowser
 	function iBrowser_open() {	

@@ -1,5 +1,5 @@
-<form class="lang_change" action="<?php echo url_for('change_language') ?>">
-	<?php echo __('Langue:') ?>
+<form id="lang_selector" class="lang_change" action="<?php echo url_for('change_language') ?>">
+	<?php echo __('Langue du site :') ?>
   	<select name="language" id="language">
   	<?php 
   	foreach($languages as $l)
@@ -12,5 +12,5 @@
   	?>
 	</select>
 	<?php echo $form->renderHiddenFields() ?>
-	<input type="submit" value="ok" />
+    <span id="lang_submit"><input type="submit" value="<?php echo __('Ok') ?>" /></span>
 </form>

@@ -1,0 +1,65 @@
+BilanCarboneCoeff:
+  NaturalGas:
+    name_short: nat_gas
+    name: "Gaz Naturel"
+    coeff: 2300
+  PropaneGas:
+    name_short: prop_gas
+    name: "Gaz propane"
+    coeff: 2900
+  Fuel:
+    name_short: fuel
+    name: "Fuel"
+    coeff: 2860
+  Wood:
+    name_short: wood
+    name: "Bois"
+    coeff: 3
+  Electricity:
+    name_short: elec
+    name: "Electricité"
+    coeff: 372
+  KmPlane:
+    name_short: km_plane
+    name: "Kilomètres en avion"
+    coeff: 140
+  Train:
+    name_short: train
+    name: "Kilomètres en train"
+    coeff: 0.116
+  Bus:
+    name_short: bus
+    name: "Temps passé dans des transports en commun de proximité non propulsés à l'électricité (ex.: bus)"
+    coeff: 0.776
+  Metro:
+    name_short: metro
+    name: "Temps passé dans des transports en commun de proximité propulsés à l'électricité (ex.: métro)"
+    coeff: 0.208
+  Feed:
+    name_short: feed
+    name: "Alimentation"
+    coeff: 2050.4
+  Computers:
+    name_short: computers
+    name: "Achats concernant les ordinateurs"
+    coeff: 0.733
+  Books:
+    name_short: books
+    name: "Achat de petits consommables"
+    coeff: 4.40
+  Pets:
+    name_short: pets
+    name: "Achat de viande rouge pour animaux domestiques"
+    coeff: 208.729
+  Yacht:
+    name_short: yacht
+    name: "Possession de bateau(x), mobile-home(s) ou caravane(s)"
+    coeff: 550
+  TreesCO2:
+    name_short: trees_co2
+    name: "Kg équiv. CO2 consommés par les arbres"
+    coeff: 7.14
+  CostTree:
+    name_short: cost_tree
+    name: "Coût d'un arbre"
+    coeff: 5

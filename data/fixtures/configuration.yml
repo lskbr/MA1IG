@@ -88,7 +88,7 @@ BooleanConfiguration:
     is_activated: true
   BilanCarbone:
     main: bilan_carbone
-    name: Bilan Carbone
+    name: Empreinte écologique
     description: Calcule votre empreinte écologique en quelques minutes.
     is_activated: true
   Donenligne:

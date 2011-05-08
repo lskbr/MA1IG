@@ -1,7 +1,7 @@
 BilanCarboneCoeff:
   NaturalGas:
     name_short: nat_gas
-    name: "Gaz Naturel"
+    name: "Gaz naturel"
     coeff: 2300
   PropaneGas:
     name_short: prop_gas
@@ -55,11 +55,11 @@ BilanCarboneCoeff:
     name_short: yacht
     name: "Possession de bateau(x), mobile-home(s) ou caravane(s)"
     coeff: 550
-  TreesCO2:
-    name_short: trees_co2
-    name: "Kg équiv. CO2 consommés par les arbres"
+  TreeCO2:
+    name_short: tree_co2
+    name: "Kg équiv. CO2 consommés par un arbre"
     coeff: 7.14
   CostTree:
     name_short: cost_tree
-    name: "Coût d'un arbre"
+    name: "Coût d'un arbre (en euros)"
     coeff: 5

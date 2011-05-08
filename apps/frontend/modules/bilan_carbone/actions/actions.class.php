@@ -20,6 +20,8 @@ class bilan_carboneActions extends sfActions {
 
         $this->form = new BilanCarboneForm();
 
+        $this->feed_coeff = Doctrine_Core::getTable('BilanCarboneCoeff')->createQuery('a')->where('name_short=?', 'feed')->execute();
+
         if ($request->isMethod('post')) {
             $this->form->bind($request->getParameter('bilan_carbone'));
             if ($this->form->isValid()) {

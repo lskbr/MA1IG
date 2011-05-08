@@ -75,8 +75,19 @@ Category:
        pt:
          name: Eles disseram
 
-  commentNousAiderCat:
+  bilanCarboneCat:
     position: 6
+    is_activated : 1
+    Translation:
+       en:
+         name: Ecological Footprint
+       fr:
+         name: Empreinte écologique
+       pt:
+         name: Pegada Ecológica
+
+  commentNousAiderCat:
+    position: 7
     is_activated : 1
     Translation:
        en:
@@ -87,7 +98,7 @@ Category:
          name: Como ajudar?
 
   contactCat:
-    position: 7
+    position: 8
     is_activated : 1
     Translation:
        en:

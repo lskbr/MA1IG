@@ -1,0 +1,1 @@
+<?php echo html_entity_decode($code->getCode(), ENT_QUOTES, 'UTF-8'); ?>

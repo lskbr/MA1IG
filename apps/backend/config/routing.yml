@@ -205,10 +205,20 @@ sentences:
   url: /sentence
   param: { module: sentences, action: index }
 
-homepage:
-  url:   /
-  param: { module: homepage, action: index }
-
 multiplephoto:
   url:   /multiplephoto
   param: { module: multiplephoto, action: index }
+
+bilan_carbone_coeff:
+  class: sfDoctrineRouteCollection
+  url:   /bilan_carbone_coeff
+  options:
+    model:                BilanCarboneCoeff
+    module:               bilan_carbone_coeff
+    prefix_path:          /bilan_carbone_coeff
+    column:               id
+    with_wildcard_routes: true
+
+homepage:
+  url:   /
+  param: { module: homepage, action: index }

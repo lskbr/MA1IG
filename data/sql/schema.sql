@@ -1,3 +1,4 @@
+CREATE TABLE bilan_carbone_coeff (id BIGINT AUTO_INCREMENT, name_short VARCHAR(255) NOT NULL UNIQUE, name VARCHAR(255) NOT NULL, coeff FLOAT(18, 2) NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE configuration (id BIGINT AUTO_INCREMENT, main VARCHAR(255) NOT NULL, name VARCHAR(255) NOT NULL, description text, configuration_id BIGINT, type VARCHAR(255), is_kernel TINYINT(1) DEFAULT '0', is_activated TINYINT(1) DEFAULT '0', value VARCHAR(255) DEFAULT '0', INDEX configuration_id_idx (configuration_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE category_translation (id BIGINT, name VARCHAR(40) NOT NULL UNIQUE, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE category (id BIGINT AUTO_INCREMENT, position BIGINT NOT NULL, is_activated TINYINT(1) DEFAULT '0' NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;

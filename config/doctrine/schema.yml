@@ -247,3 +247,9 @@ address:
     person_id: {type: integer}
   relations:
     Person: {local: person_id, foreign: id}
+
+BilanCarboneCoeff:
+  columns:
+    name_short: {type: string(255), notnull: true, unique: true}
+    name: {type: string(255), notnull: true}
+    coeff: {type: float, notnull: true}

@@ -11,9 +11,11 @@
         <?php include_javascripts() ?>
         <?php include_stylesheets() ?>
 
-        <!-- Tracking de Google Analytics -->
-        <?php include_once('googleanalyticstracking.php') ?>
-        <!-- Fin du tracking de Google Analytics -->
+        <?php
+        // Tracking de Google Analytics
+        if(config::getInstance()->get('google_analytics'))
+            include_component('google_analytics', 'google_analytics');
+        ?>
     </head>
 
     <body>

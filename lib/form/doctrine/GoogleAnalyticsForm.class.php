@@ -12,5 +12,6 @@ class GoogleAnalyticsForm extends BaseGoogleAnalyticsForm
 {
   public function configure()
   {
+      $this->widgetSchema['code'] = new sfWidgetFormTextarea(array(), array('cols' => 200, 'rows' => 20));
   }
 }

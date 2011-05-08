@@ -101,6 +101,11 @@ BooleanConfiguration:
     name: Newsletter
     description: Permet d'envoyer une actualité par e-mail aux abonnés
     is_activated: true
+  GoogleAnalytics:
+    main: google_analytics
+    name: Google Analytics
+    description: Permet d'obtenir des statistiques de visite du site grâce à Google Analytics
+    is_activated: true
   Page1:
     main: page_contact
     name: Afficher le lien contact

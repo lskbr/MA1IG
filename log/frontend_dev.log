@@ -13740,3 +13740,30 @@ May 05 22:35:19 symfony [info] {sfWebDebugLogger} Component "language/language" 
 May 05 22:35:19 symfony [info] {sfWebDebugLogger} Partial "language/_language" 5.30 ms (1)
 May 05 22:35:19 symfony [info] {sfWebResponse} Send content (107368 o)
 >>>>>>> 585ccd891cbb291e686a5598d78f53c707f49da4
+May 07 10:36:17 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+May 07 10:36:17 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+May 07 10:36:17 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_register" (/guard/register)
+May 07 10:36:17 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_forgot_password" (/guard/forgot_password)
+May 07 10:36:17 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_forgot_password_change" (/guard/forgot_password/:unique_key)
+May 07 10:36:17 symfony [info] {sfPatternRouting} Match route "localized_homepage" (/:sf_culture/) for /fr/ with parameters array (  'module' => 'page',  'action' => 'index',  'sf_culture' => 'fr',)
+May 07 10:36:19 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 07 10:36:19 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 07 10:36:19 symfony [info] {pageActions} Call "pageActions->executeIndex()"
+May 07 10:36:19 symfony [info] {sfPHPView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/page/templates/indexSuccess.php"
+May 07 10:36:20 symfony [info] {main} Set slot "title"
+May 07 10:36:26 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+May 07 10:36:27 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.id AS c__id, c.main AS c__main, c.name AS c__name, c.description AS c__description, c.configuration_id AS c__configuration_id, c.type AS c__type, c.is_kernel AS c__is_kernel, c.is_activated AS c__is_activated, c.value AS c__value FROM configuration c - ()
+May 07 16:10:41 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+May 07 16:10:41 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+May 07 16:10:41 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_register" (/guard/register)
+May 07 16:10:41 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_forgot_password" (/guard/forgot_password)
+May 07 16:10:41 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_forgot_password_change" (/guard/forgot_password/:unique_key)
+May 07 16:10:41 symfony [info] {sfPatternRouting} Match route "localized_homepage" (/:sf_culture/) for /fr/ with parameters array (  'module' => 'page',  'action' => 'index',  'sf_culture' => 'fr',)
+May 07 16:10:44 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 07 16:10:44 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 07 16:10:44 symfony [info] {pageActions} Call "pageActions->executeIndex()"
+May 07 16:10:44 symfony [info] {sfPHPView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/page/templates/indexSuccess.php"
+May 07 16:10:44 symfony [info] {main} Set slot "title"
+May 07 16:10:53 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+May 07 16:10:54 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.id AS c__id, c.main AS c__main, c.name AS c__name, c.description AS c__description, c.configuration_id AS c__configuration_id, c.type AS c__type, c.is_kernel AS c__is_kernel, c.is_activated AS c__is_activated, c.value AS c__value FROM configuration c - ()
+May 07 16:10:59 symfony [info] {main} Call "citation->executeCitation()"

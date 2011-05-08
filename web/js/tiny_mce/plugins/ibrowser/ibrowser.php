@@ -318,9 +318,11 @@
 // ============================================================	
 	function setImagePopup(popSrc) {		
 		var formObj = document.forms[0];
-		var src = '<?php echo $cfg['scripts']; ?>' + 'phpThumb/phpThumb.php'; // command			
-		src     = src + '?src=' + popSrc; 					// popup source image				
-		src     = src + '&w=80'; 							// image width
+		//var src = '<?php echo $cfg['scripts']; ?>' + 'phpThumb/phpThumb.php'; // command			
+		//src     = src + '?src=' + popSrc; 					// popup source image
+		var src = "/uploads/photo"+popSrc;
+		//src     = src + '&w=80'; 							// image width
+		src     = src + '?w=80'; 							// image width
 		src     = src + '&h=60'; 							// image height
 		src     = src + '&zc=1'; 							// zoom crop			
 		document.getElementById('poPrevFrame').src = src; 	// update preview	
@@ -432,9 +434,11 @@
 		//-------------------------------------------------------------------------
 		// update preview window	
 		var sizes = resizePreview(cwidth, cheight, 150, 150);		
-		var src = '<?php echo $cfg['scripts']; ?>' + 'phpThumb/phpThumb.php'; // command
-		src = src + '?src=' + clib + cfile; // source file
-		src = src + '&w=' + sizes['w']; // width		
+		//var src = '<?php echo $cfg['scripts']; ?>' + 'phpThumb/phpThumb.php'; // command
+		var src = clib + 'thumbnail/'+ cfile;
+		//src = src + '?src=' + clib + cfile; // source file
+		//src = src + '&w=' + sizes['w']; // width		
+		src = src + '?w=' + sizes['w']; // width		
 		document.getElementById('inPrevFrame').src = src; // update regular preview
 		
 		//-------------------------------------------------------------------------
@@ -778,8 +782,9 @@
 				return;
 			}
 			var src;						
-			src = '<?php echo $cfg['scripts']; ?>' + 'phpThumb/phpThumb.php'; // command							
-			src = src + '?src=' + absPath(clib) + cfile; // source image
+			//src = '<?php echo $cfg['scripts']; ?>' + 'phpThumb/phpThumb.php'; // command		
+			//src = src + '?src=' + absPath(clib) + cfile; // source image
+			src = '/uploads/photo'+ absPath(clib) + cfile + '?';
 			src = src + '&w='+sizes['w']; //image width						
 		
 			var windowName = 'fullView';							

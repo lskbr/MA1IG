@@ -517,7 +517,8 @@ html, body {
 	//-------------------------------------------------------------------------
 	// escape and clean up file name (only lowercase letters, numbers and underscores are allowed) 
 	function fixFileName($file) {
-		$file = ereg_replace("[^a-z0-9._-]", "", str_replace(" ", "_", str_replace("%20", "_", strtolower($file))));
+		//$file = ereg_replace("[^a-z0-9._-]", "", str_replace(" ", "_", str_replace("%20", "_", strtolower($file))));
+		$file = 'ibrowser_upload_' + sha1($file); 
 		return $file;
 	}
 	//-------------------------------------------------------------------------

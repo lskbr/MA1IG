@@ -321,12 +321,7 @@
 		var formObj = document.forms[0];
 		//var src = '<?php echo $cfg['scripts']; ?>' + 'phpThumb/phpThumb.php'; // command			
 		//src     = src + '?src=' + popSrc; 					// popup source image
-		var src = "/uploads/photo"+popSrc;
-		//var src = popSrc;
-		//src     = src + '&w=80'; 							// image width
-		src     = src + '?w=80'; 							// image width
-		src     = src + '&h=60'; 							// image height
-		src     = src + '&zc=1'; 							// zoom crop			
+		var src = popSrc;			
 		document.getElementById('poPrevFrame').src = src; 	// update preview	
 		formObj.popSrc.value = popSrc;
 	}
@@ -416,7 +411,7 @@
 	   if(dir.search("thumbnailGrande/")!=-1){
 	       dir = dir.replace("thumbnailGrande/",'');
      }
-	   return dir;
+	   return dir.concat('thumbnail/');
   }
   function imageChange() {		
 	
@@ -445,11 +440,7 @@
 		// update preview window	
 		var sizes = resizePreview(cwidth, cheight, 150, 150);		
 		//var src = '<?php echo $cfg['scripts']; ?>' + 'phpThumb/phpThumb.php'; // command
-		var src = getThumbPath(clib) + 'thumbnail/'+ cfile;
-		
-		//src = src + '?src=' + clib + cfile; // source file
-		//src = src + '&w=' + sizes['w']; // width		
-		src = src + '?w=' + sizes['w']; // width		
+		var src = getThumbPath(clib) + cfile;				
 		document.getElementById('inPrevFrame').src = src; // update regular preview		
 		//-------------------------------------------------------------------------
 		// reset rename and delete info
@@ -474,8 +465,7 @@
 		//-------------------------------------------------------------------------
 		// update popup preview and set popup default attributes
 		if (document.getElementById('mbtn_po').className == 'btnDown') {
-			//var popSrc = clib + cfile; 
-			var popSrc = cfile; 
+			var popSrc = getThumbPath(clib) + cfile;  
 			setImagePopup(popSrc);			
 			formObj.popTitle.value = cfile.substr(0, cfile.length-4);			
 		}

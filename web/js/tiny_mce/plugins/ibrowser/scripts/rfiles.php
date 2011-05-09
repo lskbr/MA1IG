@@ -16,6 +16,7 @@
 	// include configuration settings
 	include dirname(__FILE__) . '/../config/config.inc.php';
 	include dirname(__FILE__) . '/../langs/lang.class.php';	
+	include dirname(__FILE__) . './thumbs.php';
 	//-------------------------------------------------------------------------
 		
 	// language settings	
@@ -249,6 +250,7 @@ html, body {
 </html>
 <?php
 	// get images
+		
 	function getItems($path, $valid, $list) {			
 		global $cfg;
 		global $l;		
@@ -266,6 +268,9 @@ html, body {
 			closedir($handle);                                               
 			ksort($files);							
 			$dfmt = "m-d-Y";
+			
+			$thumbpath = getThumbnailDir($path);
+      
 			foreach ($files as $filename => $ext) {										
 				$size     = @getimagesize($path . basename($filename));		
 				if( $size === false ) {
@@ -278,7 +283,8 @@ html, body {
 				if ($list == true || $list == 1) {
 					$retstr .= '<li class="cimgup" ifile="' . basename($filename) . '" iwidth="' . htmlentities($size[0], ENT_QUOTES) . '" iheight="' . htmlentities($size[1], ENT_QUOTES) . '" itype="' . htmlentities($size[2] . '|' . $ctype, ENT_QUOTES) . '" imdate="' . htmlentities($modified, ENT_QUOTES) . '" icdate="' . htmlentities($created, ENT_QUOTES) . '" isize="' .filesize_h($fsize,2) . '">' . htmlentities(basename($filename), ENT_QUOTES,$l->getCharset()) . '</li>' . "\n";
 				} else {
-					$src     = 'phpThumb/phpThumb.php?src=' . absPath(str_replace($cfg['root_dir'],'', $path)) . basename($filename) . '&w=48&h=48&far=1&bg=ffffff&f=jpg'; 				
+					//$src     = 'phpThumb/phpThumb.php?src=' . absPath(str_replace($cfg['root_dir'],'', $path)) . basename($filename) . '&w=48&h=48&far=1&bg=ffffff&f=jpg';									
+          $src     = absPath(str_replace($cfg['root_dir'],'', $thumbpath)) . basename($filename); 				
 					$retstr .= '<li class="cimgup" ifile="' . basename($filename) . '" iwidth="' . htmlentities($size[0], ENT_QUOTES) . '" iheight="' . htmlentities($size[1], ENT_QUOTES) . '" itype="' . htmlentities($size[2] . '|' . $ctype, ENT_QUOTES) . '" imdate="' . htmlentities($modified, ENT_QUOTES) . '" icdate="' . htmlentities($created, ENT_QUOTES) . '" isize="' .filesize_h($fsize,2) . '">' . '<img src="' . $src . '" width="48" height="48" alt="' . basename($filename) . '; ' . htmlentities($size[0], ENT_QUOTES) . ' x ' . htmlentities($size[1], ENT_QUOTES) . 'px;' . '" title="' . basename($filename) . '; ' . htmlentities($size[0], ENT_QUOTES) . ' x ' . htmlentities($size[1], ENT_QUOTES) . 'px;' . '"/>' . '</li>' . "\n";
 				}
 			}			

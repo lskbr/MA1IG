@@ -127,7 +127,7 @@
 		//-------------------------------------------------------------------------
 		preloadImages('images/firefox.gif','images/explorer.gif','images/img_in.gif','images/img_at.gif','images/img_po.gif','images/help.gif','images/help_off.gif','images/about.gif','images/about_off.gif','images/im.gif','images/dir_off.gif','images/dir.gif','images/prev_off.gif','images/prev.gif','images/symbols_off.gif','images/symbols.gif','images/alert_off.gif','images/alert.gif','images/dirview_off.gif','images/dirview.gif'); // preload images				
 		btnStage();
-		//resizeDialogToContent();		
+		resizeDialogToContent();		
 		window.focus();		
 	}
 // ============================================================

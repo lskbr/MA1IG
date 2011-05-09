@@ -8,6 +8,7 @@
       <th>Initial number</th>
       <th>Period</th>
       <th>Objective number</th>
+      <th>Slogan</th>
     </tr>
   </thead>
   <tbody>
@@ -18,6 +19,7 @@
       <td><?php echo $counter->getInitialNumber() ?></td>
       <td><?php echo $counter->getPeriod() ?></td>
       <td><?php echo $counter->getObjectiveNumber() ?></td>
+      <td><?php echo $counter->getSlogan() ?></td>
     </tr>
     <?php endforeach; ?>
   </tbody>

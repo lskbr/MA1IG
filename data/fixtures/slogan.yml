@@ -1,0 +1,73 @@
+Slogan:
+  S1:
+    name: Compteur
+    flag: text1
+    Translation:
+      en:
+        content: "We have already planted"
+      fr:
+        content: "Nous avons déjà planté"
+      nl:
+        content: "We have already planted"
+      pt:
+        content: "Já plantamos"
+  S2:
+    name: Compteur
+    flag: text2
+    Translation:
+      en:
+        content: "Help us continue to increase this number"
+      fr:
+        content: "Aidez nous à continuer à augmenter ce nombre"
+      nl:
+        content: "Help us continue to increase this number"
+      pt:
+        content: "Ajude-nos a continuar aumentando este número"
+  S3:
+    name: Compteur
+    flag: text3
+    Translation:
+      en:
+        content: "Donate !"
+      fr:
+        content: "Faites un don !"
+      nl:
+        content: "Donate !"
+      pt:
+        content: "Doe !"
+  S4:
+    name: Compteur2
+    flag: text1
+    Translation:
+      en:
+        content: "en-11111"
+      fr:
+        content: "fr-11111"
+      nl:
+        content: "nl-11111"
+      pt:
+        content: "pt-11111"
+  S5:
+    name: Compteur2
+    flag: text2
+    Translation:
+      en:
+        content: "en-22222"
+      fr:
+        content: "fr-22222"
+      nl:
+        content: "nl-22222"
+      pt:
+        content: "pt-22222"
+  S6:
+    name: Compteur2
+    flag: text3
+    Translation:
+      en:
+        content: "en-33333"
+      fr:
+        content: "fr-33333"
+      nl:
+        content: "nl-33333"
+      pt:
+        content: "pt-33333"

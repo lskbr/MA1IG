@@ -4,3 +4,4 @@ Counter:
     initial_number: 140000
     period:	12
     objective_number: 1000000
+    slogan: Compteur

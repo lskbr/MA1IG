@@ -20,6 +20,10 @@
       <th>Objective number:</th>
       <td><?php echo $counter->getObjectiveNumber() ?></td>
     </tr>
+    <tr>
+      <th>Slogan:</th>
+      <td><?php echo $counter->getSlogan() ?></td>
+    </tr>
   </tbody>
 </table>
 

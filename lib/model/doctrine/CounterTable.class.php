@@ -17,9 +17,9 @@ class CounterTable extends Doctrine_Table
         return Doctrine_Core::getTable('Counter');
     }
 
-    public function getCounterData()
+    public static function getCounterData()
     {
-        return $this->createQuery('a')->
+        return CounterTable::getInstance()->createQuery('a')->
             select('a.initial_number, '.
                 'FLOOR(a.initial_number + TIMESTAMPDIFF(SECOND, a.initial_date, NOW())*'.
                     'a.objective_number/TIMESTAMPDIFF(SECOND, a.initial_date, '.
@@ -35,5 +35,16 @@ class CounterTable extends Doctrine_Table
                 'FLOOR(1000*TIMESTAMPDIFF(SECOND, initial_date, ADDDATE(initial_date, '.
                     'INTERVAL period MONTH))/objective_number) AS interval')->
             orderBy('a.initial_date DESC')->limit(1)->execute();
+    }
+
+    public static function getCounterText($culture, $flag)
+    {
+    	$data = CounterTable::getInstance()->createQuery('a')->
+			select('a.id, b.id, b.flag, t.content')->
+			innerJoin('a.Slogan b')->
+			innerJoin('b.Translation t')->
+			where("t.lang=?", $culture)->
+			andWhere("b.flag=?", $flag)->execute(array(), Doctrine::HYDRATE_NONE);
+		return $data[0][3];
     }
 }

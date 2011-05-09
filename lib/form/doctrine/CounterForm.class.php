@@ -19,5 +19,15 @@ class CounterForm extends BaseCounterForm
 //		));
 
  		$this->widgetSchema["initial_date"] = new sfWidgetFormDate(array('format' => '%day%/%month%/%year%'));
+
+ 		$this->widgetSchema["slogan"] = new sfWidgetFormDoctrineChoice(array(
+	 		'model' => $this->getRelatedModelName('Slogan'),
+	 		'add_empty' => false,
+	 		'table_method' => 'getSlogans'));
+	 	
+	 	$this->validatorSchema["slogan"] =  new sfValidatorDoctrineChoice(array(
+		 	'model' => $this->getRelatedModelName('Slogan'),
+		 	'column' => 'name',
+		 	'required' => false));
 	}
 }

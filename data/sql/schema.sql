@@ -6,16 +6,14 @@ CREATE TABLE citation (id BIGINT AUTO_INCREMENT, PRIMARY KEY(id)) ENGINE = INNOD
 CREATE TABLE comment (id BIGINT AUTO_INCREMENT, text text, update_at datetime, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE configuration (id BIGINT AUTO_INCREMENT, main VARCHAR(255) NOT NULL, name VARCHAR(255) NOT NULL, description text, configuration_id BIGINT, type VARCHAR(255), is_kernel TINYINT(1) DEFAULT '0', is_activated TINYINT(1) DEFAULT '0', value VARCHAR(255) DEFAULT '0', INDEX configuration_type_idx (type), INDEX configuration_id_idx (configuration_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE corespondance (id BIGINT AUTO_INCREMENT, first_mail datetime, last_mail datetime, number_of_mail BIGINT DEFAULT 0, PRIMARY KEY(id)) ENGINE = INNODB;
-CREATE TABLE counter (id BIGINT AUTO_INCREMENT, initial_date DATETIME NOT NULL, initial_number BIGINT NOT NULL, period BIGINT NOT NULL, objective_number BIGINT NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
-CREATE TABLE counter_text_translation (id BIGINT, slogan1 VARCHAR(255) NOT NULL, slogan2 VARCHAR(255) NOT NULL, donation VARCHAR(255) NOT NULL, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
-CREATE TABLE counter_text (id BIGINT AUTO_INCREMENT, PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE counter (id BIGINT AUTO_INCREMENT, initial_date DATETIME NOT NULL, initial_number BIGINT NOT NULL, period BIGINT NOT NULL, objective_number BIGINT NOT NULL, slogan VARCHAR(40), INDEX slogan_idx (slogan), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE dynamic_page_translation (id BIGINT, menu_title VARCHAR(255) NOT NULL, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE dynamic_page (id BIGINT AUTO_INCREMENT, position BIGINT NOT NULL, publication_date DATETIME, category_id BIGINT, controller VARCHAR(255) NOT NULL, action VARCHAR(255) NOT NULL, boolean_configuation_id BIGINT NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX category_id_idx (category_id), INDEX boolean_configuation_id_idx (boolean_configuation_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE faq_translation (id BIGINT, question text, answer text, is_activated TINYINT(1) DEFAULT '0', lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE faq (id BIGINT AUTO_INCREMENT, position BIGINT, faq_category_id BIGINT NOT NULL, INDEX faq_category_id_idx (faq_category_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE faq_category_translation (id BIGINT, name VARCHAR(255), lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE faq_category (id BIGINT AUTO_INCREMENT, PRIMARY KEY(id)) ENGINE = INNODB;
-CREATE TABLE folder (id BIGINT AUTO_INCREMENT, name VARCHAR(255) UNIQUE, PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE folder (id BIGINT AUTO_INCREMENT, name VARCHAR(255) NOT NULL UNIQUE, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE galery_translation (id BIGINT, name VARCHAR(40) NOT NULL UNIQUE, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE galery (id BIGINT AUTO_INCREMENT, position BIGINT NOT NULL, is_activated TINYINT(1) DEFAULT '0' NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE guestbook (id BIGINT AUTO_INCREMENT, content text, is_validated TINYINT(1) DEFAULT '0' NOT NULL, language_id BIGINT, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX language_id_idx (language_id), PRIMARY KEY(id)) ENGINE = INNODB;
@@ -31,6 +29,8 @@ CREATE TABLE partner (id BIGINT AUTO_INCREMENT, logo VARCHAR(255), position BIGI
 CREATE TABLE person (id BIGINT AUTO_INCREMENT, first_name VARCHAR(255) NOT NULL, last_name VARCHAR(255) NOT NULL, email_address VARCHAR(255) NOT NULL UNIQUE, corespondance_id BIGINT, INDEX corespondance_id_idx (corespondance_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE photo_translation (id BIGINT, title VARCHAR(255), description text, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE photo (id BIGINT AUTO_INCREMENT, url VARCHAR(255), publication_start DATETIME, publication_end DATETIME, galery_id BIGINT, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX galery_id_idx (galery_id), PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE slogan_translation (id BIGINT, content VARCHAR(255), lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
+CREATE TABLE slogan (id BIGINT AUTO_INCREMENT, name VARCHAR(40), flag VARCHAR(255), UNIQUE INDEX nameflag_idx (name, flag), INDEX name_idx (name), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE standard_sentence (id BIGINT AUTO_INCREMENT, text text NOT NULL, title VARCHAR(255) NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE static_page_translation (id BIGINT, menu_title VARCHAR(255) NOT NULL, content text NOT NULL, is_activated TINYINT(1) DEFAULT '0', title VARCHAR(255) NOT NULL, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE static_page (id BIGINT AUTO_INCREMENT, position BIGINT NOT NULL, publication_date DATETIME, category_id BIGINT, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX category_id_idx (category_id), PRIMARY KEY(id)) ENGINE = INNODB;
@@ -48,7 +48,7 @@ CREATE TABLE sf_guard_user_permission (user_id BIGINT, permission_id BIGINT, cre
 ALTER TABLE configuration ADD CONSTRAINT configuration_configuration_id_configuration_id FOREIGN KEY (configuration_id) REFERENCES configuration(id);
 ALTER TABLE category_translation ADD CONSTRAINT category_translation_id_category_id FOREIGN KEY (id) REFERENCES category(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE citation_translation ADD CONSTRAINT citation_translation_id_citation_id FOREIGN KEY (id) REFERENCES citation(id) ON UPDATE CASCADE ON DELETE CASCADE;
-ALTER TABLE counter_text_translation ADD CONSTRAINT counter_text_translation_id_counter_text_id FOREIGN KEY (id) REFERENCES counter_text(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE counter ADD CONSTRAINT counter_slogan_slogan_name FOREIGN KEY (slogan) REFERENCES slogan(name) ON UPDATE CASCADE ON DELETE SET NULL;
 ALTER TABLE dynamic_page_translation ADD CONSTRAINT dynamic_page_translation_id_dynamic_page_id FOREIGN KEY (id) REFERENCES dynamic_page(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE dynamic_page ADD CONSTRAINT dynamic_page_category_id_category_id FOREIGN KEY (category_id) REFERENCES category(id);
 ALTER TABLE dynamic_page ADD CONSTRAINT dynamic_page_boolean_configuation_id_configuration_id FOREIGN KEY (boolean_configuation_id) REFERENCES configuration(id);
@@ -72,6 +72,7 @@ ALTER TABLE partner_translation ADD CONSTRAINT partner_translation_id_partner_id
 ALTER TABLE person ADD CONSTRAINT person_corespondance_id_corespondance_id FOREIGN KEY (corespondance_id) REFERENCES corespondance(id);
 ALTER TABLE photo_translation ADD CONSTRAINT photo_translation_id_photo_id FOREIGN KEY (id) REFERENCES photo(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE photo ADD CONSTRAINT photo_galery_id_galery_id FOREIGN KEY (galery_id) REFERENCES galery(id);
+ALTER TABLE slogan_translation ADD CONSTRAINT slogan_translation_id_slogan_id FOREIGN KEY (id) REFERENCES slogan(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE static_page_translation ADD CONSTRAINT static_page_translation_id_static_page_id FOREIGN KEY (id) REFERENCES static_page(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE static_page ADD CONSTRAINT static_page_category_id_category_id FOREIGN KEY (category_id) REFERENCES category(id);
 ALTER TABLE address ADD CONSTRAINT address_person_id_person_id FOREIGN KEY (person_id) REFERENCES person(id);

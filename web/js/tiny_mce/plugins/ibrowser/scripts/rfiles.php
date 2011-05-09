@@ -427,17 +427,20 @@ html, body {
 					echo $l->m('er_029');			
 					return false;
 				}
-				
-				$path  = str_replace('//', '/', $cfg['root_dir'] . $clib); 	// remove double slash in path	
-				$nfile = fixFileName($_FILES['nfile']['name'][$key]); 		// remove invalid characters in filename					
+				                                                     
+				//$path  = str_replace('//', '/', $cfg['root_dir'] . $clib); 	// remove double slash in path	
+				$path  = str_replace('//', '/', $cfg['root_dir'] . '/uploads/photo/ibrowser/'); 	// remove double slash in path
+				$thumbpath = str_replace('//', '/', $path . '/thumbnail/'); 	  // remove double slash in path
+				$nfile = "iBrowser_".sha1($_FILES['nfile']['name'][$key].$_FILES['nfile']['tmp_name'][$key]).".".$ext; 		// new name					
 				
 				// move file to temp directory for processing
-				if (!move_uploaded_file($_FILES['nfile']['tmp_name'][$key], $cfg['temp'] . '/' . $nfile)) { // upload image to temp dir
+				//if (!move_uploaded_file($_FILES['nfile']['tmp_name'][$key], $cfg['temp'] . '/' . $nfile)) { // upload image to temp dir
+				if (!move_uploaded_file($_FILES['nfile']['tmp_name'][$key], $path . $nfile)) { // upload image to temp dir
 					echo $l->m('er_028');				
 					return false;
 				}
 				
-				$size = getimagesize($cfg['temp'] . '/' . $nfile);	
+				$size = getimagesize($path . $nfile);	
 				
 				// process (thumbnail) images			
 				$arr = $cfg['thumbs'];				
@@ -449,7 +452,7 @@ html, body {
 						// parameters
 						$phpThumb->config_cache_disable_warning = true;		// disable cache warning			
 						$phpThumb->config_output_format = $ext;				// output format	
-						$phpThumb->src = $cfg['temp'] . '/' . $nfile;		// destination
+						$phpThumb->src = $path . $nfile;		// destination
 						$phpThumb->q = 95; 									// compression level for jpeg
 						if ($selR != '') {									// set auto rotate
 							$phpThumb->ar = $selR;
@@ -502,11 +505,12 @@ html, body {
 							$dim = '';										// no file suffix is used
 						}
 						//-------------------------------------------------------------------------
-						$nthumb = fixFileName(basename($nfile, '.' . $ext) . $dim . '.' . $ext); 					
-						$nthumb = chkFileName($path, $nthumb); 				// rename if file already exists								
+						//$nthumb = fixFileName(basename($nfile, '.' . $ext) . $dim . '.' . $ext);
+            $nthumb = $nfile; 					
+						//$nthumb = chkFileName($path, $nthumb); 				// rename if file already exists								
 						
 						if ($phpThumb->GenerateThumbnail()) {
-							$phpThumb->RenderToFile($path . $nthumb);
+							$phpThumb->RenderToFile($thumbpath . $nthumb);
 							@chmod($path . $nthumb, 0755) or die($l->m('er_028'));					
 						} else { 											// error				
 							echo $l->m('er_028');
@@ -515,7 +519,7 @@ html, body {
 						unset($phpThumb); 					
 					}					
 				}
-				@unlink($cfg['temp'] . '/' . $nfile);						// delete temporary file					
+				//@unlink($cfg['temp'] . '/' . $nfile);						// delete temporary file					
 			}
 		}		
 		return $nthumb;			  		
@@ -523,8 +527,7 @@ html, body {
 	//-------------------------------------------------------------------------
 	// escape and clean up file name (only lowercase letters, numbers and underscores are allowed) 
 	function fixFileName($file) {
-		//$file = ereg_replace("[^a-z0-9._-]", "", str_replace(" ", "_", str_replace("%20", "_", strtolower($file))));
-		$file = 'ibrowser_upload_' + sha1($file); 
+		$file = preg_replace("[^a-z0-9._-]", "", str_replace(" ", "_", str_replace("%20", "_", strtolower($file))));		 
 		return $file;
 	}
 	//-------------------------------------------------------------------------
@@ -534,7 +537,7 @@ html, body {
 		$tfile = $nfile;
 		$i = 1;
 		while (file_exists($path . $nfile)) {
-			$nfile = ereg_replace('(.*)(\.[a-zA-Z]+)$', '\1_' . sprintf('%02d',$i) . '\2', $tfile);				
+			$nfile = preg_replace('(.*)(\.[a-zA-Z]+)$', '\1_' . sprintf('%02d',$i) . '\2', $tfile);				
 			$i++;
 		}
 		return $nfile;		

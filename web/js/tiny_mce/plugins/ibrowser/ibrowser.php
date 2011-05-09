@@ -785,7 +785,9 @@
 			var src;						
 			//src = '<?php echo $cfg['scripts']; ?>' + 'phpThumb/phpThumb.php'; // command		
 			//src = src + '?src=' + absPath(clib) + cfile; // source image
-			src = '/uploads/photo'+ absPath(clib) + cfile + '?';
+			//src = '/uploads/photo'+ absPath(clib) + cfile + '?';
+			src = getThumbPath(absPath(clib)) + cfile + '?';
+
 			src = src + '&w='+sizes['w']; //image width						
 		
 			var windowName = 'fullView';							

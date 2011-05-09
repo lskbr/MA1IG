@@ -69,7 +69,7 @@
 			'size'   	=> 512,												
 			'ext'    	=> '*',
 			'crop'    	=> false,
-		), */
+		), 
 		array (
 			'size'   	=> 400,												
 			'ext'    	=> '*',
@@ -82,6 +82,11 @@
 		),
 		array (
 			'size'   	=> 120,												
+			'ext'    	=> '*',
+			'crop'    	=> false,
+		),*/
+		array (
+			'size'   	=> 150,												
 			'ext'    	=> '*',
 			'crop'    	=> false,
 		),
@@ -101,7 +106,11 @@
 		array (																		
 			'value'   	=> '/uploads/photo/thumbnailGrande',												
 			'text'    	=> 'Site Pictures 1024 x 768',
-		),		
+		),
+		array (																		
+			'value'   	=> '/uploads/photo/iBrowser',												
+			'text'    	=> 'iBrowser uploaded files',
+		),				
 	);
 	//-------------------------------------------------------------------------
 	// use dynamic image libraries - if $cfg['ilibs_inc'] is set, static image libraries above are ignored

@@ -16,7 +16,7 @@
 <?php
 	//-------------------------------------------------------------------------
 	// include configuration settings
-	if (!isset($l)) {
+	if (!$l) {
 		include dirname(__FILE__) . '/../config/config.inc.php';
 		include dirname(__FILE__) . '/../langs/lang.class.php';	
 		// language settings	

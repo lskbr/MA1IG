@@ -391,9 +391,9 @@ th a, th a:hover {
 
 .sf_admin_action_delete{
     background-image:url(../images/icons/delete.png);
-    background-position: 4px 50%;
+    background-position:0 50%;
     background-repeat:no-repeat;
-    padding-left: 21px;
+    padding-left:18px;
 }
 
 .sf_admin_actions {

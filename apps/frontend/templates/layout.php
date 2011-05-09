@@ -3,17 +3,19 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title><?php 
-        echo __('Graine de vie');
         if(get_slot('title')):
-            echo ' - '.get_slot('title');
+            echo get_slot('title').' - ';
         endif;
+        echo __('Graine de vie');
         ?></title>
         <?php include_javascripts() ?>
         <?php include_stylesheets() ?>
 
-        <!-- Tracking de Google Analytics -->
-        <?php include_once('googleanalyticstracking.php') ?>
-        <!-- Fin du tracking de Google Analytics -->
+        <?php
+        // Tracking de Google Analytics
+        if(config::getInstance()->get('google_analytics'))
+            include_component('google_analytics', 'google_analytics');
+        ?>
     </head>
 
     <body>
@@ -85,7 +87,7 @@
 
                 <div id="content">
                     <?php
-                    echo $sf_content;
+                    echo '<div class="social_sharing">'.$sf_content.'</div>';
 
                     // Partage sur les réseaux sociaux
                     if(config::getInstance()->get('social_sharing'))
@@ -100,18 +102,22 @@
                 	<img src="/images/frblogo.png" width="106" height="39" />
                 </div>
                 <div id="bottom-bar">
-                	<ul>
-                            <li><?php include_component('donenligne', 'show')?></li>
-                        <li class="form">
-                            <?php include_component('language', 'language') ?>
-                        </li>
+                    <ul>
+                        <li class="form"><?php include_component('donenligne', 'show')?></li>
+                        
+                        <li class="sep_li">|</li>
+                        <li class="form"><?php include_component('language', 'language') ?></li>
+
                         <?php if(config::getInstance()->get('page_contact')): ?>
-                    	<li><a href="<?php echo url_for(config::getInstance()->get('id_contact'));  ?>"><?php echo __("Contact") ?></a></li>
+                        <li class="sep_li">|</li>
+                        <li><a href="<?php echo url_for(config::getInstance()->get('id_contact'));  ?>"><?php echo __("Contact") ?></a></li>
                         <?php endif;
+
                         if(config::getInstance()->get('page_mention')): ?>
                         <li>|</li>
                         <li><a href="<?php echo url_for(config::getInstance()->get('id_mention'));  ?>"><?php echo __("Mentions légales") ?></a></li>
                         <?php endif;
+
                         if(config::getInstance()->get('page_sitemap')): ?>
                         <li>|</li>
                         <li><a href="<?php echo url_for(config::getInstance()->get('id_sitemap'));  ?>"><?php echo __("Plan du site") ?></a></li>

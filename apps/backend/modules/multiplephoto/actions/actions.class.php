@@ -45,9 +45,12 @@ class multiplephotoActions extends sfActions
         $files = $request->getFiles('multiplephoto');
         $data = $request->getParameter('multiplephoto');                            
         $photo = new Photo();
-        $photo->setTitle($data['title']);
-        $photo->setGaleryId($data['galery_id']);
-        $photo->setDescription($data['description']);
+        if(isset($data['title']))
+          $photo->setTitle($data['title']);
+        if(isset($data['galery_id']))
+          $photo->setGaleryId($data['galery_id']);
+        if(isset($data['description']))
+          $photo->setDescription($data['description']);
         $new_name = $this->generateNewFileName($files['uploadedfile']);        
         move_uploaded_file($files['uploadedfile']['tmp_name'], $photo->getPhotoUploadFolder().$new_name);
         $photo->setUrl($new_name);

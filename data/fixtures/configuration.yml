@@ -88,7 +88,7 @@ BooleanConfiguration:
     is_activated: true
   BilanCarbone:
     main: bilan_carbone
-    name: Bilan Carbone
+    name: Empreinte écologique
     description: Calcule votre empreinte écologique en quelques minutes.
     is_activated: true
   Donenligne:
@@ -100,6 +100,11 @@ BooleanConfiguration:
     main: newsletter
     name: Newsletter
     description: Permet d'envoyer une actualité par e-mail aux abonnés
+    is_activated: true
+  GoogleAnalytics:
+    main: google_analytics
+    name: Google Analytics
+    description: Permet d'obtenir des statistiques de visite du site grâce à Google Analytics
     is_activated: true
   Page1:
     main: page_contact

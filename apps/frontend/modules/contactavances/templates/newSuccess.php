@@ -1,7 +1,13 @@
 <!--
     Réalisé par Laurent
 -->
-<h1><?php echo __('Nouveau message') ?></h1>
+<?php
+$page_title = __('Contactez-nous');
+
+slot('title', $page_title);
+?>
+
+<h1><?php echo $page_title ?></h1>
 
 <?php
 if(isset($mail) && isset($userName)){

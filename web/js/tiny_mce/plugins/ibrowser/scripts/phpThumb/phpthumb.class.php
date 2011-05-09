@@ -657,7 +657,7 @@ class phpthumb {
 			$CacheDirOldFilesSize = array();
 			$AllFilesInCacheDirectory = phpthumb_functions::GetAllFilesInSubfolders($this->config_cache_directory);
 			foreach ($AllFilesInCacheDirectory as $fullfilename) {
-				if (preg_match('/^phpThumb_cache_/i', basename($fullfilename)) && file_exists($fullfilename)) {
+				if (eregi('^phpThumb_cache_', basename($fullfilename)) && file_exists($fullfilename)) {
 					$CacheDirOldFilesAge[$fullfilename] = @fileatime($fullfilename);
 					if ($CacheDirOldFilesAge[$fullfilename] == 0) {
 						$CacheDirOldFilesAge[$fullfilename] = @filemtime($fullfilename);
@@ -883,8 +883,7 @@ class phpthumb {
 		$AvailableImageOutputFormats = array_unique($AvailableImageOutputFormats);
 		$this->DebugMessage('$AvailableImageOutputFormats = array('.implode(';', $AvailableImageOutputFormats).')', __FILE__, __LINE__);
 
-		//$this->f = ereg_replace('[^a-z]', '', strtolower($this->f));
-		$this->f = preg_replace('/[^a-z]/', '', strtolower($this->f));
+		$this->f = ereg_replace('[^a-z]', '', strtolower($this->f));
 		if (strtolower($this->config_output_format) == 'jpg') {
 			$this->config_output_format = 'jpeg';
 		}
@@ -1148,14 +1147,13 @@ class phpthumb {
 				$commandline .= ' --version';
 				$this->DebugMessage('ImageMagick version checked with "'.$commandline.'"', __FILE__, __LINE__);
 				$versionstring[1] = trim(phpthumb_functions::SafeExec($commandline));
-				//if (preg_match('/^Version: \d*(\s|\d|\.|\\)+ (http|file):/i', $versionstring[1], $matches)) {
-				if (false) {
+				if (eregi('^Version: [^0-9]*([ 0-9\\.\\:Q/]+) (http|file)\:', $versionstring[1], $matches)) {
 					$versionstring[0] = $matches[1];
 				} else {
 					$versionstring[0] = false;
 					$this->DebugMessage('ImageMagick did not return recognized version string ('.$versionstring[1].')', __FILE__, __LINE__);
 				}
-				//$this->DebugMessage('ImageMagick convert --version says "'.$matches[0].'"', __FILE__, __LINE__);
+				$this->DebugMessage('ImageMagick convert --version says "'.$matches[0].'"', __FILE__, __LINE__);
 			}
 		}
 		return @$versionstring[intval($returnRAW)];
@@ -1170,8 +1168,7 @@ class phpthumb {
 				$commandline .= ' -help';
 				$IMhelp_lines = explode("\n", phpthumb_functions::SafeExec($commandline));
 				foreach ($IMhelp_lines as $line) {
-					//if (ereg('^[\+\-]([a-z\-]+) ', trim($line), $matches)) {
-					if (preg_match('/^[\+\-]([a-z\-]+) /', trim($line), $matches)) {
+					if (ereg('^[\+\-]([a-z\-]+) ', trim($line), $matches)) {
 						$IMoptions[$matches[1]] = true;
 					}
 				}

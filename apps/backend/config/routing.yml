@@ -1,3 +1,12 @@
+slogan:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Slogan
+    module:               slogan
+    prefix_path:          /slogan
+    column:               id
+    with_wildcard_routes: true
+
 newsletter:
   class: sfDoctrineRouteCollection
   options:

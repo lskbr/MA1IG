@@ -22,4 +22,15 @@ class SloganTable extends Doctrine_Table
     	return SloganTable::getInstance()->createQuery('a')->
     		select('a.name AS id, a.name AS name')->groupBy('a.name')->execute();
     }
+
+    public static function updateSloganNames($id, $name)
+	{
+		$oldName = SloganTable::getInstance()->createQuery('a')->
+    		select('a.name')->where('a.id=?', $id)->
+    		execute(array(), Doctrine::HYDRATE_NONE);
+		
+		return SloganTable::getInstance()->createQuery('a')->
+    		update()->set('a.name', '?', $name)->
+    		where('a.name=?', $oldName[0][0])->execute();
+	}
 }

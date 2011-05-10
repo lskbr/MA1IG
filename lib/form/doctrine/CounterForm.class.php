@@ -12,13 +12,14 @@ class CounterForm extends BaseCounterForm
 {
 	public function configure()
 	{
-//		$this->widgetSchema['initial_date'] = new sfWidgetFormJQueryDate(array(
-//			'image'=>'/images/calendar.png',
-//			'date_widget' => new sfWidgetFormDate(array('format' => '%day%/%month%/%year%')),
-//			'culture' => 'fr'
-//		));
+		$this->widgetSchema['initial_date'] = new sfWidgetFormJQueryDate(array(
+			'image'=>'/images/calendar.png',
+			'date_widget' => new sfWidgetFormDate(array('format' => '%day%/%month%/%year%')),
+			'culture' => 'fr'
+		));
 
- 		$this->widgetSchema["initial_date"] = new sfWidgetFormDate(array('format' => '%day%/%month%/%year%'));
+		// Simple date without jQuery date picker
+ 		//$this->widgetSchema["initial_date"] = new sfWidgetFormDate(array('format' => '%day%/%month%/%year%'));
 
  		$this->widgetSchema["slogan"] = new sfWidgetFormDoctrineChoice(array(
 	 		'model' => $this->getRelatedModelName('Slogan'),

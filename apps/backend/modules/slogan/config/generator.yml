@@ -1,0 +1,44 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Slogan
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          slogan
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Gestion des slogans
+        batch_actions: {}
+        display: [=name,=flag,=content]
+        fields:
+          name:
+            label: Nom
+          flag:
+            label: Type
+          content:
+            label: Texte
+      filter:
+        class: false
+      form:    ~
+      edit:
+        title: Modification du slogan
+        fields:
+          name:
+            label: Nom
+          flag:
+            label: Type
+      new:
+        title: Nouveau slogan
+        fields:
+          name:
+            label: Nom
+          flag:
+            label: Type

@@ -45,6 +45,10 @@ class CounterTable extends Doctrine_Table
 			innerJoin('b.Translation t')->
 			where("t.lang=?", $culture)->
 			andWhere("b.flag=?", $flag)->execute(array(), Doctrine::HYDRATE_NONE);
-		return $data[0][3];
+
+        if (isset($data[0]) && isset($data[0][3]))
+            return $data[0][3];
+        
+        return "";
     }
 }

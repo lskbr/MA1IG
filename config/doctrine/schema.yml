@@ -158,13 +158,6 @@ Photo:
   relations:
     Galery: {local: galery_id, foreign: id}
 
-Counter:
-  columns:
-    initial_date: {type: timestamp, notnull: true}
-    initial_number: {type: integer, notnull: true}
-    period: {type: integer, notnull: true}
-    objective_number: {type: integer, notnull: true}
-
 Guestbook:
   actAs: 
     Timestampable: ~

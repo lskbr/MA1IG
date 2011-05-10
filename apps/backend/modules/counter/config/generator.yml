@@ -17,7 +17,7 @@ generator:
       list:
         title: Gestion du compteur d'arbres
         batch_actions: {}
-        display: [_initial_date,=initial_number,=period,=objective_number,=slogan]
+        display: [_initial_date,=initial_number,=period,=objective_number,_slogan]
         fields:
           initial_date:
             label: Date initiale

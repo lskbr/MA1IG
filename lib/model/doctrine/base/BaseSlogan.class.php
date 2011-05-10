@@ -56,10 +56,6 @@ abstract class BaseSlogan extends sfDoctrineRecord
               1 => 'flag',
              ),
              ));
-        $this->option('primary', array(
-             0 => 'name',
-             1 => 'flag',
-             ));
     }
 
     public function setUp()

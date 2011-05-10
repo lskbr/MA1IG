@@ -58,8 +58,8 @@ BilanCarboneCoeff:
   TreeCO2:
     name_short: tree_co2
     name: "Kg équiv. CO2 consommés par un arbre"
-    coeff: 7.14
+    coeff: 166.895
   CostTree:
     name_short: cost_tree
     name: "Coût d'un arbre (en euros)"
-    coeff: 5
+    coeff: 0.2

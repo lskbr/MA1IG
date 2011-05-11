@@ -17,10 +17,18 @@ class SloganTable extends Doctrine_Table
 		return Doctrine_Core::getTable('Slogan');
 	}
 
-	public static function getSlogans()
+	public static function getCounterSlogans()
     {
     	return SloganTable::getInstance()->createQuery('a')->
-    		select('a.name AS id, a.name AS name')->groupBy('a.name')->execute();
+    		select('a.name AS id, a.name AS name')->
+    		where('a.type=?', 'counter')->groupBy('a.name')->execute();
+    }
+
+    public static function getRefImgSlogans()
+    {
+    	return SloganTable::getInstance()->createQuery('a')->
+    		select('a.name AS id, a.name AS name')->
+    		where('a.type=?', 'refimg')->groupBy('a.name')->execute();
     }
 
     public static function updateSloganNames($id, $name)

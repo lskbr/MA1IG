@@ -24,7 +24,7 @@ class CounterForm extends BaseCounterForm
  		$this->widgetSchema["slogan"] = new sfWidgetFormDoctrineChoice(array(
 	 		'model' => $this->getRelatedModelName('Slogan'),
 	 		'add_empty' => false,
-	 		'table_method' => 'getSlogans'));
+	 		'table_method' => 'getCounterSlogans'));
 	 	
 	 	$this->validatorSchema["slogan"] =  new sfValidatorDoctrineChoice(array(
 		 	'model' => $this->getRelatedModelName('Slogan'),

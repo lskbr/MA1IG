@@ -14,6 +14,7 @@ echo homepageItem('Droits', 'Gestion des différents droits', 'sf_guard_permissi
 echo homepageItem('Gestion des pages', 'Gestion des pages et de leurs contenu', 'static_page', 'staticpage');
 echo homepageItem('Ajouter une page', 'Ajout d\'une page au site internet', 'static_page_new', 'add_staticpage');
 echo homepageItem('Compteur d\'arbres', 'Modifer le compteur', 'counter', 'counter');
+echo homepageItem('Images de référencement', 'Gérér les images', 'ref_image', 'ref_image');
 echo homepageItem('Slogans', 'Modifer les slogans', 'slogan', 'slogan');
 echo homepageItem('Livre d\'or', 'Valider les messages du livre d\'or', 'guestbook', 'guestbook');
 echo homepageItem('Liste des FAQ', 'Afficher la liste des questions fréquemment posées', 'faq', 'faq','faq');

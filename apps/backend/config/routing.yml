@@ -1,3 +1,12 @@
+ref_image:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                RefImage
+    module:               ref_image
+    prefix_path:          /ref_image
+    column:               id
+    with_wildcard_routes: true
+
 slogan:
   class: sfDoctrineRouteCollection
   options:

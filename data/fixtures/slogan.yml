@@ -1,7 +1,8 @@
 Slogan:
   S1:
     name: Compteur
-    flag: text1
+    type: counter
+    flag: 'position 1'
     Translation:
       en:
         content: "We have already planted"
@@ -13,7 +14,8 @@ Slogan:
         content: "Já plantamos"
   S2:
     name: Compteur
-    flag: text2
+    type: counter
+    flag: 'position 2'
     Translation:
       en:
         content: "Help us continue to increase this number"
@@ -25,7 +27,8 @@ Slogan:
         content: "Ajude-nos a continuar aumentando este número"
   S3:
     name: Compteur
-    flag: text3
+    type: counter
+    flag: 'position 3'
     Translation:
       en:
         content: "Donate !"
@@ -36,38 +39,29 @@ Slogan:
       pt:
         content: "Doe !"
   S4:
-    name: Compteur2
-    flag: text1
+    name: 'Image référencement'
+    type: refimg
+    flag: 'position 1'
     Translation:
       en:
-        content: "en-11111"
+        content: "I contributed to the plantation of"
       fr:
-        content: "fr-11111"
+        content: "J'ai contribué à la plantation de"
       nl:
-        content: "nl-11111"
+        content: "ich habe zur pflanzung beeigetragen von"
       pt:
-        content: "pt-11111"
+        content: "contribuí para a plantação"
   S5:
-    name: Compteur2
-    flag: text2
+    name: 'Image référencement'
+    type: refimg
+    flag: 'position 2'
     Translation:
       en:
-        content: "en-22222"
+        content: "Tree in Madagascar"
       fr:
-        content: "fr-22222"
+        content: "arbre à Madagascar"
       nl:
-        content: "nl-22222"
+        content: "boom aan Madagascar"
       pt:
-        content: "pt-22222"
-  S6:
-    name: Compteur2
-    flag: text3
-    Translation:
-      en:
-        content: "en-33333"
-      fr:
-        content: "fr-33333"
-      nl:
-        content: "nl-33333"
-      pt:
-        content: "pt-33333"
+        content: "árvore à Madagascar"
+

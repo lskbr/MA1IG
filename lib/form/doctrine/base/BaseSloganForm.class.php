@@ -17,13 +17,15 @@ abstract class BaseSloganForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'   => new sfWidgetFormInputHidden(),
       'name' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Counter'), 'add_empty' => true)),
-      'flag' => new sfWidgetFormChoice(array('choices' => array('text1' => 'text1', 'text2' => 'text2', 'text3' => 'text3'))),
+      'type' => new sfWidgetFormChoice(array('choices' => array('counter' => 'counter', 'refimg' => 'refimg'))),
+      'flag' => new sfWidgetFormChoice(array('choices' => array('position 1' => 'position 1', 'position 2' => 'position 2', 'position 3' => 'position 3'))),
     ));
 
     $this->setValidators(array(
       'id'   => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'name' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Counter'), 'required' => false)),
-      'flag' => new sfValidatorChoice(array('choices' => array(0 => 'text1', 1 => 'text2', 2 => 'text3'), 'required' => false)),
+      'type' => new sfValidatorChoice(array('choices' => array(0 => 'counter', 1 => 'refimg'), 'required' => false)),
+      'flag' => new sfValidatorChoice(array('choices' => array(0 => 'position 1', 1 => 'position 2', 2 => 'position 3'), 'required' => false)),
     ));
 
     $this->validatorSchema->setPostValidator(

@@ -14,12 +14,14 @@ abstract class BaseSloganFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'name' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Counter'), 'add_empty' => true)),
-      'flag' => new sfWidgetFormChoice(array('choices' => array('' => '', 'text1' => 'text1', 'text2' => 'text2', 'text3' => 'text3'))),
+      'type' => new sfWidgetFormChoice(array('choices' => array('' => '', 'counter' => 'counter', 'refimg' => 'refimg'))),
+      'flag' => new sfWidgetFormChoice(array('choices' => array('' => '', 'position 1' => 'position 1', 'position 2' => 'position 2', 'position 3' => 'position 3'))),
     ));
 
     $this->setValidators(array(
       'name' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Counter'), 'column' => 'id')),
-      'flag' => new sfValidatorChoice(array('required' => false, 'choices' => array('text1' => 'text1', 'text2' => 'text2', 'text3' => 'text3'))),
+      'type' => new sfValidatorChoice(array('required' => false, 'choices' => array('counter' => 'counter', 'refimg' => 'refimg'))),
+      'flag' => new sfValidatorChoice(array('required' => false, 'choices' => array('position 1' => 'position 1', 'position 2' => 'position 2', 'position 3' => 'position 3'))),
     ));
 
     $this->widgetSchema->setNameFormat('slogan_filters[%s]');
@@ -41,6 +43,7 @@ abstract class BaseSloganFormFilter extends BaseFormFilterDoctrine
     return array(
       'id'   => 'Number',
       'name' => 'ForeignKey',
+      'type' => 'Enum',
       'flag' => 'Enum',
     );
   }

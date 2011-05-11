@@ -17,12 +17,12 @@ generator:
       list:
         title: Gestion des slogans
         batch_actions: {}
-        display: [=name,=flag,=content]
+        display: [=name, =flag, =content]
         fields:
           name:
             label: Nom
           flag:
-            label: Type
+            label: Position du text
           content:
             label: Texte
       filter:
@@ -33,12 +33,17 @@ generator:
         fields:
           name:
             label: Nom
+          type:
+            label: Type de slogan
           flag:
-            label: Type
+            label: Position du text
       new:
         title: Nouveau slogan
         fields:
           name:
             label: Nom
+          type:
+            label: Type de slogan
           flag:
-            label: Type
+            label: Position du text
+

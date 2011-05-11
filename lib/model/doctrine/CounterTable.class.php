@@ -43,8 +43,11 @@ class CounterTable extends Doctrine_Table
 			select('a.id, b.id, b.flag, t.content')->
 			innerJoin('a.Slogan b')->
 			innerJoin('b.Translation t')->
-			where("t.lang=?", $culture)->
-			andWhere("b.flag=?", $flag)->execute(array(), Doctrine::HYDRATE_NONE);
+			where('t.lang=?', $culture)->
+            andWhere('b.type=?', 'counter')->
+			andWhere('b.flag=?', $flag)->
+            orderBy('a.initial_date DESC')->
+            execute(array(), Doctrine::HYDRATE_NONE);
 
         if (isset($data[0]) && isset($data[0][3]))
             return $data[0][3];

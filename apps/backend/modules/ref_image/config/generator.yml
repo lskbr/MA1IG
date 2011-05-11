@@ -1,0 +1,41 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           RefImage
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          ref_image
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title: Gestion d'images de référencement
+        batch_actions: {}
+        display: [url, payment_id]
+        fields:
+          url:
+            label: Image
+            date_format: dd-MMMM-yyyy
+          payment_id:
+            label: id
+      filter:
+        class: false
+      form:    ~
+      edit:
+        title: Modifer l'images de référencement
+      new:
+        title: Créer nouvelle image de référencement
+        display: [payment_id, lang_id, _image]
+        fields:
+          payment_id:
+            label: Référance pour le payment
+          lang_id:
+            label: Langue
+          _image:
+            label: Image de référancement

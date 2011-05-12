@@ -56,3 +56,358 @@ May 12 14:13:39 symfony [info] {sfWebDebugLogger} Partial "login/_login" 22.61 m
 May 12 14:13:39 symfony [info] {sfWebDebugLogger} Component "sfGuardAuth/signin_form" 266.91 ms (1)
 May 12 14:13:39 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 72.50 ms (1)
 May 12 14:13:39 symfony [info] {sfWebDebugLogger} Component "counter/counter" 547.53 ms (1)
+May 12 14:28:20 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+May 12 14:28:20 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+May 12 14:28:20 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_register" (/guard/register)
+May 12 14:28:20 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_forgot_password" (/guard/forgot_password)
+May 12 14:28:20 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_forgot_password_change" (/guard/forgot_password/:unique_key)
+May 12 14:28:20 symfony [info] {sfPatternRouting} Match route "localized_homepage" (/:sf_culture/) for /fr/ with parameters array (  'module' => 'page',  'action' => 'index',  'sf_culture' => 'fr',)
+May 12 14:28:20 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 12 14:28:20 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 12 14:28:20 symfony [info] {pageActions} Call "pageActions->executeIndex()"
+May 12 14:28:20 symfony [info] {sfPHPView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/page/templates/indexSuccess.php"
+May 12 14:28:20 symfony [info] {main} Set slot "title"
+May 12 14:28:20 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+May 12 14:28:20 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.id AS c__id, c.main AS c__main, c.name AS c__name, c.description AS c__description, c.configuration_id AS c__configuration_id, c.type AS c__type, c.is_kernel AS c__is_kernel, c.is_activated AS c__is_activated, c.value AS c__value FROM configuration c - ()
+May 12 14:28:20 symfony [info] {main} Call "citation->executeCitation()"
+May 12 14:28:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT DISTINCT c3.id FROM citation c3 INNER JOIN citation_translation c4 ON c3.id = c4.id WHERE c4.lang = ? AND c4.content != '' ORDER BY RAND() LIMIT 1 - (fr)
+May 12 14:28:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c2.id AS c2__id, c2.author AS c2__author, c2.content AS c2__content, c2.lang AS c2__lang FROM citation c INNER JOIN citation_translation c2 ON c.id = c2.id WHERE c.id IN ('2') AND (c2.lang = ? AND c2.content != '') ORDER BY RAND() - (fr)
+May 12 14:28:21 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/citation/templates/_citation.php"
+May 12 14:28:21 symfony [info] {main} Call "news->executeNews()"
+May 12 14:28:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT n.id AS n__id, n.title AS n__title, n.content AS n__content, n.is_activated AS n__is_activated, n.language_id AS n__language_id, n.publication_date AS n__publication_date, n.comments_activated AS n__comments_activated, l.id AS l__id, l.name AS l__name, l.abbreviation AS l__abbreviation, l.flag AS l__flag, l.is_activated AS l__is_activated, l.is_default AS l__is_default, l.created_at AS l__created_at, l.updated_at AS l__updated_at FROM news n LEFT JOIN language l ON n.language_id = l.id WHERE (n.publication_date < NOW() AND n.is_activated = ? AND l.abbreviation = ?) ORDER BY n.publication_date DESC LIMIT 3 - (1, fr)
+May 12 14:28:21 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/news/templates/_news.php"
+May 12 14:28:21 symfony [info] {main} Call "guestbook->executeGuestbook()"
+May 12 14:28:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT g.id AS g__id, g.content AS g__content, g.is_validated AS g__is_validated, g.language_id AS g__language_id, g.created_at AS g__created_at, g.updated_at AS g__updated_at, l.id AS l__id, l.name AS l__name, l.abbreviation AS l__abbreviation, l.flag AS l__flag, l.is_activated AS l__is_activated, l.is_default AS l__is_default, l.created_at AS l__created_at, l.updated_at AS l__updated_at FROM guestbook g INNER JOIN language l ON g.language_id = l.id WHERE (l.abbreviation = ? AND g.is_validated = ?) ORDER BY RAND() LIMIT 1 - (fr, 1)
+May 12 14:28:21 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/guestbook/templates/_guestbook.php"
+May 12 14:28:21 symfony [info] {sfPHPView} Decorate content with "C:\wamp\www\MA1IG\apps\frontend\templates/layout.php"
+May 12 14:28:21 symfony [info] {sfPHPView} Render "C:\wamp\www\MA1IG\apps\frontend\templates/layout.php"
+May 12 14:28:21 symfony [info] {main} Get slot "title"
+May 12 14:28:21 symfony [info] {main} Get slot "title"
+May 12 14:28:21 symfony [info] {main} Call "google_analytics->executeGoogle_analytics()"
+May 12 14:28:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT g.id AS g__id, g.code AS g__code FROM google_analytics g WHERE (g.id = ?) LIMIT 1 - (1)
+May 12 14:28:21 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/google_analytics/templates/_google_analytics.php"
+May 12 14:28:21 symfony [info] {main} Call "login->executeLogin()"
+May 12 14:28:21 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/login/templates/_login.php"
+May 12 14:28:21 symfony [info] {main} Call "sfGuardAuth->executeSignin_form()"
+May 12 14:28:21 symfony [info] {sfPartialView} Render "C:/wamp/www/MA1IG/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+May 12 14:28:21 symfony [info] {main} Call "counter->executeCounter()"
+May 12 14:28:21 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.id AS c__id, c.initial_number AS c__initial_number, FLOOR(c.initial_number + TIMESTAMPDIFF(SECOND, c.initial_date, NOW())*c.objective_number/TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))) AS c__0, FLOOR((1 - TIMESTAMPDIFF(SECOND, c.initial_date, NOW())*c.objective_number/TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH)) + FLOOR(TIMESTAMPDIFF(SECOND, c.initial_date, NOW())*c.objective_number/TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))))*(1000*TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))/c.objective_number)) AS c__1, FLOOR(1000*TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))/c.objective_number) AS c__2 FROM counter c ORDER BY c.initial_date DESC LIMIT 1 - ()
+May 12 14:28:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, s.id AS s__id, s.flag AS s__flag, s2.content AS s2__content FROM counter c INNER JOIN slogan s ON c.slogan = s.name INNER JOIN slogan_translation s2 ON s.id = s2.id WHERE (s2.lang = ? AND s.type = ? AND s.flag = ?) ORDER BY c.initial_date DESC - (fr, counter, position 1)
+May 12 14:28:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, s.id AS s__id, s.flag AS s__flag, s2.content AS s2__content FROM counter c INNER JOIN slogan s ON c.slogan = s.name INNER JOIN slogan_translation s2 ON s.id = s2.id WHERE (s2.lang = ? AND s.type = ? AND s.flag = ?) ORDER BY c.initial_date DESC - (fr, counter, position 2)
+May 12 14:28:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, s.id AS s__id, s.flag AS s__flag, s2.content AS s2__content FROM counter c INNER JOIN slogan s ON c.slogan = s.name INNER JOIN slogan_translation s2 ON s.id = s2.id WHERE (s2.lang = ? AND s.type = ? AND s.flag = ?) ORDER BY c.initial_date DESC - (fr, counter, position 3)
+May 12 14:28:21 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/counter/templates/_counter.php"
+May 12 14:28:21 symfony [info] {main} Call "menu->executeMenu()"
+May 12 14:28:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.position AS c__position, c.is_activated AS c__is_activated, c.created_at AS c__created_at, c.updated_at AS c__updated_at FROM category c WHERE (c.is_activated = ?) ORDER BY c.position ASC - (1)
+May 12 14:28:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.position AS s__position, s.publication_date AS s__publication_date, s.category_id AS s__category_id, s.created_at AS s__created_at, s.updated_at AS s__updated_at, s2.id AS s2__id, s2.menu_title AS s2__menu_title, s2.content AS s2__content, s2.is_activated AS s2__is_activated, s2.title AS s2__title, s2.lang AS s2__lang FROM static_page s LEFT JOIN static_page_translation s2 ON s.id = s2.id WHERE (s2.is_activated = ? AND s.publication_date <= ? AND s2.lang = ?) - (1, 2011-05-12 14:28:21, fr)
+May 12 14:28:21 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.position AS d__position, d.publication_date AS d__publication_date, d.category_id AS d__category_id, d.controller AS d__controller, d.action AS d__action, d.boolean_configuation_id AS d__boolean_configuation_id, d.created_at AS d__created_at, d.updated_at AS d__updated_at, c.id AS c__id, c.main AS c__main, c.name AS c__name, c.description AS c__description, c.configuration_id AS c__configuration_id, c.type AS c__type, c.is_kernel AS c__is_kernel, c.is_activated AS c__is_activated, c.value AS c__value FROM dynamic_page d LEFT JOIN configuration c ON d.boolean_configuation_id = c.id AND c.type = 1 WHERE (c.is_activated = ?) - (1)
+May 12 14:28:22 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/menu/templates/_menu.php"
+May 12 14:28:22 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.name AS c__name, c.lang AS c__lang FROM category_translation c WHERE (c.id IN (?)) - (4)
+May 12 14:28:22 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (3)
+May 12 14:28:22 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.name AS c__name, c.lang AS c__lang FROM category_translation c WHERE (c.id IN (?)) - (6)
+May 12 14:28:22 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (4)
+May 12 14:28:22 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (5)
+May 12 14:28:22 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.name AS c__name, c.lang AS c__lang FROM category_translation c WHERE (c.id IN (?)) - (8)
+May 12 14:28:22 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (1)
+May 12 14:28:22 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (2)
+May 12 14:28:22 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/fb_page/templates/_fb_page.php"
+May 12 14:28:22 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/social_sharing/templates/_social_sharing.php"
+May 12 14:28:22 symfony [info] {main} Call "donenligne->executeShow()"
+May 12 14:28:22 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/donenligne/templates/_show.php"
+May 12 14:28:22 symfony [info] {main} Call "language->executeLanguage()"
+May 12 14:28:22 symfony [info] {Doctrine_Connection_Statement} execute : SELECT l.id AS l__id, l.name AS l__name, l.abbreviation AS l__abbreviation, l.flag AS l__flag, l.is_activated AS l__is_activated, l.is_default AS l__is_default, l.created_at AS l__created_at, l.updated_at AS l__updated_at FROM language l WHERE (l.is_activated = ?) - (1)
+May 12 14:28:22 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/language/templates/_language.php"
+May 12 14:28:22 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+May 12 14:28:22 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Configuration 1020.89 ms (21)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Factories 86.84 ms (1)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Action "page/index" 0.34 ms (1)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} View "Success" for "page/index" 1686.66 ms (1)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.34 ms (23)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Component "citation/citation" 553.44 ms (1)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Partial "citation/_citation" 9.44 ms (1)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Component "news/news" 39.87 ms (1)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Partial "news/_news" 29.84 ms (1)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Component "guestbook/guestbook" 27.61 ms (1)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Partial "guestbook/_guestbook" 5.19 ms (1)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Component "google_analytics/google_analytics" 9.80 ms (1)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Partial "google_analytics/_google_analytics" 3.25 ms (1)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Component "login/login" 0.08 ms (1)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Partial "login/_login" 2.82 ms (1)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Component "sfGuardAuth/signin_form" 13.42 ms (1)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 9.21 ms (1)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Component "counter/counter" 106.33 ms (1)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Partial "counter/_counter" 7.60 ms (1)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Component "menu/menu" 131.41 ms (1)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Partial "menu/_menu" 190.45 ms (1)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Partial "fb_page/_fb_page" 24.36 ms (1)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Partial "social_sharing/_social_sharing" 22.80 ms (1)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Component "donenligne/show" 6.48 ms (1)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Partial "donenligne/_show" 22.99 ms (1)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Component "language/language" 167.45 ms (1)
+May 12 14:28:22 symfony [info] {sfWebDebugLogger} Partial "language/_language" 27.14 ms (1)
+May 12 14:28:22 symfony [info] {sfWebResponse} Send content (116838 o)
+May 12 14:28:46 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+May 12 14:28:46 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+May 12 14:28:46 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_register" (/guard/register)
+May 12 14:28:46 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_forgot_password" (/guard/forgot_password)
+May 12 14:28:46 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_forgot_password_change" (/guard/forgot_password/:unique_key)
+May 12 14:28:46 symfony [info] {sfPatternRouting} Match route "default" (/:sf_culture/:module/:action/*) for /fr/bilan_carbone/calcul with parameters array (  'module' => 'bilan_carbone',  'action' => 'calcul',  'sf_culture' => 'fr',)
+May 12 14:28:46 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 12 14:28:46 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 12 14:28:46 symfony [info] {bilan_carboneActions} Call "bilan_carboneActions->executeCalcul()"
+May 12 14:28:46 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+May 12 14:28:46 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.id AS c__id, c.main AS c__main, c.name AS c__name, c.description AS c__description, c.configuration_id AS c__configuration_id, c.type AS c__type, c.is_kernel AS c__is_kernel, c.is_activated AS c__is_activated, c.value AS c__value FROM configuration c - ()
+May 12 14:28:46 symfony [info] {sfFrontWebController} Redirect to "http://localhost:8081/frontend_dev.php/fr/bilan_carbone"
+May 12 14:28:46 symfony [info] {sfWebResponse} Send status "HTTP/1.1 302 Found"
+May 12 14:28:46 symfony [info] {sfWebResponse} Send header "Location: http://localhost:8081/frontend_dev.php/fr/bilan_carbone"
+May 12 14:28:46 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+May 12 14:28:46 symfony [info] {sfWebDebugLogger} Configuration 70.08 ms (9)
+May 12 14:28:46 symfony [info] {sfWebDebugLogger} Factories 89.10 ms (1)
+May 12 14:28:46 symfony [info] {sfWebDebugLogger} Action "bilan_carbone/calcul" 88.60 ms (1)
+May 12 14:28:46 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.03 ms (2)
+May 12 14:28:46 symfony [info] {sfWebResponse} Send content (126 o)
+May 12 14:28:46 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+May 12 14:28:46 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+May 12 14:28:46 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_register" (/guard/register)
+May 12 14:28:46 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_forgot_password" (/guard/forgot_password)
+May 12 14:28:46 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_forgot_password_change" (/guard/forgot_password/:unique_key)
+May 12 14:28:46 symfony [info] {sfPatternRouting} Match route "bilan_carbone" (/:sf_culture/bilan_carbone) for /fr/bilan_carbone with parameters array (  'module' => 'bilan_carbone',  'action' => 'index',  'sf_culture' => 'fr',)
+May 12 14:28:46 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 12 14:28:46 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 12 14:28:46 symfony [info] {bilan_carboneActions} Call "bilan_carboneActions->executeIndex()"
+May 12 14:28:46 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+May 12 14:28:46 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.id AS c__id, c.main AS c__main, c.name AS c__name, c.description AS c__description, c.configuration_id AS c__configuration_id, c.type AS c__type, c.is_kernel AS c__is_kernel, c.is_activated AS c__is_activated, c.value AS c__value FROM configuration c - ()
+May 12 14:28:46 symfony [info] {Doctrine_Connection_Statement} execute : SELECT b.id AS b__id, b.name_short AS b__name_short, b.name AS b__name, b.coeff AS b__coeff FROM bilan_carbone_coeff b WHERE (b.name_short = ?) - (feed)
+May 12 14:28:46 symfony [info] {sfPHPView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/bilan_carbone/templates/indexSuccess.php"
+May 12 14:28:46 symfony [info] {main} Set slot "title"
+May 12 14:28:47 symfony [info] {sfPHPView} Decorate content with "C:\wamp\www\MA1IG\apps\frontend\templates/layout.php"
+May 12 14:28:47 symfony [info] {sfPHPView} Render "C:\wamp\www\MA1IG\apps\frontend\templates/layout.php"
+May 12 14:28:47 symfony [info] {main} Get slot "title"
+May 12 14:28:47 symfony [info] {main} Get slot "title"
+May 12 14:28:47 symfony [info] {main} Call "google_analytics->executeGoogle_analytics()"
+May 12 14:28:47 symfony [info] {Doctrine_Connection_Statement} execute : SELECT g.id AS g__id, g.code AS g__code FROM google_analytics g WHERE (g.id = ?) LIMIT 1 - (1)
+May 12 14:28:47 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/google_analytics/templates/_google_analytics.php"
+May 12 14:28:47 symfony [info] {main} Call "login->executeLogin()"
+May 12 14:28:47 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/login/templates/_login.php"
+May 12 14:28:47 symfony [info] {main} Call "sfGuardAuth->executeSignin_form()"
+May 12 14:28:47 symfony [info] {sfPartialView} Render "C:/wamp/www/MA1IG/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+May 12 14:28:47 symfony [info] {main} Call "counter->executeCounter()"
+May 12 14:28:47 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.id AS c__id, c.initial_number AS c__initial_number, FLOOR(c.initial_number + TIMESTAMPDIFF(SECOND, c.initial_date, NOW())*c.objective_number/TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))) AS c__0, FLOOR((1 - TIMESTAMPDIFF(SECOND, c.initial_date, NOW())*c.objective_number/TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH)) + FLOOR(TIMESTAMPDIFF(SECOND, c.initial_date, NOW())*c.objective_number/TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))))*(1000*TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))/c.objective_number)) AS c__1, FLOOR(1000*TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))/c.objective_number) AS c__2 FROM counter c ORDER BY c.initial_date DESC LIMIT 1 - ()
+May 12 14:28:47 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, s.id AS s__id, s.flag AS s__flag, s2.content AS s2__content FROM counter c INNER JOIN slogan s ON c.slogan = s.name INNER JOIN slogan_translation s2 ON s.id = s2.id WHERE (s2.lang = ? AND s.type = ? AND s.flag = ?) ORDER BY c.initial_date DESC - (fr, counter, position 1)
+May 12 14:28:47 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, s.id AS s__id, s.flag AS s__flag, s2.content AS s2__content FROM counter c INNER JOIN slogan s ON c.slogan = s.name INNER JOIN slogan_translation s2 ON s.id = s2.id WHERE (s2.lang = ? AND s.type = ? AND s.flag = ?) ORDER BY c.initial_date DESC - (fr, counter, position 2)
+May 12 14:28:47 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, s.id AS s__id, s.flag AS s__flag, s2.content AS s2__content FROM counter c INNER JOIN slogan s ON c.slogan = s.name INNER JOIN slogan_translation s2 ON s.id = s2.id WHERE (s2.lang = ? AND s.type = ? AND s.flag = ?) ORDER BY c.initial_date DESC - (fr, counter, position 3)
+May 12 14:28:47 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/counter/templates/_counter.php"
+May 12 14:28:47 symfony [info] {main} Call "menu->executeMenu()"
+May 12 14:28:47 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.position AS c__position, c.is_activated AS c__is_activated, c.created_at AS c__created_at, c.updated_at AS c__updated_at FROM category c WHERE (c.is_activated = ?) ORDER BY c.position ASC - (1)
+May 12 14:28:47 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.position AS s__position, s.publication_date AS s__publication_date, s.category_id AS s__category_id, s.created_at AS s__created_at, s.updated_at AS s__updated_at, s2.id AS s2__id, s2.menu_title AS s2__menu_title, s2.content AS s2__content, s2.is_activated AS s2__is_activated, s2.title AS s2__title, s2.lang AS s2__lang FROM static_page s LEFT JOIN static_page_translation s2 ON s.id = s2.id WHERE (s2.is_activated = ? AND s.publication_date <= ? AND s2.lang = ?) - (1, 2011-05-12 14:28:47, fr)
+May 12 14:28:47 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.position AS d__position, d.publication_date AS d__publication_date, d.category_id AS d__category_id, d.controller AS d__controller, d.action AS d__action, d.boolean_configuation_id AS d__boolean_configuation_id, d.created_at AS d__created_at, d.updated_at AS d__updated_at, c.id AS c__id, c.main AS c__main, c.name AS c__name, c.description AS c__description, c.configuration_id AS c__configuration_id, c.type AS c__type, c.is_kernel AS c__is_kernel, c.is_activated AS c__is_activated, c.value AS c__value FROM dynamic_page d LEFT JOIN configuration c ON d.boolean_configuation_id = c.id AND c.type = 1 WHERE (c.is_activated = ?) - (1)
+May 12 14:28:47 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/menu/templates/_menu.php"
+May 12 14:28:47 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.name AS c__name, c.lang AS c__lang FROM category_translation c WHERE (c.id IN (?)) - (4)
+May 12 14:28:47 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (3)
+May 12 14:28:47 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.name AS c__name, c.lang AS c__lang FROM category_translation c WHERE (c.id IN (?)) - (6)
+May 12 14:28:47 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (4)
+May 12 14:28:47 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (5)
+May 12 14:28:47 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.name AS c__name, c.lang AS c__lang FROM category_translation c WHERE (c.id IN (?)) - (8)
+May 12 14:28:48 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (1)
+May 12 14:28:48 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (2)
+May 12 14:28:48 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/fb_page/templates/_fb_page.php"
+May 12 14:28:48 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/social_sharing/templates/_social_sharing.php"
+May 12 14:28:48 symfony [info] {main} Call "donenligne->executeShow()"
+May 12 14:28:48 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/donenligne/templates/_show.php"
+May 12 14:28:48 symfony [info] {main} Call "language->executeLanguage()"
+May 12 14:28:48 symfony [info] {Doctrine_Connection_Statement} execute : SELECT l.id AS l__id, l.name AS l__name, l.abbreviation AS l__abbreviation, l.flag AS l__flag, l.is_activated AS l__is_activated, l.is_default AS l__is_default, l.created_at AS l__created_at, l.updated_at AS l__updated_at FROM language l WHERE (l.is_activated = ?) - (1)
+May 12 14:28:48 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/language/templates/_language.php"
+May 12 14:28:48 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+May 12 14:28:48 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+May 12 14:28:48 symfony [info] {sfWebDebugLogger} Configuration 544.54 ms (18)
+May 12 14:28:48 symfony [info] {sfWebDebugLogger} Factories 87.84 ms (1)
+May 12 14:28:48 symfony [info] {sfWebDebugLogger} Action "bilan_carbone/index" 162.18 ms (1)
+May 12 14:28:48 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.32 ms (20)
+May 12 14:28:48 symfony [info] {sfWebDebugLogger} View "Success" for "bilan_carbone/index" 1327.94 ms (1)
+May 12 14:28:48 symfony [info] {sfWebDebugLogger} Component "google_analytics/google_analytics" 10.86 ms (1)
+May 12 14:28:48 symfony [info] {sfWebDebugLogger} Partial "google_analytics/_google_analytics" 2.70 ms (1)
+May 12 14:28:48 symfony [info] {sfWebDebugLogger} Component "login/login" 0.07 ms (1)
+May 12 14:28:48 symfony [info] {sfWebDebugLogger} Partial "login/_login" 3.08 ms (1)
+May 12 14:28:48 symfony [info] {sfWebDebugLogger} Component "sfGuardAuth/signin_form" 6.24 ms (1)
+May 12 14:28:48 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 6.29 ms (1)
+May 12 14:28:48 symfony [info] {sfWebDebugLogger} Component "counter/counter" 630.16 ms (1)
+May 12 14:28:48 symfony [info] {sfWebDebugLogger} Partial "counter/_counter" 13.28 ms (1)
+May 12 14:28:48 symfony [info] {sfWebDebugLogger} Component "menu/menu" 135.85 ms (1)
+May 12 14:28:48 symfony [info] {sfWebDebugLogger} Partial "menu/_menu" 142.17 ms (1)
+May 12 14:28:48 symfony [info] {sfWebDebugLogger} Partial "fb_page/_fb_page" 1.68 ms (1)
+May 12 14:28:48 symfony [info] {sfWebDebugLogger} Partial "social_sharing/_social_sharing" 2.33 ms (1)
+May 12 14:28:48 symfony [info] {sfWebDebugLogger} Component "donenligne/show" 5.41 ms (1)
+May 12 14:28:48 symfony [info] {sfWebDebugLogger} Partial "donenligne/_show" 6.29 ms (1)
+May 12 14:28:48 symfony [info] {sfWebDebugLogger} Component "language/language" 35.13 ms (1)
+May 12 14:28:48 symfony [info] {sfWebDebugLogger} Partial "language/_language" 7.58 ms (1)
+May 12 14:28:48 symfony [info] {sfWebResponse} Send content (110625 o)
+May 12 14:28:50 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+May 12 14:28:50 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+May 12 14:28:50 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_register" (/guard/register)
+May 12 14:28:50 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_forgot_password" (/guard/forgot_password)
+May 12 14:28:50 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_forgot_password_change" (/guard/forgot_password/:unique_key)
+May 12 14:28:50 symfony [info] {sfPatternRouting} Match route "bilan_carbone" (/:sf_culture/bilan_carbone) for /fr/bilan_carbone with parameters array (  'module' => 'bilan_carbone',  'action' => 'index',  'sf_culture' => 'fr',)
+May 12 14:28:51 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 12 14:28:51 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 12 14:28:51 symfony [info] {bilan_carboneActions} Call "bilan_carboneActions->executeIndex()"
+May 12 14:28:51 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+May 12 14:28:51 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.id AS c__id, c.main AS c__main, c.name AS c__name, c.description AS c__description, c.configuration_id AS c__configuration_id, c.type AS c__type, c.is_kernel AS c__is_kernel, c.is_activated AS c__is_activated, c.value AS c__value FROM configuration c - ()
+May 12 14:28:51 symfony [info] {Doctrine_Connection_Statement} execute : SELECT b.id AS b__id, b.name_short AS b__name_short, b.name AS b__name, b.coeff AS b__coeff FROM bilan_carbone_coeff b WHERE (b.name_short = ?) - (feed)
+May 12 14:28:51 symfony [info] {sfPHPView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/bilan_carbone/templates/indexSuccess.php"
+May 12 14:28:51 symfony [info] {main} Set slot "title"
+May 12 14:28:51 symfony [info] {sfPHPView} Decorate content with "C:\wamp\www\MA1IG\apps\frontend\templates/layout.php"
+May 12 14:28:51 symfony [info] {sfPHPView} Render "C:\wamp\www\MA1IG\apps\frontend\templates/layout.php"
+May 12 14:28:51 symfony [info] {main} Get slot "title"
+May 12 14:28:51 symfony [info] {main} Get slot "title"
+May 12 14:28:51 symfony [info] {main} Call "google_analytics->executeGoogle_analytics()"
+May 12 14:28:51 symfony [info] {Doctrine_Connection_Statement} execute : SELECT g.id AS g__id, g.code AS g__code FROM google_analytics g WHERE (g.id = ?) LIMIT 1 - (1)
+May 12 14:28:51 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/google_analytics/templates/_google_analytics.php"
+May 12 14:28:51 symfony [info] {main} Call "login->executeLogin()"
+May 12 14:28:51 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/login/templates/_login.php"
+May 12 14:28:51 symfony [info] {main} Call "sfGuardAuth->executeSignin_form()"
+May 12 14:28:51 symfony [info] {sfPartialView} Render "C:/wamp/www/MA1IG/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+May 12 14:28:51 symfony [info] {main} Call "counter->executeCounter()"
+May 12 14:28:51 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.id AS c__id, c.initial_number AS c__initial_number, FLOOR(c.initial_number + TIMESTAMPDIFF(SECOND, c.initial_date, NOW())*c.objective_number/TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))) AS c__0, FLOOR((1 - TIMESTAMPDIFF(SECOND, c.initial_date, NOW())*c.objective_number/TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH)) + FLOOR(TIMESTAMPDIFF(SECOND, c.initial_date, NOW())*c.objective_number/TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))))*(1000*TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))/c.objective_number)) AS c__1, FLOOR(1000*TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))/c.objective_number) AS c__2 FROM counter c ORDER BY c.initial_date DESC LIMIT 1 - ()
+May 12 14:28:51 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, s.id AS s__id, s.flag AS s__flag, s2.content AS s2__content FROM counter c INNER JOIN slogan s ON c.slogan = s.name INNER JOIN slogan_translation s2 ON s.id = s2.id WHERE (s2.lang = ? AND s.type = ? AND s.flag = ?) ORDER BY c.initial_date DESC - (fr, counter, position 1)
+May 12 14:28:51 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, s.id AS s__id, s.flag AS s__flag, s2.content AS s2__content FROM counter c INNER JOIN slogan s ON c.slogan = s.name INNER JOIN slogan_translation s2 ON s.id = s2.id WHERE (s2.lang = ? AND s.type = ? AND s.flag = ?) ORDER BY c.initial_date DESC - (fr, counter, position 2)
+May 12 14:28:51 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, s.id AS s__id, s.flag AS s__flag, s2.content AS s2__content FROM counter c INNER JOIN slogan s ON c.slogan = s.name INNER JOIN slogan_translation s2 ON s.id = s2.id WHERE (s2.lang = ? AND s.type = ? AND s.flag = ?) ORDER BY c.initial_date DESC - (fr, counter, position 3)
+May 12 14:28:51 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/counter/templates/_counter.php"
+May 12 14:28:51 symfony [info] {main} Call "menu->executeMenu()"
+May 12 14:28:51 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.position AS c__position, c.is_activated AS c__is_activated, c.created_at AS c__created_at, c.updated_at AS c__updated_at FROM category c WHERE (c.is_activated = ?) ORDER BY c.position ASC - (1)
+May 12 14:28:52 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.position AS s__position, s.publication_date AS s__publication_date, s.category_id AS s__category_id, s.created_at AS s__created_at, s.updated_at AS s__updated_at, s2.id AS s2__id, s2.menu_title AS s2__menu_title, s2.content AS s2__content, s2.is_activated AS s2__is_activated, s2.title AS s2__title, s2.lang AS s2__lang FROM static_page s LEFT JOIN static_page_translation s2 ON s.id = s2.id WHERE (s2.is_activated = ? AND s.publication_date <= ? AND s2.lang = ?) - (1, 2011-05-12 14:28:51, fr)
+May 12 14:28:52 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.position AS d__position, d.publication_date AS d__publication_date, d.category_id AS d__category_id, d.controller AS d__controller, d.action AS d__action, d.boolean_configuation_id AS d__boolean_configuation_id, d.created_at AS d__created_at, d.updated_at AS d__updated_at, c.id AS c__id, c.main AS c__main, c.name AS c__name, c.description AS c__description, c.configuration_id AS c__configuration_id, c.type AS c__type, c.is_kernel AS c__is_kernel, c.is_activated AS c__is_activated, c.value AS c__value FROM dynamic_page d LEFT JOIN configuration c ON d.boolean_configuation_id = c.id AND c.type = 1 WHERE (c.is_activated = ?) - (1)
+May 12 14:28:52 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/menu/templates/_menu.php"
+May 12 14:28:52 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.name AS c__name, c.lang AS c__lang FROM category_translation c WHERE (c.id IN (?)) - (4)
+May 12 14:28:52 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (3)
+May 12 14:28:52 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.name AS c__name, c.lang AS c__lang FROM category_translation c WHERE (c.id IN (?)) - (6)
+May 12 14:28:52 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (4)
+May 12 14:28:52 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (5)
+May 12 14:28:52 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.name AS c__name, c.lang AS c__lang FROM category_translation c WHERE (c.id IN (?)) - (8)
+May 12 14:28:52 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (1)
+May 12 14:28:52 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (2)
+May 12 14:28:52 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/fb_page/templates/_fb_page.php"
+May 12 14:28:52 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/social_sharing/templates/_social_sharing.php"
+May 12 14:28:52 symfony [info] {main} Call "donenligne->executeShow()"
+May 12 14:28:52 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/donenligne/templates/_show.php"
+May 12 14:28:52 symfony [info] {main} Call "language->executeLanguage()"
+May 12 14:28:52 symfony [info] {Doctrine_Connection_Statement} execute : SELECT l.id AS l__id, l.name AS l__name, l.abbreviation AS l__abbreviation, l.flag AS l__flag, l.is_activated AS l__is_activated, l.is_default AS l__is_default, l.created_at AS l__created_at, l.updated_at AS l__updated_at FROM language l WHERE (l.is_activated = ?) - (1)
+May 12 14:28:52 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/language/templates/_language.php"
+May 12 14:28:52 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+May 12 14:28:52 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+May 12 14:28:52 symfony [info] {sfWebDebugLogger} Configuration 532.86 ms (18)
+May 12 14:28:52 symfony [info] {sfWebDebugLogger} Factories 82.57 ms (1)
+May 12 14:28:52 symfony [info] {sfWebDebugLogger} Action "bilan_carbone/index" 116.02 ms (1)
+May 12 14:28:52 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.29 ms (20)
+May 12 14:28:52 symfony [info] {sfWebDebugLogger} View "Success" for "bilan_carbone/index" 1204.49 ms (1)
+May 12 14:28:52 symfony [info] {sfWebDebugLogger} Component "google_analytics/google_analytics" 10.66 ms (1)
+May 12 14:28:52 symfony [info] {sfWebDebugLogger} Partial "google_analytics/_google_analytics" 3.31 ms (1)
+May 12 14:28:52 symfony [info] {sfWebDebugLogger} Component "login/login" 0.07 ms (1)
+May 12 14:28:52 symfony [info] {sfWebDebugLogger} Partial "login/_login" 3.44 ms (1)
+May 12 14:28:52 symfony [info] {sfWebDebugLogger} Component "sfGuardAuth/signin_form" 6.05 ms (1)
+May 12 14:28:52 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 6.49 ms (1)
+May 12 14:28:52 symfony [info] {sfWebDebugLogger} Component "counter/counter" 655.00 ms (1)
+May 12 14:28:52 symfony [info] {sfWebDebugLogger} Partial "counter/_counter" 7.65 ms (1)
+May 12 14:28:52 symfony [info] {sfWebDebugLogger} Component "menu/menu" 137.06 ms (1)
+May 12 14:28:52 symfony [info] {sfWebDebugLogger} Partial "menu/_menu" 146.68 ms (1)
+May 12 14:28:52 symfony [info] {sfWebDebugLogger} Partial "fb_page/_fb_page" 1.75 ms (1)
+May 12 14:28:52 symfony [info] {sfWebDebugLogger} Partial "social_sharing/_social_sharing" 2.31 ms (1)
+May 12 14:28:52 symfony [info] {sfWebDebugLogger} Component "donenligne/show" 6.12 ms (1)
+May 12 14:28:52 symfony [info] {sfWebDebugLogger} Partial "donenligne/_show" 6.36 ms (1)
+May 12 14:28:52 symfony [info] {sfWebDebugLogger} Component "language/language" 33.10 ms (1)
+May 12 14:28:52 symfony [info] {sfWebDebugLogger} Partial "language/_language" 7.56 ms (1)
+May 12 14:28:52 symfony [info] {sfWebResponse} Send content (110707 o)
+May 12 14:28:58 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+May 12 14:28:58 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+May 12 14:28:58 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_register" (/guard/register)
+May 12 14:28:58 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_forgot_password" (/guard/forgot_password)
+May 12 14:28:58 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_forgot_password_change" (/guard/forgot_password/:unique_key)
+May 12 14:28:58 symfony [info] {sfPatternRouting} Match route "default" (/:sf_culture/:module/:action/*) for /fr/bilan_carbone/calcul with parameters array (  'module' => 'bilan_carbone',  'action' => 'calcul',  'sf_culture' => 'fr',)
+May 12 14:28:58 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 12 14:28:58 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 12 14:28:58 symfony [info] {bilan_carboneActions} Call "bilan_carboneActions->executeCalcul()"
+May 12 14:28:58 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+May 12 14:28:58 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.id AS c__id, c.main AS c__main, c.name AS c__name, c.description AS c__description, c.configuration_id AS c__configuration_id, c.type AS c__type, c.is_kernel AS c__is_kernel, c.is_activated AS c__is_activated, c.value AS c__value FROM configuration c - ()
+May 12 14:28:59 symfony [info] {sfFrontWebController} Redirect to "http://localhost:8081/frontend_dev.php/fr/bilan_carbone"
+May 12 14:28:59 symfony [info] {sfWebResponse} Send status "HTTP/1.1 302 Found"
+May 12 14:28:59 symfony [info] {sfWebResponse} Send header "Location: http://localhost:8081/frontend_dev.php/fr/bilan_carbone"
+May 12 14:28:59 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+May 12 14:28:59 symfony [info] {sfWebDebugLogger} Configuration 17.45 ms (8)
+May 12 14:28:59 symfony [info] {sfWebDebugLogger} Factories 85.15 ms (1)
+May 12 14:28:59 symfony [info] {sfWebDebugLogger} Action "bilan_carbone/calcul" 98.69 ms (1)
+May 12 14:28:59 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (2)
+May 12 14:28:59 symfony [info] {sfWebResponse} Send content (126 o)
+May 12 14:28:59 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signin" (/guard/login)
+May 12 14:28:59 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_signout" (/guard/logout)
+May 12 14:28:59 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_register" (/guard/register)
+May 12 14:28:59 symfony [info] {sfPatternRouting} Connect sfRoute "sf_guard_forgot_password" (/guard/forgot_password)
+May 12 14:28:59 symfony [info] {sfPatternRouting} Connect sfDoctrineRoute "sf_guard_forgot_password_change" (/guard/forgot_password/:unique_key)
+May 12 14:28:59 symfony [info] {sfPatternRouting} Match route "bilan_carbone" (/:sf_culture/bilan_carbone) for /fr/bilan_carbone with parameters array (  'module' => 'bilan_carbone',  'action' => 'index',  'sf_culture' => 'fr',)
+May 12 14:28:59 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+May 12 14:28:59 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+May 12 14:28:59 symfony [info] {bilan_carboneActions} Call "bilan_carboneActions->executeIndex()"
+May 12 14:28:59 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+May 12 14:28:59 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.id AS c__id, c.main AS c__main, c.name AS c__name, c.description AS c__description, c.configuration_id AS c__configuration_id, c.type AS c__type, c.is_kernel AS c__is_kernel, c.is_activated AS c__is_activated, c.value AS c__value FROM configuration c - ()
+May 12 14:28:59 symfony [info] {Doctrine_Connection_Statement} execute : SELECT b.id AS b__id, b.name_short AS b__name_short, b.name AS b__name, b.coeff AS b__coeff FROM bilan_carbone_coeff b WHERE (b.name_short = ?) - (feed)
+May 12 14:28:59 symfony [info] {sfPHPView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/bilan_carbone/templates/indexSuccess.php"
+May 12 14:28:59 symfony [info] {main} Set slot "title"
+May 12 14:28:59 symfony [info] {sfPHPView} Decorate content with "C:\wamp\www\MA1IG\apps\frontend\templates/layout.php"
+May 12 14:28:59 symfony [info] {sfPHPView} Render "C:\wamp\www\MA1IG\apps\frontend\templates/layout.php"
+May 12 14:28:59 symfony [info] {main} Get slot "title"
+May 12 14:28:59 symfony [info] {main} Get slot "title"
+May 12 14:28:59 symfony [info] {main} Call "google_analytics->executeGoogle_analytics()"
+May 12 14:28:59 symfony [info] {Doctrine_Connection_Statement} execute : SELECT g.id AS g__id, g.code AS g__code FROM google_analytics g WHERE (g.id = ?) LIMIT 1 - (1)
+May 12 14:28:59 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/google_analytics/templates/_google_analytics.php"
+May 12 14:28:59 symfony [info] {main} Call "login->executeLogin()"
+May 12 14:28:59 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/login/templates/_login.php"
+May 12 14:28:59 symfony [info] {main} Call "sfGuardAuth->executeSignin_form()"
+May 12 14:28:59 symfony [info] {sfPartialView} Render "C:/wamp/www/MA1IG/plugins/sfDoctrineGuardPlugin/modules/sfGuardAuth/templates/_signin_form.php"
+May 12 14:28:59 symfony [info] {main} Call "counter->executeCounter()"
+May 12 14:28:59 symfony [info] {Doctrine_Connection_Mysql} query : SELECT c.id AS c__id, c.initial_number AS c__initial_number, FLOOR(c.initial_number + TIMESTAMPDIFF(SECOND, c.initial_date, NOW())*c.objective_number/TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))) AS c__0, FLOOR((1 - TIMESTAMPDIFF(SECOND, c.initial_date, NOW())*c.objective_number/TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH)) + FLOOR(TIMESTAMPDIFF(SECOND, c.initial_date, NOW())*c.objective_number/TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))))*(1000*TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))/c.objective_number)) AS c__1, FLOOR(1000*TIMESTAMPDIFF(SECOND, c.initial_date, ADDDATE(c.initial_date, INTERVAL c.period MONTH))/c.objective_number) AS c__2 FROM counter c ORDER BY c.initial_date DESC LIMIT 1 - ()
+May 12 14:29:00 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, s.id AS s__id, s.flag AS s__flag, s2.content AS s2__content FROM counter c INNER JOIN slogan s ON c.slogan = s.name INNER JOIN slogan_translation s2 ON s.id = s2.id WHERE (s2.lang = ? AND s.type = ? AND s.flag = ?) ORDER BY c.initial_date DESC - (fr, counter, position 1)
+May 12 14:29:00 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, s.id AS s__id, s.flag AS s__flag, s2.content AS s2__content FROM counter c INNER JOIN slogan s ON c.slogan = s.name INNER JOIN slogan_translation s2 ON s.id = s2.id WHERE (s2.lang = ? AND s.type = ? AND s.flag = ?) ORDER BY c.initial_date DESC - (fr, counter, position 2)
+May 12 14:29:00 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, s.id AS s__id, s.flag AS s__flag, s2.content AS s2__content FROM counter c INNER JOIN slogan s ON c.slogan = s.name INNER JOIN slogan_translation s2 ON s.id = s2.id WHERE (s2.lang = ? AND s.type = ? AND s.flag = ?) ORDER BY c.initial_date DESC - (fr, counter, position 3)
+May 12 14:29:00 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/counter/templates/_counter.php"
+May 12 14:29:00 symfony [info] {main} Call "menu->executeMenu()"
+May 12 14:29:00 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.position AS c__position, c.is_activated AS c__is_activated, c.created_at AS c__created_at, c.updated_at AS c__updated_at FROM category c WHERE (c.is_activated = ?) ORDER BY c.position ASC - (1)
+May 12 14:29:00 symfony [info] {Doctrine_Connection_Statement} execute : SELECT s.id AS s__id, s.position AS s__position, s.publication_date AS s__publication_date, s.category_id AS s__category_id, s.created_at AS s__created_at, s.updated_at AS s__updated_at, s2.id AS s2__id, s2.menu_title AS s2__menu_title, s2.content AS s2__content, s2.is_activated AS s2__is_activated, s2.title AS s2__title, s2.lang AS s2__lang FROM static_page s LEFT JOIN static_page_translation s2 ON s.id = s2.id WHERE (s2.is_activated = ? AND s.publication_date <= ? AND s2.lang = ?) - (1, 2011-05-12 14:29:00, fr)
+May 12 14:29:00 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.position AS d__position, d.publication_date AS d__publication_date, d.category_id AS d__category_id, d.controller AS d__controller, d.action AS d__action, d.boolean_configuation_id AS d__boolean_configuation_id, d.created_at AS d__created_at, d.updated_at AS d__updated_at, c.id AS c__id, c.main AS c__main, c.name AS c__name, c.description AS c__description, c.configuration_id AS c__configuration_id, c.type AS c__type, c.is_kernel AS c__is_kernel, c.is_activated AS c__is_activated, c.value AS c__value FROM dynamic_page d LEFT JOIN configuration c ON d.boolean_configuation_id = c.id AND c.type = 1 WHERE (c.is_activated = ?) - (1)
+May 12 14:29:00 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/menu/templates/_menu.php"
+May 12 14:29:00 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.name AS c__name, c.lang AS c__lang FROM category_translation c WHERE (c.id IN (?)) - (4)
+May 12 14:29:00 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (3)
+May 12 14:29:00 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.name AS c__name, c.lang AS c__lang FROM category_translation c WHERE (c.id IN (?)) - (6)
+May 12 14:29:00 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (4)
+May 12 14:29:00 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (5)
+May 12 14:29:00 symfony [info] {Doctrine_Connection_Statement} execute : SELECT c.id AS c__id, c.name AS c__name, c.lang AS c__lang FROM category_translation c WHERE (c.id IN (?)) - (8)
+May 12 14:29:00 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (1)
+May 12 14:29:00 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.menu_title AS d__menu_title, d.lang AS d__lang FROM dynamic_page_translation d WHERE (d.id IN (?)) - (2)
+May 12 14:29:00 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/fb_page/templates/_fb_page.php"
+May 12 14:29:00 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/social_sharing/templates/_social_sharing.php"
+May 12 14:29:00 symfony [info] {main} Call "donenligne->executeShow()"
+May 12 14:29:00 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/donenligne/templates/_show.php"
+May 12 14:29:00 symfony [info] {main} Call "language->executeLanguage()"
+May 12 14:29:00 symfony [info] {Doctrine_Connection_Statement} execute : SELECT l.id AS l__id, l.name AS l__name, l.abbreviation AS l__abbreviation, l.flag AS l__flag, l.is_activated AS l__is_activated, l.is_default AS l__is_default, l.created_at AS l__created_at, l.updated_at AS l__updated_at FROM language l WHERE (l.is_activated = ?) - (1)
+May 12 14:29:00 symfony [info] {sfPartialView} Render "C:\wamp\www\MA1IG\apps\frontend\modules/language/templates/_language.php"
+May 12 14:29:00 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+May 12 14:29:00 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+May 12 14:29:00 symfony [info] {sfWebDebugLogger} Configuration 512.69 ms (18)
+May 12 14:29:00 symfony [info] {sfWebDebugLogger} Factories 80.24 ms (1)
+May 12 14:29:00 symfony [info] {sfWebDebugLogger} Action "bilan_carbone/index" 115.88 ms (1)
+May 12 14:29:00 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.30 ms (20)
+May 12 14:29:00 symfony [info] {sfWebDebugLogger} View "Success" for "bilan_carbone/index" 1172.85 ms (1)
+May 12 14:29:00 symfony [info] {sfWebDebugLogger} Component "google_analytics/google_analytics" 10.19 ms (1)
+May 12 14:29:00 symfony [info] {sfWebDebugLogger} Partial "google_analytics/_google_analytics" 2.80 ms (1)
+May 12 14:29:00 symfony [info] {sfWebDebugLogger} Component "login/login" 0.07 ms (1)
+May 12 14:29:00 symfony [info] {sfWebDebugLogger} Partial "login/_login" 2.70 ms (1)
+May 12 14:29:00 symfony [info] {sfWebDebugLogger} Component "sfGuardAuth/signin_form" 6.23 ms (1)
+May 12 14:29:00 symfony [info] {sfWebDebugLogger} Partial "sfGuardAuth/_signin_form" 6.64 ms (1)
+May 12 14:29:00 symfony [info] {sfWebDebugLogger} Component "counter/counter" 634.53 ms (1)
+May 12 14:29:00 symfony [info] {sfWebDebugLogger} Partial "counter/_counter" 7.09 ms (1)
+May 12 14:29:00 symfony [info] {sfWebDebugLogger} Component "menu/menu" 132.00 ms (1)
+May 12 14:29:00 symfony [info] {sfWebDebugLogger} Partial "menu/_menu" 146.15 ms (1)
+May 12 14:29:00 symfony [info] {sfWebDebugLogger} Partial "fb_page/_fb_page" 1.72 ms (1)
+May 12 14:29:00 symfony [info] {sfWebDebugLogger} Partial "social_sharing/_social_sharing" 2.43 ms (1)
+May 12 14:29:00 symfony [info] {sfWebDebugLogger} Component "donenligne/show" 5.49 ms (1)
+May 12 14:29:00 symfony [info] {sfWebDebugLogger} Partial "donenligne/_show" 6.41 ms (1)
+May 12 14:29:00 symfony [info] {sfWebDebugLogger} Component "language/language" 35.48 ms (1)
+May 12 14:29:00 symfony [info] {sfWebDebugLogger} Partial "language/_language" 7.45 ms (1)
+May 12 14:29:00 symfony [info] {sfWebResponse} Send content (110707 o)

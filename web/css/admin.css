@@ -57,7 +57,7 @@ body{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	height: 20px;
-	padding: 1px 5px;
+	padding: 1px 3px;
 }
 
 .module-form tfoot tr {
@@ -184,11 +184,12 @@ a:hover{
     background-color: #ddd;
 }
 .main{
+	color: #555;
+	font-size: 13px;
     margin-left:270px;
     background-color: #ddd;
     min-height: 400px;
     padding:20px;
-    color:#5a5a5a;
 }
 #footer{
     clear:both;
@@ -256,7 +257,7 @@ select {
 	padding-top: 0px;
 }	
 
-.input-tiny, .input-small, .input-medium, .input-big, .input-flex, textarea{
+.input-tiny, .input-small, .input-medium, .input-big, .input-flex, .input-email, textarea{
     padding:5px;
     border:1px solid #959595;
     font-size:12px;
@@ -265,10 +266,12 @@ select {
     color:#333;
 }
 .input-tiny{width:40px;}
+.input-email{width:250px;}
 .input-small{width:120px;}
 .input-medium{width:240px;} 
 .input-big{width:480px;} 
 .input-flex{width:70%;}
+
 
 textarea, iframe , .wysiwyg{
     overflow:auto;
@@ -348,16 +351,18 @@ textarea{
     padding-left:2px;
 }
 .desc{
+	color: #888;
     display:block;
     padding-left:0px;
-    font-size: 8px;
+    font-size: 11px;
     padding-bottom: 10px;
     line-height:10px;
 }
 .desc_check{
+	color: #888;
     display:block;
     padding-left:4px;
-    font-size: 8px;
+    font-size: 11px;
     padding-bottom: 10px;
     line-height:10px;
 }

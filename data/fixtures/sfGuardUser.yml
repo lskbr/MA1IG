@@ -42,7 +42,7 @@ sfGuardUser:
     username: xirius
     is_active: 1
     is_super_admin: 0
-    password: 947482317
+    password: yeswecan
     Groups: [Administrateur]
     Person: Alexandre
 

@@ -1,0 +1,19 @@
+RefTextParam:
+  P1:
+    x: 220
+    y: 35
+    width: 100
+    font_size: 11
+    color: '000000'
+  P2:
+    x: 500
+    y: 35
+    width: 100
+    font_size: 11
+    color: '000000'
+  P3:
+    x: 335
+    y: 50
+    width: 100
+    font_size: 15
+    color: '000000'

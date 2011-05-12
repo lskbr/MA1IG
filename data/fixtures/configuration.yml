@@ -20,7 +20,7 @@ BooleanConfiguration:
 
   ContactsAvancesAlertesMail:
     main: contacts_alerte
-    name: Alerte mail
+    name: Alerte e-mail
     description: Voulez-vous être contacté pour prévenir de nouveaux messages ?
     is_activated: true
     BooleanConfiguration: ContactAvances
@@ -154,21 +154,21 @@ NumericConfiguration:
     value: 100
   PersoneDeContactParDefaultMessagerie:
     main: contacts_default_person_id
-    name: Id de la persone a qui est destiné tous les mails
+    name: Id de la persone a qui est destiné tous les emails
     BooleanConfiguration: ContactAvances
     value: 1
 
 StringConfiguration:
   ContactAvancesAdresseMail:
     main: contacts_avances_adresse_mail
-    name: Adresse mail
-    description: Adresse-mail pour envoyer les alertes
+    name: Adresse e-mail
+    description: Adresse e-mail pour envoyer les alertes
     value: laurent_cardon@hotmail.com
     BooleanConfiguration: ContactsAvancesAlertesMail
   NewsletterAdresseMail:
     main: newsletter_mail
-    name: Adresse email
-    description: Adresse email qui enverra la newsletter du site
+    name: Adresse e-mail
+    description: Adresse e-mail qui enverra la newsletter du site
     value: info@grainedevie.seaflat.be
     BooleanConfiguration: Newsletter
   Page1_link:

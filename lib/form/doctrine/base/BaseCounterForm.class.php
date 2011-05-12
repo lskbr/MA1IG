@@ -20,6 +20,7 @@ abstract class BaseCounterForm extends BaseFormDoctrine
       'initial_number'   => new sfWidgetFormInputText(),
       'period'           => new sfWidgetFormInputText(),
       'objective_number' => new sfWidgetFormInputText(),
+      'slogan'           => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Slogan'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
@@ -28,6 +29,7 @@ abstract class BaseCounterForm extends BaseFormDoctrine
       'initial_number'   => new sfValidatorInteger(),
       'period'           => new sfValidatorInteger(),
       'objective_number' => new sfValidatorInteger(),
+      'slogan'           => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Slogan'), 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('counter[%s]');

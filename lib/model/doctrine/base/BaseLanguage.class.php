@@ -12,6 +12,7 @@
  * @property boolean $is_default
  * @property Doctrine_Collection $Guestbook
  * @property Doctrine_Collection $News
+ * @property Doctrine_Collection $RefImage
  * 
  * @method string              getName()         Returns the current record's "name" value
  * @method string              getAbbreviation() Returns the current record's "abbreviation" value
@@ -20,6 +21,7 @@
  * @method boolean             getIsDefault()    Returns the current record's "is_default" value
  * @method Doctrine_Collection getGuestbook()    Returns the current record's "Guestbook" collection
  * @method Doctrine_Collection getNews()         Returns the current record's "News" collection
+ * @method Doctrine_Collection getRefImage()     Returns the current record's "RefImage" collection
  * @method Language            setName()         Sets the current record's "name" value
  * @method Language            setAbbreviation() Sets the current record's "abbreviation" value
  * @method Language            setFlag()         Sets the current record's "flag" value
@@ -27,6 +29,7 @@
  * @method Language            setIsDefault()    Sets the current record's "is_default" value
  * @method Language            setGuestbook()    Sets the current record's "Guestbook" collection
  * @method Language            setNews()         Sets the current record's "News" collection
+ * @method Language            setRefImage()     Sets the current record's "RefImage" collection
  * 
  * @package    grainedevie
  * @subpackage model
@@ -76,6 +79,10 @@ abstract class BaseLanguage extends sfDoctrineRecord
         $this->hasMany('News', array(
              'local' => 'id',
              'foreign' => 'language_id'));
+
+        $this->hasMany('RefImage', array(
+             'local' => 'id',
+             'foreign' => 'lang_id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable();
         $this->actAs($timestampable0);

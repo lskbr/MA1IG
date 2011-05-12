@@ -25,7 +25,7 @@ class newsActions extends sfActions
     $this->comments = Doctrine_Core::getTable('NewsComments')
         ->createQuery('a')
         ->where('a.news_id= ? ', $this->news->getId())
-        ->orderBy('coalesce(father_id,id), created_at')
+          ->orderBy('coalesce(father_id,id), created_at')
         ->execute();
     $this->authenticated = $this->getUser()->isAuthenticated();
     if($this->authenticated)

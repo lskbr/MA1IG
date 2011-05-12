@@ -35,7 +35,7 @@ class contactavancesActions extends sfActions {
         if (isset($sse['message']['Sender']['email_address']) && !$this->getUser()->isAuthenticated() && Doctrine_Query::create()->from('sfGuardUser')->where('person.email_address = ?', $sse['message']['Sender']['email_address'])->andWhere('sfGuardUser.person_id = person.id')->count() != 1) {
 
             $sender = Doctrine_Core::getTable('Person')->createQuery()->where('email_address = ?', $sse['message']['Sender']['email_address'])->fetchOne();
-            $this->form = new MessageForm(null, null, null, false);
+            $this->form = new MessageForm(null, null, null, true);
         } else {
             $sender = null;
             $this->form = new MessageForm(null, null, null, !$this->getUser()->isAuthenticated());

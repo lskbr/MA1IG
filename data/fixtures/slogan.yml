@@ -1,0 +1,67 @@
+Slogan:
+  S1:
+    name: Compteur
+    type: counter
+    flag: 'position 1'
+    Translation:
+      en:
+        content: "We have already planted"
+      fr:
+        content: "Nous avons déjà planté"
+      nl:
+        content: "We have already planted"
+      pt:
+        content: "Já plantamos"
+  S2:
+    name: Compteur
+    type: counter
+    flag: 'position 2'
+    Translation:
+      en:
+        content: "Help us continue to increase this number"
+      fr:
+        content: "Aidez nous à continuer à augmenter ce nombre"
+      nl:
+        content: "Help us continue to increase this number"
+      pt:
+        content: "Ajude-nos a continuar aumentando este número"
+  S3:
+    name: Compteur
+    type: counter
+    flag: 'position 3'
+    Translation:
+      en:
+        content: "Donate !"
+      fr:
+        content: "Faites un don !"
+      nl:
+        content: "Donate !"
+      pt:
+        content: "Doe !"
+  S4:
+    name: 'Image référencement'
+    type: refimg
+    flag: 'position 1'
+    Translation:
+      en:
+        content: "I contributed to the plantation of"
+      fr:
+        content: "J'ai contribué à la plantation de"
+      nl:
+        content: "ich habe zur pflanzung beeigetragen von"
+      pt:
+        content: "contribuí para a plantação"
+  S5:
+    name: 'Image référencement'
+    type: refimg
+    flag: 'position 2'
+    Translation:
+      en:
+        content: "Tree in Madagascar"
+      fr:
+        content: "arbre à Madagascar"
+      nl:
+        content: "boom aan Madagascar"
+      pt:
+        content: "árvore à Madagascar"
+

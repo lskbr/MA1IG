@@ -12,8 +12,7 @@ html{
 }
 
 body{
-    background:#fff url(../images/bg.jpg) repeat-x;
-    background-color:#dddddd;
+    background:#ddd url(../images/bg.jpg) repeat-x;
     font-size:12px;
     font-family:"Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
     line-height:1.5em;
@@ -21,6 +20,61 @@ body{
     margin:0 auto;
     padding-bottom:30px;
 }
+
+/* Connexion => */
+.module-form {
+	background-color: #ccc;
+	border: 1px dashed #999;
+	/* -> border */
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-khtml-border-radius: 5px 5px 5px 5px;
+	/* <- border */
+	display: inline-block;
+	margin-top: 15px;
+	padding: 20px;
+}
+
+.module-form table,
+.module-form table th,
+.module-form table td {
+	border: none;
+}
+
+.module-form table th label {
+	text-align: right;
+}
+
+.module-form table td {
+	padding-left: 5px;
+	text-align: left;
+}
+
+.module-form tbody input[type=text],
+.module-form tbody input[type=password] {
+	border: 1px solid #999;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	height: 20px;
+	padding: 1px 3px;
+}
+
+.module-form tfoot tr {
+	border-top: 2px solid #aaa;
+}
+
+.module-form tfoot th,
+.module-form tfoot td {
+	padding-top: 7px;
+}
+
+.module-form tfoot input[type=submit] {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	height: 26px;
+}
+/* <= Connexion */
 
 a{
     color:#454545;
@@ -130,11 +184,12 @@ a:hover{
     background-color: #ddd;
 }
 .main{
+	color: #555;
+	font-size: 13px;
     margin-left:270px;
     background-color: #ddd;
     min-height: 400px;
     padding:20px;
-    color:#5a5a5a;
 }
 #footer{
     clear:both;
@@ -202,7 +257,7 @@ select {
 	padding-top: 0px;
 }	
 
-.input-tiny, .input-small, .input-medium, .input-big, .input-flex, textarea{
+.input-tiny, .input-small, .input-medium, .input-big, .input-flex, .input-email, textarea{
     padding:5px;
     border:1px solid #959595;
     font-size:12px;
@@ -211,10 +266,12 @@ select {
     color:#333;
 }
 .input-tiny{width:40px;}
+.input-email{width:250px;}
 .input-small{width:120px;}
 .input-medium{width:240px;} 
 .input-big{width:480px;} 
 .input-flex{width:70%;}
+
 
 textarea, iframe , .wysiwyg{
     overflow:auto;
@@ -294,16 +351,18 @@ textarea{
     padding-left:2px;
 }
 .desc{
+	color: #888;
     display:block;
     padding-left:0px;
-    font-size: 8px;
+    font-size: 11px;
     padding-bottom: 10px;
     line-height:10px;
 }
 .desc_check{
+	color: #888;
     display:block;
     padding-left:4px;
-    font-size: 8px;
+    font-size: 11px;
     padding-bottom: 10px;
     line-height:10px;
 }
@@ -428,13 +487,21 @@ img.add{
     left:20px;
     top:28px;
 }
+
+input.edit_flag {
+	clear: left;
+	float: left;
+	margin-bottom: 5px;
+}
+
 img.edit_flag{
     width:100px;
     height:60px;
 }
-label.edit_flag{
-    float:right;
-    text-align:left;
+
+label.edit_flag {
+	float: left;
+	margin-left: 5px;
 }
 
 label.edit_photo{

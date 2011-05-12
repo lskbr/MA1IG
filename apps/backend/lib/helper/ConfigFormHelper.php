@@ -2,7 +2,7 @@
 
 function checkbox_tag($config)
 {
-	$txt='<input type="checkbox" name="options['.$config->getId().']" value="true"';
+	$txt = '<input type="checkbox" name="options['.$config->getId().']" value="true"';
 	if($config->isActivated())
 		$txt.='checked="checked"';
 	if((!($config->getParent()->__toString()=="") && !$config->getParent()->isActivated())||$config->getIsKernel()==true)
@@ -13,10 +13,12 @@ function checkbox_tag($config)
 }
 function textfield_tag($config)
 {
-	$txt= $config->getName().' : <input type="text" name="options['.$config->getId().']" value="'.$config->getValue().'"';
+	$txt = $config->getName().' : <input type="text" name="options['.$config->getId().']" value="'.$config->getValue().'"';
 	if(!$config->getParent()->isActivated())
 		$txt.= 'disabled="disabled"';
-	$txt.= 'class="input-tiny"/><br/>';
+	if (strpos($config->getName(), 'e-mail') !== FALSE)
+		$txt.= 'class="input-email"/><br/>';
+	else $txt.= 'class="input-tiny"/><br/>';
 	$txt.= '<span class="desc">'.$config->getDescription().'</span>';
 	return $txt;
 }

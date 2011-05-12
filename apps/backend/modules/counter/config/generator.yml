@@ -17,7 +17,7 @@ generator:
       list:
         title: Gestion du compteur d'arbres
         batch_actions: {}
-        display: [_initial_date,=initial_number,=period,=objective_number]
+        display: [_initial_date, =initial_number, =period, =objective_number, _slogan]
         fields:
           initial_date:
             label: Date initiale
@@ -28,12 +28,14 @@ generator:
             label: Période (en mois)
           objective_number:
             label: Objectif
+          slogan:
+            label: Slogan
       filter:
         class: false
       form:    ~
       edit:
         title: Modification du compteur d'arbres
-        display: [=initial_date,=initial_number,=period,=objective_number]
+        display: [initial_date, initial_number, period, objective_number, slogan]
         fields:
           initial_date:
             label: Date initiale
@@ -44,9 +46,11 @@ generator:
             label: Période (en mois)
           objective_number:
             label: Objectif
+          slogan:
+            label: Slogan
       new:
         title: Gestion du compteur d'arbres
-        display: [initial_date,initial_number,period,objective_number]
+        display: [initial_date, initial_number, period, objective_number, slogan]
         fields:
           initial_date:
             label: Date initiale
@@ -57,3 +61,5 @@ generator:
             label: Période (en mois)
           objective_number:
             label: Objectif
+          slogan:
+            label: Slogan

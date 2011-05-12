@@ -39,6 +39,7 @@ abstract class BaseBilanCarboneCoeff extends sfDoctrineRecord
              ));
         $this->hasColumn('coeff', 'float', null, array(
              'type' => 'float',
+             'scale' => 3,
              'notnull' => true,
              ));
     }

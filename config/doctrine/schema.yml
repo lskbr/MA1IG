@@ -292,7 +292,7 @@ BilanCarboneCoeff:
   columns:
     name_short: {type: string(255), notnull: true, unique: true}
     name: {type: string(255), notnull: true}
-    coeff: {type: float, notnull: true}
+    coeff: {type: float, scale: 3, notnull: true}
 
 GoogleAnalytics:
   columns:

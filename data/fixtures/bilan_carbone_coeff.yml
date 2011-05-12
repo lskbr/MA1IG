@@ -2,15 +2,15 @@ BilanCarboneCoeff:
   NaturalGas:
     name_short: nat_gas
     name: "Gaz naturel"
-    coeff: 2300
+    coeff: 2.3
   PropaneGas:
     name_short: prop_gas
     name: "Gaz propane"
-    coeff: 2900
+    coeff: 2.9
   Fuel:
     name_short: fuel
     name: "Fuel"
-    coeff: 2860
+    coeff: 2.86
   Wood:
     name_short: wood
     name: "Bois"
@@ -18,7 +18,7 @@ BilanCarboneCoeff:
   Electricity:
     name_short: elec
     name: "Electricité"
-    coeff: 372
+    coeff: 0.372
   KmPlane:
     name_short: km_plane
     name: "Kilomètres en avion"
@@ -58,7 +58,7 @@ BilanCarboneCoeff:
   TreeCO2:
     name_short: tree_co2
     name: "Kg équiv. CO2 consommés par un arbre"
-    coeff: 166.895
+    coeff: 7.136
   CostTree:
     name_short: cost_tree
     name: "Coût d'un arbre (en euros)"

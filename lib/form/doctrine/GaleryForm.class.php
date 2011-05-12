@@ -13,6 +13,15 @@ class GaleryForm extends BaseGaleryForm
   public function configure()
   {
   	unset($this['created_at'], $this['updated_at']);
-  	$this->embedI18n(array('fr', 'en', 'pt', 'nl'));
+  	//$this->embedI18n(array('fr', 'en', 'pt', 'nl'));
+  	
+  	$languages=Doctrine_Query::create()->from('Language l')->execute();
+		$lang_abb=array();
+		foreach($languages as $lang)
+			$lang_abb[]=$lang->getAbbreviation();
+		sfContext::getInstance()->getUser()->setculture('fr');
+		$this->embedI18n($lang_abb);
+		foreach($languages as $lang)
+			$this->widgetSchema->setLabel($lang->getAbbreviation(),$lang->getName());
   }
 }

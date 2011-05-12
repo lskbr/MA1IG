@@ -63,14 +63,15 @@
                             menu_item('Groupes', 'sf_guard_group', $sf_context);
                             menu_item('Images de référencement', 'ref_image', $sf_context);
                             menu_item('Langues', 'language', $sf_context);
-                            menu_item('Messagerie', 'contactavances', $sf_context, 'contacts');
                             menu_item('Livre d\'or', 'guestbook', $sf_context, 'guestbook');
-                            menu_item('Newsletter', 'newsletter', $sf_context);
+                            menu_item('Messagerie', 'contactavances', $sf_context, 'contacts');
                             menu_item('Multiple Photo Upload', 'multiplephoto', $sf_context);
+                            menu_item('Newsletter', 'newsletter', $sf_context);
                             menu_item('Pages', 'static_page', $sf_context);
                             menu_item('Pages dynamiques', 'dynamic_page', $sf_context);
                             menu_item('Partenaires', 'partner', $sf_context, 'partner');
                             menu_item('Photos', 'photo', $sf_context);
+                            menu_item('Slogan', 'slogan', $sf_context);
                             menu_item('Utilisateurs', 'sf_guard_user', $sf_context);
                         } else {
                             echo menu_item('Connexion', 'sf_guard_signin', $sf_context);

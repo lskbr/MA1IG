@@ -82,7 +82,7 @@ class bilan_carboneActions extends sfActions {
     public function executeCalcul(sfWebRequest $request) {
         if(!config::getInstance()->get('bilan_carbone'))
             $this->redirect404();
-        elseif($this->getUser()->getAttribute('eco_footprint') == '' || $this->getUser()->getAttribute('nbr_trees') == '')
+        elseif($this->getUser()->getAttribute('eco_footprint') == '' || $this->getUser()->getAttribute('nbr_trees') == '' || $this->getUser()->getAttribute('feed_coeff') == '')
             $this->redirect('bilan_carbone');
             
     }

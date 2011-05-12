@@ -57,6 +57,18 @@ DynamicPage:
         menu_title: Newslettro
       en:
         menu_title: Newsletter 
+  Guestbook:
+    position: 4
+    publication_date: '2011-03-22 20:00'
+    Category: contactCat
+    controller: guestbook
+    action: index
+    BooleanConfiguration: Guestbook
+    Translation:
+      fr:
+        menu_title: Livre d'or
+      en:
+        menu_title: Guestbook 
 
   CalculBilanCarbone:
     position: 4

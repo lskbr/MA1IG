@@ -14,7 +14,7 @@ BilanCarboneCoeff:
   Wood:
     name_short: wood
     name: "Bois"
-    coeff: 3
+    coeff: 0.003
   Electricity:
     name_short: elec
     name: "Electricité"

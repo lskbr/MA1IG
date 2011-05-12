@@ -17,6 +17,7 @@ abstract class BaseCounterFormFilter extends BaseFormFilterDoctrine
       'initial_number'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'period'           => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'objective_number' => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'slogan'           => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Slogan'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
@@ -24,6 +25,7 @@ abstract class BaseCounterFormFilter extends BaseFormFilterDoctrine
       'initial_number'   => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'period'           => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'objective_number' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'slogan'           => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Slogan'), 'column' => 'id')),
     ));
 
     $this->widgetSchema->setNameFormat('counter_filters[%s]');
@@ -48,6 +50,7 @@ abstract class BaseCounterFormFilter extends BaseFormFilterDoctrine
       'initial_number'   => 'Number',
       'period'           => 'Number',
       'objective_number' => 'Number',
+      'slogan'           => 'ForeignKey',
     );
   }
 }

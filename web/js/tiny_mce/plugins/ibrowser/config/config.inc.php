@@ -23,14 +23,14 @@
 	//  see readme.txt for further instructions	
 	
 	//-------------------------------------------------------------------------	
-	$cfg['lang']   		= 'en';														// default language; e.g. 'en'		
+	$cfg['lang']   		= 'fr';														// default language; e.g. 'en'		
 	$cfg['valid']  		= array('gif', 'jpg', 'jpeg', 'png');						// valid extentions for image files	
 	$cfg['upload'] 		= true; 													// allow uploading of image: 'true' or 'false'
 	$cfg['umax'] 		= 1;														// max. number of image files to be uploaded; default: 1; value > 1
 	$cfg['create'] 		= true; 													// allow to create directory: 'true' or 'false'
-	$cfg['delete'] 		= true; 													// allow deletion of image: 'true' or 'false'	
-	$cfg['rename'] 		= true; 													// allow renaming of image: 'true' or 'false'
-	$cfg['attrib'] 		= false; 													// allow changing image attributes: 'true' or 'false'; default = false; 	
+	$cfg['delete'] 		= false; 													// allow deletion of image: 'true' or 'false'	
+	$cfg['rename'] 		= false; 													// allow renaming of image: 'true' or 'false'
+	$cfg['attrib'] 		= true; 													// allow changing image attributes: 'true' or 'false'; default = false; 	
 	$cfg['furl'] 		= true;														// default: true; if set to true, full url incl. domain will be added to image src
 	$cfg['random']      = '&w=150&h=150&zc=1';										// random image parameters (see phpThumb readme for more information)
 	$cfg['style'] = array ( 														// css styles for images ('class' => 'descr'); - please make sure that the classes exist in your css file
@@ -41,7 +41,7 @@
 			'capDivLeftBrd' 	=> 'align left, border',							// caption: float left with border
 			'capDivLeft' 		=> 'align left',									// caption: float left
 	);
-	$cfg['list']		= true;														// default: true; if set to true, image selection will be shown as list; if set to false, image selection will show thumbnails
+	$cfg['list']		= false;														// default: true; if set to true, image selection will be shown as list; if set to false, image selection will show thumbnails
 	//-------------------------------------------------------------------------
 	// set image formats	
 	$cfg['thumbs'] = array (														 	
@@ -69,7 +69,7 @@
 			'size'   	=> 512,												
 			'ext'    	=> '*',
 			'crop'    	=> false,
-		), */
+		), 
 		array (
 			'size'   	=> 400,												
 			'ext'    	=> '*',
@@ -84,6 +84,11 @@
 			'size'   	=> 120,												
 			'ext'    	=> '*',
 			'crop'    	=> false,
+		),*/
+		array (
+			'size'   	=> 150,												
+			'ext'    	=> '*',
+			'crop'    	=> false,
 		),
 /*		array (
 			'size'   	=> 75,												
@@ -96,8 +101,16 @@
 	$cfg['ilibs'] = array (																// image library path with slashes; absolute to root directory - please make sure that the directories have write permissions	
 		array (																		
 			'value'   	=> '/uploads/photo/',												
-			'text'    	=> 'Site Pictures',
-		),		
+			'text'    	=> 'Site Pictures - Original size',
+		),
+		array (																		
+			'value'   	=> '/uploads/photo/thumbnailGrande',												
+			'text'    	=> 'Site Pictures 1024 x 768',
+		),
+		array (																		
+			'value'   	=> '/uploads/photo/iBrowser',												
+			'text'    	=> 'iBrowser uploaded files',
+		),				
 	);
 	//-------------------------------------------------------------------------
 	// use dynamic image libraries - if $cfg['ilibs_inc'] is set, static image libraries above are ignored

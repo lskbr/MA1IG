@@ -654,4 +654,9 @@ span.caption {
 	padding: 0px;
 	display: block;	
 }
+
+img.thumb {
+  height: 58px;
+  width: 58px;
+}
 /* EOF STYLES */

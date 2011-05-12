@@ -11,19 +11,22 @@
  * @property string $paypal_id
  * @property integer $person_id
  * @property Person $Person
+ * @property Doctrine_Collection $RefImage
  * 
- * @method float   getBrutAmout()  Returns the current record's "brut_amout" value
- * @method float   getFee()        Returns the current record's "fee" value
- * @method string  getDate()       Returns the current record's "date" value
- * @method string  getPaypalId()   Returns the current record's "paypal_id" value
- * @method integer getPersonId()   Returns the current record's "person_id" value
- * @method Person  getPerson()     Returns the current record's "Person" value
- * @method payment setBrutAmout()  Sets the current record's "brut_amout" value
- * @method payment setFee()        Sets the current record's "fee" value
- * @method payment setDate()       Sets the current record's "date" value
- * @method payment setPaypalId()   Sets the current record's "paypal_id" value
- * @method payment setPersonId()   Sets the current record's "person_id" value
- * @method payment setPerson()     Sets the current record's "Person" value
+ * @method float               getBrutAmout()  Returns the current record's "brut_amout" value
+ * @method float               getFee()        Returns the current record's "fee" value
+ * @method string              getDate()       Returns the current record's "date" value
+ * @method string              getPaypalId()   Returns the current record's "paypal_id" value
+ * @method integer             getPersonId()   Returns the current record's "person_id" value
+ * @method Person              getPerson()     Returns the current record's "Person" value
+ * @method Doctrine_Collection getRefImage()   Returns the current record's "RefImage" collection
+ * @method payment             setBrutAmout()  Sets the current record's "brut_amout" value
+ * @method payment             setFee()        Sets the current record's "fee" value
+ * @method payment             setDate()       Sets the current record's "date" value
+ * @method payment             setPaypalId()   Sets the current record's "paypal_id" value
+ * @method payment             setPersonId()   Sets the current record's "person_id" value
+ * @method payment             setPerson()     Sets the current record's "Person" value
+ * @method payment             setRefImage()   Sets the current record's "RefImage" collection
  * 
  * @package    grainedevie
  * @subpackage model
@@ -65,5 +68,9 @@ abstract class Basepayment extends sfDoctrineRecord
         $this->hasOne('Person', array(
              'local' => 'person_id',
              'foreign' => 'id'));
+
+        $this->hasMany('RefImage', array(
+             'local' => 'id',
+             'foreign' => 'payment_id'));
     }
 }

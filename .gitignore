@@ -1,1 +1,9 @@
-﻿cache/
+cache/
+log/
+nbproject/
+
+# Logs and databases #
+######################
+*.log
+*.sql
+

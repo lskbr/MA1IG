@@ -12,8 +12,7 @@ html{
 }
 
 body{
-    background:#fff url(../images/bg.jpg) repeat-x;
-    background-color:#dddddd;
+    background:#ddd url(../images/bg.jpg) repeat-x;
     font-size:12px;
     font-family:"Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
     line-height:1.5em;
@@ -21,6 +20,61 @@ body{
     margin:0 auto;
     padding-bottom:30px;
 }
+
+/* Connexion => */
+.module-form {
+	background-color: #ccc;
+	border: 1px dashed #999;
+	/* -> border */
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-khtml-border-radius: 5px 5px 5px 5px;
+	/* <- border */
+	display: inline-block;
+	margin-top: 15px;
+	padding: 20px;
+}
+
+.module-form table,
+.module-form table th,
+.module-form table td {
+	border: none;
+}
+
+.module-form table th label {
+	text-align: right;
+}
+
+.module-form table td {
+	padding-left: 5px;
+	text-align: left;
+}
+
+.module-form tbody input[type=text],
+.module-form tbody input[type=password] {
+	border: 1px solid #999;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	height: 20px;
+	padding: 1px 5px;
+}
+
+.module-form tfoot tr {
+	border-top: 2px solid #aaa;
+}
+
+.module-form tfoot th,
+.module-form tfoot td {
+	padding-top: 7px;
+}
+
+.module-form tfoot input[type=submit] {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	height: 26px;
+}
+/* <= Connexion */
 
 a{
     color:#454545;

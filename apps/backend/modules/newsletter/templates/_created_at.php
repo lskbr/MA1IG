@@ -1,1 +1,1 @@
-<?php echo date('\L\e d-m-Y à h:m:s',strtotime($newsletter->getCreatedAt())); ?>
+<?php echo date('\L\e d-m-Y à h:i:s',strtotime($newsletter->getCreatedAt())); ?>

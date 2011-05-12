@@ -35,12 +35,13 @@ class Newsletter extends BaseNewsletter
 		sfApplicationConfiguration::getActive()->loadHelpers(array('Url', 'Tag'));
 		foreach($subscribers as $s)
 		{
-		    sfContext::getInstance()->getMailer()->composeAndSend(
+		    $mail=sfContext::getInstance()->getMailer()->compose(
 		      array(config::getInstance()->get('newsletter_mail') => 'Graine de vie'),
 		      $s->getEmail(),
-		      'Newsletter :'.$this->getNews()->getTitle(),
-		      $this->getNews()->getContent().'<br/><a href="'.$this->frontendRouting()->generate('unsubscribe',$s,true).'">'.__('Me supprimer de cette liste de diffusion').'</a>'
-		    );
+		      'Newsletter : '.$this->getNews()->getTitle(),''
+		      
+		    )->setBody($this->getNews()->getContent().'<br/><a href="'.$_SERVER['HTTP_HOST'].$this->frontendRouting()->generate('unsubscribe',$s,true).'">Me supprimer de cette liste de diffusion</a>', 'text/html');
+		    sfContext::getInstance()->getMailer()->send($mail);
 		}
 		return parent::save($conn);
 	}

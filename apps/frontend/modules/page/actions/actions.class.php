@@ -19,7 +19,7 @@ class pageActions extends sfActions
   {
     if (!$request->getParameter('sf_culture'))
     {
-	    $culture = $request->getPreferredCulture(array('en', 'fr', 'pt'));
+	    $culture = $request->getPreferredCulture(array('en', 'fr', 'pt','nl'));
 	    $this->getUser()->setCulture($culture);
       $this->redirect('localized_homepage');
     }

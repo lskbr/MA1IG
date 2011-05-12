@@ -32,5 +32,6 @@ generator:
         class: false
       form:
         class: BackendLanguageForm
-      edit:    ~
+      edit:
+        title: Editer une langue
       new:     ~

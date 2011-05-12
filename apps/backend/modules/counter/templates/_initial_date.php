@@ -1,1 +1,1 @@
-<?php echo date('\L\e d-m-Y à h:m:s',strtotime($counter->getInitialDate())); ?>
+<?php echo date('\L\e d-m-Y à H:i:s',strtotime($counter->getInitialDate())); ?>

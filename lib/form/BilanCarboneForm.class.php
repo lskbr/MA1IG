@@ -10,27 +10,27 @@
 class BilanCarboneForm extends BaseForm {
     public function configure() {
         $this->setWidgets(array(
-                'nbr_people' => new sfWidgetFormInputText(),
-                'nat_gas' => new sfWidgetFormInputText(),
-                'prop_gas' => new sfWidgetFormInputText(),
-                'fuel' => new sfWidgetFormInputText(),
-                'wood' => new sfWidgetFormInputText(),
-                'elec' => new sfWidgetFormInputText(),
+                'nbr_people' => new sfWidgetFormInputText(array(), array('size' => '3')),
+                'nat_gas' => new sfWidgetFormInputText(array(), array('size' => '6')),
+                'prop_gas' => new sfWidgetFormInputText(array(), array('size' => '6')),
+                'fuel' => new sfWidgetFormInputText(array(), array('size' => '6')),
+                'wood' => new sfWidgetFormInputText(array(), array('size' => '6')),
+                'elec' => new sfWidgetFormInputText(array(), array('size' => '6')),
 
-                'km1' => new sfWidgetFormInputText(),
-                'co21' => new sfWidgetFormInputText(),
-                'km2' => new sfWidgetFormInputText(),
-                'co22' => new sfWidgetFormInputText(),
+                'km1' => new sfWidgetFormInputText(array(), array('size' => '6')),
+                'co21' => new sfWidgetFormInputText(array(), array('size' => '6')),
+                'km2' => new sfWidgetFormInputText(array(), array('size' => '6')),
+                'co22' => new sfWidgetFormInputText(array(), array('size' => '6')),
                 
-                'km_plane'=> new sfWidgetFormInputText(),
-                'train' => new sfWidgetFormInputText(),
-                'bus' => new sfWidgetFormInputText(),
-                'metro' => new sfWidgetFormInputText(),
+                'km_plane'=> new sfWidgetFormInputText(array(), array('size' => '6')),
+                'train' => new sfWidgetFormInputText(array(), array('size' => '6')),
+                'bus' => new sfWidgetFormInputText(array(), array('size' => '6')),
+                'metro' => new sfWidgetFormInputText(array(), array('size' => '6')),
             
-                'computers' => new sfWidgetFormInputText(),
-                'books' => new sfWidgetFormInputText(),
-                'pets' => new sfWidgetFormInputText(),
-                'yacht' => new sfWidgetFormInputText(),
+                'computers' => new sfWidgetFormInputText(array(), array('size' => '6')),
+                'books' => new sfWidgetFormInputText(array(), array('size' => '6')),
+                'pets' => new sfWidgetFormInputText(array(), array('size' => '6')),
+                'yacht' => new sfWidgetFormInputText(array(), array('size' => '6')),
         ));
 
         $this->setValidators(array(
@@ -55,6 +55,29 @@ class BilanCarboneForm extends BaseForm {
                 'books' => new sfValidatorNumber(array('required' => true, 'trim' => true, 'min' => 0)),
                 'pets' => new sfValidatorNumber(array('required' => true, 'trim' => true, 'min' => 0)),
                 'yacht' => new sfValidatorNumber(array('required' => true, 'trim' => true, 'min' => 0)),
+        ));
+
+        $this->setDefaults(array(
+                'nbr_people' => 1,
+                'nat_gas' => 0,
+                'prop_gas' => 0,
+                'fuel' => 0,
+                'wood' => 0,
+
+                'km1' => 0,
+                'co21' => 0,
+                'km2' => 0,
+                'co22' => 0,
+
+                'km_plane'=> 0,
+                'train' => 0,
+                'bus' => 0,
+                'metro' => 0,
+
+                'computers' => 0,
+                'books' => 0,
+                'pets' => 0,
+                'yacht' => 0,
         ));
 
         $this->widgetSchema->setNameFormat('bilan_carbone[%s]');

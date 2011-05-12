@@ -17,5 +17,5 @@
 
 <div id="lien_google_analytics">
     Accéder à la page des statistiques enregistrées par Google Analytics :<br/>
-    <a href="http://www.google.com/analytics/" target="_blank">Cliquez-ici</a>, puis connectez-vous avec le compte de Graine de vie.
+    <a href="http://www.google.com/analytics/" target="_blank">Cliquez-ici</a>, puis connectez-vous avec le compte Google de Graine de vie.
 </div>

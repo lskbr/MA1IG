@@ -16,7 +16,7 @@ slot('title', $page_title);
         <?php echo __('Pour compenser celle-ci totalement, il faudrait planter :').'<br/><span class="bilan_nbr">'.format_number(ceil($sf_user->getAttribute('nbr_trees'))).'</span> '.__('arbres'); ?>
     </div>
     <div class="bilan_don">
-        <?php echo __('Aidez-nous à la compenser (au moins en partie) grâce à un don :') ?><br/>
+        <?php echo __('Aidez-nous à la compenser grâce à un don (<b>%number%</b>&nbsp;€/arbres) :', array('%number%' => $cost_tree)) ?><br/>
         <?php include_component('donenligne', 'show', array('montant' => round($sf_user->getAttribute('montant_don'), 2))); ?>
     </div>
 </div>

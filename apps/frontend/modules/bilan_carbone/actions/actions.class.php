@@ -82,8 +82,10 @@ class bilan_carboneActions extends sfActions {
     public function executeCalcul(sfWebRequest $request) {
         if(!config::getInstance()->get('bilan_carbone'))
             $this->redirect404();
-        elseif($this->getUser()->getAttribute('eco_footprint') == '' || $this->getUser()->getAttribute('nbr_trees') == '' || $this->getUser()->getAttribute('feed_coeff') == '')
+        elseif($this->getUser()->getAttribute('eco_footprint') == '' || $this->getUser()->getAttribute('nbr_trees') == '' || $this->getUser()->getAttribute('montant_don') == '')
             $this->redirect('bilan_carbone');
-            
+
+        $this->cost_tree = Doctrine_Core::getTable('BilanCarboneCoeff')->createQuery('a')->where('name_short=?', 'cost_tree')->execute()->get(0)->getCoeff();
+
     }
 }

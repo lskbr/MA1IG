@@ -43,3 +43,32 @@ DynamicPage:
         menu_title: Fotos
       en:
         menu_title: Gallery
+
+  CalculBilanCarbone:
+    position: 4
+    publication_date: '2011-03-22 20:00'
+    Category: bilanCarboneCat
+    controller: bilan_carbone
+    action: index
+    BooleanConfiguration: BilanCarbone
+    Translation:
+      fr:
+        menu_title: "Calculez la vôtre !"
+      pt:
+        menu_title: "Calcule o seu!"
+      en:
+        menu_title: "Calculate yours!"
+  ResultBilanCarbone:
+    position: 5
+    publication_date: '2011-03-22 20:00'
+    Category: bilanCarboneCat
+    controller: bilan_carbone
+    action: calcul
+    BooleanConfiguration: BilanCarbone
+    Translation:
+      fr:
+        menu_title: "Résultat..."
+      pt:
+        menu_title: "Resultado..."
+      en:
+        menu_title: "Result..."

@@ -53,14 +53,15 @@
                             menu_item('Catégories', 'category', $sf_context);
                             menu_item('Catégories de FAQ', 'faq_category', $sf_context, 'faq');
                             menu_item('Citation', 'citation', $sf_context, 'citation');
-                            menu_item('Compteur d\'arbres', 'counter', $sf_context);
-                            menu_item('Gestion des modules', 'configuration', $sf_context);
+                            menu_item('Compteur d\'arbres', 'counter', $sf_context);                            
                             menu_item('Donations', 'donenligne', $sf_context, 'donenligne');
-                            menu_item('Empreinte écologique', 'bilan_carbone_coeff', $sf_context, 'bilan_carbone');
+                            menu_item('Empreinte écologique', 'bilan_carbone_coeff', $sf_context, 'bilan_carbone'); 
                             menu_item('FAQ', 'faq', $sf_context, 'faq');
                             menu_item('Galeries', 'galery', $sf_context);
+                            menu_item('Gestion des modules', 'configuration', $sf_context);
                             menu_item('Google Analytics', 'google_analytics', $sf_context, 'google_analytics');
                             menu_item('Groupes', 'sf_guard_group', $sf_context);
+                            menu_item('Images de référencement', 'ref_image', $sf_context);
                             menu_item('Langues', 'language', $sf_context);
                             menu_item('Messagerie', 'contactavances', $sf_context, 'contacts');
                             menu_item('Livre d\'or', 'guestbook', $sf_context, 'guestbook');

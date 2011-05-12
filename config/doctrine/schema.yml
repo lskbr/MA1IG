@@ -97,7 +97,6 @@ Message: #Laurent
     Folder: {local: folder_id, foreign: id}
     ForwardTo: {local: forward_to_id, foreign: id, class: Person}
 
-
 Person: #Laurent
   columns:
     first_name: {type: string(255), notnull: true}
@@ -112,7 +111,6 @@ Corespondance: #Laurent
     first_mail: {type: datetime}
     last_mail: {type: datetime}
     number_of_mail: {type: integer, default: 0}
-
 
 Partner:
   actAs: {I18n: {fields: [company_name, description, site, is_visible]}}
@@ -159,17 +157,6 @@ Photo:
     galery_id: {type: integer}
   relations:
     Galery: {local: galery_id, foreign: id}
-
-Counter:
-  actAs: {I18n: {fields: [slogan_part1, slogan_part2, donation_text]}}
-  columns:
-    initial_date: {type: timestamp, notnull: true}
-    initial_number: {type: integer, notnull: true}
-    period: {type: integer, notnull: true}
-    objective_number: {type: integer, notnull: true}
-    slogan_part1: {type: string(255), notnull: true}
-    slogan_part2: {type: string(255), notnull: true}
-    donation_text: {type: string(255), notnull: true}
 
 Guestbook:
   actAs: 
@@ -237,6 +224,59 @@ payment:
     person_id: {type: integer}
   relations:
     Person: {local: person_id, foreign: id}
+
+Slogan:
+  actAs: {I18n: {fields: [content]}}
+  columns:
+    name: {type: string(40)}
+    type: {type: enum, values: [counter, refimg]}
+    flag: {type: enum, values: ['position 1', 'position 2', 'position 3']}
+    content: {type: string(255)}
+  indexes:
+    nameflag: {type: unique, fields: [name, flag]}
+
+Counter:
+  columns:
+    initial_date: {type: timestamp, notnull: true}
+    initial_number: {type: integer, notnull: true}
+    period: {type: integer, notnull: true}
+    objective_number: {type: integer, notnull: true}
+    slogan: {type: string(40)}
+  relations:
+    Slogan: {onDelete: SET NULL, onUpdate: CASCADE, local: slogan, foreign: name}
+
+RefTextParam:
+  columns:
+    x: {type: integer}
+    y: {type: integer}
+    width: {type: integer}
+    font_size: {type: integer}
+    color: {type: string(6)}
+
+RefImageParam:
+  columns:
+    url: {type: string(255)}
+    text1: {type: integer}
+    text2: {type: integer}
+    text3: {type: integer}
+  relations:
+    RefTextParam: {onDelete: SET NULL, onUpdate: CASCADE, local: text1, foreign: id}
+    RefTextParam: {onDelete: SET NULL, onUpdate: CASCADE, local: text2, foreign: id}
+    RefTextParam: {onDelete: SET NULL, onUpdate: CASCADE, local: text3, foreign: id}
+
+RefImage:
+  columns:
+    url: {type: string(255)}
+    code: {type: clob}
+    payment_id: {type: integer}
+    lang_id: {type: integer}
+    param_id: {type: integer, default: 1}
+    slogan: {type: string(40)}
+  relations:
+    payment: {onDelete: SET NULL, onUpdate: CASCADE, local: payment_id, foreign: id}
+    Language: {onDelete: SET NULL, onUpdate: CASCADE, local: lang_id, foreign: id}
+    RefImageParam: {onDelete: SET NULL, onUpdate: CASCADE, local: param_id, foreign: id}
+    Slogan: {onDelete: SET NULL, onUpdate: CASCADE, local: slogan, foreign: name}
 
 address:
   columns:

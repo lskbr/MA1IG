@@ -1,4 +1,6 @@
 <?php
+use_helper('Number');
+
 $page_title = __('Calculez votre empreinte écologique !');
 slot('title', $page_title);
 ?>
@@ -72,7 +74,7 @@ endif;
         <fieldset>
             <legend><h3><?php echo __('Alimentation') ?></h3></legend>
             <div>
-                <?php echo __('L\'alimentation d\'un européen moyen produit <b>2050,4 kg équiv. CO<sub>2</sub></b> par an.<br/>Cette consommation varie d\'une personne à l\'autre mais pour simplifier ce questionnaire nous retiendrons la valeur moyenne.') ?>
+                <?php echo __('L\'alimentation d\'un européen moyen produit <b>%number% kg équiv. CO<sub>2</sub></b> par an.<br/>Cette consommation varie d\'une personne à l\'autre mais pour simplifier ce questionnaire nous retiendrons la valeur moyenne.', array('%number%' => format_number(round($feed_coeff->get(0)->getCoeff(),2)))) ?>
             </div>
         </fieldset>
         <fieldset>

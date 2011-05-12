@@ -31,14 +31,14 @@ endif;
             <legend><h3><?php echo __('Logement') ?></h3></legend>
             <h4>&#149; <?php echo $form['nbr_people']->renderLabel(__('Combien de personnes vivent dans votre logement ?'), array('style' => 'font-weight: inherit;')) ?></h4>
             <div><?php echo $form['nbr_people']->render(array('value' => '1', 'size' => '3')).' '.__('personne(s)').$form['nbr_people']->renderError(); ?></div>
-            <h4>&#149; <?php echo __('Que consommez-vous comme combustible ?') ?></h4>
+            <h4>&#149; <?php echo __('Que consommez-vous comme combustible par an ?') ?></h4>
             <div>
                 <?php echo $form['nat_gas']->renderLabel(__('Gaz naturel')).' : '.$form['nat_gas']->render(array('value' => '0', 'size' => '6')).' '.__('m<sup>3</sup>').$form['nat_gas']->renderError(); ?><br/>
                 <?php echo $form['prop_gas']->renderLabel(__('Gaz propane')).' : '.$form['prop_gas']->render(array('value' => '0', 'size' => '6')).' '.__('kg').$form['prop_gas']->renderError(); ?><br/>
                 <?php echo $form['fuel']->renderLabel(__('Fuel')).' : '.$form['fuel']->render(array('value' => '0', 'size' => '6')).' '.__('litre(s)').$form['fuel']->renderError(); ?><br/>
                 <?php echo $form['wood']->renderLabel(__('Bois')).' : '.$form['wood']->render(array('value' => '0', 'size' => '6')).' '.__('kg').$form['wood']->renderError(); ?>
             </div>
-            <h4>&#149; <?php echo $form['elec']->renderLabel(__('Que consommez-vous en électricité ?'), array('style' => 'font-weight: inherit;')) ?></h4>
+            <h4>&#149; <?php echo $form['elec']->renderLabel(__('Que consommez-vous en électricité par an ?'), array('style' => 'font-weight: inherit;')) ?></h4>
             <div><?php echo $form['elec']->render(array('value' => '', 'size' => '6')).' '.__('kWh').$form['elec']->renderError(); ?></div>
 
         </fieldset>
@@ -46,12 +46,12 @@ endif;
             <legend><h3><?php echo __('Transport') ?></h3></legend>
             <h4>&#149; <?php echo __('Véhicule 1 (voiture, moto,...)') ?></h4>
             <div>
-                <?php echo $form['km1']->renderLabel(__('Nombre de kilomètres parcourus')).' : '.$form['km1']->render(array('value' => '0', 'size' => '6')).' '.__('km').$form['km1']->renderError(); ?><br/>
+                <?php echo $form['km1']->renderLabel(__('Nombre de kilomètres parcourus par an')).' : '.$form['km1']->render(array('value' => '0', 'size' => '6')).' '.__('km').$form['km1']->renderError(); ?><br/>
                 <?php echo $form['co21']->renderLabel(__('Emission de CO<sub>2</sub> par kilomètre')).' : '.$form['co21']->render(array('value' => '0', 'size' => '6')).' '.__('g/km').$form['co21']->renderError(); ?><br/>
             </div>
             <h4>&#149; <?php echo __('Véhicule 2 (voiture, moto,...)') ?></h4>
             <div>
-                <?php echo $form['km2']->renderLabel(__('Nombre de kilomètres parcourus')).' : '.$form['km2']->render(array('value' => '0', 'size' => '6')).' '.__('km').$form['km2']->renderError(); ?><br/>
+                <?php echo $form['km2']->renderLabel(__('Nombre de kilomètres parcourus par an')).' : '.$form['km2']->render(array('value' => '0', 'size' => '6')).' '.__('km').$form['km2']->renderError(); ?><br/>
                 <?php echo $form['co22']->renderLabel(__('Emission de CO<sub>2</sub> par kilomètre')).' : '.$form['co22']->render(array('value' => '0', 'size' => '6')).' '.__('g/km').$form['co22']->renderError(); ?><br/>
             </div>
             <fieldset class="help">
@@ -62,7 +62,7 @@ endif;
             </fieldset>
             <h4>&#149; <?php echo __('Avion') ?></h4>
             <div>
-                <?php echo $form['km_plane']->renderLabel(__('Distance totale parcourue')).' : '.$form['km_plane']->render(array('value' => '0', 'size' => '6')).' '.__('km').$form['km_plane']->renderError(); ?><br/>
+                <?php echo $form['km_plane']->renderLabel(__('Distance totale parcourue par an')).' : '.$form['km_plane']->render(array('value' => '0', 'size' => '6')).' '.__('km').$form['km_plane']->renderError(); ?><br/>
             </div>
             <h4>&#149; <?php echo __('Transports en commun') ?></h4>
             <div>

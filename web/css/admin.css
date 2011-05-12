@@ -415,6 +415,10 @@ th a, th a:hover {
     color: #cdcdcd;
 }
 
+div#lien_google_analytics {
+    margin-top: 20px;
+}
+
 .sf_admin_list {
     margin-top: 10px;
     margin-bottom: 10px;

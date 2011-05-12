@@ -13,7 +13,7 @@ class PartnerForm extends BasePartnerForm
   public function configure()
   {
 		$this->getWidgetSchema()->getFormFormatter()->setHelpFormat('%help%');
-		unset($this['position']);
+		unset($this['position'], $this['visit_count']);
 		$this->widgetSchema->setLabels(array(
 		  'company_name'    => 'Nom de la société :',
 		  'description'      => 'Description de la société :'

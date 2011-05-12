@@ -487,13 +487,21 @@ img.add{
     left:20px;
     top:28px;
 }
+
+input.edit_flag {
+	clear: left;
+	float: left;
+	margin-bottom: 5px;
+}
+
 img.edit_flag{
     width:100px;
     height:60px;
 }
-label.edit_flag{
-    float:right;
-    text-align:left;
+
+label.edit_flag {
+	float: left;
+	margin-left: 5px;
 }
 
 label.edit_photo{

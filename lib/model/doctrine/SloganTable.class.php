@@ -17,6 +17,17 @@ class SloganTable extends Doctrine_Table
 		return Doctrine_Core::getTable('Slogan');
 	}
 
+	public static function getContent($name, $pos)
+	{
+		return Doctrine_Core::getTable('SloganTranslation')->createQuery('a')->
+			select('a.id AS id_lang, a.lang, a.content')->
+			innerJoin('a.Slogan b')->
+			where('b.name=?', $name)->
+			andWhere('b.flag=?', $pos)->
+			orderBy('a.lang')->
+			execute();
+	}
+
 	public static function getCounterSlogans()
     {
     	return SloganTable::getInstance()->createQuery('a')->

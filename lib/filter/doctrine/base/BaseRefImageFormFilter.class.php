@@ -18,6 +18,7 @@ abstract class BaseRefImageFormFilter extends BaseFormFilterDoctrine
       'payment_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('payment'), 'add_empty' => true)),
       'lang_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Language'), 'add_empty' => true)),
       'param_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('RefImageParam'), 'add_empty' => true)),
+      'slogan'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Slogan'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
@@ -26,6 +27,7 @@ abstract class BaseRefImageFormFilter extends BaseFormFilterDoctrine
       'payment_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('payment'), 'column' => 'id')),
       'lang_id'    => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Language'), 'column' => 'id')),
       'param_id'   => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('RefImageParam'), 'column' => 'id')),
+      'slogan'     => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Slogan'), 'column' => 'id')),
     ));
 
     $this->widgetSchema->setNameFormat('ref_image_filters[%s]');
@@ -51,6 +53,7 @@ abstract class BaseRefImageFormFilter extends BaseFormFilterDoctrine
       'payment_id' => 'ForeignKey',
       'lang_id'    => 'ForeignKey',
       'param_id'   => 'ForeignKey',
+      'slogan'     => 'ForeignKey',
     );
   }
 }

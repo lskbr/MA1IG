@@ -8,16 +8,13 @@
  * @property string $name_short
  * @property string $name
  * @property float $coeff
- * @property Doctrine_Collection $RefImageParam
  * 
- * @method string              getNameShort()     Returns the current record's "name_short" value
- * @method string              getName()          Returns the current record's "name" value
- * @method float               getCoeff()         Returns the current record's "coeff" value
- * @method Doctrine_Collection getRefImageParam() Returns the current record's "RefImageParam" collection
- * @method BilanCarboneCoeff   setNameShort()     Sets the current record's "name_short" value
- * @method BilanCarboneCoeff   setName()          Sets the current record's "name" value
- * @method BilanCarboneCoeff   setCoeff()         Sets the current record's "coeff" value
- * @method BilanCarboneCoeff   setRefImageParam() Sets the current record's "RefImageParam" collection
+ * @method string            getNameShort()  Returns the current record's "name_short" value
+ * @method string            getName()       Returns the current record's "name" value
+ * @method float             getCoeff()      Returns the current record's "coeff" value
+ * @method BilanCarboneCoeff setNameShort()  Sets the current record's "name_short" value
+ * @method BilanCarboneCoeff setName()       Sets the current record's "name" value
+ * @method BilanCarboneCoeff setCoeff()      Sets the current record's "coeff" value
  * 
  * @package    grainedevie
  * @subpackage model
@@ -49,8 +46,6 @@ abstract class BaseBilanCarboneCoeff extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('RefImageParam', array(
-             'local' => 'id',
-             'foreign' => 'coeff_id'));
+        
     }
 }

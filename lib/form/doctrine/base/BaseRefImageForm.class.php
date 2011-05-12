@@ -21,6 +21,7 @@ abstract class BaseRefImageForm extends BaseFormDoctrine
       'payment_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('payment'), 'add_empty' => true)),
       'lang_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Language'), 'add_empty' => true)),
       'param_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('RefImageParam'), 'add_empty' => true)),
+      'slogan'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Slogan'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
@@ -30,6 +31,7 @@ abstract class BaseRefImageForm extends BaseFormDoctrine
       'payment_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('payment'), 'required' => false)),
       'lang_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Language'), 'required' => false)),
       'param_id'   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('RefImageParam'), 'required' => false)),
+      'slogan'     => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Slogan'), 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('ref_image[%s]');

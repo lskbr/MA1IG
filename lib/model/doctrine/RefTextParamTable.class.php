@@ -16,4 +16,11 @@ class RefTextParamTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('RefTextParam');
     }
+	
+	public static function getTextParams()
+	{
+		return RefTextParamTable::getInstance()->createQuery('a')->
+			select("a.id, CONCAT(a.x, ':', a.y, ':', a.width, ':', a.font_size, ':', a.color) AS params")->
+			leftJoin('a.RefImageParam b')->execute();
+	}
 }

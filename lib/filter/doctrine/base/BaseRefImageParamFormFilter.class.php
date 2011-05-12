@@ -13,21 +13,17 @@ abstract class BaseRefImageParamFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'url'      => new sfWidgetFormFilterInput(),
-      'text1'    => new sfWidgetFormFilterInput(),
-      'text2'    => new sfWidgetFormFilterInput(),
-      'text3'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('RefTextParam'), 'add_empty' => true)),
-      'slogan'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Slogan'), 'add_empty' => true)),
-      'coeff_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('BilanCarboneCoeff'), 'add_empty' => true)),
+      'url'   => new sfWidgetFormFilterInput(),
+      'text1' => new sfWidgetFormFilterInput(),
+      'text2' => new sfWidgetFormFilterInput(),
+      'text3' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('RefTextParam'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
-      'url'      => new sfValidatorPass(array('required' => false)),
-      'text1'    => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'text2'    => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'text3'    => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('RefTextParam'), 'column' => 'id')),
-      'slogan'   => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Slogan'), 'column' => 'id')),
-      'coeff_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('BilanCarboneCoeff'), 'column' => 'id')),
+      'url'   => new sfValidatorPass(array('required' => false)),
+      'text1' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'text2' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'text3' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('RefTextParam'), 'column' => 'id')),
     ));
 
     $this->widgetSchema->setNameFormat('ref_image_param_filters[%s]');
@@ -47,13 +43,11 @@ abstract class BaseRefImageParamFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id'       => 'Number',
-      'url'      => 'Text',
-      'text1'    => 'Number',
-      'text2'    => 'Number',
-      'text3'    => 'ForeignKey',
-      'slogan'   => 'ForeignKey',
-      'coeff_id' => 'ForeignKey',
+      'id'    => 'Number',
+      'url'   => 'Text',
+      'text1' => 'Number',
+      'text2' => 'Number',
+      'text3' => 'ForeignKey',
     );
   }
 }

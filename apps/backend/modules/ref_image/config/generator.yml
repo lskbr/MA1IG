@@ -29,13 +29,29 @@ generator:
       form:    ~
       edit:
         title: Modifer l'images de référencement
-      new:
-        title: Créer nouvelle image de référencement
-        display: [payment_id, lang_id, _image]
+        display: [payment_id, lang_id, slogan, _image, code]
         fields:
           payment_id:
             label: Référance pour le payment
           lang_id:
             label: Langue
+          slogan:
+            label: Slogan
           _image:
             label: Image de référancement
+          code:
+            label: Code source
+      new:
+        title: Créer nouvelle image de référencement
+        display: [payment_id, lang_id, slogan, _image, code]
+        fields:
+          payment_id:
+            label: Référance pour le payment
+          lang_id:
+            label: Langue
+          slogan:
+            label: Slogan
+          _image:
+            label: Image de référancement
+          code:
+            label: Code source

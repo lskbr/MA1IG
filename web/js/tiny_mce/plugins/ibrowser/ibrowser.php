@@ -22,6 +22,7 @@
 	// include configuration settings
 	include dirname(__FILE__) . '/config/config.inc.php';
 	include dirname(__FILE__) . '/langs/lang.class.php';
+	
 	//-------------------------------------------------------------------------
 	// language settings	
 	$l = (isset($_REQUEST['lang']) ? new PLUG_Lang($_REQUEST['lang']) : new PLUG_Lang($cfg['lang']));
@@ -320,11 +321,7 @@
 		var formObj = document.forms[0];
 		//var src = '<?php echo $cfg['scripts']; ?>' + 'phpThumb/phpThumb.php'; // command			
 		//src     = src + '?src=' + popSrc; 					// popup source image
-		var src = "/uploads/photo"+popSrc;
-		//src     = src + '&w=80'; 							// image width
-		src     = src + '?w=80'; 							// image width
-		src     = src + '&h=60'; 							// image height
-		src     = src + '&zc=1'; 							// zoom crop			
+		var src = popSrc;			
 		document.getElementById('poPrevFrame').src = src; 	// update preview	
 		formObj.popSrc.value = popSrc;
 	}
@@ -409,7 +406,15 @@
 // ============================================================
 // = image change - set attributes V 1.0, date: 12/03/2004    =
 // ============================================================
-	function imageChange() {		
+	function getThumbPath(dir)
+	{
+	   if(dir.search("thumbnailGrande/")!=-1){
+	       dir = dir.replace("thumbnailGrande/",'');
+     }
+	   return dir.concat('thumbnail/');
+  }
+  function imageChange() {		
+	
 		var formObj = document.forms[0];
 		var args 	= imageChange.arguments;  												// image change arguments - set by rfiles.php						
 		var clib    = absPath(formObj.ilibs.options[formObj.ilibs.selectedIndex].value);	// current library - absolute path		
@@ -435,12 +440,8 @@
 		// update preview window	
 		var sizes = resizePreview(cwidth, cheight, 150, 150);		
 		//var src = '<?php echo $cfg['scripts']; ?>' + 'phpThumb/phpThumb.php'; // command
-		var src = clib + 'thumbnail/'+ cfile;
-		//src = src + '?src=' + clib + cfile; // source file
-		//src = src + '&w=' + sizes['w']; // width		
-		src = src + '?w=' + sizes['w']; // width		
-		document.getElementById('inPrevFrame').src = src; // update regular preview
-		
+		var src = getThumbPath(clib) + cfile;				
+		document.getElementById('inPrevFrame').src = src; // update regular preview		
 		//-------------------------------------------------------------------------
 		// reset rename and delete info
 		if ('<?php echo $cfg['rename']; ?>' == true) {
@@ -464,7 +465,7 @@
 		//-------------------------------------------------------------------------
 		// update popup preview and set popup default attributes
 		if (document.getElementById('mbtn_po').className == 'btnDown') {
-			var popSrc = clib + cfile; 
+			var popSrc = getThumbPath(clib) + cfile;  
 			setImagePopup(popSrc);			
 			formObj.popTitle.value = cfile.substr(0, cfile.length-4);			
 		}
@@ -784,7 +785,9 @@
 			var src;						
 			//src = '<?php echo $cfg['scripts']; ?>' + 'phpThumb/phpThumb.php'; // command		
 			//src = src + '?src=' + absPath(clib) + cfile; // source image
-			src = '/uploads/photo'+ absPath(clib) + cfile + '?';
+			//src = '/uploads/photo'+ absPath(clib) + cfile + '?';
+			src = getThumbPath(absPath(clib)) + cfile + '?';
+
 			src = src + '&w='+sizes['w']; //image width						
 		
 			var windowName = 'fullView';							
@@ -821,7 +824,7 @@
 		}
 		// resize dialog to content
 		if (args[0] == 1) {					
-			resizeDialogToContent();
+			//resizeDialogToContent();
 		}		
 	}	
 // ============================================================

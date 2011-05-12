@@ -9,33 +9,21 @@
  * @property integer $text1
  * @property integer $text2
  * @property integer $text3
- * @property string $slogan
- * @property integer $coeff_id
  * @property RefTextParam $RefTextParam
- * @property Slogan $Slogan
- * @property BilanCarboneCoeff $BilanCarboneCoeff
  * @property Doctrine_Collection $RefImage
  * 
- * @method string              getUrl()               Returns the current record's "url" value
- * @method integer             getText1()             Returns the current record's "text1" value
- * @method integer             getText2()             Returns the current record's "text2" value
- * @method integer             getText3()             Returns the current record's "text3" value
- * @method string              getSlogan()            Returns the current record's "slogan" value
- * @method integer             getCoeffId()           Returns the current record's "coeff_id" value
- * @method RefTextParam        getRefTextParam()      Returns the current record's "RefTextParam" value
- * @method Slogan              getSlogan()            Returns the current record's "Slogan" value
- * @method BilanCarboneCoeff   getBilanCarboneCoeff() Returns the current record's "BilanCarboneCoeff" value
- * @method Doctrine_Collection getRefImage()          Returns the current record's "RefImage" collection
- * @method RefImageParam       setUrl()               Sets the current record's "url" value
- * @method RefImageParam       setText1()             Sets the current record's "text1" value
- * @method RefImageParam       setText2()             Sets the current record's "text2" value
- * @method RefImageParam       setText3()             Sets the current record's "text3" value
- * @method RefImageParam       setSlogan()            Sets the current record's "slogan" value
- * @method RefImageParam       setCoeffId()           Sets the current record's "coeff_id" value
- * @method RefImageParam       setRefTextParam()      Sets the current record's "RefTextParam" value
- * @method RefImageParam       setSlogan()            Sets the current record's "Slogan" value
- * @method RefImageParam       setBilanCarboneCoeff() Sets the current record's "BilanCarboneCoeff" value
- * @method RefImageParam       setRefImage()          Sets the current record's "RefImage" collection
+ * @method string              getUrl()          Returns the current record's "url" value
+ * @method integer             getText1()        Returns the current record's "text1" value
+ * @method integer             getText2()        Returns the current record's "text2" value
+ * @method integer             getText3()        Returns the current record's "text3" value
+ * @method RefTextParam        getRefTextParam() Returns the current record's "RefTextParam" value
+ * @method Doctrine_Collection getRefImage()     Returns the current record's "RefImage" collection
+ * @method RefImageParam       setUrl()          Sets the current record's "url" value
+ * @method RefImageParam       setText1()        Sets the current record's "text1" value
+ * @method RefImageParam       setText2()        Sets the current record's "text2" value
+ * @method RefImageParam       setText3()        Sets the current record's "text3" value
+ * @method RefImageParam       setRefTextParam() Sets the current record's "RefTextParam" value
+ * @method RefImageParam       setRefImage()     Sets the current record's "RefImage" collection
  * 
  * @package    grainedevie
  * @subpackage model
@@ -60,13 +48,6 @@ abstract class BaseRefImageParam extends sfDoctrineRecord
         $this->hasColumn('text3', 'integer', null, array(
              'type' => 'integer',
              ));
-        $this->hasColumn('slogan', 'string', 40, array(
-             'type' => 'string',
-             'length' => 40,
-             ));
-        $this->hasColumn('coeff_id', 'integer', null, array(
-             'type' => 'integer',
-             ));
     }
 
     public function setUp()
@@ -74,18 +55,6 @@ abstract class BaseRefImageParam extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('RefTextParam', array(
              'local' => 'text3',
-             'foreign' => 'id',
-             'onDelete' => 'SET NULL',
-             'onUpdate' => 'CASCADE'));
-
-        $this->hasOne('Slogan', array(
-             'local' => 'slogan',
-             'foreign' => 'name',
-             'onDelete' => 'SET NULL',
-             'onUpdate' => 'CASCADE'));
-
-        $this->hasOne('BilanCarboneCoeff', array(
-             'local' => 'coeff_id',
              'foreign' => 'id',
              'onDelete' => 'SET NULL',
              'onUpdate' => 'CASCADE'));

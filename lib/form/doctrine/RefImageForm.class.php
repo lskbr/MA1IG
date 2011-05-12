@@ -24,5 +24,15 @@ class RefImageForm extends BaseRefImageForm
 		$this->widgetSchema['param_id'] = new sfWidgetFormDoctrineChoice(array(
 			'model' => $this->getRelatedModelName('RefImageParam'),
 			'add_empty' => false));
+		
+		$this->widgetSchema["slogan"] = new sfWidgetFormDoctrineChoice(array(
+	 		'model' => $this->getRelatedModelName('Slogan'),
+	 		'add_empty' => false,
+	 		'table_method' => 'getRefImgSlogans'));
+	 	
+	 	$this->validatorSchema["slogan"] =  new sfValidatorDoctrineChoice(array(
+		 	'model' => $this->getRelatedModelName('Slogan'),
+		 	'column' => 'name',
+		 	'required' => false));
 	}
 }

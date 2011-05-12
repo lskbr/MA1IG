@@ -259,14 +259,10 @@ RefImageParam:
     text1: {type: integer}
     text2: {type: integer}
     text3: {type: integer}
-    slogan: {type: string(40)}
-    coeff_id: {type: integer}
   relations:
     RefTextParam: {onDelete: SET NULL, onUpdate: CASCADE, local: text1, foreign: id}
     RefTextParam: {onDelete: SET NULL, onUpdate: CASCADE, local: text2, foreign: id}
     RefTextParam: {onDelete: SET NULL, onUpdate: CASCADE, local: text3, foreign: id}
-    Slogan: {onDelete: SET NULL, onUpdate: CASCADE, local: slogan, foreign: name}
-    BilanCarboneCoeff: {onDelete: SET NULL, onUpdate: CASCADE, local: coeff_id, foreign: id}
 
 RefImage:
   columns:
@@ -275,10 +271,12 @@ RefImage:
     payment_id: {type: integer}
     lang_id: {type: integer}
     param_id: {type: integer, default: 1}
+    slogan: {type: string(40)}
   relations:
     payment: {onDelete: SET NULL, onUpdate: CASCADE, local: payment_id, foreign: id}
     Language: {onDelete: SET NULL, onUpdate: CASCADE, local: lang_id, foreign: id}
     RefImageParam: {onDelete: SET NULL, onUpdate: CASCADE, local: param_id, foreign: id}
+    Slogan: {onDelete: SET NULL, onUpdate: CASCADE, local: slogan, foreign: name}
 
 address:
   columns:

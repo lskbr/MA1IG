@@ -31,8 +31,8 @@ CREATE TABLE partner (id BIGINT AUTO_INCREMENT, logo VARCHAR(255), position BIGI
 CREATE TABLE person (id BIGINT AUTO_INCREMENT, first_name VARCHAR(255) NOT NULL, last_name VARCHAR(255) NOT NULL, email_address VARCHAR(255) NOT NULL UNIQUE, corespondance_id BIGINT, INDEX corespondance_id_idx (corespondance_id), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE photo_translation (id BIGINT, title VARCHAR(255), description text, lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE photo (id BIGINT AUTO_INCREMENT, url VARCHAR(255), publication_start DATETIME, publication_end DATETIME, galery_id BIGINT, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX galery_id_idx (galery_id), PRIMARY KEY(id)) ENGINE = INNODB;
-CREATE TABLE ref_image (id BIGINT AUTO_INCREMENT, url VARCHAR(255), code LONGTEXT, payment_id BIGINT, lang_id BIGINT, param_id BIGINT DEFAULT 1, INDEX payment_id_idx (payment_id), INDEX lang_id_idx (lang_id), INDEX param_id_idx (param_id), PRIMARY KEY(id)) ENGINE = INNODB;
-CREATE TABLE ref_image_param (id BIGINT AUTO_INCREMENT, url VARCHAR(255), text1 BIGINT, text2 BIGINT, text3 BIGINT, slogan VARCHAR(40), coeff_id BIGINT, INDEX text3_idx (text3), INDEX slogan_idx (slogan), INDEX coeff_id_idx (coeff_id), PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE ref_image (id BIGINT AUTO_INCREMENT, url VARCHAR(255), code LONGTEXT, payment_id BIGINT, lang_id BIGINT, param_id BIGINT DEFAULT 1, slogan VARCHAR(40), INDEX payment_id_idx (payment_id), INDEX lang_id_idx (lang_id), INDEX param_id_idx (param_id), INDEX slogan_idx (slogan), PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE ref_image_param (id BIGINT AUTO_INCREMENT, url VARCHAR(255), text1 BIGINT, text2 BIGINT, text3 BIGINT, INDEX text3_idx (text3), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE ref_text_param (id BIGINT AUTO_INCREMENT, x BIGINT, y BIGINT, width BIGINT, font_size BIGINT, color VARCHAR(6), PRIMARY KEY(id)) ENGINE = INNODB;
 CREATE TABLE slogan_translation (id BIGINT, content VARCHAR(255), lang CHAR(2), PRIMARY KEY(id, lang)) ENGINE = INNODB;
 CREATE TABLE slogan (id BIGINT AUTO_INCREMENT, name VARCHAR(40), type VARCHAR(255), flag VARCHAR(255), UNIQUE INDEX nameflag_idx (name, flag), INDEX name_idx (name), PRIMARY KEY(id)) ENGINE = INNODB;
@@ -77,12 +77,11 @@ ALTER TABLE partner_translation ADD CONSTRAINT partner_translation_id_partner_id
 ALTER TABLE person ADD CONSTRAINT person_corespondance_id_corespondance_id FOREIGN KEY (corespondance_id) REFERENCES corespondance(id);
 ALTER TABLE photo_translation ADD CONSTRAINT photo_translation_id_photo_id FOREIGN KEY (id) REFERENCES photo(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE photo ADD CONSTRAINT photo_galery_id_galery_id FOREIGN KEY (galery_id) REFERENCES galery(id);
+ALTER TABLE ref_image ADD CONSTRAINT ref_image_slogan_slogan_name FOREIGN KEY (slogan) REFERENCES slogan(name) ON UPDATE CASCADE ON DELETE SET NULL;
 ALTER TABLE ref_image ADD CONSTRAINT ref_image_payment_id_payment_id FOREIGN KEY (payment_id) REFERENCES payment(id) ON UPDATE CASCADE ON DELETE SET NULL;
 ALTER TABLE ref_image ADD CONSTRAINT ref_image_param_id_ref_image_param_id FOREIGN KEY (param_id) REFERENCES ref_image_param(id) ON UPDATE CASCADE ON DELETE SET NULL;
 ALTER TABLE ref_image ADD CONSTRAINT ref_image_lang_id_language_id FOREIGN KEY (lang_id) REFERENCES language(id) ON UPDATE CASCADE ON DELETE SET NULL;
 ALTER TABLE ref_image_param ADD CONSTRAINT ref_image_param_text3_ref_text_param_id FOREIGN KEY (text3) REFERENCES ref_text_param(id) ON UPDATE CASCADE ON DELETE SET NULL;
-ALTER TABLE ref_image_param ADD CONSTRAINT ref_image_param_slogan_slogan_name FOREIGN KEY (slogan) REFERENCES slogan(name) ON UPDATE CASCADE ON DELETE SET NULL;
-ALTER TABLE ref_image_param ADD CONSTRAINT ref_image_param_coeff_id_bilan_carbone_coeff_id FOREIGN KEY (coeff_id) REFERENCES bilan_carbone_coeff(id) ON UPDATE CASCADE ON DELETE SET NULL;
 ALTER TABLE slogan_translation ADD CONSTRAINT slogan_translation_id_slogan_id FOREIGN KEY (id) REFERENCES slogan(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE static_page_translation ADD CONSTRAINT static_page_translation_id_static_page_id FOREIGN KEY (id) REFERENCES static_page(id) ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE static_page ADD CONSTRAINT static_page_category_id_category_id FOREIGN KEY (category_id) REFERENCES category(id);

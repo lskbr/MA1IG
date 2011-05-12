@@ -10,26 +10,32 @@
  * @property integer $payment_id
  * @property integer $lang_id
  * @property integer $param_id
+ * @property string $slogan
  * @property payment $payment
  * @property Language $Language
  * @property RefImageParam $RefImageParam
+ * @property Slogan $Slogan
  * 
  * @method string        getUrl()           Returns the current record's "url" value
  * @method clob          getCode()          Returns the current record's "code" value
  * @method integer       getPaymentId()     Returns the current record's "payment_id" value
  * @method integer       getLangId()        Returns the current record's "lang_id" value
  * @method integer       getParamId()       Returns the current record's "param_id" value
+ * @method string        getSlogan()        Returns the current record's "slogan" value
  * @method payment       getPayment()       Returns the current record's "payment" value
  * @method Language      getLanguage()      Returns the current record's "Language" value
  * @method RefImageParam getRefImageParam() Returns the current record's "RefImageParam" value
+ * @method Slogan        getSlogan()        Returns the current record's "Slogan" value
  * @method RefImage      setUrl()           Sets the current record's "url" value
  * @method RefImage      setCode()          Sets the current record's "code" value
  * @method RefImage      setPaymentId()     Sets the current record's "payment_id" value
  * @method RefImage      setLangId()        Sets the current record's "lang_id" value
  * @method RefImage      setParamId()       Sets the current record's "param_id" value
+ * @method RefImage      setSlogan()        Sets the current record's "slogan" value
  * @method RefImage      setPayment()       Sets the current record's "payment" value
  * @method RefImage      setLanguage()      Sets the current record's "Language" value
  * @method RefImage      setRefImageParam() Sets the current record's "RefImageParam" value
+ * @method RefImage      setSlogan()        Sets the current record's "Slogan" value
  * 
  * @package    grainedevie
  * @subpackage model
@@ -58,6 +64,10 @@ abstract class BaseRefImage extends sfDoctrineRecord
              'type' => 'integer',
              'default' => 1,
              ));
+        $this->hasColumn('slogan', 'string', 40, array(
+             'type' => 'string',
+             'length' => 40,
+             ));
     }
 
     public function setUp()
@@ -78,6 +88,12 @@ abstract class BaseRefImage extends sfDoctrineRecord
         $this->hasOne('RefImageParam', array(
              'local' => 'param_id',
              'foreign' => 'id',
+             'onDelete' => 'SET NULL',
+             'onUpdate' => 'CASCADE'));
+
+        $this->hasOne('Slogan', array(
+             'local' => 'slogan',
+             'foreign' => 'name',
              'onDelete' => 'SET NULL',
              'onUpdate' => 'CASCADE'));
     }

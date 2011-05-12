@@ -10,20 +10,20 @@
  * @property enum $flag
  * @property string $content
  * @property Doctrine_Collection $Counter
- * @property Doctrine_Collection $RefImageParam
+ * @property Doctrine_Collection $RefImage
  * 
- * @method string              getName()          Returns the current record's "name" value
- * @method enum                getType()          Returns the current record's "type" value
- * @method enum                getFlag()          Returns the current record's "flag" value
- * @method string              getContent()       Returns the current record's "content" value
- * @method Doctrine_Collection getCounter()       Returns the current record's "Counter" collection
- * @method Doctrine_Collection getRefImageParam() Returns the current record's "RefImageParam" collection
- * @method Slogan              setName()          Sets the current record's "name" value
- * @method Slogan              setType()          Sets the current record's "type" value
- * @method Slogan              setFlag()          Sets the current record's "flag" value
- * @method Slogan              setContent()       Sets the current record's "content" value
- * @method Slogan              setCounter()       Sets the current record's "Counter" collection
- * @method Slogan              setRefImageParam() Sets the current record's "RefImageParam" collection
+ * @method string              getName()     Returns the current record's "name" value
+ * @method enum                getType()     Returns the current record's "type" value
+ * @method enum                getFlag()     Returns the current record's "flag" value
+ * @method string              getContent()  Returns the current record's "content" value
+ * @method Doctrine_Collection getCounter()  Returns the current record's "Counter" collection
+ * @method Doctrine_Collection getRefImage() Returns the current record's "RefImage" collection
+ * @method Slogan              setName()     Sets the current record's "name" value
+ * @method Slogan              setType()     Sets the current record's "type" value
+ * @method Slogan              setFlag()     Sets the current record's "flag" value
+ * @method Slogan              setContent()  Sets the current record's "content" value
+ * @method Slogan              setCounter()  Sets the current record's "Counter" collection
+ * @method Slogan              setRefImage() Sets the current record's "RefImage" collection
  * 
  * @package    grainedevie
  * @subpackage model
@@ -79,7 +79,7 @@ abstract class BaseSlogan extends sfDoctrineRecord
              'local' => 'name',
              'foreign' => 'slogan'));
 
-        $this->hasMany('RefImageParam', array(
+        $this->hasMany('RefImage', array(
              'local' => 'name',
              'foreign' => 'slogan'));
 

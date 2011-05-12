@@ -14,7 +14,7 @@ class BackendLanguageForm extends LanguageForm
 	      'file_src'  => '/uploads/flags/'.$this->getObject()->getFlag(),
 	      'is_image'  => true,
 	      'with_delete' => true,
-	      'edit_mode' => true,
+	      'edit_mode' => !$this->isNew(),
 	      'delete_label' => 'Supprimer le fichier actuellement présent sur le site'
 	    ), array('class' => 'edit_flag'));
 

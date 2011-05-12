@@ -21,7 +21,7 @@ if(config::getInstance()->get('citation'))
 			echo'<div class="comment_item answer"/>';
 		?>
 		<div class="comment_header"/>
-		<?php echo $com->getsfGuardUser()->getName(); ?> - Le <?php echo date('d-m-Y à h:m:s',strtotime($com->getCreatedAt()));?>
+		<?php echo $com->getsfGuardUser()->getName(); ?> - Le <?php echo date('d-m-Y à H:i:s',strtotime($com->getCreatedAt()));?>
 		<div>
 		<?php if($authenticated && $com->getFatherId()==null):?><a href="<?php echo url_for('news_answer', $news).$com->getId().'#comment_form';?>">Répondre</a><?php endif; ?>
 		<?php if($authenticated && $sf_user->hasCredential('DeleteNewsComments')){

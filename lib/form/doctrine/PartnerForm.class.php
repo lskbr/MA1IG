@@ -13,7 +13,7 @@ class PartnerForm extends BasePartnerForm
   public function configure()
   {
 		$this->getWidgetSchema()->getFormFormatter()->setHelpFormat('%help%');
-		unset($this['position']);
+		unset($this['position'], $this['visit_count']);
 		$this->widgetSchema->setLabels(array(
 		  'company_name'    => 'Nom de la société :',
 		  'description'      => 'Description de la société :'
@@ -23,7 +23,7 @@ class PartnerForm extends BasePartnerForm
 	      'file_src'  => '/uploads/logos/'.$this->getObject()->getLogo(),
 	      'is_image'  => true,
 	      'with_delete' => true,
-	      'edit_mode' => true,
+	      'edit_mode' => !$this->isNew(),
 	      'delete_label' => 'Supprimer le fichier actuellement présent sur le site'
 	    ), array('class' => 'edit_logo'));
 

@@ -17,7 +17,7 @@ BooleanConfiguration:
     description: Permet la gestion des catégories de manière mutlilingue et transparente pour les utilisateurs
     is_activated: true
     is_kernel: true
-    
+
   ContactsAvancesAlertesMail:
     main: contacts_alerte
     name: Alerte e-mail
@@ -147,11 +147,6 @@ NumericConfiguration:
     description: Indique combien de lettres sont utilisées dans l'accroche de chaque news sur la page récapitulative.
     BooleanConfiguration: News
     value: 435
-  ComsParPage:
-    main: news_comments_by_page
-    name: Nombre de commentaires par page
-    BooleanConfiguration: Commentaires
-    value: 4
   DureeAvantSuppressionMessagerie:
     main: contacts_delay_before_supress
     name: Delais en jour avant supression automatique des messages non-enregistrés

@@ -12,6 +12,6 @@ class NewsletterForm extends BaseNewsletterForm
 {
   public function configure()
   {
-  	unset($this['created_at'], $this['updated_at']);
+  	unset($this['created_at'], $this['updated_at'], $this['subscriber_count']);
   }
 }

@@ -25,7 +25,7 @@ class newsActions extends sfActions
     $this->comments = Doctrine_Core::getTable('NewsComments')
         ->createQuery('a')
         ->where('a.news_id= ? ', $this->news->getId())
-        ->orderBy('least(id,coalesce(father_id,id)), created_at')
+          ->orderBy('coalesce(father_id,id), created_at')
         ->execute();
     $this->authenticated = $this->getUser()->isAuthenticated();
     if($this->authenticated)
@@ -38,7 +38,7 @@ class newsActions extends sfActions
       {
         $com=Doctrine::getTable('newsComments')->find($this->answer);
         $this->answer=$com->getSfGuardUser()->getName();
-        $this->form->getWidgetSchema()->setLabels(array('content' =>'Postez un commentaire en réponse à '.$this->answer.' (<a href="'.$this->generateUrl('news_show',$this->news).'#comment_form">Annuler</a>) : <br/>'));     
+        $this->form->getWidgetSchema()->setLabels(array('content' =>'Postez un commentaire en réponse à '.$this->answer.' (<a href="'.$this->generateUrl('news_show',$this->news).'#comment_form">Annuler</a>) : <br/>'));
       }
       else
         $this->form->getWidgetSchema()->setLabels(array('content' =>'Postez un commentaire : <br/>'));

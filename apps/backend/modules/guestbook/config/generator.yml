@@ -25,7 +25,7 @@ generator:
           created_at:
             label: Date du message
           is_validated:
-            label: Status
+            label: Statut
         batch_actions: {}
       filter:
         display: [language_id, content]

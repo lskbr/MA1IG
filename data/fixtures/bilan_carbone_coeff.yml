@@ -22,7 +22,7 @@ BilanCarboneCoeff:
   KmPlane:
     name_short: km_plane
     name: "Kilomètres en avion"
-    coeff: 0.140
+    coeff: 0.14
   Train:
     name_short: train
     name: "Kilomètres en train"

@@ -21,11 +21,6 @@ class guestbookActions extends sfActions
     
   }
 
-  public function executeNew(sfWebRequest $request)
-  {
-    $this->form = new FrontendGuestbookForm();
-  }
-
   public function executeCreate(sfWebRequest $request)
   {
     $this->forward404Unless($request->isMethod(sfRequest::POST));

@@ -16,7 +16,7 @@ DynamicPage:
       en:
         menu_title: Contact us
   Partner:
-    position: 2
+    position: 3
     publication_date: '2011-03-22 20:00'
     Category: contactCat
     controller: partner
@@ -43,6 +43,20 @@ DynamicPage:
         menu_title: Fotos
       en:
         menu_title: Gallery
+  Newsletter:
+    position: 2
+    publication_date: '2011-03-22 20:00'
+    Category: contactCat
+    controller: subscription
+    action: index
+    BooleanConfiguration: Newsletter
+    Translation:
+      fr:
+        menu_title: Newsletter
+      pt:
+        menu_title: Newslettro
+      en:
+        menu_title: Newsletter 
 
   CalculBilanCarbone:
     position: 4

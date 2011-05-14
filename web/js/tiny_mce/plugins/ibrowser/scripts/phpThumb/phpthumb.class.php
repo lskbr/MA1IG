@@ -15,6 +15,8 @@ if (!include_once(dirname(__FILE__).'/phpthumb.functions.php')) {
 }
 ob_end_clean();
 
+ini_set('gd.jpeg_ignore_warning', 1);
+
 class phpthumb {
 
 	// public:

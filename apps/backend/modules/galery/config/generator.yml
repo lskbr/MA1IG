@@ -17,7 +17,7 @@ generator:
         is_activated: {label: Visible, help: 'Cette gallérie est-elle visible pour les utilisateurs du site ?'}
         name: {label: Nom}
       list:    
-        title: Géstion de Galeries
+        title: Liste de Galléries
         batch_actions: {}
         display: [=name, is_activated]
         sort: [position, asc]
@@ -28,4 +28,4 @@ generator:
       edit:
         title: Edition de la gallérie "%%name%%"
       new:     
-        title: Ajouter une nouvelle gallerie
+        title: Ajouter une nouvelle gallérie

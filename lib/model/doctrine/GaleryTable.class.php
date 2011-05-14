@@ -14,11 +14,14 @@ class GaleryTable extends Doctrine_Table
      */
     public static function getInstance()
     {
-        return Doctrine_Core::getTable('Galery');
+        return Doctrine_Core::getTable('galery');
     }
 
-    public function getActiveGallery() { //author : Laurent
-        $query = $this->createQuery('a')->where('a.is_activated = ?', true)->orderBy('a.position ASC');
+    public function getActiveGallery() {
+        $query = $this->createQuery('g')
+                 ->leftJoin('g.Translation')
+                 ->where('g.is_activated = ?', true)
+                 ->orderBy('g.position ASC');
         return $query->execute();
     }
 

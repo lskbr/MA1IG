@@ -12,4 +12,73 @@
  */
 class Galery extends BaseGalery
 {
+	    public static function monter(Galery $galery) {
+        $currentPosition = $galery->getPosition();
+        if ($currentPosition <= 1) {
+            return false;
+        } else {
+            $upGalery = Doctrine_Query::create()
+                  ->from('Galery g')                            
+                  ->leftJoin('g.Translation')
+                  ->where('g.position < ?', $currentPosition)
+                  ->orderby('g.position desc')
+                  ->fetchOne();            
+            if ($upGalery != false) {
+                $newPosition = $upGalery->getPosition();
+                $upGalery->setPosition($currentPosition);
+                $upGalery->save();
+                $galery->setPosition($newPosition);
+                $galery->save();
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public static function descendre(Galery $galery) {
+        $currentPosition = $galery->getPosition();        
+        $lowGalery = Doctrine_Query::create()
+          ->from('Galery g') 
+          ->leftJoin('g.Translation')         
+          ->where('g.position > ?', $currentPosition)          
+          ->orderBy('g.position asc')
+          ->fetchOne();        
+        if ($lowGalery == false) {
+            return false;
+        } else {
+            $newPosition=$lowGalery->getPosition();
+            $lowGalery->setPosition($currentPosition);
+            $lowGalery->save();
+            $galery->setPosition($newPosition);
+            $galery->save();
+            return true;
+        }
+    }
+
+    public static function activateToggle(Galery $galery) {
+        $currentIsActivated = $galery->getIsActivated();
+        $galery->setIsActivated(!$currentIsActivated);
+        $galery->save();
+        return true;
+    }
+
+    public static function getLastPosition() {
+        return Doctrine_Query::create()
+               ->select('MAX(g.position) as position')->from('galery g')
+               ->fetchOne()->getPosition();
+    }
+    public static function getFirstPosition() {
+        return Doctrine_Query::create()
+               ->select('MIN(g.position) as position')->from('galery g')
+               ->fetchOne()->getPosition();
+    }
+
+    public function save(Doctrine_Connection $conn = null) {
+        if ($this->getPosition() == null) {
+            $this->setPosition(Galery::getLastPosition() + 1);
+        }
+        return parent::save($conn);
+    }
+
 }

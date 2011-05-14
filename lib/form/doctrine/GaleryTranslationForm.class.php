@@ -12,5 +12,6 @@ class GaleryTranslationForm extends BaseGaleryTranslationForm
 {
   public function configure()
   {
+  	$this->widgetSchema['name']->setLabel("Nom");
   }
 }

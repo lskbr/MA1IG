@@ -13,13 +13,19 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
+      fields:  
+        is_activated: {label: Visible, help: 'Cette gallérie est-elle visible pour les utilisateurs du site ?'}
+        name: {label: Nom}
       list:    
         title: Géstion de Galeries
         batch_actions: {}
-        display: [name, position, is_activated]
+        display: [=name, is_activated]
+        sort: [position, asc]
+        table_method: retrieveBackendGalleries
       filter:  
         class: false
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:
+        title: Edition de la gallérie "%%name%%"
+      new:     
+        title: Ajouter une nouvelle gallerie

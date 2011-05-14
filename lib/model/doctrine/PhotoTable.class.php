@@ -16,4 +16,11 @@ class PhotoTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('Photo');
     }
+
+    public function retrieveBackendPhoto(Doctrine_Query $query) {        
+        $rootAlias = $query->getRootAlias();
+        $query->leftJoin($rootAlias . '.Translation');
+        $query->leftJoin($rootAlias . '.Galery g')->leftJoin('g.Translation')->orderBy('position ASC');
+        return $query;    
+    }
 }

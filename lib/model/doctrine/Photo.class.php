@@ -55,6 +55,7 @@ class Photo extends BasePhoto
 	{
 		$filename = $this->getUrl();		
 		// Create the thumbnail
+		ini_set('gd.jpeg_ignore_warning', 1);
 		if(isset($filename)){
 			$this->create_thumbnail($filename, $this->getPhotoThumbnailFolder(), 150, 150);
 			$this->create_thumbnail($filename, $this->getPhotoThumbnailGrandeFolder(), 1024, 768);	    

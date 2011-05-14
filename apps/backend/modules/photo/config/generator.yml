@@ -13,14 +13,25 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
+      fields:        
+        title: {label: Titre}
+        description: {label: Déscription}
+        galery_id: {label: Gallérie}
+        galery: {label: Gallérie}
+        publication_start: {label: Debut de publication}
+        publication_end: {label: Fin de publication}
+        created_at: {label: Creer le: }
+        updated_at: {label: Modifier le: }
+        
       list:    
-        title: Géstion de Photos
+        title: Liste de Photos
         batch_actions: {}
-        display: [_picsmall, id, title, description, galery, publication_start, publication_end]
-        sort: [id, title, description, galery, publication_start, publication_end]
+        display: [_picsmall, title, description, galery, publication_start, publication_end]
+        sort: [title, asc]
+        table_method: retrieveBackendPhoto
       filter:  ~
-      form:
-        class: PhotoForm
-      edit:    ~
-      new:     ~
+      form: ~
+      edit:    
+        title: Edition de la photo
+      new:
+        title: Ajout d'une photo

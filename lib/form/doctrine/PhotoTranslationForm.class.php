@@ -12,5 +12,7 @@ class PhotoTranslationForm extends BasePhotoTranslationForm
 {
   public function configure()
   {
+    $this->widgetSchema['title']->setLabel("Titre");
+    $this->widgetSchema['description']->setLabel("Déscription");
   }
 }

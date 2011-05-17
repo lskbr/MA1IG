@@ -33,8 +33,18 @@ class PhotoForm extends BasePhotoForm
         'delete_label' => 'Supprimer le fichier photo actuellement présent sur le site'
       ), array('class' => 'photo'));
 
-  	$this->widgetSchema['publication_start'] = new sfWidgetFormI18nDateTime(array('culture' => 'fr'));
-  	$this->widgetSchema['publication_end'] = new sfWidgetFormI18nDateTime(array('culture' => 'fr'));
+  	$this->widgetSchema['publication_start'] = new sfWidgetFormJQueryDate(array(
+      'image'=>'/images/calendar.png',
+      'date_widget' => new sfWidgetFormI18nDate(array('culture' => 'fr')),
+      'culture' => 'fr'
+    ));
+
+  	$this->widgetSchema['publication_end'] = new sfWidgetFormJQueryDate(array(
+      'image'=>'/images/calendar.png',
+      'date_widget' => new sfWidgetFormI18nDate(array('culture' => 'fr')),
+      'culture' => 'fr'
+    ));
+    
 	  $this->validatorSchema['url'] = new sfValidatorFile(array(
 		  'required' => false,
 		  'path' => sfConfig::get('sf_upload_dir').'/photo',
